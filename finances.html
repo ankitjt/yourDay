@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>YourDay -Finances</title>
+    <title>YourDay - Finances</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 flex flex-col overflow-auto relative">
+    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 flex flex-col overflow-auto relative" style="background-image:url(./assets/finance.webp)">
 
         <!-- Site Navbar -->
 
@@ -37,10 +37,10 @@
             <!-- Filter Type -->
 
             <section class="monthFilter mb-5 text-rose-600 font-semibold flex items-center justify-between">
-                <span class="monthName">
+                <span class="monthName hidden">
                     All Time
                 </span>
-                <select name="monthList" id="monthList" class="rounded-lg text-zinc-800">
+                <select name="monthList" id="monthList" class="rounded-lg text-white bg-pink-500 border-none outline-none">
                     <option selected value="All Time">All Time</option>
                     <option value="january">January</option>
                     <option value="February">February</option>
@@ -119,14 +119,14 @@
 
                 <!-- Patient Name -->
 
-                <select name="monthList" id="monthList" class="rounded-lg text-zinc-800">
+                <select name="monthList" id="monthList" class="rounded-lg text-white bg-pink-500 border-none outline-none">
                     <option value="John Doe">John Doe</option>
                     <option value="Jane Smith">Jane Smith</option>
                 </select>
 
                 <!-- Months -->
 
-                <select name="monthListByName" id="monthList" class="rounded-lg text-zinc-800">
+                <select name="monthListByName" id="monthList" class="rounded-lg text-white bg-pink-500 border-none outline-none">
                     <option selected value="All Time">All Time</option>
                     <option value="january">January</option>
                     <option value="February">February</option>

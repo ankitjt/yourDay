@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>YourDay -Appointments</title>
+    <title>YourDay - Appointments</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
@@ -14,9 +14,10 @@
 </head>
 
 <body>
-    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 flex flex-col overflow-hidden relative">
+    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 flex flex-col overflow-hidden relative"
+    style="background-image:url(./assets/appointments2.webp)">
 
-        <nav class="text-xl flex items-center justify-between px-1 py-2 text-blue-700">
+        <nav class="text-xl flex items-center justify-between px-1 py-2 text-slate-50">
             <a href="home.html">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-rose-600 " viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
@@ -43,8 +44,8 @@
         <!-- Create Appointments -->
 
         <section class="mt-10">
-            <h1 class="font-semibold border-b-2 border-blue-700 text-blue-700 py-1">Create Appointment</h1>
-            <form action="" class="mt-10 px-4">
+            <h1 class="font-semibold border-b-2 border-slate-50 text-slate-50 py-1 mx-1">Create Appointment</h1>
+            <form action="" class="mt-10 px-1">
                 <div class="aptName mb-6">
                     <input type="text" placeholder="Name" name="aptName" id="aptName" class="border-2 border-blue-700 rounded-lg w-full text-blue-700 py-3">
                 </div>
@@ -60,11 +61,11 @@
                 <div class="aptFees mb-6">
                     <input type="number" placeholder="Fee" name="aptFees" id="aptFees" class="border-2 border-blue-700 rounded-lg w-full text-blue-700 py-3">
                 </div>
-                <button class="bg-blue-700 px-6 py-3 text-white text-lg tracking-widest rounded-md uppercase">Create</button>
+                <button class="bg-blue-700 px-6 py-3 text-white text-lg tracking-widest rounded-lg uppercase">Create</button>
             </form>
         </section>
 
-        <section class="notes mt-5 pl-8 font-semibold text-rose-600 text-md">
+        <section class="notes mt-5 pl-8 font-semibold text-rose-600 text-md bg-slate-300 p-3 rounded-lg">
             <ol class="list-disc">
                 <li>All fields are required.</li>
                 <li>Go to <i class="text-blue-700">
