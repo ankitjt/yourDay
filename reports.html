@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay - Reports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script>
+</head>
+
+<body class="h-full">
+    <div class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-right pb-4  px-4 overflow-auto"
+        style="background-image:url(./assets/reports3.webp)">
+
+        <h1 class="text-xl flex items-center justify-between  py-8">
+            <a href="index.html">
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                        clip-rule="evenodd" />
+                </svg>
+            </a>
+            <span class="text-zinc-900 text-sm tracking-widest font-semibold uppercase">Reports</span>
+        </h1>
+
+        <!-- Report Summary -->
+
+        <section class="reportSummary  bg-gray-100 p-4 rounded-lg">
+
+            <select name="monthList" id="monthList" class="rounded-lg text-white bg-pink-500 w-1/2 mb-5 border-none outline-none">
+                <option selected value="All Time">All Time</option>
+                <option value="january">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+        
+            <div class="totalSessions flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
+                <span>Sessions</span>
+                <span class="totalSessionsCount tracking-widest">452</span>
+            </div>
+            <div class="totalSupervision flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
+                <span>Supervision</span>
+                <span class="totalSupervisionCount tracking-widest">152</span>
+            </div>
+            <div class="totalRescheduled flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
+                <span>Rescheduled</span>
+                <span class="totalRescheduledCount tracking-widest">43</span>
+            </div>
+            <div class="totalCancelled flex items-center justify-between font-semibold text-zinc-900 px-2 uppercase text-sm tracking-widest">
+                <span>Cancelled</span>
+                <span class="totalCancelledCount tracking-widest">15</span>
+            </div>
+        </section>
+
+        <!-- Report Summary Individual -->
+        
+        <section class="reportSummary mt-10 bg-gray-100 p-4 rounded-lg">
+        
+            <select name="monthList" id="monthList" class="rounded-lg text-white w-1/2 mb-5 bg-pink-500 border-none outline-none">
+                <option value="John Doe">John Doe</option>
+                <option value="Jane Smith">Jane Smith</option>
+            </select>
+        
+            <div class="shadow-xl p-2 profileSection">
+                <button class="sectionButton w-full flex items-center justify-between font-semibold">
+                    <span class="sectionName">Profile</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam illo.
+                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio neque!
+                </section>
+            </div>
+            <div class="shadow-xl p-2 workSection">
+                <button class="sectionButton w-full flex items-center justify-between font-semibold">
+                    <span class="sectionName">Work</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
+                    vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
+                    illo.
+                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
+                    minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
+                    neque!
+                </section>
+            </div>
+            <div class="shadow-xl p-2 moneySection">
+                <button class="sectionButton w-full flex items-center justify-between font-semibold">
+                    <span class="sectionName">Money</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
+                    vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
+                    illo.
+                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
+                    minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
+                    neque!
+                </section>
+            </div>
+       
+        </section>
+
+    </div>
+    <script src="./scripts/reports.js"></script>
+</body>
+
+</html>
