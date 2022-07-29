@@ -14,35 +14,43 @@
 </head>
 
 <body>
-    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative p-10 flex flex-col overflow-hidden relative" style="background-image:url(./assets/logo6.webp)">
+    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative p-10 flex flex-col overflow-hidden relative -z-0" style="background-image:url(./assets/logo6.webp)">
        
         <h1 class="text-5xl text-center text-teal-50">YourDay</h1>
         <div class="grow flex items-center justify-end pb-10 flex-col">
             <button class="bg-blue-700 w-full py-6 mb-4 text-white text-2xl rounded-md uppercase">
                 <a href="schedule.html">Schedule</a>
             </button>
-            <button class="bg-pink-700 w-full py-6 text-white text-2xl rounded-md uppercase">Login</button>
+            <button class="bg-pink-700 w-full py-6 text-white text-2xl rounded-md uppercase loginButton ">Login</button>
         </div>
 
         <!-- Login Form -->
-        <form action="#" class="text-slate-700 font-semibold absolute w-full h-3/4 left-0 bottom-0 bg-white  flex px-10 justify-center flex-col hideen">
-            <img src="./assets/signin.webp" alt="signInImage" class="-mt-20">
+        <form action="#" class="text-slate-700 font-semibold absolute w-full h-1/2 left-0 -bottom-[500px] bg-white  flex px-10 justify-center flex-col loginForm">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 absolute left-1/2 -translate-x-1/2 -top-5  bg-red-800 rounded-full text-white closeLoginForm" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                    clip-rule="evenodd" />
+            </svg>
             <div class="email">
                 <input type="email" autocomplete="off" name="email" id="email" placeholder="enter your email" class="border-2 border-blue-500 rounded-lg px-2 py-4 w-full mt-10 mb-5 tracking-wider">
             </div>
             <div class="password">
                 <input type="password" name="password" autocomplete="off" id="password" placeholder="enter your password" class="border-2 border-blue-500 rounded-lg px-2 py-4 w-full  mb-5">
             </div>
-            <a href="home.html" class="text-center mt-5">
-                <span class=" rounded-full text-slate-50 bg-blue-500 w-1/2  py-4 px-10 uppercase tracking-widest ">Login</span>
-            </a>
-            <span class="absolute bottom-5 left-[80px] text-center text-blue-500">
+            <div class="text-center mt-5 outline-hidden ">
+                <a href="home.html" class="rounded-full text-slate-50 py-4 px-10 bg-blue-500 uppercase tracking-widest outline-hidden focus:outline-hidden block">
+                    Login
+                </a>
+
+            </div>
+            <span class=" mt-10 text-center text-blue-500">
                 Wishing you a lovely day. 
                 <span class="text-2xl text-rose-600">&#x2665;</span>
             </span>
         </form>
         
     </div>
+    <script src="./scripts/index.js"></script>
 </body>
 
 </html>

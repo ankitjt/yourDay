@@ -3,5 +3,9 @@
 }
 
 select {
-    outline:none
+    outline:none;
+}
+
+.formLoginButton {
+    outline: hidden !important;
 }
