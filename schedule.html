@@ -38,25 +38,24 @@
                 <span class="text-sm tracking-widest font-semibold uppercase">Schedule</span>
             </h1>
 
-            <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full">
+            <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-20">
 
                 <!-- Schedule View Style  -->
-
-                <div class="scheduleViewType lg:py-2 lg:mx-20 flex items-center border-b-2 border-blue-400 xs:hidden">
+                <div class="scheduleViewType lg:py-2 lg:flex lg:items-center lg:border-b-2 border-blue-400 hidden ">
                     
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 mr-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="tableViewIcon h-8 w-8 text-blue-700 mr-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                         stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="galleryViewIcon h-8 w-8 text-blue-700 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
                         <path
                             d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
                     </svg>
                 </div>
 
                 <!-- Schedule with Gallery View  -->
-                <section class="scheduleList lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-20 mt-20  px-8 lg:px-20 lg:py-10 overflow-scroll lg:overflow-auto lg:-ml-[1000px] lg:hidden">
+                <section class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-20 mt-20 px-5 lg:py-10 overflow-scroll lg:overflow-auto">
                     
                     <!-- Session -->
 
@@ -154,11 +153,7 @@
                                         <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                     </svg>
                                 </div>
-                                
-                            </div>
-                            
-                           
-                          
+                            </div>  
                         </div>
                     </div>
 
@@ -253,7 +248,7 @@
                 </section>
 
                 <!-- Schedule in a table view  -->
-                <table class="border-collapse lg:mx-20 lg:mt-10">
+                <table class="border-collapse box-border lg:mx-5 lg:mt-10 lg:w-auto scheduleTableView hidden lg:hidden">
                     <thead>
                         <tr class="bg-blue-600 ">
                             <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">State</th>
@@ -299,6 +294,7 @@
         </div>
 
     </div>
+    <script src="./scripts/schedule.js"></script>
 </body>
 
 </html>
