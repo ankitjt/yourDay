@@ -22,8 +22,11 @@
             <img src="./assets/schedule.webp" alt="logo" class="h-screen">
         </div>
 
-        <div class="scheduleWrapper lg:w-2/3 lg:bg-blue-100">
-            <h1 class="text-xl flex items-center justify-between px-8 py-8 text-zinc-900">
+        <div class="scheduleWrapper lg:w-2/3 lg:overflow-x-hidden">
+
+            <!-- Navbar  -->
+
+            <h1 class="text-xl flex items-center justify-between px-8 py-8  lg:px-20 lg:py-16 text-zinc-900">
                 <a href="index.html">
     
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -34,115 +37,265 @@
                 </a>
                 <span class="text-sm tracking-widest font-semibold uppercase">Schedule</span>
             </h1>
-    
-            <section class="scheduleList lg:mt-0 lg:grid lg:grid-cols-2 gap-4 mt-20 px-8 overflow-scroll">
-    
-                <div class="1 bg-gradient-to-r from-indigo-700 via-purple-700  p-4 rounded-xl text-teal-50  mb-6 flex justify-between ">
-                    <div class="details ">
-                        <div class="timeAndDate flex justify-between items-center text-xl font-black">
-                            <span class="time divide-y">
-                                10:00 
-                            </span>
-                            <span class="date ml-4">
-                                26:07:2022
-                            </span>
-                        </div>
-                        <div class="ptName">
-                            <span class="name text-sm font-semibold">
-                                John Doe
-                            </span>
-                        </div>
-                    </div>
-                    <span class="aptDetails flex items-end justify-end">
-                        <span class="aptType text-sm tracking-wider font-medium bg-purple-700   px-2 py-1 rounded-full">
-                            S
-                        </span>
-                    </span>
-                  
-                </div>
-    
-                <div class="1 bg-gradient-to-r from-green-700 via-green-700  p-4 rounded-xl text-teal-50 mb-6 flex justify-between">
-                    <div class="details ">
-                        <div class="timeAndDate flex justify-between items-center text-xl font-black">
-                            <span class="time divide-y">
-                                10:00 
-                            </span>
-                            <span class="date ml-4">
-                                26:07:2022
-                            </span>
-                        </div>
-                        <div class="ptName">
-                            <span class="name text-sm font-semibold">
-                                John Doe
-                            </span>
-                        </div>
-                    </div>
+
+            <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full">
+
+                <!-- Schedule View Style  -->
+
+                <div class="scheduleViewType lg:py-2 lg:mx-20 flex items-center border-b-2 border-blue-400 xs:hidden">
                     
-                        <span class="aptDetails flex items-end justify-between">
-                          
-                            <span class="aptType text-sm tracking-wider font-medium bg-teal-800  px-2 py-1 rounded-full">
-                                SV
-                            </span>
-                        </span>
-                  
-                </div>
-    
-                <div class="1 bg-gradient-to-r from-rose-700 via-rose-700 p-4 rounded-xl text-slate-50  mb-6 flex justify-between">
-                    <div class="details ">
-                        <div class="timeAndDate flex justify-between items-center text-xl font-black">
-                            <span class="time divide-y">
-                                10:00 
-                            </span>
-                            <span class="date ml-4">
-                                26:07:2022
-                            </span>
-                        </div>
-                        <div class="ptName">
-                            <span class="name text-sm font-semibold">
-                                John Doe
-                            </span>
-                        </div>
-                    </div>
-                    
-                        <span class="aptDetails flex items-end justify-between">
-                        
-                            <span class="aptType text-sm tracking-wider font-medium bg-rose-600  px-2 py-1 rounded-full">
-                                FR
-                            </span>
-                        </span>
-                  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 mr-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                        stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-700 cursor-pointer" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z" />
+                    </svg>
                 </div>
 
-                <div class="1 bg-gradient-to-r from-indigo-700 via-purple-700  p-4 rounded-xl text-teal-50  mb-6 flex justify-between">
-                    <div class="details ">
-                        <div class="timeAndDate flex justify-between items-center text-xl font-black">
-                            <span class="time divide-y">
-                                10:00 
-                            </span>
-                            <span class="date ml-4">
-                                26:07:2022
-                            </span>
-                        </div>
-                        <div class="ptName">
-                            <span class="name text-sm font-semibold">
-                                John Doe
-                            </span>
+                <!-- Schedule with Gallery View  -->
+                <section class="scheduleList lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-20 mt-20  px-8 lg:px-20 lg:py-10 overflow-scroll lg:overflow-auto lg:-ml-[1000px] lg:hidden">
+                    
+                    <!-- Session -->
+
+                    <div class="1  p-4 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer">
+                        <div class="details flex flex-col">
+                            <div class="timeAndDate flex justify-between items-center lg:text-xs font-black">
+                                <span class="time flex items-center justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                        10:00 - 11:00
+                                    </span>
+                                </span>
+                                <span class="date tracking-wider text-sm lg:text-xs">
+                                    26:07:2022
+                                </span>
+                            </div>
+                            <div class="ptName flex mt-2 items-center justify-between">
+                                <div class="ptName-wrapper flex items-center">
+                                    <span class="name text-sm lg:text-xs font-semibold mr-2">
+                                        John Doe
+                                    </span>
+                                    <span class="aptDetails flex items-center">
+                            
+                                        <span
+                                            class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
+                                            S
+                                        </span>
+                                    </span>
+                                </div>
+                                <!-- Edit Appointment -->
+                                <div class="editAppointments flex items-center justify-between w-[70px]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                        <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd"
+                                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                            clip-rule="evenodd" />
+                                    </svg>
+                                    <!-- <select name="" id="" class="text-xs rounded-md pr-6 text-center font-semibold py-1 bg-emerald-100 text-emerald-700 tracking-wider outline-none border-none">
+                                        <option value="Done">Done</option>
+                                        <option value="cancel">cancel</option>
+                                        <option value="Edit">Edit</option>
+                                    </select> -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                        <span class="aptDetails flex items-end justify-between">
+
+                    <!-- Supervision  -->
+
+                    <div class="1  p-4 lg:px-4 lg:py-3 rounded-md bg-blue-100 border-l-8 border-blue-600 text-blue-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col">
+                            <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                                <span class="time flex items-center justify-between">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                        10:00 - 12:00
+                                    </span>
+                                </span>
+                                <span class="date tracking-wider text-sm lg:text-xs">
+                                    02:08:2022
+                                </span>
+                            </div>
+                            <div class="ptName flex mt-2 items-center justify-between">
+                                <div class="ptName-wrapper flex items-center justify-between">
+                                    <span class="name text-xs font-semibold mr-2">
+                                        John Doe
+                                    </span>
+                                    <span class="aptDetails flex items-center">
+                            
+                                        <span
+                                            class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-blue-700  px-2 py-1 rounded-full">
+                                            SV
+                                        </span>
+                                    </span>
+                                    
+                                </div>
+                                <!-- Edit Appointment -->
+                                <div class="editAppointments">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                    </svg>
+                                </div>
+                                
+                            </div>
+                            
+                           
                           
-                            <span class="aptType text-sm tracking-wider font-medium bg-purple-700  px-2 py-1 rounded-full">
-                                S
-                            </span>
-                        </span>
-                  
-                </div>
-    
-        
-               
-                
-            </section>
+                        </div>
+                    </div>
+
+                    <!-- For Review (New) -->
+
+                    <div class="1 p-4 lg:px-4 lg:py-3 rounded-md bg-rose-100 border-l-8 border-rose-600 text-rose-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col justify-center">
+                            <div class="details-wrapper flex flex-col justify-center">
+                                <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                                    <span class="time flex items-center justify-between">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                            10:00 - 11:00
+                                        </span>
+                                    </span>
+                                    <span class="date text-sm lg:text-xs tracking-wider">
+                                        26:07:2022
+                                    </span>
+                                </div>
+                                <div class="ptName flex mt-2 items-center justify-between">
+                                    <div class="ptName-wrapper flex items-center">
+                                        <span class="name text-xs font-semibold mr-2">
+                                            John Doe
+                                        </span>
+                                        <span class="aptDetails flex items-center">
+                                
+                                            <span
+                                                class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-rose-700  px-2 py-1 rounded-full">
+                                                N
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <!-- Edit Appointment -->
+                                    <div class="editAppointments">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Session 2 -->
+                    <div class="1 p-4 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col">
+                            <div class="details-wrapper">
+                                <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                                    <span class="time flex items-center justify-between">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                            stroke-width="2">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                            10:00 - 11:00
+                                        </span>
+                                    </span>
+                                    <span class="date text-sm lg:text-xs tracking-wider">
+                                        26:07:2022
+                                    </span>
+                                </div>
+                                <div class="ptName flex mt-2 items-center justify-between">
+                                    <div class="ptName-wrapper flex items-center">
+                                        <span class="name text-xs font-semibold mr-2">
+                                            John Doe
+                                        </span>
+                                        <span class="aptDetails flex items-center">
+                                        
+                                            <span
+                                                class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
+                                                S
+                                            </span>
+                                        </span>
+                                    </div>
+                                    <!-- Edit Appointment -->
+                                    <div class="editAppointments">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Schedule in a table view  -->
+                <table class="border-collapse lg:mx-20 lg:mt-10">
+                    <thead>
+                        <tr class="bg-blue-600 ">
+                            <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">State</th>
+                            <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">City</th>
+                            <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">City</th>
+                            <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">City</th>
+                            <th class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider ">City</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
+                            <td class=" py-3 text-center text-sm font-semibold  ">Indiana</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Indianapolis</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Indianapolis</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Indianapolis</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Indianapolis</td>
+                        </tr>
+                        <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
+                            <td class=" py-3 text-center text-sm font-semibold  ">Ohio</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Columbus</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Columbus</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Columbus</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Columbus</td>
+                        </tr>
+                        <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
+                            <td class=" py-3 text-center text-sm font-semibold  ">Michigan</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Detroit</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Detroit</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Detroit</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Detroit</td>
+                        </tr>
+                        <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
+                            <td class=" py-3 text-center text-sm font-semibold  ">Michigan</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Michigan</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Michigan</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Michigan</td>
+                            <td class=" py-3 text-center text-sm font-semibold  ">Detroit</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
         </div>
 
     </div>
