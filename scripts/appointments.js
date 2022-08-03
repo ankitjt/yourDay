@@ -49,11 +49,11 @@ closePrompts.onclick = () => {
 }
 
 editButton.onclick = () => {
-    confirmPage.style.left = "-500px"
+    confirmPage.style.left = "-1000px"
 }
 
 confirmButton.onclick = () => {
-    confirmPage.style.left = "-500px"
+    confirmPage.style.left = "-1000px"
     aptFirstName.value = ""
     aptLastName.value = ""
     aptEmail.value = ""
