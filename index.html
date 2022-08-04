@@ -14,11 +14,12 @@
 </head>
 
 <body>
-    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative p-10 lg:p-0 flex flex-col lg:flex-row overflow-hidden relative -z-0 bg-[url('./assets/logo6.webp')] lg:bg-[url('')]">
+    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center p-10 lg:p-0 flex flex-col lg:flex-row overflow-hidden relative -z-0 bg-[url('./assets/logo6.webp')] lg:bg-[url('')]">
 
         <!-- Login Form -->
         <form action="#"
-            class="text-slate-700 z-10 font-semibold absolute w-screen lg:w-1/2 lg:left-1/2 h-1/2 left-0 -bottom-[500px] bg-white flex px-10 justify-center flex-col loginForm lg:bg-gray-200 lg:px-40">
+            class="text-slate-700 z-10 font-semibold absolute w-screen lg:w-1/2 lg:left-1/2 h-5/6 left-0 -bottom-[1500px] bg-white flex px-10 justify-center flex-col loginForm lg:bg-gray-200 lg:px-40">
+            <img src="./assets/loginForm.webp" alt="you" srcset="" class="rounded-full h-52 w-52 mx-auto text-center drop-shadow-xl">
             <svg xmlns="http://www.w3.org/2000/svg"
                 class="h-10 w-10 absolute left-1/2 -translate-x-1/2 -top-5  bg-red-800 rounded-full text-white closeLoginForm"
                 viewBox="0 0 20 20" fill="currentColor">
@@ -28,11 +29,11 @@
             </svg>
             <div class="email">
                 <input type="email" autocomplete="off" name="email" id="email" placeholder="enter your email"
-                    class="border-2 border-blue-500 rounded-lg px-2 py-4 w-full mt-10 mb-5 tracking-wider">
+                    class="border-2 border-gray-200 bg-slate-50 text-sm rounded-lg px-2 py-4 w-full mt-10 mb-5 tracking-wider">
             </div>
             <div class="password">
                 <input type="password" name="password" autocomplete="off" id="password" placeholder="enter your password"
-                    class="border-2 border-blue-500 rounded-lg px-2 py-4 w-full  mb-5">
+                    class="border-2 border-gray-200 bg-slate-50 text-sm rounded-lg px-2 py-4 w-full  mb-5">
             </div>
             <div class="text-center mt-5 outline-hidden flex items-center justify-center">
                 <a href="home.html"
@@ -55,13 +56,13 @@
        </div>
 
        <!-- Index page links -->
-        <div class="everything flex h-screen flex items-center justify-center flex-col lg:w-1/2 lg:justify-center lg:p-10 relative">
+        <div class="everything h-screen flex items-center justify-center flex-col lg:w-1/2 lg:justify-center lg:p-10 relative">
             <h1 class="text-5xl w-full text-center text-teal-50 lg:text-blue-500 lg:font-semibold mb-10">YourDay</h1>
             <div class="flex items-center justify-end pb-10 flex-col w-full">
                     <a href="schedule.html" class="bg-blue-700 w-full lg:w-1/2 py-6 mb-4 text-white text-center text-2xl rounded-md uppercase lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out">Schedule</a>
                     <a href="#" class="bg-pink-700 w-full lg:w-1/2 py-6 text-white text-2xl rounded-md uppercase text-center loginButton lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out">Login</a>
                 
-                <span class="font-semibold text-slate-50 lg:text-rose-600 absolute bottom-10 italic block text-center">The light will bring you to you, to us, always.</span>
+                <span class="font-semibold text-slate-50 lg:text-rose-600 absolute top-4 italic block text-center text-xs">The light will bring you to you, to us, always.</span>
             </div>
     
         

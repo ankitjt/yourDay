@@ -10,5 +10,5 @@ loginButton.onclick = () => {
 }
 
 closeLoginForm.onclick  = () => {
-    loginForm.style.bottom = "-500px"
+    loginForm.style.bottom = "-1500px"
 }
