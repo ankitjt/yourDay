@@ -18,7 +18,6 @@
         class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center relative px-6 py-10 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between">
 
         <!-- Only for Desktop -->
-
         <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
             <img src="./assets/notes2.webp" alt="logo" class="h-screen w-auto">
         </div>
@@ -26,7 +25,6 @@
         <div class="notesWrapper lg:grow lg:p-8 relative lg:overflow-x-hidden">
 
             <!-- Prompts Section -->
-
             <section
                 class="z-40 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-3/6 -translate-x-1/2 bottom-20 -left-[500px] flex items-center justify-between">
                 <div class="promptContent font-medium text-slate-50 w-5/6 text-justify"></div>
@@ -38,8 +36,9 @@
                 </svg>
             </section>
 
-            <!-- Site Navbar -->
+            <!-- ***** ***** ***** ***** Ends Prompts section ***** ***** ***** ***** -->
 
+            <!-- Site Navbar -->
             <nav class="text-xl flex items-center justify-between text-zinc-900 lg:text-zinc-900">
                 <a href="home.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-left text-zinc-900"
@@ -53,11 +52,9 @@
             </nav>
 
             <!-- Notes Taking section  -->
-
             <div class="pageWrapper">
 
-                <!-- Names for notes  -->
-                
+                <!-- Dropdown of names for notes  -->
                 <div class="namesForNotes ptNotes mt-10 w-full">
                     <h3 class="font-semibold text-zinc-900">Select Name:</h3>
                 </div>
@@ -67,7 +64,6 @@
                 </select>
 
                 <!-- Existing Uploaded notes table  -->
-
                 <div class="uploadedNotesWrapper mt-10">
                     <h4 class="border-b-2 border-gray-200 font-semibold text-blue-600">
                         <span>Upload notes</span>
@@ -75,21 +71,20 @@
                     </h4>
 
                     <!-- Upload note file  -->
-
                     <form action="#" class="w-full">
                         <input type="file" name="" id="" class="mt-10 text-blue-600 font-semibold text-base w-full lg:w-1/2 file:py-2 file:px-1 file:w-1/3 file:rounded-md file:bg-blue-600 file:border-none file:text-slate-50 file:font-medium file:mr-4">
                     </form>
 
                     <!-- Uploaded Notes list  -->
-
                     <div class="uploadedNotes mt-10 border-2 border-gray-200 rounded-md">
+
                         <h3 class="p-3 lg:px-6 rounded-t-md text-blue-600 border-b-2 border-gray-200 font-semibold">
-                            <!-- <span class="selectedName">John Doe </span> -->
                             <span class="totalUploadedNotesCount">Uploaded notes ( 02 )</span>
                             
                         </h3>
                         <div class="uploadedNotes p-3 lg:px-6">
-                            <div class="note mb-4 flex items-center justify-between">
+
+                            <div class="note mb-4 flex items-center justify-between lg:hover:bg-gray-200 p-2 rounded-lg  lg:transition-all lg:ease-in-out">
                                 <div class="noteLink flex flex-col">
                                     <a href="#" class="text-blue-600">
                                         <span class="noteName font-semibold underline">document1.pdf</span>
@@ -106,7 +101,8 @@
                                     </svg>
                                 </div>
                             </div>
-                            <div class="note mb-4 flex items-center justify-between">
+
+                            <div class="note mb-4 flex items-center justify-between lg:hover:bg-gray-200 p-2 rounded-lg  lg:transition-all lg:ease-in-out">
                                 <div class="noteLink flex flex-col">
                                     <a href="#" class="text-blue-600">
                                         <span class="noteName font-semibold underline">document2.pdf</span>
@@ -125,6 +121,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- ***** ***** ***** ***** Ends Uploaded Notes list section ***** ***** ***** ***** -->
+                    
                 </div>
             </div>
         </div>

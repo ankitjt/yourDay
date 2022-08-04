@@ -15,123 +15,210 @@
 </head>
 
 <body class="h-full">
-    <div class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-right pb-4  px-4 overflow-auto"
-        style="background-image:url(./assets/reports3.webp)">
 
-        <h1 class="text-xl flex items-center justify-between  py-8">
-            <a href="home.html">
+    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('./assets/reports3.webp')] lg:bg-[url('')] lg:justify-between">
 
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                        d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                        clip-rule="evenodd" />
-                </svg>
-            </a>
-            <span class="text-zinc-900 text-sm tracking-widest font-semibold uppercase">Reports</span>
-        </h1>
+        <!-- Only for Desktop -->
+        <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
+            <img src="./assets/reports3.webp" alt="logo" class="h-screen w-auto">
+        </div>
 
-        <!-- Report Summary -->
+        <!-- Reports Wrapper  -->
+        <div class="reportsWrapper lg:grow lg:py-0 lg:px-16 relative lg:h-screen lg:overflow-auto lg:w-3/5">
 
-        <section class="reportSummary  bg-gray-100 p-4 rounded-lg">
+            <h1 class="text-xl flex items-center justify-between  py-8">
+                <a href="home.html">
 
-            <select name="monthList" id="monthList" class="rounded-lg text-white bg-pink-500 w-1/2 mb-5 border-none outline-none">
-                <option selected value="All Time">All Time</option>
-                <option value="january">January</option>
-                <option value="February">February</option>
-                <option value="March">March</option>
-                <option value="April">April</option>
-                <option value="May">May</option>
-                <option value="June">June</option>
-                <option value="July">July</option>
-                <option value="August">August</option>
-                <option value="September">September</option>
-                <option value="October">October</option>
-                <option value="November">November</option>
-                <option value="December">December</option>
-            </select>
-        
-            <div class="totalSessions flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
-                <span>Sessions</span>
-                <span class="totalSessionsCount tracking-widest">452</span>
-            </div>
-            <div class="totalSupervision flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
-                <span>Supervision</span>
-                <span class="totalSupervisionCount tracking-widest">152</span>
-            </div>
-            <div class="totalRescheduled flex items-center justify-between font-semibold text-zinc-900 px-2 mb-2 uppercase text-sm tracking-widest">
-                <span>Rescheduled</span>
-                <span class="totalRescheduledCount tracking-widest">43</span>
-            </div>
-            <div class="totalCancelled flex items-center justify-between font-semibold text-zinc-900 px-2 uppercase text-sm tracking-widest">
-                <span>Cancelled</span>
-                <span class="totalCancelledCount tracking-widest">15</span>
-            </div>
-        </section>
-
-        <!-- Report Summary Individual -->
-        
-        <section class="reportSummary mt-10 bg-gray-100 p-4 rounded-lg">
-        
-            <select name="monthList" id="monthList" class="rounded-lg text-white w-1/2 mb-5 bg-pink-500 border-none outline-none">
-                <option value="John Doe">John Doe</option>
-                <option value="Jane Smith">Jane Smith</option>
-            </select>
-        
-            <div class="shadow-xl p-2 profileSection">
-                <button class="sectionButton w-full flex items-center justify-between font-semibold">
-                    <span class="sectionName">Profile</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
+                        fill="currentColor">
                         <path fill-rule="evenodd"
-                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                             clip-rule="evenodd" />
                     </svg>
-                </button>
-                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam illo.
-                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio neque!
+                </a>
+                <span class="text-zinc-900 text-sm tracking-widest font-semibold uppercase">Reports</span>
+            </h1>
+
+            <!-- Report by month -->
+
+            <section class="reportByMonthSection rounded-lg">
+
+                <h3 class=" mb-2">
+                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                        By month
+                    </span>
+                </h3>
+                
+                <!-- Filter Type ( By month ) -->
+                
+                <section class="monthFilter mb-5 text-rose-600 font-semibold">
+                    <select name="reportByMonthFilter" id="monthList"
+                        class="form-select rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-sm w-4/6 lg:w-2/4">
+                        <option selected value="All Time">All Time ( By month )</option>
+                        <option value="january">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
                 </section>
-            </div>
-            <div class="shadow-xl p-2 workSection">
-                <button class="sectionButton w-full flex items-center justify-between font-semibold">
-                    <span class="sectionName">Work</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
-                    vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
-                    illo.
-                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
-                    minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
-                    neque!
-                </section>
-            </div>
-            <div class="shadow-xl p-2 moneySection">
-                <button class="sectionButton w-full flex items-center justify-between font-semibold">
-                    <span class="sectionName">Money</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </button>
-                <section class="content mt-2 font-semibold text-sm text-justify p-3 hidden ease-in-out">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
-                    vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
-                    illo.
-                    Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
-                    minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
-                    neque!
-                </section>
-            </div>
-       
-        </section>
+                
+                <div class="reportsTotalByMonth text-zinc-900 text-xs font-semibold tracking-widest bg-gray-50 lg:p-8 p-4 mt-10 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+                    <div class="totalSessions flex items-center justify-between mb-4 uppercase">
+                        <span>Sessions</span>
+                        <span class="totalSessionsCount">452</span>
+                    </div>
+                    <div class="totalSupervision flex items-center justify-between mb-4 uppercase">
+                        <span>Supervision</span>
+                        <span class="totalSupervisionCount">152</span>
+                    </div>
+                    <div class="totalRescheduled flex items-center justify-between mb-4 uppercase">
+                        <span>Rescheduled</span>
+                        <span class="totalRescheduledCount">43</span>
+                    </div>
+                    <div class="totalCancelled flex items-center justify-between uppercase 4">
+                        <span>Cancelled</span>
+                        <span class="totalCancelledCount">15</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ***** ***** ***** ***** Ends Report by month section ***** ***** ***** ***** -->
+
+            <!-- Report by Name -->
+            <section class="reportByNameSection mt-10 lg:mt-10 rounded-lg">
+
+                <h3 class=" mb-2">
+                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                        By name
+                    </span>
+                </h3>
+
+                <!-- Report By Name Filter  -->
+                <select name="reportByNameFilter" id="monthList" class="form-select rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-sm mb-5 w-4/6 font-semibold lg:w-2/4">
+                    <option value="John Doe">John Doe</option>
+                    <option value="Jane Smith">Jane Smith</option>
+                </select>
+                
+                <!-- Reports By Name section  -->
+                <div class="reportByName">
+
+                    <!-- Profile Section  -->
+                    <div class="reportsByNameSections text-zinc-900 my-4 bg-blue-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out w-full">
+                        <button class="sectionButton w-full  font-semibold lg:px-8 px-4 py-5">
+
+                            <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400 pb-2">
+                                <span class="sectionNameProfile text-sm font-semibold tracking-widest ">Profile</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-900" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            
+                        </button>
+
+                        <!-- Patient Profile -->
+                        
+                        <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+                            <div class="profileName flex items-center justify-between  my-3">
+                                <span class="nameTag ">Name</span>
+                                <span class="name  ml-2 tracking-widest">John Doe</span>
+                            </div>
+                            <div class="profileEmail flex items-center justify-between  my-3">
+                                <span class="emailTag ">Email</span>
+                                <span class="email  ml-2 tracking-widest">johndoe@gmail.com</span>
+                            </div>
+                            <div class="profileMobileNumber flex items-center justify-between  my-3">
+                                <span class="mobileTag ">Mobile</span>
+                                <span class="mobileNumber  ml-2 tracking-widest">+91-1234567890</span>
+                            </div>
+                            <div class="profileStartDate flex items-center justify-between  my-3">
+                                <span class="startDateTag ">Start Date</span>
+                                <span class="startDate  ml-2 tracking-widest">27/07/2022</span>
+                            </div>
+                            <div class="profileFee flex items-center justify-between  my-3">
+                                <span class="feeTag ">Fee</span>
+                                <span class="fee  ml-2 tracking-widest">1500</span>
+                            </div>
+                            <div class="profileCategory flex items-center justify-between  my-3">
+                                <span class="categoryTag ">Category</span>
+                                <span class="category  ml-2 tracking-widest">Session</span>
+                            </div>
+                            <div class="profileCategory flex items-center justify-between my-3">
+                                <span class="categoryTag">Occurrence ( per week )</span>
+                                <span class="category  ml-2">1</span>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!-- Work section  -->
+                    <div class="reportsByNameSections text-zinc-900  my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out ">
+
+                        <button class="sectionButton w-full lg:px-8 px-4 py-5 flex items-center justify-between font-semibold">
+
+                            <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400 pb-2">
+                                <span class="sectionButtonWork text-sm font-semibold tracking-widest ">Work</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-900" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                        <section class="content font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
+                            vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
+                            illo.
+                            Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
+                            minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
+                            neque!
+                        </section>
+                    </div>
+
+                    <!-- Money Section  -->
+                    <div class="reportsByNameSections text-zinc-900  my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out ">
+
+                        <button class="sectionButton w-full lg:px-8 px-4 py-5 flex items-center justify-between font-semibold">
+
+                            <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400 pb-2">
+                                <span class="sectionNameMoney text-sm font-semibold tracking-widest ">Money</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-900" viewBox="0 0 20 20"
+                                    fill="currentColor">
+                                    <path fill-rule="evenodd"
+                                        d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                        </button>
+                        <section class="content font-semibold text-xs leading-loose text-justify pb-6 px-8 hidden  lg:transition-all lg:ease-in-out">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt, doloribus sed? Quibusdam voluptatibus et minima
+                            vitae nihil mollitia quod error provident, similique autem aliquid aliquam! Soluta provident repellendus numquam
+                            illo.
+                            Ipsam, harum id. Magni totam unde explicabo, impedit eligendi cumque incidunt voluptate doloribus molestias
+                            minima debitis fugit atque sapiente ab repellendus asperiores. Temporibus fugiat eum libero sunt magni optio
+                            neque!
+                        </section>
+                    </div>
+                    
+                </div>
+        
+            </section>
+
+            <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
+
+        </div>
 
     </div>
+
     <script src="./scripts/reports.js"></script>
 </body>
 

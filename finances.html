@@ -17,7 +17,6 @@
     <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('./assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
 
         <!-- Only for Desktop -->
-        
         <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
             <img src="./assets/finance2.webp" alt="logo" class="h-screen w-auto">
         </div>
@@ -25,7 +24,6 @@
         <div class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden">
 
             <!-- Site Navbar -->
-
             <nav class="text-xl flex items-center justify-between px-1 py-2 text-zinc-900">
                 <a href="home.html">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-zinc-900" viewBox="0 0 20 20"
@@ -39,19 +37,18 @@
             </nav>
             
             <!-- Filter by Month Only -->
-        
             <section class="mt-5 px-1 flex flex-col justify-center tracking-wide">
 
-                <h3 class=" mb-5">
-                    <span class="border-b-2 text-blue-600 border-blue-600 font-semibold">
-                        Search by month
+                <h3 class=" mb-2">
+                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                        By month
                     </span>
                 </h3>
 
                 <!-- Filter Type ( By month ) -->
 
                 <section class="monthFilter mb-5 text-rose-600 font-semibold lg:grid lg:grid-cols-2 lg:gap-x-10">
-                    <select name="monthList" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-4 border-gray-200 outline-none">
+                    <select name="monthList" id="monthList" class="form-select rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600">
                         <option selected value="All Time">All Time ( By month )</option>
                         <option value="january">January</option>
                         <option value="February">February</option>
@@ -70,7 +67,7 @@
 
                 <!-- Total Money Count -->
                 
-                <div class="moneyCount lg:mt-5 lg:grid lg:gap-x-10 lg:grid-cols-2 text-white">
+                <div class="moneyCount lg:grid lg:gap-x-10 lg:grid-cols-2 text-white">
 
                     <!-- Sessions Money -->
 
@@ -124,13 +121,14 @@
 
             </section>
 
+            <!-- ***** ***** ***** ***** Ends Filter by month section ***** ***** ***** ***** -->
+
             <!-- Filter by Name Only -->
-            
-            <section class="mt-5 lg:mt-5 px-1 flex flex-col justify-center tracking-wide text-slate-50 ">
+            <section class="mt-5 lg:mt-10 px-1 flex flex-col justify-center tracking-wide text-slate-50 ">
                 
-                <h3 class=" mb-5">
-                    <span class="border-b-2 text-blue-600 border-blue-600 font-semibold">
-                        Search by name
+                <h3 class=" mb-2">
+                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                        By name
                     </span>
                 </h3>
 
@@ -140,14 +138,14 @@
 
                     <!-- Patient Name -->
 
-                    <select name="monthList" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-4 border-gray-200 outline-none ">
+                    <select name="monthList" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600">
                         <option value="John Doe">John Doe</option>
                         <option value="Jane Smith">Jane Smith</option>
                     </select>
 
                     <!-- Months -->
 
-                    <select name="monthListByName" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-4 border-gray-200 outline-none ">
+                    <select name="monthListByName" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600">
                         <option selected value="All Time">All Time</option>
                         <option value="january">January</option>
                         <option value="February">February</option>
@@ -166,30 +164,34 @@
 
                 <!-- Patient Profile -->
 
-                <section class="profile mb-5 bg-emerald-500 rounded-lg px-3 py-3">
-                    <div class="profileName flex items-center justify-between mb-1">
-                        <span class="nameTag text-sm">Name:</span>
-                        <span class="name text-md ml-2">John Doe</span>
+                <section class="profile mb-5 bg-blue-700 rounded-lg px-3 py-3 lg:p-5">
+                    <div class="profileName flex items-center justify-between mb-2">
+                        <span class="nameTag text-xs">Name</span>
+                        <span class="name text-sm ml-2 tracking-widest">John Doe</span>
                     </div>
-                    <div class="profileEmail flex items-center justify-between mb-1">
-                        <span class="emailTag text-sm">Email:</span>
-                        <span class="email text-md ml-2">johndoe@gmail.com</span>
+                    <div class="profileEmail flex items-center justify-between mb-2">
+                        <span class="emailTag text-xs">Email</span>
+                        <span class="email text-sm ml-2 tracking-widest">johndoe@gmail.com</span>
                     </div>
-                    <div class="profileMobileNumber flex items-center justify-between mb-1">
-                        <span class="mobileTag text-sm">Mobile:</span>
-                        <span class="mobileNumber text-md ml-2">+91-1234567890</span>
+                    <div class="profileMobileNumber flex items-center justify-between mb-2">
+                        <span class="mobileTag text-xs">Mobile</span>
+                        <span class="mobileNumber text-sm ml-2 tracking-widest">+91-1234567890</span>
                     </div>
-                    <div class="profileStartDate flex items-center justify-between mb-1">
-                        <span class="startDateTag text-sm">Start Date:</span>
-                        <span class="startDate text-md ml-2">27/07/2022</span>
+                    <div class="profileStartDate flex items-center justify-between mb-2">
+                        <span class="startDateTag text-xs">Start Date</span>
+                        <span class="startDate text-sm ml-2 tracking-widest">27/07/2022</span>
                     </div>
-                    <div class="profileFee flex items-center justify-between mb-1">
-                        <span class="feeTag text-sm">Fee:</span>
-                        <span class="fee text-md ml-2">1500</span>
+                    <div class="profileFee flex items-center justify-between mb-2">
+                        <span class="feeTag text-xs">Fee</span>
+                        <span class="fee text-sm ml-2 tracking-widest">1500</span>
                     </div>
-                    <div class="profileCategory flex items-center justify-between mb-1">
-                        <span class="categoryTag text-sm">Category:</span>
-                        <span class="category text-md ml-2">Session</span>
+                    <div class="profileCategory flex items-center justify-between mb-2">
+                        <span class="categoryTag text-xs">Category</span>
+                        <span class="category text-sm ml-2 tracking-widest">Session</span>
+                    </div>
+                    <div class="profileCategory flex items-center justify-between">
+                        <span class="categoryTag text-xs">Occurrence ( per week )</span>
+                        <span class="category text-sm ml-2">1</span>
                     </div>
                 </section>
             
@@ -245,6 +247,8 @@
                 </div>
             
             </section>
+
+            <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
 
         </div>
 
