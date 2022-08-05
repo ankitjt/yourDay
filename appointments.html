@@ -14,17 +14,17 @@
 </head>
 
 <body>
-    <div class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden bg-[url('./assets/appointments3.webp')] lg:bg-[url('')] lg:justify-between">
+    <div class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center lg:p-0 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden bg-[url('./assets/appointments4.webp')] lg:bg-[url('')] lg:justify-between">
 
         <!-- Only for Desktop -->
         <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
-            <img src="./assets/appointmentsDesktop.webp" alt="logo" class="h-screen w-auto">
+            <img src="./assets/appointments4.webp" alt="logo" class="h-screen w-auto">
         </div>
 
-        <div class="appointmentWrapper lg:grow lg:p-8 relative lg:overflow-x-hidden">
+        <div class="appointmentWrapper px-6 lg:grow lg:p-8 relative lg:overflow-x-hidden">
 
             <!-- Confirm Page -->
-            <section class="confirmPage z-50 absolute h-screen w-screen lg:w-full lg:h-full top-0 bg-emerald-500 -left-[2000px] py-2 bg-no-repeat bg-cover bg-center lg:px-20 lg:py-10 flex lg:justify-between items-center flex-col" >
+            <section class="confirmPage z-50 absolute h-screen w-screenh-screen  lg:w-full lg:h-full top-0 bg-emerald-500 -left-[2000px] py-2 lg:px-20 lg:py-10 flex lg:justify-between items-center flex-col" >
                 
                 <!-- Confirm Page Navbar -->
 
@@ -34,37 +34,37 @@
 
                 <!-- Confirm Page Details -->
 
-                <div class="grow confirmPageDetails p-10 flex flex-col mx-4 justify-between bg-slate-50 text-zinc-900 rounded-sm">
+                <div class="confirmPageDetails h-full w-100 p-10 flex flex-col mx-4 justify-start bg-slate-50 text-zinc-900 rounded-lg overflow-hidden">
 
                     <div class="appointmentDetails lg:flex lg:flex-col lg:justify-between">
                         
                         <div class="appointmentDetailsWrapper grid grid-cols-2">
 
-                            <h3 class="text-center font-medium mb-2 lg:mb-10 rounded-xl col-span-full">Appointment Details</h3>
+                            <h3 class="text-center font-medium mb-2 lg:mb-10 rounded-xl text-blue-600 col-span-full">Appointment Details</h3>
 
-                            <div class="flex flex-col items-start mb-2 rounded-xl  lg:px-4 lg:py-2 py-4   font-medium tracking-wider">
-                                <span class="confirmNameTag text-[10px] text-rose-600 font-semibold">Name</span>
-                                <span class="confirmName text-sm mt-[1px]">John Doe</span>
+                            <div class="flex flex-col items-start mb-2 rounded-xl  lg:px-4 lg:py-2 py-4 font-medium tracking-wider">
+                                <span class="confirmNameTag text-[10px] text-blue-600 font-semibold">Name</span>
+                                <span class="confirmName text-xs mt-[1px]">John Doe</span>
                             </div>
                             <div class="flex flex-col items-start lg:items-end mb-2 rounded-xl  lg:px-4 lg:py-2 py-4 font-medium tracking-wider">
-                                <span class="confirmEmailTag text-[10px] text-rose-600 font-semibold">Email</span>
-                                <span class="confirmEmail text-sm mt-[1px]">johndoe@gmail.com</span>
+                                <span class="confirmEmailTag text-[10px] text-blue-600 font-semibold">Email</span>
+                                <span class="confirmEmail text-xs mt-[1px]">johndoe@gmail.com</span>
                             </div>
                             <div class="flex flex-col items-start mb-2 rounded-xl  lg:px-4 lg:py-2 py-4   font-medium tracking-wider">
-                                <span class="confirmMobileNumberTag text-[10px] text-rose-600 font-semibold">Mobile Number</span>
-                                <span class="confirmMobileNumber text-sm mt-[1px]">+91-1234567890</span>
+                                <span class="confirmMobileNumberTag text-[10px] text-blue-600 font-semibold">Mobile Number</span>
+                                <span class="confirmMobileNumber text-xs mt-[1px]">+91-1234567890</span>
                             </div>
                             <div class="flex flex-col items-start lg:items-end  mb-2 rounded-xl  lg:px-4 lg:py-2 py-4   font-medium tracking-wider">
-                                <span class="confirmStartTimeDateTag text-[10px] text-rose-600 font-semibold">Start Time and Date</span>
-                                <span class="confirmStartTimeDate text-sm mt-[1px]">10:00, 29/07/2022</span>
+                                <span class="confirmStartTimeDateTag text-[10px] text-blue-600 font-semibold">Start Time and Date</span>
+                                <span class="confirmStartTimeDate text-xs mt-[1px]">10:00, 29/07/2022</span>
                             </div>
                             <div class="flex flex-col items-start mb-2 rounded-xl  lg:px-4 lg:py-2 py-4   font-medium tracking-wider">
-                                <span class="confirmAppointmentTypeTag text-[10px] text-rose-600 font-semibold">Appointment Type</span>
-                                <span class="confirmAppointmentType text-sm mt-[1px]">Session</span>
+                                <span class="confirmAppointmentTypeTag text-[10px] text-blue-600 font-semibold">Appointment Type</span>
+                                <span class="confirmAppointmentType text-xs mt-[1px]">Session</span>
                             </div>
                             <div class="flex flex-col items-start lg:items-end  mb-2 rounded-xl  lg:px-4 lg:py-2 py-4   font-medium tracking-wider">
-                                <span class="confirmFeeTag text-[10px] text-rose-600 font-semibold">Fees</span>
-                                <span class="confirmFee text-sm mt-[1px]">1500</span>
+                                <span class="confirmFeeTag text-[10px] text-blue-600 font-semibold">Fees</span>
+                                <span class="confirmFee text-xs mt-[1px]">1500</span>
                             </div>
                         </div>
                     
@@ -108,22 +108,22 @@
 
             <!-- ***** ***** ***** ***** Ends Prompts section ***** ***** ***** ***** -->
 
-            <!-- Site Navbar -->
-            <nav class="text-xl flex items-center justify-between p-4 text-zinc-900 lg:text-zinc-900">
+            <!-- Navbar -->
+            <nav class="text-xs flex items-center justify-between  py-6 text-zinc-900 lg:text-zinc-900">
                 <a href="home.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-zinc-900" viewBox="0 0 20 20" fill="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
                             d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                             clip-rule="evenodd" />
                     </svg>
                 </a>
-                <span class=" text-sm tracking-widest font-semibold uppercase">Appointments</span>
+                <span class="tracking-widest font-semibold uppercase">Appointments</span>
             </nav>
 
-            <div class="pageWrapper">
+            <div class="pageWrapper lg:py-0 pb-6">
             
             <!-- Total Count -->
-            <section class="mt-5 lg:mt-10 flex items-center justify-evenly lg:w-full text-slate-50">
+            <section class="lg:mt-10 flex items-center justify-between lg:justify-evenly lg:w-full text-slate-50">
                 <div class="completed flex flex-row lg:justify-between justify-evenly items-center bg-emerald-600 lg:px-10 py-2 lg:py-4 w-[150px] lg:w-2/6 rounded-md">
                     <span class="completed text-sm">Completed</span>
                     <span class="completedCount text-xl font-semibold">41</span>
@@ -138,47 +138,54 @@
 
 
             <!-- Create Appointments -->
-            <section class="mt-5 px-5">
+            <section class="mt-5">
                 
                 <!-- Create Appointment Form -->
-                <div class="font-semibold text-blue-900 mt-5 lg:mt-10 px-1 lg:px-10 createAptForm " autocomplete="nope">
+                <div class="font-semibold text-blue-900 mt-5 lg:mt-10 lg:px-10 createAptForm " autocomplete="nope">
 
                     <!-- Form Fields  -->
-                    <div class="formFields lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-5">
-                        <div class=" mb-3 ">
-                            <input type="text" placeholder="First name" name="aptFirstName" autocomplete="nope" id="aptFirstName" class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-2 lg:py-3 aptFirstName">
+                    <div class="formFields lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-5 px-2">
+                        <div class="mb-5">
+                            <input type="text" placeholder="First name" name="aptFirstName" autocomplete="nope" id="aptFirstName" class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-4 aptFirstName lg:drop-shadow-none drop-shadow-2xl">
                         </div>
-                        <div class=" mb-3 ">
-                            <input type="text" placeholder="Last Name" name="aptLastName" autocomplete="nope" id="aptLastName" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptLastName">
+                        <div class="mb-5">
+                            <input type="text" placeholder="Last Name" name="aptLastName" autocomplete="nope" id="aptLastName" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptLastName lg:drop-shadow-none drop-shadow-2xl">
                         </div>
-                        <div class=" mb-3 ">
-                            <input type="email" placeholder="Email" name="email" autocomplete="nope" id="email" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptEmail">
+                        <div class="mb-5">
+                            <input type="email" placeholder="Email" name="email" autocomplete="nope" id="email" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptEmail lg:drop-shadow-none drop-shadow-2xl">
                         </div>
-                        <div class=" mb-3 ">
-                            <input type="number" placeholder="Mobile Number" autocomplete="nope" name="mobileNumber" id="mobileNumber" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptMobileNumber">
+                        <div class="mb-5">
+                            <input type="number" placeholder="Mobile Number" autocomplete="nope" name="mobileNumber" id="mobileNumber" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptMobileNumber lg:drop-shadow-none drop-shadow-2xl">
                         </div>
                         
-                        <div class=" mb-3 ">
-                            <input type="text" placeholder="Appointment Type" name="appointmentType" autocomplete="nope" id="appointmentType"
-                                class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptType">
+                        <div class="mb-5">
+                            <select name="appointmentType" id="appointmentType" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4 aptType lg:drop-shadow-none drop-shadow-2xl text-sm">
+                                <option value="appointmentType" selected class="font-semibold">Appointment Type</option>
+                                <option value="appointmentTypeSession" class="font-semibold">Session</option>
+                                <option value="appointmentTypeSupervision" class="font-semibold">Supervision</option>
+                                <option value="appointmentTypeReview" class="font-semibold">For Review</option>
+                            </select>
                         </div>
-                        <div class=" mb-3 ">
+
+                        <div class="mb-5">
                             <input type="number" placeholder="Occurrence ( per week )" name="appointmentType" autocomplete="nope" id="appointmentType"
-                                class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptType">
+                                class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptType lg:drop-shadow-none drop-shadow-2xl text-sm">
                         </div>
-                        <div class=" mb-3 ">
+                        <div class="mb-5">
                             <input type="datetime-local" placeholder="Start time and date" autocomplete="nope" name="aptName" id="aptName"
-                                class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptStartTimeDate ">
+                                class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptStartTimeDate  lg:drop-shadow-none drop-shadow-2xl font-medium text-sm">
                         </div>
-                        <div class=" mb-3 ">
-                            <input type="number" placeholder="Fee" name="aptFees" id="aptFees" autocomplete="nope" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-2 lg:py-3 aptFees">
+                        <div class="mb-5">
+                            <input type="number" placeholder="Fee" name="aptFees" id="aptFees" autocomplete="nope" class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptFees lg:drop-shadow-none drop-shadow-2xl text-sm">
                         </div>
                     </div>
-                    <button class="bg-blue-700 px-6 py-3 text-white text-md tracking-widest rounded-lg uppercase mt-4  createAptBtn">Create</button>
+                    <div class="appointmentButtonWrapper lg:text-right px-2 lg:mt-3">
+                        <button class="bg-blue-700 ml-2 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn">Create</button>
+                    </div>
 
                     <!-- Notes  -->
-                    <section class="notes mt-5 lg:mx-4 font-semibold text-rose-600 text-sm bg-slate-200 p-2 lg:px-10 lg:py-4 rounded-lg">
-                        <ol class="list-disc">
+                    <section class="notes mt-5 lg:mx-4 font-semibold text-rose-600 text-xs bg-slate-200 rounded-lg">
+                        <ol class="list-disc pl-10 py-4">
                             <li>All fields are required.</li>
                             <li>Go to <i class="text-blue-700">
                                     <a href="schedule.html">Schedule</a>

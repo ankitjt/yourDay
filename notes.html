@@ -15,7 +15,7 @@
 
 <body>
     <div
-        class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center relative px-6 py-10 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between">
+        class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center relative px-6 py-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between ">
 
         <!-- Only for Desktop -->
         <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
@@ -38,45 +38,45 @@
 
             <!-- ***** ***** ***** ***** Ends Prompts section ***** ***** ***** ***** -->
 
-            <!-- Site Navbar -->
-            <nav class="text-xl flex items-center justify-between text-zinc-900 lg:text-zinc-900">
+            <!-- Navbar -->
+            <nav class="text-xs flex items-center justify-between text-zinc-900 lg:text-zinc-900">
                 <a href="home.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-left text-zinc-900"
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-left text-zinc-900"
                         viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd"
                             d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                             clip-rule="evenodd" />
                     </svg>
                 </a>
-                <span class=" text-sm tracking-widest font-semibold uppercase">Notes</span>
+                <span class="tracking-widest font-semibold uppercase">Notes</span>
             </nav>
 
             <!-- Notes Taking section  -->
             <div class="pageWrapper">
 
                 <!-- Dropdown of names for notes  -->
-                <div class="namesForNotes ptNotes mt-10 w-full">
-                    <h3 class="font-semibold text-zinc-900">Select Name:</h3>
+                <div class="namesForNotes ptNotes mt-5 w-full text-xs">
+                    <h3 class="font-semibold text-blue-600">Select Name:</h3>
                 </div>
-                <select name="ptNotes" id="" class="mt-2 w-full lg:w-1/2 rounded-md border-2 border-gray-200 font-semibold">
-                    <option value="johnDoe">John Doe</option>
-                    <option value="janeSmith">Jane Smith</option>
+                <select name="ptNotes" id="" class=" text-xs text-blue-600 mt-2 w-1/2 rounded-md border-2 border-gray-200 font-semibold">
+                    <option value="johnDoe" class="font-semibold">John Doe</option>
+                    <option value="janeSmith" class="font-semibold">Jane Smith</option>
                 </select>
 
                 <!-- Existing Uploaded notes table  -->
-                <div class="uploadedNotesWrapper mt-10">
+                <div class="uploadedNotesWrapper mt-10 text-xs">
                     <h4 class="border-b-2 border-gray-200 font-semibold text-blue-600">
                         <span>Upload notes</span>
-                        <span class="instructions text-xs text-rose-400 ml-1">( only .pdf files allowed )</span>
+                        <span class="instructions  text-rose-400 ml-1">( only .pdf files allowed )</span>
                     </h4>
 
                     <!-- Upload note file  -->
                     <form action="#" class="w-full">
-                        <input type="file" name="" id="" class="mt-10 text-blue-600 font-semibold text-base w-full lg:w-1/2 file:py-2 file:px-1 file:w-1/3 file:rounded-md file:bg-blue-600 file:border-none file:text-slate-50 file:font-medium file:mr-4">
+                        <input type="file" name="" id="" class="mt-5 text-xs text-blue-600 font-semibold w-full lg:w-2/5 file:py-2  file:w-2/5 file:rounded-md file:bg-blue-600 file:border-none file:text-slate-50 file:font-medium file:mr-4">
                     </form>
 
                     <!-- Uploaded Notes list  -->
-                    <div class="uploadedNotes mt-10 border-2 border-gray-200 rounded-md">
+                    <div class="uploadedNotes mt-5 border-2 border-gray-200 rounded-md">
 
                         <h3 class="p-3 lg:px-6 rounded-t-md text-blue-600 border-b-2 border-gray-200 font-semibold">
                             <span class="totalUploadedNotesCount">Uploaded notes ( 02 )</span>

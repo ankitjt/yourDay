@@ -14,18 +14,18 @@
 </head>
 
 <body class="h-full">
-    <div class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center px-4  lg:pb-0 overflow-auto bg-[url('./assets/schedule.webp')] lg:bg-[url('')] lg:flex">
+    <div class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('./assets/schedule.webp')] lg:bg-[url('')] lg:flex">
 
         <!-- Only for Desktop -->
         
-        <div class="banner-holder lg:w-1/2 lg:h-screen lg:block hidden">
+        <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
             <img src="./assets/schedule.webp" alt="logo" class="h-screen">
         </div>
 
         <div class="scheduleWrapper lg:w-2/3 lg:overflow-x-hidden">
 
             <!-- Navbar  -->
-            <h1 class="text-xl flex items-center justify-between py-8  lg:px-10 lg:py-16 text-zinc-900">
+            <nav class="text-xs flex items-center justify-between px-6 py-6 lg:p-10 text-zinc-900">
                 <a href="home.html">
     
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -34,12 +34,12 @@
                             clip-rule="evenodd" />
                     </svg>
                 </a>
-                <span class="text-sm tracking-widest font-semibold uppercase">Schedule</span>
-            </h1>
+                <span class="tracking-widest font-semibold uppercase">Schedule</span>
+            </nav>
 
-            <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-5">
+            <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-6">
 
-                <!-- Schedule View Style  -->
+                <!-- Schedule View Style (For Desktop only)  -->
                 <div class="scheduleViewType lg:py-2 lg:flex lg:items-center lg:border-b-2 border-blue-400 hidden ">
                     
                     <svg xmlns="http://www.w3.org/2000/svg" class="tableViewIcon h-8 w-8 text-blue-700 mr-5 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor"
@@ -55,35 +55,35 @@
 
                 <!-- ***** ***** ***** ***** Ends Schedule View Style section ***** ***** ***** ***** -->
 
-                <!-- Schedule with a Gallery View  -->
-                <section class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-20 mt-20 lg:py-10 overflow-scroll lg:overflow-auto">
+                <!-- Schedule with a Gallery View (For Desktop + Mobile)  -->
+                <section class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2">
                     
                     <!-- Session -->
-                    <div class="1  p-4 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer">
-                        <div class="details flex flex-col">
-                            <div class="timeAndDate flex justify-between items-center lg:text-xs font-black">
+                    <div class="1  p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer">
+                        <div class="details flex flex-col text-xs">
+                            <div class="timeAndDate flex justify-between items-center font-black">
                                 <span class="time flex items-center justify-between">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                    <span class="clockDetails tracking-wider">
                                         10:00 - 11:00
                                     </span>
                                 </span>
-                                <span class="date tracking-wider text-sm lg:text-xs">
+                                <span class="date tracking-wider">
                                     26:07:2022
                                 </span>
                             </div>
                             <div class="ptName flex mt-2 items-center justify-between">
                                 <div class="ptName-wrapper flex items-center">
-                                    <span class="name text-sm lg:text-xs font-semibold mr-2">
+                                    <span class="name font-semibold mr-2">
                                         John Doe
                                     </span>
                                     <span class="aptDetails flex items-center">
                             
                                         <span
-                                            class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
+                                            class="aptType  text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
                                             S
                                         </span>
                                     </span>
@@ -116,31 +116,31 @@
                     </div>
 
                     <!-- Supervision  -->
-                    <div class="1  p-4 lg:px-4 lg:py-3 rounded-md bg-blue-100 border-l-8 border-blue-600 text-blue-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
-                        <div class="details flex flex-col">
-                            <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                    <div class="1  p-3 lg:px-4 lg:py-3 rounded-md bg-blue-100 border-l-8 border-blue-600 text-blue-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col text-xs">
+                            <div class="timeAndDate flex justify-between items-center font-black">
                                 <span class="time flex items-center justify-between">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                         stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                     </svg>
-                                    <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                    <span class="clockDetails tracking-wider">
                                         10:00 - 12:00
                                     </span>
                                 </span>
-                                <span class="date tracking-wider text-sm lg:text-xs">
+                                <span class="date tracking-wider">
                                     02:08:2022
                                 </span>
                             </div>
                             <div class="ptName flex mt-2 items-center justify-between">
                                 <div class="ptName-wrapper flex items-center justify-between">
-                                    <span class="name text-xs font-semibold mr-2">
+                                    <span class="name font-semibold mr-2">
                                         John Doe
                                     </span>
                                     <span class="aptDetails flex items-center">
                             
                                         <span
-                                            class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-blue-700  px-2 py-1 rounded-full">
+                                            class="aptType text-emerald-50 tracking-wider font-medium bg-blue-700  px-2 py-1 rounded-full">
                                             SV
                                         </span>
                                     </span>
@@ -157,32 +157,32 @@
                     </div>
 
                     <!-- For Review (New) -->
-                    <div class="1 p-4 lg:px-4 lg:py-3 rounded-md bg-rose-100 border-l-8 border-rose-600 text-rose-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
-                        <div class="details flex flex-col justify-center">
+                    <div class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-rose-100 border-l-8 border-rose-600 text-rose-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col justify-center text-xs">
                             <div class="details-wrapper flex flex-col justify-center">
-                                <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                                <div class="timeAndDate flex justify-between items-center font-black">
                                     <span class="time flex items-center justify-between">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                        <span class="clockDetails tracking-wider">
                                             10:00 - 11:00
                                         </span>
                                     </span>
-                                    <span class="date text-sm lg:text-xs tracking-wider">
+                                    <span class="date tracking-wider">
                                         26:07:2022
                                     </span>
                                 </div>
                                 <div class="ptName flex mt-2 items-center justify-between">
                                     <div class="ptName-wrapper flex items-center">
-                                        <span class="name text-xs font-semibold mr-2">
+                                        <span class="name font-semibold mr-2">
                                             John Doe
                                         </span>
                                         <span class="aptDetails flex items-center">
                                 
                                             <span
-                                                class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-rose-700  px-2 py-1 rounded-full">
+                                                class="aptType text-emerald-50 tracking-wider font-medium bg-rose-700  px-2 py-1 rounded-full">
                                                 N
                                             </span>
                                         </span>
@@ -200,32 +200,32 @@
                     </div>
 
                     <!-- Session 2 -->
-                    <div class="1 p-4 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
-                        <div class="details flex flex-col">
+                    <div class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700  mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl">
+                        <div class="details flex flex-col text-xs">
                             <div class="details-wrapper">
-                                <div class="timeAndDate flex justify-between items-center text-xl lg:text-xs font-black">
+                                <div class="timeAndDate flex justify-between items-center font-black">
                                     <span class="time flex items-center justify-between">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                             stroke-width="2">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
-                                        <span class="clockDetails text-sm lg:text-xs tracking-wider">
+                                        <span class="clockDetails tracking-wider">
                                             10:00 - 11:00
                                         </span>
                                     </span>
-                                    <span class="date text-sm lg:text-xs tracking-wider">
+                                    <span class="date tracking-wider">
                                         26:07:2022
                                     </span>
                                 </div>
                                 <div class="ptName flex mt-2 items-center justify-between">
                                     <div class="ptName-wrapper flex items-center">
-                                        <span class="name text-xs font-semibold mr-2">
+                                        <span class="name font-semibold mr-2">
                                             John Doe
                                         </span>
                                         <span class="aptDetails flex items-center">
                                         
                                             <span
-                                                class="aptType lg:text-xs text-sm text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
+                                                class="aptType text-emerald-50 tracking-wider font-medium bg-emerald-700  px-2 py-1 rounded-full">
                                                 S
                                             </span>
                                         </span>
