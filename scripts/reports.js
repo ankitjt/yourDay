@@ -14,11 +14,11 @@ for(let thisSection of sectionButton) {
         downArrowChild.classList.toggle("rotate-180")
         if(panel.style.display === 'block') {
             panel.style.display = 'none'
-            sectionButtonWrapper.classList.remove("border-b-2")
+            sectionButtonWrapper.classList.remove("border-b-2", "pb-2", "border-slate-100")
             thisSectionParent.classList.add("lg:hover:scale-95", "lg:transition-all", "lg:ease-in-out")
         }
         else {
-            sectionButtonWrapper.classList.add("border-b-2")
+            sectionButtonWrapper.classList.add("border-b-2", "pb-2", "border-slate-100")
             panel.style.display = "block"
             thisSectionParent.classList.remove("lg:hover:scale-95", "lg:transition-all", "lg:ease-in-out")
         }
