@@ -1,0 +1,24 @@
+{
+  "name": "yourDay",
+  "version": "1.0.0",
+  "description": "An app to keep track of your day.",
+  "main": "index.js",
+  "dependencies": {
+    "tailwindcss": "^3.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankitjt/yourDay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ankitjt/yourDay/issues"
+  },
+  "homepage": "https://github.com/ankitjt/yourDay#readme"
+}
