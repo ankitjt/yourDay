@@ -1,258 +1,315 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
     <title>YourDay - Finances</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="../dist/output.css" />
+  </head>
 
-<body>
-    <div class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('./assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
+  <body>
+    <div
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/finance2.webp')] lg:bg-[url('')] lg:justify-between"
+    >
+      <!-- Only for Desktop -->
+      <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
+        <img
+          src="../assets/finance2.webp"
+          alt="logo"
+          class="h-screen w-auto py-10"
+        />
+      </div>
 
-        <!-- Only for Desktop -->
-        <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden ">
-            <img src="./assets/finance2.webp" alt="logo" class="h-screen w-auto py-10">
-        </div>
+      <div
+        class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden"
+      >
+        <!-- Navbar -->
+        <nav
+          class="text-xs flex items-center justify-between py-2 text-zinc-900"
+        >
+          <a href="./home.html">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5 text-zinc-900"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </a>
+          <span class="tracking-widest font-semibold uppercase">Finances</span>
+        </nav>
 
-        <div class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden">
+        <!-- By Month Only -->
+        <section class="mt-5 px-1 flex flex-col justify-center tracking-wide">
+          <h3 class="mb-2">
+            <span
+              class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold"
+            >
+              By month
+            </span>
+          </h3>
 
-            <!-- Navbar -->
-            <nav class="text-xs flex items-center justify-between py-2 text-zinc-900">
-                <a href="home.html">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path fill-rule="evenodd"
-                            d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                            clip-rule="evenodd" />
-                    </svg>
-                </a>
-                <span class="tracking-widest font-semibold uppercase">Finances</span>
-            </nav>
-            
-            <!-- By Month Only -->
-            <section class="mt-5 px-1 flex flex-col justify-center tracking-wide">
+          <!-- Filter Type ( By month ) -->
 
-                <h3 class=" mb-2">
-                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-                        By month
-                    </span>
-                </h3>
+          <section class="monthFilter mb-5 text-rose-600 font-semibold">
+            <select
+              name="monthList"
+              id="monthList"
+              class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6"
+            >
+              <option selected value="All Time" class="font-semibold">
+                All Time
+              </option>
+              <option value="january" class="font-semibold">January</option>
+              <option value="February" class="font-semibold">February</option>
+              <option value="March" class="font-semibold">March</option>
+              <option value="April" class="font-semibold">April</option>
+              <option value="May" class="font-semibold">May</option>
+              <option value="June" class="font-semibold">June</option>
+              <option value="July" class="font-semibold">July</option>
+              <option value="August" class="font-semibold">August</option>
+              <option value="September" class="font-semibold">September</option>
+              <option value="October" class="font-semibold">October</option>
+              <option value="November" class="font-semibold">November</option>
+              <option value="December" class="font-semibold">December</option>
+            </select>
+          </section>
 
-                <!-- Filter Type ( By month ) -->
+          <!-- Total Money Count -->
 
-                <section class="monthFilter mb-5 text-rose-600 font-semibold">
-                    <select name="monthList" id="monthList" class="form-select rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6">
-                        <option selected value="All Time" class="font-semibold">All Time</option>
-                        <option value="january" class="font-semibold">January</option>
-                        <option value="February" class="font-semibold">February</option>
-                        <option value="March" class="font-semibold">March</option>
-                        <option value="April" class="font-semibold">April</option>
-                        <option value="May" class="font-semibold">May</option>
-                        <option value="June" class="font-semibold">June</option>
-                        <option value="July" class="font-semibold">July</option>
-                        <option value="August" class="font-semibold">August</option>
-                        <option value="September" class="font-semibold">September</option>
-                        <option value="October" class="font-semibold">October</option>
-                        <option value="November" class="font-semibold">November</option>
-                        <option value="December" class="font-semibold">December</option>
-                    </select>
-                </section>
+          <div class="moneyCount lg:grid lg:gap-x-10 lg:grid-cols-2 text-white">
+            <!-- Sessions Money -->
 
-                <!-- Total Money Count -->
-                
-                <div class="moneyCount lg:grid lg:gap-x-10 lg:grid-cols-2 text-white">
+            <div
+              class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium"
+            >
+              <span class="sessions flex flex-col">
+                <span class="totalSessions"> Total Sessions </span>
+                <span class="totalSessionsCount mt-1">
+                  <span class="countOfSessions">431</span>
+                </span>
+              </span>
+              <span class="moneyBySessions flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="totalMoneyBySessions tracking-widest">
+                  55,124
+                </span>
+              </span>
+            </div>
 
-                    <!-- Sessions Money -->
+            <!-- Supervision Money -->
 
-                    <div class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
-                        <span class="sessions flex flex-col">
-                            <span class="totalSessions">
-                                Total Sessions
-                            </span>
-                            <span class="totalSessionsCount mt-1">
-                                <span class="countOfSessions">431</span>
-                                
-                            </span>
-                            
-                        </span>
-                        <span class="moneyBySessions flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="totalMoneyBySessions tracking-widest">
-                                55,124
-                            </span>
-                        </span>
-                    </div>
+            <div
+              class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium"
+            >
+              <span class="supervision flex flex-col">
+                <span class="totalSupervision"> Total Supervision </span>
+                <span class="totalSessionsCount mt-1">
+                  <span class="countOfSessions">431</span>
+                </span>
+              </span>
+              <span class="moneyBySupervision flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="totalMoneyBySupervision tracking-widest">
+                  9,124
+                </span>
+              </span>
+            </div>
+          </div>
+        </section>
 
-                    <!-- Supervision Money -->
+        <!-- ***** ***** ***** ***** Ends By month section ***** ***** ***** ***** -->
 
-                    <div class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
-                        <span class="supervision flex flex-col">
-                            <span class="totalSupervision">
-                                Total Supervision
-                            </span>
-                            <span class="totalSessionsCount mt-1">
-                                <span class="countOfSessions">431</span>
-                            </span>
-                        </span>
-                        <span class="moneyBySupervision flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="totalMoneyBySupervision tracking-widest">
-                                9,124
-                            </span>
-                        </span>
-                    </div>
+        <!-- By Name Only -->
+        <section
+          class="mt-5 px-1 flex flex-col justify-center tracking-wide text-slate-50"
+        >
+          <h3 class="mb-2">
+            <span
+              class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold"
+            >
+              By name
+            </span>
+          </h3>
 
-                </div>
+          <!-- Filter Type -->
 
-            </section>
+          <section
+            class="monthFilter mb-5 flex items-center justify-between font-semibold"
+          >
+            <!-- Patient Name -->
 
-            <!-- ***** ***** ***** ***** Ends By month section ***** ***** ***** ***** -->
+            <select
+              name="monthList"
+              id="monthList"
+              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6"
+            >
+              <option value="John Doe" class="font-semibold">John Doe</option>
+              <option value="Jane Smith" class="font-semibold">
+                Jane Smith
+              </option>
+            </select>
 
-            <!-- By Name Only -->
-            <section class="mt-5 px-1 flex flex-col justify-center tracking-wide text-slate-50 ">
-                
-                <h3 class=" mb-2">
-                    <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-                        By name
-                    </span>
-                </h3>
+            <!-- Months -->
 
-                <!-- Filter Type -->
-            
-                <section class="monthFilter mb-5 flex items-center justify-between font-semibold">
+            <select
+              name="monthListByName"
+              id="monthList"
+              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6"
+            >
+              <option selected value="All Time" class="font-semibold">
+                All Time
+              </option>
+              <option value="january" class="font-semibold">January</option>
+              <option value="February" class="font-semibold">February</option>
+              <option value="March" class="font-semibold">March</option>
+              <option value="April" class="font-semibold">April</option>
+              <option value="May" class="font-semibold">May</option>
+              <option value="June" class="font-semibold">June</option>
+              <option value="July" class="font-semibold">July</option>
+              <option value="August" class="font-semibold">August</option>
+              <option value="September" class="font-semibold">September</option>
+              <option value="October" class="font-semibold">October</option>
+              <option value="November" class="font-semibold">November</option>
+              <option value="December" class="font-semibold">December</option>
+            </select>
+          </section>
 
-                    <!-- Patient Name -->
+          <!-- Patient Profile -->
 
-                    <select name="monthList" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6">
-                        <option value="John Doe" class="font-semibold">John Doe</option>
-                        <option value="Jane Smith" class="font-semibold">Jane Smith</option>
-                    </select>
+          <section
+            class="profile mb-5 bg-blue-700 rounded-lg px-3 py-3 lg:p-5 text-xs"
+          >
+            <div class="profileName flex items-center justify-between mb-2">
+              <span class="nameTag">Name</span>
+              <span class="name ml-2 tracking-widest">John Doe</span>
+            </div>
+            <div class="profileEmail flex items-center justify-between mb-2">
+              <span class="emailTag">Email</span>
+              <span class="email ml-2 tracking-widest">johndoe@gmail.com</span>
+            </div>
+            <div
+              class="profileMobileNumber flex items-center justify-between mb-2"
+            >
+              <span class="mobileTag">Mobile</span>
+              <span class="mobileNumber ml-2 tracking-widest"
+                >+91-1234567890</span
+              >
+            </div>
+            <div
+              class="profileStartDate flex items-center justify-between mb-2"
+            >
+              <span class="startDateTag">Start Date</span>
+              <span class="startDate ml-2 tracking-widest">27/07/2022</span>
+            </div>
+            <div class="profileFee flex items-center justify-between mb-2">
+              <span class="feeTag">Fee</span>
+              <span class="fee ml-2 tracking-widest">1500</span>
+            </div>
+            <div class="profileCategory flex items-center justify-between mb-2">
+              <span class="categoryTag">Category</span>
+              <span class="category ml-2 tracking-widest">Session</span>
+            </div>
+            <div class="profileCategory flex items-center justify-between">
+              <span class="categoryTag">Occurrence ( per week )</span>
+              <span class="category ml-2">1</span>
+            </div>
+          </section>
 
-                    <!-- Months -->
+          <!-- Total Money Count individual -->
 
-                    <select name="monthListByName" id="monthList" class="rounded-lg text-blue-600 lg:py-3  border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs lg:w-2/6">
-                        <option selected value="All Time" class="font-semibold">All Time</option>
-                        <option value="january" class="font-semibold">January</option>
-                        <option value="February" class="font-semibold">February</option>
-                        <option value="March" class="font-semibold">March</option>
-                        <option value="April" class="font-semibold">April</option>
-                        <option value="May" class="font-semibold">May</option>
-                        <option value="June" class="font-semibold">June</option>
-                        <option value="July" class="font-semibold">July</option>
-                        <option value="August" class="font-semibold">August</option>
-                        <option value="September" class="font-semibold">September</option>
-                        <option value="October" class="font-semibold">October</option>
-                        <option value="November" class="font-semibold">November</option>
-                        <option value="December" class="font-semibold">December</option>
-                    </select>
-                </section>
+          <div class="moneyCountIndividual lg:grid lg:grid-cols-2 lg:gap-x-10">
+            <!-- Sessions Money -->
 
-                <!-- Patient Profile -->
+            <div
+              class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium"
+            >
+              <span class="sessions flex flex-col">
+                <span class="totalSessions"> Total Sessions </span>
+                <span class="totalSessionsCount mt-1">
+                  <span class="countOfSessions">55</span>
+                </span>
+              </span>
+              <span class="moneyBySessions flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <span class="totalMoneyBySessions tracking-widest">
+                  11,124
+                </span>
+              </span>
+            </div>
 
-                <section class="profile mb-5 bg-blue-700 rounded-lg px-3 py-3 lg:p-5 text-xs">
-                    <div class="profileName flex items-center justify-between mb-2">
-                        <span class="nameTag ">Name</span>
-                        <span class="name ml-2 tracking-widest">John Doe</span>
-                    </div>
-                    <div class="profileEmail flex items-center justify-between mb-2">
-                        <span class="emailTag ">Email</span>
-                        <span class="email ml-2 tracking-widest">johndoe@gmail.com</span>
-                    </div>
-                    <div class="profileMobileNumber flex items-center justify-between mb-2">
-                        <span class="mobileTag ">Mobile</span>
-                        <span class="mobileNumber ml-2 tracking-widest">+91-1234567890</span>
-                    </div>
-                    <div class="profileStartDate flex items-center justify-between mb-2">
-                        <span class="startDateTag ">Start Date</span>
-                        <span class="startDate ml-2 tracking-widest">27/07/2022</span>
-                    </div>
-                    <div class="profileFee flex items-center justify-between mb-2">
-                        <span class="feeTag ">Fee</span>
-                        <span class="fee ml-2 tracking-widest">1500</span>
-                    </div>
-                    <div class="profileCategory flex items-center justify-between mb-2">
-                        <span class="categoryTag ">Category</span>
-                        <span class="category ml-2 tracking-widest">Session</span>
-                    </div>
-                    <div class="profileCategory flex items-center justify-between">
-                        <span class="categoryTag ">Occurrence ( per week )</span>
-                        <span class="category ml-2">1</span>
-                    </div>
-                </section>
-            
-                <!-- Total Money Count individual -->
-                
-                <div class="moneyCountIndividual lg:grid lg:grid-cols-2 lg:gap-x-10">
+            <!-- Supervision Money -->
 
-                    <!-- Sessions Money -->
-                
-                    <div
-                        class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
-                        <span class="sessions flex flex-col">
-                            <span class="totalSessions">
-                                Total Sessions
-                            </span>
-                            <span class="totalSessionsCount mt-1">
-                                <span class="countOfSessions">55</span>
-                
-                            </span>
-                
-                        </span>
-                        <span class="moneyBySessions flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <span class="totalMoneyBySessions tracking-widest">
-                                11,124
-                            </span>
-                        </span>
-                    </div>
-                
-                    <!-- Supervision Money -->
-                
-                    <div
-                        class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
-                        <span class="supervision flex flex-col">
-                            <span class="totalSupervision">
-                                Total Supervision
-                            </span>
-                            <span class="totalSessionsCount mt-1">
-                                <span class="countOfSessions">-</span>
-                            </span>
-                        </span>
-                        <span class="moneyBySupervision flex items-center">
-                            <span class="totalMoneyBySupervision tracking-widest">
-                                -
-                            </span>
-                        </span>
-                    </div>
+            <div
+              class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium"
+            >
+              <span class="supervision flex flex-col">
+                <span class="totalSupervision"> Total Supervision </span>
+                <span class="totalSessionsCount mt-1">
+                  <span class="countOfSessions">-</span>
+                </span>
+              </span>
+              <span class="moneyBySupervision flex items-center">
+                <span class="totalMoneyBySupervision tracking-widest"> - </span>
+              </span>
+            </div>
+          </div>
+        </section>
 
-                </div>
-            
-            </section>
-
-            <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
-
-        </div>
-
+        <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
+      </div>
     </div>
-</body>
-
+  </body>
 </html>

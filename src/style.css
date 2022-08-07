@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* * {
+ * {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
@@ -13,4 +12,4 @@ select {
 
 .formLoginButton {
     outline: hidden !important;
-} */
+} 
