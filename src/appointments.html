@@ -65,7 +65,7 @@
                     class="confirmNameTag text-[10px] text-blue-600 font-semibold"
                     >Name</span
                   >
-                  <span class="confirmName text-xs mt-[1px]">John Doe</span>
+                  <span class="confirmName text-xs mt-[1px] capitalize"></span>
                 </div>
                 <div
                   class="flex flex-col items-start lg:items-end mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
@@ -74,8 +74,8 @@
                     class="confirmEmailTag text-[10px] text-blue-600 font-semibold"
                     >Email</span
                   >
-                  <span class="confirmEmail text-xs mt-[1px]"
-                    >johndoe@gmail.com</span
+                  <span class="confirmEmail text-xs mt-[1px] lowercase"
+                    ></span
                   >
                 </div>
                 <div
@@ -86,31 +86,40 @@
                     >Mobile Number</span
                   >
                   <span class="confirmMobileNumber text-xs mt-[1px]"
-                    >+91-1234567890</span
+                    ></span
                   >
                 </div>
                 <div
                   class="flex flex-col items-start lg:items-end mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
                 >
                   <span
-                    class="confirmStartTimeDateTag text-[10px] text-blue-600 font-semibold"
-                    >Start Time and Date</span
+                    class="confirmStartDateTag text-[10px] text-blue-600 font-semibold"
+                    >Start Date</span
                   >
-                  <span class="confirmStartTimeDate text-xs mt-[1px]"
-                    >10:00, 29/07/2022</span
+                  <span class="confirmStartDate text-xs mt-[1px]"
+                    ></span
                   >
                 </div>
+                <div class="flex flex-col items-start mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider">
+                  <span class="confirmTimeSlotTag text-[10px] text-blue-600 font-semibold">Time Slot</span>
+                  <span class="confirmTimeSlot text-xs mt-[1px]"></span>
+                </div>
                 <div
-                  class="flex flex-col items-start mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
+                  class="flex flex-col items-start lg:items-end mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
                 >
                   <span
                     class="confirmAppointmentTypeTag text-[10px] text-blue-600 font-semibold"
                     >Appointment Type</span
                   >
                   <span class="confirmAppointmentType text-xs mt-[1px]"
-                    >Session</span
+                    ></span
                   >
                 </div>
+                <div class="flex flex-col items-end lg:items-start mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider">
+                  <span class="confirmOccurrenceTypeTag text-[10px] text-blue-600 font-semibold">Occurrence Type ( per week )</span>
+                  <span class="confirmOccurrenceType text-xs mt-[1px]"></span>
+                </div>
+
                 <div
                   class="flex flex-col items-start lg:items-end mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
                 >
@@ -118,7 +127,7 @@
                     class="confirmFeeTag text-[10px] text-blue-600 font-semibold"
                     >Fees</span
                   >
-                  <span class="confirmFee text-xs mt-[1px]">1500</span>
+                  <span class="confirmFee text-xs mt-[1px]"></span>
                 </div>
               </div>
             </div>
@@ -298,26 +307,26 @@
                     class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4 aptType lg:drop-shadow-none drop-shadow-2xl text-sm"
                   >
                     <option
-                      value="appointmentType"
-                      selected
+                      value=""
+                      
                       class="font-semibold"
                     >
                       Appointment Type
                     </option>
                     <option
-                      value="appointmentTypeSession"
+                      value="Session"
                       class="font-semibold"
                     >
                       Session
                     </option>
                     <option
-                      value="appointmentTypeSupervision"
+                      value="Supervision"
                       class="font-semibold"
                     >
                       Supervision
                     </option>
-                    <option value="appointmentTypeReview" class="font-semibold">
-                      For Review
+                    <option value="New" class="font-semibold">
+                      For Review ( New )
                     </option>
                   </select>
                 </div>
@@ -326,22 +335,64 @@
                   <input
                     type="number"
                     placeholder="Occurrence ( per week )"
-                    name="appointmentType"
+                    name="occurrenceType"
                     autocomplete="nope"
-                    id="appointmentType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptType lg:drop-shadow-none drop-shadow-2xl text-sm"
+                    id="occurrenceType"
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptOccurrenceType lg:drop-shadow-none drop-shadow-2xl text-sm"
                   />
                 </div>
+
+                <!-- Start Date  -->
                 <div class="mb-5">
                   <input
-                    type="datetime-local"
-                    placeholder="Start time and date"
+                    type="date"
+                    placeholder="Start Date"
                     autocomplete="nope"
-                    name="aptName"
-                    id="aptName"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptStartTimeDate lg:drop-shadow-none drop-shadow-2xl font-medium text-sm"
+                    name="aptStartDate"
+                    id="aptStartDate"
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptStartDate lg:drop-shadow-none drop-shadow-2xl font-medium text-sm"
                   />
                 </div>
+
+                <!-- Time slot -->
+                <div class="mb-5">
+                  <select name="aptTimeSlot" id="aptTimeSlot"
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4 aptTimeSlot lg:drop-shadow-none drop-shadow-2xl text-sm">
+                    <option value="" class="font-semibold">
+                      Time slot
+                    </option>
+                    <option value="09:00 - 10:00" class="font-semibold">
+                    09:00 - 10:00
+                    </option>
+                    <option value="10:00 - 11:00" class="font-semibold">
+                      10:00 - 11:00
+                    </option>
+                    <option value="11:00 - 12:00" class="font-semibold">
+                      11:00 - 12:00
+                    </option>
+                    <option value="12:00 - 13:00" class="font-semibold">
+                      12:00 - 13:00
+                    </option>
+                    <option value="13:00 - 14:00" class="font-semibold">
+                      13:00 - 14:00
+                    </option>
+                    <option value="14:00 - 15:00" class="font-semibold">
+                      14:00 - 15:00
+                    </option>
+                    <option value="15:00 - 16:00" class="font-semibold">
+                      15:00 - 16:00
+                    </option>
+                    <option value="16:00 - 17:00" class="font-semibold">
+                      16:00 - 17:00
+                    </option>
+                    <option value="17:00 - 18:00" class="font-semibold">
+                      17:00 - 18:00
+                    </option>
+                    
+                  </select>
+                </div>
+
+                <!-- Fees  -->
                 <div class="mb-5">
                   <input
                     type="number"
@@ -353,30 +404,30 @@
                   />
                 </div>
               </div>
-              <div class="appointmentButtonWrapper lg:text-right px-2 lg:mt-3">
+              <div class="appointmentButtonWrapper lg:flex px-2 lg:mt-1">
                 <button
-                  class="bg-blue-700 ml-2 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn"
+                  class="bg-blue-700 ml-2 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn"
                 >
                   Create
                 </button>
+
+                <!-- Notes  -->
+                <section class="notes lg:mx-4 font-semibold text-rose-600 text-xs rounded-lg">
+                  <ol class="list-disc px-10 py-1">
+                    <li>All fields are required.</li>
+                    <li>
+                      Go to
+                      <i class="text-blue-700">
+                        <a href="./schedule.html">Schedule</a>
+                      </i>
+                      to view all appointments.
+                    </li>
+                  </ol>
+                </section>
+              
               </div>
 
-              <!-- Notes  -->
-              <section
-                class="notes mt-5 lg:mx-4 font-semibold text-rose-600 text-xs bg-slate-200 rounded-lg"
-              >
-                <ol class="list-disc pl-10 py-4">
-                  <li>All fields are required.</li>
-                  <li>
-                    Go to
-                    <i class="text-blue-700">
-                      <a href="./schedule.html">Schedule</a>
-                    </i>
-                    to view all appointments.
-                  </li>
-                </ol>
-              </section>
-            </div>
+             
 
             <!-- ***** ***** ***** ***** Ends Create Appointment Form section ***** ***** ***** ***** -->
           </section>
@@ -385,6 +436,8 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/appointments.js"></script>
   </body>
 </html>
