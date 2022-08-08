@@ -67,7 +67,7 @@ closePrompts.onclick = () => {
 }
 
 editButton.onclick = () => {
-    confirmPage.style.left = "-1000px"
+    confirmPage.style.left = "-2000px"
 }
 
 confirmButton.onclick = () => {
@@ -81,7 +81,7 @@ confirmButton.onclick = () => {
         aptOccurrenceType: aptOccurrenceType.value,
         aptFees: aptFees.value
     })
-    confirmPage.style.left = "-1000px"
+    confirmPage.style.left = "-2000px"
     aptFirstName.value = ""
     aptLastName.value = ""
     aptEmail.value = ""

@@ -179,14 +179,12 @@
             <!-- Patient Name -->
 
             <select
-              name="monthList"
-              id="monthList"
-              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs"
+              name="financePatientList"
+              id="financePatientList"
+              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize"
             >
-              <option value="John Doe" class="font-semibold">John Doe</option>
-              <option value="Jane Smith" class="font-semibold">
-                Jane Smith
-              </option>
+            <option value="" class="font-semibold">Names</option>
+              
             </select>
 
             <!-- Months -->
@@ -217,42 +215,12 @@
           <!-- Patient Profile -->
 
           <section
-            class="profile mb-5 text-zinc-900 lg:p-5 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out"
+            class="profile mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out"
           >
-            <div class="profileName flex items-center justify-between mb-2">
-              <span class="nameTag">Name</span>
-              <span class="name ml-2 tracking-widest">John Doe</span>
-            </div>
-            <div class="profileEmail flex items-center justify-between mb-2">
-              <span class="emailTag">Email</span>
-              <span class="email ml-2 tracking-widest">johndoe@gmail.com</span>
-            </div>
-            <div
-              class="profileMobileNumber flex items-center justify-between mb-2"
-            >
-              <span class="mobileTag">Mobile</span>
-              <span class="mobileNumber ml-2 tracking-widest"
-                >+91-1234567890</span
-              >
-            </div>
-            <div
-              class="profileStartDate flex items-center justify-between mb-2"
-            >
-              <span class="startDateTag">Start Date</span>
-              <span class="startDate ml-2 tracking-widest">27/07/2022</span>
-            </div>
-            <div class="profileFee flex items-center justify-between mb-2">
-              <span class="feeTag">Fee</span>
-              <span class="fee ml-2 tracking-widest">1500</span>
-            </div>
-            <div class="profileCategory flex items-center justify-between mb-2">
-              <span class="categoryTag">Category</span>
-              <span class="category ml-2 tracking-widest">Session</span>
-            </div>
-            <div class="profileCategory flex items-center justify-between">
-              <span class="categoryTag">Occurrence ( per week )</span>
-              <span class="category ml-2">1</span>
-            </div>
+          <div class="profileDetails">
+
+          </div>
+            
           </section>
 
           <!-- Total Money Count individual -->
@@ -311,5 +279,8 @@
         <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/finances.js"></script>
   </body>
 </html>
