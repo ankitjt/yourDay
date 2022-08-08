@@ -2,9 +2,11 @@ let aptFirstName = document.querySelector(".aptFirstName"),
     aptLastName = document.querySelector(".aptLastName"),
     aptEmail = document.querySelector(".aptEmail"),
     aptMobileNumber = document.querySelector(".aptMobileNumber"),
-    aptStartTimeDate = document.querySelector(".aptStartTimeDate"),
+    aptStartDate = document.querySelector(".aptStartDate"),
     aptFees = document.querySelector(".aptFees"),
     aptType = document.querySelector(".aptType"),
+    aptOccurrenceType = document.querySelector(".aptOccurrenceType"),
+    aptTimeSlot = document.querySelector(".aptTimeSlot"),
     createAptBtn = document.querySelector(".createAptBtn"),
     prompts = document.querySelector(".prompts"),
     pageWrapper = document.querySelector(".pageWrapper"),
@@ -15,15 +17,29 @@ let aptFirstName = document.querySelector(".aptFirstName"),
     confirmName = document.querySelector(".confirmName"),
     confirmEmail = document.querySelector(".confirmEmail"),
     confirmMobileNumber = document.querySelector(".confirmMobileNumber"),
-    confirmStartTimeDate = document.querySelector(".confirmStartTimeDate"),
+    confirmStartDate = document.querySelector(".confirmStartDate"),
+    confirmTimeSlot = document.querySelector(".confirmTimeSlot"),
     confirmAppointmentType = document.querySelector(".confirmAppointmentType"),
+    confirmOccurrenceType = document.querySelector(".confirmOccurrenceType"),
     confirmFee = document.querySelector(".confirmFee"),
     confirmButton = document.querySelector(".confirmButton")
     
 
 
-createAptBtn.onclick = (e) => {
-    if(aptFirstName.value === "" || aptLastName.value === "" || aptEmail.value === "" || aptMobileNumber.value === "" || aptStartTimeDate.value === "" || aptFees.value === "" || aptType.value === "")
+firebase.initializeApp({
+        apiKey: "AIzaSyBP_xYkTozmmX7K5b9lO_5LPcI1LLoxxFw",
+        authDomain: "yourday-3fcd8.firebaseapp.com",
+        projectId: "yourday-3fcd8",
+        storageBucket: "yourday-3fcd8.appspot.com",
+        messagingSenderId: "216062777762",
+        appId: "1:216062777762:web:0470a736d1cd2e8ea57afb"
+      });
+
+const db = firebase.firestore()
+let result
+
+createAptBtn.onclick = () => {
+    if(aptFirstName.value === "" || aptLastName.value === "" || aptEmail.value === "" || aptMobileNumber.value === "" || aptStartDate.value === "" || aptFees.value === "" || aptType.value === "" || aptOccurrenceType.value === "" || aptTimeSlot.value === "")
     {
         prompts.style.transition = "0.5s ease-in-out"
         prompts.classList.remove("bg-emerald-500")
@@ -35,8 +51,10 @@ createAptBtn.onclick = (e) => {
         confirmName.innerText = aptFirstName.value + " " + aptLastName.value
         confirmEmail.innerText = aptEmail.value
         confirmMobileNumber.innerText = aptMobileNumber.value
-        confirmStartTimeDate.innerText = aptStartTimeDate.value
+        confirmStartDate.innerText = aptStartDate.value
+        confirmTimeSlot.innerText = aptTimeSlot.value
         confirmAppointmentType.innerText = aptType.value
+        confirmOccurrenceType.innerText = aptOccurrenceType.value
         confirmFee.innerText = aptFees.value
         confirmPage.style.left = 0;
         confirmPage.style.transition = "0.5s ease-in-out"
@@ -53,14 +71,26 @@ editButton.onclick = () => {
 }
 
 confirmButton.onclick = () => {
+    db.collection("appointments").add({
+        aptName: aptFirstName.value + " " + aptLastName.value,
+        aptEmail: aptEmail.value,
+        aptMobileNumber: aptMobileNumber.value,
+        aptStartDate: aptStartDate.value,
+        aptTimeSlot: aptTimeSlot.value,
+        aptType: aptType.value,
+        aptOccurrenceType: aptOccurrenceType.value,
+        aptFees: aptFees.value
+    })
     confirmPage.style.left = "-1000px"
     aptFirstName.value = ""
     aptLastName.value = ""
     aptEmail.value = ""
     aptMobileNumber.value = ""
-    aptStartTimeDate.value = ""
-    aptType.value = ""
+    aptStartDate.value = ""
+    aptType.selectedIndex = 0
+    aptTimeSlot.selectedIndex = 0
     aptFees.value = ""
+    aptOccurrenceType.value = ""
     prompts.style.transition = "0.5s ease-in-out"
     pageWrapper.classList.add("blur-sm")
     prompts.classList.add("left-1/2")
