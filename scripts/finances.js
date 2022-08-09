@@ -31,8 +31,8 @@ financePatientList.onchange = () => {
       if (financePatientList.value === doc.data().aptName) {
         let profile = `
           <div class="profileName flex items-center justify-between mb-2">
-                <span class="nameTag">Name</span>
-                <span class="name ml-2 tracking-widest capitalize">${
+                 <span class="nameTag">Name</span>
+                 <span class="name ml-2 tracking-widest capitalize">${
                   doc.data().aptName
                 }</span>
               </div>
@@ -78,10 +78,6 @@ financePatientList.onchange = () => {
               </div>
         `;
         profileDetails.innerHTML = profile;
-        
-      }
-      else {
-        profileDetails.innerHTML = "No name selected"
       }
     })
   })
