@@ -2,7 +2,7 @@ let aptFirstName = document.querySelector(".aptFirstName"),
     aptLastName = document.querySelector(".aptLastName"),
     aptEmail = document.querySelector(".aptEmail"),
     aptMobileNumber = document.querySelector(".aptMobileNumber"),
-    aptStartDate = document.querySelector(".aptStartDate"),
+    aptDay = document.querySelector(".aptDay"),
     aptFees = document.querySelector(".aptFees"),
     aptType = document.querySelector(".aptType"),
     aptOccurrenceType = document.querySelector(".aptOccurrenceType"),
@@ -18,7 +18,7 @@ let aptFirstName = document.querySelector(".aptFirstName"),
     confirmName = document.querySelector(".confirmName"),
     confirmEmail = document.querySelector(".confirmEmail"),
     confirmMobileNumber = document.querySelector(".confirmMobileNumber"),
-    confirmStartDate = document.querySelector(".confirmStartDate"),
+    confirmDay = document.querySelector(".confirmDay"),
     confirmTimeSlot = document.querySelector(".confirmTimeSlot"),
     confirmAppointmentType = document.querySelector(".confirmAppointmentType"),
     confirmOccurrenceType = document.querySelector(".confirmOccurrenceType"),
@@ -41,77 +41,114 @@ const db = firebase.firestore()
 let result
 
 createAptBtn.onclick = () => {
-    if(aptFirstName.value === "" || aptLastName.value === "" || aptEmail.value === "" || aptMobileNumber.value === "" || aptStartDate.value === "" || aptFees.value === "" || aptType.value === "" || aptOccurrenceType.value === "" || aptTimeSlot.value === "" || aptCategory.value === "")
+    // if (aptCategory.value === "" || aptType.value === "" || aptFirstName.value === "" || aptLastName.value === "" || aptEmail.value === "" || aptMobileNumber.value === "" || aptDay.value === "" || aptTimeSlot.value === "" || aptOccurrenceType.value === "" || aptFees.value === "")
+     if (aptCategory.value === "" || aptEmail.value === "" || aptDay.value === "" || aptTimeSlot.value === "")
     {
-        prompts.style.transition = "0.5s ease-in-out"
-        prompts.classList.remove("bg-emerald-500")
         pageWrapper.classList.add("blur-sm")
         prompts.classList.add("left-1/2")
-        confirmPage.style.left = "-2000px"
-        promptContent.innerText = "Please fill out all the fields."
+        prompts.style.transition = "0.5s ease-in-out"
+        promptContent.innerText = "All fields are required."
     }
 
-    else if(aptCategory.value === "New") {
-        
+    if (aptCategory.value === "New") {
         db.collection("appointments").onSnapshot((querySnapshot) => {
-        
             querySnapshot.forEach((doc) => {
-                if (aptCategory.value === "New" && aptEmail.value.toLowerCase() === doc.data().aptEmail) {
-                    prompts.style.transition = "0.5s ease-in-out"
-                    prompts.classList.remove("bg-emerald-500")
+                if (aptEmail.value === doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
                     pageWrapper.classList.add("blur-sm")
                     prompts.classList.add("left-1/2")
                     confirmPage.style.left = "-2000px"
-                    promptContent.innerText = "Email already linked with an account. For appointment of existing account use category as 'Existing'. "
+                    prompts.classList.remove("bg-emerald-500")
+                    prompts.style.transition = "0.5s ease-in-out"
+                    promptContent.innerText = "Do you wish to update the slot?"
+                    console.log(aptEmail.value, doc.data().aptEmail);
+                    console.log(aptDay.value, doc.data().aptDay);
+                    console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
                 }
+                else {
+                    if (aptEmail.value !== doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
+                        pageWrapper.classList.add("blur-sm")
+                        prompts.classList.add("left-1/2")
+                        confirmPage.style.left = "-2000px"
+                        prompts.style.transition = "0.5s ease-in-out"
+                        prompts.classList.remove("bg-emerald-500")
+                        promptContent.innerText = "Slot filled."
+                        console.log(aptEmail.value, doc.data().aptEmail);
+                        console.log(aptDay.value, doc.data().aptDay);
+                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
+                    }
 
-                if (aptStartDate.value === doc.data().aptStartDate && aptTimeSlot.value === doc.data().aptTimeSlot && aptCategory.value === "New" ) {
-                    prompts.style.transition = "0.5s ease-in-out"
-                    prompts.classList.remove("bg-emerald-500")
-                    pageWrapper.classList.add("blur-sm")
-                    prompts.classList.add("left-1/2")
-                    confirmPage.style.left = "-2000px"
-                    promptContent.innerText = "You already have a appointment at the same slot. "
                     
+                    if (aptEmail.value === doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
+                        pageWrapper.classList.add("blur-sm")
+                        prompts.classList.add("left-1/2")
+                        prompts.style.transition = "0.5s ease-in-out"
+                        prompts.classList.remove("bg-emerald-500")
+                        confirmPage.style.left = "-2000px"
+                        promptContent.innerText = "Do you wish to update as user is already given a slot."
+                        console.log(aptEmail.value, doc.data().aptEmail);
+                        console.log(aptDay.value, doc.data().aptDay);
+                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
+                    }
+                    if (aptEmail.value !== doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
+                        // pageWrapper.classList.add("blur-sm")
+                        // prompts.classList.add("left-1/2")
+                        // prompts.style.transition = "0.5s ease-in-out"
+                        // prompts.classList.remove("bg-rose-600")
+                        // prompts.classList.add("bg-emerald-500")
+                        // promptContent.innerText = "Appointment created."
+                        confirmPage.style.transition = "0.5s ease-in-out"
+                        confirmPage.style.left = 0
+                        let firstName = aptFirstName.value
+                        let lastName = aptLastName.value
+                        confirmName.innerText = firstName + " " + lastName
+                        confirmEmail.innerText = aptEmail.value.trim()
+                        confirmMobileNumber.innerText = aptMobileNumber.value
+                        confirmDay.innerText = aptDay.value
+                        confirmTimeSlot.innerText = aptTimeSlot.value
+                        confirmAppointmentType.innerText = aptType.value
+                        confirmOccurrenceType.innerText = aptOccurrenceType.value
+                        confirmCategory.innerText = aptCategory.value
+                        console.log(aptEmail.value, doc.data().aptEmail);
+                        console.log(aptDay.value, doc.data().aptDay);
+                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
+                    }
                 }
-
-                // if (aptCategory.value === "Existing" && aptEmail.value === doc.data().aptEmail && aptStartDate.value === doc.data().aptStartDate && aptTimeSlot.value === doc.data().aptTimeSlot) {
-                //     prompts.style.transition = "0.5s ease-in-out"
-                //     prompts.classList.remove("bg-emerald-500")
+                // else if (aptEmail.value === doc.data().aptEmail) {
                 //     pageWrapper.classList.add("blur-sm")
                 //     prompts.classList.add("left-1/2")
-                //     confirmPage.style.left = "-2000px"
-                //     promptContent.innerText = "To change appointment of an existing record go to Schedule section. "
+                //     prompts.style.transition = "0.5s ease-in-out"
+                //     promptContent.innerText = "Email already registered."
                     
                 // }
+
+                // else if (aptEmail.value !== doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
+                //     pageWrapper.classList.add("blur-sm")
+                //     prompts.classList.add("left-1/2")
+                //     prompts.style.transition = "0.5s ease-in-out"
+                //     prompts.classList.remove("bg-emerald-500")
+                //     promptContent.innerText = "Slot filled."
+                //     console.log(aptEmail.value, doc.data().aptEmail);
+                //     console.log(aptDay.value, doc.data().aptDay);
+                //     console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
+                // }
                     
-                else {
-                    console.log('this is done');
-                    confirmPage.style.left = 0
-                    let firstName = aptFirstName.value
-                    let lastName = aptLastName.value
-                    confirmName.innerText = firstName + " " + lastName
-                    confirmEmail.innerText = aptEmail.value.trim()
-                    confirmMobileNumber.innerText = aptMobileNumber.value
-                    confirmStartDate.innerText = aptStartDate.value
-                    confirmTimeSlot.innerText = aptTimeSlot.value
-                    confirmAppointmentType.innerText = aptType.value
-                    confirmOccurrenceType.innerText = aptOccurrenceType.value
-                    confirmCategory.innerText = aptCategory.value
-                    confirmFees.innerText = aptFees.value
-                    confirmPage.style.transition = "0.5s ease-in-out"
-                  
-            }
+                // else if (aptEmail.value !== doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
+                //     pageWrapper.classList.add("blur-sm")
+                //     prompts.classList.add("left-1/2")
+                //     prompts.style.transition = "0.5s ease-in-out"
+                //     prompts.classList.remove("bg-rose-600")
+                //     prompts.classList.add("bg-emerald-500")
+                //     promptContent.innerText = "Appointment created."
+                //     console.log(aptEmail.value, doc.data().aptEmail);
+                //     console.log(aptDay.value, doc.data().aptDay);
+                //     console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
+                // }
+                    
+                
                 
             })
         })
     }
-
-    
-
-    
-              
- 
 }
 
 closePrompts.onclick = () => {
@@ -121,38 +158,43 @@ closePrompts.onclick = () => {
 
 editButton.onclick = () => {
     confirmPage.style.left = "-2000px"
+    prompts.classList.remove("left-1/2")
+    pageWrapper.classList.remove("blur-sm")
 }
 
 
-confirmButton.onclick = () => {
-    db.collection("appointments").add({
-        aptCategory: confirmCategory.innerText,
-        aptName: confirmName.innerText,
-        aptEmail: confirmEmail.innerText,
-        aptMobileNumber: confirmMobileNumber.innerText,
-        aptStartDate: confirmStartDate.innerText,
-        aptTimeSlot: confirmTimeSlot.innerText,
-        aptType: confirmAppointmentType.innerText,
-        aptOccurrenceType: confirmOccurrenceType.innerText,
-        aptFees: confirmFees.innerText
-    })
-    confirmPage.style.left = "-2000px !important"
-    aptFirstName.value = ""
-    aptLastName.value = ""
-    aptEmail.value = ""
-    aptMobileNumber.value = ""
-    aptStartDate.value = ""
-    aptType.selectedIndex = 0
-    aptTimeSlot.selectedIndex = 0
-    aptCategory.selectedIndex = 0
-    aptFees.value = ""
-    aptOccurrenceType.value = ""
-    prompts.style.transition = "0.5s ease-in-out"
-    pageWrapper.classList.add("blur-sm")
-    prompts.classList.add("left-1/2")
-    prompts.classList.add("bg-emerald-500")
-    promptContent.innerText = "Appointment Created"
-}
+    confirmButton.onclick = () => {
+        
+        db.collection("appointments").add({
+            aptCategory: confirmCategory.innerText,
+            aptName: confirmName.innerText,
+            aptEmail: confirmEmail.innerText,
+            aptMobileNumber: confirmMobileNumber.innerText,
+            aptDay: confirmDay.innerText,
+            aptTimeSlot: confirmTimeSlot.innerText,
+            aptType: confirmAppointmentType.innerText,
+            aptOccurrenceType: confirmOccurrenceType.innerText,
+            aptFees: confirmFees.innerText,
+            serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+        })
+        aptFirstName.value = ""
+        aptLastName.value = ""
+        aptEmail.value = ""
+        aptMobileNumber.value = ""
+        aptDay.selectedIndex = 0
+        aptType.selectedIndex = 0
+        aptTimeSlot.selectedIndex = 0
+        aptCategory.selectedIndex = 0
+        aptFees.value = ""
+        aptOccurrenceType.value = ""
+        prompts.style.transition = "0.5s ease-in-out"
+        pageWrapper.classList.add("blur-sm")
+        prompts.classList.add("left-1/2")
+        prompts.classList.add("bg-emerald-500")
+        promptContent.innerText = "Appointment Created"
+        confirmPage.style.transition = "0.5s ease-in-out"
+        confirmPage.style.left = "-2000px"
+    }
 
 
 // (() => { 
