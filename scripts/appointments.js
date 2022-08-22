@@ -41,114 +41,116 @@ const db = firebase.firestore()
 let result
 
 createAptBtn.onclick = () => {
-    // if (aptCategory.value === "" || aptType.value === "" || aptFirstName.value === "" || aptLastName.value === "" || aptEmail.value === "" || aptMobileNumber.value === "" || aptDay.value === "" || aptTimeSlot.value === "" || aptOccurrenceType.value === "" || aptFees.value === "")
-     if (aptCategory.value === "" || aptEmail.value === "" || aptDay.value === "" || aptTimeSlot.value === "")
-    {
+   
+    if (aptCategory.value === "" || aptEmail.value === "" || aptDay.value === "" || aptTimeSlot.value === "") {
         pageWrapper.classList.add("blur-sm")
         prompts.classList.add("left-1/2")
         prompts.style.transition = "0.5s ease-in-out"
         promptContent.innerText = "All fields are required."
     }
 
-    if (aptCategory.value === "New") {
-        db.collection("appointments").onSnapshot((querySnapshot) => {
+    else if (aptCategory.value === "New") {
+
+        db.collection("appointments").where("aptEmail", "==", aptEmail.value).where("aptDay", "==", aptDay.value).where("aptTimeSlot", "==", aptTimeSlot.value).get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                if (aptEmail.value === doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
-                    pageWrapper.classList.add("blur-sm")
-                    prompts.classList.add("left-1/2")
-                    confirmPage.style.left = "-2000px"
-                    prompts.classList.remove("bg-emerald-500")
-                    prompts.style.transition = "0.5s ease-in-out"
-                    promptContent.innerText = "Do you wish to update the slot?"
-                    console.log(aptEmail.value, doc.data().aptEmail);
-                    console.log(aptDay.value, doc.data().aptDay);
-                    console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                }
-                else {
-                    if (aptEmail.value !== doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
-                        pageWrapper.classList.add("blur-sm")
-                        prompts.classList.add("left-1/2")
-                        confirmPage.style.left = "-2000px"
-                        prompts.style.transition = "0.5s ease-in-out"
-                        prompts.classList.remove("bg-emerald-500")
-                        promptContent.innerText = "Slot filled."
-                        console.log(aptEmail.value, doc.data().aptEmail);
-                        console.log(aptDay.value, doc.data().aptDay);
-                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                    }
-
-                    
-                    if (aptEmail.value === doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
-                        pageWrapper.classList.add("blur-sm")
-                        prompts.classList.add("left-1/2")
-                        prompts.style.transition = "0.5s ease-in-out"
-                        prompts.classList.remove("bg-emerald-500")
-                        confirmPage.style.left = "-2000px"
-                        promptContent.innerText = "Do you wish to update as user is already given a slot."
-                        console.log(aptEmail.value, doc.data().aptEmail);
-                        console.log(aptDay.value, doc.data().aptDay);
-                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                    }
-                    if (aptEmail.value !== doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
-                        // pageWrapper.classList.add("blur-sm")
-                        // prompts.classList.add("left-1/2")
-                        // prompts.style.transition = "0.5s ease-in-out"
-                        // prompts.classList.remove("bg-rose-600")
-                        // prompts.classList.add("bg-emerald-500")
-                        // promptContent.innerText = "Appointment created."
-                        confirmPage.style.transition = "0.5s ease-in-out"
-                        confirmPage.style.left = 0
-                        let firstName = aptFirstName.value
-                        let lastName = aptLastName.value
-                        confirmName.innerText = firstName + " " + lastName
-                        confirmEmail.innerText = aptEmail.value.trim()
-                        confirmMobileNumber.innerText = aptMobileNumber.value
-                        confirmDay.innerText = aptDay.value
-                        confirmTimeSlot.innerText = aptTimeSlot.value
-                        confirmAppointmentType.innerText = aptType.value
-                        confirmOccurrenceType.innerText = aptOccurrenceType.value
-                        confirmCategory.innerText = aptCategory.value
-                        console.log(aptEmail.value, doc.data().aptEmail);
-                        console.log(aptDay.value, doc.data().aptDay);
-                        console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                    }
-                }
-                // else if (aptEmail.value === doc.data().aptEmail) {
-                //     pageWrapper.classList.add("blur-sm")
-                //     prompts.classList.add("left-1/2")
-                //     prompts.style.transition = "0.5s ease-in-out"
-                //     promptContent.innerText = "Email already registered."
-                    
-                // }
-
-                // else if (aptEmail.value !== doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
-                //     pageWrapper.classList.add("blur-sm")
-                //     prompts.classList.add("left-1/2")
-                //     prompts.style.transition = "0.5s ease-in-out"
-                //     prompts.classList.remove("bg-emerald-500")
-                //     promptContent.innerText = "Slot filled."
-                //     console.log(aptEmail.value, doc.data().aptEmail);
-                //     console.log(aptDay.value, doc.data().aptDay);
-                //     console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                // }
-                    
-                // else if (aptEmail.value !== doc.data().aptEmail && aptDay.value !== doc.data().aptDay && aptTimeSlot.value !== doc.data().aptTimeSlot) {
-                //     pageWrapper.classList.add("blur-sm")
-                //     prompts.classList.add("left-1/2")
-                //     prompts.style.transition = "0.5s ease-in-out"
-                //     prompts.classList.remove("bg-rose-600")
-                //     prompts.classList.add("bg-emerald-500")
-                //     promptContent.innerText = "Appointment created."
-                //     console.log(aptEmail.value, doc.data().aptEmail);
-                //     console.log(aptDay.value, doc.data().aptDay);
-                //     console.log(aptTimeSlot.value, doc.data().aptTimeSlot);
-                // }
-                    
-                
-                
+                pageWrapper.classList.add("blur-sm")
+                prompts.classList.add("left-1/2")
+                prompts.style.transition = "0.5s ease-in-out"
+                promptContent.innerText = "Email already exists, do you wish to update their slot?"
             })
         })
+
+        db.collection("appointments").where("aptEmail", "!=", aptEmail.value).where("aptDay", "==", aptDay.value).where("aptTimeSlot", "==", aptTimeSlot.value).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                pageWrapper.classList.add("blur-sm")
+                prompts.classList.add("left-1/2")
+                prompts.style.transition = "0.5s ease-in-out"
+                promptContent.innerText = "Slot already filled"
+            })
+        })
+
+        db.collection("appointments").where("aptEmail", "!=", aptEmail.value).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                confirmPage.style.transition = "0.5s ease-in-out"
+                confirmPage.style.left = 0
+                let firstName = aptFirstName.value
+                let lastName = aptLastName.value
+                confirmName.innerText = firstName + " " + lastName
+                confirmEmail.innerText = aptEmail.value.trim()
+                confirmMobileNumber.innerText = aptMobileNumber.value
+                confirmDay.innerText = aptDay.value
+                confirmTimeSlot.innerText = aptTimeSlot.value.toString()
+                confirmFees.innerText = aptFees.value
+                confirmAppointmentType.innerText = aptType.value
+                confirmOccurrenceType.innerText = aptOccurrenceType.value
+                confirmCategory.innerText = aptCategory.value
+            })
+        })
+
+        
+
+        // db.collection("appointments").onSnapshot((querySnapshot) => {
+        //     querySnapshot.forEach((doc) => {
+
+        //         if (aptEmail.value === doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
+                
+        //             pageWrapper.classList.add("blur-sm")
+        //             prompts.classList.add("left-1/2")
+        //             prompts.style.transition = "0.5s ease-in-out"
+        //             promptContent.innerText = "Email already exists, do you wish to update their slot?"
+        //             console.log(aptEmail.value, doc.data().aptEmail);
+                    
+        //         }
+
+        //         if (aptEmail.value !== doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot) {
+                
+        //             pageWrapper.classList.add("blur-sm")
+        //             prompts.classList.add("left-1/2")
+        //             prompts.style.transition = "0.5s ease-in-out"
+        //             promptContent.innerText = "Slot already filled."
+        //             console.log(aptEmail.value, doc.data().aptEmail);
+                                
+        //         }
+
+        //         else {
+        //             confirmPage.style.transition = "0.5s ease-in-out"
+        //             confirmPage.style.left = 0
+        //             let firstName = aptFirstName.value
+        //             let lastName = aptLastName.value
+        //             confirmName.innerText = firstName + " " + lastName
+        //             confirmEmail.innerText = aptEmail.value.trim()
+        //             confirmMobileNumber.innerText = aptMobileNumber.value
+        //             confirmDay.innerText = aptDay.value
+        //             confirmTimeSlot.innerText = aptTimeSlot.value.toString()
+        //             confirmFees.innerText = aptFees.value
+        //             confirmAppointmentType.innerText = aptType.value
+        //             confirmOccurrenceType.innerText = aptOccurrenceType.value
+        //             confirmCategory.innerText = aptCategory.value
+        //         }
+
+                
+        //     })
+        // })
     }
+
+    // else  {
+                    
+    //     console.log(aptEmail.value, doc.data().aptEmail);
+    //     confirmPage.style.transition = "0.5s ease-in-out"
+    //     confirmPage.style.left = 0
+    //     let firstName = aptFirstName.value
+    //     let lastName = aptLastName.value
+    //     confirmName.innerText = firstName + " " + lastName
+    //     confirmEmail.innerText = aptEmail.value.trim()
+    //     confirmMobileNumber.innerText = aptMobileNumber.value
+    //     confirmDay.innerText = aptDay.value
+    //     confirmTimeSlot.innerText = aptTimeSlot.value
+    //     confirmFees.innerText = aptFees.value
+    //     confirmAppointmentType.innerText = aptType.value
+    //     confirmOccurrenceType.innerText = aptOccurrenceType.value
+    //     confirmCategory.innerText = aptCategory.value
+
+    // }
 }
 
 closePrompts.onclick = () => {
@@ -163,20 +165,21 @@ editButton.onclick = () => {
 }
 
 
-    confirmButton.onclick = () => {
-        
-        db.collection("appointments").add({
-            aptCategory: confirmCategory.innerText,
-            aptName: confirmName.innerText,
-            aptEmail: confirmEmail.innerText,
-            aptMobileNumber: confirmMobileNumber.innerText,
-            aptDay: confirmDay.innerText,
-            aptTimeSlot: confirmTimeSlot.innerText,
-            aptType: confirmAppointmentType.innerText,
-            aptOccurrenceType: confirmOccurrenceType.innerText,
-            aptFees: confirmFees.innerText,
-            serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
+confirmButton.onclick = () => {
+    db.collection("appointments").add({
+        aptCategory: confirmCategory.innerText,
+        aptName: confirmName.innerText,
+        aptEmail: confirmEmail.innerText,
+        aptMobileNumber: confirmMobileNumber.innerText,
+        aptDay: confirmDay.innerText,
+        aptTimeSlot: confirmTimeSlot.innerText,
+        aptType: confirmAppointmentType.innerText,
+        aptOccurrenceType: confirmOccurrenceType.innerText,
+        aptFees: confirmFees.innerText,
+        serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+    })
+        confirmPage.style.left = "-2000px"
+        confirmPage.style.transition = "0.5s ease-in-out"
         aptFirstName.value = ""
         aptLastName.value = ""
         aptEmail.value = ""
@@ -187,28 +190,5 @@ editButton.onclick = () => {
         aptCategory.selectedIndex = 0
         aptFees.value = ""
         aptOccurrenceType.value = ""
-        prompts.style.transition = "0.5s ease-in-out"
-        pageWrapper.classList.add("blur-sm")
-        prompts.classList.add("left-1/2")
-        prompts.classList.add("bg-emerald-500")
-        promptContent.innerText = "Appointment Created"
-        confirmPage.style.transition = "0.5s ease-in-out"
-        confirmPage.style.left = "-2000px"
     }
 
-
-// (() => { 
-//     let x = 10
-//     if (x < 20) {
-//         console.log("x is less than 200");
-//         return false
-//     }
-//     if (x === 200) {
-//         console.log("x is equal");
-//         return false
-//     }
-//     else {
-//         console.log("no result found");
-//     }
-
-// })()
