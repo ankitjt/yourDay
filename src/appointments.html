@@ -102,15 +102,15 @@
                   >
                 </div>
 
-                <!-- Start Date  -->
+                <!-- Day Slot  -->
                 <div
                   class="flex flex-col items-start mb-2 rounded-xl lg:px-4 lg:py-2 py-4 font-medium tracking-wider"
                 >
                   <span
-                    class="confirmStartDateTag text-[10px] text-blue-600 font-semibold"
+                    class="confirmDayTag text-[10px] text-blue-600 font-semibold"
                     >Start Date</span
                   >
-                  <span class="confirmStartDate text-xs mt-[1px]"
+                  <span class="confirmDay text-xs mt-[1px]"
                     ></span
                   >
                 </div>
@@ -362,16 +362,35 @@
                   />
                 </div>
 
-                <!-- Start Date  -->
+                <!-- Start Day  -->
                 <div class="mb-5">
-                  <input
-                    type="date"
-                    placeholder="Start Date"
-                    autocomplete="nope"
-                    name="aptStartDate"
-                    id="aptStartDate"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-4 aptStartDate lg:drop-shadow-none drop-shadow-2xl font-medium text-sm"
-                  />
+                  <select name="aptDay" id="aptDay"
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm">
+                    <option value="" class="font-semibold">
+                      Pick a day
+                    </option>
+                    <option value="Monday" class="font-semibold">
+                      Monday
+                    </option>
+                    <option value="Tuesday" class="font-semibold">
+                      Tuesday
+                    </option>
+                    <option value="Wednesday" class="font-semibold">
+                      Wednesday
+                    </option>
+                    <option value="Thursday" class="font-semibold">
+                      Thursday
+                    </option>
+                    <option value="Friday" class="font-semibold">
+                      Friday
+                    </option>
+                    <option value="Saturday" class="font-semibold">
+                      Saturday
+                    </option>
+                    <option value="Sunday" class="font-semibold">
+                      Sunday
+                    </option>
+                  </select>
                 </div>
 
                 <!-- Time slot -->
