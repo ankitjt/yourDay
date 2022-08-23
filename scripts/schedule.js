@@ -30,7 +30,7 @@ galleryViewIcon.onclick = () => {
       querySnapshot.forEach((doc) => {
         let appointmentPill = `
           <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md ${doc.data().aptType === "Session" ? 'bg-emerald-100' : 'bg-blue-100'} ${doc.data().aptType === "New" ? 'bg-rose-100': ''} border-l-8 ${doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600'} ${doc.data().aptType === "New" ? 'border-rose-600': ''} ${doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700'} ${doc.data().aptType === "New" ? 'text-rose-700': ''} mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+              class="1 p-3 lg:px-4 lg:py-3 rounded-md ${doc.data().aptType === "Session" ? 'bg-emerald-100' : 'bg-blue-100'} ${doc.data().aptType === "New" ? 'bg-rose-100': ''} border-l-8 ${doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600'} ${doc.data().aptType === "New" ? 'border-rose-600': ''} ${doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700'} ${doc.data().aptType === "New" ? 'text-rose-700': ''} mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-xl cursor-pointer"
             >
               <div class="details flex flex-col text-xs">
                 <div
