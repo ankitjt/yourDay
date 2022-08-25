@@ -19,13 +19,27 @@
     <div
       class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('../assets/schedule.webp')] lg:bg-[url('')] lg:flex"
     >
+
+      
       <!-- Only for Desktop -->
 
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/schedule.webp" alt="logo" class="h-screen" />
       </div>
 
-      <div class="scheduleWrapper lg:w-2/3 lg:overflow-x-hidden">
+      <div class="scheduleWrapper lg:w-3/5 lg:overflow-x-hidden relative">
+
+        <!-- Update Appointments Section -->
+        <div class="updateAppointments z-50 fixed w-full  h-82  lg:block hidden border-box top-0 -right-[2000px] lg:flex">
+          <div class="w-2/5 dummy"></div>
+          <div class="updateAppointmentWrapper w-3/5 bg-slate-200 px-10 py-4">
+            <h1 class="text-center font-semibold">Update Appointments</h1>
+            <div class="updateAppointmentsSection"></div>
+          </div>
+        </div>
+
+        <!-- Ends Update Appointments Section -->
+
         <!-- Navbar  -->
         <nav
           class="text-xs flex items-center justify-between px-6 py-6 lg:p-10 text-zinc-900"
@@ -84,7 +98,7 @@
 
           <!-- Schedule with a Gallery View (For Desktop + Mobile)  -->
           <section
-            class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2"
+            class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2 lg:hidden"
           >
             
 
@@ -153,7 +167,7 @@
 
           <!-- Schedule with a table view  -->
           <table
-            class="text-left text-xs border-collapse box-border lg:mx-2 lg:my-10  scheduleTableView hidden lg:hidden"
+            class="text-left text-xs border-collapse box-border lg:my-10  scheduleTableView hidden lg:table"
           >
             <thead class="px-10">
               <tr class="bg-blue-600">
