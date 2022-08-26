@@ -94,25 +94,25 @@
               class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize"
             >
               <span>Sessions</span>
-              <span class="totalSessionsCount">452</span>
+              <span class="totalSessionsCount"></span>
             </div>
             <div
               class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize"
             >
               <span>Supervision</span>
-              <span class="totalSupervisionCount">152</span>
+              <span class="totalSupervisionCount"></span>
             </div>
             <div
               class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize"
             >
               <span>Rescheduled</span>
-              <span class="totalRescheduledCount">43</span>
+              <span class="totalRescheduledCount"></span>
             </div>
             <div
               class="totalCancelled flex items-center justify-between capitalize"
             >
               <span>Cancelled</span>
-              <span class="totalCancelledCount">15</span>
+              <span class="totalCancelledCount"></span>
             </div>
           </div>
         </section>
@@ -132,18 +132,16 @@
           <!-- Report By Name Filter  -->
           <select
             name="reportByNameFilter"
-            id="monthList"
-            class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs mb-1 w-4/6 font-semibold lg:w-2/4"
+            id="reportByNameFilter"
+            class="reportByNameFilter rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs mb-1 w-4/6 font-semibold lg:w-2/4"
           >
-            <option value="selectName" class="font-semibold">
-              Select Name
-            </option>
-            <option value="John Doe" class="font-semibold">John Doe</option>
-            <option value="Jane Smith" class="font-semibold">Jane Smith</option>
+          <option value="Select" class="font-semibold">Select</option>
           </select>
 
           <!-- Reports By Name section  -->
+          
           <div class="reportByName">
+
             <!-- Profile Section  -->
             <div
               class="reportsByNameSections text-blue-600 my-4 bg-blue-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out w-full"
@@ -180,14 +178,14 @@
               >
                 <div class="profileName flex items-center justify-between my-3">
                   <span class="nameTag">Name</span>
-                  <span class="name ml-2 tracking-widest">John Doe</span>
+                  <span class="name ml-2 tracking-widest">NA</span>
                 </div>
                 <div
                   class="profileEmail flex items-center justify-between my-3"
                 >
                   <span class="emailTag">Email</span>
                   <span class="email ml-2 tracking-widest"
-                    >johndoe@gmail.com</span
+                    >NA</span
                   >
                 </div>
                 <div
@@ -195,30 +193,36 @@
                 >
                   <span class="mobileTag">Mobile</span>
                   <span class="mobileNumber ml-2 tracking-widest"
-                    >+91-1234567890</span
+                    >NA</span
                   >
                 </div>
                 <div
                   class="profileStartDate flex items-center justify-between my-3"
                 >
-                  <span class="startDateTag">Start Date</span>
-                  <span class="startDate ml-2 tracking-widest">27/07/2022</span>
+                  <span class="createDateTag">Create Date</span>
+                  <span class="createDate ml-2 tracking-widest">NA</span>
                 </div>
                 <div class="profileFee flex items-center justify-between my-3">
                   <span class="feeTag">Fee</span>
-                  <span class="fee ml-2 tracking-widest">1500</span>
+                  <span class="fee ml-2 tracking-widest">NA</span>
                 </div>
                 <div
                   class="profileCategory flex items-center justify-between my-3"
                 >
                   <span class="categoryTag">Category</span>
-                  <span class="category ml-2 tracking-widest">Session</span>
+                  <span class="category ml-2 tracking-widest">NA</span>
                 </div>
                 <div
-                  class="profileCategory flex items-center justify-between my-3"
+                  class="profileOccurrence flex items-center justify-between my-3"
                 >
-                  <span class="categoryTag">Occurrence ( per week )</span>
-                  <span class="category ml-2">1</span>
+                  <span class="occurrenceTag">Occurrence ( per week )</span>
+                  <span class="occurrence ml-2">NA</span>
+                </div>
+                <div
+                  class="profileSlot flex items-center justify-between my-3"
+                >
+                  <span class="slotTag">Slot</span>
+                  <span class="slot ml-2">NA</span>
                 </div>
               </section>
             </div>
@@ -312,7 +316,8 @@
         <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
       </div>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/reports.js"></script>
   </body>
 </html>

@@ -71,6 +71,7 @@
 
         <!-- Notes Taking section  -->
         <div class="pageWrapper">
+
           <!-- Dropdown of names for notes  -->
           <div class="namesForNotes ptNotes mt-5 w-full text-xs">
             <h3 class="font-semibold text-blue-600">Select Name:</h3>
@@ -78,10 +79,9 @@
           <select
             name="ptNotes"
             id=""
-            class="text-xs text-blue-600 mt-2 w-1/2 rounded-md border-2 border-gray-200 font-semibold"
+            class="patientList text-xs text-blue-600 mt-2 w-1/2 rounded-md border-2 border-gray-200 font-semibold"
           >
-            <option value="johnDoe" class="font-semibold">John Doe</option>
-            <option value="janeSmith" class="font-semibold">Jane Smith</option>
+            <option value="Select" class="font-semibold">Select</option>
           </select>
 
           <!-- Existing Uploaded notes table  -->
@@ -186,6 +186,8 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/notes.js"></script>
   </body>
 </html>
