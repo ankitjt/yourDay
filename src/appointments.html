@@ -12,7 +12,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <!-- <link rel="stylesheet" href="../dist/output.css"> -->
   </head>
 
   <body>
@@ -28,11 +27,10 @@
         />
       </div>
 
-      <div
-        class="appointmentWrapper px-6 lg:grow lg:p-8 relative lg:overflow-x-hidden"
-      >
+      <div class="appointmentWrapper px-6 lg:grow lg:p-8 relative lg:overflow-x-hidden">
+
         <!-- Confirm Page -->
-        <section
+        <sections
           class="confirmPage z-50 absolute h-screen w-screen lg:w-full lg:h-full top-0 bg-emerald-500 -left-[2000px] py-2 lg:px-20 lg:py-10 flex lg:justify-between items-center flex-col px-10"
         >
           <!-- Confirm Page Navbar -->
@@ -198,7 +196,7 @@
               </a>
             </div>
           </div>
-        </section>
+        </sections>
 
         <!-- ***** ***** ***** ***** Ends Confirm Page section ***** ***** ***** ***** -->
 
@@ -251,7 +249,7 @@
         <div class="pageWrapper pb-6">
 
           <!-- Total Count -->
-          <section
+          <!-- <section
             class="lg:mt-10 my-5 flex items-center justify-between lg:justify-evenly lg:w-full text-slate-50"
           >
             <div
@@ -261,17 +259,17 @@
               <span class="completedCount text-xl font-semibold">31</span>
             </div>
             <div
-              class="pending flex flex-row lg:justify-between justify-evenly items-center bg-rose-600 lg:px-10 py-2 lg:py-3 w-[150px] lg:w-2/6 rounded-md"
+              class="scheduled flex flex-row lg:justify-between justify-evenly items-center bg-rose-600 lg:px-10 py-2 lg:py-3 w-[150px] lg:w-2/6 rounded-md"
             >
               <span class="pending text-sm">Pending</span>
               <span class="pendingCount text-xl font-semibold">09</span>
             </div>
-          </section>
+          </section> -->
 
           <!-- ***** ***** ***** ***** Ends Total Count section ***** ***** ***** ***** -->
 
           <!-- Create Appointments -->
-          <section class="mt-5">
+          <section class="mt-20">
             <!-- Create Appointment Form -->
             <div
               class="font-semibold text-blue-900 mt-5 lg:mt-10 lg:px-10 createAptForm"
@@ -285,16 +283,16 @@
                 <!-- Patient Category  -->
                 <div class="mb-5">
                   <select name="patientCategory" id="patientCategory"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4  aptCategory lg:drop-shadow-none drop-shadow-2xl text-sm">
-                    <option value="" class="font-semibold">
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-4  aptCategory lg:drop-shadow-none drop-shadow-2xl text-sm bg-gray-300">
+                    <!-- <option value="" class="font-semibold" disabled>
                       Category
-                    </option>
-                    <option value="New" class="font-semibold">
+                    </option> -->
+                    <option value="New" class="font-semibold" selected>
                       New
                     </option>
-                    <option value="Existing" class="font-semibold">
+                    <!-- <option value="Existing" class="font-semibold">
                       Existing
-                    </option>
+                    </option> -->
                   </select>
               </div>
 
@@ -450,7 +448,7 @@
                   />
                 </div>
               </div>
-              <div class="appointmentButtonWrapper lg:flex px-2 lg:mt-1">
+              <div class="appointmentButtonWrapper lg:flex px-2 lg:mt-10">
                 <button
                   class="bg-blue-700 ml-2 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn"
                 >
