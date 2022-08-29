@@ -61,14 +61,13 @@
           <span class="tracking-widest font-semibold uppercase">Schedule</span>
         </nav>
 
-        <div
-          class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-6"
-        >
-          <!-- Schedule View Style (For Desktop only)  -->
-          <div
-            class="scheduleViewType lg:flex lg:items-center hidden lg:border-b-2 border-gray-200 lg:pb-2"
-          >
-            <div class="tableViewIcon flex mr-5 items-center cursor-pointer px-2 py-1 rounded-md">
+        <!-- Table Icons (For Desktop only)  -->
+        <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-6">
+
+          <div class="scheduleViewType lg:flex lg:items-center hidden ">
+
+            <!-- Update Table Icons-->
+            <div class="updateViewIcon flex mr-5 items-center cursor-pointer px-3 py-2 rounded-md bg-blue-100">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-blue-700">
                 <path
                   d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
@@ -93,8 +92,9 @@
               <span class="something text-xs ml-1 font-semibold text-blue-600">Card View</span>
             </div> -->
 
-            <div class="completedViewIcon flex items-center cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-emerald-500 ">
+            <!-- Completed Table Icons  -->
+            <div class="completedViewIcon flex items-center cursor-pointer px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-emerald-500 ">
                 <path fill-rule="evenodd"
                   d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
                   clip-rule="evenodd" />
@@ -103,8 +103,9 @@
 
             </div>
 
-            <div class="completedViewIcon flex items-center ml-5 cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6 text-red-500">
+            <!-- Cancelled Table Icons  -->
+            <div class="cancelledViewIcon flex items-center ml-5 cursor-pointer px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 text-red-500">
                 <path fill-rule="evenodd"
                   d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
                   clip-rule="evenodd" />
@@ -115,84 +116,27 @@
 
           </div>
 
-          <!-- ***** ***** ***** ***** Ends Schedule View Style section ***** ***** ***** ***** -->
+          <!-- ***** ***** ***** ***** Ends Table Icons ***** ***** ***** ***** -->
 
-          <!-- Schedule with a Gallery View (For Desktop + Mobile)  -->
+          <!-- Schedule with a Gallery View (Mobile)  -->
           <section
             class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2 lg:hidden"
           >
             
-
-            <!-- For Review (New) -->
-            <!-- <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-rose-100 border-l-8 border-rose-600 text-rose-700 mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl"
-            >
-              <div class="details flex flex-col justify-center text-xs">
-                <div class="details-wrapper flex flex-col justify-center">
-                  <div
-                    class="timeAndDate flex justify-between items-center font-black"
-                  >
-                    <span class="time flex items-center justify-between">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-3 w-3 mr-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <span class="clockDetails tracking-wider">
-                        10:00 - 11:00
-                      </span>
-                    </span>
-                    <span class="date tracking-wider"> 26:07:2022 </span>
-                  </div>
-                  <div class="ptName flex mt-2 items-center justify-between">
-                    <div class="ptName-wrapper flex items-center">
-                      <span class="name font-semibold mr-2"> John Doe </span>
-                      <span class="aptDetails flex items-center">
-                        <span
-                          class="aptType text-emerald-50 tracking-wider font-medium bg-rose-700 px-2 py-1 rounded-full"
-                        >
-                          N
-                        </span>
-                      </span>
-                    </div>
-                     Edit  
-                    <div class="editAppointments">
-                      <svg
-                        capitalize="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-
           </section>
 
           <!-- ***** ***** ***** ***** Ends Schedule with a Gallery View section ***** ***** ***** ***** -->
 
-          <!-- Schedule with a table view  -->
+          <!-- Table Views  with Data-->
           <div class="tableViewWrapper w-full relative">
+
             <div id="loader" class="center"><iframe
                 src="https://giphy.com/embed/bhNf6JJLcFhe0" width="50%" height="50%" style="position:absolute" frameBorder="0"
                 class="giphy-embed" allowFullScreen></iframe></div>
+
+            <!-- Update Table  -->
             <table
-              class="text-left text-xs border-collapse box-border lg:my-10  scheduleTableView hidden lg:table lg:w-full"
+              class="text-left text-xs border-collapse box-border lg:my-10  updateTableView hidden lg:table lg:w-full"
             >
               <thead class="px-10">
                 <tr class="bg-blue-600">
@@ -232,10 +176,72 @@
               
               </tbody>
             </table>
+
+            <!-- Completed Table  -->
+
+            <table class="text-left text-xs border-collapse box-border lg:my-10  completedTableView hidden lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Time
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Day
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Actionnn
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="completedTableViewRows px-10">
+            
+              </tbody>
+            </table>
+
+            <!-- Cancelled Table  -->
+            
+            <table class="text-left text-xs border-collapse box-border lg:my-10  cancelledTableView hidden lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Time
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Day
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="cancelledTableViewRows px-10">
+            
+              </tbody>
+            </table>
+            
           </div>
 
           <!-- ***** ***** ***** ***** Ends Schedule with a Table View section ***** ***** ***** ***** -->
-        </div>
+
+    
       </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
