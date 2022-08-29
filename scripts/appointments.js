@@ -54,7 +54,8 @@ createAptBtn.onclick = () => {
         db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
         {
             querySnapshot.forEach( ( doc ) =>
-            {
+            {   
+                console.log(doc.id);
                 if ( aptEmail.value === doc.data().aptEmail && aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot )
                 {
                     pageWrapper.classList.add("blur-sm")
@@ -138,6 +139,7 @@ confirmButton.onclick = () =>
         aptType: confirmAppointmentType.innerText,
         aptOccurrenceType: confirmOccurrenceType.innerText,
         aptFees: confirmFees.innerText,
+        appointmentStatus: "Scheduled",
         serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
     })
         
