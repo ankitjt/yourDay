@@ -126,129 +126,136 @@ cancelledViewIcon.onclick = () =>
 // } )();
 
 // For Update table view {Page Load}
-    
+
 ( () =>
 {
-  db.collection('appointments')
-    .where('appointmentStatus', '==', 'Scheduled')
+  db.collection( 'appointments' )
+    .where('appointmentStatus', 'in', ['Scheduled', 'Updated'])
     .get()
-    .then((querySnapshot) => {
-      let tableRowsToDelete = document.querySelectorAll('.tableRow12')
-      for (let rowsToDelete of tableRowsToDelete) {
-        rowsToDelete.remove()
-      }
+    .then( ( querySnapshot ) =>
+    {
+      rowsToDelete()
+      
       querySnapshot.forEach((doc) => {
-        let tableView = `
-          <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${
-            doc.id
-          }">
-                   <td class="py-3  text-xs px-5 font-semibold">
-                     ${doc.data().aptName}
-                   </td>
-                   <td class="py-3  text-xs px-5 font-semibold">
-                     ${doc.data().aptTimeSlot}
-                   </td>
-                   <td class="py-3  text-xs px-5 font-semibold">
-                     ${doc.data().aptDay}
-                   </td>
-                   <td class="py-3  text-xs px-5 font-semibold">
-                     ${doc.data().aptType}
-                   </td>
-                   <td class="py-3  text-xs px-5 font-semibold">
-                   
-                     <div class="${
-                       doc.data().appointmentStatus === 'Completed'
-                         ? 'block'
-                         : 'hidden'
-                     }">
-                       <span class="text-emerald-500">
-                         ${
-                           doc.data().appointmentStatus === "Scheduled"
-                             ? 'Scheduled'
-                             : doc.data().appointmentStatus
-                         }
-                       </span>
-                     </div>
-                     <div class="${
-                       doc.data().appointmentStatus === 'Cancelled'
-                         ? 'block'
-                         : 'hidden'
-                     }">
-                       <span class="text-red-500">
-                         ${
-                           doc.data().appointmentStatus === undefined
-                             ? 'Scheduled'
-                             : doc.data().appointmentStatus
-                         }
-                       </span>
-                     </div>
-                     <div class="${
-                       doc.data().appointmentStatus === 'Updated'
-                         ? 'block'
-                         : 'hidden'
-                     }">
-                       <span class="text-amber-500">
-                         ${
-                           doc.data().appointmentStatus === undefined
-                             ? 'Scheduled'
-                             : doc.data().appointmentStatus
-                         }
-                       </span>
-                     </div>
-                     <div class="${
-                       doc.data().appointmentStatus === "Scheduled"
-                         ? 'block'
-                         : 'hidden'
-                     }">
-                       <span>
-                         ${
-                           doc.data().appointmentStatus === undefined
-                             ? 'Scheduled'
-                             : doc.data().appointmentStatus
-                         }
-                       </span>
-                     </div>
-                   </td>
-                   <td class="py-3 text-xs px-5 font-semibold">
-                     <select name="appointmentActions" id="appointmentActions"
-                       class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-sm">
-                       <option value="Action" class="font-semibold">
-                         Action
-                       </option>
-                       <option value="Completed" class="font-semibold">
-                         Completed
-                       </option>
-                       <option value="Cancelled" class="font-semibold">
-                         Cancelled
-                       </option>
-                       <option value="Updated" class="font-semibold">
-                         Edit/Update
-                       </option>
-                     </select>
-                   </td>
-                 </tr>
-              
-           `
-        updateTableViewRows.innerHTML += tableView
+        
+      let tableView = `
+              <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${
+                doc.id
+              }">
+                      <td class="py-3  text-xs px-5 font-semibold">
+                        ${doc.data().aptName}
+                      </td>
+                      <td class="py-3  text-xs px-5 font-semibold">
+                        ${doc.data().aptDay} / ${doc.data().aptTimeSlot}
+                      </td>
+                      <td class="py-3  text-xs px-5 font-semibold">
+                        ${doc.data().aptType}
+                      </td>
 
-        let aptActions = document.querySelectorAll('.aptActions')
+                      <!-- Status -->
+                      <td class="py-3  text-xs px-5 font-semibold">
+                      
+                        <div class="${
+                          doc.data().appointmentStatus === 'Completed'
+                            ? 'block'
+                            : 'hidden'
+                        }">
+                          <span class="text-emerald-500">
+                            ${
+                              doc.data().appointmentStatus === "Scheduled"
+                                ? 'Scheduled'
+                                : doc.data().appointmentStatus
+                            }
+                          </span>
+                        </div>
+                        <div class="${
+                          doc.data().appointmentStatus === 'Cancelled'
+                            ? 'block'
+                            : 'hidden'
+                        }">
+                          <span class="text-red-500">
+                            ${
+                              doc.data().appointmentStatus === undefined
+                                ? 'Scheduled'
+                                : doc.data().appointmentStatus
+                            }
+                          </span>
+                        </div>
+                        <div class="${
+                          doc.data().appointmentStatus === 'Updated'
+                            ? 'block'
+                            : 'hidden'
+                        }">
+                          <span class="text-amber-500">
+                            ${
+                              doc.data().appointmentStatus === undefined
+                                ? 'Scheduled'
+                                : doc.data().appointmentStatus
+                            }
+                          </span>
+                        </div>
+                        <div class="${
+                          doc.data().appointmentStatus === "Scheduled"
+                            ? 'block'
+                            : 'hidden'
+                        }">
+                          <span>
+                            ${
+                              doc.data().appointmentStatus === undefined
+                                ? 'Scheduled'
+                                : doc.data().appointmentStatus
+                            }
+                          </span>
+                        </div>
+                      </td>
+                      <td class="py-3 text-xs px-5 font-semibold">
+                        <select name="appointmentActions" id="appointmentActions"
+                          class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-sm">
+                          <option value="Action" class="font-semibold">
+                            Action
+                          </option>
+                          <option value="Completed" class="font-semibold">
+                            Completed
+                          </option>
+                          <option value="Cancelled" class="font-semibold">
+                            Cancelled
+                          </option>
+                          <option value="Updated" class="font-semibold">
+                            Edit/Update
+                          </option>
+                        </select>
+                      </td>
+                    </tr>
+                  
+              `
+        updateTableViewRows.innerHTML += tableView
+         
+        appointmentsToUpdate()
+        
+      })
+    })
+} )();
+
+const appointmentsToUpdate = () =>
+{
+  let aptActions = document.querySelectorAll('.aptActions')
         for (let i = 0; i < aptActions.length; i++) {
           aptActions[i].onchange = () => {
+            
             let selectedRow = aptActions[i].parentElement.parentElement
             let rowId = selectedRow.getAttribute('data-id')
             let dbPath = db.collection('appointments').doc(rowId)
+            let ask = 'Do you confirm to update?'
 
             if (aptActions[i].value === 'Completed') {
-              let ask = 'Do you confirm to update?'
               if (confirm(ask) === true) {
                 dbPath.update({
                   appointmentStatus: 'Completed',
-                })
+                } )
               } else {
                 aptActions[i].selectedIndex = 0
               }
             } else if (aptActions[i].value === 'Cancelled') {
-              let ask = 'Do you confirm to update?'
               if (confirm(ask) === true) {
                 dbPath.update({
                   appointmentStatus: 'Cancelled',
@@ -260,7 +267,8 @@ cancelledViewIcon.onclick = () =>
               updateAppointments.style.transition = '0.5s ease-in-out'
               updateAppointments.style.right = 0
               dbPath.get().then((doc) => {
-                if (doc.exists) {
+                if ( doc.exists )
+                {
                   let updateForm = `
                        <div class="updateFormWrapper grid grid-cols-2 gap-y-3 gap-x-10 mt-10">
    
@@ -405,10 +413,15 @@ cancelledViewIcon.onclick = () =>
             }
           }
         }
-      })
-    })
-} )();
+}
 
+const rowsToDelete = () =>
+{
+  let tableRowsToDelete = document.querySelectorAll('.tableRow12')
+      for (let rowsToDelete of tableRowsToDelete) {
+        rowsToDelete.remove()
+      }
+}
 // Completed Table View 
 const showCompletedTableData = () =>
 {
@@ -489,12 +502,13 @@ const showCompletedTableData = () =>
                let selectedRow = aptActions[ i ].parentElement.parentElement
                let rowId = selectedRow.getAttribute( "data-id" )
                let dbPath = db.collection( "appointments" ).doc( rowId )
-   
+                let ask = "Do you confirm to update?"
                if ( aptActions[ i ].value === "Completed" )
                {
-                 let ask  = "Do you confirm to update?"
+                 
                  if ( confirm( ask ) === true )
                  {
+                   location.reload()
                    dbPath.update( {
                      appointmentStatus:"Completed"
                    } )
@@ -507,12 +521,13 @@ const showCompletedTableData = () =>
    
                else if ( aptActions[ i ].value === "Cancelled" )
                {
-                 let ask  = "Do you confirm to update?"
+                 
                  if ( confirm( ask ) === true )
                  {
                    dbPath.update( {
                      appointmentStatus:"Cancelled"
                    } )
+                  
                  }
                  else
                  {
@@ -662,6 +677,7 @@ const showCompletedTableData = () =>
                }
                
              }
+             
            }
           })
         } )
@@ -740,7 +756,8 @@ const showCancelledTableData = () =>
            `
             cancelledTableViewRows.innerHTML += tableView123
             
-           let aptActions = document.querySelectorAll( ".aptActions" )
+            let aptActions = document.querySelectorAll( ".aptActions" )
+            let ask = "Do you wish to update?"
            for ( let i = 0; i < aptActions.length; i++ )
            {
              aptActions[ i ].onchange = () =>
@@ -751,17 +768,20 @@ const showCancelledTableData = () =>
    
                if ( aptActions[ i ].value === "Completed" )
                {
-                 let ask  = "Do you confirm to update?"
+                 
                  if ( confirm( ask ) === true )
                  {
+                   
                    dbPath.update( {
                      appointmentStatus:"Completed"
                    } )
+                   location.reload()
                  }
                  else
                  {
                    aptActions[i].selectedIndex = 0
                  }
+                 
                }
    
                else if ( aptActions[ i ].value === "Cancelled" )
