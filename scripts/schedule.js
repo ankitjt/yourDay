@@ -11,19 +11,6 @@ let scheduleGalleryView = document.querySelector('.scheduleGalleryView'),
   cancelledTableView = document.querySelector('.cancelledTableView'),
   completedTableViewRows = document.querySelector('.completedTableViewRows'),
   cancelledTableViewRows = document.querySelector('.cancelledTableViewRows')
-  
-
-
-  firebase.initializeApp({
-          apiKey: "AIzaSyBP_xYkTozmmX7K5b9lO_5LPcI1LLoxxFw",
-          authDomain: "yourday-3fcd8.firebaseapp.com",
-          projectId: "yourday-3fcd8",
-          storageBucket: "yourday-3fcd8.appspot.com",
-          messagingSenderId: "216062777762",
-          appId: "1:216062777762:web:0470a736d1cd2e8ea57afb"
-        });
-  
-const db = firebase.firestore()
 
 updateViewIcon.onclick = () => {
   scheduleGalleryView.classList.add( "lg:hidden" )
@@ -137,7 +124,7 @@ cancelledViewIcon.onclick = () =>
       rowsToDelete()
       
       querySnapshot.forEach((doc) => {
-        
+      let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
       let tableView = `
               <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${
                 doc.id
@@ -146,7 +133,7 @@ cancelledViewIcon.onclick = () =>
                         ${doc.data().aptName}
                       </td>
                       <td class="py-3  text-xs px-5 font-semibold">
-                        ${doc.data().aptDay} / ${doc.data().aptTimeSlot}
+                        ${doc.data().aptDay} <br /> ${doc.data().aptTimeSlot}
                       </td>
                       <td class="py-3  text-xs px-5 font-semibold">
                         ${doc.data().aptType}
@@ -155,6 +142,7 @@ cancelledViewIcon.onclick = () =>
                       <!-- Status -->
                       <td class="py-3  text-xs px-5 font-semibold">
                       
+                      <div class="appointmentStatus">
                         <div class="${
                           doc.data().appointmentStatus === 'Completed'
                             ? 'block'
@@ -207,6 +195,11 @@ cancelledViewIcon.onclick = () =>
                             }
                           </span>
                         </div>
+                        
+                      </div>
+                      <div class="statusUpdateTime"> 
+                        <span class="text-[10px] text-gray-900"> (on ${doc.data().statusUpdatedTimeStamp.seconds === undefined ? 'NA' : myData.toDateString()} ) </span>
+                      </div>
                       </td>
                       <td class="py-3 text-xs px-5 font-semibold">
                         <select name="appointmentActions" id="appointmentActions"
@@ -251,6 +244,7 @@ const appointmentsToUpdate = () =>
               if (confirm(ask) === true) {
                 dbPath.update({
                   appointmentStatus: 'Completed',
+                  statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                 } )
               } else {
                 aptActions[i].selectedIndex = 0
@@ -259,6 +253,7 @@ const appointmentsToUpdate = () =>
               if (confirm(ask) === true) {
                 dbPath.update({
                   appointmentStatus: 'Cancelled',
+                  statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                 })
               } else {
                 aptActions[i].selectedIndex = 0
@@ -396,6 +391,7 @@ const appointmentsToUpdate = () =>
                       aptTimeSlot: timeSlotUpdateHolder.value,
                       aptOccurrenceType: occurrenceUpdateHolder.value,
                       appointmentStatus: 'Updated',
+                      statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                     })
 
                     updateAppointments.style.right = '-2000px'
@@ -451,26 +447,33 @@ const showCompletedTableData = () =>
                      ${doc.data().aptType}
                    </td>
                    <td class="py-3  text-xs px-5 font-semibold">
-                     <div class="${doc.data().appointmentStatus === "Completed" ? "block" : "hidden"}">
-                       <span class="text-emerald-500">
-                         ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
-                       </span>
-                     </div>
-                     <div class="${doc.data().appointmentStatus === "Cancelled" ? "block" : "hidden"}">
-                       <span class="text-red-500">
-                         ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
-                       </span>
-                     </div>
-                     <div class="${doc.data().appointmentStatus === "Updated" ? "block" : "hidden"}">
-                       <span class="text-amber-500">
-                         ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
-                       </span>
-                     </div>
-                     <div class="${doc.data().appointmentStatus === undefined ? "block" : "hidden"}">
-                       <span>
-                         ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
-                       </span>
-                     </div>
+                      <div class="appointmentStatus">
+                        <div class="${doc.data().appointmentStatus === "Completed" ? "block" : "hidden"}">
+                          <span class="text-emerald-500">
+                            ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
+                          </span>
+                        </div>
+                        <div class="${doc.data().appointmentStatus === "Cancelled" ? "block" : "hidden"}">
+                          <span class="text-red-500">
+                            ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
+                          </span>
+                        </div>
+                        <div class="${doc.data().appointmentStatus === "Updated" ? "block" : "hidden"}">
+                          <span class="text-amber-500">
+                            ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
+                          </span>
+                        </div>
+                        <div class="${doc.data().appointmentStatus === undefined ? "block" : "hidden"}">
+                          <span>
+                            ${doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus}
+                          </span>
+                          </div>
+                      </div>
+
+                      <div class="statusUpdateTime"> 
+                        <span class="text-xs">${doc.data().statusUpdatedTimeStamp} </span>
+                      </div>
+                     
                    </td>
                    <td class="py-3 text-xs px-5 font-semibold">
                      <select name="appointmentActions" id="appointmentActions"
@@ -510,7 +513,8 @@ const showCompletedTableData = () =>
                  {
                    location.reload()
                    dbPath.update( {
-                     appointmentStatus:"Completed"
+                     appointmentStatus: "Completed",
+                     statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                    } )
                  }
                  else
@@ -525,7 +529,8 @@ const showCompletedTableData = () =>
                  if ( confirm( ask ) === true )
                  {
                    dbPath.update( {
-                     appointmentStatus:"Cancelled"
+                     appointmentStatus: "Cancelled",
+                     statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                    } )
                   
                  }
@@ -656,7 +661,8 @@ const showCompletedTableData = () =>
                          aptDay: dayUpdateHolder.value,
                          aptTimeSlot: timeSlotUpdateHolder.value,
                          aptOccurrenceType: occurrenceUpdateHolder.value,
-                         appointmentStatus:"Updated"
+                         appointmentStatus: "Updated",
+                         statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                        } )
    
                        updateAppointments.style.right = "-2000px"
@@ -773,7 +779,8 @@ const showCancelledTableData = () =>
                  {
                    
                    dbPath.update( {
-                     appointmentStatus:"Completed"
+                     appointmentStatus: "Completed",
+                     statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                    } )
                    location.reload()
                  }
@@ -790,7 +797,8 @@ const showCancelledTableData = () =>
                  if ( confirm( ask ) === true )
                  {
                    dbPath.update( {
-                     appointmentStatus:"Cancelled"
+                     appointmentStatus: "Cancelled",
+                     statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                    } )
                  }
                  else
@@ -920,7 +928,8 @@ const showCancelledTableData = () =>
                          aptDay: dayUpdateHolder.value,
                          aptTimeSlot: timeSlotUpdateHolder.value,
                          aptOccurrenceType: occurrenceUpdateHolder.value,
-                         appointmentStatus:"Updated"
+                         appointmentStatus: "Updated",
+                         statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
                        } )
    
                        updateAppointments.style.right = "-2000px"
