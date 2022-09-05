@@ -35,7 +35,10 @@ let aptName = document.querySelector( '.aptName' ),
   firstStartDate = document.querySelector( '.firstStartDate' ),
   firstStartDateWrapper = document.querySelector( '.firstStartDateWrapper' ),
   firstTimeSlotWrapper = document.querySelector( '.firstTimeSlotWrapper' ),
-  firstTimeSlot = document.querySelector( '.firstTimeSlot' )
+  firstTimeSlot = document.querySelector( '.firstTimeSlot' ),
+  confirmSecondStartDate = document.querySelector(".confirmSecondStartDate"),
+  confirmSecondDay = document.querySelector(".confirmSecondDay"),
+  confirmSecondTimeSlot = document.querySelector(".confirmSecondTimeSlot")
 
 createAptBtn.onclick = () =>
 {
