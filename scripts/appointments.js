@@ -36,37 +36,37 @@ let aptName = document.querySelector( '.aptName' ),
   firstStartDateWrapper = document.querySelector( '.firstStartDateWrapper' ),
   firstTimeSlotWrapper = document.querySelector( '.firstTimeSlotWrapper' ),
   firstTimeSlot = document.querySelector( '.firstTimeSlot' ),
-  confirmSecondStartDate = document.querySelector(".confirmSecondStartDate"),
-  confirmSecondDay = document.querySelector(".confirmSecondDay"),
-  confirmSecondTimeSlot = document.querySelector(".confirmSecondTimeSlot")
+  confirmSecondStartDate = document.querySelector( ".confirmSecondStartDate" ),
+  confirmSecondDay = document.querySelector( ".confirmSecondDay" ),
+  confirmSecondTimeSlot = document.querySelector( ".confirmSecondTimeSlot" )
 
 createAptBtn.onclick = () =>
 {
-  // if (
-  //   aptCategory.value === '' ||
-  //   aptType.value === '' ||
-  //   aptName.value === '' ||
-  //   aptStartDate.value === '' ||
-  //   aptEmail.value === '' ||
-  //   aptMobileNumber.value === '' ||
-  //   aptDay.value === '' ||
-  //   aptTimeSlot.value === '' ||
-  //   aptOccurrenceType.value === '' ||
-  //   aptFees.value === ''
-  // )  
-  if ( aptOccurrenceType.value === '' )
+  if (
+    aptCategory.value === '' ||
+    aptType.value === '' ||
+    aptName.value === '' ||
+    aptStartDate.value === '' ||
+    aptEmail.value === '' ||
+    aptMobileNumber.value === '' ||
+    aptDay.value === '' ||
+    aptTimeSlot.value === '' ||
+    aptOccurrenceType.value === '' ||
+    aptFees.value === ''
+  )  
+  
   {
 
     pageWrapper.classList.add( 'blur-sm' )
     prompts.classList.add( 'left-1/2' )
     prompts.style.transition = '0.5s ease-in-out'
     promptContent.innerText = 'All fields required.'
-  
+
   }
 
   else if ( aptCategory.value === 'New' )
   {
-    
+
     db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
     {
 
@@ -95,7 +95,7 @@ createAptBtn.onclick = () =>
           prompts.style.transition = '0.5s ease-in-out'
           promptContent.innerText = 'Email already in use !!!'
           confirmPage.style.left = '-2000px'
-        
+
         }
         else if (
           aptEmail.value !== doc.data().aptEmail &&
@@ -109,7 +109,7 @@ createAptBtn.onclick = () =>
           prompts.style.transition = '0.5s ease-in-out'
           promptContent.innerText = 'Slot is already filled.'
           confirmPage.style.left = '-2000px'
-       
+
         }
         else if ( aptOccurrenceType.value === '2' )
         {
@@ -117,25 +117,25 @@ createAptBtn.onclick = () =>
           forSecondOccurrenceType()
 
         }
-        else
-        {
 
-          confirmName.innerText = aptName.value.trim()
-          confirmEmail.innerText = aptEmail.value.trim()
-          confirmMobileNumber.innerText = aptMobileNumber.value
-          confirmStartDate.innerText = aptStartDate.value
-          confirmDay.innerText = aptDay.value
-          confirmTimeSlot.innerText = aptTimeSlot.value.toString()
-          confirmFees.innerText = aptFees.value
-          confirmAppointmentType.innerText = aptType.value
-          confirmOccurrenceType.innerText = aptOccurrenceType.value
-          confirmCategory.innerText = aptCategory.value
-          confirmPage.style.transition = '0.5s ease-in-out'
-          confirmPage.style.left = 0
-
-        }
       } )
     } )
+    console.log(aptStartDate.value);
+    confirmName.innerText = aptName.value.trim()
+    confirmEmail.innerText = aptEmail.value.trim()
+    confirmMobileNumber.innerText = aptMobileNumber.value
+    confirmStartDate.innerText = aptStartDate.value.toString()
+    confirmSecondStartDate.innerText = "NA"
+    confirmDay.innerText = aptDay.value
+    confirmSecondDay.innerText = "NA"
+    confirmTimeSlot.innerText = aptTimeSlot.value.toString()
+    confirmSecondTimeSlot.innerText = "NA"
+    confirmFees.innerText = aptFees.value
+    confirmAppointmentType.innerText = aptType.value
+    confirmOccurrenceType.innerText = aptOccurrenceType.value
+    confirmCategory.innerText = aptCategory.value
+    confirmPage.style.transition = '0.5s ease-in-out'
+    confirmPage.style.left = 0
 
 
   }
@@ -143,7 +143,7 @@ createAptBtn.onclick = () =>
 
 const forSecondOccurrenceType = () =>
 {
-  
+
   createAptBtn.classList.add( 'hidden' )
   createTwoAptBtn.classList.remove( 'hidden' )
 
@@ -171,6 +171,8 @@ const forSecondOccurrenceType = () =>
   firstTimeSlot.innerText = aptTimeSlot.value
 
   cancelForOccurrence.classList.remove( 'hidden' )
+
+
 
 }
 
@@ -218,6 +220,22 @@ createTwoAptBtn.onclick = () =>
     console.log( firstDaySlot.innerText, typeof ( aptDay.value ), typeof ( firstDaySlot.innerText ), aptDay.value )
     console.log( firstTimeSlot.innerText, typeof ( aptTimeSlot.value ), typeof ( firstTimeSlot.innerText ), aptTimeSlot.value )
 
+    confirmName.innerText = aptName.value.trim()
+    confirmEmail.innerText = aptEmail.value.trim()
+    confirmMobileNumber.innerText = aptMobileNumber.value
+    confirmStartDate.innerText = firstStartDate.innerText
+    confirmSecondStartDate.innerText = aptStartDate.value
+    confirmDay.innerText = firstDaySlot.innerText
+    confirmSecondDay.innerText = aptDay.value
+    confirmTimeSlot.innerText = firstTimeSlot.innerText
+    confirmSecondTimeSlot.innerText = aptTimeSlot.value.toString()
+    confirmFees.innerText = aptFees.value
+    confirmAppointmentType.innerText = aptType.value
+    confirmOccurrenceType.innerText = aptOccurrenceType.value
+    confirmCategory.innerText = aptCategory.value
+    confirmPage.style.transition = '0.5s ease-in-out'
+    confirmPage.style.left = 0
+
   }
 }
 
@@ -238,8 +256,27 @@ editButton.onclick = () =>
 
 }
 
-confirmButton.onclick = () =>
+confirmButton.onclick = (e) =>
 {
+  e.preventDefault()
+  db.collection( 'appointments' ).add( {
+    aptCategory: confirmCategory.innerText,
+    aptName: confirmName.innerText,
+    aptEmail: confirmEmail.innerText,
+    aptMobileNumber: confirmMobileNumber.innerText,
+    aptDay: confirmDay.innerText,
+    aptSecondDay: "NA",
+    aptTimeSlot: confirmTimeSlot.innerText,
+    aptSecondTimeSlot: "NA",
+    aptType: confirmAppointmentType.innerText,
+    aptOccurrenceType: confirmOccurrenceType.innerText,
+    aptStartDate: confirmStartDate.innerText,
+    aptSecondStartDate: "NA",
+    aptFees: confirmFees.innerText,
+    appointmentStatus: 'Scheduled',
+    serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+    statusUpdatedTimeStamp: ""
+  } )
 
   confirmPage.style.left = '-2000px'
   confirmPage.style.transition = '0.5s ease-in-out'
@@ -253,21 +290,6 @@ confirmButton.onclick = () =>
   aptStartDate.value = ''
   aptFees.value = ''
   aptOccurrenceType.value = ''
-
-  db.collection( 'appointments' ).add( {
-    aptCategory: confirmCategory.innerText,
-    aptName: confirmName.innerText,
-    aptEmail: confirmEmail.innerText,
-    aptMobileNumber: confirmMobileNumber.innerText,
-    aptDay: confirmDay.innerText,
-    aptTimeSlot: confirmTimeSlot.innerText,
-    aptType: confirmAppointmentType.innerText,
-    aptOccurrenceType: confirmOccurrenceType.innerText,
-    aptStartDate: confirmStartDate.value,
-    aptFees: confirmFees.innerText,
-    appointmentStatus: 'Scheduled',
-    serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-  } )
 
   pageWrapper.classList.add( 'blur-sm' )
   prompts.classList.add( 'left-1/2' )
