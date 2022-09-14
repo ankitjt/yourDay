@@ -1,17 +1,23 @@
-let financePatientList = document.querySelector(".financePatientList"),
-    profileDetails = document.querySelector(".profileDetails")
+let financePatientList = document.querySelector( ".financePatientList" ),
+  profileDetails = document.querySelector( ".profileDetails" ),
+  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" ),
+  totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" );
+  
 
-(() => {
-  db.collection("appointments").onSnapshot((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      let patientList = `
+    ( () =>
+    {
+      db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
+      {
+        querySnapshot.forEach( ( doc ) =>
+        {
+          let patientList = `
         
-        <option value="${doc.data().aptName}" class="font-semibold" data-id="${doc.id}">${doc.data().aptName}</option>
-      `;
-      financePatientList.innerHTML += patientList
-    })
-  })
-})()
+        <option value="${ doc.data().aptName }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
+      `
+          financePatientList.innerHTML += patientList
+        } )
+      } )
+    } )()
 
 financePatientList.onchange = () => {
     

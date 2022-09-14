@@ -42,6 +42,13 @@ let aptName = document.querySelector( '.aptName' ),
 
 createAptBtn.onclick = () =>
 {
+  let checkForDay = new Date( aptStartDate.value )
+
+  console.log( checkForDay.getDay() );
+  console.log( typeof ( checkForDay.getDay() ) );
+  
+  const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
+
   if (
     aptCategory.value === '' ||
     aptType.value === '' ||
@@ -53,8 +60,7 @@ createAptBtn.onclick = () =>
     aptTimeSlot.value === '' ||
     aptOccurrenceType.value === '' ||
     aptFees.value === ''
-  )  
-  
+  )
   {
 
     pageWrapper.classList.add( 'blur-sm' )
@@ -62,6 +68,14 @@ createAptBtn.onclick = () =>
     prompts.style.transition = '0.5s ease-in-out'
     promptContent.innerText = 'All fields required.'
 
+  }
+  
+  else if ( checkForDay.getDay().toString() !== aptDay.value )
+  {
+    pageWrapper.classList.add( 'blur-sm' )
+    prompts.classList.add( 'left-1/2' )
+    prompts.style.transition = '0.5s ease-in-out'
+    promptContent.innerText = 'Day in the start date and day slot checked does not match.'
   }
 
   else if ( aptCategory.value === 'New' )
@@ -120,7 +134,7 @@ createAptBtn.onclick = () =>
 
       } )
     } )
-    console.log(aptStartDate.value);
+    console.log( aptStartDate.value )
     confirmName.innerText = aptName.value.trim()
     confirmEmail.innerText = aptEmail.value.trim()
     confirmMobileNumber.innerText = aptMobileNumber.value
@@ -136,7 +150,6 @@ createAptBtn.onclick = () =>
     confirmCategory.innerText = aptCategory.value
     confirmPage.style.transition = '0.5s ease-in-out'
     confirmPage.style.left = 0
-
 
   }
 }
@@ -256,9 +269,20 @@ editButton.onclick = () =>
 
 }
 
-confirmButton.onclick = (e) =>
+confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
+  let futureDates = []
+  let newDate = new Date( confirmStartDate.innerText )
+  let inSeconds = Math.floor( newDate.getTime() / 1000 )
+  for ( let i = 0; i < 15; i++ )
+  {
+    let sixDays = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
+    let newDateFormat = new Date( sixDays * 1000 )
+
+    futureDates.push( newDateFormat.getDate() + "-" + ( newDateFormat.getMonth() + 1 ) + "-" + newDateFormat.getFullYear() )
+    
+  }
   db.collection( 'appointments' ).add( {
     aptCategory: confirmCategory.innerText,
     aptName: confirmName.innerText,
@@ -270,7 +294,7 @@ confirmButton.onclick = (e) =>
     aptSecondTimeSlot: "NA",
     aptType: confirmAppointmentType.innerText,
     aptOccurrenceType: confirmOccurrenceType.innerText,
-    aptStartDate: confirmStartDate.innerText,
+    aptStartDate: futureDates,
     aptSecondStartDate: "NA",
     aptFees: confirmFees.innerText,
     appointmentStatus: 'Scheduled',
