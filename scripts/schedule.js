@@ -50,6 +50,8 @@ cancelledViewIcon.onclick = () =>
 
 }
 
+const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
+
 // galleryViewIcon.onclick = () => {
 //   scheduleGalleryView.classList.remove('lg:hidden', "hidden");
 //   updateTableView.classList.add('lg:hidden', 'hidden');
@@ -119,7 +121,7 @@ cancelledViewIcon.onclick = () =>
 ( () =>
 {
   db.collection( 'appointments' )
-    // .where( 'appointmentStatus', 'in', [ 'Scheduled', 'Updated' ] )
+    .orderBy("aptStartDate")
     .get()
     .then( ( querySnapshot ) =>
     {
@@ -127,6 +129,8 @@ cancelledViewIcon.onclick = () =>
 
       querySnapshot.forEach( ( doc ) =>
       {
+        let newDateFormat = new Date( doc.data().aptStartDate * 1000 )
+        let finalDate = newDateFormat.getDate() + "-" + ( newDateFormat.getMonth() + 1 ) + "-" + newDateFormat.getFullYear()
         let myData
         if ( doc.data().statusUpdatedTimeStamp === undefined )
         {
@@ -138,84 +142,82 @@ cancelledViewIcon.onclick = () =>
         }
         if ( doc.data().appointmentStatus === "Scheduled" || doc.data().appointmentStatus === "Updated" )
         {
-          for ( let eachRecord = 0; eachRecord < doc.data().aptStartDate.length; eachRecord++)
-          {
-            let tableViewForUpdate = `
-                  <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${ doc.id
-              }">
-                          <td class="py-3  text-xs px-5 font-semibold">
-                            ${ doc.data().aptName }
-                          </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
-                            ${ doc.data().aptStartDate[eachRecord] }
-                          </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
-                            ${ doc.data().aptDay } <br /> ${ doc.data().aptTimeSlot }
-                          </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
-                            ${ doc.data().aptType }
-                          </td>
-    
-                          <!-- Status -->
-                          <td class="py-3  text-xs px-5 font-semibold">
-                          
-                             <div class="appointmentStatus">
-                              <div class="${ doc.data().appointmentStatus === "Completed" ? "block" : "hidden" }">
-                                <span class="text-emerald-500">
-                                  ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
-                                </span>
-                              </div>
-                              <div class="${ doc.data().appointmentStatus === "Cancelled" ? "block" : "hidden" }">
-                                <span class="text-red-500">
-                                  ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
-                                </span>
-                              </div>
-                              <div class="${ doc.data().appointmentStatus === "Updated" ? "block" : "hidden" }">
-                                <span class="text-amber-500">
-                                  ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
-                                </span>
-                              </div>
-                              <div class="${ doc.data().appointmentStatus === "Scheduled" ? "block" : "hidden" }">
-                                <span>
-                                  ${ doc.data().appointmentStatus === "Scheduled" ? "Scheduled" : doc.data().appointmentStatus }
-                                </span>
-                              </div>
+          let tableViewForUpdate = `
+                <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${ doc.id
+            }">
+                        <td class="py-3  text-xs px-5 font-semibold">
+                          ${ doc.data().aptName }
+                        </td>
+                        <td class="py-3  text-xs px-5 font-semibold">
+                          ${ finalDate }
+                        </td>
+                        <td class="py-3  text-xs px-5 font-semibold">
+                          ${ days[doc.data().aptDay - 1] } <br /> ${ doc.data().aptTimeSlot }
+                        </td>
+                        <td class="py-3  text-xs px-5 font-semibold">
+                          ${ doc.data().aptType }
+                        </td>
+  
+                        <!-- Status -->
+                        <td class="py-3  text-xs px-5 font-semibold">
+                        
+                           <div class="appointmentStatus">
+                            <div class="${ doc.data().appointmentStatus === "Completed" ? "block" : "hidden" }">
+                              <span class="text-emerald-500">
+                                ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
+                              </span>
                             </div>
-    
-                            <div class="statusUpdateTime"> 
-                              <span class="text-[10px] text-gray-900"> ${ doc.data().statusUpdatedTimeStamp === "" ? '' : myData.toDateString() + " " + myData.toLocaleTimeString() } </span>
+                            <div class="${ doc.data().appointmentStatus === "Cancelled" ? "block" : "hidden" }">
+                              <span class="text-red-500">
+                                ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
+                              </span>
                             </div>
-    
-                          </td>
-    
-                          <td class="py-3 text-xs px-5 font-semibold">
-                            <select name="appointmentActions" id="appointmentActions"
-                              class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-sm">
-                              <option value="Action" class="font-semibold">
-                                Action
-                              </option>
-                              <option value="Completed" class="font-semibold">
-                                Completed
-                              </option>
-                              <option value="Paid Cancelled" class="font-semibold">
-                                Paid Cancelled
-                              </option>
-                              <option value="Free Cancelled" class="font-semibold">
-                                Free Cancelled
-                              </option>
-                              <option value="Updated" class="font-semibold">
-                                Edit/Update
-                              </option>
-                              <option value="Close" class="font-semibold">
-                                Closed
-                              </option>
-                            </select>
-                          </td>
-                        </tr>
-                      
-                  `
-            updateTableViewRows.innerHTML += tableViewForUpdate
-          }
+                            <div class="${ doc.data().appointmentStatus === "Updated" ? "block" : "hidden" }">
+                              <span class="text-amber-500">
+                                ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
+                              </span>
+                            </div>
+                            <div class="${ doc.data().appointmentStatus === "Scheduled" ? "block" : "hidden" }">
+                              <span>
+                                ${ doc.data().appointmentStatus === "Scheduled" ? "Scheduled" : doc.data().appointmentStatus }
+                              </span>
+                            </div>
+                          </div>
+  
+                          <div class="statusUpdateTime"> 
+                            <span class="text-[10px] text-gray-900"> ${ doc.data().statusUpdatedTimeStamp === "" ? '' : myData.toDateString() + " " + myData.toLocaleTimeString() } </span>
+                          </div>
+  
+                        </td>
+  
+                        <td class="py-3 text-xs px-5 font-semibold">
+                          <select name="appointmentActions" id="appointmentActions"
+                            class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-sm">
+                            <option value="Action" class="font-semibold">
+                              Action
+                            </option>
+                            <option value="Completed" class="font-semibold">
+                              Completed
+                            </option>
+                            <option value="Paid Cancelled" class="font-semibold">
+                              Paid Cancelled
+                            </option>
+                            <option value="Free Cancelled" class="font-semibold">
+                              Free Cancelled
+                            </option>
+                            <option value="Updated" class="font-semibold">
+                              Edit/Update
+                            </option>
+                            <option value="Close" class="font-semibold">
+                              Closed
+                            </option>
+                          </select>
+                        </td>
+                      </tr>
+                    
+                `
+          updateTableViewRows.innerHTML += tableViewForUpdate
+          
 
         }
 

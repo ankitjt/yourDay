@@ -44,10 +44,10 @@ createAptBtn.onclick = () =>
 {
   let checkForDay = new Date( aptStartDate.value )
 
-  console.log( checkForDay.getDay() );
-  console.log( typeof ( checkForDay.getDay() ) );
+  console.log( checkForDay.getDay() )
+  console.log( typeof ( checkForDay.getDay() ) )
+
   
-  const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
 
   if (
     aptCategory.value === '' ||
@@ -69,7 +69,7 @@ createAptBtn.onclick = () =>
     promptContent.innerText = 'All fields required.'
 
   }
-  
+
   else if ( checkForDay.getDay().toString() !== aptDay.value )
   {
     pageWrapper.classList.add( 'blur-sm' )
@@ -272,35 +272,38 @@ editButton.onclick = () =>
 confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
-  let futureDates = []
+
   let newDate = new Date( confirmStartDate.innerText )
-  let inSeconds = Math.floor( newDate.getTime() / 1000 )
-  for ( let i = 0; i < 15; i++ )
+  let newDateInSeconds = newDate / 1000
+  let finalNewDate = new Date( newDateInSeconds * 1000 )
+  let selectedFirstDate = finalNewDate.getDate() + "-" + ( finalNewDate.getMonth() + 1 ) + "-" + finalNewDate.getFullYear()
+  let myArr = [finalNewDate]
+
+  for ( let i = 0; i < 5; i++ )
   {
     let sixDays = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-    let newDateFormat = new Date( sixDays * 1000 )
-
-    futureDates.push( newDateFormat.getDate() + "-" + ( newDateFormat.getMonth() + 1 ) + "-" + newDateFormat.getFullYear() )
+    myArr.push(sixDays)
     
+    db.collection( 'appointments' ).add( {
+      aptCategory: confirmCategory.innerText,
+      aptName: confirmName.innerText,
+      aptEmail: confirmEmail.innerText,
+      aptMobileNumber: confirmMobileNumber.innerText,
+      aptDay: confirmDay.innerText,
+      aptSecondDay: "NA",
+      aptTimeSlot: confirmTimeSlot.innerText,
+      aptSecondTimeSlot: "NA",
+      aptType: confirmAppointmentType.innerText,
+      aptOccurrenceType: confirmOccurrenceType.innerText,
+      aptStartDate: sixDays,
+      aptSecondStartDate: "NA",
+      aptFees: confirmFees.innerText,
+      appointmentStatus: 'Scheduled',
+      serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      statusUpdatedTimeStamp: ""
+    } )
+
   }
-  db.collection( 'appointments' ).add( {
-    aptCategory: confirmCategory.innerText,
-    aptName: confirmName.innerText,
-    aptEmail: confirmEmail.innerText,
-    aptMobileNumber: confirmMobileNumber.innerText,
-    aptDay: confirmDay.innerText,
-    aptSecondDay: "NA",
-    aptTimeSlot: confirmTimeSlot.innerText,
-    aptSecondTimeSlot: "NA",
-    aptType: confirmAppointmentType.innerText,
-    aptOccurrenceType: confirmOccurrenceType.innerText,
-    aptStartDate: futureDates,
-    aptSecondStartDate: "NA",
-    aptFees: confirmFees.innerText,
-    appointmentStatus: 'Scheduled',
-    serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-    statusUpdatedTimeStamp: ""
-  } )
 
   confirmPage.style.left = '-2000px'
   confirmPage.style.transition = '0.5s ease-in-out'
