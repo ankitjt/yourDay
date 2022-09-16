@@ -275,14 +275,12 @@ confirmButton.onclick = ( e ) =>
 
   let newDate = new Date( confirmStartDate.innerText )
   let newDateInSeconds = newDate / 1000
-  let finalNewDate = new Date( newDateInSeconds * 1000 )
-  let selectedFirstDate = finalNewDate.getDate() + "-" + ( finalNewDate.getMonth() + 1 ) + "-" + finalNewDate.getFullYear()
-  let myArr = [finalNewDate]
+  let appointmentsDates = [ newDateInSeconds ]
 
   for ( let i = 0; i < 5; i++ )
   {
-    let sixDays = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-    myArr.push(sixDays)
+    let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
+    appointmentsDates.push( futureAppointments )
     
     db.collection( 'appointments' ).add( {
       aptCategory: confirmCategory.innerText,
@@ -295,7 +293,7 @@ confirmButton.onclick = ( e ) =>
       aptSecondTimeSlot: "NA",
       aptType: confirmAppointmentType.innerText,
       aptOccurrenceType: confirmOccurrenceType.innerText,
-      aptStartDate: sixDays,
+      aptStartDate: appointmentsDates[i],
       aptSecondStartDate: "NA",
       aptFees: confirmFees.innerText,
       appointmentStatus: 'Scheduled',
