@@ -1,0 +1,28 @@
+Databases
+
+1. Profile
+
+    - Apt Category
+    - Apt Name
+    - Apt Email
+    - Apt Mobile Number
+    - Apt Start Date
+    - Apt Occurrence Type
+    - Apt Fees
+    - Server Timestamp 
+
+    Will be used in Reports Page and fetching user names
+
+2. Appointments 
+
+    - Apt Name
+    - Apt Date
+    - Apt Slot
+    - Apt Type
+    - Apt Status
+    - Apt Action
+    - Updated server Timestamp
+
+    Will be used in Schedule page for fetching appointments and other details.
+
+    Will be used in Finance page to generating finances and other related reports.
