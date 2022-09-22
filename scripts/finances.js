@@ -1,12 +1,11 @@
 let financePatientList = document.querySelector( ".financePatientList" ),
-  profileDetails = document.querySelector( ".profileDetails" ),
-  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" ),
-  totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" );
+  profileDetails = document.querySelector( ".profileDetails" );
+  
   
 
     ( () =>
     {
-      db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
+      db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
       {
         querySnapshot.forEach( ( doc ) =>
         {
@@ -17,12 +16,20 @@ let financePatientList = document.querySelector( ".financePatientList" ),
           financePatientList.innerHTML += patientList
         } )
       } )
-    } )()
+    } )();
 
 financePatientList.onchange = () => {
-    
-  db.collection("appointments").onSnapshot((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
+  
+  
+  getCounts()
+
+  db.collection("profiles").onSnapshot((querySnapshot) => {
+    querySnapshot.forEach( ( doc ) =>
+    {
+      if ( financePatientList.value === "" )
+      {
+        profileDetails.innerText = "Select Patient name"
+      }
       if (financePatientList.value === doc.data().aptName) {
         let profile = `
           <div class="profileName flex items-center justify-between mb-2">
@@ -65,14 +72,48 @@ financePatientList.onchange = () => {
                   doc.data().aptType
                 }</span>
               </div>
-              <div class="profileCategory flex items-center justify-between">
+              <div class="profileCategory flex items-center justify-between mb-2">
                 <span class="categoryTag">Occurrence ( per week )</span>
                 <span class="category ml-2">${
                   doc.data().aptOccurrenceType
                 }</span>
               </div>
+              <div class="profileCategory flex items-center justify-between ">
+                <span class="categoryTag">Profile Created on</span>
+                <span class="category ml-2">${
+                 new Date( doc.data().profileCreatedOn.seconds * 1000 )
+                }</span>
+              </div>
         `;
         profileDetails.innerHTML = profile;
+      }
+    })
+  })
+}
+
+const getCounts = () =>
+{
+  let totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
+  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" )
+  let namesArr = []
+  let totalFees  = []
+  db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
+  {
+    querySnapshot.forEach( ( doc ) =>
+    {
+      if ( financePatientList.value === doc.data().aptName )
+      {
+        namesArr.push( doc.data().aptName )
+
+        if ( doc.data().appointmentStatus === "Completed" )
+        {
+          totalFees.push( doc.data().aptFees )
+          let sum = totalFees.reduce( ( a, b ) => a + b, 0 )
+          totalMoneySessionsIndividual.innerText = sum
+        }
+
+        countOfSessionsIndividual.innerText = namesArr.length
+        
       }
     })
   })

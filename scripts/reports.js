@@ -59,15 +59,24 @@ for(let thisSection of sectionButton) {
             {
                 updatedCounts.push(doc.data().appointmentStatus)
             }
-            let patientNames = `
-            <option value="${doc.id}" class="font-semibold" data-id="${doc.id}">${doc.data().aptName}</option>
-            `
-            reportByNameFilter.innerHTML += patientNames
+            
         })
         totalSessionsCount.innerText = sessionCounts.length
         totalSupervisionCount.innerText = supervisionCounts.length
         totalCancelledCount.innerText = cancelledCounts.length
         totalRescheduledCount.innerText = updatedCounts.length
+    } )
+    
+    db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
+    {   
+        querySnapshot.forEach( ( doc ) =>
+        {
+            let patientNames = `
+            <option value="${ doc.id }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
+            `
+            reportByNameFilter.innerHTML += patientNames
+            
+        })
     })
     
 } )()
@@ -94,7 +103,8 @@ reportByNameFilter.onchange = () =>
     }
     else
     {
-        let dbRef = db.collection( "appointments" ).doc( reportByNameFilter.value )
+        let dbRef = db.collection( "profiles" ).doc( reportByNameFilter.value )
+        const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
         dbRef.get().then( ( doc ) =>
         {
             if ( doc.exists )
@@ -105,7 +115,7 @@ reportByNameFilter.onchange = () =>
                 category.innerText = doc.data().aptType
                 fee.innerText = doc.data().aptFees
                 occurrence.innerText = doc.data().aptOccurrenceType
-                slot.innerText = doc.data().aptDay + " , " + doc.data().aptTimeSlot
+                slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot
             }
         })
     }

@@ -382,7 +382,7 @@ const appointmentsToUpdate = () =>
 
       if ( aptActions[ i ].value === 'Completed' )
       {
-        if ( confirm( ask, e ) === true )
+        if ( confirm( ask ) === true )
         {
           dbPath.update( {
             appointmentStatus: 'Completed',

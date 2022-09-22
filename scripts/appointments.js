@@ -43,11 +43,7 @@ let aptName = document.querySelector( '.aptName' ),
 createAptBtn.onclick = () =>
 {
   let checkForDay = new Date( aptStartDate.value )
-
-  console.log( checkForDay.getDay() )
-  console.log( typeof ( checkForDay.getDay() ) )
-
-  
+ 
 
   if (
     aptCategory.value === '' ||
@@ -134,7 +130,6 @@ createAptBtn.onclick = () =>
 
       } )
     } )
-    console.log( aptStartDate.value )
     confirmName.innerText = aptName.value.trim()
     confirmEmail.innerText = aptEmail.value.trim()
     confirmMobileNumber.innerText = aptMobileNumber.value
@@ -276,6 +271,7 @@ confirmButton.onclick = ( e ) =>
   let newDate = new Date( confirmStartDate.innerText )
   let newDateInSeconds = newDate / 1000
   let appointmentsDates = [ newDateInSeconds ]
+  createProfile()
 
   for ( let i = 0; i < 5; i++ )
   {
@@ -283,7 +279,6 @@ confirmButton.onclick = ( e ) =>
     appointmentsDates.push( futureAppointments )
     
     db.collection( 'appointments' ).add( {
-      aptCategory: confirmCategory.innerText,
       aptName: confirmName.innerText,
       aptEmail: confirmEmail.innerText,
       aptMobileNumber: confirmMobileNumber.innerText,
@@ -292,11 +287,10 @@ confirmButton.onclick = ( e ) =>
       aptTimeSlot: confirmTimeSlot.innerText,
       aptSecondTimeSlot: "NA",
       aptType: confirmAppointmentType.innerText,
-      aptOccurrenceType: confirmOccurrenceType.innerText,
       aptStartDate: appointmentsDates[i],
       aptSecondStartDate: "NA",
-      aptFees: confirmFees.innerText,
       appointmentStatus: 'Scheduled',
+      aptFees: Number( confirmFees.innerText ),
       serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
       statusUpdatedTimeStamp: ""
     } )
@@ -322,4 +316,28 @@ confirmButton.onclick = ( e ) =>
   promptContent.innerText = 'Appointment created'
   confirmPage.style.left = '-2000px'
 
+}
+
+const createProfile = () =>
+{
+  
+  db.collection( "profiles" ).add(
+    {
+      aptCategory: confirmCategory.innerText,
+      aptName: confirmName.innerText,
+      aptEmail: confirmEmail.innerText,
+      aptMobileNumber: confirmMobileNumber.innerText,
+      aptDay: confirmDay.innerText,
+      aptSecondDay: "NA",
+      aptStartDate: confirmStartDate.innerText,
+      aptTimeSlot: confirmTimeSlot.innerText,
+      aptSecondTimeSlot: "NA",
+      aptType: confirmAppointmentType.innerText,
+      aptOccurrenceType: confirmOccurrenceType.innerText,
+      aptSecondStartDate: "NA",
+      aptFees: confirmFees.innerText,
+      appointmentStatus: 'Scheduled',
+      profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
+    }
+  )
 }
