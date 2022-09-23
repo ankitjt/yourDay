@@ -388,7 +388,8 @@ const appointmentsToUpdate = () =>
             appointmentStatus: 'Completed',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
-
+          console.log( dbPath.doc.data().aptFees )
+          
         }
         else
         {
@@ -401,7 +402,8 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Paid Cancelled',
-            statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+            statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+            
           } )
         }
         else

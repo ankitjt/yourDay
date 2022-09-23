@@ -94,7 +94,12 @@ financePatientList.onchange = () => {
 const getCounts = () =>
 {
   let totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
-  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" )
+    countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" ),
+    moneyScheduled = document.querySelector( ".moneyScheduled" ),
+    moneyPaidCancelled = document.querySelector( ".moneyPaidCancelled" ),
+    moneyCompleted = document.querySelector( ".moneyCompleted" ),
+    moneyFreeCancelled = document.querySelector( ".moneyFreeCancelled" )
+  
   let namesArr = []
   let totalFees  = []
   db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
