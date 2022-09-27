@@ -8,39 +8,28 @@
     <title>YourDay - Finances</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
-    <!-- <link rel="stylesheet" href="../dist/output.css" /> -->
   </head>
 
   <body>
     <div
-         class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
-        <img
-             src="../assets/finance2.webp"
-             alt="logo"
-             class="h-screen w-auto py-10" />
+        <img src="../assets/finance2.webp" alt="logo" class="h-screen w-auto py-10" />
       </div>
 
-      <div
-           class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden">
+      <div class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden">
         <!-- Navbar -->
-        <nav
-             class="text-xs flex items-center justify-between py-2 text-zinc-900">
+        <nav class="text-xs flex items-center justify-between py-2 text-zinc-900">
           <a href="./home.html">
-            <svg
-                 xmlns="http://www.w3.org/2000/svg"
-                 class="h-5 w-5 text-zinc-900"
-                 viewBox="0 0 20 20"
-                 fill="currentColor">
-              <path
-                    fill-rule="evenodd"
-                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                    clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
             </svg>
           </a>
           <span class="tracking-widest font-semibold uppercase">Finances</span>
@@ -49,8 +38,7 @@
         <!-- By Month Only -->
         <section class="mt-5 px-1 flex flex-col justify-center tracking-wide">
           <h3 class="mb-2">
-            <span
-                  class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
               By month
             </span>
           </h3>
@@ -58,10 +46,8 @@
           <!-- Filter Type ( By month ) -->
 
           <section class="monthFilter mb-5 text-rose-600 font-semibold grid grid-cols-2 gap-x-10">
-            <select
-                    name="monthList"
-                    id="monthList"
-                    class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
+            <select name="monthList" id="monthList"
+              class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
               <option selected value="All Time" class="font-semibold">
                 All Time
               </option>
@@ -86,7 +72,7 @@
             <!-- Sessions Money -->
 
             <div
-                 class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
+              class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
               <span class="sessions flex flex-col">
                 <span class="totalSessions"> Total Sessions </span>
                 <span class="totalSessionsCount mt-1">
@@ -94,17 +80,10 @@
                 </span>
               </span>
               <span class="moneyBySessions flex items-center">
-                <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     class="h-4 w-4 mr-2"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke="currentColor"
-                     stroke-width="2">
-                  <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span class="totalMoneyBySessions tracking-widest">
                   55,124
@@ -115,7 +94,7 @@
             <!-- Supervision Money -->
 
             <div
-                 class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
+              class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
               <span class="supervision flex flex-col">
                 <span class="totalSupervision"> Total Supervision </span>
                 <span class="totalSessionsCount mt-1">
@@ -123,17 +102,10 @@
                 </span>
               </span>
               <span class="moneyBySupervision flex items-center">
-                <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     class="h-4 w-4 mr-2"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke="currentColor"
-                     stroke-width="2">
-                  <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span class="totalMoneyBySupervision tracking-widest">
                   9,124
@@ -146,35 +118,28 @@
         <!-- ***** ***** ***** ***** Ends By month section ***** ***** ***** ***** -->
 
         <!-- By Name Only -->
-        <section
-                 class="mt-5 px-1 flex flex-col justify-center tracking-wide text-slate-50">
+        <section class="mt-5 px-1 flex flex-col justify-center tracking-wide text-slate-50">
           <h3 class="mb-2">
-            <span
-                  class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
               By name
             </span>
           </h3>
 
           <!-- Filter Type -->
 
-          <section
-                   class="monthFilter mb-5 grid grid-cols-2 gap-x-10 font-semibold">
+          <section class="monthFilter mb-5 grid grid-cols-2 gap-x-10 font-semibold">
             <!-- Patient Name -->
 
-            <select
-                    name="financePatientList"
-                    id="financePatientList"
-                    class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize">
+            <select name="financePatientList" id="financePatientList"
+              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize">
               <option value="" class="font-semibold">Names</option>
 
             </select>
 
             <!-- Months -->
 
-            <select
-                    name="monthListByName"
-                    id="monthList"
-                    class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
+            <select name="monthListByName" id="monthList"
+              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
               <option selected value="All Time" class="font-semibold">
                 All Time
               </option>
@@ -199,7 +164,7 @@
             <!-- Sessions Money -->
 
             <div
-                 class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
+              class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
               <span class="sessions flex flex-col">
                 <span class="totalSessions"> Total Sessions </span>
                 <span class="totalSessionsCount mt-1">
@@ -207,17 +172,10 @@
                 </span>
               </span>
               <span class="moneyBySessions flex items-center">
-                <svg
-                     xmlns="http://www.w3.org/2000/svg"
-                     class="h-4 w-4 mr-2"
-                     fill="none"
-                     viewBox="0 0 24 24"
-                     stroke="currentColor"
-                     stroke-width="2">
-                  <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span class="totalMoneySessionsIndividual tracking-widest">
                   0
@@ -228,7 +186,7 @@
             <!-- Supervision Money -->
 
             <div
-                 class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
+              class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
               <span class="supervision flex flex-col">
                 <span class="totalSupervision"> Total Supervision </span>
                 <span class="totalSessionsCount mt-1">
@@ -244,7 +202,7 @@
           <!-- Patient Profile -->
 
           <section
-                   class="profile mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+            class="profile mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
             <div class="profileDetails">
               <h1>Select Patient Name</h1>
             </div>
@@ -253,40 +211,40 @@
 
           <!-- Money Breakdown section -->
           <section
-                   class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
-          
-              <div class="moneyScheduledWrapper flex items-center justify-between mb-2">
-                <span>Total Scheduled</span>
-                <span class="moneyScheduled ml-2 tracking-widest">${
-                  doc.data().aptScheduled
-                  }</span>
-              </div>
-              <div class="moneyCompletedWrapper flex items-center justify-between mb-2">
-                <span>Total Completed</span>
-                <span class="moneyCompleted ml-2 tracking-widest">${
-                  doc.data().aptCompleted
-                  }</span>
-              </div>
-              <div class="moneyPaidCancelledWrapper flex items-center justify-between mb-2">
-                <span>Total Paid Cancelled</span>
-                <span class="moneyPaidCancelled ml-2 tracking-widest">${
-                  doc.data().aptPaidCancelled
-                  }</span>
-              </div>
-              <div class="moneyFreeCancelledWrapper flex items-center justify-between mb-2">
-                <span>Total Free Cancelled</span>
-                <span class="moneyFreeCancelled ml-2 tracking-widest">${
-                  doc.data().aptFreeCancelled
-                  }</span>
-              </div>
+            class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+
+            <div class="moneyScheduledWrapper flex items-center justify-between mb-2">
+              <span>Total Scheduled</span>
+              <span class="moneyScheduled ml-2 tracking-widest">${
+                doc.data().aptScheduled
+                }</span>
             </div>
-
-          </section>
-
-        </section>
-
-        <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
+            <div class="moneyCompletedWrapper flex items-center justify-between mb-2">
+              <span>Total Completed</span>
+              <span class="moneyCompleted ml-2 tracking-widest">${
+                doc.data().aptCompleted
+                }</span>
+            </div>
+            <div class="moneyPaidCancelledWrapper flex items-center justify-between mb-2">
+              <span>Total Paid Cancelled</span>
+              <span class="moneyPaidCancelled ml-2 tracking-widest">${
+                doc.data().aptPaidCancelled
+                }</span>
+            </div>
+            <div class="moneyFreeCancelledWrapper flex items-center justify-between mb-2">
+              <span>Total Free Cancelled</span>
+              <span class="moneyFreeCancelled ml-2 tracking-widest">${
+                doc.data().aptFreeCancelled
+                }</span>
+            </div>
       </div>
+
+      </section>
+
+      </section>
+
+      <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
+    </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
