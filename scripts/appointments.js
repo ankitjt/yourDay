@@ -43,7 +43,7 @@ let aptName = document.querySelector( '.aptName' ),
 createAptBtn.onclick = () =>
 {
   let checkForDay = new Date( aptStartDate.value )
- 
+
 
   if (
     aptCategory.value === '' ||
@@ -180,8 +180,6 @@ const forSecondOccurrenceType = () =>
 
   cancelForOccurrence.classList.remove( 'hidden' )
 
-
-
 }
 
 cancelForOccurrence.onclick = () =>
@@ -224,9 +222,6 @@ createTwoAptBtn.onclick = () =>
   }
   else
   {
-    console.log( firstStartDate.innerText, typeof ( aptStartDate.value ), typeof ( firstStartDate.innerText ), aptStartDate.value )
-    console.log( firstDaySlot.innerText, typeof ( aptDay.value ), typeof ( firstDaySlot.innerText ), aptDay.value )
-    console.log( firstTimeSlot.innerText, typeof ( aptTimeSlot.value ), typeof ( firstTimeSlot.innerText ), aptTimeSlot.value )
 
     confirmName.innerText = aptName.value.trim()
     confirmEmail.innerText = aptEmail.value.trim()
@@ -277,7 +272,7 @@ confirmButton.onclick = ( e ) =>
   {
     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
     appointmentsDates.push( futureAppointments )
-    
+
     db.collection( 'appointments' ).add( {
       aptName: confirmName.innerText,
       aptEmail: confirmEmail.innerText,
@@ -287,7 +282,7 @@ confirmButton.onclick = ( e ) =>
       aptTimeSlot: confirmTimeSlot.innerText,
       aptSecondTimeSlot: "NA",
       aptType: confirmAppointmentType.innerText,
-      aptStartDate: appointmentsDates[i],
+      aptStartDate: appointmentsDates[ i ],
       aptSecondStartDate: "NA",
       appointmentStatus: 'Scheduled',
       aptFees: Number( confirmFees.innerText ),
@@ -320,7 +315,7 @@ confirmButton.onclick = ( e ) =>
 
 const createProfile = () =>
 {
-  
+
   db.collection( "profiles" ).add(
     {
       aptCategory: confirmCategory.innerText,

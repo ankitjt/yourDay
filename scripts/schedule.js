@@ -122,7 +122,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
 {
   db.collection( 'appointments' )
     .orderBy( "aptStartDate" )
-    .limit(5)
+    .limit( 5 )
     .get()
     .then( ( querySnapshot ) =>
     {
@@ -153,7 +153,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                           ${ finalDate }
                         </td>
                         <td class="py-3  text-xs px-5 font-semibold">
-                          ${ days[doc.data().aptDay - 1] } <br /> ${ doc.data().aptTimeSlot }
+                          ${ days[ doc.data().aptDay - 1 ] } <br /> ${ doc.data().aptTimeSlot }
                         </td>
                         <td class="py-3  text-xs px-5 font-semibold">
                           ${ doc.data().aptType }
@@ -218,7 +218,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                     
                 `
           updateTableViewRows.innerHTML += tableViewForUpdate
-          
+
 
         }
 
@@ -389,7 +389,7 @@ const appointmentsToUpdate = () =>
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
           console.log( dbPath.doc.data().aptFees )
-          
+
         }
         else
         {
@@ -403,7 +403,7 @@ const appointmentsToUpdate = () =>
           dbPath.update( {
             appointmentStatus: 'Paid Cancelled',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-            
+
           } )
         }
         else
