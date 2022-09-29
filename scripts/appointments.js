@@ -5,6 +5,8 @@ let aptName = document.querySelector( '.aptName' ),
   aptDay = document.querySelector( '.aptDay' ),
   aptFees = document.querySelector( '.aptFees' ),
   aptType = document.querySelector( '.aptType' ),
+  aptNature = document.querySelector( '.aptNature' ),
+  aptAddress = document.querySelector( '.aptAddress' ),
   aptOccurrenceType = document.querySelector( '.aptOccurrenceType' ),
   aptCategory = document.querySelector( '.aptCategory' ),
   aptTimeSlot = document.querySelector( '.aptTimeSlot' ),
@@ -24,7 +26,9 @@ let aptName = document.querySelector( '.aptName' ),
   confirmStartDate = document.querySelector( '.confirmStartDate' ),
   confirmTimeSlot = document.querySelector( '.confirmTimeSlot' ),
   confirmAppointmentType = document.querySelector( '.confirmAppointmentType' ),
+  confirmAppointmentNature = document.querySelector( '.confirmAppointmentNature' ),
   confirmOccurrenceType = document.querySelector( '.confirmOccurrenceType' ),
+  confirmAddress = document.querySelector( '.confirmAddress' ),
   confirmCategory = document.querySelector( '.confirmCategory' ),
   confirmFees = document.querySelector( '.confirmFees' ),
   confirmButton = document.querySelector( '.confirmButton' ),
@@ -48,6 +52,7 @@ createAptBtn.onclick = () =>
   if (
     aptCategory.value === '' ||
     aptType.value === '' ||
+    aptNature.value === "" ||
     aptName.value === '' ||
     aptStartDate.value === '' ||
     aptEmail.value === '' ||
@@ -55,7 +60,8 @@ createAptBtn.onclick = () =>
     aptDay.value === '' ||
     aptTimeSlot.value === '' ||
     aptOccurrenceType.value === '' ||
-    aptFees.value === ''
+    aptFees.value === '' ||
+    aptAddress.value === ''
   )
   {
 
@@ -140,7 +146,9 @@ createAptBtn.onclick = () =>
     confirmTimeSlot.innerText = aptTimeSlot.value.toString()
     confirmSecondTimeSlot.innerText = "NA"
     confirmFees.innerText = aptFees.value
+    confirmAddress.innerText = aptAddress.value
     confirmAppointmentType.innerText = aptType.value
+    confirmAppointmentNature.innerText = aptNature.value
     confirmOccurrenceType.innerText = aptOccurrenceType.value
     confirmCategory.innerText = aptCategory.value
     confirmPage.style.transition = '0.5s ease-in-out'
@@ -299,11 +307,13 @@ confirmButton.onclick = ( e ) =>
   aptMobileNumber.value = ''
   aptDay.selectedIndex = 0
   aptType.selectedIndex = 0
+  aptNature.selectedIndex = 0
   aptTimeSlot.selectedIndex = 0
   aptCategory.selectedIndex = 0
   aptStartDate.value = ''
   aptFees.value = ''
   aptOccurrenceType.value = ''
+  aptAddress.value = ''
 
   pageWrapper.classList.add( 'blur-sm' )
   prompts.classList.add( 'left-1/2' )
@@ -328,6 +338,8 @@ const createProfile = () =>
       aptTimeSlot: confirmTimeSlot.innerText,
       aptSecondTimeSlot: "NA",
       aptType: confirmAppointmentType.innerText,
+      aptAddress: confirmAddress.innerText,
+      aptNature: confirmAppointmentNature.innerText,
       aptOccurrenceType: confirmOccurrenceType.innerText,
       aptSecondStartDate: "NA",
       aptFees: confirmFees.innerText,

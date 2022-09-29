@@ -231,7 +231,10 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                                ${ doc.data().aptName }
                              </td>
                              <td class="py-3  text-xs px-5 font-semibold">
-                                  ${ doc.data().aptDay } <br /> ${ doc.data().aptTimeSlot }
+                                  ${ finalDate }
+                              </td>
+                             <td class="py-3  text-xs px-5 font-semibold">
+                                  ${ days[ doc.data().aptDay - 1 ] } <br /> ${ doc.data().aptTimeSlot }
                               </td>
                              <td class="py-3  text-xs px-5 font-semibold">
                                ${ doc.data().aptType }
@@ -300,7 +303,10 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                                ${ doc.data().aptName }
                              </td>
                              <td class="py-3  text-xs px-5 font-semibold">
-                                  ${ doc.data().aptDay } <br /> ${ doc.data().aptTimeSlot }
+                                  ${ finalDate }
+                              </td>
+                             <td class="py-3  text-xs px-5 font-semibold">
+                                  ${ days[ doc.data().aptDay - 1 ] } <br /> ${ doc.data().aptTimeSlot }
                                 </td>
                              <td class="py-3  text-xs px-5 font-semibold">
                                ${ doc.data().aptType }
