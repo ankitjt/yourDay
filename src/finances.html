@@ -14,17 +14,16 @@
   </head>
 
   <body class="relative">
-    
+
     <div
       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
 
-      <!-- Money BreakDOwn  -->
-      <div class="absolute sessionsBreakDown h-screen w-1/4 bg-purple-400 z-50 -right-[2000px]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam blanditiis molestiae rerum itaque quaerat voluptate
-        corrupti, quod suscipit numquam praesentium consectetur modi velit totam labore, culpa obcaecati expedita fugiat.
-        Ducimus?
+      <!-- Money BreakDown  -->
+      <div
+        class="absolute sessionsBreakDown h-screen w-1/4  bg-gradient-to-r from-indigo-500 to-indigo-600 z-50 -right-[2000px] left-0  px-5 py-10">
+        
       </div>
-      
+
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/finance2.webp" alt="logo" class="h-screen w-auto py-10" />
@@ -174,7 +173,7 @@
         <section
           class="profile mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] ">
           <div class="profileDetails">
-            <h1>Select Patient Name</h1>
+            <h1>Select Patient Name for profile</h1>
           </div>
 
         </section>
@@ -182,30 +181,8 @@
         <!-- Money Breakdown section -->
         <section
           class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] ">
+          <h1>Select Patient Name for breakdown</h1>
 
-          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
-            <span>Total Scheduled</span>
-            <span class="moneyScheduled tracking-widest underline cursor-pointer"></span>
-          </div>
-          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
-            <span>Total Completed</span>
-            <span class="moneyCompleted tracking-widest underline cursor-pointer"></span>
-          </div>
-          <div
-            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
-            <span>Total Paid Cancelled</span>
-            <span class="moneyPaidCancelled tracking-widest underline cursor-pointer"></span>
-          </div>
-          <div
-            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
-            <span>Total Free Cancelled</span>
-            <span class="moneyFreeCancelled tracking-widest underline cursor-pointer"></span>
-          </div>
-          <hr class="h-1 bg-blue-500 rounded-md my-4">
-          <div class="moneyTotalWrapper flex items-center justify-between mt-5 bg-rose-100 px-3 py-3 rounded-md">
-            <span>Total Due</span>
-            <span class="moneyTotal tracking-widest"></span>
-          </div>
         </section>
 
         <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
