@@ -122,7 +122,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
 {
   db.collection( 'appointments' )
     .orderBy( "aptStartDate" )
-    .limit( 5 )
+    .limit( 15 )
     .get()
     .then( ( querySnapshot ) =>
     {
