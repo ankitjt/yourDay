@@ -55,18 +55,18 @@
               <option selected value="All Time" class="font-semibold">
                 All Time
               </option>
-              <option value="january" class="font-semibold">January</option>
-              <option value="February" class="font-semibold">February</option>
-              <option value="March" class="font-semibold">March</option>
-              <option value="April" class="font-semibold">April</option>
-              <option value="May" class="font-semibold">May</option>
-              <option value="June" class="font-semibold">June</option>
-              <option value="July" class="font-semibold">July</option>
-              <option value="August" class="font-semibold">August</option>
-              <option value="September" class="font-semibold">September</option>
-              <option value="October" class="font-semibold">October</option>
-              <option value="November" class="font-semibold">November</option>
-              <option value="December" class="font-semibold">December</option>
+              <option value="1" class="font-semibold">January</option>
+              <option value="2" class="font-semibold">February</option>
+              <option value="3" class="font-semibold">March</option>
+              <option value="4" class="font-semibold">April</option>
+              <option value="5" class="font-semibold">May</option>
+              <option value="6" class="font-semibold">June</option>
+              <option value="7" class="font-semibold">July</option>
+              <option value="8" class="font-semibold">August</option>
+              <option value="9" class="font-semibold">September</option>
+              <option value="10" class="font-semibold">October</option>
+              <option value="11" class="font-semibold">November</option>
+              <option value="12" class="font-semibold">December</option>
             </select>
           </section>
 
@@ -116,7 +116,7 @@
               class="reportsByNameSections text-blue-600 my-4 bg-blue-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out w-full">
               <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
-                  <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile</span>
+                  <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update Profile</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
                     fill="currentColor">
                     <path fill-rule="evenodd"
@@ -132,6 +132,7 @@
                 <div class="profileName flex items-center justify-between my-3">
                   <span class="nameTag">Name</span>
                   <span class="name ml-2 tracking-widest">NA</span>
+                  
                 </div>
                 <div class="profileEmail flex items-center justify-between my-3">
                   <span class="emailTag">Email</span>
@@ -141,13 +142,13 @@
                   <span class="mobileTag">Mobile</span>
                   <span class="mobileNumber ml-2 tracking-widest">NA</span>
                 </div>
+                <div class="profileAddress flex items-center justify-between my-3">
+                  <span class="addressTag">Address</span>
+                  <span class="address ml-2 tracking-widest">NA</span>
+                </div>
                 <div class="profileStartDate flex items-center justify-between my-3">
                   <span class="createDateTag">Create Date</span>
                   <span class="createDate ml-2 tracking-widest">NA</span>
-                </div>
-                <div class="profileFee flex items-center justify-between my-3">
-                  <span class="feeTag">Fee</span>
-                  <span class="fee ml-2 tracking-widest">NA</span>
                 </div>
                 <div class="profileCategory flex items-center justify-between my-3">
                   <span class="categoryTag">Category</span>
@@ -160,6 +161,10 @@
                 <div class="profileSlot flex items-center justify-between my-3">
                   <span class="slotTag">Slot</span>
                   <span class="slot ml-2">NA</span>
+                </div>
+                <div class="profileFee flex items-center justify-between my-3">
+                  <span class="feeTag">Fees</span>
+                  <span class="fee ml-2 tracking-widest">NA</span>
                 </div>
               </section>
             </div>
@@ -191,12 +196,12 @@
               </section>
             </div>
 
-            <!-- Money Section  -->
+            <!-- Profile Action Section  -->
             <div
               class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
               <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between">
-                  <span class="sectionNameMoney text-sm font-semibold tracking-wider">Money</span>
+                  <span class="sectionNameMoney text-sm font-semibold tracking-wider">Profile Actions</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
                     fill="currentColor">
                     <path fill-rule="evenodd"
@@ -205,16 +210,43 @@
                   </svg>
                 </div>
               </button>
-              <section
-                class="content font-semibold text-xs leading-loose text-justify pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-                doloribus sed? Quibusdam voluptatibus et minima vitae nihil
-                mollitia quod error provident, similique autem aliquid aliquam!
-                Soluta provident repellendus numquam illo. Ipsam, harum id.
-                Magni totam unde explicabo, impedit eligendi cumque incidunt
-                voluptate doloribus molestias minima debitis fugit atque
-                sapiente ab repellendus asperiores. Temporibus fugiat eum libero
-                sunt magni optio neque!
+              <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+                <div class="profileName flex items-center justify-between my-3">
+                  <span class="nameTag">Name</span>
+                  <span class="name ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileEmail flex items-center justify-between my-3">
+                  <span class="emailTag">Email</span>
+                  <span class="email ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileMobileNumber flex items-center justify-between my-3">
+                  <span class="mobileTag">Mobile</span>
+                  <span class="mobileNumber ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileAddress flex items-center justify-between my-3">
+                  <span class="addressTag">Address</span>
+                  <span class="address ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileStartDate flex items-center justify-between my-3">
+                  <span class="createDateTag">Create Date</span>
+                  <span class="createDate ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileCategory flex items-center justify-between my-3">
+                  <span class="categoryTag">Category</span>
+                  <span class="category ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileOccurrence flex items-center justify-between my-3">
+                  <span class="occurrenceTag">Occurrence ( per week )</span>
+                  <span class="occurrence ml-2">NA</span>
+                </div>
+                <div class="profileSlot flex items-center justify-between my-3">
+                  <span class="slotTag">Slot</span>
+                  <span class="slot ml-2">NA</span>
+                </div>
+                <div class="profileFee flex items-center justify-between my-3">
+                  <span class="feeTag">Fees</span>
+                  <span class="fee ml-2 tracking-widest">NA</span>
+                </div>
               </section>
             </div>
           </div>

@@ -21,8 +21,8 @@
       <!-- Money BreakDown  -->
       <div
         class="absolute sessionsBreakDown h-screen w-2/5  bg-gradient-to-r from-indigo-500 to-indigo-600 z-50 -left-[2000px] ease-in-out duration-300  p-10 overflow-auto">
-        
-           
+
+
       </div>
 
       <!-- Only for Desktop -->
@@ -136,9 +136,9 @@
 
           <!-- Filter Type -->
 
-          <section class="monthFilter mb-5 grid grid-cols-2 gap-x-10 font-semibold">
-            <!-- Patient Name -->
+          <section class="monthFilter mb-5 grid grid-cols-3 gap-x-5 font-semibold">
 
+            <!-- Patient Name -->
             <select name="financePatientList" id="financePatientList"
               class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize">
               <option value="" class="font-semibold">Names</option>
@@ -146,7 +146,6 @@
             </select>
 
             <!-- Months -->
-
             <select name="monthListByName" id="monthList"
               class="monthListByName rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
               <option selected value="Select Month" class="font-semibold">
@@ -165,6 +164,10 @@
               <option value="11" class="font-semibold">November</option>
               <option value="12" class="font-semibold">December</option>
             </select>
+
+            <div class="div flex items-center">
+              <button class="findDetailsByName bg-blue-600 px-4 py-2 text-sm  rounded-lg">Search</button>
+            </div>
           </section>
 
         </section>
