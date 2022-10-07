@@ -15,9 +15,105 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script> -->
   </head>
 
-  <body class="h-full">
+  <body class="h-full relative overflow-x-hidden">
+
+    <!-- Update Profile -->
+    <div
+      class="absolute h-screen w-2/5 -left-[2000px] bg-blue-100 z-40 updateProfileWrapper p-10 ease-in-out duration-300">
+      <h1 class="uppercase text-md font-semibold">Update Profile</h1>
+
+      <section class="profileDetails mt-3 px-5 lg:transition-all lg:ease-in-out text-xs font-semibold">
+        <div class="profileName flex items-center justify-between my-3">
+          <span class="nameTag font-semibold">Name</span>
+          <input type="text" value=""
+            class="updateName  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="flex items-center justify-between my-3">
+          <span class="appointmentNature">Appointment Nature</span>
+          <input type="text" value=""
+            class="updateAptNature  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileEmail flex items-center justify-between my-3">
+          <span class="emailTag">Email</span>
+          <input type="email" value=""
+            class="updateEmail   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="profileMobileNumber flex items-center justify-between my-3">
+          <span class="mobileTag">Mobile</span>
+          <input type='number' value=""
+            class="updateMobileNumber   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="profileAddress flex items-center justify-between my-3">
+          <span class="addressTag">Address</span>
+          <input type='text' value=""
+            class="updateAddress   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="profileStartDate flex items-center justify-between my-3">
+          <span class="createDateTag">Create Date</span>
+          <input type='text' value=""
+            class="updateCreateDate   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileCategory flex items-center justify-between my-3">
+          <span class="categoryTag">Category</span>
+          <input type='text' value=""
+            class="updateCategory   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileOccurrence flex items-center justify-between my-3">
+          <span class="occurrenceTag">Occurrence ( per week )</span>
+          <input type='number' value=""
+            class="updateOccurrence  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileSlot flex items-center justify-between my-3">
+          <span class="slotTag">Slot</span>
+          <input type='text' value=""
+            class="updateSlot  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileFee flex items-center justify-between my-3">
+          <span class="feeTag">Fees</span>
+          <input type='number' value=""
+            class="updateFees   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+
+        <div class="updateProfileActionButtons  text-white flex flex-col ">
+
+          <div class="updateWrapper flex justify-between mt-5">
+            <button
+              class="updateProfileButton bg-blue-600 cursor-pointer px-5 py-2 rounded-md tracking-wider uppercase">Update</button>
+            <button
+              class="closeUpdateProfileWrapper cursor-pointer bg-gray-400 px-5 py-2 rounded-md tracking-wider uppercase">Close</button>
+          </div>
+
+          <div class="deleteButtonWrapper mt-8">
+            <button
+              class="deleteProfileButton w-full cursor-pointer bg-rose-600 px-5 py-2 rounded-md tracking-wider uppercase">Delete
+              Profile</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Prompts -->
+      <section
+        class="z-60 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+        <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
+          viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+            clip-rule="evenodd" />
+        </svg>
+      </section>
+
+    </div>
+
     <div
       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/reports3.webp')] lg:bg-[url('')] lg:justify-between">
+
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/reports3.webp" alt="logo" class="h-screen w-auto" />
@@ -113,7 +209,7 @@
 
             <!-- Profile Section  -->
             <div
-              class="reportsByNameSections text-blue-600 my-4 bg-blue-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out w-full">
+              class="reportsByNameSections text-blue-600 my-4 bg-white drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md w-full">
               <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
                   <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update Profile</span>
@@ -129,49 +225,60 @@
               <!-- Patient Profile -->
 
               <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+
                 <div class="profileName flex items-center justify-between my-3">
                   <span class="nameTag">Name</span>
-                  <span class="name ml-2 tracking-widest">NA</span>
-                  
+                  <span class="name ml-2">NA</span>
                 </div>
+
                 <div class="profileEmail flex items-center justify-between my-3">
                   <span class="emailTag">Email</span>
-                  <span class="email ml-2 tracking-widest">NA</span>
+                  <span class="email ml-2">NA</span>
                 </div>
+
                 <div class="profileMobileNumber flex items-center justify-between my-3">
                   <span class="mobileTag">Mobile</span>
-                  <span class="mobileNumber ml-2 tracking-widest">NA</span>
+                  <span class="mobileNumber ml-2">NA</span>
                 </div>
+
                 <div class="profileAddress flex items-center justify-between my-3">
                   <span class="addressTag">Address</span>
-                  <span class="address ml-2 tracking-widest">NA</span>
+                  <span class="address ml-2">NA</span>
                 </div>
+
                 <div class="profileStartDate flex items-center justify-between my-3">
                   <span class="createDateTag">Create Date</span>
-                  <span class="createDate ml-2 tracking-widest">NA</span>
+                  <span class="createDate ml-2">NA</span>
                 </div>
+
                 <div class="profileCategory flex items-center justify-between my-3">
                   <span class="categoryTag">Category</span>
-                  <span class="category ml-2 tracking-widest">NA</span>
+                  <span class="category ml-2">NA</span>
                 </div>
+
                 <div class="profileOccurrence flex items-center justify-between my-3">
                   <span class="occurrenceTag">Occurrence ( per week )</span>
                   <span class="occurrence ml-2">NA</span>
                 </div>
+
                 <div class="profileSlot flex items-center justify-between my-3">
                   <span class="slotTag">Slot</span>
                   <span class="slot ml-2">NA</span>
                 </div>
+
                 <div class="profileFee flex items-center justify-between my-3">
                   <span class="feeTag">Fees</span>
-                  <span class="fee ml-2 tracking-widest">NA</span>
+                  <span class="fee ml-2">NA</span>
                 </div>
+
+                <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
+
               </section>
             </div>
 
             <!-- Work section  -->
             <div
-              class="reportsByNameSections text-blue-600 my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+              class="reportsByNameSections text-blue-600 my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md  lg:transition-all lg:ease-in-out">
               <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
                   <span class="sectionButtonWork text-sm font-semibold tracking-wider">Work</span>
@@ -184,7 +291,7 @@
                 </div>
               </button>
               <section
-                class="content font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
+                class="workContent font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
                 doloribus sed? Quibusdam voluptatibus et minima vitae nihil
                 mollitia quod error provident, similique autem aliquid aliquam!
@@ -197,7 +304,7 @@
             </div>
 
             <!-- Profile Action Section  -->
-            <div
+            <!-- <div
               class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
               <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between">
@@ -248,7 +355,7 @@
                   <span class="fee ml-2 tracking-widest">NA</span>
                 </div>
               </section>
-            </div>
+            </div> -->
           </div>
         </section>
 
