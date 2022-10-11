@@ -96,7 +96,8 @@ let nameOfUser = document.querySelector( ".name" ),
     occurrence = document.querySelector( ".occurrence" ),
     address = document.querySelector( ".address" ),
     slot = document.querySelector( ".slot" ),
-    profile = document.querySelector( '.profile' )
+    profile = document.querySelector( '.profile' ),
+    profileUpdatedOn = document.querySelector( ".profileUpdatedOn" )
 
 reportByNameFilter.onchange = () =>
 {
@@ -130,6 +131,8 @@ reportByNameFilter.onchange = () =>
             if ( doc.exists )
             {
                 let createdDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
+                let updatedProfileDate =  doc.data().profileUpdateOn === undefined ? 'NA' : new Date( doc.data().profileUpdateOn.seconds * 1000 )
+                console.log(updatedProfileDate);
 
                 nameOfUser.innerText = doc.data().aptName
                 email.innerText = doc.data().aptEmail
@@ -146,8 +149,11 @@ reportByNameFilter.onchange = () =>
                         <span class='ml-2'>${ doc.data().aptFees } </span>`
                 occurrence.innerText = doc.data().aptOccurrenceType
                 address.innerText = doc.data().aptAddress
-                createDate.innerText = createdDate.getDay() + '/' + ( createdDate.getMonth() + 1 ) + '/' + createdDate.getFullYear() + ',' + createdDate.getHours() + ':' + createdDate.getMinutes()
+                createDate.innerText = createdDate.getDate() + '/' + ( createdDate.getMonth() + 1 ) + '/' + createdDate.getFullYear() + ',' + createdDate.getHours() + ':' + createdDate.getMinutes()
                 slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot;
+                profileUpdatedOn.innerHTML = `
+                    <span>Last Updated: </span> 
+                    <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>`
 
             }
         } )
@@ -168,7 +174,12 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
     updateOccurrence = document.querySelector( ".updateOccurrence" ),
     updateSlot = document.querySelector( ".updateSlot" ),
     updateFees = document.querySelector( ".updateFees" ),
-    currentProfileName, currentProfileEmail, currentProfileMobileNumber, currentProfileAddress, currentProfileFees
+    
+    currentProfileName = '',
+    currentProfileEmail = '',
+    currentProfileMobileNumber = '',
+    currentProfileAddress = '',
+    currentProfileFees = ''
 
 updateProfileLink.onclick = () =>
 {
@@ -179,40 +190,78 @@ updateProfileLink.onclick = () =>
     else
     {
         updateProfileWrapper.classList.add( 'left-0' )
-        db.collection( "profiles" ).where( "aptName", "==", reportByNameFilter.value ).onSnapshot( ( querySnapshot ) =>
+        let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
+        db.collection( "profiles" ).doc( getName ).get().then( ( doc ) =>
         {
-            querySnapshot.forEach( ( doc ) =>
-            {
-                updateName.value = ''
-                updateAptNature.value = ''
-                updateEmail.value = ''
-                updateAddress.value = ''
-                updateCreateDate.value = ''
-                updateCategory.value = ''
-                updateOccurrence.value = ''
-                updateSlot.value = ''
-                updateFees.value = ''
-                updateMobileNumber.value = ''
+            updateName.value = ''
+            updateAptNature.value = ''
+            updateEmail.value = ''
+            updateAddress.value = ''
+            updateCreateDate.value = ''
+            updateCategory.value = ''
+            updateOccurrence.value = ''
+            updateSlot.value = ''
+            updateFees.value = ''
+            updateMobileNumber.value = ''
+            profileUpdatedOn.value = ''
 
-                updateName.value = doc.data().aptName
-                updateAptNature.value = doc.data().aptType
-                updateEmail.value = doc.data().aptEmail
-                updateAddress.value = doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress
-                updateCreateDate.value = doc.data().aptStartDate
-                updateCategory.value = doc.data().aptCategory
-                updateOccurrence.value = doc.data().aptOccurrenceType
-                updateSlot.value = days[ doc.data().aptDay - 1 ]
-                updateFees.value = doc.data().aptFees
-                updateMobileNumber.value = doc.data().aptMobileNumber
 
-                currentProfileName = doc.data().aptName
-                currentProfileEmail = doc.data().aptEmail
-                currentProfileAddress = doc.data().aptAddress
-                currentProfileMobileNumber = doc.data().aptMobileNumber
-                currentProfileFees = doc.data().aptFees
 
-            } )
-        } )
+            updateName.value = doc.data().aptName
+            updateAptNature.value = doc.data().aptType
+            updateEmail.value = doc.data().aptEmail
+            updateAddress.value = doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress
+            updateCreateDate.value = doc.data().aptStartDate
+            updateCategory.value = doc.data().aptCategory
+            updateOccurrence.value = doc.data().aptOccurrenceType
+            updateSlot.value = days[ doc.data().aptDay - 1 ]
+            updateFees.value = doc.data().aptFees
+            updateMobileNumber.value = doc.data().aptMobileNumber
+
+            currentProfileName = doc.data().aptName
+            currentProfileEmail = doc.data().aptEmail
+            currentProfileAddress = doc.data().aptAddress
+            currentProfileMobileNumber = doc.data().aptMobileNumber
+            currentProfileFees = doc.data().aptFees
+
+        }) 
+        // db.collection( "profiles" ).where( "aptName", "==", reportByNameFilter.value ).onSnapshot( ( querySnapshot ) =>
+        // {
+        //     querySnapshot.forEach( ( doc ) =>
+        //     {
+        //         updateName.value = ''
+        //         updateAptNature.value = ''
+        //         updateEmail.value = ''
+        //         updateAddress.value = ''
+        //         updateCreateDate.value = ''
+        //         updateCategory.value = ''
+        //         updateOccurrence.value = ''
+        //         updateSlot.value = ''
+        //         updateFees.value = ''
+        //         updateMobileNumber.value = ''
+        //         profileUpdatedOn.value = ''
+
+
+
+        //         updateName.value = doc.data().aptName
+        //         updateAptNature.value = doc.data().aptType
+        //         updateEmail.value = doc.data().aptEmail
+        //         updateAddress.value = doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress
+        //         updateCreateDate.value = doc.data().aptStartDate
+        //         updateCategory.value = doc.data().aptCategory
+        //         updateOccurrence.value = doc.data().aptOccurrenceType
+        //         updateSlot.value = days[ doc.data().aptDay - 1 ]
+        //         updateFees.value = doc.data().aptFees
+        //         updateMobileNumber.value = doc.data().aptMobileNumber
+
+        //         currentProfileName = doc.data().aptName
+        //         currentProfileEmail = doc.data().aptEmail
+        //         currentProfileAddress = doc.data().aptAddress
+        //         currentProfileMobileNumber = doc.data().aptMobileNumber
+        //         currentProfileFees = doc.data().aptFees
+
+        //     } )
+        // } )
     }
 }
 
@@ -225,7 +274,8 @@ updateProfileButton.onclick = () =>
         profileDetails = document.querySelector( ".profileDetails" ),
         promptContent = document.querySelector( ".promptContent" )
 
-    if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === updateMobileNumber.value && currentProfileAddress.value === updateAddress && currentProfileFees === updateFees.value )
+    // Need to add check for address
+    if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === updateMobileNumber.value && currentProfileFees === updateFees.value )
     {
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
@@ -233,6 +283,17 @@ updateProfileButton.onclick = () =>
     }
     else 
     {
+        let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
+        let dbRef = db.collection( "profiles" ).doc( getName )
+        console.log( updateName.value, updateEmail.value, updateMobileNumber.value, parseInt( updateFees.value ), getName );
+        dbRef.update( {
+            aptName: updateName.value,
+            aptEmail: updateEmail.value,
+            aptMobileNumber: updateMobileNumber.value,
+            aptAddress: updateAddress.value,
+            aptFees: parseInt( updateFees.value ),
+            profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
+        } )
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
         promptContent.innerText = 'Profile Updated'
