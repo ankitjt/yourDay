@@ -75,12 +75,23 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
 
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
     {
+
+        let allNames = document.querySelectorAll( '.something' )
+        for ( const name123 of allNames )
+        {
+            name123.remove()
+        }
+
         querySnapshot.forEach( ( doc ) =>
         {
-            let patientNames = `
-            <option value="${ doc.data().aptName }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
-            `
-            reportByNameFilter.innerHTML += patientNames
+            if ( doc.data().softDelete !== true )
+            {
+                let patientNames = `
+                <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
+                `
+                reportByNameFilter.innerHTML += patientNames
+                
+            }
 
         } )
     } )
@@ -131,12 +142,11 @@ reportByNameFilter.onchange = () =>
             if ( doc.exists )
             {
                 let createdDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
-                let updatedProfileDate =  doc.data().profileUpdateOn === undefined ? 'NA' : new Date( doc.data().profileUpdateOn.seconds * 1000 )
-                console.log(updatedProfileDate);
+                let updatedProfileDate = doc.data().profileUpdateOn === undefined ? 'NA' : new Date( doc.data().profileUpdateOn.seconds * 1000 )
 
                 nameOfUser.innerText = doc.data().aptName
                 email.innerText = doc.data().aptEmail
-                mobileNumber.innerText = doc.data().aptMobileNumber
+                mobileNumber.innerText = parseInt( doc.data().aptMobileNumber )
                 address.innerHTML = ` ${ doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress } `
                 category.innerText = doc.data().aptType
                 fee.innerHTML =
@@ -146,7 +156,7 @@ reportByNameFilter.onchange = () =>
                                   <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span class='ml-2'>${ doc.data().aptFees } </span>`
+                        <span class='ml-2'>${ parseInt( doc.data().aptFees ) } </span>`
                 occurrence.innerText = doc.data().aptOccurrenceType
                 address.innerText = doc.data().aptAddress
                 createDate.innerText = createdDate.getDate() + '/' + ( createdDate.getMonth() + 1 ) + '/' + createdDate.getFullYear() + ',' + createdDate.getHours() + ':' + createdDate.getMinutes()
@@ -154,7 +164,6 @@ reportByNameFilter.onchange = () =>
                 profileUpdatedOn.innerHTML = `
                     <span>Last Updated: </span> 
                     <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>`
-
             }
         } )
     }
@@ -174,7 +183,7 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
     updateOccurrence = document.querySelector( ".updateOccurrence" ),
     updateSlot = document.querySelector( ".updateSlot" ),
     updateFees = document.querySelector( ".updateFees" ),
-    
+
     currentProfileName = '',
     currentProfileEmail = '',
     currentProfileMobileNumber = '',
@@ -216,52 +225,19 @@ updateProfileLink.onclick = () =>
             updateOccurrence.value = doc.data().aptOccurrenceType
             updateSlot.value = days[ doc.data().aptDay - 1 ]
             updateFees.value = doc.data().aptFees
+            let feesToNum = parseInt( updateFees.value )
+
             updateMobileNumber.value = doc.data().aptMobileNumber
+            let mobileToNum = parseInt( updateMobileNumber.value )
 
             currentProfileName = doc.data().aptName
             currentProfileEmail = doc.data().aptEmail
             currentProfileAddress = doc.data().aptAddress
-            currentProfileMobileNumber = doc.data().aptMobileNumber
-            currentProfileFees = doc.data().aptFees
+            currentProfileMobileNumber = mobileToNum
+            currentProfileFees = feesToNum
 
-        }) 
-        // db.collection( "profiles" ).where( "aptName", "==", reportByNameFilter.value ).onSnapshot( ( querySnapshot ) =>
-        // {
-        //     querySnapshot.forEach( ( doc ) =>
-        //     {
-        //         updateName.value = ''
-        //         updateAptNature.value = ''
-        //         updateEmail.value = ''
-        //         updateAddress.value = ''
-        //         updateCreateDate.value = ''
-        //         updateCategory.value = ''
-        //         updateOccurrence.value = ''
-        //         updateSlot.value = ''
-        //         updateFees.value = ''
-        //         updateMobileNumber.value = ''
-        //         profileUpdatedOn.value = ''
+        } )
 
-
-
-        //         updateName.value = doc.data().aptName
-        //         updateAptNature.value = doc.data().aptType
-        //         updateEmail.value = doc.data().aptEmail
-        //         updateAddress.value = doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress
-        //         updateCreateDate.value = doc.data().aptStartDate
-        //         updateCategory.value = doc.data().aptCategory
-        //         updateOccurrence.value = doc.data().aptOccurrenceType
-        //         updateSlot.value = days[ doc.data().aptDay - 1 ]
-        //         updateFees.value = doc.data().aptFees
-        //         updateMobileNumber.value = doc.data().aptMobileNumber
-
-        //         currentProfileName = doc.data().aptName
-        //         currentProfileEmail = doc.data().aptEmail
-        //         currentProfileAddress = doc.data().aptAddress
-        //         currentProfileMobileNumber = doc.data().aptMobileNumber
-        //         currentProfileFees = doc.data().aptFees
-
-        //     } )
-        // } )
     }
 }
 
@@ -275,7 +251,7 @@ updateProfileButton.onclick = () =>
         promptContent = document.querySelector( ".promptContent" )
 
     // Need to add check for address
-    if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === updateMobileNumber.value && currentProfileFees === updateFees.value )
+    if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === parseInt( updateFees.value ) )
     {
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
@@ -285,7 +261,7 @@ updateProfileButton.onclick = () =>
     {
         let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
         let dbRef = db.collection( "profiles" ).doc( getName )
-        console.log( updateName.value, updateEmail.value, updateMobileNumber.value, parseInt( updateFees.value ), getName );
+
         dbRef.update( {
             aptName: updateName.value,
             aptEmail: updateEmail.value,
@@ -294,9 +270,18 @@ updateProfileButton.onclick = () =>
             aptFees: parseInt( updateFees.value ),
             profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
         } )
+
+        // db.collection( 'appointments' ).where( 'aptName', '==', updateName.value ).onSnapshot( ( querySnapshot ) =>
+        // {
+        //     querySnapshot.forEach( ( doc ) =>
+        //     {
+
+        //     })
+        // })
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
         promptContent.innerText = 'Profile Updated'
+
     }
 
     closePrompts.onclick = () =>
@@ -315,4 +300,46 @@ closeUpdateProfileWrapper.onclick = () =>
     reportByNameFilter.selectedIndex = 0
     profile.classList.add( 'hidden' )
     workContent.classList.add( 'hidden' )
+}
+
+let deleteProfileButton = document.querySelector( '.deleteProfileButton' )
+let deletePrompts = document.querySelector( '.deletePrompts' )
+
+deleteProfileButton.onclick = () =>
+{
+    deletePrompts.classList.add( 'left-0' )
+}
+
+let confirmDeleteProfile = document.querySelector( '.confirmDeleteProfile' )
+confirmDeleteProfile.onclick = () =>
+{
+    let deleteProfileReason = document.querySelector( '.deleteProfileReason' )
+    let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
+    let dbRef = db.collection( "profiles" ).doc( getName )
+    if ( deleteProfileReason.value === '' )
+    {
+        alert('Please provide reason to delete..')
+    }
+    else
+    {   
+        dbRef.update( {
+            softDelete: true,
+            reasonForDelete: deleteProfileReason.value,
+            profileDeletedOn: firebase.firestore.FieldValue.serverTimestamp()
+        } )
+        alert( 'Profile Deleted successfully.' )
+
+        deleteProfileReason.value = ''
+        deletePrompts.classList.remove( 'left-0' )
+        updateProfileWrapper.classList.remove( 'left-0' )
+        profile.classList.add( 'hidden' )
+        workContent.classList.add( 'hidden' )
+    }
+}
+
+let goBack = document.querySelector( '.goBack' )
+
+goBack.onclick = () =>
+{
+    deletePrompts.classList.remove( 'left-0' )
 }
