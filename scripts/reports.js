@@ -90,7 +90,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                 <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
                 `
                 reportByNameFilter.innerHTML += patientNames
-                
+
             }
 
         } )
@@ -271,13 +271,25 @@ updateProfileButton.onclick = () =>
             profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
         } )
 
-        // db.collection( 'appointments' ).where( 'aptName', '==', updateName.value ).onSnapshot( ( querySnapshot ) =>
-        // {
-        //     querySnapshot.forEach( ( doc ) =>
-        //     {
 
-        //     })
-        // })
+        let newDbRef = db.collection( 'appointments' ).where( 'aptName', '==', currentProfileName )
+
+        newDbRef.onSnapshot( ( querySnapshot ) =>
+        {
+            var batch = db.batch()
+            querySnapshot.forEach( ( doc ) =>
+            {
+                console.log( currentProfileName, updateName.value, doc.data().aptName );
+                batch.update( newDbRef, { 'aptName': updateName.value } )
+
+            } )
+
+            batch.commit().then( () =>
+            {
+                console.log( 'profiles updated...' );
+            } )
+        } )
+
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
         promptContent.innerText = 'Profile Updated'
@@ -318,10 +330,10 @@ confirmDeleteProfile.onclick = () =>
     let dbRef = db.collection( "profiles" ).doc( getName )
     if ( deleteProfileReason.value === '' )
     {
-        alert('Please provide reason to delete..')
+        alert( 'Please provide reason to delete..' )
     }
     else
-    {   
+    {
         dbRef.update( {
             softDelete: true,
             reasonForDelete: deleteProfileReason.value,
