@@ -54,7 +54,7 @@
 
           <!-- Dropdown of names for notes  -->
           <div class="namesForNotes ptNotes mt-5 w-full text-xs">
-            <h3 class="font-semibold text-blue-600">Select Name:</h3>
+            <h3 class="font-semibold text-blue-600">Select Name ( to View/Upload ):</h3>
           </div>
           <select name="ptNotes" id=""
             class="patientList text-xs text-blue-600 mt-2 w-1/2 rounded-md border-2 border-gray-200 font-semibold">
@@ -65,7 +65,7 @@
           <div class="uploadedNotesWrapper mt-10 text-xs">
             <h4 class="border-b-2 border-gray-200 font-semibold text-blue-600">
               <span>Upload notes</span>
-              <span class="instructions text-rose-400 ml-1">( only .pdf files allowed )</span>
+              <span class="instructions text-rose-400 ml-1">( only .pdf & .jpg files allowed )</span>
             </h4>
 
             <!-- Upload note file  -->
@@ -76,11 +76,11 @@
             </form>
 
             <!-- Uploaded Notes list  -->
-            <div class="uploadedNotes mt-5 border-2 border-gray-200 rounded-md">
+            <div class="uploadedNotes hidden mt-5 border-2 border-gray-200 rounded-md">
               <h3 class="p-3 lg:px-6 rounded-t-md text-blue-600 border-b-2 border-gray-200 font-semibold">
-                <span class="totalUploadedNotesCount">Uploaded notes <span class="notesCount">( 02 )</span></span>
+                <span class="totalUploadedNotesCount">Uploaded notes ( <span class="notesCount">02 </span> )</span>
               </h3>
-              <div class="uploadedNotesList hidden p-3 lg:px-6">
+              <div class="uploadedNotesList  p-3 lg:px-6">
               </div>
             </div>
 
