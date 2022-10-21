@@ -1,439 +1,228 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>YourDay</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="../dist/output.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body class="h-full">
     <div
-      class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('../assets/schedule.webp')] lg:bg-[url('')] lg:flex"
-    >
+      class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('../assets/schedule.webp')] lg:bg-[url('')] lg:flex">
+
+
       <!-- Only for Desktop -->
 
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/schedule.webp" alt="logo" class="h-screen" />
       </div>
 
-      <div class="scheduleWrapper lg:w-2/3 lg:overflow-x-hidden">
+      <div class="scheduleWrapper lg:w-3/5 lg:overflow-x-hidden relative">
+
+        <!-- Update Appointments Section -->
+        <div
+          class="updateAppointments z-50 fixed w-full  h-82  lg:block hidden border-box top-0 -right-[2000px] lg:flex">
+          <div class="w-2/5 dummy"></div>
+          <div class="updateAppointmentWrapper w-3/5 bg-slate-200 px-10 py-4">
+            <h1 class="text-center font-semibold">Update Appointments</h1>
+            <div class="updateAppointmentsSection"></div>
+          </div>
+        </div>
+
+        <!-- Ends Update Appointments Section -->
+
         <!-- Navbar  -->
-        <nav
-          class="text-xs flex items-center justify-between px-6 py-6 lg:p-10 text-zinc-900"
-        >
+        <nav class="text-xs flex items-center justify-between px-6 py-6 lg:p-10 text-zinc-900">
           <a href="./home.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
+                clip-rule="evenodd" />
             </svg>
           </a>
           <span class="tracking-widest font-semibold uppercase">Schedule</span>
         </nav>
 
-        <div
-          class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-6"
-        >
-          <!-- Schedule View Style (For Desktop only)  -->
-          <div
-            class="scheduleViewType lg:py-2 lg:flex lg:items-center lg:border-b-2 border-blue-400 hidden"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="tableViewIcon h-8 w-8 text-blue-700 mr-5 cursor-pointer"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
-              />
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="galleryViewIcon h-8 w-8 text-blue-700 cursor-pointer"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
-              />
-            </svg>
+        <!-- Table Icons (For Desktop only)  -->
+        <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full lg:px-10 px-6">
+
+          <div class="scheduleViewType lg:flex lg:items-center hidden ">
+
+            <!-- Update Table Icons-->
+            <div class="updateViewIcon flex mr-5 items-center cursor-pointer px-3 py-2 rounded-md bg-blue-100">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="h-5 w-5 text-blue-700">
+                <path
+                  d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
+                <path
+                  d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
+              </svg>
+
+              <span class="something text-xs ml-1 font-semibold text-blue-600">Update</span>
+            </div>
+
+            <!-- <div class="galleryViewIcon flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6 text-blue-700 cursor-pointer"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"
+                />
+              </svg>
+              <span class="something text-xs ml-1 font-semibold text-blue-600">Card View</span>
+            </div> -->
+
+            <!-- Completed Table Icons  -->
+            <div class="completedViewIcon flex items-center cursor-pointer px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="h-5 w-5 text-emerald-500 ">
+                <path fill-rule="evenodd"
+                  d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="text-xs ml-1 font-semibold text-emerald-500">Completed</span>
+
+            </div>
+
+            <!-- Cancelled Table Icons  -->
+            <div class="cancelledViewIcon flex items-center ml-5 cursor-pointer px-3 py-2 rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                class="h-5 w-5 text-red-500">
+                <path fill-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                  clip-rule="evenodd" />
+              </svg>
+              <span class="text-xs ml-1 font-semibold text-red-500">Cancelled</span>
+
+            </div>
+
           </div>
 
-          <!-- ***** ***** ***** ***** Ends Schedule View Style section ***** ***** ***** ***** -->
+          <!-- ***** ***** ***** ***** Ends Table Icons ***** ***** ***** ***** -->
 
-          <!-- Schedule with a Gallery View (For Desktop + Mobile)  -->
+          <!-- Schedule with a Gallery View (Mobile)  -->
           <section
-            class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2"
-          >
-            <!-- Session -->
-            <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700 mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
-            >
-              <div class="details flex flex-col text-xs">
-                <div
-                  class="timeAndDate flex justify-between items-center font-black"
-                >
-                  <span class="time flex items-center justify-between">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3 w-3 mr-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span class="clockDetails tracking-wider">
-                      10:00 - 11:00
-                    </span>
-                  </span>
-                  <span class="date tracking-wider"> 26:07:2022 </span>
-                </div>
-                <div class="ptName flex mt-2 items-center justify-between">
-                  <div class="ptName-wrapper flex items-center">
-                    <span class="name font-semibold mr-2"> John Doe </span>
-                    <span class="aptDetails flex items-center">
-                      <span
-                        class="aptType text-emerald-50 tracking-wider font-medium bg-emerald-700 px-2 py-1 rounded-full"
-                      >
-                        S
-                      </span>
-                    </span>
-                  </div>
-                  <!-- Edit Appointment -->
-                  <div
-                    class="editAppointments flex items-center justify-between w-[70px]"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-4 w-4"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                    <!-- <select name="" id="" class="text-xs rounded-md pr-6 text-center font-semibold py-1 bg-emerald-100 text-emerald-700 tracking-wider outline-none border-none">
-                                        <option value="Done">Done</option>
-                                        <option value="cancel">cancel</option>
-                                        <option value="Edit">Edit</option>
-                                    </select> -->
-                  </div>
-                </div>
-              </div>
-            </div>
+            class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2 lg:hidden">
 
-            <!-- Supervision  -->
-            <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-blue-100 border-l-8 border-blue-600 text-blue-700 mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl"
-            >
-              <div class="details flex flex-col text-xs">
-                <div
-                  class="timeAndDate flex justify-between items-center font-black"
-                >
-                  <span class="time flex items-center justify-between">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3 w-3 mr-1"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span class="clockDetails tracking-wider">
-                      10:00 - 12:00
-                    </span>
-                  </span>
-                  <span class="date tracking-wider"> 02:08:2022 </span>
-                </div>
-                <div class="ptName flex mt-2 items-center justify-between">
-                  <div class="ptName-wrapper flex items-center justify-between">
-                    <span class="name font-semibold mr-2"> John Doe </span>
-                    <span class="aptDetails flex items-center">
-                      <span
-                        class="aptType text-emerald-50 tracking-wider font-medium bg-blue-700 px-2 py-1 rounded-full"
-                      >
-                        SV
-                      </span>
-                    </span>
-                  </div>
-                  <!-- Edit Appointment -->
-                  <div class="editAppointments">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-5 w-5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- For Review (New) -->
-            <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-rose-100 border-l-8 border-rose-600 text-rose-700 mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl"
-            >
-              <div class="details flex flex-col justify-center text-xs">
-                <div class="details-wrapper flex flex-col justify-center">
-                  <div
-                    class="timeAndDate flex justify-between items-center font-black"
-                  >
-                    <span class="time flex items-center justify-between">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-3 w-3 mr-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <span class="clockDetails tracking-wider">
-                        10:00 - 11:00
-                      </span>
-                    </span>
-                    <span class="date tracking-wider"> 26:07:2022 </span>
-                  </div>
-                  <div class="ptName flex mt-2 items-center justify-between">
-                    <div class="ptName-wrapper flex items-center">
-                      <span class="name font-semibold mr-2"> John Doe </span>
-                      <span class="aptDetails flex items-center">
-                        <span
-                          class="aptType text-emerald-50 tracking-wider font-medium bg-rose-700 px-2 py-1 rounded-full"
-                        >
-                          N
-                        </span>
-                      </span>
-                    </div>
-                    <!-- Edit Appointment -->
-                    <div class="editAppointments">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Session 2 -->
-            <div
-              class="1 p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-100 border-l-8 border-emerald-600 text-emerald-700 mb-6 lg:w-auto lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl"
-            >
-              <div class="details flex flex-col text-xs">
-                <div class="details-wrapper">
-                  <div
-                    class="timeAndDate flex justify-between items-center font-black"
-                  >
-                    <span class="time flex items-center justify-between">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-3 w-3 mr-1"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <span class="clockDetails tracking-wider">
-                        10:00 - 11:00
-                      </span>
-                    </span>
-                    <span class="date tracking-wider"> 26:07:2022 </span>
-                  </div>
-                  <div class="ptName flex mt-2 items-center justify-between">
-                    <div class="ptName-wrapper flex items-center">
-                      <span class="name font-semibold mr-2"> John Doe </span>
-                      <span class="aptDetails flex items-center">
-                        <span
-                          class="aptType text-emerald-50 tracking-wider font-medium bg-emerald-700 px-2 py-1 rounded-full"
-                        >
-                          S
-                        </span>
-                      </span>
-                    </div>
-                    <!-- Edit Appointment -->
-                    <div class="editAppointments">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        class="h-5 w-5"
-                        viewBox="0 0 20 20"
-                        fill="currentColor"
-                      >
-                        <path
-                          d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </section>
 
           <!-- ***** ***** ***** ***** Ends Schedule with a Gallery View section ***** ***** ***** ***** -->
 
-          <!-- Schedule with a table view  -->
-          <table
-            class="border-collapse box-border lg:mx-5 lg:mt-10 lg:w-auto scheduleTableView hidden lg:hidden"
-          >
-            <thead>
-              <tr class="bg-blue-600">
-                <th
-                  class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider"
-                >
-                  State
-                </th>
-                <th
-                  class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider"
-                >
-                  City
-                </th>
-                <th
-                  class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider"
-                >
-                  City
-                </th>
-                <th
-                  class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider"
-                >
-                  City
-                </th>
-                <th
-                  class="border border-blue-600 p-2 text-slate-50 text-sm uppercase tracking-wider"
-                >
-                  City
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
-                <td class="py-3 text-center text-sm font-semibold">Indiana</td>
-                <td class="py-3 text-center text-sm font-semibold">
-                  Indianapolis
-                </td>
-                <td class="py-3 text-center text-sm font-semibold">
-                  Indianapolis
-                </td>
-                <td class="py-3 text-center text-sm font-semibold">
-                  Indianapolis
-                </td>
-                <td class="py-3 text-center text-sm font-semibold">
-                  Indianapolis
-                </td>
-              </tr>
-              <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
-                <td class="py-3 text-center text-sm font-semibold">Ohio</td>
-                <td class="py-3 text-center text-sm font-semibold">Columbus</td>
-                <td class="py-3 text-center text-sm font-semibold">Columbus</td>
-                <td class="py-3 text-center text-sm font-semibold">Columbus</td>
-                <td class="py-3 text-center text-sm font-semibold">Columbus</td>
-              </tr>
-              <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
-                <td class="py-3 text-center text-sm font-semibold">Michigan</td>
-                <td class="py-3 text-center text-sm font-semibold">Detroit</td>
-                <td class="py-3 text-center text-sm font-semibold">Detroit</td>
-                <td class="py-3 text-center text-sm font-semibold">Detroit</td>
-                <td class="py-3 text-center text-sm font-semibold">Detroit</td>
-              </tr>
-              <tr class="border-l-2 border-b-2 border-r-2 border-gray-200">
-                <td class="py-3 text-center text-sm font-semibold">Michigan</td>
-                <td class="py-3 text-center text-sm font-semibold">Michigan</td>
-                <td class="py-3 text-center text-sm font-semibold">Michigan</td>
-                <td class="py-3 text-center text-sm font-semibold">Michigan</td>
-                <td class="py-3 text-center text-sm font-semibold">Detroit</td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Table Views  with Data-->
+          <div class="tableViewWrapper w-full relative">
+
+            <!-- Update Table  -->
+            <table
+              class="text-center text-xs border-collapse box-border lg:my-10  updateTableView hidden lg:table lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Date
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Slot
+                  </th>
+
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="updateTableViewRows px-10"></tbody>
+              <tbody class="completedTableViewRows px-10 hidden"></tbody>
+              <tbody class="cancelledTableViewRows px-10 hidden"></tbody>
+            </table>
+
+            <!-- Completed Table  -->
+
+            <!-- <table class="text-center text-xs border-collapse box-border lg:my-10  completedTableView hidden lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Time
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Day
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="completedTableViewRows px-10">
+
+              </tbody>
+            </table> -->
+
+            <!-- Cancelled Table  -->
+
+            <!-- <table class="text-center text-xs border-collapse box-border lg:my-10  cancelledTableView hidden lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Time
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Day
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="cancelledTableViewRows px-10">
+
+              </tbody>
+            </table> -->
+
+          </div>
 
           <!-- ***** ***** ***** ***** Ends Schedule with a Table View section ***** ***** ***** ***** -->
+
+
         </div>
       </div>
-    </div>
-    <script src="../scripts/schedule.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="../scripts/common.js"></script>
+      <script src="../scripts/schedule.js"></script>
   </body>
+
 </html>

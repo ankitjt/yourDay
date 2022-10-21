@@ -1,62 +1,163 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>YourDay - Reports</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <link rel="stylesheet" href="../dist/output.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="../dist/output.css" /> -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.2/dist/chart.min.js"></script> -->
   </head>
 
-  <body class="h-full">
+  <body class="h-full relative overflow-x-hidden">
+
+    <!-- Update Profile -->
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/reports3.webp')] lg:bg-[url('')] lg:justify-between"
-    >
+      class="absolute h-screen w-2/5 -left-[2000px] bg-blue-100 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+      <h1 class="uppercase text-md font-semibold">Update Profile</h1>
+
+      <section class="profileDetails mt-3 px-5 lg:transition-all lg:ease-in-out text-xs font-semibold">
+        <div class="profileName flex items-center justify-between my-3">
+          <span class="nameTag font-semibold">Name</span>
+          <input type="text" value=""
+            class="updateName  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="flex items-center justify-between my-3">
+          <span class="appointmentNature">Appointment Nature</span>
+          <input type="text" value=""
+            class="updateAptNature  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileEmail flex items-center justify-between my-3">
+          <span class="emailTag">Email</span>
+          <input type="email" value=""
+            class="updateEmail   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="profileMobileNumber flex items-center justify-between my-3">
+          <span class="mobileTag">Mobile</span>
+          <input type='number' value=""
+            class="updateMobileNumber   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        <div class="profileAddress flex items-center justify-between my-3">
+          <span class="addressTag">Address</span>
+          <textarea value=""
+            class="updateAddress border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3"></textarea>
+        </div>
+        <div class="profileStartDate flex items-center justify-between my-3">
+          <span class="createDateTag">Create Date</span>
+          <input type='text' value=""
+            class="updateCreateDate   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileCategory flex items-center justify-between my-3">
+          <span class="categoryTag">Category</span>
+          <input type='text' value=""
+            class="updateCategory   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileOccurrence flex items-center justify-between my-3">
+          <span class="occurrenceTag">Occurrence ( per week )</span>
+          <input type='number' value=""
+            class="updateOccurrence  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileSlot flex items-center justify-between my-3">
+          <span class="slotTag">Slot</span>
+          <input type='text' value=""
+            class="updateSlot  border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3 bg-gray-300"
+            disabled />
+        </div>
+        <div class="profileFee flex items-center justify-between my-3">
+          <span class="feeTag">Fees</span>
+          <input type='number' value=""
+            class="updateFees   border-2 border-gray-200 rounded-lg text-gray-600 text-xs font-semibold w-2/4 py-3" />
+        </div>
+        
+
+        <div class="updateProfileActionButtons  text-white flex flex-col ">
+
+          <div class="updateWrapper flex justify-between mt-5">
+            <button
+              class="updateProfileButton bg-blue-600 cursor-pointer px-5 py-2 rounded-md tracking-wider uppercase">Update</button>
+            <button
+              class="closeUpdateProfileWrapper cursor-pointer bg-gray-400 px-5 py-2 rounded-md tracking-wider uppercase">Close</button>
+          </div>
+
+          <div class="deleteButtonWrapper mt-8">
+            <button
+              class="deleteProfileButton w-full cursor-pointer bg-rose-600 px-5 py-2 rounded-md tracking-wider uppercase">Delete
+              Profile</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Delete Prompt -->
+      <section
+        class="z-60 deletePrompts absolute px-4 py-10 bg-rose-600 w-full  bottom-0 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+        <div class="deletePromptContent font-medium text-sm w-full text-justify flex flex-col px-10">
+          <textarea name="" id="" cols="5" rows="5" class="deleteProfileReason rounded-md " placeholder="Reason for delete..."></textarea>
+          <div class="confirmButtonsWrapper flex justify-between px-10 mt-5 text-sm">
+            <button class="confirmDeleteProfile cursor-pointer text-rose-600 bg-white  px-5 py-2 rounded-md tracking-wider uppercase">
+              Delete
+            </button>
+            <button class="goBack cursor-pointer text-white bg-gray-400  px-5 py-2 rounded-md tracking-wider uppercase">
+              Cancel
+            </button>
+
+          </div>
+        </div>
+        
+      </section>
+
+      <!-- Prompts -->
+      <section
+        class="z-60 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+        <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
+          viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd"
+            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+            clip-rule="evenodd" />
+        </svg>
+      </section>
+
+    </div>
+
+    <div
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/reports3.webp')] lg:bg-[url('')] lg:justify-between">
+
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/reports3.webp" alt="logo" class="h-screen w-auto" />
       </div>
 
       <!-- Reports Wrapper  -->
-      <div
-        class="reportsWrapper lg:grow lg:py-0 lg:px-16 relative lg:h-screen lg:overflow-auto lg:w-3/5"
-      >
+      <div class="reportsWrapper lg:grow lg:py-0 lg:px-16 relative lg:h-screen lg:overflow-auto lg:w-3/5">
         <!-- Navbar  -->
         <div class="text-xs flex items-center justify-between py-6">
           <a href="./home.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-zinc-900 text-left"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 text-left" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              />
+                clip-rule="evenodd" />
             </svg>
           </a>
-          <span class="text-zinc-900 tracking-widest font-semibold uppercase"
-            >Reports</span
-          >
+          <span class="text-zinc-900 tracking-widest font-semibold uppercase">Reports</span>
         </div>
 
         <!-- Report by month -->
 
         <section class="reportByMonthSection rounded-lg">
           <h3 class="mb-2">
-            <span
-              class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold"
-            >
+            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
               By month
             </span>
           </h3>
@@ -64,55 +165,43 @@
           <!-- Filter Type ( By month ) -->
 
           <section class="monthFilter mb-5 text-rose-600 font-semibold">
-            <select
-              name="reportByMonthFilter"
-              id="monthList"
-              class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-4/6 lg:w-2/4"
-            >
+            <select name="reportByMonthFilter" id="monthList"
+              class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-4/6 lg:w-2/4">
               <option selected value="All Time" class="font-semibold">
                 All Time
               </option>
-              <option value="january" class="font-semibold">January</option>
-              <option value="February" class="font-semibold">February</option>
-              <option value="March" class="font-semibold">March</option>
-              <option value="April" class="font-semibold">April</option>
-              <option value="May" class="font-semibold">May</option>
-              <option value="June" class="font-semibold">June</option>
-              <option value="July" class="font-semibold">July</option>
-              <option value="August" class="font-semibold">August</option>
-              <option value="September" class="font-semibold">September</option>
-              <option value="October" class="font-semibold">October</option>
-              <option value="November" class="font-semibold">November</option>
-              <option value="December" class="font-semibold">December</option>
+              <option value="1" class="font-semibold">January</option>
+              <option value="2" class="font-semibold">February</option>
+              <option value="3" class="font-semibold">March</option>
+              <option value="4" class="font-semibold">April</option>
+              <option value="5" class="font-semibold">May</option>
+              <option value="6" class="font-semibold">June</option>
+              <option value="7" class="font-semibold">July</option>
+              <option value="8" class="font-semibold">August</option>
+              <option value="9" class="font-semibold">September</option>
+              <option value="10" class="font-semibold">October</option>
+              <option value="11" class="font-semibold">November</option>
+              <option value="12" class="font-semibold">December</option>
             </select>
           </section>
 
           <div
-            class="reportsTotalByMonth text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out"
-          >
-            <div
-              class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize"
-            >
+            class="reportsTotalByMonth text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+            <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
               <span>Sessions</span>
-              <span class="totalSessionsCount">452</span>
+              <span class="totalSessionsCount"></span>
             </div>
-            <div
-              class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize"
-            >
+            <div class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize">
               <span>Supervision</span>
-              <span class="totalSupervisionCount">152</span>
+              <span class="totalSupervisionCount"></span>
             </div>
-            <div
-              class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize"
-            >
+            <div class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize">
               <span>Rescheduled</span>
-              <span class="totalRescheduledCount">43</span>
+              <span class="totalRescheduledCount"></span>
             </div>
-            <div
-              class="totalCancelled flex items-center justify-between capitalize"
-            >
+            <div class="totalCancelled flex items-center justify-between capitalize">
               <span>Cancelled</span>
-              <span class="totalCancelledCount">15</span>
+              <span class="totalCancelledCount"></span>
             </div>
           </div>
         </section>
@@ -122,138 +211,109 @@
         <!-- Report by Name -->
         <section class="reportByNameSection mt-5 lg:mt-10 rounded-lg">
           <h3 class="mb-2">
-            <span
-              class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold"
-            >
+            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
               By name
             </span>
           </h3>
 
           <!-- Report By Name Filter  -->
-          <select
-            name="reportByNameFilter"
-            id="monthList"
-            class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs mb-1 w-4/6 font-semibold lg:w-2/4"
-          >
-            <option value="selectName" class="font-semibold">
-              Select Name
-            </option>
-            <option value="John Doe" class="font-semibold">John Doe</option>
-            <option value="Jane Smith" class="font-semibold">Jane Smith</option>
+          <select name="reportByNameFilter" id="reportByNameFilter"
+            class="reportByNameFilter rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs mb-1 w-4/6 font-semibold lg:w-2/4">
+            <option value="Select" class="font-semibold">Select</option>
           </select>
 
           <!-- Reports By Name section  -->
+
           <div class="reportByName">
+
             <!-- Profile Section  -->
             <div
-              class="reportsByNameSections text-blue-600 my-4 bg-blue-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out w-full"
-            >
-              <button
-                class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4"
-              >
-                <div
-                  class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400"
-                >
-                  <span
-                    class="sectionNameProfile text-sm font-semibold tracking-wider"
-                    >Profile</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 downArrow text-blue-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
+              class="reportsByNameSections text-blue-600 my-4 bg-white drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md w-full">
+              <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
+                <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
+                  <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update Profile</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
                       d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </button>
 
               <!-- Patient Profile -->
 
-              <section
-                class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs"
-              >
+              <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+
                 <div class="profileName flex items-center justify-between my-3">
                   <span class="nameTag">Name</span>
-                  <span class="name ml-2 tracking-widest">John Doe</span>
+                  <span class="name ml-2">NA</span>
                 </div>
-                <div
-                  class="profileEmail flex items-center justify-between my-3"
-                >
+
+                <div class="profileEmail flex items-center justify-between my-3">
                   <span class="emailTag">Email</span>
-                  <span class="email ml-2 tracking-widest"
-                    >johndoe@gmail.com</span
-                  >
+                  <span class="email ml-2">NA</span>
                 </div>
-                <div
-                  class="profileMobileNumber flex items-center justify-between my-3"
-                >
+
+                <div class="profileMobileNumber flex items-center justify-between my-3">
                   <span class="mobileTag">Mobile</span>
-                  <span class="mobileNumber ml-2 tracking-widest"
-                    >+91-1234567890</span
-                  >
+                  <span class="mobileNumber ml-2">NA</span>
                 </div>
-                <div
-                  class="profileStartDate flex items-center justify-between my-3"
-                >
-                  <span class="startDateTag">Start Date</span>
-                  <span class="startDate ml-2 tracking-widest">27/07/2022</span>
+
+                <div class="profileAddress flex items-center justify-between my-3">
+                  <span class="addressTag">Address</span>
+                  <span class="address ml-2">NA</span>
                 </div>
-                <div class="profileFee flex items-center justify-between my-3">
-                  <span class="feeTag">Fee</span>
-                  <span class="fee ml-2 tracking-widest">1500</span>
+
+                <div class="profileStartDate flex items-center justify-between my-3">
+                  <span class="createDateTag">Create Date</span>
+                  <span class="createDate ml-2">NA</span>
                 </div>
-                <div
-                  class="profileCategory flex items-center justify-between my-3"
-                >
+
+                <div class="profileCategory flex items-center justify-between my-3">
                   <span class="categoryTag">Category</span>
-                  <span class="category ml-2 tracking-widest">Session</span>
+                  <span class="category ml-2">NA</span>
                 </div>
-                <div
-                  class="profileCategory flex items-center justify-between my-3"
-                >
-                  <span class="categoryTag">Occurrence ( per week )</span>
-                  <span class="category ml-2">1</span>
+
+                <div class="profileOccurrence flex items-center justify-between my-3">
+                  <span class="occurrenceTag">Occurrence ( per week )</span>
+                  <span class="occurrence ml-2">NA</span>
                 </div>
+
+                <div class="profileSlot flex items-center justify-between my-3">
+                  <span class="slotTag">Slot</span>
+                  <span class="slot ml-2">NA</span>
+                </div>
+
+                <div class="profileFee flex items-center justify-between my-3">
+                  <span class="feeTag">Fees</span>
+                  <span class="fee ml-2">NA</span>
+                </div>
+
+                <div class="updateLinksWrapper flex justify-between mt-6">
+                  <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
+                  <span class="profileUpdatedOn font-normal text-gray-400 text-xs"></span>
+                </div>
+
               </section>
             </div>
 
             <!-- Work section  -->
             <div
-              class="reportsByNameSections text-blue-600 my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out"
-            >
-              <button
-                class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold"
-              >
-                <div
-                  class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400"
-                >
-                  <span
-                    class="sectionButtonWork text-sm font-semibold tracking-wider"
-                    >Work</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 downArrow text-blue-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
+              class="reportsByNameSections text-blue-600 my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md  lg:transition-all lg:ease-in-out">
+              <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
+                <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
+                  <span class="sectionButtonWork text-sm font-semibold tracking-wider">Work</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
                       d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </button>
               <section
-                class="content font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out"
-              >
+                class="workContent font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
                 doloribus sed? Quibusdam voluptatibus et minima vitae nihil
                 mollitia quod error provident, similique autem aliquid aliquam!
@@ -265,54 +325,69 @@
               </section>
             </div>
 
-            <!-- Money Section  -->
-            <div
-              class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out"
-            >
-              <button
-                class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold"
-              >
-                <div
-                  class="sectionButtonWrapper w-full flex items-center justify-between"
-                >
-                  <span
-                    class="sectionNameMoney text-sm font-semibold tracking-wider"
-                    >Money</span
-                  >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5 downArrow text-blue-600"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fill-rule="evenodd"
+            <!-- Profile Action Section  -->
+            <!-- <div
+              class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+              <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
+                <div class="sectionButtonWrapper w-full flex items-center justify-between">
+                  <span class="sectionNameMoney text-sm font-semibold tracking-wider">Profile Actions</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
                       d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd"
-                    />
+                      clip-rule="evenodd" />
                   </svg>
                 </div>
               </button>
-              <section
-                class="content font-semibold text-xs leading-loose text-justify pb-6 px-8 hidden lg:transition-all lg:ease-in-out"
-              >
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-                doloribus sed? Quibusdam voluptatibus et minima vitae nihil
-                mollitia quod error provident, similique autem aliquid aliquam!
-                Soluta provident repellendus numquam illo. Ipsam, harum id.
-                Magni totam unde explicabo, impedit eligendi cumque incidunt
-                voluptate doloribus molestias minima debitis fugit atque
-                sapiente ab repellendus asperiores. Temporibus fugiat eum libero
-                sunt magni optio neque!
+              <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+                <div class="profileName flex items-center justify-between my-3">
+                  <span class="nameTag">Name</span>
+                  <span class="name ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileEmail flex items-center justify-between my-3">
+                  <span class="emailTag">Email</span>
+                  <span class="email ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileMobileNumber flex items-center justify-between my-3">
+                  <span class="mobileTag">Mobile</span>
+                  <span class="mobileNumber ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileAddress flex items-center justify-between my-3">
+                  <span class="addressTag">Address</span>
+                  <span class="address ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileStartDate flex items-center justify-between my-3">
+                  <span class="createDateTag">Create Date</span>
+                  <span class="createDate ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileCategory flex items-center justify-between my-3">
+                  <span class="categoryTag">Category</span>
+                  <span class="category ml-2 tracking-widest">NA</span>
+                </div>
+                <div class="profileOccurrence flex items-center justify-between my-3">
+                  <span class="occurrenceTag">Occurrence ( per week )</span>
+                  <span class="occurrence ml-2">NA</span>
+                </div>
+                <div class="profileSlot flex items-center justify-between my-3">
+                  <span class="slotTag">Slot</span>
+                  <span class="slot ml-2">NA</span>
+                </div>
+                <div class="profileFee flex items-center justify-between my-3">
+                  <span class="feeTag">Fees</span>
+                  <span class="fee ml-2 tracking-widest">NA</span>
+                </div>
               </section>
-            </div>
+            </div> -->
           </div>
         </section>
 
         <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
       </div>
     </div>
-
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/common.js"></script>
     <script src="../scripts/reports.js"></script>
   </body>
+
 </html>

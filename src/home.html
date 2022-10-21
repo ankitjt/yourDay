@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>YourDay - Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,14 +11,15 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../dist/output.css" />
+
+    <link rel="stylesheet" href="./style.css">
   </head>
 
   <body class="2xl:bg-gray-500 bg-blue-500">
     <!-- Adding comment to see if remote branch is working or not  -->
     <!-- This is from the creativeOne branch  -->
     <div
-      class="wrapper h-screen w-full bg-no-repeat bg-cover bg-center px-10 py-5 lg:p-0 flex flex-row overflow-auto relative bg-[url('../assets/homepage7.webp')] lg:bg-[url('')] lg:justify-between 2xl:w-5/6 2xl:mx-auto"
+      class="wrapper h-screen w-full bg-no-repeat bg-cover bg-center px-10 py-5 lg:p-0 flex flex-row overflow-auto relative bg-[url('../assets/homepage7.webp')] lg:bg-[url('')] lg:justify-between"
     >
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
@@ -45,11 +46,11 @@
         >
           <!-- Link for Appointments page  -->
           <button
-            class="bg-indigo-700 w-full py-6 mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-indigo-700 w-full mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./appointments.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Appointments</span>
               <svg
@@ -67,11 +68,11 @@
 
           <!-- Link for Schedule page  -->
           <button
-            class="bg-blue-700 w-full py-6 mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-blue-700 w-full mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./schedule.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Schedule</span>
               <svg
@@ -91,11 +92,11 @@
 
           <!-- Link for Finances page  -->
           <button
-            class="bg-green-600 w-full py-6 mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-green-600 w-full mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./finances.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Finances</span>
               <svg
@@ -115,11 +116,11 @@
 
           <!-- Link for Reports page  -->
           <button
-            class="bg-purple-600 w-full py-6 mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-purple-600 w-full mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./reports.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Reports</span>
               <svg
@@ -139,11 +140,11 @@
 
           <!-- Link for Notes page  -->
           <button
-            class="bg-gray-100 w-full py-6 mb-5 text-zinc-900 text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-gray-100 w-full mb-5 text-zinc-900 text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./notes.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Notes</span>
               <svg
@@ -163,11 +164,11 @@
 
           <!-- Link for Logout page  -->
           <button
-            class="bg-rose-600 w-full py-6 lg:mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
+            class="bg-rose-600 w-full lg:mb-5 text-white text-xl rounded-md capitalize lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-2xl cursor-pointer"
           >
             <a
               href="./index.html"
-              class="flex items-center justify-between px-10"
+              class="flex items-center justify-between p-6"
             >
               <span>Logout</span>
               <svg
