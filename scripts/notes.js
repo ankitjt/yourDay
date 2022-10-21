@@ -15,27 +15,34 @@ let patientList = document.querySelector( ".patientList" );
 
         querySnapshot.forEach( ( doc ) =>
         {
-            let patientNames = `
-            <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
-            `
-            patientList.innerHTML += patientNames
+            if ( doc.data().softDelete !== true )
+            {
+                let patientNames = `
+                <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
+                `
+                patientList.innerHTML += patientNames
+
+            }
 
         } )
     } )
 
 
 } )()
-
 patientList.onchange = () =>
 {
     // Listing All files for selected name 
     let uploadedNotesList = document.querySelector( '.uploadedNotesList' )
+    let uploadedNotes = document.querySelector( '.uploadedNotes' )
+    let notesCount = document.querySelector( '.notesCount' )
+
     if ( patientList.value === 'Select' )
     {
-        uploadedNotesList.classList.add( 'hidden' )
+        uploadedNotes.classList.add( 'hidden' )
     }
     else
     {
+        let myArr = []
         uploadedNotesList.innerHTML = ''
         let listRef = firebase.storage().ref( `ptNotes/${ patientList.value }/` )
 
@@ -50,7 +57,7 @@ patientList.onchange = () =>
                     <div
                   class="note mb-4 flex items-center justify-between lg:hover:bg-gray-200 p-2 rounded-lg lg:transition-all lg:ease-in-out">
                   <div class="noteLink flex flex-col">
-                    <a href="${url}" class="text-blue-600">
+                    <a href="${ url }" target='_blank' class="text-blue-600" download>
                       <span class="noteName font-semibold underline">${ itemRef.name }</span>
                     </a>
                     <span class="noteUploadTime text-xs font-semibold text-gray-400 tracking-wider mt-1">
@@ -67,11 +74,11 @@ patientList.onchange = () =>
                 </div>
                 `
                     uploadedNotesList.innerHTML += notesOfPatients
-                    uploadedNotesList.classList.remove( 'hidden' )
-                    console.log( itemRef.timeCreated );
+                    uploadedNotes.classList.remove( 'hidden' )
                 } )
 
-
+                myArr.push( itemRef )
+                notesCount.innerText = myArr.length
             } )
         } )
     }

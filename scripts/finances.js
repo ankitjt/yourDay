@@ -14,11 +14,15 @@ let monthListByName = document.querySelector( ".monthListByName" );
   {
     querySnapshot.forEach( ( doc ) =>
     {
-      let patientList = `
+      if ( doc.data().softDelete !== true )
+      {
+        let patientList = `
+          
+          <option value="${ doc.data().aptName }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
+        `
+        financePatientList.innerHTML += patientList
         
-        <option value="${ doc.data().aptName }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
-      `
-      financePatientList.innerHTML += patientList
+      }
     } )
   } )
 } )();
