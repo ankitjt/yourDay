@@ -163,7 +163,10 @@ reportByNameFilter.onchange = () =>
                 slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot;
                 profileUpdatedOn.innerHTML = `
                     <span>Last Updated: </span> 
-                    <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>`
+                    <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>
+
+                    `
+                console.log(updateName.value);
             }
         } )
     }
@@ -271,23 +274,33 @@ updateProfileButton.onclick = () =>
             profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
         } )
 
+        let whatChanged = document.querySelector( ".whatChanged" )
+        if ( updateName.value !== nameOfUser.innerHTML )
+        {
+            whatChanged.innerText += 'You updated name.'
+        }
+        if ( updateEmail.value !== email.innerHTML )
+        {
+            whatChanged.innerText += 'You updated Email.'
+        }
 
-        let newDbRef = db.collection( 'appointments' ).where( 'aptName', '==', currentProfileName )
 
+        let newDbRef = db.collection( 'appointments' )
+
+        //Update Profile in Db appointments
         newDbRef.onSnapshot( ( querySnapshot ) =>
         {
-            var batch = db.batch()
             querySnapshot.forEach( ( doc ) =>
             {
-                console.log( currentProfileName, updateName.value, doc.data().aptName );
-                batch.update( newDbRef, { 'aptName': updateName.value } )
-
+                var batch = db.batch()
+                if ( doc.data().aptName === nameOfUser.innerText )
+                {
+                    let newDb = newDbRef.doc( doc.id )
+                    batch.update( newDb, { 'aptName': updateName.value } )
+                    batch.commit()
+                }
             } )
 
-            batch.commit().then( () =>
-            {
-                console.log( 'profiles updated...' );
-            } )
         } )
 
         prompts.classList.add( 'left-1/2' )
@@ -302,6 +315,11 @@ updateProfileButton.onclick = () =>
         profileDetails.classList.remove( 'blur-sm' )
     }
 
+}
+
+const updateProfile = () =>
+{
+    
 }
 
 let closeUpdateProfileWrapper = document.querySelector( ".closeUpdateProfileWrapper" )
