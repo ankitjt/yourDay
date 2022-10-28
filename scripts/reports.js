@@ -9,7 +9,7 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
 
 const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
 
-// Display reports by name 
+// Display reports by name.
 
 // for ( let thisSection of sectionButton )
 // {
@@ -90,13 +90,10 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
                 <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
                 `
                 reportByNameFilter.innerHTML += patientNames
-
             }
-
         } )
     } )
-
-} )()
+} )();
 
 let nameOfUser = document.querySelector( ".name" ),
     email = document.querySelector( ".email" ),
@@ -114,16 +111,6 @@ reportByNameFilter.onchange = () =>
 {
     if ( reportByNameFilter.value === "Select" )
     {
-        nameOfUser.innerText = "NA"
-        email.innerText = "NA"
-        mobileNumber.innerText = "NA"
-        category.innerText = "NA"
-        createDate.innerText = "NA"
-        fee.innerText = "NA"
-        occurrence.innerText = "NA"
-        address.innerText = "NA"
-        slot.innerText = "NA"
-
         updateProfileWrapper.classList.remove( 'left-0' )
         profile.classList.add( 'hidden' )
         workContent.classList.add( 'hidden' )
@@ -136,6 +123,8 @@ reportByNameFilter.onchange = () =>
         let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
         let dbRef = db.collection( "profiles" ).doc( getName )
         const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
+
+        // Getting user profile details.
 
         dbRef.get().then( ( doc ) =>
         {
@@ -166,7 +155,6 @@ reportByNameFilter.onchange = () =>
                     <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>
 
                     `
-                console.log(updateName.value);
             }
         } )
     }
@@ -193,6 +181,8 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
     currentProfileAddress = '',
     currentProfileFees = ''
 
+// Filling selected user profile details in update window.
+
 updateProfileLink.onclick = () =>
 {
     if ( reportByNameFilter.value === 'Select' )
@@ -203,6 +193,7 @@ updateProfileLink.onclick = () =>
     {
         updateProfileWrapper.classList.add( 'left-0' )
         let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
+
         db.collection( "profiles" ).doc( getName ).get().then( ( doc ) =>
         {
             updateName.value = ''
@@ -216,8 +207,6 @@ updateProfileLink.onclick = () =>
             updateFees.value = ''
             updateMobileNumber.value = ''
             profileUpdatedOn.value = ''
-
-
 
             updateName.value = doc.data().aptName
             updateAptNature.value = doc.data().aptType
@@ -240,9 +229,10 @@ updateProfileLink.onclick = () =>
             currentProfileFees = feesToNum
 
         } )
-
     }
 }
+
+// Updating user profile.
 
 let updateProfileButton = document.querySelector( ".updateProfileButton" )
 
@@ -253,7 +243,8 @@ updateProfileButton.onclick = () =>
         profileDetails = document.querySelector( ".profileDetails" ),
         promptContent = document.querySelector( ".promptContent" )
 
-    // Need to add check for address
+    // *TODO: need to add check for address
+
     if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === parseInt( updateFees.value ) )
     {
         prompts.classList.add( 'left-1/2' )
@@ -274,6 +265,8 @@ updateProfileButton.onclick = () =>
             profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
         } )
 
+        // ** This needs to be updated, adding information to the db is to be configured.
+
         let whatChanged = document.querySelector( ".whatChanged" )
         if ( updateName.value !== nameOfUser.innerHTML )
         {
@@ -283,11 +276,10 @@ updateProfileButton.onclick = () =>
         {
             whatChanged.innerText += 'You updated Email.'
         }
-
+        
+        // Updating user profile in Db appointments.
 
         let newDbRef = db.collection( 'appointments' )
-
-        //Update Profile in Db appointments
         newDbRef.onSnapshot( ( querySnapshot ) =>
         {
             querySnapshot.forEach( ( doc ) =>
@@ -317,10 +309,7 @@ updateProfileButton.onclick = () =>
 
 }
 
-const updateProfile = () =>
-{
-    
-}
+// Closing update profile wrapper.
 
 let closeUpdateProfileWrapper = document.querySelector( ".closeUpdateProfileWrapper" )
 
@@ -332,15 +321,17 @@ closeUpdateProfileWrapper.onclick = () =>
     workContent.classList.add( 'hidden' )
 }
 
+// Deleting a user's profile.
+
 let deleteProfileButton = document.querySelector( '.deleteProfileButton' )
 let deletePrompts = document.querySelector( '.deletePrompts' )
+let confirmDeleteProfile = document.querySelector( '.confirmDeleteProfile' )
 
 deleteProfileButton.onclick = () =>
 {
     deletePrompts.classList.add( 'left-0' )
 }
 
-let confirmDeleteProfile = document.querySelector( '.confirmDeleteProfile' )
 confirmDeleteProfile.onclick = () =>
 {
     let deleteProfileReason = document.querySelector( '.deleteProfileReason' )
@@ -366,6 +357,8 @@ confirmDeleteProfile.onclick = () =>
         workContent.classList.add( 'hidden' )
     }
 }
+
+// Go back on in delete profile prompt.
 
 let goBack = document.querySelector( '.goBack' )
 
