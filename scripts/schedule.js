@@ -146,23 +146,23 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
           if ( doc.data().appointmentStatus === "Scheduled" || doc.data().appointmentStatus === "Updated" )
           {
             let tableViewForUpdate = `
-                  <tr class="border-l-2 border-b-2 tableRow12 border-r-2 border-gray-200" data-id="${ doc.id
+                  <tr class="border-l-2 border-b-2 text-[11px] tableRow12 border-r-2 border-gray-200" data-id="${ doc.id
               }">
-                          <td class="py-3  text-xs px-5 font-semibold">
+                          <td class="py-3 px-5 font-semibold">
                             ${ doc.data().aptName }
                           </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
+                          <td class="py-3 px-5 font-semibold">
                             ${ finalDate }
                           </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
+                          <td class="py-3 px-5 font-semibold">
                             ${ days[ doc.data().aptDay - 1 ] } <br /> ${ doc.data().aptTimeSlot }
                           </td>
-                          <td class="py-3  text-xs px-5 font-semibold">
+                          <td class="py-3 px-5 font-semibold">
                             ${ doc.data().aptType }
                           </td>
     
                           <!-- Status -->
-                          <td class="py-3  text-xs px-5 font-semibold">
+                          <td class="py-3   px-5 font-semibold">
                           
                              <div class="appointmentStatus">
                               <div class="${ doc.data().appointmentStatus === "Completed" ? "block" : "hidden" }">
@@ -193,9 +193,9 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
     
                           </td>
     
-                          <td class="py-3 text-xs px-5 font-semibold">
+                          <td class="py-3  px-5 font-semibold">
                             <select name="appointmentActions" id="appointmentActions"
-                              class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-sm">
+                              class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-2  aptActions lg:drop-shadow-none drop-shadow-2xl text-xs">
                               <option value="Action" class="font-semibold">
                                 Action
                               </option>

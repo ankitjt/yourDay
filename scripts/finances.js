@@ -2,9 +2,9 @@ let financePatientList = document.querySelector( ".financePatientList" ),
   profileDetails = document.querySelector( ".profileDetails" ),
   totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
   findDetailsByName = document.querySelector( ".findDetailsByName" ),
-  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" );
+  countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" )
 
-const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
+const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
 let monthListByName = document.querySelector( ".monthListByName" );
 
 // Getting Names List
@@ -21,11 +21,11 @@ let monthListByName = document.querySelector( ".monthListByName" );
           <option value="${ doc.data().aptName }" class="font-semibold" data-id="${ doc.id }">${ doc.data().aptName }</option>
         `
         financePatientList.innerHTML += patientList
-        
+
       }
     } )
   } )
-} )();
+} )()
 
 
 findDetailsByName.onclick = () =>
@@ -42,6 +42,7 @@ findDetailsByName.onclick = () =>
       {
         if ( financePatientList.value === doc.data().aptName )
         {
+          let profileDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
           let profile = `
                 <div class="profileName flex items-center justify-between mb-2">
                   <span class="nameTag">Name</span>
@@ -77,11 +78,11 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="profileCategory flex items-center justify-between ">
                   <span class="categoryTag">Profile Created on</span>
-                  <span class="category ml-2">${ new Date( doc.data().profileCreatedOn.seconds * 1000 ) }</span>
+                  <span class="category ml-2">${ profileDate.getDate()}-${profileDate.getMonth()+ 1}-${profileDate.getFullYear()}, ${profileDate.getHours()}:${profileDate.getMinutes()}</span>
                 </div>
                 
-              `;
-          profileDetails.innerHTML = profile;
+              `
+          profileDetails.innerHTML = profile
         }
         getCounts()
       } )

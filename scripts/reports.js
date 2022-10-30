@@ -5,37 +5,9 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
     totalSessionsCount = document.querySelector( ".totalSessionsCount" ),
     totalSupervisionCount = document.querySelector( ".totalSupervisionCount" ),
     totalCancelledCount = document.querySelector( ".totalCancelledCount" ),
-    totalRescheduledCount = document.querySelector( ".totalRescheduledCount" );
+    totalRescheduledCount = document.querySelector( ".totalRescheduledCount" )
 
 const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
-
-// Display reports by name.
-
-// for ( let thisSection of sectionButton )
-// {
-//     thisSection.onclick = () =>
-//     {
-//         let thisSectionParent = thisSection.parentElement
-//         let sectionButtonWrapper = thisSection.childNodes[ 1 ];
-//         let downArrowChild = thisSection.childNodes[ 1 ].childNodes[ 3 ]
-//         let panel = thisSection.nextElementSibling
-
-//         downArrowChild.classList.toggle( "rotate-180" )
-//         if ( panel.style.display === 'block' )
-//         {
-//             panel.style.display = 'none'
-//             sectionButtonWrapper.classList.remove( "border-b-2", "pb-2", "border-slate-100" )
-//             thisSectionParent.classList.add( "lg:hover:scale-95", "lg:transition-all", "lg:ease-in-out" )
-//         }
-//         else
-//         {
-//             sectionButtonWrapper.classList.add( "border-b-2", "pb-2", "border-slate-100" )
-//             panel.style.display = "block"
-//             thisSectionParent.classList.remove( "lg:hover:scale-95", "lg:transition-all", "lg:ease-in-out" )
-//         }
-
-//     }
-// };
 
 ( () =>
 {
@@ -93,7 +65,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
             }
         } )
     } )
-} )();
+} )()
 
 let nameOfUser = document.querySelector( ".name" ),
     email = document.querySelector( ".email" ),
@@ -122,7 +94,7 @@ reportByNameFilter.onchange = () =>
 
         let getName = reportByNameFilter.options[ reportByNameFilter.selectedIndex ].getAttribute( 'data-id' )
         let dbRef = db.collection( "profiles" ).doc( getName )
-        const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
+        const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
 
         // Getting user profile details.
 
@@ -149,7 +121,7 @@ reportByNameFilter.onchange = () =>
                 occurrence.innerText = doc.data().aptOccurrenceType
                 address.innerText = doc.data().aptAddress
                 createDate.innerText = createdDate.getDate() + '/' + ( createdDate.getMonth() + 1 ) + '/' + createdDate.getFullYear() + ',' + createdDate.getHours() + ':' + createdDate.getMinutes()
-                slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot;
+                slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot
                 profileUpdatedOn.innerHTML = `
                     <span>Last Updated: </span> 
                     <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>
@@ -159,7 +131,7 @@ reportByNameFilter.onchange = () =>
         } )
     }
 
-};
+}
 
 let updateProfileLink = document.querySelector( ".updateProfileLink" ),
     updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
@@ -276,7 +248,7 @@ updateProfileButton.onclick = () =>
         {
             whatChanged.innerText += 'You updated Email.'
         }
-        
+
         // Updating user profile in Db appointments.
 
         let newDbRef = db.collection( 'appointments' )
