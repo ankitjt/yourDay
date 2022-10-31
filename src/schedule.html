@@ -1,115 +1,117 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>YourDay</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-        rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
-<body class="h-full">
-  <div
-       class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('../assets/schedule.webp')] lg:bg-[url('')] lg:flex">
+  <body class="h-full">
+    <div
+      class="wrapper h-screen w-full relative bg-no-repeat bg-cover bg-center lg:pb-0 overflow-auto bg-[url('../assets/schedule.webp')] lg:bg-[url('')] lg:flex">
 
 
-    <!-- Only for Desktop -->
+      <!-- Only for Desktop -->
 
-    <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
-      <img src="../assets/schedule.webp" alt="logo" class="h-screen" />
-    </div>
-
-    <div class="scheduleWrapper lg:w-3/5 lg:overflow-x-hidden relative p-6">
-
-      <!-- Update Appointments Section -->
-      <div
-           class="updateAppointments z-50 fixed w-full  h-82  lg:block hidden border-box top-0 -right-[2000px] lg:flex">
-        <div class="w-2/5 dummy"></div>
-        <div class="updateAppointmentWrapper w-3/5 bg-slate-200 px-10 py-4">
-          <h1 class="text-center font-semibold">Update Appointments</h1>
-          <div class="updateAppointmentsSection"></div>
-        </div>
+      <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
+        <img src="../assets/schedule.webp" alt="logo" class="h-screen" />
       </div>
 
-      <!-- Ends Update Appointments Section -->
+      <div class="scheduleWrapper lg:w-3/5 lg:overflow-x-hidden relative p-6">
 
-      <!-- Navbar  -->
-      <nav class="text-xs flex items-center justify-between text-zinc-900">
-        <a href="./home.html">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-                  d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                  clip-rule="evenodd" />
-          </svg>
-        </a>
-        <span class="tracking-widest font-semibold uppercase">Schedule</span>
-      </nav>
+        <!-- Update Appointments Section -->
+        <div
+          class="updateAppointments z-50 fixed w-full  h-82  lg:block hidden border-box top-0 -right-[2000px] lg:flex">
+          <div class="w-2/5 dummy"></div>
+          <div class="updateAppointmentWrapper w-3/5 bg-slate-200 px-10 py-4">
+            <h1 class="text-center font-semibold">Update Appointments</h1>
+            <div class="updateAppointmentsSection"></div>
+          </div>
+        </div>
 
-      <!-- Table (For Desktop only)  -->
-      <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full  py-4 mt-2 ">
+        <!-- Ends Update Appointments Section -->
 
-        <!-- Schedules filters  -->
-        <div class="scheduleFiltersWrapper lg:flex lg:items-center hidden ">
-          <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
-            <h3 class="mb-2">
-              <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-                Find Appointments
-              </span>
-            </h3>
+        <!-- Navbar  -->
+        <nav class="text-xs flex items-center justify-between text-zinc-900">
+          <a href="./home.html">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
+          <span class="tracking-widest font-semibold uppercase">Schedule</span>
+        </nav>
 
-            <!-- Filter Type -->
-            <section class="scheduleFilters mt-1 grid grid-cols-4 gap-x-5 grow font-semibold w-full">
+        <!-- Table (For Desktop only)  -->
+        <div class="scheduleListWrapper lg:flex lg:flex-col lg:justify-center lg:w-full  py-4 mt-2 ">
 
-              <!-- Filter of Patient Name -->
-              <select name="scheduleFilterName" id="scheduleFilterName"
-                      class="rounded-lg text-blue-600 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterName capitalize w-full">
-                <option value="" class="font-semibold">Names</option>
+          <!-- Schedules filters  -->
+          <div class="scheduleFiltersWrapper lg:flex lg:items-center hidden ">
+            <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
+              <h3 class="mb-2">
+                <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                  Find Appointments
+                </span>
+              </h3>
 
-              </select>
+              <!-- Filter Type -->
+              <section class="scheduleFilters mt-1 grid grid-cols-4 gap-x-5 grow font-semibold w-full">
 
-              <!-- Filter of Months -->
-              <select name="scheduleFilterMonth" id="monthList"
-                      class="scheduleFilterMonth rounded-lg text-blue-600 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
-                <option selected value="" class="font-semibold">
-                  Select Month
-                </option>
-                <option value="1" class="font-semibold">January</option>
-                <option value="2" class="font-semibold">February</option>
-                <option value="3" class="font-semibold">March</option>
-                <option value="4" class="font-semibold">April</option>
-                <option value="5" class="font-semibold">May</option>
-                <option value="6" class="font-semibold">June</option>
-                <option value="7" class="font-semibold">July</option>
-                <option value="8" class="font-semibold">August</option>
-                <option value="9" class="font-semibold">September</option>
-                <option value="10" class="font-semibold">October</option>
-                <option value="11" class="font-semibold">November</option>
-                <option value="12" class="font-semibold">December</option>
-              </select>
+                <!-- Filter of Patient Name -->
+                <select name="scheduleFilterName" id="scheduleFilterName"
+                  class="rounded-lg text-blue-600 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterName capitalize w-full">
+                  <option value="" class="font-semibold">Names</option>
 
-              <!-- Filter of Appointment Status -->
-              <select name="scheduleFilterStatus" id="scheduleFilterStatus"
-                      class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterStatus capitalize">
-                <option value="" class="font-semibold">Status</option>
-                <option value="aptScheduled" class="font-semibold">Scheduled</option>
-                <option value="aptCompleted" class="font-semibold">Completed</option>
-                <option value="aptCancelled" class="font-semibold">Cancelled</option>
-                <option value="aptPending" class="font-semibold">Pending</option>
-              </select>
+                </select>
 
-              <div class="div flex items-center">
-                <button class="filterFindBtn bg-blue-600 px-3 py-2 text-sm rounded-md">Find</button>
+                <!-- Filter of Months -->
+                <select name="scheduleFilterMonth" id="monthList"
+                  class="scheduleFilterMonth rounded-lg text-blue-600 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
+                  <option selected value="" class="font-semibold">
+                    Select Month
+                  </option>
+                  <option value="1" class="font-semibold">January</option>
+                  <option value="2" class="font-semibold">February</option>
+                  <option value="3" class="font-semibold">March</option>
+                  <option value="4" class="font-semibold">April</option>
+                  <option value="5" class="font-semibold">May</option>
+                  <option value="6" class="font-semibold">June</option>
+                  <option value="7" class="font-semibold">July</option>
+                  <option value="8" class="font-semibold">August</option>
+                  <option value="9" class="font-semibold">September</option>
+                  <option value="10" class="font-semibold">October</option>
+                  <option value="11" class="font-semibold">November</option>
+                  <option value="12" class="font-semibold">December</option>
+                </select>
+
+                <!-- Filter of Appointment Status -->
+                <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                  class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterStatus capitalize">
+                  <option value="" class="font-semibold">Status</option>
+                  <option value="Scheduled" class="font-semibold">Scheduled</option>
+                  <option value="Completed" class="font-semibold">Completed</option>
+                  <option value="Cancelled" class="font-semibold">Cancelled</option>
+                  <option value="Pending" class="font-semibold">Pending</option>
+                </select>
+
+                <div class="div flex items-center">
+                  <button class="filterFindBtn bg-blue-600 px-3 py-2 text-sm rounded-md">Find</button>
+                </div>
+              </section>
+              <div class="helper text-orange-600 text-[10px] font-semibold mt-2">
+                Select minimum two filters.
               </div>
             </section>
 
-          </section>
-
-          <!-- <div class="galleryViewIcon flex items-center">
+            <!-- <div class="galleryViewIcon flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6 text-blue-700 cursor-pointer"
@@ -123,61 +125,61 @@
               <span class="something text-xs ml-1 font-semibold text-blue-600">Card View</span>
             </div> -->
 
+          </div>
+
+          <!-- ***** ***** ***** ***** Ends Schedule Filters Wrapper ***** ***** ***** ***** -->
+
+          <!-- Schedule with a Gallery View (Mobile)  -->
+          <section
+            class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2 lg:hidden">
+
+          </section>
+
+          <!-- ***** ***** ***** ***** Ends Schedule with a Gallery View section ***** ***** ***** ***** -->
+
+          <!-- Table Views  with Data-->
+          <div class="tableViewWrapper w-full relative">
+
+            <!-- Update Table  -->
+            <table
+              class="text-center text-xs border-collapse box-border lg:my-10  scheduleTable hidden lg:table lg:w-full">
+              <thead class="px-10">
+                <tr class="bg-blue-600">
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Name
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Date
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Slot
+                  </th>
+
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Type
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Status
+                  </th>
+                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
+                    Action
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="scheduleTableRows px-10"></tbody>
+
+            </table>
+          </div>
+
+          <!-- ***** ***** ***** ***** Ends Schedule with a Table View section ***** ***** ***** ***** -->
+
         </div>
-
-        <!-- ***** ***** ***** ***** Ends Schedule Filters Wrapper ***** ***** ***** ***** -->
-
-        <!-- Schedule with a Gallery View (Mobile)  -->
-        <section
-                 class="scheduleGalleryView lg:mt-0 lg:grid lg:grid-cols-3 w-full lg:gap-x-10 mt-5 lg:py-10 overflow-scroll lg:overflow-auto px-2 lg:hidden">
-
-        </section>
-
-        <!-- ***** ***** ***** ***** Ends Schedule with a Gallery View section ***** ***** ***** ***** -->
-
-        <!-- Table Views  with Data-->
-        <div class="tableViewWrapper w-full relative">
-
-          <!-- Update Table  -->
-          <table
-                 class="text-center text-xs border-collapse box-border lg:my-10  scheduleTable hidden lg:table lg:w-full">
-            <thead class="px-10">
-              <tr class="bg-blue-600">
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Name
-                </th>
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Date
-                </th>
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Slot
-                </th>
-
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Type
-                </th>
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Status
-                </th>
-                <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                  Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="scheduleTableRows px-10"></tbody>
-            
-          </table>
-        </div>
-
-        <!-- ***** ***** ***** ***** Ends Schedule with a Table View section ***** ***** ***** ***** -->
-
       </div>
-    </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../scripts/common.js"></script>
-    <!-- <script src="../scripts/schedule.js"></script> -->
-    <script src="../scripts/scheduleNew.js"></script>
-</body>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+      <script src="../scripts/common.js"></script>
+      <!-- <script src="../scripts/schedule.js"></script> -->
+      <script src="../scripts/scheduleNew.js"></script>
+  </body>
 
 </html>
