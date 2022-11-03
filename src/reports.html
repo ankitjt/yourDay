@@ -135,7 +135,7 @@
 
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
-        <img src="../assets/reports3.webp" alt="logo" class="h-screen w-auto" />
+        <img src="../assets/reports2.webp" alt="logo" class="h-screen w-auto" />
       </div>
 
       <!-- Reports Wrapper  -->
@@ -199,9 +199,13 @@
               <span>Rescheduled</span>
               <span class="totalRescheduledCount"></span>
             </div>
-            <div class="totalCancelled flex items-center justify-between capitalize">
+            <div class="totalCancelled flex items-center justify-between mb-2 lg:mb-4 capitalize">
               <span>Cancelled</span>
               <span class="totalCancelledCount"></span>
+            </div>
+            <div class="totalPending flex items-center justify-between capitalize">
+              <span>Pending</span>
+              <span class="totalPendingCount"></span>
             </div>
           </div>
         </section>
@@ -389,6 +393,7 @@
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="../scripts/common.js"></script>
     <script src="../scripts/reports.js"></script>
   </body>

@@ -63,22 +63,24 @@
 
           <!-- Existing Uploaded notes table  -->
           <div class="uploadedNotesWrapper mt-10 text-xs">
-            <h4 class="border-b-2 border-gray-200 font-semibold text-blue-600">
-              <span>Upload notes</span>
-              <span class="instructions text-rose-400 ml-1">( only .pdf & .jpg files allowed )</span>
-            </h4>
-
-            <!-- Upload note file  -->
-            <form action="#" class="w-full uploadNoteForm">
-              <input type="file" name="" id=""
-                class="mt-5 text-xs text-blue-600 font-semibold w-full lg:w-2/5 file:py-2 file:w-2/5 file:rounded-md file:bg-blue-600 file:border-none file:text-slate-50 file:font-medium file:mr-4 fileUpload cursor-pointer" />
-              <button class="uploadNoteBtn text-blue-600 font-semibold rounded-md bg-gray-200 py-2 px-4">Submit</button>
-            </form>
+            <div class="uploadNoteFormWrapper hidden">
+              <h4 class="border-b-2 border-gray-200 font-semibold text-blue-600">
+                <span>Upload notes</span>
+                <span class="instructions text-rose-400 ml-1">( only .pdf & .jpg files allowed )</span>
+              </h4>
+  
+              <!-- Upload note file  -->
+              <form action="#" class="w-full uploadNoteForm ">
+                <input type="file" name="" id=""
+                  class="mt-5 text-xs text-blue-600 font-semibold w-full lg:w-2/5 file:py-2 file:w-2/5 file:rounded-md file:bg-blue-600 file:border-none file:text-slate-50 file:font-medium file:mr-4 fileUpload cursor-pointer" />
+                <button class="uploadNoteBtn text-blue-600 font-semibold rounded-md bg-gray-200 py-2 px-4">Submit</button>
+              </form>
+            </div>
 
             <!-- Uploaded Notes list  -->
             <div class="uploadedNotes hidden mt-5 border-2 border-gray-200 rounded-md">
               <h3 class="p-3 lg:px-6 rounded-t-md text-blue-600 border-b-2 border-gray-200 font-semibold">
-                <span class="totalUploadedNotesCount">Uploaded notes ( <span class="notesCount">02 </span> )</span>
+                <span class="totalUploadedNotesCount">Uploaded notes <span class="notesCount"> </span> </span>
               </h3>
               <div class="uploadedNotesList  p-3 lg:px-6">
               </div>
