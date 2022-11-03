@@ -14,8 +14,8 @@ let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' );
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>
     {
-      let aptStartDate = new Date( doc.data().aptStartDate * 1000 )
-      currentDate = new Date()
+      let aptStartDate = new Date( doc.data().aptStartDate * 1000 ),
+        currentDate = new Date()
 
       let currentMonth = currentDate.getMonth() + 1
       let lastMonth = currentDate.getMonth()

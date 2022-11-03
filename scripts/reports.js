@@ -5,7 +5,8 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
     totalSessionsCount = document.querySelector( ".totalSessionsCount" ),
     totalSupervisionCount = document.querySelector( ".totalSupervisionCount" ),
     totalCancelledCount = document.querySelector( ".totalCancelledCount" ),
-    totalRescheduledCount = document.querySelector( ".totalRescheduledCount" )
+    totalRescheduledCount = document.querySelector( ".totalRescheduledCount" ),
+    totalPendingCount = document.querySelector( ".totalPendingCount" )
 
 const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ];
 
@@ -14,7 +15,8 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
     let sessionCounts = [],
         supervisionCounts = [],
         cancelledCounts = [],
-        updatedCounts = []
+        updatedCounts = [],
+        pendingCounts = []
 
     db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
     {
@@ -37,12 +39,18 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
             {
                 updatedCounts.push( doc.data().appointmentStatus )
             }
-
+            if ( doc.data().appointmentStatus === 'Pending' )
+            {
+                pendingCounts.push( doc.data().appointmentStatus )
+            }
         } )
+
         totalSessionsCount.innerText = sessionCounts.length
         totalSupervisionCount.innerText = supervisionCounts.length
         totalCancelledCount.innerText = cancelledCounts.length
         totalRescheduledCount.innerText = updatedCounts.length
+        totalPendingCount.innerText = pendingCounts.length
+        
     } )
 
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
@@ -266,6 +274,29 @@ updateProfileButton.onclick = () =>
             } )
 
         } )
+
+        let listRef = firebase.storage().ref( `ptNotes` )
+        listRef.listAll().then( ( res ) =>
+        {
+            res.prefixes.forEach( ( folderRef ) =>
+            {
+                var batch = db.batch()
+                if ( folderRef.name === nameOfUser.innerText )
+                {   
+                    let userBucket = listRef.child(nameOfUser.innerText)
+                    batch.update( userBucket, folderRef.name === nameOfUser.innerText )
+                    batch.commit()
+                }
+            })
+        })
+        // listRef.onSnapshot( ( querySnapshot ) =>
+        // {
+        //     querySnapshot.forEach( ( doc ) =>
+        //     {
+        //         var batch = db.batch()
+        //         if()
+        //     })
+        // })
 
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )
