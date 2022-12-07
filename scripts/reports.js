@@ -50,7 +50,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
         totalCancelledCount.innerText = cancelledCounts.length
         totalRescheduledCount.innerText = updatedCounts.length
         totalPendingCount.innerText = pendingCounts.length
-        
+
     } )
 
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
@@ -67,7 +67,7 @@ const days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday
             if ( doc.data().softDelete !== true )
             {
                 let patientNames = `
-                <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName }</option>
+                <option value="${ doc.data().aptName }" class="font-semibold something text-xs" data-id="${ doc.id }" >${ doc.data().aptName }</option>
                 `
                 reportByNameFilter.innerHTML += patientNames
             }
@@ -282,21 +282,13 @@ updateProfileButton.onclick = () =>
             {
                 var batch = db.batch()
                 if ( folderRef.name === nameOfUser.innerText )
-                {   
-                    let userBucket = listRef.child(nameOfUser.innerText)
+                {
+                    let userBucket = listRef.child( nameOfUser.innerText )
                     batch.update( userBucket, folderRef.name === nameOfUser.innerText )
                     batch.commit()
                 }
-            })
-        })
-        // listRef.onSnapshot( ( querySnapshot ) =>
-        // {
-        //     querySnapshot.forEach( ( doc ) =>
-        //     {
-        //         var batch = db.batch()
-        //         if()
-        //     })
-        // })
+            } )
+        } )
 
         prompts.classList.add( 'left-1/2' )
         profileDetails.classList.add( 'blur-sm' )

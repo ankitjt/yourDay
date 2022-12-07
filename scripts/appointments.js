@@ -48,7 +48,6 @@ createAptBtn.onclick = () =>
 {
   let checkForDay = new Date( aptStartDate.value )
 
-
   if (
     aptCategory.value === '' ||
     aptType.value === '' ||
@@ -64,12 +63,10 @@ createAptBtn.onclick = () =>
     aptAddress.value === ''
   )
   {
-
     pageWrapper.classList.add( 'blur-sm' )
     prompts.classList.add( 'left-1/2' )
     prompts.style.transition = '0.5s ease-in-out'
     promptContent.innerText = 'All fields required.'
-
   }
 
   else if ( checkForDay.getDay().toString() !== aptDay.value )
@@ -82,36 +79,29 @@ createAptBtn.onclick = () =>
 
   else if ( aptCategory.value === 'New' )
   {
-
     db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
     {
-
       querySnapshot.forEach( ( doc ) =>
       {
-
         if (
           aptEmail.value === doc.data().aptEmail &&
           aptDay.value === doc.data().aptDay &&
           aptTimeSlot.value === doc.data().aptTimeSlot
         )
         {
-
           pageWrapper.classList.add( 'blur-sm' )
           prompts.classList.add( 'left-1/2' )
           prompts.style.transition = '0.5s ease-in-out'
           promptContent.innerText = 'User has a slot. Do you wish to update?'
           confirmPage.style.left = '-2000px'
-
         }
         else if ( aptEmail.value === doc.data().aptEmail )
         {
-
           pageWrapper.classList.add( 'blur-sm' )
           prompts.classList.add( 'left-1/2' )
           prompts.style.transition = '0.5s ease-in-out'
           promptContent.innerText = 'Email already in use !!!'
           confirmPage.style.left = '-2000px'
-
         }
         else if (
           aptEmail.value !== doc.data().aptEmail &&
@@ -119,23 +109,19 @@ createAptBtn.onclick = () =>
           aptTimeSlot.value === doc.data().aptTimeSlot
         )
         {
-
           pageWrapper.classList.add( 'blur-sm' )
           prompts.classList.add( 'left-1/2' )
           prompts.style.transition = '0.5s ease-in-out'
           promptContent.innerText = 'Slot is already filled.'
           confirmPage.style.left = '-2000px'
-
         }
         else if ( aptOccurrenceType.value === '2' )
         {
-
           forSecondOccurrenceType()
-
         }
-
       } )
     } )
+    
     confirmName.innerText = aptName.value.trim()
     confirmEmail.innerText = aptEmail.value.trim()
     confirmMobileNumber.innerText = aptMobileNumber.value
