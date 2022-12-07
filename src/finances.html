@@ -16,7 +16,7 @@
   <body class="relative">
 
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden bg-[url('../assets/finance2.webp')] lg:bg-[url('')] lg:justify-between">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between">
 
       <!-- Money BreakDown  -->
       <div
@@ -33,8 +33,8 @@
       <div class="financesWrapper lg:grow lg:py-8 lg:px-20 relative lg:overflow-x-hidden">
         <!-- Navbar -->
         <nav class="text-xs flex items-center justify-between py-2 text-zinc-900">
-          <a href="./home.html">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
+          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 hover:text-white" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -136,37 +136,46 @@
 
           <!-- Filter Type -->
 
-          <section class="monthFilter mb-5 grid grid-cols-3 gap-x-5 font-semibold">
+          <section class="monthFilter mb-5 flex justify-between items-center font-semibold">
 
-            <!-- Patient Name -->
-            <select name="financePatientList" id="financePatientList"
-              class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize">
-              <option value="" class="font-semibold">Names</option>
+            <div class="grid grid-cols-2 gap-x-2 w-full lg:pr-10">
+              <!-- Patient Name -->
+              <select name="financePatientList" id="financePatientList"
+                class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs financePatientList capitalize w-full ">
+                <option value="" class="font-semibold">Names</option>
+              
+              </select>
+              
+              <!-- Months -->
+              <select name="monthListByName" id="monthList"
+                class="monthListByName rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-full">
+                <option selected value="Select Month" class="font-semibold">
+                  Select Month
+                </option>
+                <option value="1" class="font-semibold">January</option>
+                <option value="2" class="font-semibold">February</option>
+                <option value="3" class="font-semibold">March</option>
+                <option value="4" class="font-semibold">April</option>
+                <option value="5" class="font-semibold">May</option>
+                <option value="6" class="font-semibold">June</option>
+                <option value="7" class="font-semibold">July</option>
+                <option value="8" class="font-semibold">August</option>
+                <option value="9" class="font-semibold">September</option>
+                <option value="10" class="font-semibold">October</option>
+                <option value="11" class="font-semibold">November</option>
+                <option value="12" class="font-semibold">December</option>
+              </select>
 
-            </select>
+            </div>
+           
+            <div class="flex align-center">
+              <button class="findDetailsByName bg-blue-600 px-4 py-2 text-sm rounded-lg hidden lg:block">Search</button>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                class="w-7 h-7 ml-4 align-middle text-white md:hidden lg:hidden bg-blue-600 rounded-md">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
 
-            <!-- Months -->
-            <select name="monthListByName" id="monthList"
-              class="monthListByName rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
-              <option selected value="Select Month" class="font-semibold">
-                Select Month
-              </option>
-              <option value="1" class="font-semibold">January</option>
-              <option value="2" class="font-semibold">February</option>
-              <option value="3" class="font-semibold">March</option>
-              <option value="4" class="font-semibold">April</option>
-              <option value="5" class="font-semibold">May</option>
-              <option value="6" class="font-semibold">June</option>
-              <option value="7" class="font-semibold">July</option>
-              <option value="8" class="font-semibold">August</option>
-              <option value="9" class="font-semibold">September</option>
-              <option value="10" class="font-semibold">October</option>
-              <option value="11" class="font-semibold">November</option>
-              <option value="12" class="font-semibold">December</option>
-            </select>
-
-            <div class="div flex items-center">
-              <button class="findDetailsByName bg-blue-600 px-4 py-2 text-sm  rounded-lg">Search</button>
             </div>
           </section>
 
@@ -175,7 +184,7 @@
         <!-------------------------------------------------- Patient Profile --------------------------------------------->
 
         <section
-          class="profile mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] ">
+          class="profile mb-10 mt-10 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[10px_10px_10px_rgba(0,0,0,0.25)] ">
           <div class="profileDetails">
             <h1>Select Patient Name for profile</h1>
           </div>
@@ -184,7 +193,7 @@
 
         <!-- Money Breakdown section -->
         <section
-          class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-100 lg:p-8 p-4 rounded-lg drop-shadow-[15px_15px_15px_rgba(0,0,0,0.25)] ">
+          class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[10px_10px_10px_rgba(0,0,0,0.25)] ">
           <h1>Select month for breakdown</h1>
 
         </section>

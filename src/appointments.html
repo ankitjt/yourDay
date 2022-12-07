@@ -15,7 +15,7 @@
 
   <body>
     <div
-      class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center lg:p-0 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden bg-[url('../assets/appointments4.webp')] lg:bg-[url('')] lg:justify-between">
+      class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center lg:p-0 p-2 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden lg:justify-between">
 
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
@@ -190,8 +190,8 @@
 
         <!-- Navbar -->
         <nav class="text-xs flex items-center justify-between my-5 lg:my-2 text-zinc-900 lg:text-zinc-900">
-          <a href="./home.html">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900" viewBox="0 0 20 20"
+          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 hover:text-white" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -204,10 +204,10 @@
         <div class="pageWrapper pb-6">
 
           <!--------------------------------------- CREATE APPIONTMENTS -------------------------------------------------->
-          <section class="mt-20">
+          <section class="lg:mt-20 mt-10">
 
             <!-- Create Appointment Form -->
-            <div class="font-medium text-blue-900 mt-5 lg:mt-10 lg:px-10 createAptForm" autocomplete="nope">
+            <div class=" text-blue-900 mt-5 lg:mt-10 lg:px-10 createAptForm" autocomplete="nope">
 
               <!-- Form Fields  -->
               <div class="formFields lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-2">
@@ -217,21 +217,21 @@
 
                   <input type="text" placeholder="New" name="35q2frgsgdf" autocomplete="35q2frgsgdf" id="35q2frgsgdf"
                     value="New"
-                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 aptCategory lg:drop-shadow-none drop-shadow-2xl bg-gray-300"
+                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3 aptCategory lg:drop-shadow-none drop-shadow-2xl bg-gray-300"
                     disabled />
                 </div>
 
                 <!-- Appointment Type  -->
                 <div class="mb-5">
                   <select name="appointmentType" id="appointmentType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3.5 aptType lg:drop-shadow-none drop-shadow-2xl text-sm">
-                    <option value="" class="font-semibold">
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm py-3.5 aptType lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
+                    <option value="" class="font-semibold w-inherit">
                       Appointment Type
                     </option>
-                    <option value="Session" class="font-semibold">
+                    <option value="Session" class="font-semibold w-inherit">
                       Session
                     </option>
-                    <option value="Supervision" class="font-semibold">
+                    <option value="Supervision" class="font-semibold w-inherit">
                       Supervision
                     </option>
                   </select>
@@ -240,7 +240,7 @@
                 <!-- Appointment Method  -->
                 <div class="mb-5">
                   <select name="appointmentType" id="appointmentType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3.5 aptNature lg:drop-shadow-none drop-shadow-2xl text-sm">
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptNature lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
                     <option value="" class="font-semibold">
                       Appointment Nature
                     </option>
@@ -257,33 +257,33 @@
                 <div class="mb-5">
                   <input type="text" placeholder="Full Name" name="35q2frgsgdf" autocomplete="35q2frgsgdf"
                     id="35q2frgsgdf"
-                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 aptName lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3 aptName lg:drop-shadow-none drop-shadow-2xl " />
                 </div>
 
                 <!-- Email address  -->
                 <div class="mb-5">
                   <input type="email" placeholder="Email" name="43534rfsd" autocomplete="43534rfsd" id="43534rfsd"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptEmail lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptEmail lg:drop-shadow-none drop-shadow-2xl" />
                 </div>
 
                 <!-- Mobile Number  -->
                 <div class="mb-5">
                   <input type="number" placeholder="Mobile Number" autocomplete="nope" name="mobileNumber"
                     id="mobileNumber"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptMobileNumber lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold  lg:placeholder:text-sm py-3 aptMobileNumber lg:drop-shadow-none drop-shadow-2xl" />
                 </div>
 
                 <!-- Address  -->
                 <div class="mb-5">
                   <input type="text" placeholder="Address" autocomplete="nope" name="address" id="address"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptAddress lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptAddress lg:drop-shadow-none drop-shadow-2xl" />
                 </div>
 
                 <!-- Start Date  -->
                 <div class="mb-5 relative">
-                  <input type="date" placeholder="Start Date" name="aptStartDate" autocomplete="nope" id="aptStartDate"
-                    onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptStartDate lg:drop-shadow-none drop-shadow-2xl" />
+                  <input type="text" placeholder="Start Date" name="aptStartDate" autocomplete="nope" id="aptStartDate"
+                    onfocus="(this.type='date')" onfocusout="(this.type='text')" 
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptStartDate lg:drop-shadow-none drop-shadow-2xl" />
                   <p class="firstStartDateWrapper absolute hidden -bottom-6 left-1 text-xs text-rose-600">
                     First Start Date:
                     <span class="firstStartDate"></span>
@@ -293,7 +293,7 @@
                 <!-- Start Day  -->
                 <div class="mb-5 relative">
                   <select name="aptDay" id="aptDay"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3.5 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm">
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 aptDay lg:drop-shadow-none drop-shadow-2xl placeholder:font-semibold">
                     <option value="" class="font-semibold">
                       Pick a day
                     </option>
@@ -327,7 +327,7 @@
                 <!-- Time slot -->
                 <div class="mb-5 relative">
                   <select name="aptTimeSlot" id="aptTimeSlot"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3.5 aptTimeSlot lg:drop-shadow-none drop-shadow-2xl text-sm">
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptTimeSlot lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
                     <option value="" class="font-semibold">
                       Time slot
                     </option>
@@ -368,13 +368,15 @@
                 <div class="mb-5">
                   <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType" autocomplete="nope"
                     id="occurrenceType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptOccurrenceType lg:drop-shadow-none drop-shadow-2xl text-sm" />
+                    min="1"
+                    max="2"
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptOccurrenceType lg:drop-shadow-none drop-shadow-2xl lg:text-sm" />
                 </div>
 
                 <!-- Fees  -->
                 <div class="mb-5">
                   <input type="number" placeholder="Fee" name="aptFees" id="aptFees" autocomplete="nope"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-medium lg:placeholder:text-sm py-3 aptFees lg:drop-shadow-none drop-shadow-2xl text-sm" />
+                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold  font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptFees lg:drop-shadow-none drop-shadow-2xl lg:text-sm" />
                 </div>
               </div>
 
@@ -425,8 +427,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/common.js"></script>
-    <script src="../scripts/appointments.js"></script>
-    <script src="../scripts/test.js"></script>
+    <!-- <script src="../scripts/appointments.js"></script> -->
+    <script src="../scripts/appointmentFieldCheck.js"></script>
   </body>
 
 </html>
