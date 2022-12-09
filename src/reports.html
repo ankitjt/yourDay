@@ -117,17 +117,7 @@
 
       </section>
 
-      <!-- Prompts -->
-      <section
-        class="z-60 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
-        <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
-          viewBox="0 0 20 20" fill="currentColor">
-          <path fill-rule="evenodd"
-            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-            clip-rule="evenodd" />
-        </svg>
-      </section>
+
 
     </div>
 
@@ -141,11 +131,12 @@
 
       <!-- Reports Wrapper  -->
       <div class="reportsWrapper lg:grow lg:py-0 lg:px-16 relative lg:h-screen lg:overflow-auto lg:w-3/5">
+
         <!-- Navbar  -->
         <div class="text-xs flex items-center justify-between py-6">
           <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 text-left hover:text-white" viewBox="0 0 20 20"
-              fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 text-left hover:text-white"
+              viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                 clip-rule="evenodd" />
@@ -154,187 +145,185 @@
           <span class="text-zinc-900 tracking-widest font-semibold uppercase">Reports</span>
         </div>
 
-        <!-- Report by month -->
-
-        <section class="reportByMonthSection rounded-lg">
-          <h3 class="mb-2">
-            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-              By month
-            </span>
-          </h3>
-
-          <!-- Filter Type ( By month ) -->
-
-          <section class="monthFilter mb-5 text-rose-600 font-semibold">
-            <select name="reportByMonthFilter" id="monthList"
-              class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs w-4/6 lg:w-2/4">
-              <option selected value="All Time" class="font-semibold text-xs">
-                All Time
-              </option>
-              <option value="1" class="font-semibold text-xs">January</option>
-              <option value="2" class="font-semibold text-xs">February</option>
-              <option value="3" class="font-semibold text-xs">March</option>
-              <option value="4" class="font-semibold text-xs">April</option>
-              <option value="5" class="font-semibold text-xs">May</option>
-              <option value="6" class="font-semibold text-xs">June</option>
-              <option value="7" class="font-semibold text-xs">July</option>
-              <option value="8" class="font-semibold text-xs">August</option>
-              <option value="9" class="font-semibold text-xs">September</option>
-              <option value="10" class="font-semibold text-xs">October</option>
-              <option value="11" class="font-semibold text-xs">November</option>
-              <option value="12" class="font-semibold text-xs">December</option>
-            </select>
-          </section>
-
-          <div
-            class="reportsTotalByMonth text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
-            <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
-              <span>Sessions</span>
-              <span class="totalSessionsCount"></span>
-            </div>
-            <div class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize">
-              <span>Supervision</span>
-              <span class="totalSupervisionCount"></span>
-            </div>
-            <div class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize">
-              <span>Rescheduled</span>
-              <span class="totalRescheduledCount"></span>
-            </div>
-            <div class="totalCancelled flex items-center justify-between mb-2 lg:mb-4 capitalize">
-              <span>Cancelled</span>
-              <span class="totalCancelledCount"></span>
-            </div>
-            <div class="totalPending flex items-center justify-between capitalize">
-              <span>Pending</span>
-              <span class="totalPendingCount"></span>
-            </div>
-          </div>
+        <!-- Prompts -->
+        <section
+          class="z-50 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+          <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
+            viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+              clip-rule="evenodd" />
+          </svg>
         </section>
 
-        <!-- ***** ***** ***** ***** Ends Report by month section ***** ***** ***** ***** -->
+        <!-- Report by month -->
+        <div class="pageWrapper pb-6">
+          <section class="reportByMonthSection rounded-lg">
+            <h3 class="mb-2">
+              <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                By month
+              </span>
+            </h3>
 
-        <!-- Report by Name -->
-        <section class="reportByNameSection mt-10 rounded-lg">
-          <h3 class="mb-2">
-            <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-              By name
-            </span>
-          </h3>
+            <!-- Filter Type ( By month ) -->
 
-          <!-- Report By Name Filter  -->
-          <select name="reportByNameFilter" id="reportByNameFilter"
-            class="reportByNameFilter rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs mb-1 w-4/6 font-semibold lg:w-2/4">
-            <option value="Select" class="font-semibold text-xs">Select</option>
-          </select>
+            <section class="monthFilter mb-5 text-rose-600 font-semibold">
+              <select name="reportByMonthFilter" id="monthList"
+                class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs w-4/6 lg:w-2/4">
+                <option selected value="All Time" class="font-semibold text-xs">
+                  All Time
+                </option>
+                <option value="1" class="font-semibold text-xs">January</option>
+                <option value="2" class="font-semibold text-xs">February</option>
+                <option value="3" class="font-semibold text-xs">March</option>
+                <option value="4" class="font-semibold text-xs">April</option>
+                <option value="5" class="font-semibold text-xs">May</option>
+                <option value="6" class="font-semibold text-xs">June</option>
+                <option value="7" class="font-semibold text-xs">July</option>
+                <option value="8" class="font-semibold text-xs">August</option>
+                <option value="9" class="font-semibold text-xs">September</option>
+                <option value="10" class="font-semibold text-xs">October</option>
+                <option value="11" class="font-semibold text-xs">November</option>
+                <option value="12" class="font-semibold text-xs">December</option>
+              </select>
+            </section>
 
-          <!-- Reports By Name section  -->
-
-          <div class="reportByName">
-
-            <!-- Profile Section  -->
             <div
-              class="reportsByNameSections text-blue-600 my-4 bg-white drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md w-full">
-              <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
-                <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
-                  <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update Profile</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </div>
-              </button>
+              class="reportsTotalByMonth text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+              <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
+                <span>Sessions</span>
+                <span class="totalSessionsCount"></span>
+              </div>
+              <div class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize">
+                <span>Supervision</span>
+                <span class="totalSupervisionCount"></span>
+              </div>
+              <div class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize">
+                <span>Rescheduled</span>
+                <span class="totalRescheduledCount"></span>
+              </div>
+              <div class="totalCancelled flex items-center justify-between mb-2 lg:mb-4 capitalize">
+                <span>Cancelled</span>
+                <span class="totalCancelledCount"></span>
+              </div>
+              <div class="totalPending flex items-center justify-between capitalize">
+                <span>Pending</span>
+                <span class="totalPendingCount"></span>
+              </div>
+            </div>
+          </section>
 
-              <!-- Patient Profile -->
+          <!-- ***** ***** ***** ***** Ends Report by month section ***** ***** ***** ***** -->
 
-              <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+          <!-- Report by Name -->
+          <section class="reportByNameSection mt-10 rounded-lg">
+            <h3 class="mb-2">
+              <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                By name
+              </span>
+            </h3>
 
-                <div class="profileName flex items-center justify-between my-3">
-                  <span class="nameTag">Name</span>
-                  <span class="name ml-2">NA</span>
-                </div>
+            <!-- Report By Name Filter  -->
+            <select name="reportByNameFilter" id="reportByNameFilter"
+              class="patientList rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs mb-1 w-4/6 font-semibold lg:w-2/4">
+              <option value="Select" class="font-semibold text-xs">Select</option>
+            </select>
 
-                <div class="profileEmail flex items-center justify-between my-3">
-                  <span class="emailTag">Email</span>
-                  <span class="email ml-2">NA</span>
-                </div>
+            <!-- Reports By Name section  -->
 
-                <div class="profileMobileNumber flex items-center justify-between my-3">
-                  <span class="mobileTag">Mobile</span>
-                  <span class="mobileNumber ml-2">NA</span>
-                </div>
+            <div class="reportByName">
 
-                <div class="profileAddress flex items-center justify-between my-3">
-                  <span class="addressTag">Address</span>
-                  <span class="address ml-2">NA</span>
-                </div>
+              <!-- Profile Section  -->
+              <div
+                class="reportsByNameSections text-blue-600 my-4 bg-gray-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md w-full">
+                <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
+                  <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
+                    <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update
+                      Profile</span>
 
-                <div class="profileStartDate flex items-center justify-between my-3">
-                  <span class="createDateTag">Create Date</span>
-                  <span class="createDate ml-2">NA</span>
-                </div>
-
-                <div class="profileCategory flex items-center justify-between my-3">
-                  <span class="categoryTag">Category</span>
-                  <span class="category ml-2">NA</span>
-                </div>
-
-                <div class="profileOccurrence flex items-center justify-between my-3">
-                  <span class="occurrenceTag">Occurrence ( per week )</span>
-                  <span class="occurrence ml-2">NA</span>
-                </div>
-
-                <div class="profileSlot flex items-center justify-between my-3">
-                  <span class="slotTag">Slot</span>
-                  <span class="slot ml-2">NA</span>
-                </div>
-
-                <div class="profileFee flex items-center justify-between my-3">
-                  <span class="feeTag">Fees</span>
-                  <span class="fee ml-2">NA</span>
-                </div>
-
-                <div class="updateLinksWrapper flex justify-between mt-6">
-                  <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
-                  <div class="updateDetails flex flex-col flex-end">
-                    <span class="profileUpdatedOn font-normal text-gray-400 text-xs"></span>
-                    <span class="whatChanged font-normal text-gray-400 text-xs"></span>
                   </div>
-                </div>
+                </button>
 
-              </section>
-            </div>
+                <!-- Patient Profile -->
 
-            <!-- Work section  -->
-            <div
-              class="reportsByNameSections text-blue-600 my-4 bg-amber-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md  lg:transition-all lg:ease-in-out">
-              <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
-                <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
-                  <span class="sectionButtonWork text-sm font-semibold tracking-wider">Work</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
-                    fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M15.707 4.293a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 011.414-1.414L10 8.586l4.293-4.293a1 1 0 011.414 0zm0 6a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-5-5a1 1 0 111.414-1.414L10 14.586l4.293-4.293a1 1 0 011.414 0z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </div>
-              </button>
-              <section
-                class="workContent font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt,
-                doloribus sed? Quibusdam voluptatibus et minima vitae nihil
-                mollitia quod error provident, similique autem aliquid aliquam!
-                Soluta provident repellendus numquam illo. Ipsam, harum id.
-                Magni totam unde explicabo, impedit eligendi cumque incidunt
-                voluptate doloribus molestias minima debitis fugit atque
-                sapiente ab repellendus asperiores. Temporibus fugiat eum libero
-                sunt magni optio neque!
-              </section>
-            </div>
+                <section
+                  class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
 
-            <!-- Profile Action Section  -->
-            <!-- <div
+                  <div class="profileName flex items-center justify-between my-3">
+                    <span class="nameTag">Name</span>
+                    <span class="name ml-2">NA</span>
+                  </div>
+
+                  <div class="profileEmail flex items-center justify-between my-3">
+                    <span class="emailTag">Email</span>
+                    <span class="email ml-2">NA</span>
+                  </div>
+
+                  <div class="profileMobileNumber flex items-center justify-between my-3">
+                    <span class="mobileTag">Mobile</span>
+                    <span class="mobileNumber ml-2">NA</span>
+                  </div>
+
+                  <div class="profileAddress flex items-center justify-between my-3">
+                    <span class="addressTag">Address</span>
+                    <span class="address ml-2">NA</span>
+                  </div>
+
+                  <div class="profileStartDate flex items-center justify-between my-3">
+                    <span class="createDateTag">Create Date</span>
+                    <span class="createDate ml-2">NA</span>
+                  </div>
+
+                  <div class="profileCategory flex items-center justify-between my-3">
+                    <span class="categoryTag">Category</span>
+                    <span class="category ml-2">NA</span>
+                  </div>
+
+                  <div class="profileOccurrence flex items-center justify-between my-3">
+                    <span class="occurrenceTag">Occurrence ( per week )</span>
+                    <span class="occurrence ml-2">NA</span>
+                  </div>
+
+                  <div class="profileSlot flex items-center justify-between my-3">
+                    <span class="slotTag">Slot</span>
+                    <span class="slot ml-2">NA</span>
+                  </div>
+
+                  <div class="profileFee flex items-center justify-between my-3">
+                    <span class="feeTag">Fees</span>
+                    <span class="fee ml-2">NA</span>
+                  </div>
+
+                  <div class="updateLinksWrapper flex justify-between mt-6">
+                    <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
+                    <div class="updateDetails flex flex-col flex-end">
+                      <span class="profileUpdatedOn font-normal text-gray-400 text-xs"></span>
+                      <span class="whatChanged font-normal text-gray-400 text-xs"></span>
+                    </div>
+                  </div>
+
+                </section>
+              </div>
+
+              <!-- Work section  -->
+              <div
+                class="reportsByNameSections text-blue-600 my-4 bg-gray-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md  lg:transition-all lg:ease-in-out">
+                <button
+                  class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
+                  <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
+                    <span class="sectionButtonWork text-sm font-semibold tracking-wider">Work</span>
+
+                  </div>
+                </button>
+                <section
+                  class="workContent font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
+
+                </section>
+              </div>
+
+              <!-- Profile Action Section  -->
+              <!-- <div
               class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
               <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between">
@@ -386,8 +375,10 @@
                 </div>
               </section>
             </div> -->
-          </div>
-        </section>
+            </div>
+          </section>
+
+        </div>
 
         <!-- ***** ***** ***** ***** Ends Report by name section ***** ***** ***** ***** -->
       </div>
@@ -395,8 +386,16 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
-    <script src="../scripts/common.js"></script>
-    <script src="../scripts/reports.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
+    <script src="../scripts/reports/reports_constants.js"></script>
+    <script src="../scripts/reports/reports_onLoad.js"></script>
+    <script src="../scripts/reports/reports_userProfile.js"></script>
+    <script src="../scripts/reports/reports_deleteProfile.js"></script>
+    <script src="../scripts/reports/reports_updateProfile.js"></script>
+    <script src="../scripts/reports/reports.js"></script>
+    <script src="../scripts/commonScripts/prompts.js"></script>
   </body>
 
 </html>
