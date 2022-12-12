@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>YourDay - Reports</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 
   </head>
@@ -122,7 +118,7 @@
     </div>
 
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white ">
 
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
@@ -130,19 +126,19 @@
       </div>
 
       <!-- Reports Wrapper  -->
-      <div class="reportsWrapper lg:grow lg:py-0 lg:px-16 relative lg:h-screen lg:overflow-auto lg:w-3/5">
+      <div class="reportsWrapper lg:grow px-3 lg:py-8 lg:px-14 relative lg:h-screen lg:overflow-auto lg:w-3/5">
 
         <!-- Navbar  -->
-        <div class="text-xs flex items-center justify-between py-6">
+        <div class="text-xs flex items-center justify-between my-6 lg:my-2 text-blue-600">
           <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 text-left hover:text-white"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-left hover:text-white"
               viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                 clip-rule="evenodd" />
             </svg>
           </a>
-          <span class="text-zinc-900 tracking-widest font-semibold uppercase">Reports</span>
+          <span class=" tracking-widest font-semibold uppercase">Reports</span>
         </div>
 
         <!-- Prompts -->
@@ -158,7 +154,7 @@
         </section>
 
         <!-- Report by month -->
-        <div class="pageWrapper pb-6">
+        <div class="pageWrapper pb-6 mt-10">
           <section class="reportByMonthSection rounded-lg">
             <h3 class="mb-2">
               <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
@@ -170,7 +166,7 @@
 
             <section class="monthFilter mb-5 text-rose-600 font-semibold">
               <select name="reportByMonthFilter" id="monthList"
-                class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs w-4/6 lg:w-2/4">
+                class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs w-full lg:w-2/4 bg-transparent">
                 <option selected value="All Time" class="font-semibold text-xs">
                   All Time
                 </option>
@@ -190,7 +186,7 @@
             </section>
 
             <div
-              class="reportsTotalByMonth text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] lg:hover:scale-95 lg:transition-all lg:ease-in-out">
+              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-lg border-2 border-gray-200 ">
               <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
                 <span>Sessions</span>
                 <span class="totalSessionsCount"></span>
@@ -226,7 +222,7 @@
 
             <!-- Report By Name Filter  -->
             <select name="reportByNameFilter" id="reportByNameFilter"
-              class="patientList rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs mb-1 w-4/6 font-semibold lg:w-2/4">
+              class="patientList rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs mb-1 w-full font-semibold lg:w-2/4 bg-transparent">
               <option value="Select" class="font-semibold text-xs">Select</option>
             </select>
 
@@ -236,10 +232,10 @@
 
               <!-- Profile Section  -->
               <div
-                class="reportsByNameSections text-blue-600 my-4 bg-gray-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] profileSection rounded-md w-full">
-                <button class="sectionButton w-full font-semibold lg:px-8 lg:py-5 p-4">
-                  <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
-                    <span class="sectionNameProfile text-sm font-semibold tracking-wider">Profile / Update
+                class="reportsByNameSections text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
+                <button class="sectionButton w-full font-semibold p-4">
+                  <div class="sectionButtonWrapper w-full flex items-center justify-between">
+                    <span class="sectionNameProfile text-xs font-semibold tracking-wider">Profile / Update
                       Profile</span>
 
                   </div>
@@ -308,11 +304,11 @@
 
               <!-- Work section  -->
               <div
-                class="reportsByNameSections text-blue-600 my-4 bg-gray-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] workSection rounded-md  lg:transition-all lg:ease-in-out">
+                class="reportsByNameSections text-white my-4 border-gray-200 border-2 text-blue-600 workSection rounded-md  lg:transition-all lg:ease-in-out">
                 <button
-                  class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
-                  <div class="sectionButtonWrapper w-full flex items-center justify-between border-gray-400">
-                    <span class="sectionButtonWork text-sm font-semibold tracking-wider">Work</span>
+                  class="sectionButton w-full p-4 flex items-center justify-between font-semibold">
+                  <div class="sectionButtonWrapper w-full flex items-center justify-between ">
+                    <span class="sectionButtonWork text-xs font-semibold tracking-wider">Work</span>
 
                   </div>
                 </button>

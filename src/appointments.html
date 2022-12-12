@@ -6,23 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>YourDay - Appointments</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
     <div
-      class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center lg:p-0 p-2 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden lg:justify-between">
+      class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center lg:p-0 p-2 flex flex-col lg:flex-row overflow-auto relative overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white ">
 
       <!-- Only for Desktop -->
       <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/appointments4.webp" alt="logo" class="h-screen w-auto" />
       </div>
 
-      <div class="appointmentWrapper px-6 lg:grow lg:p-8 relative lg:overflow-x-hidden">
+      <div class="appointmentWrapper px-6 lg:grow lg:py-8 lg:px-14 relative lg:overflow-x-hidden">
 
         <!-- Confirm Page -->
         <sections
@@ -189,9 +185,9 @@
         <!-- ***** ***** ***** ***** Ends Prompts section ***** ***** ***** ***** -->
 
         <!-- Navbar -->
-        <nav class="text-xs flex items-center justify-between my-5 lg:my-2 text-zinc-900 lg:text-zinc-900">
-          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-zinc-900 hover:text-white" viewBox="0 0 20 20"
+        <nav class="text-xs flex items-center justify-between my-5 lg:my-2 text-blue-600">
+          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1 ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  hover:text-white" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -201,13 +197,13 @@
           <span class="tracking-widest font-semibold uppercase">Appointments</span>
         </nav>
 
-        <div class="pageWrapper pb-6">
+        <div class="pageWrapper pb-6 mt-10">
 
           <!--------------------------------------- CREATE APPIONTMENTS -------------------------------------------------->
-          <section class="lg:mt-20 mt-10">
+          <section>
 
             <!-- Create Appointment Form -->
-            <div class=" text-blue-900 mt-5 lg:mt-10 lg:px-10 createAptForm" autocomplete="nope">
+            <div class=" text-blue-600 createAptForm" autocomplete="nope">
 
               <!-- Form Fields  -->
               <div class="formFields lg:grid lg:grid-cols-2 lg:gap-x-10 lg:gap-y-2">
@@ -217,14 +213,14 @@
 
                   <input type="text" placeholder="New" name="35q2frgsgdf" autocomplete="35q2frgsgdf" id="35q2frgsgdf"
                     value="New"
-                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3 aptCategory lg:drop-shadow-none drop-shadow-2xl bg-gray-300"
+                    class="aptCategory border-1 border-blue-600 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3 lg:drop-shadow-none bg-blue-600 text-white"
                     disabled />
                 </div>
 
                 <!-- Appointment Type  -->
                 <div class="mb-5">
                   <select name="appointmentType" id="appointmentType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm py-3.5 aptType lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
+                    class="aptType border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 font-semibold lg:placeholder:text-sm py-3.5  lg:drop-shadow-none lg:text-sm bg-transparent text-white lg:text-blue-600">
                     <option value="" class="font-semibold w-inherit">
                       Appointment Type
                     </option>
@@ -240,7 +236,7 @@
                 <!-- Appointment Method  -->
                 <div class="mb-5">
                   <select name="appointmentType" id="appointmentType"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptNature lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
+                    class="aptNature border-blue-500 border-1 rounded-lg w-full font-semibold placeholder:text-blue-600 lg:placeholder:text-sm py-3 lg:py-3.5  lg:drop-shadow-none lg:border-gray-200  lg:text-sm bg-transparent text-white lg:text-blue-600">
                     <option value="" class="font-semibold">
                       Appointment Nature
                     </option>
@@ -257,33 +253,33 @@
                 <div class="mb-5">
                   <input type="text" placeholder="Full Name" name="35q2frgsgdf" autocomplete="35q2frgsgdf"
                     id="35q2frgsgdf"
-                    class="border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3 aptName lg:drop-shadow-none drop-shadow-2xl " />
+                    class="aptName border-1 border-blue-500 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-3  lg:drop-shadow-none bg-transparent text-white lg:text-blue-900" />
                 </div>
 
                 <!-- Email address  -->
                 <div class="mb-5">
                   <input type="email" placeholder="Email" name="43534rfsd" autocomplete="43534rfsd" id="43534rfsd"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptEmail lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptEmail lg:drop-shadow-none bg-transparent text-white lg:text-blue-900" />
                 </div>
 
                 <!-- Mobile Number  -->
                 <div class="mb-5">
                   <input type="number" placeholder="Mobile Number" autocomplete="nope" name="mobileNumber"
                     id="mobileNumber"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold  lg:placeholder:text-sm py-3 aptMobileNumber lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold font-semibold  lg:placeholder:text-sm py-3 aptMobileNumber lg:drop-shadow-none bg-transparent text-white lg:text-blue-900" />
                 </div>
 
                 <!-- Address  -->
                 <div class="mb-5">
                   <input type="text" placeholder="Address" autocomplete="nope" name="address" id="address"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptAddress lg:drop-shadow-none drop-shadow-2xl" />
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptAddress lg:drop-shadow-none bg-transparent text-white lg:text-blue-900" />
                 </div>
 
                 <!-- Start Date  -->
                 <div class="mb-5 relative">
                   <input type="text" placeholder="Start Date" name="aptStartDate" autocomplete="nope" id="aptStartDate"
-                    onfocus="(this.type='date')" onfocusout="(this.type='text')" 
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptStartDate lg:drop-shadow-none drop-shadow-2xl" />
+                    onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 aptStartDate lg:drop-shadow-none bg-transparent text-white lg:text-blue-900" />
                   <p class="firstStartDateWrapper absolute hidden -bottom-6 left-1 text-xs text-rose-600">
                     First Start Date:
                     <span class="firstStartDate"></span>
@@ -293,7 +289,7 @@
                 <!-- Start Day  -->
                 <div class="mb-5 relative">
                   <select name="aptDay" id="aptDay"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 aptDay lg:drop-shadow-none drop-shadow-2xl placeholder:font-semibold">
+                    class="aptDay  border-blue-500 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5  lg:drop-shadow-none  lg:text-sm bg-transparent text-white lg:text-blue-600">
                     <option value="" class="font-semibold">
                       Pick a day
                     </option>
@@ -327,7 +323,7 @@
                 <!-- Time slot -->
                 <div class="mb-5 relative">
                   <select name="aptTimeSlot" id="aptTimeSlot"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptTimeSlot lg:drop-shadow-none drop-shadow-2xl lg:text-sm">
+                    class="aptTimeSlot border-blue-500 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5  lg:drop-shadow-none  lg:text-sm bg-transparent text-white lg:text-blue-600">
                     <option value="" class="font-semibold">
                       Time slot
                     </option>
@@ -367,28 +363,26 @@
                 <!-- Occurrence Type  -->
                 <div class="mb-5">
                   <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType" autocomplete="nope"
-                    id="occurrenceType"
-                    min="1"
-                    max="2"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptOccurrenceType lg:drop-shadow-none drop-shadow-2xl lg:text-sm" />
+                    id="occurrenceType" min="1" max="2"
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptOccurrenceType lg:drop-shadow-none  lg:text-sm bg-transparent text-white lg:text-blue-900" />
                 </div>
 
                 <!-- Fees  -->
                 <div class="mb-5">
                   <input type="number" placeholder="Fee" name="aptFees" id="aptFees" autocomplete="nope"
-                    class="border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 placeholder:font-semibold  font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptFees lg:drop-shadow-none drop-shadow-2xl lg:text-sm" />
+                    class="border-blue-500 border-1 rounded-lg w-full placeholder:text-white lg:placeholder:text-blue-600 lg:border-gray-200 placeholder:font-semibold  font-semibold lg:placeholder:text-sm py-3 lg:py-3.5 aptFees lg:drop-shadow-none  lg:text-sm bg-transparent text-white lg:text-blue-900" />
                 </div>
               </div>
 
               <div class="appointmentButtonWrapper flex items-center justify-between lg:mt-5">
                 <div class="createAppointmentButtons">
                   <button
-                    class="bg-blue-700 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn">
+                    class="bg-blue-600 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createAptBtn">
                     Create
                   </button>
 
                   <button
-                    class="bg-blue-700 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createTwoAptBtn hidden">
+                    class="bg-blue-600 px-6 py-3 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase createTwoAptBtn hidden">
                     Create Two Appointments
                   </button>
 
