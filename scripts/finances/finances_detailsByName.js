@@ -1,11 +1,14 @@
+let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
 findDetailsByName.onclick = () =>
 {
   if ( financePatientList.value === '' || monthListByName.value === 'Select Month' )
   {
     promptMessages( 'Select name and month' )
+    patientProfileWrapper.classList.add('hidden')
   }
   else
   {
+    patientProfileWrapper.classList.remove('hidden')
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>

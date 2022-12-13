@@ -6,6 +6,7 @@ const getCounts = () =>
   let totalPaidCancelled = []
   let totalFreeCancelled = []
   let moneyFromPaidCancelledArray = [ 0 ]
+  
   let totalMoneyFromCompletedSessions,
     moneyFromPaidCancelledSessions,
     moneyBreakDownWrapper = document.querySelector( ".moneyBreakDownWrapper" ),
@@ -52,27 +53,28 @@ const getCounts = () =>
             totalMoneyFromCompletedSessions = totalFees.reduce( ( a, b ) => a + b, 0 )
           }
           moneyBreakData =
-            `
-                        <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
+            `           
+                        <div class='p-3'>
+                        <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Scheduled</span>
                           <span class="moneyScheduled tracking-widest  ${ totalScheduled.length === 0 ? "" : "underline" } cursor-pointer">${ totalScheduled.length }</span>
                         </div>
-                        <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
+                        <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Completed</span>
                           <span class="moneyCompleted tracking-widest ${ totalFees.length === 0 ? "" : "underline" }  cursor-pointer">${ totalFees.length === 0 ? "-" : totalFees.length }</span>
                         </div>
                         <div
-                          class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
+                          class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Paid Cancelled</span>
                           <span class="moneyPaidCancelled tracking-widest ${ totalPaidCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalPaidCancelled.length < 1 ? "-" : totalPaidCancelled.length }</span>
                         </div>
                         <div
-                          class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-blue-100 px-3 py-3 rounded-md">
+                          class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Free Cancelled</span>
                           <span class="moneyFreeCancelled tracking-widest ${ totalFreeCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalFreeCancelled.length === 0 ? "-" : totalFreeCancelled.length }</span>
                         </div>
                         <hr class="h-1 bg-blue-500 rounded-md my-4">
-                        <div class="moneyTotalWrapper flex items-center justify-between mt-5 bg-rose-100 px-3 py-3 rounded-md">
+                        <div class="moneyTotalWrapper flex items-center justify-between mt-5 bg-rose-800 text-white px-3 py-3 rounded-md">
                           <span>Total Due</span>
                           <span class="moneyTotal tracking-widest">
                              <div class="flex"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
@@ -86,7 +88,7 @@ const getCounts = () =>
                           </div>
                           </span>
                         </div>
-                   
+                    </div>
                       `
           moneyBreakDownWrapper.innerHTML = moneyBreakData
           showBreakDownOfAppointments()
