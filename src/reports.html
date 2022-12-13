@@ -130,8 +130,8 @@
 
         <!-- Navbar  -->
         <div class="text-xs flex items-center justify-between my-6 lg:my-2 text-blue-600">
-          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5  text-left hover:text-white"
+          <a href="./home.html" class="hover:bg-blue-500 rounded-full align-middle ">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white"
               viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -164,29 +164,29 @@
 
             <!-- Filter Type ( By month ) -->
 
-            <section class="monthFilter mb-5 text-rose-600 font-semibold">
+            <section class="monthFilter mb-5">
               <select name="reportByMonthFilter" id="monthList"
-                class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs w-full lg:w-2/4 bg-transparent">
-                <option selected value="All Time" class="font-semibold text-xs">
+                class="form-select border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex  lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
+                <option selected value="All Time" class="lg:font-semibold w-full block text-xs lg:text-base">
                   All Time
                 </option>
-                <option value="1" class="font-semibold text-xs">January</option>
-                <option value="2" class="font-semibold text-xs">February</option>
-                <option value="3" class="font-semibold text-xs">March</option>
-                <option value="4" class="font-semibold text-xs">April</option>
-                <option value="5" class="font-semibold text-xs">May</option>
-                <option value="6" class="font-semibold text-xs">June</option>
-                <option value="7" class="font-semibold text-xs">July</option>
-                <option value="8" class="font-semibold text-xs">August</option>
-                <option value="9" class="font-semibold text-xs">September</option>
-                <option value="10" class="font-semibold text-xs">October</option>
-                <option value="11" class="font-semibold text-xs">November</option>
-                <option value="12" class="font-semibold text-xs">December</option>
+                <option value="1" class="lg:font-semibold w-full block text-xs lg:text-base">January</option>
+                <option value="2" class="lg:font-semibold w-full block text-xs lg:text-base">February</option>
+                <option value="3" class="lg:font-semibold w-full block text-xs lg:text-base">March</option>
+                <option value="4" class="lg:font-semibold w-full block text-xs lg:text-base">April</option>
+                <option value="5" class="lg:font-semibold w-full block text-xs lg:text-base">May</option>
+                <option value="6" class="lg:font-semibold w-full block text-xs lg:text-base">June</option>
+                <option value="7" class="lg:font-semibold w-full block text-xs lg:text-base">July</option>
+                <option value="8" class="lg:font-semibold w-full block text-xs lg:text-base">August</option>
+                <option value="9" class="lg:font-semibold w-full block text-xs lg:text-base">September</option>
+                <option value="10" class="lg:font-semibold w-full block text-xs lg:text-base">October</option>
+                <option value="11" class="lg:font-semibold w-full block text-xs lg:text-base">November</option>
+                <option value="12" class="lg:font-semibold w-full block text-xs lg:text-base">December</option>
               </select>
             </section>
 
             <div
-              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-lg border-2 border-gray-200 ">
+              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-lg border-2 border-blue-600 lg:border-gray-200 ">
               <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
                 <span>Sessions</span>
                 <span class="totalSessionsCount"></span>
@@ -222,29 +222,27 @@
 
             <!-- Report By Name Filter  -->
             <select name="reportByNameFilter" id="reportByNameFilter"
-              class="patientList rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 lg:text-xs mb-1 w-full font-semibold lg:w-2/4 bg-transparent">
-              <option value="Select" class="font-semibold text-xs">Select</option>
+              class="patientList border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex  lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
+              <option value="Select" class="lg:font-semibold w-full block text-xs lg:text-base">Select</option>
             </select>
 
             <!-- Reports By Name section  -->
 
-            <div class="reportByName">
+            <div class="reportByName hidden">
 
               <!-- Profile Section  -->
               <div
-                class="reportsByNameSections text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
-                <button class="sectionButton w-full font-semibold p-4">
+                class="reportsByNameSections text-white lg:text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
+                <button class="sectionButton w-full lg:font-semibold p-4">
                   <div class="sectionButtonWrapper w-full flex items-center justify-between">
-                    <span class="sectionNameProfile text-xs font-semibold tracking-wider">Profile / Update
-                      Profile</span>
-
+                    <span class="sectionNameProfile lg:text-sm text-xs">Profile / Update Profile</span>
                   </div>
                 </button>
 
                 <!-- Patient Profile -->
 
                 <section
-                  class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+                  class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden lg:font-semibold text-xs">
 
                   <div class="profileName flex items-center justify-between my-3">
                     <span class="nameTag">Name</span>
@@ -291,7 +289,7 @@
                     <span class="fee ml-2">NA</span>
                   </div>
 
-                  <div class="updateLinksWrapper flex justify-between mt-6">
+                  <div class="updateLinksWrapper justify-between mt-6 hidden lg:flex">
                     <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
                     <div class="updateDetails flex flex-col flex-end">
                       <span class="profileUpdatedOn font-normal text-gray-400 text-xs"></span>
@@ -304,16 +302,13 @@
 
               <!-- Work section  -->
               <div
-                class="reportsByNameSections text-white my-4 border-gray-200 border-2 text-blue-600 workSection rounded-md  lg:transition-all lg:ease-in-out">
-                <button
-                  class="sectionButton w-full p-4 flex items-center justify-between font-semibold">
+                class="reportsByNameSections text-white lg:text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
+                <button class="sectionButton w-full lg:font-semibold p-4">
                   <div class="sectionButtonWrapper w-full flex items-center justify-between ">
-                    <span class="sectionButtonWork text-xs font-semibold tracking-wider">Work</span>
-
+                    <span class="sectionButtonWork lg:text-sm text-xs">Work</span>
                   </div>
                 </button>
-                <section
-                  class="workContent font-semibold text-xs text-justify leading-loose pb-6 px-8 hidden lg:transition-all lg:ease-in-out">
+                <section class="workContent font-semibold text-xs text-justify leading-loose">
 
                 </section>
               </div>

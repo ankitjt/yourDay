@@ -12,7 +12,7 @@
   <body class="relative">
 
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-50 lg:bg-white">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white">
 
       <!-- Money BreakDown  -->
       <div
@@ -30,8 +30,8 @@
 
         <!-- Navbar -->
         <nav class="text-xs flex items-center justify-between my-5 lg:my-2 text-blue-600">
-          <a href="./home.html" class="hover:bg-blue-500 rounded-full p-1">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 hover:text-white" viewBox="0 0 20 20"
+          <a href="./home.html" class="hover:bg-blue-500 rounded-full align-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -64,9 +64,9 @@
 
             <!-- Filter Type ( By month ) -->
 
-            <section class="monthFilter mb-5 text-rose-600 font-semibold grid grid-cols-2 gap-x-10">
+            <section class="monthFilter mb-5 lg:grid lg:grid-cols-2 lg:gap-x-10">
               <select name="monthList" id="monthList"
-                class="form-select rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs">
+                class="form-select border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
                 <option selected value="All Time" class="font-semibold">
                   All Time
                 </option>
@@ -146,34 +146,34 @@
 
             <!-- Filter Type -->
 
-            <section class="monthFilter mb-5 flex justify-between items-center font-semibold">
+            <section class="monthFilter mb-5 flex justify-between items-center">
 
               <div class="grid grid-cols-2 gap-x-2 w-full lg:pr-10">
                 <!-- Patient Name -->
                 <select name="financePatientList" id="financePatientList"
-                  class="rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs patientList capitalize w-full ">
-                  <option value="" class="font-semibold">Names</option>
+                  class="patientList border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
+                  <option value="" class="lg:font-semibold text-xs lg:text-base">Name</option>
 
                 </select>
 
                 <!-- Months -->
                 <select name="monthListByName" id="monthList"
-                  class="monthListByName rounded-lg text-blue-600 lg:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-full">
-                  <option selected value="Select Month" class="font-semibold">
-                    Select Month
+                  class="monthListByName border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
+                  <option selected value="Select Month" class="lg:font-semibold text-xs lg:text-base">
+                    Month
                   </option>
-                  <option value="1" class="font-semibold">January</option>
-                  <option value="2" class="font-semibold">February</option>
-                  <option value="3" class="font-semibold">March</option>
-                  <option value="4" class="font-semibold">April</option>
-                  <option value="5" class="font-semibold">May</option>
-                  <option value="6" class="font-semibold">June</option>
-                  <option value="7" class="font-semibold">July</option>
-                  <option value="8" class="font-semibold">August</option>
-                  <option value="9" class="font-semibold">September</option>
-                  <option value="10" class="font-semibold">October</option>
-                  <option value="11" class="font-semibold">November</option>
-                  <option value="12" class="font-semibold">December</option>
+                  <option value="1" class="lg:font-semibold text-xs lg:text-base">January</option>
+                  <option value="2" class="lg:font-semibold text-xs lg:text-base">February</option>
+                  <option value="3" class="lg:font-semibold text-xs lg:text-base">March</option>
+                  <option value="4" class="lg:font-semibold text-xs lg:text-base">April</option>
+                  <option value="5" class="lg:font-semibold text-xs lg:text-base">May</option>
+                  <option value="6" class="lg:font-semibold text-xs lg:text-base">June</option>
+                  <option value="7" class="lg:font-semibold text-xs lg:text-base">July</option>
+                  <option value="8" class="lg:font-semibold text-xs lg:text-base">August</option>
+                  <option value="9" class="lg:font-semibold text-xs lg:text-base">September</option>
+                  <option value="10" class="lg:font-semibold text-xs lg:text-base">October</option>
+                  <option value="11" class="lg:font-semibold text-xs lg:text-base">November</option>
+                  <option value="12" class="lg:font-semibold text-xs lg:text-base">December</option>
                 </select>
 
               </div>
@@ -194,21 +194,19 @@
           </section>
 
           <!-------------------------------------------------- Patient Profile --------------------------------------------->
+          <div class="patientProfileWrapper hidden">
+            <section class="profile mb-10 mt-10 text-white lg:text-blue-600 lg:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
+              <div class="profileDetails p-4">
+                
+              </div>
 
-          <section
-            class="profile mb-10 mt-10 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[10px_10px_10px_rgba(0,0,0,0.25)] ">
-            <div class="profileDetails">
-              <h1>Select Patient Name for profile</h1>
-            </div>
+            </section>
 
-          </section>
-
-          <!-- Money Breakdown section -->
-          <section
-            class="moneyBreakDownWrapper mb-5 text-zinc-900 text-xs lg:text-md font-semibold tracking-wider bg-gray-50 lg:p-8 p-4 rounded-lg drop-shadow-[10px_10px_10px_rgba(0,0,0,0.25)] ">
-            <h1>Select month for breakdown</h1>
-
-          </section>
+            <!-- Money Breakdown section -->
+            <section
+              class="moneyBreakDownWrapper mb-5 text-white lg:text-blue-600 lg:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
+            </section>
+          </div>
 
         </div>
 
