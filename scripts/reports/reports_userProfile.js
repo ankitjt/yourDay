@@ -1,3 +1,4 @@
+let reportByName = document.querySelector('.reportByName')
 patientList.onchange = () =>
 {
   if ( patientList.value === "Select" )
@@ -5,9 +6,11 @@ patientList.onchange = () =>
     updateProfileWrapper.classList.remove( 'left-0' )
     profile.classList.add( 'hidden' )
     workContent.classList.add( 'hidden' )
+    reportByName.classList.add( 'hidden' )
   }
   else
   {
+    reportByName.classList.remove('hidden')
     profile.classList.remove( 'hidden' )
     workContent.classList.remove( 'hidden' )
 
