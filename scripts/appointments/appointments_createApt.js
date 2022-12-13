@@ -17,7 +17,7 @@ createAptBtn.onclick = () =>
     aptAddress.value === ''
   )
   {
-    promptMessages( 'All fields required.' )
+    promptMessages( 'All fields are required.' )
   }
 
   else if ( checkForDay.getDay().toString() !== aptDay.value )
