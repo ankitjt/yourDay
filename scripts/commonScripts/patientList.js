@@ -14,7 +14,7 @@ let patientList = document.querySelector( '.patientList' );
       if ( doc.data().softDelete !== true )
       {
         let patientNames = `
-                <option value="${ doc.data().aptName }" class="lg:font-semibold w-full block text-xs lg:text-base" data-id="${ doc.id }" >${ doc.data().aptName }</option>
+                <option value="${ doc.data().aptName }" class="md:font-semibold w-full block text-xs md:text-base" data-id="${ doc.id }" >${ doc.data().aptName }</option>
                 `
         patientList.innerHTML += patientNames
       }

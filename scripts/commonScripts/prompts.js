@@ -1,12 +1,14 @@
 let checkPrompt = document.querySelector( '.checkPrompt' )
+let pageBlocker = document.querySelector( '.pageBlocker' )
+
 const promptMessages = ( message ) =>
 {
   prompts.classList.add( 'left-1/2' )
-  pageWrapper.classList.add( 'blur-sm' )
+  pageBlocker.classList.remove( 'hidden' )
   promptContent.innerText = message
   closePrompts.onclick = () =>
   {
     prompts.classList.remove( 'left-1/2' )
-    pageWrapper.classList.remove( 'blur-sm' )
+    pageBlocker.classList.add( 'hidden' )
   }
 }
