@@ -23,7 +23,7 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 lg:px-4 lg:py-3 rounded-md bg-gray-100 mb-6  lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-xl cursor-pointer w-full">
+                 class=" p-3 md:px-4 md:py-3 rounded-md bg-gray-100 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
                 <div class="details flex flex-col text-xs">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
@@ -76,7 +76,7 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-100 mb-6  lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-xl cursor-pointer w-full">
+                 class=" p-3 md:px-4 md:py-3 rounded-md bg-emerald-100 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
                 <div class="details flex flex-col text-xs">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
@@ -127,7 +127,7 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 lg:px-4 lg:py-3 rounded-md bg-emerald-500 mb-6  lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-xl cursor-pointer w-full">
+                 class=" p-3 md:px-4 md:py-3 rounded-md bg-emerald-500 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
                 <div class="details flex flex-col text-xs">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
@@ -178,7 +178,7 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 lg:px-4 lg:py-3 rounded-md bg-rose-200 mb-6  lg:hover:drop-shadow-2xl lg:hover:-translate-y-2 lg:transition-all lg:ease-in-out lg:shadow-xl cursor-pointer w-full">
+                 class=" p-3 md:px-4 md:py-3 rounded-md bg-rose-200 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
                 <div class="details flex flex-col text-xs">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">

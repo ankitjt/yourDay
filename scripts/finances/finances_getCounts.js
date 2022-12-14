@@ -55,21 +55,21 @@ const getCounts = () =>
           moneyBreakData =
             `           
                         <div class='p-3'>
-                        <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
+                        <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Scheduled</span>
                           <span class="moneyScheduled tracking-widest  ${ totalScheduled.length === 0 ? "" : "underline" } cursor-pointer">${ totalScheduled.length }</span>
                         </div>
-                        <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
+                        <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Completed</span>
                           <span class="moneyCompleted tracking-widest ${ totalFees.length === 0 ? "" : "underline" }  cursor-pointer">${ totalFees.length === 0 ? "-" : totalFees.length }</span>
                         </div>
                         <div
-                          class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
+                          class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Paid Cancelled</span>
                           <span class="moneyPaidCancelled tracking-widest ${ totalPaidCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalPaidCancelled.length < 1 ? "-" : totalPaidCancelled.length }</span>
                         </div>
                         <div
-                          class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white lg:text-blue-600 lg:bg-blue-100  px-3 py-3 rounded-md">
+                          class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
                           <span>Free Cancelled</span>
                           <span class="moneyFreeCancelled tracking-widest ${ totalFreeCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalFreeCancelled.length === 0 ? "-" : totalFreeCancelled.length }</span>
                         </div>

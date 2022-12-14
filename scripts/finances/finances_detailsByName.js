@@ -3,7 +3,7 @@ findDetailsByName.onclick = () =>
 {
   if ( financePatientList.value === '' || monthListByName.value === 'Select Month' )
   {
-    promptMessages( 'Select name and month' )
+    promptMessages( 'Select name and month.' )
     patientProfileWrapper.classList.add('hidden')
   }
   else
