@@ -8,7 +8,7 @@ select {
     outline: none;
 }
 
-.app-name, .pageNotFound  {
+.app-name, .pageNotFound, .indexPageAppName  {
     font-family: 'La Belle Aurore',cursive !important;
 }
 

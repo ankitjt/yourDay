@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +12,7 @@
   <body class="relative">
 
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 p-0 md:p-0 flex flex-col md:flex-row overflow-auto overflow-x-hidden md:justify-between bg-gray-800 md:bg-white">
 
       <!-- Money BreakDown  -->
       <div
@@ -22,14 +22,14 @@
       </div>
 
       <!-- Only for Desktop -->
-      <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
+      <div class="banner-holder md:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/finance2.webp" alt="logo" class="h-screen w-auto py-10" />
       </div>
 
-      <div class="financesWrapper lg:grow lg:py-8 lg:px-14 relative lg:overflow-x-hidden">
-
+      <div class="financesWrapper md:grow md:py-8 md:px-14 relative md:overflow-x-hidden">
+        <div class="pageBlocker absolute h-full w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div>
         <!-- Navbar -->
-        <nav class="text-xs flex items-center justify-between my-5 lg:my-2 text-blue-600">
+        <nav class="text-xs flex items-center justify-between my-5 md:my-2 text-blue-600">
           <a href="./home.html" class="hover:bg-blue-500 rounded-full align-middle">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white" viewBox="0 0 20 20"
               fill="currentColor">
@@ -43,7 +43,7 @@
 
         <!-- Prompts -->
         <section
-          class="z-50 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+          class="z-50 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-md w-5/6 md:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
           <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
             viewBox="0 0 20 20" fill="currentColor">
@@ -64,9 +64,9 @@
 
             <!-- Filter Type ( By month ) -->
 
-            <section class="monthFilter mb-5 lg:grid lg:grid-cols-2 lg:gap-x-10">
+            <section class="monthFilter mb-5 md:grid md:grid-cols-2 md:gap-x-10">
               <select name="monthList" id="monthList"
-                class="form-select border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
+                class="form-select border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
                 <option selected value="All Time" class="font-semibold">
                   All Time
                 </option>
@@ -87,11 +87,11 @@
 
             <!-- Total Money Count -->
 
-            <div class="moneyCount lg:grid lg:gap-x-10 lg:grid-cols-2 text-white">
+            <div class="moneyCount md:grid md:gap-x-10 md:grid-cols-2 text-white">
               <!-- Sessions Money -->
 
               <div
-                class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs lg:text-sm rounded-lg font-medium">
+                class="sessionsWrapper flex justify-between px-6 py-3 mb-3 items-center bg-indigo-600 text-xs md:text-sm rounded-md font-medium">
                 <span class="sessions flex flex-col">
                   <span class="totalSessions"> Total Sessions </span>
                   <span class="totalSessionsCount mt-1">
@@ -113,7 +113,7 @@
               <!-- Supervision Money -->
 
               <div
-                class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs lg:text-sm rounded-lg font-medium">
+                class="supervisionWrapper flex justify-between px-6 py-3 mb-3 items-center bg-blue-600 text-xs md:text-sm rounded-md font-medium">
                 <span class="supervision flex flex-col">
                   <span class="totalSupervision"> Total Supervision </span>
                   <span class="totalSessionsCount mt-1">
@@ -148,42 +148,42 @@
 
             <section class="monthFilter mb-5 flex justify-between items-center">
 
-              <div class="grid grid-cols-2 gap-x-2 w-full lg:pr-10">
+              <div class="grid grid-cols-2 gap-x-2 w-full md:pr-10">
                 <!-- Patient Name -->
                 <select name="financePatientList" id="financePatientList"
-                  class="patientList border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
-                  <option value="" class="lg:font-semibold text-xs lg:text-base">Name</option>
+                  class="patientList border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                  <option value="" class="md:font-semibold text-xs md:text-base">Name</option>
 
                 </select>
 
                 <!-- Months -->
                 <select name="monthListByName" id="monthList"
-                  class="monthListByName border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
-                  <option selected value="Select Month" class="lg:font-semibold text-xs lg:text-base">
+                  class="monthListByName border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                  <option selected value="Select Month" class="md:font-semibold text-xs md:text-base">
                     Month
                   </option>
-                  <option value="1" class="lg:font-semibold text-xs lg:text-base">January</option>
-                  <option value="2" class="lg:font-semibold text-xs lg:text-base">February</option>
-                  <option value="3" class="lg:font-semibold text-xs lg:text-base">March</option>
-                  <option value="4" class="lg:font-semibold text-xs lg:text-base">April</option>
-                  <option value="5" class="lg:font-semibold text-xs lg:text-base">May</option>
-                  <option value="6" class="lg:font-semibold text-xs lg:text-base">June</option>
-                  <option value="7" class="lg:font-semibold text-xs lg:text-base">July</option>
-                  <option value="8" class="lg:font-semibold text-xs lg:text-base">August</option>
-                  <option value="9" class="lg:font-semibold text-xs lg:text-base">September</option>
-                  <option value="10" class="lg:font-semibold text-xs lg:text-base">October</option>
-                  <option value="11" class="lg:font-semibold text-xs lg:text-base">November</option>
-                  <option value="12" class="lg:font-semibold text-xs lg:text-base">December</option>
+                  <option value="1" class="md:font-semibold text-xs md:text-base">January</option>
+                  <option value="2" class="md:font-semibold text-xs md:text-base">February</option>
+                  <option value="3" class="md:font-semibold text-xs md:text-base">March</option>
+                  <option value="4" class="md:font-semibold text-xs md:text-base">April</option>
+                  <option value="5" class="md:font-semibold text-xs md:text-base">May</option>
+                  <option value="6" class="md:font-semibold text-xs md:text-base">June</option>
+                  <option value="7" class="md:font-semibold text-xs md:text-base">July</option>
+                  <option value="8" class="md:font-semibold text-xs md:text-base">August</option>
+                  <option value="9" class="md:font-semibold text-xs md:text-base">September</option>
+                  <option value="10" class="md:font-semibold text-xs md:text-base">October</option>
+                  <option value="11" class="md:font-semibold text-xs md:text-base">November</option>
+                  <option value="12" class="md:font-semibold text-xs md:text-base">December</option>
                 </select>
 
               </div>
 
               <div class="flex align-center">
                 <button
-                  class="findDetailsByName bg-blue-600 px-4 py-2 text-sm rounded-lg hidden lg:block">Search</button>
+                  class="findDetailsByName bg-blue-600 px-4 py-2 text-sm rounded-md hidden md:block">Search</button>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                   stroke="currentColor"
-                  class="w-7 h-7 ml-4 align-middle text-white md:hidden lg:hidden bg-blue-600 rounded-md">
+                  class="w-7 h-7 ml-4 align-middle text-white md:hidden md:hidden bg-blue-600 rounded-md">
                   <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -195,7 +195,7 @@
 
           <!-------------------------------------------------- Patient Profile --------------------------------------------->
           <div class="patientProfileWrapper hidden">
-            <section class="profile mb-10 mt-10 text-white lg:text-blue-600 lg:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
+            <section class="profile mb-10 mt-10 text-white md:text-blue-600 md:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
               <div class="profileDetails p-4">
                 
               </div>
@@ -204,7 +204,7 @@
 
             <!-- Money Breakdown section -->
             <section
-              class="moneyBreakDownWrapper mb-5 text-white lg:text-blue-600 lg:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
+              class="moneyBreakDownWrapper mb-5 text-white md:text-blue-600 md:font-semibold text-sm my-4 border-gray-200 border-2 text-blue-600 rounded-md">
             </section>
           </div>
 

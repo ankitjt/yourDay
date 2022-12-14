@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
   <head>
     <meta charset="UTF-8" />
@@ -14,64 +14,65 @@
 
     <!-- Update Profile -->
     <div
-      class="absolute h-screen overflow-y-auto w-full lg:w-2/5 -left-[2000px] bg-blue-100 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+      class="absolute h-screen overflow-y-auto w-full md:w-2/5 -left-[2000px] bg-blue-100 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+      <!-- <div class="pageBlocker absolute h-screen w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div> -->
       <h1 class="uppercase text-md font-semibold">Update Profile</h1>
 
-      <section class="profileDetails mt-10 lg:px-5 lg:transition-all lg:ease-in-out text-xs font-semibold">
-        <div class="profileName flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="nameTag font-semibold mb-2 lg:mb-0">Name</span>
+      <section class="profileDetails mt-10 md:px-5 md:transition-all md:ease-in-out text-xs font-semibold">
+        <div class="profileName flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="nameTag font-semibold mb-2 md:mb-0">Name</span>
           <input type="text" value=""
-            class="updateName border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3" />
+            class="updateName border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3" />
         </div>
-        <div class="flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="appointmentNature mb-2 lg:mb-0">Appointment Nature</span>
+        <div class="flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="appointmentNature mb-2 md:mb-0">Appointment Nature</span>
           <input type="text" value=""
-            class="updateAptNature  border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3 bg-gray-300"
+            class="updateAptNature  border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3 bg-gray-300"
             disabled />
         </div>
-        <div class="profileEmail flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="emailTag mb-2 lg:mb-0">Email</span>
+        <div class="profileEmail flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="emailTag mb-2 md:mb-0">Email</span>
           <input type="email" value=""
-            class="updateEmail   border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3" />
+            class="updateEmail   border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3" />
         </div>
-        <div class="profileMobileNumber flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="mobileTag mb-2 lg:mb-0">Mobile</span>
+        <div class="profileMobileNumber flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="mobileTag mb-2 md:mb-0">Mobile</span>
           <input type='number' value=""
-            class="updateMobileNumber   border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3" />
+            class="updateMobileNumber   border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3" />
         </div>
-        <div class="profileAddress flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="addressTag mb-2 lg:mb-0">Address</span>
+        <div class="profileAddress flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="addressTag mb-2 md:mb-0">Address</span>
           <textarea value=""
-            class="updateAddress border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3"></textarea>
+            class="updateAddress border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3"></textarea>
         </div>
-        <div class="profileStartDate flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="createDateTag mb-2 lg:mb-0">Create Date</span>
+        <div class="profileStartDate flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="createDateTag mb-2 md:mb-0">Create Date</span>
           <input type='text' value=""
-            class="updateCreateDate   border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3 bg-gray-300"
+            class="updateCreateDate   border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3 bg-gray-300"
             disabled />
         </div>
-        <div class="profileCategory flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="categoryTag mb-2 lg:mb-0">Category</span>
+        <div class="profileCategory flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="categoryTag mb-2 md:mb-0">Category</span>
           <input type='text' value=""
-            class="updateCategory   border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3 bg-gray-300"
+            class="updateCategory   border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3 bg-gray-300"
             disabled />
         </div>
-        <div class="profileOccurrence flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="occurrenceTag mb-2 lg:mb-0">Occurrence ( per week )</span>
+        <div class="profileOccurrence flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="occurrenceTag mb-2 md:mb-0">Occurrence ( per week )</span>
           <input type='number' value=""
-            class="updateOccurrence  border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3 bg-gray-300"
+            class="updateOccurrence  border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3 bg-gray-300"
             disabled />
         </div>
-        <div class="profileSlot flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="slotTag mb-2 lg:mb-0">Slot</span>
+        <div class="profileSlot flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="slotTag mb-2 md:mb-0">Slot</span>
           <input type='text' value=""
-            class="updateSlot  border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3 bg-gray-300"
+            class="updateSlot  border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3 bg-gray-300"
             disabled />
         </div>
-        <div class="profileFee flex lg:items-center lg:justify-between flex-col lg:flex-row my-5">
-          <span class="feeTag mb-2 lg:mb-0">Fees</span>
+        <div class="profileFee flex md:items-center md:justify-between flex-col md:flex-row my-5">
+          <span class="feeTag mb-2 md:mb-0">Fees</span>
           <input type='number' value=""
-            class="updateFees border-2 border-gray-200 rounded-lg text-gray-600 lg:text-xs font-semibold lg:w-2/4 w-full py-3" />
+            class="updateFees border-2 border-gray-200 rounded-md text-gray-600 md:text-xs font-semibold md:w-2/4 w-full py-3" />
         </div>
 
 
@@ -118,21 +119,22 @@
     </div>
 
     <div
-      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white ">
+      class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center relative py-5 px-5 md:p-0 flex flex-col md:flex-row overflow-auto overflow-x-hidden md:justify-between bg-gray-800 md:bg-white ">
 
       <!-- Only for Desktop -->
-      <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
+      <div class="banner-holder md:w-2/5 lg:h-screen lg:block hidden">
         <img src="../assets/reports2.webp" alt="logo" class="h-screen w-auto" />
       </div>
 
       <!-- Reports Wrapper  -->
-      <div class="reportsWrapper lg:grow px-3 lg:py-8 lg:px-14 relative lg:h-screen lg:overflow-auto lg:w-3/5">
+      <div class="reportsWrapper md:grow px-3 md:py-8 md:px-14 relative md:h-screen md:overflow-auto md:w-3/5">
+        <div class="pageBlocker absolute h-full w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div>
 
         <!-- Navbar  -->
-        <div class="text-xs flex items-center justify-between my-6 lg:my-2 text-blue-600">
+        <div class="text-xs flex items-center justify-between my-6 md:my-2 text-blue-600">
           <a href="./home.html" class="hover:bg-blue-500 rounded-full align-middle ">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white"
-              viewBox="0 0 20 20" fill="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white" viewBox="0 0 20 20"
+              fill="currentColor">
               <path fill-rule="evenodd"
                 d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
                 clip-rule="evenodd" />
@@ -143,7 +145,7 @@
 
         <!-- Prompts -->
         <section
-          class="z-50 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+          class="z-50 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-md w-5/6 md:w-4/6 -translate-x-1/2 bottom-20 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
           <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
             viewBox="0 0 20 20" fill="currentColor">
@@ -155,7 +157,7 @@
 
         <!-- Report by month -->
         <div class="pageWrapper pb-6 mt-10">
-          <section class="reportByMonthSection rounded-lg">
+          <section class="reportByMonthSection rounded-md">
             <h3 class="mb-2">
               <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
                 By month
@@ -166,40 +168,40 @@
 
             <section class="monthFilter mb-5">
               <select name="reportByMonthFilter" id="monthList"
-                class="form-select border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex  lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
-                <option selected value="All Time" class="lg:font-semibold w-full block text-xs lg:text-base">
+                class="form-select border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                <option selected value="All Time" class="md:font-semibold w-full block text-xs md:text-base">
                   All Time
                 </option>
-                <option value="1" class="lg:font-semibold w-full block text-xs lg:text-base">January</option>
-                <option value="2" class="lg:font-semibold w-full block text-xs lg:text-base">February</option>
-                <option value="3" class="lg:font-semibold w-full block text-xs lg:text-base">March</option>
-                <option value="4" class="lg:font-semibold w-full block text-xs lg:text-base">April</option>
-                <option value="5" class="lg:font-semibold w-full block text-xs lg:text-base">May</option>
-                <option value="6" class="lg:font-semibold w-full block text-xs lg:text-base">June</option>
-                <option value="7" class="lg:font-semibold w-full block text-xs lg:text-base">July</option>
-                <option value="8" class="lg:font-semibold w-full block text-xs lg:text-base">August</option>
-                <option value="9" class="lg:font-semibold w-full block text-xs lg:text-base">September</option>
-                <option value="10" class="lg:font-semibold w-full block text-xs lg:text-base">October</option>
-                <option value="11" class="lg:font-semibold w-full block text-xs lg:text-base">November</option>
-                <option value="12" class="lg:font-semibold w-full block text-xs lg:text-base">December</option>
+                <option value="1" class="md:font-semibold w-full block text-xs md:text-base">January</option>
+                <option value="2" class="md:font-semibold w-full block text-xs md:text-base">February</option>
+                <option value="3" class="md:font-semibold w-full block text-xs md:text-base">March</option>
+                <option value="4" class="md:font-semibold w-full block text-xs md:text-base">April</option>
+                <option value="5" class="md:font-semibold w-full block text-xs md:text-base">May</option>
+                <option value="6" class="md:font-semibold w-full block text-xs md:text-base">June</option>
+                <option value="7" class="md:font-semibold w-full block text-xs md:text-base">July</option>
+                <option value="8" class="md:font-semibold w-full block text-xs md:text-base">August</option>
+                <option value="9" class="md:font-semibold w-full block text-xs md:text-base">September</option>
+                <option value="10" class="md:font-semibold w-full block text-xs md:text-base">October</option>
+                <option value="11" class="md:font-semibold w-full block text-xs md:text-base">November</option>
+                <option value="12" class="md:font-semibold w-full block text-xs md:text-base">December</option>
               </select>
             </section>
 
             <div
-              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-lg border-2 border-blue-600 lg:border-gray-200 ">
-              <div class="totalSessions flex items-center justify-between mb-2 lg:mb-4 capitalize">
+              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-md border-2 border-blue-600 md:border-gray-200 ">
+              <div class="totalSessions flex items-center justify-between mb-2 md:mb-4 capitalize">
                 <span>Sessions</span>
                 <span class="totalSessionsCount"></span>
               </div>
-              <div class="totalSupervision flex items-center justify-between mb-2 lg:mb-4 capitalize">
+              <div class="totalSupervision flex items-center justify-between mb-2 md:mb-4 capitalize">
                 <span>Supervision</span>
                 <span class="totalSupervisionCount"></span>
               </div>
-              <div class="totalRescheduled flex items-center justify-between mb-2 lg:mb-4 capitalize">
+              <div class="totalRescheduled flex items-center justify-between mb-2 md:mb-4 capitalize">
                 <span>Rescheduled</span>
                 <span class="totalRescheduledCount"></span>
               </div>
-              <div class="totalCancelled flex items-center justify-between mb-2 lg:mb-4 capitalize">
+              <div class="totalCancelled flex items-center justify-between mb-2 md:mb-4 capitalize">
                 <span>Cancelled</span>
                 <span class="totalCancelledCount"></span>
               </div>
@@ -213,7 +215,7 @@
           <!-- ***** ***** ***** ***** Ends Report by month section ***** ***** ***** ***** -->
 
           <!-- Report by Name -->
-          <section class="reportByNameSection mt-10 rounded-lg">
+          <section class="reportByNameSection mt-10 rounded-md">
             <h3 class="mb-2">
               <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
                 By name
@@ -222,8 +224,8 @@
 
             <!-- Report By Name Filter  -->
             <select name="reportByNameFilter" id="reportByNameFilter"
-              class="patientList border-blue-600 lg:border-gray-200 border-1 rounded-lg w-full placeholder:text-blue-600 lg:font-semibold lg:placeholder:text-sm lg:py-3.5 py-3 flex  lg:drop-shadow-none lg:text-sm lg:bg-transparent text-white lg:text-blue-600 bg-gray-800">
-              <option value="Select" class="lg:font-semibold w-full block text-xs lg:text-base">Select</option>
+              class="patientList border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+              <option value="Select" class="md:font-semibold w-full block text-xs md:text-base">Select</option>
             </select>
 
             <!-- Reports By Name section  -->
@@ -232,17 +234,16 @@
 
               <!-- Profile Section  -->
               <div
-                class="reportsByNameSections text-white lg:text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
-                <button class="sectionButton w-full lg:font-semibold p-4">
+                class="reportsByNameSections text-white md:text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
+                <button class="sectionButton w-full md:font-semibold p-4">
                   <div class="sectionButtonWrapper w-full flex items-center justify-between">
-                    <span class="sectionNameProfile lg:text-sm text-xs">Profile / Update Profile</span>
+                    <span class="sectionNameProfile md:text-sm text-xs">Profile / Update Profile</span>
                   </div>
                 </button>
 
                 <!-- Patient Profile -->
 
-                <section
-                  class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden lg:font-semibold text-xs">
+                <section class="profile px-5 pb-4 md:px-8 md:transition-all md:ease-in-out md:font-semibold text-xs">
 
                   <div class="profileName flex items-center justify-between my-3">
                     <span class="nameTag">Name</span>
@@ -289,7 +290,7 @@
                     <span class="fee ml-2">NA</span>
                   </div>
 
-                  <div class="updateLinksWrapper justify-between mt-6 hidden lg:flex">
+                  <div class="updateLinksWrapper justify-between mt-6 hidden md:flex">
                     <span class="updateProfileLink underline cursor-pointer text-rose-600">Update</span>
                     <div class="updateDetails flex flex-col flex-end">
                       <span class="profileUpdatedOn font-normal text-gray-400 text-xs"></span>
@@ -302,21 +303,21 @@
 
               <!-- Work section  -->
               <div
-                class="reportsByNameSections text-white lg:text-blue-600 my-4 border-2 border-gray-200 profileSection rounded-md w-full">
-                <button class="sectionButton w-full lg:font-semibold p-4">
+                class="reportsByNameSections text-white md:text-blue-600 my-4 border-2 border-gray-200 workContent rounded-md w-full">
+                <button class="sectionButton w-full md:font-semibold p-4">
                   <div class="sectionButtonWrapper w-full flex items-center justify-between ">
-                    <span class="sectionButtonWork lg:text-sm text-xs">Work</span>
+                    <span class="sectionButtonWork md:text-sm text-xs">Work</span>
                   </div>
                 </button>
-                <section class="workContent font-semibold text-xs text-justify leading-loose">
+                <section class=" font-semibold text-xs text-justify leading-loose">
 
                 </section>
               </div>
 
               <!-- Profile Action Section  -->
               <!-- <div
-              class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md lg:hover:scale-95 lg:transition-all lg:ease-in-out">
-              <button class="sectionButton w-full lg:px-8 lg:py-5 p-4 flex items-center justify-between font-semibold">
+              class="reportsByNameSections text-blue-600 my-4 bg-emerald-100 drop-shadow-[25px_25px_25px_rgba(0,0,0,0.25)] moneySection rounded-md md:hover:scale-95 md:transition-all md:ease-in-out">
+              <button class="sectionButton w-full md:px-8 md:py-5 p-4 flex items-center justify-between font-semibold">
                 <div class="sectionButtonWrapper w-full flex items-center justify-between">
                   <span class="sectionNameMoney text-sm font-semibold tracking-wider">Profile Actions</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 downArrow text-blue-600" viewBox="0 0 20 20"
@@ -327,7 +328,7 @@
                   </svg>
                 </div>
               </button>
-              <section class="profile px-5 pb-4 lg:px-8 lg:transition-all lg:ease-in-out hidden font-semibold text-xs">
+              <section class="profile px-5 pb-4 md:px-8 md:transition-all md:ease-in-out hidden font-semibold text-xs">
                 <div class="profileName flex items-center justify-between my-3">
                   <span class="nameTag">Name</span>
                   <span class="name ml-2 tracking-widest">NA</span>
