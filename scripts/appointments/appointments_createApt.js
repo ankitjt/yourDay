@@ -54,30 +54,37 @@ createAptBtn.onclick = () =>
           promptMessages( 'Slot is already filled.' )
           confirmPage.style.left = '-2000px'
         }
+        else if ( aptOccurrenceType.value > 2 || aptOccurrenceType.value < 1 )
+        {
+          promptMessages( 'Occurrence cannot be more than 2.' )
+          confirmPage.style.left = '-2000px'
+        }
         else if ( aptOccurrenceType.value === '2' )
         {
+          confirmPage.style.left = '-2000px'
           forSecondOccurrenceType()
+        }
+        else
+        {
+          confirmName.innerText = aptName.value.trim()
+          confirmEmail.innerText = aptEmail.value.trim()
+          confirmMobileNumber.innerText = aptMobileNumber.value
+          confirmStartDate.innerText = aptStartDate.value.toString()
+          confirmSecondStartDate.innerText = "NA"
+          confirmDay.innerText = days[ aptDay.value - 1 ]
+          confirmSecondDay.innerText = "NA"
+          confirmTimeSlot.innerText = aptTimeSlot.value.toString()
+          confirmSecondTimeSlot.innerText = "NA"
+          confirmFees.innerText = aptFees.value
+          confirmAddress.innerText = aptAddress.value
+          confirmAppointmentType.innerText = aptType.value
+          confirmAppointmentNature.innerText = aptNature.value
+          confirmOccurrenceType.innerText = aptOccurrenceType.value
+          confirmCategory.innerText = aptCategory.value
+          confirmPage.style.transition = '0.5s ease-in-out'
+          confirmPage.style.left = 0
         }
       } )
     } )
-
-    confirmName.innerText = aptName.value.trim()
-    confirmEmail.innerText = aptEmail.value.trim()
-    confirmMobileNumber.innerText = aptMobileNumber.value
-    confirmStartDate.innerText = aptStartDate.value.toString()
-    confirmSecondStartDate.innerText = "NA"
-    confirmDay.innerText = aptDay.value
-    confirmSecondDay.innerText = "NA"
-    confirmTimeSlot.innerText = aptTimeSlot.value.toString()
-    confirmSecondTimeSlot.innerText = "NA"
-    confirmFees.innerText = aptFees.value
-    confirmAddress.innerText = aptAddress.value
-    confirmAppointmentType.innerText = aptType.value
-    confirmAppointmentNature.innerText = aptNature.value
-    confirmOccurrenceType.innerText = aptOccurrenceType.value
-    confirmCategory.innerText = aptCategory.value
-    confirmPage.style.transition = '0.5s ease-in-out'
-    confirmPage.style.left = 0
-
   }
 }

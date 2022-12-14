@@ -1,8 +1,10 @@
+let aptInfo = document.querySelector('.aptInfo')
 const forSecondOccurrenceType = () =>
 {
 
   createAptBtn.classList.add( 'hidden' )
   createTwoAptBtn.classList.remove( 'hidden' )
+  aptInfo.classList.remove( 'hidden' )
 
   confirmPage.style.left = '-2000px'
   aptType.setAttribute( 'disabled', 'true' )
@@ -10,21 +12,23 @@ const forSecondOccurrenceType = () =>
   aptEmail.setAttribute( 'disabled', 'true' )
   aptMobileNumber.setAttribute( 'disabled', 'true' )
   aptFees.setAttribute( 'disabled', 'true' )
+  aptAddress.setAttribute('disabled', 'true')
   aptOccurrenceType.setAttribute( 'disabled', 'true' )
 
-  aptType.classList.add( 'bg-gray-300' )
-  aptName.classList.add( 'bg-gray-300' )
-  aptEmail.classList.add( 'bg-gray-300' )
-  aptMobileNumber.classList.add( 'bg-gray-300' )
-  aptFees.classList.add( 'bg-gray-300' )
-  aptOccurrenceType.classList.add( 'bg-gray-300' )
+  aptType.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptName.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptEmail.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptMobileNumber.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptFees.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptAddress.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptOccurrenceType.classList.add( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
 
   firstStartDateWrapper.classList.remove( 'hidden' )
   firstDaySlotWrapper.classList.remove( 'hidden' )
   firstTimeSlotWrapper.classList.remove( 'hidden' )
 
   firstStartDate.innerText = aptStartDate.value
-  firstDaySlot.innerText = aptDay.value
+  firstDaySlot.innerText = days[aptDay.value - 1]
   firstTimeSlot.innerText = aptTimeSlot.value
 
   cancelForOccurrence.classList.remove( 'hidden' )
@@ -41,12 +45,13 @@ cancelForOccurrence.onclick = () =>
   aptFees.removeAttribute( 'disabled', 'true' )
   aptOccurrenceType.removeAttribute( 'disabled', 'true' )
 
-  aptType.classList.remove( 'bg-gray-300' )
-  aptName.classList.remove( 'bg-gray-300' )
-  aptEmail.classList.remove( 'bg-gray-300' )
-  aptMobileNumber.classList.remove( 'bg-gray-300' )
-  aptFees.classList.remove( 'bg-gray-300' )
-  aptOccurrenceType.classList.remove( 'bg-gray-300' )
+  aptType.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptName.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptEmail.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptMobileNumber.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptFees.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptAddress.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
+  aptOccurrenceType.classList.remove( 'md:bg-blue-600', 'md:text-white', 'md:font-light' )
 
   firstStartDateWrapper.classList.add( 'hidden' )
   firstDaySlotWrapper.classList.add( 'hidden' )
@@ -55,6 +60,7 @@ cancelForOccurrence.onclick = () =>
   createTwoAptBtn.classList.add( 'hidden' )
   createAptBtn.classList.remove( 'hidden' )
   cancelForOccurrence.classList.add( 'hidden' )
+  aptInfo.classList.add( 'hidden' )
 
   aptOccurrenceType.value = "1"
 
