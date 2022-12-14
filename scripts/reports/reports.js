@@ -5,8 +5,7 @@ closeUpdateProfileWrapper.onclick = () =>
 {
     updateProfileWrapper.classList.remove( 'left-0' )
     patientList.selectedIndex = 0
-    profile.classList.add( 'hidden' )
-    workContent.classList.add( 'hidden' )
+    reportByName.classList.add( 'hidden' )
 }
 
 // Go back on in delete profile prompt.

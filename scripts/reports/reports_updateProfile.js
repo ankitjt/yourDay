@@ -24,7 +24,7 @@ updateProfileLink.onclick = () =>
 {
   if ( patientList.value === 'Select' )
   {
-    promptMessages( 'Select Patient name' )
+    promptMessages( 'Select Patient name.' )
   }
   else
   {

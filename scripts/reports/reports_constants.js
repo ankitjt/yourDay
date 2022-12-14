@@ -1,5 +1,7 @@
 let sectionButton = document.querySelectorAll( ".sectionButton" ),
   workContent = document.querySelector( ".workContent" ),
+  profileSection = document.querySelector( '.profileSection' ),
+  reportByName = document.querySelector( '.reportByName' ),
   downArrow = document.querySelector( ".downArrow" ),
   reportByNameFilter = document.querySelector( ".reportByNameFilter" ),
   totalSessionsCount = document.querySelector( ".totalSessionsCount" ),

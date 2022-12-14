@@ -1,18 +1,15 @@
-let reportByName = document.querySelector('.reportByName')
+
 patientList.onchange = () =>
 {
   if ( patientList.value === "Select" )
   {
     updateProfileWrapper.classList.remove( 'left-0' )
-    profile.classList.add( 'hidden' )
-    workContent.classList.add( 'hidden' )
+
     reportByName.classList.add( 'hidden' )
   }
   else
   {
     reportByName.classList.remove('hidden')
-    profile.classList.remove( 'hidden' )
-    workContent.classList.remove( 'hidden' )
 
     let getName = patientList.options[ patientList.selectedIndex ].getAttribute( 'data-id' )
     let dbRef = db.collection( "profiles" ).doc( getName )
