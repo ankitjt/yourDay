@@ -16,7 +16,6 @@
       <!-- Only for Desktop -->
       <div class="banner-holder md:w-2/5 lg:h-screen lg:block hidden relative">
         <img src="../assets/appointments3.webp" alt="logo" class="h-screen w-auto" />
-        <textarea class="quickNotes absolute w-3/5 h-[100px] bg-rose-600 left-1/2 -translate-x-1/2 rounded-lg outline-none text-white top-10 p-2 placeholder:text-white" placeholder="write a quick note..."></textarea>
       </div>
 
       <div class="appointmentWrapper px-6 md:grow md:py-8 md:px-14 relative md:overflow-x-hidden">
@@ -199,7 +198,7 @@
         </nav>
 
         <div class="pageWrapper pb-6 mt-10 relative">
-         
+
 
           <!--------------------------------------- CREATE APPIONTMENTS -------------------------------------------------->
           <section>
@@ -253,7 +252,8 @@
 
                 <!-- Full Name  -->
                 <div class="mb-5">
-                  <input type="text" placeholder="Full Name" title="Full Name" aria-autocomplete="none" autocomplete="off"
+                  <input type="text" placeholder="Full Name" title="Full Name" aria-autocomplete="none"
+                    autocomplete="off"
                     class="aptName border-1 border-blue-500 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:placeholder:text-sm md:font-semibold  py-3  md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                 </div>
 
@@ -265,23 +265,26 @@
 
                 <!-- Mobile Number  -->
                 <div class="mb-5">
-                  <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off" name="mobileNumber"
-                    id="mobileNumber" title="Mobile Number"
+                  <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
+                    name="mobileNumber" id="mobileNumber" title="Mobile Number"
                     class="border-blue-500 border-1 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:font-semibold md:placeholder:text-sm py-3 aptMobileNumber md:drop-shadow-none md:bg-transparent  md:text-blue-600 bg-gray-800 text-white" />
                 </div>
 
                 <!-- Address  -->
                 <div class="mb-5">
-                  <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address" id="address" title="Address"
+                  <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
+                    id="address" title="Address"
                     class="border-blue-500 border-1 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:font-semibold md:placeholder:text-sm py-3 aptAddress md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                 </div>
 
                 <!-- Start Date  -->
                 <div class="mb-5 relative">
-                  <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none" autocomplete="off" id="aptStartDate" title="Appointment Start Date"
-                    onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                  <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
+                    autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
+                    onfocusout="(this.type='text')"
                     class="border-blue-500 border-1 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:font-semibold md:placeholder:text-sm py-3 aptStartDate md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
-                  <p class="firstStartDateWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                  <p
+                    class="firstStartDateWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
                     First Start Date:
                     <span class="firstStartDate"></span>
                   </p>
@@ -316,7 +319,8 @@
                       Sunday
                     </option>
                   </select>
-                  <p class="firstDaySlotWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                  <p
+                    class="firstDaySlotWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
                     First Day Slot: <span class="firstDaySlot"></span>
                   </p>
                 </div>
@@ -356,21 +360,24 @@
                       17:00 - 18:00
                     </option>
                   </select>
-                  <p class="firstTimeSlotWrapper hidden absolute -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                  <p
+                    class="firstTimeSlotWrapper hidden absolute -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
                     First Time Slot : <span class="firstTimeSlot"></span>
                   </p>
                 </div>
 
                 <!-- Occurrence Type  -->
                 <div class="mb-5">
-                  <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType" aria-autocomplete="none" autocomplete="off"
-                    id="occurrenceType" min="1" max="2" title="Appointment Occurrence"
+                  <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType"
+                    aria-autocomplete="none" autocomplete="off" id="occurrenceType" min="1" max="2"
+                    title="Appointment Occurrence"
                     class="border-blue-500 border-1 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:font-semibold md:placeholder:text-sm py-3 md:py-3.5 aptOccurrenceType md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                 </div>
 
                 <!-- Fees  -->
                 <div class="mb-5">
-                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none" autocomplete="off" title="Appointment Fees"
+                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
+                    autocomplete="off" title="Appointment Fees"
                     class="border-blue-500 border-1 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-200 md:font-semibold md:placeholder:text-sm py-3 md:py-3.5 aptFees md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                 </div>
               </div>
@@ -391,7 +398,8 @@
                     class="bg-red-500 ml-4 hidden py-1  px-2 text-white text-xs md:text-md tracking-widest rounded-full uppercase cancelForOccurrence cursor-pointer">
                     X
                   </button>
-                  <p class="text-rose-600 aptInfo hidden font-semibold text-xs mt-5">Provide second 'Start Date', 'Start Day', 'Time Slot'.</p>
+                  <p class="text-rose-600 aptInfo hidden font-semibold text-xs mt-5">Provide second 'Start Date', 'Start
+                    Day', 'Time Slot'.</p>
                 </div>
 
                 <!-- Notes  -->
@@ -419,6 +427,8 @@
         </div>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../scripts/appointments/appointmentMails.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/commonScripts/dbConnect.js"></script>
