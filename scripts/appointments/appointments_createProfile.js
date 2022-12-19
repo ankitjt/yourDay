@@ -76,4 +76,7 @@ const createProfile = () =>
       profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
     }
   )
+  let createdTime = firebase.firestore.FieldValue.serverTimestamp()
+  console.log(createdTime);
+    triggerAppointmentMail()
 }
