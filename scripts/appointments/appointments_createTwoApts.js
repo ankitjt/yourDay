@@ -16,7 +16,7 @@ createTwoAptBtn.onclick = () =>
     confirmStartDate.innerText = firstStartDate.innerText
     confirmSecondStartDate.innerText = aptStartDate.value
     confirmDay.innerText = firstDaySlot.innerText
-    confirmSecondDay.innerText = aptDay.value
+    confirmSecondDay.innerText = days[ aptDay.value - 1 ]
     confirmTimeSlot.innerText = firstTimeSlot.innerText
     confirmSecondTimeSlot.innerText = aptTimeSlot.value.toString()
     confirmFees.innerText = aptFees.value

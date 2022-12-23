@@ -38,4 +38,7 @@ let aptName = document.querySelector( '.aptName' ),
   firstTimeSlot = document.querySelector( '.firstTimeSlot' ),
   confirmSecondStartDate = document.querySelector( ".confirmSecondStartDate" ),
   confirmSecondDay = document.querySelector( ".confirmSecondDay" ),
+  countryCode = document.querySelector( ".countryCode" ),
+  dropOption = document.querySelector( ".dropOption" ),
+  countryCodeNumber = document.querySelector( ".countryCodeNumber" ),
   confirmSecondTimeSlot = document.querySelector( ".confirmSecondTimeSlot" )

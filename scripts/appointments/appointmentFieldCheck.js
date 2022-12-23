@@ -1,28 +1,22 @@
-let aptName = document.querySelector( '.aptName' ),
-  createAptBtn = document.querySelector( '.createAptBtn' ),
-  aptEmail = document.querySelector( '.aptEmail' )
-    
-createAptBtn.onclick = () =>
+const fieldValidators = () =>
 {
   let userName = aptName.value
   let check1 = userName.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check1 !== -1 )
   {
-    alert('Invalid name')
-  }
-  else
-  {
-    alert('Name ok!!')
+    confirmPage.style.left = '-2000px'
+    promptMessages( 'Name should be only be alphabetic.' )
   }
 
-  if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( aptEmail.value ) === true )
+  if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( aptEmail.value ) !== true )
   {
-    alert('Correct Email')
+    confirmPage.style.left = '-2000px'
+    promptMessages( 'Incorrect Email format. Format should be abc@xyz.com' )
   }
-  else
+
+  if ( aptMobileNumber.value > 10 || aptMobileNumber.value < 5 )
   {
-    alert('Incorrect Email format.')
+    confirmPage.style.left = '-2000px'
+    promptMessages('Mobile Number should be more than 5 or less than 10 numbers.')
   }
-  // aptName.value = ''
-  // aptEmail.value = ''
 }
