@@ -73,10 +73,13 @@ const createProfile = () =>
       aptSecondStartDate: "NA",
       aptFees: confirmFees.innerText,
       appointmentStatus: 'Scheduled',
+      emergencyName: confirmEmergencyName.innerText,
+      patientRelation: confirmEmergencyRelation.innerText,
+      emergencyMobileNumber: confirmEmergencyMobileNumber.innerText,
+      emergencyAddress: confirmEmergencyAddress.innerText,
       profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
     }
   )
   let createdTime = firebase.firestore.FieldValue.serverTimestamp()
-  console.log(createdTime);
     triggerAppointmentMail()
 }

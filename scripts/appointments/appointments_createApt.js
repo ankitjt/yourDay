@@ -1,9 +1,3 @@
-countryCode.onchange = () =>
-{
-  // countryNameAlgeria.classList.add('hidden')
-  console.log( dropOption.childNodes )
-}
-
 createAptBtn.onclick = () =>
 {
   let checkForDay = new Date( aptStartDate.value )
@@ -13,30 +7,24 @@ createAptBtn.onclick = () =>
     aptType.value === '' ||
     aptNature.value === "" ||
     aptName.value === '' ||
+    emergencyName.value === '' ||
     aptStartDate.value === '' ||
     aptEmail.value === '' ||
     aptMobileNumber.value === '' ||
+    emergencyMobileNumber.value === '' ||
+    countryCode.value === '' ||
+    emergencyCountryCode.value === '' ||
     aptDay.value === '' ||
     aptTimeSlot.value === '' ||
     aptOccurrenceType.value === '' ||
     aptFees.value === '' ||
+    emergencyAddress.value === '' ||
+    emergencyRelation.value === '' ||
     aptAddress.value === ''
   )
   {
     promptMessages( 'All fields are required.' )
   }
-
-  // else if (
-
-  //   aptName.value !== '' ||
-  //   aptStartDate.value !== '' ||
-  //   aptEmail.value !== '' ||
-  //   aptMobileNumber.value !== '' ||
-  //   aptFees.value !== '' ||
-  //   aptAddress.value !== ''
-  // )
-  // {
-  // }
 
   else if ( checkForDay.getDay().toString() !== aptDay.value )
   {
@@ -75,11 +63,11 @@ createAptBtn.onclick = () =>
             }
           } )
         } )
-        let mobileNumberValue = aptMobileNumber.value
-        let cleanMobileNumber = mobileNumberValue.replace( '0', '' )
+        // let mobileNumberValue = aptMobileNumber.value
+        // let cleanMobileNumber = mobileNumberValue.replace( '0', '' )
         confirmName.innerText = aptName.value.trim()
         confirmEmail.innerText = aptEmail.value.trim()
-        confirmMobileNumber.innerText = cleanMobileNumber
+        confirmMobileNumber.innerText = countryCode.value + '-' + aptMobileNumber.value
         confirmStartDate.innerText = aptStartDate.value.toString()
         confirmSecondStartDate.innerText = "NA"
         confirmDay.innerText = days[ aptDay.value - 1 ]
@@ -92,6 +80,10 @@ createAptBtn.onclick = () =>
         confirmAppointmentNature.innerText = aptNature.value
         confirmOccurrenceType.innerText = aptOccurrenceType.value
         confirmCategory.innerText = aptCategory.value
+        confirmEmergencyName.innerText = emergencyName.value
+        confirmEmergencyRelation.innerText = emergencyRelation.value
+        confirmEmergencyMobileNumber.innerText = emergencyCountryCode.value + '-' + emergencyMobileNumber.value
+        confirmEmergencyAddress.innerText = emergencyAddress.value
         confirmPage.style.transition = '0.5s ease-in-out'
         confirmPage.style.left = 0
       }

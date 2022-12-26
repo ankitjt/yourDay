@@ -1,4 +1,7 @@
-let aptName = document.querySelector( '.aptName' ),
+let
+
+  // Form Field Variables 
+  aptName = document.querySelector( '.aptName' ),
   aptEmail = document.querySelector( '.aptEmail' ),
   aptMobileNumber = document.querySelector( '.aptMobileNumber' ),
   aptStartDate = document.querySelector( '.aptStartDate' ),
@@ -11,9 +14,30 @@ let aptName = document.querySelector( '.aptName' ),
   aptCategory = document.querySelector( '.aptCategory' ),
   aptTimeSlot = document.querySelector( '.aptTimeSlot' ),
   createAptBtn = document.querySelector( '.createAptBtn' ),
+  
+  countryCode = document.querySelector( ".countryCode" ),
+  dropOption = document.querySelector( ".dropOption" ),
+  countryCodeNumber = document.querySelector( ".countryCodeNumber" ),
+
+  // Emergency Contact variables
+  emergencyName = document.querySelector( ".emergencyName" ),
+  emergencyRelation = document.querySelector( ".emergencyRelation" ),
+  emergencyAddress = document.querySelector( ".emergencyAddress" ),
+  emergencyCountryCode = document.querySelector( ".emergencyCountryCode" ),
+  emergencyMobileNumber = document.querySelector( ".emergencyMobileNumber" ),
+
+  // Occurrence is 2
+  firstDaySlot = document.querySelector( '.firstDaySlot' ),
+  firstDaySlotWrapper = document.querySelector( '.firstDaySlotWrapper' ),
+  firstStartDate = document.querySelector( '.firstStartDate' ),
+  firstStartDateWrapper = document.querySelector( '.firstStartDateWrapper' ),
+  firstTimeSlotWrapper = document.querySelector( '.firstTimeSlotWrapper' ),
+  firstTimeSlot = document.querySelector( '.firstTimeSlot' ),
   createTwoAptBtn = document.querySelector( '.createTwoAptBtn' ),
   cancelForOccurrence = document.querySelector( '.cancelForOccurrence' ),
   editButton = document.querySelector( '.editButton' ),
+
+  // Confirm Page Variables
   confirmPage = document.querySelector( '.confirmPage' ),
   confirmName = document.querySelector( '.confirmName' ),
   confirmEmail = document.querySelector( '.confirmEmail' ),
@@ -30,15 +54,14 @@ let aptName = document.querySelector( '.aptName' ),
   confirmButton = document.querySelector( '.confirmButton' ),
   completed = document.querySelector( '.completed' ),
   scheduled = document.querySelector( '.scheduled' ),
-  firstDaySlot = document.querySelector( '.firstDaySlot' ),
-  firstDaySlotWrapper = document.querySelector( '.firstDaySlotWrapper' ),
-  firstStartDate = document.querySelector( '.firstStartDate' ),
-  firstStartDateWrapper = document.querySelector( '.firstStartDateWrapper' ),
-  firstTimeSlotWrapper = document.querySelector( '.firstTimeSlotWrapper' ),
-  firstTimeSlot = document.querySelector( '.firstTimeSlot' ),
   confirmSecondStartDate = document.querySelector( ".confirmSecondStartDate" ),
   confirmSecondDay = document.querySelector( ".confirmSecondDay" ),
-  countryCode = document.querySelector( ".countryCode" ),
-  dropOption = document.querySelector( ".dropOption" ),
-  countryCodeNumber = document.querySelector( ".countryCodeNumber" ),
+  confirmCountryCode = document.querySelector( ".confirmCountryCode" ),
+  confirmDropOption = document.querySelector( ".confirmDropOption" ),
+ 
+  confirmEmergencyName = document.querySelector( ".confirmEmergencyName" ),
+  confirmEmergencyRelation = document.querySelector( ".confirmEmergencyRelation" ),
+  confirmEmergencyAddress = document.querySelector( ".confirmEmergencyAddress" ),
+  confirmEmergencyCountryCode = document.querySelector( ".confirmEmergencyCountryCode" ),
+  confirmEmergencyMobileNumber = document.querySelector( ".confirmEmergencyMobileNumber" ),
   confirmSecondTimeSlot = document.querySelector( ".confirmSecondTimeSlot" )
