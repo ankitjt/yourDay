@@ -8,6 +8,22 @@ const fieldValidators = () =>
     promptMessages( 'Name should be only be alphabetic.' )
   }
 
+  let emergencyName = emergencyName.value
+  let check2 = emergencyName.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
+  if ( check2 !== -1 )
+  {
+    confirmPage.style.left = '-2000px'
+    promptMessages( 'Name should be only be alphabetic.' )
+  }
+
+  let emergencyRelation = emergencyRelation.value
+  let check3 = emergencyRelation.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
+  if ( check3 !== -1 )
+  {
+    confirmPage.style.left = '-2000px'
+    promptMessages( 'Relation should be only be alphabetic.' )
+  }
+
   if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( aptEmail.value ) !== true )
   {
     confirmPage.style.left = '-2000px'
@@ -48,12 +64,14 @@ const fieldValidators = () =>
   }
 
   let currentDate = new Date()
-  let currentCheckDate = `${currentDate.getMonth() + 1}${currentDate.getDate()}`;
+  let currentMonth = currentDate.getMonth()
+  let currentYear = currentDate.getFullYear()
+  let currentDay = currentDate.getDate()
+  let finalCurrentDate = new Date( currentYear, currentMonth, currentDay )
 
   let startDate = new Date( aptStartDate.value )
-  let currentStartDate = `${ startDate.getMonth() + 1 }${ startDate.getDate() }`;
 
-  if ( currentStartDate < currentCheckDate )
+  if ( startDate < finalCurrentDate )
   {
     confirmPage.style.left = '-2000px'
     promptMessages( 'Start Date cannot be less than current Date.' )

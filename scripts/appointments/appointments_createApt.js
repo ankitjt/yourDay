@@ -63,12 +63,17 @@ createAptBtn.onclick = () =>
             }
           } )
         } )
-        // let mobileNumberValue = aptMobileNumber.value
-        // let cleanMobileNumber = mobileNumberValue.replace( '0', '' )
+
+        let aptStartDate1 = new Date(aptStartDate.value)
+        let currentMonth = aptStartDate1.getMonth()+1
+        let currentYear = aptStartDate1.getFullYear()
+        let currentDay = aptStartDate1.getDate()
+        let finalCurrentDate = currentDay+' - '+currentMonth+' - '+currentYear
+
         confirmName.innerText = aptName.value.trim()
         confirmEmail.innerText = aptEmail.value.trim()
         confirmMobileNumber.innerText = countryCode.value + '-' + aptMobileNumber.value
-        confirmStartDate.innerText = aptStartDate.value.toString()
+        confirmStartDate.innerText = finalCurrentDate.toString()
         confirmSecondStartDate.innerText = "NA"
         confirmDay.innerText = days[ aptDay.value - 1 ]
         confirmSecondDay.innerText = "NA"
