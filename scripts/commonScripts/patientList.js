@@ -4,9 +4,9 @@ let patientList = document.querySelector( '.patientList' );
   db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
   {
     let allNames = document.querySelectorAll( '.something' )
-    for ( const name123 of allNames )
+    for ( const names of allNames )
     {
-      name123.remove()
+      names.remove()
     }
 
     querySnapshot.forEach( ( doc ) =>
@@ -14,7 +14,12 @@ let patientList = document.querySelector( '.patientList' );
       if ( doc.data().softDelete !== true )
       {
         let patientNames = `
-                <option value="${ doc.data().aptName }" class="md:font-semibold w-full block text-xs md:text-base" data-id="${ doc.id }" >${ doc.data().aptName }</option>
+                
+                <option value="${ doc.data().aptName }" class="md:font-semibold md:flex md:items-center md:justifiy-between w-full h-auto text-xs my-10" data-id="${ doc.id }" >
+                <div>${ doc.data().aptName } ${doc.data().aptType === 'Session' ? '(S)' : '(SV)' } </div> &nbsp;
+                <div class="text-red-500 lowercase ml-10">( ${ doc.data().aptEmail } )</div> &nbsp;
+                </option>
+                <br />
                 `
         patientList.innerHTML += patientNames
       }
