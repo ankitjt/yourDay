@@ -70,6 +70,9 @@ const showBreakDownOfAppointments = () =>
       {
 
         let dates = new Date( doc.data().aptStartDate * 1000 )
+
+        let updatedStatusDate = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
+        
         if ( doc.data().appointmentStatus === "Completed" )
         {
           if ( dates.getMonth() + 1 === parseInt( monthListByName.value ) )
@@ -93,7 +96,11 @@ const showBreakDownOfAppointments = () =>
                     </div>
                   <div class="ptName flex mt-2 items-center justify-between">
                     <div class="ptName-wrapper flex items-center">
-                      <span class="name font-semibold mr-2 capitalize"> ${ doc.data().appointmentStatus } </span>
+                      <span class="name font-semibold mr-2 capitalize"> 
+                        <span> ${ doc.data().appointmentStatus }</span>
+                        <br />
+                        <span>Updated on: ${ updatedStatusDate.getDate() + '-' + (updatedStatusDate.getMonth() + 1) + '-' + updatedStatusDate.getFullYear() }</span>
+                      </span>
                       <span class="aptDetails flex items-center">
                         <span  class="aptType ${ doc.data().aptType === " Session" ? 'text-emerald-50' : 'text-blue-50' } ${ doc.data().aptType === "New" ? 'text-slate-100' : '' } tracking-wider font-medium ${ doc.data().aptType === "Session" ? 'bg-emerald-700' : 'bg-blue-700' } ${ doc.data().aptType === "New"
                 ? 'bg-rose-700' : '' } px-2 py-1 rounded-full" >
