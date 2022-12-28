@@ -69,9 +69,11 @@ createAptBtn.onclick = () =>
         let currentYear = aptStartDate1.getFullYear()
         let currentDay = aptStartDate1.getDate()
         let finalCurrentDate = currentDay+' - '+currentMonth+' - '+currentYear
+        let aptEmailOfUser = aptEmail.value
+        let correctEmail = aptEmailOfUser.toLowercase()
 
         confirmName.innerText = aptName.value.trim()
-        confirmEmail.innerText = aptEmail.value.trim()
+        confirmEmail.innerText = correctEmail.trim()
         confirmMobileNumber.innerText = countryCode.value + '-' + aptMobileNumber.value
         confirmStartDate.innerText = finalCurrentDate.toString()
         confirmSecondStartDate.innerText = "NA"
