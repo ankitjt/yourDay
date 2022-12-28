@@ -4,3 +4,17 @@ let scheduleFilterName = document.querySelector( '.scheduleFilterName' )
 let scheduleTableRows = document.querySelector( '.scheduleTableRows' )
 let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
 let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
+
+let scheduleGalleryView = document.querySelector( '.scheduleGalleryView' ),
+  updateTableView = document.querySelector( '.updateTableView' ),
+  updateViewIcon = document.querySelector( '.updateViewIcon' ),
+  galleryViewIcon = document.querySelector( '.galleryViewIcon' ),
+  updateTableViewRows = document.querySelector( '.updateTableViewRows' ),
+  updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' ),
+  updateAppointments = document.querySelector( '.updateAppointments' ),
+  completedViewIcon = document.querySelector( '.completedViewIcon' ),
+  completedTableView = document.querySelector( '.completedTableView' ),
+  cancelledViewIcon = document.querySelector( '.cancelledViewIcon' ),
+  cancelledTableView = document.querySelector( '.cancelledTableView' ),
+  completedTableViewRows = document.querySelector( '.completedTableViewRows' ),
+  cancelledTableViewRows = document.querySelector( '.cancelledTableViewRows' )

@@ -1,35 +1,15 @@
-let filterFindBtn = document.querySelector( '.filterFindBtn' )
-filterFindBtn.onclick = () =>
+// Showing appointments of current and previous month.
+const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
 {
-  let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
-  let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
-  if ( scheduleFilterName.value === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
-  {
-    promptMessages( 'Use all filters' )
-  }
-  else
-  {
-    aptsDb.orderBy( 'aptStartDate' ).onSnapshot( ( querySnapshot ) =>
-    {
-      scheduleTableRows.innerHTML = ''
-      querySnapshot.forEach( ( doc ) =>
-      {
-        if ( scheduleFilterName.value !== '' || scheduleFilterMonth.value !== '' || scheduleFilterStatus.value !== '' )
-        {
-          let filterMonth = new Date( doc.data().aptStartDate * 1000 )
-          let userMonth = ( filterMonth.getMonth() + 1 ).toString()
-          myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
-
-          // All filters are used
-          if ( scheduleFilterName.value === doc.data().aptName && scheduleFilterMonth.value === userMonth && scheduleFilterStatus.value === doc.data().appointmentStatus )
-          {
-            let currentMonthAppointments = /*html*/`
-              <tr class="border-l-2 border-b-2 text-[11px] tableRow12 border-r-2 border-gray-200" data-id="${ doc.id }">
+  let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
+  let currentMonthAppointments = /*html*/ `
+              <tr class="border-l-2 border-b-2 text-[11px] tableRow12 border-r-2 border-gray-200" data-id="${ doc.id
+    }">
                 <td class="py-3 px-5 font-semibold">
                   ${ doc.data().aptName }
                 </td>
                 <td class="py-3 px-5 font-semibold">
-                  ${ filterMonth.getDate() }-${ filterMonth.getMonth() + 1 }-${ filterMonth.getFullYear() }
+                  ${ aptStartDate.getDate() }-${ aptStartDateMonth }-${ aptStartDate.getFullYear() }
                 </td>
                 <td class="py-3 px-5 font-semibold">
                   ${ doc.data().aptDay } <br /> ${ doc.data().aptTimeSlot }
@@ -59,7 +39,7 @@ filterFindBtn.onclick = () =>
                     </div>
                     <div class="${ doc.data().appointmentStatus === "Pending" ? "block" : "hidden" }">
                       <span class="text-amber-500">
-                        ${ doc.data().appointmentStatus }
+                        ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
                       </span>
                     </div>
                     <div class="${ doc.data().appointmentStatus === "Scheduled" ? "block" : "hidden" }">
@@ -72,7 +52,7 @@ filterFindBtn.onclick = () =>
               
                   <div class="statusUpdateTime">
                     <span class="text-[10px] text-gray-900"> ${ doc.data().statusUpdatedTimeStamp === "" ? '' : myData.toDateString()
-                + " " + myData.toLocaleTimeString() } </span>
+      + " " + myData.toLocaleTimeString() } </span>
                   </div>
               
                 </td>
@@ -101,14 +81,24 @@ filterFindBtn.onclick = () =>
                   </select>
                 </td>
               </tr>
-                  
               `
-            scheduleTableRows.innerHTML += currentMonthAppointments
-          }
-        }
-        appointmentsToUpdate()
-      } )
+  scheduleTableRows.innerHTML += currentMonthAppointments
 
-    } )
+}
+
+// Clearing old rows in the table
+const rowsToDelete = () =>
+{
+  let tableRowsToDelete = document.querySelectorAll( '.tableRow12' )
+  for ( let rowsToDelete of tableRowsToDelete )
+  {
+    rowsToDelete.remove()
   }
+}
+
+// Clear filters
+let filterClearBtn = document.querySelector( '.filterClearBtn' )
+filterClearBtn.onclick = () =>
+{
+  location.reload()
 }

@@ -20,7 +20,7 @@ const appointmentsToUpdate = () =>
             appointmentStatus: 'Completed',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
-          location.reload()
+          setTimeout(location.reload(), 5000)
         }
         else
         {
@@ -36,7 +36,7 @@ const appointmentsToUpdate = () =>
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
 
           } )
-          location.reload()
+          setTimeout( location.reload(), 5000 )
         }
         else
         {
@@ -51,7 +51,7 @@ const appointmentsToUpdate = () =>
             appointmentStatus: 'Free Cancelled',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
-          location.reload()
+          setTimeout( location.reload(), 5000 )
         }
         else
         {
@@ -62,7 +62,7 @@ const appointmentsToUpdate = () =>
       {
         let updateAppointments = document.querySelector( '.updateAppointments' )
         updateAppointments.style.transition = '0.5s ease-in-out'
-        updateAppointments.style.right = 0
+        updateAppointments.style.left = 0
         dbPath.get().then( ( doc ) =>
         {
           if ( doc.exists )
@@ -99,7 +99,7 @@ const appointmentsToUpdate = () =>
             cancelUpdateButton.onclick = () =>
             {
               aptActions[ i ].selectedIndex = 0
-              updateAppointments.style.right = '-2000px'
+              updateAppointments.style.left = '-2000px'
             }
           }
         } )

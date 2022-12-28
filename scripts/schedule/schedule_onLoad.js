@@ -1,4 +1,3 @@
-let scheduleGalleryView = document.querySelector( '.scheduleGalleryView' );
 ( () =>
 {
 
@@ -34,7 +33,7 @@ let scheduleGalleryView = document.querySelector( '.scheduleGalleryView' );
                    ${ doc.data().aptTimeSlot }
                  </span>
                </span>
-               <span class="date tracking-wider"> ${ days[doc.data().aptDay - 1] } </span>
+               <span class="date tracking-wider"> ${ days[doc.data().aptDay + 1] } </span>
              </div>
              <div class="ptName flex mt-2 items-center justify-between">
                <div class="ptName-wrapper flex items-center">
@@ -75,22 +74,6 @@ let scheduleGalleryView = document.querySelector( '.scheduleGalleryView' );
     } )
   } )
 
-  // Showing profile names in the dropdown filter
-  profileDb.onSnapshot( ( querySnapshot ) =>
-  {
-    let allNames = document.querySelectorAll( '.something' )
-    for ( const name123 of allNames )
-    {
-      name123.remove()
-    }
-    querySnapshot.forEach( ( doc ) =>
-    {
-      let patientNames = `
-            <option value="${ doc.data().aptName }" class="font-semibold something" data-id="${ doc.id }" >${ doc.data().aptName } <span>${ doc.data().softDelete === true ? '( Deleted )' : '' } </span></option>
-            `
-      scheduleFilterName.innerHTML += patientNames
-    } )
 
-  } )
 
 } )()

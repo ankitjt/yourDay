@@ -24,7 +24,7 @@ const updateForm = ( doc ) =>
                             <select name="aptDay" id="aptDay"
                             class="dayUpdateHolder border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm">
                                 <option value="${ doc.data().aptDay }" class="font-semibold">
-                                ${ days[ doc.data().aptDay - 1 ] }
+                                ${ doc.data().aptDay }
                                 </option>
                                 <option value="Monday" class="font-semibold">
                                 Monday
@@ -103,7 +103,7 @@ const updateForm = ( doc ) =>
                             </div>
                             
                         </div>
-                        <div class="updateCancelButtons mt-5">
+                        <div class="updateCancelButtons mt-10">
                             <button class="bg-emerald-500 updateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase">Update</button>
                             <button class="bg-rose-500 cancelUpdateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase">Cancel</button>
                         </div>
