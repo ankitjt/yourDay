@@ -6,7 +6,8 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
   reportByNameFilter = document.querySelector( ".reportByNameFilter" ),
   totalSessionsCount = document.querySelector( ".totalSessionsCount" ),
   totalSupervisionCount = document.querySelector( ".totalSupervisionCount" ),
-  totalCancelledCount = document.querySelector( ".totalCancelledCount" ),
+  totalFreeCancelledCounts = document.querySelector( ".totalFreeCancelledCount" ),
+  totalPaidCancelledCounts = document.querySelector( ".totalPaidCancelledCount" ),
   totalRescheduledCount = document.querySelector( ".totalRescheduledCount" ),
   totalPendingCount = document.querySelector( ".totalPendingCount" )
 

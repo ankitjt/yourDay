@@ -2,7 +2,8 @@
 {
   let sessionCounts = [],
     supervisionCounts = [],
-    cancelledCounts = [],
+    totalFreeCancelledCount = [],
+    totalPaidCancelledCount = [],
     updatedCounts = [],
     pendingCounts = []
 
@@ -19,9 +20,13 @@
         supervisionCounts.push( doc.data().aptType )
       }
 
-      if ( doc.data().appointmentStatus === 'Cancelled' )
+      if ( doc.data().appointmentStatus === 'Free Cancelled' )
       {
-        cancelledCounts.push( doc.data().appointmentStatus )
+        totalFreeCancelledCount.push( doc.data().appointmentStatus )
+      }
+      if ( doc.data().appointmentStatus === 'Paid Cancelled' )
+      {
+        totalPaidCancelledCount.push( doc.data().appointmentStatus )
       }
       if ( doc.data().appointmentStatus === 'Updated' )
       {
@@ -35,7 +40,8 @@
 
     totalSessionsCount.innerText = sessionCounts.length
     totalSupervisionCount.innerText = supervisionCounts.length
-    totalCancelledCount.innerText = cancelledCounts.length
+    totalFreeCancelledCounts.innerText = totalFreeCancelledCount.length
+    totalPaidCancelledCounts.innerText = totalPaidCancelledCount.length
     totalRescheduledCount.innerText = updatedCounts.length
     totalPendingCount.innerText = pendingCounts.length
 
