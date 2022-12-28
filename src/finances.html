@@ -10,9 +10,10 @@
   </head>
 
   <body class="relative overflow-x-hidden">
-
+    <span
+      class="pb bg-red-600 p-3 text-xs animate-bounce  absolute top-8 left-2 lg:left-10  z-50 rounded-full text-white font-semibold cursor-pointer">PB</span>
     <div
-      class='absolute globalNotificationWrapper right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-50 ease-in-out duration-300'>
+      class='absolute globalNotificationWrapper right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-40 ease-in-out duration-300 hidden'>
       <p>This is a global notification</p>
     </div>
 
@@ -21,19 +22,21 @@
 
       <!-- Notification Center -->
       <div
-        class="absolute notificationCenter bg-gray-800 w-fit h-4/5 z-30 top-1/2 right-10 -translate-y-1/2 rounded-md p-10 hidden">
+        class="absolute notificationCenter bg-gray-800 w-fit h-4/5 z-50 top-1/2 right-10 -translate-y-1/2 rounded-md p-10 hidden">
       </div>
 
-      <!-- Money BreakDown  -->
-      <div
-        class="absolute sessionsBreakDown h-screen w-2/5  bg-gradient-to-r from-indigo-500 to-indigo-600 z-50 -left-[2000px] ease-in-out duration-300 absolute  p-10 overflow-auto">
 
-
-      </div>
 
       <!-- Only for Desktop -->
-      <div class="banner-holder md:w-2/5 lg:h-screen hidden lg:flex lg:items-center lg:justify-center">
-        <img src="../assets/finance2.webp" alt="logo" class="h-auto w-auto" />
+      <div class="banner-holder md:w-2/5 lg:h-screen hidden lg:flex lg:items-center lg:justify-center relative ">
+
+        <img src="../assets/finance2.webp" alt="logo" />
+
+        <!-- Money BreakDown  -->
+        <div
+          class="absolute sessionsBreakDown bottom-0 h-5/6 w-full  bg-gradient-to-r from-indigo-500 to-indigo-600 z-50 -left-[2000px] ease-in-out duration-300 absolute p-10 overflow-auto">
+        </div>
+
       </div>
 
       <div class="financesWrapper md:grow md:py-8 md:px-14 relative md:overflow-x-hidden">
@@ -91,7 +94,7 @@
 
             <section class="monthFilter mb-5 md:grid md:grid-cols-2 md:gap-x-10">
               <select name="monthList" id="monthList"
-                class="form-select border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                class="form-select border-blue-600 md:border-gray-200 border-1 rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 financeMonthFilter">
                 <option selected value="All Time" class="font-semibold">
                   All Time
                 </option>
@@ -120,7 +123,7 @@
                 <span class="sessions flex flex-col">
                   <span class="totalSessions"> Total Sessions </span>
                   <span class="totalSessionsCount mt-1">
-                    <span class="countOfSessions">431</span>
+                    <span class="countOfSessions"></span>
                   </span>
                 </span>
                 <span class="moneyBySessions flex items-center">
@@ -130,7 +133,7 @@
                       d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span class="totalMoneyBySessions tracking-widest">
-                    55,124
+                   
                   </span>
                 </span>
               </div>
@@ -142,7 +145,7 @@
                 <span class="supervision flex flex-col">
                   <span class="totalSupervision"> Total Supervision </span>
                   <span class="totalSessionsCount mt-1">
-                    <span class="countOfSessions">431</span>
+                    <span class="countOfSupervisions"></span>
                   </span>
                 </span>
                 <span class="moneyBySupervision flex items-center">
@@ -151,8 +154,8 @@
                     <path stroke-linecap="round" stroke-linejoin="round"
                       d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span class="totalMoneyBySupervision tracking-widest">
-                    9,124
+                  <span class="totalMoneyBySupervisions tracking-widest">
+                   
                   </span>
                 </span>
               </div>
@@ -249,7 +252,10 @@
     <script src="../scripts/finances/finances_detailsByName.js"></script>
     <script src="../scripts/finances/finances_breakDownAppointments.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
+    <script src="../scripts/finances/financeMonthFilter.js"></script>
     <script src="../scripts/commonScripts/globalNotification.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../scripts/commonScripts/panicButton.js"></script>
   </body>
 
 </html>
