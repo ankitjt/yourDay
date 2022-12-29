@@ -23,27 +23,137 @@
 
       <div class="notesWrapper lg:grow lg:p-8 relative lg:overflow-x-hidden">
 
-        <button class="checkPrompt bg-blue-500 p-3 rounded-md text-white tracking-widest">CheckPrompt</button>
-        
-        <!-- Prompts Section -->
-        <section
-          class="z-40 prompts absolute px-4 py-6 bg-rose-600 w-inherit rounded-lg w-5/6 lg:w-3/6 -translate-x-1/2 bottom-20 -left-[500px] flex items-center justify-between">
-          <div class="promptContent font-medium text-slate-50 w-5/6 text-justify"></div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer"
-            viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-              clip-rule="evenodd" />
-          </svg>
-        </section>
+
+        <div class="createTable border-2 border-gray-200 rounded-xl pb-10">
+          <div
+            class="tableHeaders flex items-center  border-b-2 border-zinc-200 uppercase text-xs font-semibold px-10 py-5 bg-gray-100 rounded-t-left-xl rounded-t-right-xl">
+            <span class="w-[200px]">Name</span>
+            <span class="w-[200px]">Time</span>
+            <span class="w-[200px]">Day</span>
+            <span class="w-[200px]">Status</span>
+            <span class="">Edit</span>
+          </div>
+          <div class="tableRowsWrapper flex flex-col">
+            <div
+              class="row flex items-center  text-xs  border-b-2 border-zinc-200 py-5  px-10 hover:bg-blue-100 ease-in-out duration-300 text-gray-900 font-semibold">
+              <span class="w-[200px] ">Jhon Doe</span>
+              <span class="w-[200px]">9:30 AM</span>
+              <span class="w-[200px]">Friday</span>
+              <span class="w-[200px]">Scheduled</span>
+              <span class='w-[100px]'>
+                <select id="countries"
+                  class="border border-gray-300 text-gray-900 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full px-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  <option selected>Select</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="FR">France</option>
+                  <option value="DE">Germany</option>
+                </select>
+              </span>
+            </div>
+            <div
+              class="row flex items-center  text-xs  border-b-2 border-zinc-200 py-5  px-10 hover:bg-blue-100 ease-in-out duration-300 text-gray-900 font-semibold">
+              <span class="w-[200px]">Jhon Doe</span>
+              <span class="w-[200px]">9:30 AM</span>
+              <span class="w-[200px]">Friday</span>
+              <span class="w-[200px]">Scheduled</span>
+              <span class='text-blue-500 underline cursor-pointer'>Update</span>
+            </div>
+            <div
+              class="row flex items-center  text-xs  border-b-2 border-zinc-200 py-5  px-10 hover:bg-blue-100 ease-in-out duration-300 text-gray-900 font-semibold">
+              <span class="w-[200px]">Jhon Doe</span>
+              <span class="w-[200px]">9:30 AM</span>
+              <span class="w-[200px]">Friday</span>
+              <span class="w-[200px]">Scheduled</span>
+              <span class='text-blue-500 underline cursor-pointer'>Update</span>
+            </div>
+            <div
+              class="row flex items-center  text-xs  border-b-2 border-zinc-200 py-5  px-10 hover:bg-blue-100 ease-in-out duration-300 text-gray-900 font-semibold">
+              <span class="w-[200px]">Jhon Doe</span>
+              <span class="w-[200px]">9:30 AM</span>
+              <span class="w-[200px]">Friday</span>
+              <span class="w-[200px]">Scheduled</span>
+              <span class='text-blue-500 underline cursor-pointer'>Update</span>
+            </div>
+            <div
+              class="row flex items-center  text-xs  border-b-2 border-zinc-200 py-5  px-10 hover:bg-blue-100 ease-in-out duration-300 text-gray-900 font-semibold">
+              <span class="w-[200px]">Jhon Doe</span>
+              <span class="w-[200px]">9:30 AM</span>
+              <span class="w-[200px]">Friday</span>
+              <span class="w-[200px]">Scheduled</span>
+              <span class='text-blue-500 underline cursor-pointer'>Update</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown mt-10">
+          <div class="relative">
+            <button type="button"
+              class="listButton relative w-1/2 cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
+              aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+              <span class="flex items-center">
+                <img
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                  alt="" class="h-6 w-6 flex-shrink-0 rounded-full">
+                <span class="ml-3 block truncate selectedOptionName font-semibold">Select Name</span>
+              </span>
+              <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                <!-- Heroicon name: mini/chevron-up-down -->
+                <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                  fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+
+            <ul
+              class="absolute z-10 mt-2 max-h-56 w-1/2 overflow-auto rounded-md text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden dropDownList"
+              tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+            
+              <li class="text-gray-900 border-b-2 font-semibold border-gray-200 hover:bg-blue-100 ease-in-out duration-300 cursor-pointer listItems relative cursor-default select-none py-2 pl-3 pr-9 " id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="" class="h-6 w-6 flex-shrink-0 rounded-full">
+                  <span class="font-semibold ml-3 block truncate optionName">Wade Cooper</span>
+                </div>
+              </li>
+              <li class="text-gray-900 border-b-2 font-semibold border-gray-200 hover:bg-blue-100 ease-in-out duration-300 cursor-pointer listItems relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="" class="h-6 w-6 flex-shrink-0 rounded-full">
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <span class="font-normal ml-3 block truncate">Jane Smith</span>
+                </div>
+                
+              </li>
+              <li class="text-gray-900 border-b-2 font-semibold border-gray-200 hover:bg-blue-100 ease-in-out duration-300 cursor-pointer listItems relative cursor-default select-none py-2 pl-3 pr-9" id="listbox-option-0" role="option">
+                <div class="flex items-center">
+                  <img
+                    src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    alt="" class="h-6 w-6 flex-shrink-0 rounded-full">
+                  <!-- Selected: "font-semibold", Not Selected: "font-normal" -->
+                  <span class="font-normal ml-3 block truncate">Jhon Snow</span>
+                </div>
+               
+              </li>
+            
+              <!-- More items... -->
+            </ul>
+          </div>
+        </div>
 
         <!-- ***** ***** ***** ***** Ends Prompts section ***** ***** ***** ***** -->
 
-    
+
       </div>
     </div>
     <script src="../scripts/commonScripts/commonVariables.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
+    <script src="../scripts/test.js"></script>
   </body>
 
 </html>
