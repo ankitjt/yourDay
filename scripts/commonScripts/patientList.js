@@ -1,7 +1,7 @@
 let patientList = document.querySelector( '.patientList' ),
   patientListButton = document.querySelector( '.patientListButton' ),
-  patientEmail = document.querySelector( '.patientEmail12' ),
-  patientName = document.querySelector( '.patientName12' );
+  patientEmail = document.querySelector( '.patientEmail' ),
+  patientName = document.querySelector( '.patientName' );
 
 ( () =>
 {
@@ -32,14 +32,14 @@ let patientList = document.querySelector( '.patientList' ),
                   </li>
                   `
                   patientList.innerHTML += patientNames
-                  selectingPatientName()
+                  selectingPatientName(doc)
       }
     } )
   } )
 
 } )()
 
-const selectingPatientName = () =>
+const selectingPatientName = (doc) =>
 {
   patientListButton.onclick = () =>
   {
@@ -49,7 +49,9 @@ const selectingPatientName = () =>
     {
       item.onclick = () =>
       {
+        console.log(item.childNodes[1].childNodes[1].childNodes[1].innerText);
         patientName.innerText = item.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText
+        patientName.setAttribute('data-id', doc.id)
         patientList.classList.toggle( 'hidden' )
       }
     }
