@@ -70,7 +70,7 @@ createAptBtn.onclick = () =>
         let currentDay = aptStartDate1.getDate()
         let finalCurrentDate = currentDay+' - '+currentMonth+' - '+currentYear
         let aptEmailOfUser = aptEmail.value
-        let correctEmail = aptEmailOfUser.toLowercase()
+        let correctEmail = aptEmailOfUser.toLowerCase()
 
         confirmName.innerText = aptName.value.trim()
         confirmEmail.innerText = correctEmail.trim()
