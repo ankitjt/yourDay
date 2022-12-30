@@ -12,7 +12,8 @@
 
   <body class="h-full relative overflow-x-hidden">
     <span
-      class="pb bg-red-600 p-3 text-xs animate-bounce  absolute top-8 left-2 lg:left-10 z-50 rounded-full text-white font-semibold cursor-pointer">PB</span>
+      class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute top-6 left-2 lg:left-10  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase">yD</span>
+      
     <!-- Update Profile -->
     <div
       class="absolute h-screen overflow-y-auto w-full md:w-3/5 lg:w-2/5 -left-[2000px] bg-gray-800 md:bg-gray-50 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
@@ -126,12 +127,12 @@
       </div>
 
       <!-- Only for Desktop -->
-      <div class="banner-holder md:w-2/5 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center">
-        <img src="../assets/reports4.webp" alt="logo" class="h-auto w-auto" />
+      <div class="banner-holder md:w-2/6 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
+        <img src="../assets/reports4.webp" alt="logo" />
       </div>
 
       <!-- Reports Wrapper  -->
-      <div class="reportsWrapper md:grow px-3 md:py-6 md:px-14 relative md:h-screen md:overflow-auto md:w-3/5">
+      <div class="reportsWrapper md:grow px-3 md:py-6 md:px-14 relative md:h-screen md:overflow-auto md:w-full">
         <div class="pageBlocker absolute h-full w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div>
 
         <!-- Navbar  -->
@@ -186,7 +187,7 @@
             <section class="monthFilter mb-5">
               <div class="relative">
                 <button type="button"
-                  class="listButton relative border-blue-600 md:border-gray-200 border-2 rounded-md w-full sm:w-1/2 placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                  class="listButton relative border-blue-600 md:border-gray-200 border rounded-md w-full sm:w-1/2 placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
                   aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                   <span class="flex items-center">
                     <span class="ml-3 block truncate selectedOptionName font-semibold">Select Month</span>
@@ -327,8 +328,9 @@
               </select> -->
             </section>
 
+            <!-- By Month Breakdown  -->
             <div
-              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-md border-2 border-blue-600 md:border-gray-200 ">
+              class="reportsTotalByMonth text-blue-600 text-xs font-semibold p-4 rounded-md border border-blue-600 md:border-gray-200 md:w-3/4 ">
               <div class="totalSessions flex items-center justify-between mb-2 md:mb-4 capitalize">
                 <span>Sessions</span>
                 <span class="totalSessionsCount"></span>
@@ -359,7 +361,7 @@
           <!-- ***** ***** ***** ***** Ends Report by month section ***** ***** ***** ***** -->
 
           <!-- Report by Name -->
-          <section class="reportByNameSection mt-10 rounded-md">
+          <section class="reportByNameSection mt-5 rounded-md">
             <h3 class="mb-2">
               <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
                 By name
@@ -369,7 +371,7 @@
             <!-- Report By Name Filter  -->
             <div class="relative">
               <button type="button"
-                class="patientListButton relative border-blue-600 md:border-gray-200 border-2 rounded-md w-full sm:w-1/2 placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                class="patientListButton relative border-blue-600 md:border-gray-200 border rounded-md w-full sm:w-1/2 placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
                 aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                 <span class="flex items-center">
                   <span class="ml-3 block truncate selectedPatientName font-semibold flex justify-between items-center">

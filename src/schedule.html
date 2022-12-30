@@ -12,7 +12,7 @@
   <body class="h-full relative">
 
     <span
-      class="pb bg-red-600 p-3 text-xs animate-bounce  absolute top-8 left-2 lg:left-10  z-50 rounded-full text-white font-semibold cursor-pointer">PB</span>
+      class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute top-6 left-2 lg:left-10  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase">yD</span>
 
     <!-- Global Notification -->
     <div class='absolute  right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-50 hidden'>
@@ -30,7 +30,7 @@
       <!-- Only for Desktop -->
 
       <div
-        class="banner-holder md:w-3/5 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
+        class="banner-holder md:w-2/6 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
         <img src="../assets/schedule4.webp" alt="logo" />
 
         <!-- Update Appointments Section -->
@@ -47,8 +47,6 @@
       <div class="scheduleWrapper md:w-full md:overflow-x-hidden relative md:py-8 md:px-14">
 
         <div class="pageBlocker absolute h-full w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div>
-
-
 
         <!-- Ends Update Appointments Section -->
 
@@ -104,72 +102,79 @@
               </h3>
 
               <!-- Filter Type -->
-              <section class="scheduleFilters mt-1 flex flex-col justify-between font-semibold w-full">
+              <section class="scheduleFilters mt-1 font-semibold w-full">
 
-                <div class="filters flex justify-between">
-                  <!-- Filter of Patient Name -->
-                  <div class="relative w-60">
-                    <button type="button"
-                      class="patientListButton w-full relative border-blue-600 md:border-gray-200 border-2 rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
-                      aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-                      <span class="flex items-center">
-                        <span
-                          class="ml-3 block truncate selectedPatientName font-semibold flex justify-between items-center">
-                          <span class="patientName12">By Name</span>
-                          <span class="patientEmail12 ml-2"></span>
+                <div class="filters flex items-center flex-row justify-between w-full">
+
+                  <div class="filterWrappers grid grid-cols-3 gap-x-5 w-full mr-5">
+
+                    <!-- Filter of Patient Name -->
+                    <div class="relative w-full">
+                      <button type="button"
+                        class="patientListButton w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-xs md:py-4 py-3  flex  md:drop-shadow-none md:text-xs md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                        aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                        <span class="flex items-center">
+                          <span
+                            class="ml-3 block truncate selectedPatientName font-semibold flex justify-between items-center">
+                            <span class="patientName12">By Name</span>
+                            <span class="patientEmail12 ml-2"></span>
+                          </span>
                         </span>
-                      </span>
-                      <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                        <!-- Heroicon name: mini/chevron-up-down -->
-                        <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                          fill="currentColor" aria-hidden="true">
-                          <path fill-rule="evenodd"
-                            d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </span>
-                    </button>
-                    <ul
-                      class="absolute z-50 bg-white mt-2 max-h-56 w-auto overflow-auto rounded-md text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden patientList"
-                      tabindex="-1" role="listbox" aria-labelledby="listbox-label"
-                      aria-activedescendant="listbox-option-3">
-                    </ul>
+                        <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                          <!-- Heroicon name: mini/chevron-up-down -->
+                          <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                            fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                              d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                              clip-rule="evenodd" />
+                          </svg>
+                        </span>
+                      </button>
+                      <ul
+                        class="absolute z-50 bg-white mt-2 max-h-56 w-auto overflow-auto rounded-md text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden patientList"
+                        tabindex="-1" role="listbox" aria-labelledby="listbox-label"
+                        aria-activedescendant="listbox-option-3">
+                      </ul>
+                    </div>
+
+                    <!-- Filter of Months -->
+                    <select name="scheduleFilterMonth" id="monthList"
+                      class="scheduleFilterMonth rounded-md text-blue-600 md:py-3 py-3 border border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-52 md:w-full">
+                      <option selected value="" class="font-semibold">
+                        Select Month
+                      </option>
+                      <option value="1" class="font-semibold">January</option>
+                      <option value="2" class="font-semibold">February</option>
+                      <option value="3" class="font-semibold">March</option>
+                      <option value="4" class="font-semibold">April</option>
+                      <option value="5" class="font-semibold">May</option>
+                      <option value="6" class="font-semibold">June</option>
+                      <option value="7" class="font-semibold">July</option>
+                      <option value="8" class="font-semibold">August</option>
+                      <option value="9" class="font-semibold">September</option>
+                      <option value="10" class="font-semibold">October</option>
+                      <option value="11" class="font-semibold">November</option>
+                      <option value="12" class="font-semibold">December</option>
+                    </select>
+
+                    <!-- Filter of Appointment Status -->
+                    <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                      class="rounded-md text-blue-600 md:py-3 border border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterStatus capitalize w-52 md:w-full">
+                      <option value="" class="font-semibold">Status</option>
+                      <option value="Scheduled" class="font-semibold">Scheduled</option>
+                      <option value="Completed" class="font-semibold">Completed</option>
+                      <option value="Cancelled" class="font-semibold">Cancelled</option>
+                      <option value="Pending" class="font-semibold">Pending</option>
+                    </select>
                   </div>
 
-                  <!-- Filter of Months -->
-                  <select name="scheduleFilterMonth" id="monthList"
-                    class="scheduleFilterMonth rounded-md text-blue-600 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs  w-60">
-                    <option selected value="" class="font-semibold">
-                      Select Month
-                    </option>
-                    <option value="1" class="font-semibold">January</option>
-                    <option value="2" class="font-semibold">February</option>
-                    <option value="3" class="font-semibold">March</option>
-                    <option value="4" class="font-semibold">April</option>
-                    <option value="5" class="font-semibold">May</option>
-                    <option value="6" class="font-semibold">June</option>
-                    <option value="7" class="font-semibold">July</option>
-                    <option value="8" class="font-semibold">August</option>
-                    <option value="9" class="font-semibold">September</option>
-                    <option value="10" class="font-semibold">October</option>
-                    <option value="11" class="font-semibold">November</option>
-                    <option value="12" class="font-semibold">December</option>
-                  </select>
+                  <!-- Buttons  -->
+                  <div class="div flex items-center ">
+                    <button class="filterFindBtn bg-emerald-500 mx-2 w-16 text-center py-2 text-sm rounded-full">Find</button>
+                    <button
+                      class="filterClearBtn border border-gray-200 w-16 text-center drop-shadow-3xl text-blue-600  py-2 text-sm rounded-full">Clear</button>
+                  </div>
 
-                  <!-- Filter of Appointment Status -->
-                  <select name="scheduleFilterStatus" id="scheduleFilterStatus"
-                    class="rounded-md text-blue-600 md:py-3 border-2 border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterStatus capitalize  w-60">
-                    <option value="" class="font-semibold">Status</option>
-                    <option value="Scheduled" class="font-semibold">Scheduled</option>
-                    <option value="Completed" class="font-semibold">Completed</option>
-                    <option value="Cancelled" class="font-semibold">Cancelled</option>
-                    <option value="Pending" class="font-semibold">Pending</option>
-                  </select>
-                </div>
-                <div class="div flex items-center mt-5">
-                  <button class="filterFindBtn bg-blue-600 px-6 py-2 text-sm rounded-md">Find</button>
-                  <button
-                    class="filterClearBtn bg-gray-200 ml-5 text-blue-700 px-6 py-2 text-sm rounded-md">Clear</button>
                 </div>
               </section>
               <div class="helper text-red-600 text-xs font-semibold mt-2">
@@ -181,26 +186,32 @@
           <!-- ***** ***** ***** ***** Ends Schedule Filters Wrapper ***** ***** ***** ***** -->
 
           <!-- Schedule with a Gallery View (Mobile)  -->
-          <section class="scheduleGalleryView w-full mt-5 overflow-scroll md:overflow-auto md:hidden">
+          <section class="scheduleGalleryView w-full mt-5 overflow-scroll overflow-x-hidden md:overflow-auto md:hidden">
 
           </section>
 
           <!-- ***** ***** ***** ***** Ends Schedule with a Gallery View section ***** ***** ***** ***** -->
 
           <!-- Table Views  with Data-->
-          <div class="tableViewWrapper w-full relative">
+          <div class="tableViewWrapper md:block hidden w-full relative mt-10">
+            <h3>
+              <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
+                Appointments
+              </span>
+            </h3>
 
             <!-- Update Table  -->
-            <div class="scheduleTable text-xs mt-10 md:my-10 md:w-full md:block">
+            <div class="scheduleTable text-xs mt-5 md:my-5 md:w-full md:block overflow-x-hidden overflow-y-auto">
               <div
-                class="tableHeaders flex items-center text-center border-r-2 border-l-2 border-t-2 border-gray-200 uppercase text-xs font-semibold py-5 text-blue-600 rounded-t-xl  rounded-t-left-xl rounded-t-right-xl">
-                <span class="w-[180px]">Name</span>
-                <span class="w-[180px]">Slot</span>
-                <span class="w-[180px]">Type</span>
-                <span class="w-[180px]">Status</span>
-                <span class="w-[180px]">Action</span>
+                class="tableHeaders grid grid-cols-6 gap-y-5 text-center border-r border-l border-t border-gray-200 uppercase text-xs font-medium py-5 text-gray-400 rounded-t-xl rounded-t-left-xl rounded-t-right-xl">
+                <span>Name</span>
+                <span>Time</span>
+                <span>Date</span>
+                <span>Type</span>
+                <span>Status</span>
+                <span>Action</span>
               </div>
-              <div class="scheduleTableRows border-l-2 border-r-2 border-b-2 border-gray-200 rounded-b-xl">
+              <div class="scheduleTableRows border-l border-r border-b border-gray-200 rounded-b-xl">
               </div>
             </div>
             <!-- <table

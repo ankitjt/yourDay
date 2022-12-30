@@ -8,11 +8,14 @@ select {
     outline: none;
 }
 
-.app-name, .pageNotFound, .indexPageAppName, .confirmPageTitle  {
-    font-family: 'La Belle Aurore',cursive !important;
+.app-name,
+.pageNotFound,
+.indexPageAppName,
+.confirmPageTitle {
+    font-family: 'La Belle Aurore', cursive !important;
 }
 
-.aptType > option {
+.aptType>option {
     width: 50px !important;
 }
 
@@ -27,4 +30,26 @@ select {
     left: 0;
     right: 0;
     margin: auto;
+}
+
+::-webkit-scrollbar {
+    background-color: rgb(241 ,245 ,249)  ;
+    border-radius: 10px;
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    height: -2000px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    opacity: 1 !important;
+    background-color: #d4d4d8;
+    border-radius: 10px;
+    height: -25px !important;
 }

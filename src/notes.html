@@ -11,7 +11,7 @@
 
   <body class="relative">
     <span
-      class="pb bg-red-600 p-3 text-xs animate-bounce  absolute top-8 left-2 lg:left-10  z-50 rounded-full text-white font-semibold cursor-pointer">PB</span>
+      class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute top-6 left-2 lg:left-10  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase">yD</span>
     <div
       class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center relative px-6 py-5 md:p-0 flex flex-col md:flex-row overflow-auto overflow-x-hidden md:justify-between bg-gray-800 md:bg-white ">
 
@@ -21,7 +21,7 @@
       </div>
 
       <!-- Only for Desktop -->
-      <div class="banner-holder md:w-3/5 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
+      <div class="banner-holder md:w-2/6 lg:h-screen lg:block hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
         <img src="../assets/notes6.webp" alt="logo" />
       </div>
 
@@ -74,10 +74,33 @@
           <div class="namesForNotes ptNotes mt-5 w-full text-xs">
             <h3 class="uppercase text-xs text-blue-600 border-blue-600 font-semibold mb-5">Select Name ( to View/Upload ):</h3>
           </div>
-          <select name="ptNotes" id=""
-            class="patientList border-blue-600 md:border-gray-200 border-1 rounded-md w-full md:w-1/2 placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
-            <option value="Select" class="md:font-semibold w-full block text-xs md:text-base">Select</option>
-          </select>
+
+          <!-- Patient List  -->
+          <div class="relative w-full md:w-1/2">
+            <button type="button"
+              class="patientListButton w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-4 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+              aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+              <span class="flex items-center">
+                <span class="ml-3 block truncate selectedPatientName font-semibold flex justify-between items-center">
+                  <span class="patientName12">By Name</span>
+                  <span class="patientEmail12 ml-2"></span>
+                </span>
+              </span>
+              <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+                <!-- Heroicon name: mini/chevron-up-down -->
+                <svg class="h-5 w-5 text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M10 3a.75.75 0 01.55.24l3.25 3.5a.75.75 0 11-1.1 1.02L10 4.852 7.3 7.76a.75.75 0 01-1.1-1.02l3.25-3.5A.75.75 0 0110 3zm-3.76 9.2a.75.75 0 011.06.04l2.7 2.908 2.7-2.908a.75.75 0 111.1 1.02l-3.25 3.5a.75.75 0 01-1.1 0l-3.25-3.5a.75.75 0 01.04-1.06z"
+                    clip-rule="evenodd" />
+                </svg>
+              </span>
+            </button>
+            <ul
+              class="absolute z-50 bg-white mt-2 max-h-56 w-auto overflow-auto rounded-md text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden patientList"
+              tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+            </ul>
+          </div>
 
           <!-- Existing Uploaded notes table  -->
           <div class="uploadedNotesWrapper mt-10 text-xs">
