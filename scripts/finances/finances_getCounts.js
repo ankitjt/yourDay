@@ -20,7 +20,7 @@ const getCounts = () =>
       let newDateFormat = new Date( doc.data().aptStartDate * 1000 )
       if ( ( newDateFormat.getMonth() + 1 ) === parseInt( monthListByName.value ) )
       {
-        if ( financePatientList.value === doc.data().aptName )
+        if ( patientName.innerText === doc.data().aptName )
         {
           namesArr.push( doc.data().aptName )
           if ( doc.data().appointmentStatus === "Scheduled" )

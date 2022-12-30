@@ -1,7 +1,7 @@
 let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
 findDetailsByName.onclick = () =>
 {
-  if ( financePatientList.value === '' || monthListByName.value === 'Select Month' )
+  if ( patientName.innerText === 'By Name' || monthListByName.value === 'Select Month' )
   {
     promptMessages( 'Select name and month.' )
     patientProfileWrapper.classList.add('hidden')
@@ -13,7 +13,7 @@ findDetailsByName.onclick = () =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        if ( financePatientList.value === doc.data().aptName )
+        if ( patientName.innerText === doc.data().aptName )
         {
           let profileDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
           let profile = `

@@ -80,9 +80,3 @@ notificationOpener.onclick = () =>
   notificationCenter.appendChild( final )
 
 };
-
-
-( () =>
-{
- 
-} )()

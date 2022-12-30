@@ -11,7 +11,7 @@ const showBreakDownOfAppointments = () =>
   {
     sessionsBreakDown.classList.add( 'left-0' )
     sessionsBreakDown.innerText = ""
-    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", financePatientList.value ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
@@ -64,7 +64,7 @@ const showBreakDownOfAppointments = () =>
   {
     sessionsBreakDown.classList.add( 'left-0' )
     sessionsBreakDown.innerText = ""
-    db.collection( "appointments" ).where( "aptName", "==", financePatientList.value ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
@@ -123,7 +123,7 @@ const showBreakDownOfAppointments = () =>
   {
     sessionsBreakDown.innerText = ""
     sessionsBreakDown.classList.add( 'left-0' )
-    db.collection( "appointments" ).where( "aptName", "==", financePatientList.value ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
@@ -174,7 +174,7 @@ const showBreakDownOfAppointments = () =>
   {
     sessionsBreakDown.innerText = ""
     sessionsBreakDown.classList.add( 'left-0' )
-    db.collection( "appointments" ).where( "aptName", "==", financePatientList.value ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {

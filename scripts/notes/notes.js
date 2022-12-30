@@ -1,17 +1,23 @@
 const storage = firebase.storage()
+let bannerHolder = document.querySelector( '.banner-holder' )
 
-// To populate the patient list.
 
 
 // Listing All files for selected name.
-patientList.onchange = () =>
+bannerHolder.onclick = () =>
 {
+  patientList.classList.add('hidden')
+}
+
+patientList.onclick = () =>
+{
+
   let uploadedNotesList = document.querySelector( '.uploadedNotesList' )
   let uploadedNotes = document.querySelector( '.uploadedNotes' )
   let notesCount = document.querySelector( '.notesCount' )
   let uploadNoteFormWrapper = document.querySelector( '.uploadNoteFormWrapper' )
 
-  if ( patientList.value === 'Select' )
+  if ( patientListButton.innerText === 'By Name' )
   {
     uploadedNotes.classList.add( 'hidden' )
     uploadNoteFormWrapper.classList.add( 'hidden' )
@@ -22,7 +28,7 @@ patientList.onchange = () =>
     uploadNoteFormWrapper.classList.remove( 'hidden' )
     uploadedNotesList.innerHTML = ''
     notesCount.innerHTML = ''
-    let listRef = firebase.storage().ref( `ptNotes/${ patientList.value }/` )
+    let listRef = firebase.storage().ref( `ptNotes/${ patientName.innerText }/` )
 
     let s = firebase.storage().ref( 'ptNotes' )
     let dataSort = []
@@ -30,7 +36,7 @@ patientList.onchange = () =>
     {
       res.prefixes.forEach( ( folderRef ) =>
       {
-        if ( folderRef.name === patientList.value )
+        if ( folderRef.name === patientName.innerText )
         {
           listRef.listAll().then( ( res ) =>
           {
@@ -78,7 +84,7 @@ patientList.onchange = () =>
             } )
           } )
         }
-        
+
 
       } )
     } )
@@ -96,9 +102,9 @@ uploadNoteBtn.onclick = ( e ) =>
 {
   let file = fileUpload.files[ 0 ]
 
-  if ( patientList.value === 'Select' )
+  if ( patientListButton.innerText === 'By Name' )
   {
-    promptMessages( 'Select patient name first...' );
+    promptMessages( 'Select patient name first...' )
   }
 
   else if ( file === undefined )
@@ -111,7 +117,7 @@ uploadNoteBtn.onclick = ( e ) =>
     let metadata = {
       uploadTime: firebase.firestore.FieldValue.serverTimestamp()
     }
-    let storageRef = firebase.storage().ref( `ptNotes/${ patientList.value }/` + file.name )
+    let storageRef = firebase.storage().ref( `ptNotes/${ patientName.innerText }/` + file.name )
     storageRef.put( file, metadata )
     promptMessages( 'file uploaded' )
     fileUpload.value = ''

@@ -50,7 +50,7 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
               </span>
               <span class="text-right">
                 <select id="countries"
-                  class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ml-5 px-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ml-5 px-2.5 ">
                   <option selected>Select</option>
                   <option value="US" class='font-semibold text-gray-900'>Completed</option>
                   <option value="CA" class='font-semibold text-gray-900'>Pending</option>
