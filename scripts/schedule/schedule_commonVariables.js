@@ -1,6 +1,5 @@
 let aptsDb = db.collection( 'appointments' )
 let profileDb = db.collection( 'profiles' )
-let scheduleFilterName = document.querySelector( '.scheduleFilterName' )
 let scheduleTableRows = document.querySelector( '.scheduleTableRows' )
 let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
 let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )

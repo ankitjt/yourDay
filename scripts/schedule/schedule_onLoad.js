@@ -33,7 +33,7 @@
                    ${ doc.data().aptTimeSlot }
                  </span>
                </span>
-               <span class="date tracking-wider"> ${ days[doc.data().aptDay + 1] } </span>
+               <span class="date tracking-wider"> ${ doc.data().aptDay } </span>
              </div>
              <div class="ptName flex mt-2 items-center justify-between">
                <div class="ptName-wrapper flex items-center">

@@ -3,7 +3,7 @@ filterFindBtn.onclick = () =>
 {
   let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
-  if ( scheduleFilterName.value === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
+  if ( patientListButton.innerText === 'By Name' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
   {
     promptMessages( 'Use all filters' )
   }

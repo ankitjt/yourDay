@@ -3,14 +3,17 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
 {
   let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
   let currentMonthAppointments = `
-  <div class="flex flex-col">
-              <div class="flex items-center text-center text-xs border-t-2 border-gray-200 py-3 hover:bg-blue-100 ease-in-out duration-300 text-blue-500 font-semibold" data-id="${ doc.id }">
-              <span class="w-[180px]">${ doc.data().aptName }</span>
-        
-              <span class="w-[180px] ">${ doc.data().aptTimeSlot }<br />
-              ${ aptStartDate.getDate() }-${ aptStartDateMonth }-${ aptStartDate.getFullYear() }, <span class=''> ${ doc.data().aptDay} </span> </span>
-              <span class="w-[180px]">${ doc.data().aptType }</span>
-              <span class="w-[180px]">
+  <div class="flex flex-col justify-center align-middle">
+              <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-t border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-500 font-semibold" data-id="${ doc.id }">
+             
+              <span>${ doc.data().aptName }</span>
+              <span>${ doc.data().aptTimeSlot }</span>
+              <span>
+                <span> ${ doc.data().aptDay}, </span>
+                <span>${ aptStartDate.getDate() }-${ aptStartDateMonth }-${ aptStartDate.getFullYear() } </span>
+              </span>
+              <span>${ doc.data().aptType }</span>
+              <span>
                 <div class="appointmentStatus uppercase text-xs">
                     <div class="${ doc.data().appointmentStatus === "Completed" ? "block" : "hidden" }">
                       <span class="text-emerald-500">
@@ -45,9 +48,9 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
       + " " + myData.toLocaleTimeString() } </span>
                   </div> 
               </span>
-              <span class="w-[180px] text-center">
+              <span class="text-right">
                 <select id="countries"
-                  class="aptActions border border-blue-500 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block  px-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                  class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ml-5 px-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                   <option selected>Select</option>
                   <option value="US" class='font-semibold text-gray-900'>Completed</option>
                   <option value="CA" class='font-semibold text-gray-900'>Pending</option>
@@ -58,7 +61,6 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
                 </select>
               </span>
             </div>
-
             </div>
   `
   scheduleTableRows.innerHTML += currentMonthAppointments
