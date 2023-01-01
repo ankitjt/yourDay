@@ -1,28 +1,29 @@
 const updateForm = ( doc ) =>
 {
-  let updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' )
-  let updateForm = /*html*/`
-                        <div class="updateFormWrapper grid grid-cols-2 gap-y-3 gap-x-10 mt-10">
+    let updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' )
+
+    let updateForm = /*html*/`
+                        <div class="updateFormWrapper grid grid-cols-1 mt-2">
 
                             <div class="nameUpdate">
 
-                            <span class="mb-3 px-1 text-xs font-semibold"> Name </span>
+                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Name </span>
                             <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled value="${ doc.data().aptName
-    }" class="border-2 border-gray-200 bg-gray-300 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 lg:drop-shadow-none drop-shadow-2xl" />
+        }" class="border border-gray-200 bg-gray-200 rounded-lg w-full text-md text-gray-500 py-2 lg:drop-shadow-none drop-shadow-2xl mb-3" />
                             </div>
 
                             <div class="emailUpdate">
 
-                            <span class="mb-3 px-1 text-xs font-semibold"> Email </span>
+                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Email </span>
                             <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled value="${ doc.data().aptEmail
-    }" class="border-2 border-gray-200 bg-gray-300 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 lg:drop-shadow-none drop-shadow-2xl">
+        }" class="border border-gray-200 bg-gray-200 rounded-lg w-full text-md text-gray-500 py-2 lg:drop-shadow-none drop-shadow-2xl mb-3">
                             </div>
 
                             <div class="dayUpdate">
 
-                            <span class="mb-3 px-1 text-xs font-semibold">Day</span>
+                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900">Day</span>
                             <select name="aptDay" id="aptDay"
-                            class="dayUpdateHolder border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm">
+                            class="dayUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-medium lg:placeholder:text-sm py-2 aptDay lg:drop-shadow-none drop-shadow-2xl text-md mb-3 text-blue-600">
                                 <option value="${ doc.data().aptDay }" class="font-semibold">
                                 ${ doc.data().aptDay }
                                 </option>
@@ -52,11 +53,11 @@ const updateForm = ( doc ) =>
 
                             <div class="timeSlotUpdate">
 
-                            <span class="mb-3 px-1 text-xs font-semibold"> Time Slot </span>
+                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Time Slot </span>
                             <select name="aptTimeSlot" id="aptTimeSlot"
-                                class="timeSlotUpdateHolder border-gray-200 border-2 rounded-lg w-full placeholder:text-blue-900 font-medium lg:placeholder:text-sm py-3 aptTimeSlot lg:drop-shadow-none drop-shadow-2xl text-sm">
+                                class="timeSlotUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-medium lg:placeholder:text-sm py-2 aptTimeSlot text-md text-blue-600 mb-3">
                                 <option value="${ doc.data().aptTimeSlot
-    }" class="font-semibold">
+        }" class="font-semibold">
                                 ${ doc.data().aptTimeSlot }
                                 </option>
                                 <option value="09:00 - 10:00" class="font-semibold">
@@ -90,23 +91,16 @@ const updateForm = ( doc ) =>
                             </select>
                             </div>
 
-                            <div class="occurrenceUpdate">
-
-                            <span class="mb-3 px-1 text-xs font-semibold">Occurrence Type</span>
-                            <input type="number" name="occurrenceUpdateCell" id="occurrenceUpdateCell" value="${ doc.data().aptOccurrenceType
-    }" class="occurrenceUpdateHolder border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 lg:drop-shadow-none drop-shadow-2xl">
-                            </div>
-
                             <div class="reasonToUpdate">
-                            <span class="mb-3 px-1 text-xs font-semibold">Reason to Update</span>
-                            <input type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border-2 border-gray-200 rounded-lg w-full placeholder:text-blue-900 lg:placeholder:text-sm placeholder:font-medium py-3 lg:drop-shadow-none drop-shadow-2xl">
+                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900">Reason to Update</span>
+                            <input type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-blue-600 lg:placeholder:text-sm placeholder:font-medium py-2 mb-3 text-sm text-blue-600">
                             </div>
                             
                         </div>
-                        <div class="updateCancelButtons mt-10">
-                            <button class="bg-emerald-500 updateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase">Update</button>
-                            <button class="bg-rose-500 cancelUpdateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-lg uppercase">Cancel</button>
+                        <div class="updateCancelButtons  mt-5">
+                            <button class="bg-emerald-500 updateButton py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-full uppercase">Update</button>
+                            <button class="bg-rose-500 cancelUpdateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-full uppercase">Cancel</button>
                         </div>
                         `
-  updateAppointmentsSection.innerHTML = updateForm
+    updateAppointmentsSection.innerHTML = updateForm
 }

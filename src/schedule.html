@@ -12,7 +12,7 @@
 <body class="h-full relative">
 
   <span
-        class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute top-6 left-2 lg:left-10  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase">yD</span>
+        class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute bottom-6 left-2 lg:left-5 z-50 rounded-full text-white font-medium cursor-pointer uppercase ease-in-out duration-600">yD</span>
 
   <!-- Global Notification -->
   <div class='absolute  right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-50 hidden'>
@@ -30,15 +30,15 @@
     <!-- Only for Desktop -->
 
     <div
-         class="banner-holder md:w-2/6 lg:h-screen  hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
+         class="banner-holder md:w-3/6 lg:h-screen  hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
       <img src="../assets/schedule4.webp" alt="logo" />
 
       <!-- Update Appointments Section -->
       <div
-           class="updateAppointments z-50 absolute w-full md:h-5/6 hidden border-box bottom-0 -left-[2000px] md:flex md:items-center md:justify-center bg-slate-200">
+           class="updateAppointments z-50 absolute w-full md:h-full hidden border-box bottom-0 -left-[2000px] md:flex md:items-center md:justify-center bg-white border-r border-gray-300 overflow-y-auto">
 
-        <div class="updateAppointmentWrapper w-full  px-10 py-4">
-          <h1 class="text-center font-semibold">Update Appointments</h1>
+        <div class="updateAppointmentWrapper w-full  px-10">
+          <h1 class="text-center font-semibold text-blue-600 py-2">Update Appointments</h1>
           <div class="updateAppointmentsSection w-full"></div>
         </div>
       </div>
@@ -120,7 +120,7 @@
                         </span>
                       </span>
                       <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
-                       
+
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                              stroke="currentColor"
                              class="w-5 h-5 text-red-400 downArrowPtList">
@@ -191,7 +191,7 @@
         <!-- ***** ***** ***** ***** Ends Schedule Filters Wrapper ***** ***** ***** ***** -->
 
         <!-- Schedule with a Gallery View (Mobile)  -->
-        <section class="scheduleGalleryView w-full mt-5 overflow-scroll overflow-x-hidden md:overflow-auto md:hidden">
+        <section class="scheduleGalleryView w-full mt-5 px-5 overflow-x-hidden md:overflow-auto md:hidden">
 
         </section>
 
@@ -219,34 +219,6 @@
             <div class="scheduleTableRows border-l border-r border-b border-gray-200 rounded-b-xl">
             </div>
           </div>
-          <!-- <table
-              class="text-center text-xs border-collapse box-border md:my-10  scheduleTable hidden md:table md:w-full">
-              <thead class="px-10">
-                <tr class="bg-blue-600">
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Name
-                  </th>
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Date
-                  </th>
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Slot
-                  </th>
-
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Type
-                  </th>
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Status
-                  </th>
-                  <th class="border border-blue-600 px-5 py-3 text-slate-50 capitalize tracking-widest">
-                    Action
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="scheduleTableRows px-10"></tbody>
-
-            </table> -->
         </div>
 
         <!-- ***** ***** ***** ***** Ends Schedule with a Table View section ***** ***** ***** ***** -->
@@ -264,16 +236,16 @@
   <script src="../scripts/commonScripts/dbConnect.js"></script>
   <script src="../scripts/commonScripts/commonVariables.js"></script>
   <script src="../scripts/schedule/schedule_commonVariables.js"></script>
+  <script src="../scripts/commonScripts/panicButton.js"></script>
   <script src="../scripts/schedule/schedule_onLoad.js"></script>
   <script src="../scripts/schedule/schedule_filterSchedules.js"></script>
   <script src="../scripts/schedule/schedule_autoUpdatePendingApts.js"></script>
-  <script src="../scripts/schedule/schedule_editAppiontments.js"></script>
+  <script src="../scripts/schedule/schedule_updateForm.js"></script>
   <script src="../scripts/schedule/schedule_updateAppointments.js"></script>
   <script src="../scripts/commonScripts/prompts.js"></script>
   <script src="../scripts/schedule/schedule_showingApts.js"></script>
   <script src="../scripts/commonScripts/globalNotification.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="../scripts/commonScripts/panicButton.js"></script>
   <script src="../scripts/commonScripts/patientList.js"></script>
   <!-- <script src="../scripts/schedule/appointmentsToUpdate.js"></script> -->
 </body>

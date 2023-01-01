@@ -58,6 +58,9 @@ const appointmentsToUpdate = () =>
       }
       else if ( aptActions[ i ].value === 'Updated' )
       {
+        pb.classList.remove( 'left-2', 'lg:left-5' )
+        pb.classList.add( 'right-10' )
+        console.log('test');
         updateAppointments.style.transition = '0.5s ease-in-out'
         updateAppointments.style.right = 0
         dbPath.get().then( ( doc ) =>

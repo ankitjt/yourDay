@@ -6,11 +6,22 @@
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>
     {
-      let appointmentPill = `
+      let aptStartDate = new Date( doc.data().aptStartDate * 1000 )
+      let currentDate = new Date()
+      let currentMonth = currentDate.getMonth() + 1
+      let lastMonth = currentDate.getMonth()
+      let aptStartDateMonth = aptStartDate.getMonth() + 1
+
+      if ( aptStartDateMonth === currentMonth || aptStartDateMonth === lastMonth )
+      {
+        if ( doc.data().appointmentStatus === 'Pending' )
+        {
+          
+          let appointmentPill = `
               <div
-               class="1 px-3 py-5  rounded-md ${ doc.data().aptType === "Session" ? '' : 'bg-transparent' } ${ doc.data().aptType === "New" ? 'bg-rose-100' : '' } border-l-8 ${ doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ doc.data().aptType === "New" ? 'border-rose-600' : '' } ${ doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ doc.data().aptType === "New" ? 'text-rose-700' : '' } mb-10"
+               class="1 px-3 py-5  rounded-2xl ${ doc.data().aptType === "Session" ? '' : 'bg-transparent' } ${ doc.data().aptType === "New" ? 'bg-rose-100' : '' } border-l-8 border ${ doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ doc.data().aptType === "New" ? 'border-rose-600' : '' } ${ doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ doc.data().aptType === "New" ? 'text-rose-700' : '' } mb-10 drop-shadow-2xl "
          >
-           <div class="details flex flex-col text-sm">
+           <div class="details flex flex-col text-lg">
              <div
                class="timeAndDate flex justify-between items-center font-black"
              >
@@ -33,7 +44,9 @@
                    ${ doc.data().aptTimeSlot }
                  </span>
                </span>
-               <span class="date tracking-wider"> ${ doc.data().aptDay } </span>
+               <div class='flex flex-col justify-between'>
+                <span class="date tracking-wider"> ${ doc.data().aptDay } </span>
+               </div>
              </div>
              <div class="ptName flex mt-2 items-center justify-between">
                <div class="ptName-wrapper flex items-center">
@@ -46,18 +59,16 @@
                    </span>
                  </span>
                </div>
-
+                <span class="status tracking-wider text-red-400"> ${ doc.data().appointmentStatus } </span>
                </div>
              </div>
            </div>
          </div>
      `
-      scheduleGalleryView.innerHTML += appointmentPill
-      let aptStartDate = new Date( doc.data().aptStartDate * 1000 )
-      let currentDate = new Date()
-      let currentMonth = currentDate.getMonth() + 1
-      let lastMonth = currentDate.getMonth()
-      let aptStartDateMonth = aptStartDate.getMonth() + 1
+          scheduleGalleryView.innerHTML += appointmentPill
+        }
+      }
+
 
       if ( aptStartDateMonth === currentMonth || aptStartDateMonth === lastMonth )
       {

@@ -256,6 +256,8 @@ const appointmentsToUpdate = () =>
       }
       else if ( aptActions[ i ].value === 'Updated' )
       {
+        pb.classList.add( 'md:top-0' )
+        pb.classList.remove('lg:left-5')
         let updateAppointments = document.querySelector( '.updateAppointments' )
         let updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' )
         updateAppointments.style.transition = '0.5s ease-in-out'
@@ -405,6 +407,7 @@ const appointmentsToUpdate = () =>
             {
               aptActions[ i ].selectedIndex = 0
               updateAppointments.style.right = '-2000px'
+              
             }
           }
         } )

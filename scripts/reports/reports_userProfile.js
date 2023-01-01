@@ -1,18 +1,18 @@
 
-patientList.onchange = () =>
+patientList.onclick = () =>
 {
-  if ( patientList.value === "Select" )
+  if ( patientList.innerText === "By Name" )
   {
     updateProfileWrapper.classList.remove( 'left-0' )
-
     reportByName.classList.add( 'hidden' )
   }
   else
   {
-    reportByName.classList.remove('hidden')
-
-    let getName = patientList.options[ patientList.selectedIndex ].getAttribute( 'data-id' )
-    let dbRef = db.collection( "profiles" ).doc( getName )
+    reportByName.classList.remove( 'hidden' )
+    console.log( patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText );
+    let getName = patientListButton.childNodes[ 1 ]
+    // let dbRef = db.collection( "profiles" ).doc( getName )
+    console.log(getName);
 
     // Getting user profile details.
 

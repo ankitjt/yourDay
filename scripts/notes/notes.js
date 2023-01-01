@@ -1,8 +1,6 @@
 const storage = firebase.storage()
 let bannerHolder = document.querySelector( '.banner-holder' )
 
-
-
 // Listing All files for selected name.
 bannerHolder.onclick = () =>
 {

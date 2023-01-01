@@ -22,8 +22,8 @@ let patientList = document.querySelector( '.patientList' ),
                 <li
                     class="text-gray-900 border-b-2 font-semibold border-gray-200 hover:bg-blue-100 ease-in-out duration-300 cursor-pointer patientListItems relative overflow-x-hidden py-2 w-full" title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }'
                     id="listbox-option-0" role="option" data-id="${ doc.id } ">
-                    <div class="flex items-center lg:flex-row justify-between px-2 md:flex-col">
-                      <div class='patientListWrapper items-center flex text-xs'>
+                    <div class="flex items-center lg:flex-row px-2 md:flex-col">
+                      <div class='patientListWrapper items-center justify-between flex text-xs'>
                       <span class="font-semibold block truncate optionName tracking-normal">${ doc.data().aptName }</span>
                       <div class="text-blue-500 text-xs ml-2 lowercase ">(${ doc.data().aptEmail })</div>
                         <span class="ml-2 bg-red-400 rounded-full px-2 py-1 font-normal lowercase text-slate-50">${ doc.data().aptType === 'Session' ? 'S' : 'SV' }</span>

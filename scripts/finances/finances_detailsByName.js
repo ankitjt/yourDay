@@ -8,7 +8,8 @@ findDetailsByName.onclick = () =>
   }
   else
   {
-    patientProfileWrapper.classList.remove('hidden')
+    patientProfileWrapper.classList.remove( 'hidden' )
+    
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>

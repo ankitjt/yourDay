@@ -52,12 +52,12 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
                 <select id="countries"
                   class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ml-5 px-2.5 ">
                   <option selected>Select</option>
-                  <option value="US" class='font-semibold text-gray-900'>Completed</option>
-                  <option value="CA" class='font-semibold text-gray-900'>Pending</option>
-                  <option value="FR" class='font-semibold text-gray-900'>Free Cancelled</option>
-                  <option value="DE" class='font-semibold text-gray-900'>Paid Cancelled</option>
-                  <option value="DE" class='font-semibold text-gray-900'>Edit/Update</option>
-                  <option value="DE" class='font-semibold text-gray-900'>Closed</option>
+                  <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
+                  <option value="Pending" class='font-semibold text-gray-900'>Pending</option>
+                  <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>
+                  <option value="Paid Cancelled" class='font-semibold text-gray-900'>Paid Cancelled</option>
+                  <option value="Updated" class='font-semibold text-gray-900'>Edit/Update</option>
+                  <option value="Closed" class='font-semibold text-gray-900'>Closed</option>
                 </select>
               </span>
             </div>

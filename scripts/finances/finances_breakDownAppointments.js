@@ -1,15 +1,26 @@
+let closeSessionsBreakDownWrapper = document.querySelector( '.closeSessionsBreakDownWrapper' )
+
+closeSessionsBreakDownWrapper.onclick = () =>
+{
+  sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
+  sessionsBreakDownWrapper.classList.remove( 'left-0' )
+  pb.classList.add( 'left-2', 'lg:left-5' )
+  pb.classList.remove( 'right-10' )
+}
+
 const showBreakDownOfAppointments = () =>
 {
   let moneyScheduled = document.querySelector( ".moneyScheduled" ),
     moneyPaidCancelled = document.querySelector( ".moneyPaidCancelled" ),
     moneyCompleted = document.querySelector( ".moneyCompleted" ),
     moneyTotal = document.querySelector( ".moneyTotal" ),
-    sessionsBreakDown = document.querySelector( ".sessionsBreakDown" ),
     moneyFreeCancelled = document.querySelector( ".moneyFreeCancelled" )
 
   moneyScheduled.onclick = () =>
   {
-    sessionsBreakDown.classList.add( 'left-0' )
+    sessionsBreakDownWrapper.classList.add( 'left-0' )
+    pb.classList.remove( 'left-2', 'lg:left-5' )
+    pb.classList.add( 'right-10' )
     sessionsBreakDown.innerText = ""
     db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
     {
@@ -23,8 +34,8 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 md:px-4 md:py-3 rounded-md bg-gray-100 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
-                <div class="details flex flex-col text-xs">
+                 class="p-3 md:px-4 md:py-3 rounded-md bg-white mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
+                <div class="details flex flex-col text-xs text-blue-500">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
                       <svg  xmlns="http:www.w3.org/2000/svg"  class="h-3 w-3 mr-1"  fill="none"  viewBox="0 0 24 24"
@@ -62,7 +73,9 @@ const showBreakDownOfAppointments = () =>
 
   moneyCompleted.onclick = () =>
   {
-    sessionsBreakDown.classList.add( 'left-0' )
+    pb.classList.remove( 'left-2', 'lg:left-5' )
+    pb.classList.add( 'right-10' )
+    sessionsBreakDownWrapper.classList.add( 'left-0' )
     sessionsBreakDown.innerText = ""
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
@@ -79,8 +92,8 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 md:px-4 md:py-3 rounded-md bg-emerald-100 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
-                <div class="details flex flex-col text-xs">
+                 class="p-3 md:px-4 md:py-3 rounded-md bg-white  mb-6  md:hover:drop-shadow-3xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
+                <div class="details flex flex-col text-xs text-blue-500">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
                       <svg  xmlns="http:www.w3.org/2000/svg"  class="h-3 w-3 mr-1"  fill="none"  viewBox="0 0 24 24"
@@ -121,8 +134,10 @@ const showBreakDownOfAppointments = () =>
 
   moneyPaidCancelled.onclick = () =>
   {
+    pb.classList.remove( 'left-2', 'lg:left-5' )
+    pb.classList.add( 'right-10' )
     sessionsBreakDown.innerText = ""
-    sessionsBreakDown.classList.add( 'left-0' )
+    sessionsBreakDownWrapper.classList.add( 'left-0' )
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
@@ -134,8 +149,8 @@ const showBreakDownOfAppointments = () =>
           {
             let scheduledData = `
             <div
-                 class=" p-3 md:px-4 md:py-3 rounded-md bg-emerald-500 mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
-                <div class="details flex flex-col text-xs">
+                 class=" p-3 md:px-4 md:py-3 rounded-md bg-white mb-6  md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-xl cursor-pointer w-full">
+                <div class="details flex flex-col text-xs text-blue-500">
                   <div  class="timeAndDate flex justify-between items-center font-black" >
                     <span class="time flex items-center justify-between">
                       <svg  xmlns="http:www.w3.org/2000/svg"  class="h-3 w-3 mr-1"  fill="none"  viewBox="0 0 24 24"
@@ -172,8 +187,10 @@ const showBreakDownOfAppointments = () =>
 
   moneyFreeCancelled.onclick = () =>
   {
+    pb.classList.remove( 'left-2', 'lg:left-5' )
+    pb.classList.add( 'right-10' )
     sessionsBreakDown.innerText = ""
-    sessionsBreakDown.classList.add( 'left-0' )
+    sessionsBreakDownWrapper.classList.add( 'left-0' )
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>

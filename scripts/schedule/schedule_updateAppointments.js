@@ -60,6 +60,8 @@ const appointmentsToUpdate = () =>
       }
       else if ( aptActions[ i ].value === 'Updated' )
       {
+        pb.classList.remove( 'left-2', 'lg:left-5' )
+        pb.classList.add('right-10')
         let updateAppointments = document.querySelector( '.updateAppointments' )
         updateAppointments.style.transition = '0.5s ease-in-out'
         updateAppointments.style.left = 0
@@ -98,6 +100,8 @@ const appointmentsToUpdate = () =>
             )
             cancelUpdateButton.onclick = () =>
             {
+              pb.classList.add( 'left-2', 'lg:left-5' )
+              pb.classList.remove( 'right-10' )
               aptActions[ i ].selectedIndex = 0
               updateAppointments.style.left = '-2000px'
             }

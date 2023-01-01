@@ -11,7 +11,8 @@ select {
 .app-name,
 .pageNotFound,
 .indexPageAppName,
-.confirmPageTitle {
+.confirmPageTitle ,
+.pb{
     font-family: 'La Belle Aurore', cursive !important;
 }
 

@@ -7,4 +7,3 @@ let pageWrapper = document.querySelector( '.pageWrapper' )
 let reportsWrapper = document.querySelector( '.reportsWrapper' )
 
 
-

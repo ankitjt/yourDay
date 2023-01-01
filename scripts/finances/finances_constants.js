@@ -3,4 +3,6 @@ let
   totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
   findDetailsByName = document.querySelector( ".findDetailsByName" ),
   countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" ),
-  monthListByName = document.querySelector( ".monthListByName" )
+  monthListByName = document.querySelector( ".monthListByName" ),
+  sessionsBreakDown = document.querySelector( ".sessionsBreakDown" ),
+  sessionsBreakDownWrapper = document.querySelector( ".sessionsBreakDownWrapper" )
