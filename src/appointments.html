@@ -11,7 +11,7 @@
 
   <body class="relative">
     <span
-          class="pb bg-red-500 p-3 text-2xl animate-bounce  absolute bottom-6 left-2 lg:left-5 z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase">yD</span>
+      class="pb bg-red-500  p-3 text-2xl animate-bounce  absolute bottom-6  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase right-12 lg:left-10 lg:right-0 w-fit ">yD</span>
 
     <!-- Global Notification -->
     <div class='absolute  right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-40 hidden'>
@@ -34,7 +34,7 @@
 
         <!-- Confirm Page -->
         <sections
-          class="confirmPage z-50 absolute h-screen w-screen md:w-full md:h-full top-0 -left-[2000px] md:px-32 flex md:justify-between items-center flex-col px-10 bg-gray-100">
+          class="confirmPage z-50 absolute h-full w-full md:w-full md:h-full top-0 -left-[2000px] md:px-32 flex md:justify-between items-center flex-col px-10 bg-gray-100">
 
 
           <!-- Confirm Page Details -->
@@ -308,14 +308,14 @@
                     <div class="mb-3">
 
                       <input type="text" placeholder="New" value="New" title="Patient Category"
-                        class="aptCategory border border-blue-600 rounded-md w-full placeholder:text-white md:placeholder:text-blue-800 md:placeholder:text-xs py-3 md:drop-shadow-none bg-blue-600 text-white"
+                        class="aptCategory border border-blue-600 rounded-md w-full placeholder:text-white md:placeholder:text-blue-800 text-sm py-4 md:drop-shadow-none bg-blue-600 text-white"
                         disabled />
                     </div>
 
                     <!-- Appointment Type  -->
                     <div class="mb-3">
                       <select name="appointmentType" id="appointmentType" title="Appointment Type"
-                        class="aptType border-blue-500 border rounded-md w-full md:font-medium placeholder:text-blue-600 md:placeholder:text-sm py-3 md:py-3.5  md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                        class="aptType border-blue-500 border rounded-md w-full md:font-medium placeholder:text-blue-600 text-sm py-4 md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
                         <option value="" class="md:font-semibold text-xs md:text-base ">
                           Appointment Type
                         </option>
@@ -331,7 +331,7 @@
                     <!-- Appointment Method  -->
                     <div class="mb-3">
                       <select name="appointmentType" id="appointmentType" title="Appointment Nature"
-                        class="aptNature border-blue-500 border rounded-md w-full md:font-medium placeholder:text-blue-600 md:placeholder:text-sm py-3 md:py-3.5  md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                        class="aptNature border-blue-500 border rounded-md w-full md:font-medium placeholder:text-blue-600 text-sm py-4  md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
                         <option value="" class="md:font-semibold text-xs md:text-base">
                           Appointment Nature
                         </option>
@@ -359,20 +359,20 @@
                     <div class="mb-3">
                       <input type="text" placeholder="Full Name" title="Full Name" aria-autocomplete="none"
                         autocomplete="off"
-                        class="aptName border  border-blue-500 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:placeholder:text-sm md:font-medium md:py-3  py-3  md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="aptName border  border-blue-500 rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 text-sm md:font-medium py-4 md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
 
                     <!-- Email address  -->
                     <div class="mb-3">
                       <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 aptEmail md:drop-shadow-none md:bg-transparent md:text-blue-600 bg-gray-800 text-white" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptEmail md:drop-shadow-none md:bg-transparent md:text-blue-600 bg-gray-800 text-white" />
                     </div>
 
                     <!-- Mobile Number  -->
                     <div class="mb-5 flex">
 
                       <select name="countryCode" id=""
-                        class="border-blue-500 border  rounded-md w-20 md:font-semibold placeholder:text-blue-600 md:placeholder:text-sm py-3 md:py-3.5  md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 countryCode ">
+                        class="border-blue-500 border  rounded-md w-20 md:font-semibold placeholder:text-blue-600 text-sm py-4 md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 countryCode ">
                         <option data-countryCode="IN" value="+91"
                           class="md:font-semibold w-full block text-xs md:text-base" selected>
                           <span class="countryCodeNumber">+91</span>
@@ -812,14 +812,14 @@
                       </select>
                       <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
                         name="mobileNumber" id="mobileNumber" title="Mobile Number"
-                        class=" ml-2 border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 aptMobileNumber md:drop-shadow-none md:bg-transparent  md:text-blue-600 bg-gray-800 text-white" />
+                        class=" ml-2 border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptMobileNumber md:drop-shadow-none md:bg-transparent  md:text-blue-600 bg-gray-800 text-white" />
                     </div>
 
                     <!-- Address  -->
                     <div class="mb-3">
                       <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off"
                         name="address" id="address" title="Address"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 aptAddress md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptAddress md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
                   </div>
                 </div>
@@ -837,9 +837,9 @@
                       <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                         autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
                         onfocusout="(this.type='text')"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 aptStartDate md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptStartDate md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                       <p
-                        class="firstStartDateWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                        class="firstStartDateWrapper hidden py-2 text-xs text-rose-600 font-semibold">
                         First Start Date:
                         <span class="firstStartDate"></span>
                       </p>
@@ -848,7 +848,7 @@
                     <!-- Start Day  -->
                     <div class="mb-3 relative">
                       <select name="aptDay" id="aptDay" title="Appointment Start Day"
-                        class="aptDay  border-blue-500 md:border-gray-300 border  rounded-md w-full placeholder:text-blue-600 md:font-medium md:placeholder:text-sm py-3 md:py-3.5 md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                        class="aptDay  border-blue-500 md:border-gray-300 border  rounded-md w-full placeholder:text-blue-600 md:font-medium text-sm py-4 md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
                         <option value="" class="md:font-semibold text-xs md:text-base">
                           Pick a day
                         </option>
@@ -875,7 +875,7 @@
                         </option>
                       </select>
                       <p
-                        class="firstDaySlotWrapper absolute hidden -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                        class="firstDaySlotWrapper hidden py-2 text-xs text-rose-600 font-semibold">
                         First Day Slot: <span class="firstDaySlot"></span>
                       </p>
                     </div>
@@ -883,7 +883,7 @@
                     <!-- Time slot -->
                     <div class="mb-3 relative">
                       <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
-                        class="aptTimeSlot border-blue-500 md:border-gray-300 border  rounded-md w-full placeholder:text-blue-600 md:font-medium md:placeholder:text-sm py-3 md:py-3.5 md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                        class="aptTimeSlot border-blue-500 md:border-gray-300 border  rounded-md w-full placeholder:text-blue-600 md:font-medium text-sm py-4 md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
                         <option value="" class="md:font-semibold">
                           Time slot
                         </option>
@@ -916,7 +916,7 @@
                         </option>
                       </select>
                       <p
-                        class="firstTimeSlotWrapper hidden absolute -bottom-6 left-1 my-2 text-xs text-rose-600 font-semibold">
+                        class="firstTimeSlotWrapper hidden py-2 text-xs text-rose-600 font-semibold">
                         First Time Slot : <span class="firstTimeSlot"></span>
                       </p>
                     </div>
@@ -926,14 +926,13 @@
                       <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType"
                         aria-autocomplete="none" autocomplete="off" id="occurrenceType" min="1" max="2"
                         title="Appointment Occurrence"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-semibold md:placeholder:text-sm py-3 md:py-3.5 aptOccurrenceType md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptOccurrenceType md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
 
-                    <!-- Fees  -->
                     <div class="mb-3">
                       <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
                         autocomplete="off" title="Appointment Fees"
-                        class="border-blue-500 border rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 md:py-3.5 aptFees md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 aptFees md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
                   </div>
                 </div>
@@ -950,21 +949,21 @@
                     <div class="mb-3">
                       <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 md:py-3.5 emergencyName md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyName md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
 
                     <!-- Emergency Contact Relation -->
                     <div class="mb-3">
                       <input type="text" placeholder="Relation" name="emergencyRelation" id="emergencyRelation"
                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 md:py-3.5 emergencyRelation md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyRelation md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
 
                     <!-- Emergency Contact Number -->
                     <div class="mb-3 flex">
 
                       <select name="countryCode" id=""
-                        class="border-blue-500 border rounded-md w-20 md:font-medium placeholder:text-blue-600 md:placeholder:text-sm py-3 md:py-3.5  md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 emergencyCountryCode">
+                        class="border-blue-500 border rounded-md w-20 md:font-medium placeholder:text-blue-600 text-sm py-4   md:drop-shadow-none md:border-gray-300  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 emergencyCountryCode">
                         <option data-countryCode="IN" value="+91"
                           class="md:font-semibold w-full block text-xs md:text-base" selected>
                           <span class="countryCodeNumber">+91</span>
@@ -1615,20 +1614,20 @@
                       </select>
                       <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
                         name="mobileNumber" id="mobileNumber" title="Emergency Contact Number"
-                        class=" ml-2 border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 emergencyMobileNumber md:drop-shadow-none md:bg-transparent  md:text-blue-600 bg-gray-800 text-white" />
+                        class=" ml-2 border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyMobileNumber md:drop-shadow-none md:bg-transparent  md:text-blue-600 bg-gray-800 text-white" />
                     </div>
 
                     <!-- Emergency Contact Address -->
                     <div class="mb-3">
                       <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium md:placeholder:text-sm py-3 md:py-3 emergencyAddress md:drop-shadow-none  md:text-base md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                        class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyAddress md:drop-shadow-none  md:text-base md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                     </div>
                   </div>
                 </div>
 
                 <!-- Buttons  -->
-                <div class="appointmentButtonWrapper flex items-center justify-between md:mt-5">
+                <div class="appointmentButtonWrapper flex items-center md:mt-5">
                   <div class="createAppointmentButtons">
                     <button
                       class="bg-blue-600 px-6 py-3 text-white text-xs md:text-md tracking-widest rounded-full uppercase createAptBtn">
@@ -1650,7 +1649,7 @@
                   </div>
 
                   <!-- Notes  -->
-                  <section class="notes text-right font-semibold text-rose-600 text-xs rounded-md">
+                  <section class="notes mx-3 font-semibold text-rose-600 text-xs rounded-md">
                     <ol class="list-none py-1">
                       <li>All fields are required.</li>
                       <li>
@@ -1684,7 +1683,6 @@
     <script src="../scripts/appointments/appointments_variables.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
     <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/appointments/appointmentFieldCheck.js"></script>
     <script src="../scripts/appointments/appointments_createApt.js"></script>
     <script src="../scripts/appointments/appointments_secondOcc.js"></script>
     <script src="../scripts/appointments/appointments_createTwoApts.js"></script>
@@ -1692,6 +1690,7 @@
     <script src="../scripts/appointments/appointments.js"></script>
     <script src="../scripts/commonScripts/globalNotification.js"></script>
     <script src="../scripts/commonScripts/panicButton.js"></script>
+    <script src="../scripts/appointments/appointmentFieldCheck.js"></script>
   </body>
 
 </html>

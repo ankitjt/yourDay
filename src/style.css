@@ -11,8 +11,8 @@ select {
 .app-name,
 .pageNotFound,
 .indexPageAppName,
-.confirmPageTitle ,
-.pb{
+.confirmPageTitle,
+.pb {
     font-family: 'La Belle Aurore', cursive !important;
 }
 
@@ -34,7 +34,7 @@ select {
 }
 
 ::-webkit-scrollbar {
-    background-color: rgb(241 ,245 ,249)  ;
+    background-color: rgb(241, 245, 249);
     border-radius: 10px;
     width: 10px;
 
@@ -53,4 +53,13 @@ select {
     background-color: #d4d4d8;
     border-radius: 10px;
     height: -25px !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
 }
