@@ -3,7 +3,7 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
 {
   let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
   let currentMonthAppointments = `
-  <div class="flex flex-col justify-center align-middle">
+  <div class="flex flex-col justify-center align-middle tableRow12">
               <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-t border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-500 font-semibold" data-id="${ doc.id }">
              
               <span>${ doc.data().aptName }</span>
