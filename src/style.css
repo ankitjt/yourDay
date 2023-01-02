@@ -1,39 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Montserrat+Alternates:wght@400;500;600&display=swap');
 
- * {
+* {
     font-family: 'Montserrat Alternates', sans-serif;
 }
 
 select {
-    outline:none;
+    outline: none;
+}
+
+.app-name,
+.pageNotFound,
+.indexPageAppName,
+.confirmPageTitle,
+.pb {
+    font-family: 'La Belle Aurore', cursive !important;
+}
+
+.aptType>option {
+    width: 50px !important;
 }
 
 .formLoginButton {
     outline: hidden !important;
-} 
+}
 
- /* #loader {
-     border: 12px solid #f3f3f3;
-     border-radius: 50%;
-     border-top: 12px solid #444444;
-     width: 70px;
-     height: 70px;
-     animation: spin 1s linear infinite;
- }
+.center {
+    position: absolute;
+    top: 300px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
 
- @keyframes spin {
-     100% {
-         transform: rotate(360deg);
-     }
- } */
+::-webkit-scrollbar {
+    background-color: rgb(241, 245, 249);
+    border-radius: 10px;
+    width: 10px;
 
- .center {
-     position: absolute;
-     top: 300px;
-     bottom: 0;
-     left: 0;
-     right: 0;
-     margin: auto;
- }
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    height: -2000px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    opacity: 1 !important;
+    background-color: #d4d4d8;
+    border-radius: 10px;
+    height: -25px !important;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input[data-autocompleted] {
+    background-color: transparent !important;
+}
