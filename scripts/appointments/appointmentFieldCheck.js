@@ -8,16 +8,16 @@ const fieldValidators = () =>
     promptMessages( 'Name should be only be alphabetic.' )
   }
 
-  let emergencyName = emergencyName.value
-  let check2 = emergencyName.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
+  let emergencyNameCheck = emergencyName.value
+  let check2 = emergencyNameCheck.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check2 !== -1 )
   {
     confirmPage.style.left = '-2000px'
     promptMessages( 'Name should be only be alphabetic.' )
   }
 
-  let emergencyRelation = emergencyRelation.value
-  let check3 = emergencyRelation.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
+  let emergencyRelationCheck = emergencyRelation.value
+  let check3 = emergencyRelationCheck.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check3 !== -1 )
   {
     confirmPage.style.left = '-2000px'

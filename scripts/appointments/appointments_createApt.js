@@ -33,15 +33,13 @@ createAptBtn.onclick = () =>
 
   else if ( aptCategory.value === 'New' )
   {
-
-
+    fieldValidators()
     db.collection( 'profiles' ).where( 'aptEmail', '==', aptEmail.value ).onSnapshot( ( querySnapshot ) =>
     {
       if ( querySnapshot.empty )
       {
         db.collection( 'profiles' ).onSnapshot( ( querySnapshot ) =>
         {
-          fieldValidators()
           querySnapshot.forEach( ( doc ) =>
           {
             if ( aptDay.value === doc.data().aptDay && aptTimeSlot.value === doc.data().aptTimeSlot )
