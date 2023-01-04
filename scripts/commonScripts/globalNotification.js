@@ -2,6 +2,7 @@ let body = document.getElementsByTagName( 'body' )
 let openedNotification = document.querySelector( '.openedNotification' )
 let notification = document.querySelector( '.notification' )
 let notificationCenter = document.querySelector( '.notificationCenter' )
+let notificationContent = document.querySelector( '.notificationContent' )
 let theDayD = document.createElement( 'div' )
 let theDayP = document.createElement( 'div' )
 let theDayC = document.createElement( 'div' )
@@ -16,7 +17,7 @@ notificationOpener.onclick = () =>
 
   // Total Appointments of the day 
   let theDay = `
-    <div class="theDay text-gray-300 mt-5">
+    <div class="theDay text-gray-300">
 
           <h1 class="text-xs uppercase text-gray-500 font-semibold mb-5 border-b-2 border-gray-500 pb-1">
             Today
@@ -77,6 +78,6 @@ notificationOpener.onclick = () =>
   theDayC.innerHTML = completed
   final.innerHTML = theDayD.innerHTML + theDayP.innerHTML + theDayC.innerHTML
 
-  notificationCenter.appendChild( final )
+  notificationContent.appendChild( final )
 
 };

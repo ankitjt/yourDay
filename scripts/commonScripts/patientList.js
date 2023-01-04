@@ -22,7 +22,7 @@ let patientList = document.querySelector( '.patientList' ),
                 <li
                     class="text-gray-900 border-b-2 font-semibold border-gray-200 hover:bg-blue-100 ease-in-out duration-300 cursor-pointer patientListItems relative overflow-x-hidden py-2 w-full" title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }'
                     id="listbox-option-0" role="option" data-id="${ doc.id } ">
-                    <div class="flex items-center lg:flex-row px-2 md:flex-col">
+                    <div class="flex items-start lg:items-center lg:flex-row px-2 md:flex-col">
                       <div class='patientListWrapper items-center justify-between flex text-xs'>
                       <span class="font-semibold block truncate optionName tracking-normal">${ doc.data().aptName }</span>
                       <div class="text-blue-500 text-xs ml-2 lowercase ">(${ doc.data().aptEmail })</div>
@@ -55,12 +55,11 @@ const selectingPatientName = ( doc ) =>
     {
       item.onclick = () =>
       {
-
         downArrowPtList.classList.toggle( 'hidden' )
         upArrowPtList.classList.toggle( 'hidden' )
         patientName.innerText = item.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText
         patientName.value = item.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText
-        patientName.setAttribute( 'data-id', doc.id )
+        patientName.setAttribute( 'data-id', item.getAttribute( 'data-id' ) )
         patientList.classList.toggle( 'hidden' )
       }
     }

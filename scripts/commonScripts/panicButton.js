@@ -1,4 +1,4 @@
-let pb = document.querySelector( '.pb' )
+
 pb.onclick = () =>
 {
   let currentTime = new Date()
