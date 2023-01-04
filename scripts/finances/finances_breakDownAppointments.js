@@ -4,8 +4,8 @@ closeSessionsBreakDownWrapper.onclick = () =>
 {
   sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
   sessionsBreakDownWrapper.classList.remove( 'left-0' )
-  pb.classList.add( 'left-2', 'lg:left-5' )
-  pb.classList.remove( 'right-10' )
+  pb.classList.add( 'lg:left-6')
+
 }
 
 const showBreakDownOfAppointments = () =>
@@ -19,8 +19,8 @@ const showBreakDownOfAppointments = () =>
   moneyScheduled.onclick = () =>
   {
     sessionsBreakDownWrapper.classList.add( 'left-0' )
-    pb.classList.remove( 'left-2', 'lg:left-5' )
-    pb.classList.add( 'right-10' )
+    pb.classList.remove('lg:left-6' )
+
     sessionsBreakDown.innerText = ""
     db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
     {
@@ -73,8 +73,7 @@ const showBreakDownOfAppointments = () =>
 
   moneyCompleted.onclick = () =>
   {
-    pb.classList.remove( 'left-2', 'lg:left-5' )
-    pb.classList.add( 'right-10' )
+    pb.classList.remove( 'lg:left-6' )
     sessionsBreakDownWrapper.classList.add( 'left-0' )
     sessionsBreakDown.innerText = ""
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
@@ -134,8 +133,7 @@ const showBreakDownOfAppointments = () =>
 
   moneyPaidCancelled.onclick = () =>
   {
-    pb.classList.remove( 'left-2', 'lg:left-5' )
-    pb.classList.add( 'right-10' )
+    pb.classList.remove( 'lg:left-6' )
     sessionsBreakDown.innerText = ""
     sessionsBreakDownWrapper.classList.add( 'left-0' )
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>
@@ -187,8 +185,7 @@ const showBreakDownOfAppointments = () =>
 
   moneyFreeCancelled.onclick = () =>
   {
-    pb.classList.remove( 'left-2', 'lg:left-5' )
-    pb.classList.add( 'right-10' )
+    pb.classList.remove( 'lg:left-6' )
     sessionsBreakDown.innerText = ""
     sessionsBreakDownWrapper.classList.add( 'left-0' )
     db.collection( "appointments" ).where( "aptName", "==", patientName.innerText ).orderBy( "aptStartDate" ).onSnapshot( ( querySnapshot ) =>

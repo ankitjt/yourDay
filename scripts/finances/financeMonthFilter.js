@@ -25,7 +25,6 @@ financeMonthFilter.onchange = () =>
             totalMoneySessionArr.push( doc.data().aptFees )
             countOfSessions.innerText = totalMoneySessionArr.length
             totalMoneyBySessions.innerText = totalMoneySessionArr.reduce( ( a, b ) => a + b, 0 )
-            console.log(doc.data().aptName, doc.data().aptFees);
         }
 
         // For supervision
