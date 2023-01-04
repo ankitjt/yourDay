@@ -1,24 +1,12 @@
 
 createTwoAptBtn.onclick = () =>
 {
-  console.log( firstStartDate.innerText );
-  console.log(aptStartDate.value, typeof(aptStartDate.value));
-  
-  console.log( firstDaySlot.innerText );
-  console.log(aptDay.value, typeof(aptDay.value));
-  
-  console.log( firstTimeSlot.innerText );
-  console.log(aptTimeSlot.value, typeof(aptTimeSlot.value));
-  
   if ( firstStartDate.innerText === aptStartDate.value || firstDaySlot.innerText === days[aptDay.value -1] )
   {
-
     promptMessages( 'You are giving same details...' )
-
   }
   else
   {
-
     confirmName.innerText = aptName.value.trim()
     confirmEmail.innerText = aptEmail.value.trim()
     confirmMobileNumber.innerText = countryCode.value + '-' + aptMobileNumber.value

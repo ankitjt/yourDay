@@ -1,3 +1,69 @@
+let apt = {
+  name : document.querySelector( '.aptName' ),
+  email : document.querySelector( '.aptEmail' ),
+  mobileNumber : document.querySelector( '.aptMobileNumber' ),
+  startDate : document.querySelector( '.aptStartDate' ),
+  day : document.querySelector( '.aptDay' ),
+  fees : document.querySelector( '.aptFees' ),
+  type : document.querySelector( '.aptType' ),
+  nature : document.querySelector( '.aptNature' ),
+  address : document.querySelector( '.aptAddress' ),
+  occurrenceType : document.querySelector( '.aptOccurrenceType' ),
+  category : document.querySelector( '.aptCategory' ),
+  timeSlot : document.querySelector( '.aptTimeSlot' ),
+  create: document.querySelector( '.createAptBtn' ),
+  countryCode : document.querySelector( ".countryCode" ),
+  dropOption : document.querySelector( ".dropOption" ),
+  countryCodeNumber: document.querySelector( ".countryCodeNumber" ),
+  emergencyName : document.querySelector( ".emergencyName" ),
+  emergencyRelation : document.querySelector( ".emergencyRelation" ),
+  emergencyAddress : document.querySelector( ".emergencyAddress" ),
+  emergencyCountryCode : document.querySelector( ".emergencyCountryCode" ),
+  emergencyMobileNumber : document.querySelector( ".emergencyMobileNumber" ),
+}
+
+let apt__occ2 = {
+  firstDaySlot : document.querySelector( '.firstDaySlot' ),
+  firstDaySlotWrapper : document.querySelector( '.firstDaySlotWrapper' ),
+  firstStartDate : document.querySelector( '.firstStartDate' ),
+  firstStartDateWrapper : document.querySelector( '.firstStartDateWrapper' ),
+  firstTimeSlotWrapper : document.querySelector( '.firstTimeSlotWrapper' ),
+  firstTimeSlot : document.querySelector( '.firstTimeSlot' ),
+  createTwoAptBtn : document.querySelector( '.createTwoAptBtn' ),
+  cancelForOccurrence : document.querySelector( '.cancelForOccurrence' ),
+  editButton : document.querySelector( '.editButton' ),
+}
+
+let apt__confirmPage = {
+  page : document.querySelector( '.confirmPage' ),
+  name : document.querySelector( '.confirmName' ),
+  email : document.querySelector( '.confirmEmail' ),
+  mobileNumber : document.querySelector( '.confirmMobileNumber' ),
+  day : document.querySelector( '.confirmDay' ),
+  startDate : document.querySelector( '.confirmStartDate' ),
+  timeSlot : document.querySelector( '.confirmTimeSlot' ),
+  type : document.querySelector( '.confirmAppointmentType' ),
+  nature : document.querySelector( '.confirmAppointmentNature' ),
+  occurrenceType : document.querySelector( '.confirmOccurrenceType' ),
+  address : document.querySelector( '.confirmAddress' ),
+  category : document.querySelector( '.confirmCategory' ),
+  fees : document.querySelector( '.confirmFees' ),
+  button : document.querySelector( '.confirmButton' ),
+  completed : document.querySelector( '.completed' ),
+  scheduled : document.querySelector( '.scheduled' ),
+  secondStartDate : document.querySelector( ".confirmSecondStartDate" ),
+  secondDay : document.querySelector( ".confirmSecondDay" ),
+  countryCode : document.querySelector( ".confirmCountryCode" ),
+  dropOption : document.querySelector( ".confirmDropOption" ),
+
+  emergencyName : document.querySelector( ".confirmEmergencyName" ),
+  emergencyRelation : document.querySelector( ".confirmEmergencyRelation" ),
+  emergencyAddress : document.querySelector( ".confirmEmergencyAddress" ),
+  emergencyCountryCode : document.querySelector( ".confirmEmergencyCountryCode" ),
+  emergencyMobileNumber : document.querySelector( ".confirmEmergencyMobileNumber" ),
+  secondTimeSlot : document.querySelector( ".confirmSecondTimeSlot" )
+}
+
 let
 
   // Form Field Variables 
