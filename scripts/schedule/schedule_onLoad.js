@@ -1,3 +1,5 @@
+let arr = [];
+let appointmentCount = document.querySelector( ".appointmentCount" );
 ( () =>
 {
 
@@ -14,14 +16,14 @@
 
       if ( aptStartDateMonth === currentMonth || aptStartDateMonth === lastMonth )
       {
-        if ( doc.data().appointmentStatus === 'Pending' )
+        if ( doc.data().appointmentStatus === 'Pending' || doc.data().appointmentStatus === 'Scheduled' )
         {
           
           let appointmentPill = `
               <div
-               class="1 px-3 py-5  rounded-2xl ${ doc.data().aptType === "Session" ? '' : 'bg-transparent' } ${ doc.data().aptType === "New" ? 'bg-rose-100' : '' } border-l-8 border ${ doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ doc.data().aptType === "New" ? 'border-rose-600' : '' } ${ doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ doc.data().aptType === "New" ? 'text-rose-700' : '' } mb-10 drop-shadow-2xl "
+               class="1 px-3 py-5  rounded-2xl ${ doc.data().aptType === "Session" ? '' : 'bg-transparent' } ${ doc.data().aptType === "New" ? 'bg-rose-100' : '' } border-l-8 border ${ doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ doc.data().aptType === "New" ? 'border-rose-600' : '' } ${ doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ doc.data().aptType === "New" ? 'text-rose-700' : '' } mb-5"
          >
-           <div class="details flex flex-col text-lg">
+           <div class="details flex flex-col text-md">
              <div
                class="timeAndDate flex justify-between items-center font-black"
              >
@@ -45,7 +47,7 @@
                  </span>
                </span>
                <div class='flex flex-col justify-between'>
-                <span class="date tracking-wider"> ${ doc.data().aptDay } </span>
+                <span class="date"> ${ doc.data().aptDay } </span>
                </div>
              </div>
              <div class="ptName flex mt-2 items-center justify-between">
@@ -53,13 +55,13 @@
                  <span class="name font-semibold mr-2 capitalize"> ${ doc.data().aptName } </span>
                  <span class="aptDetails flex items-center">
                    <span
-                     class="aptType ${ doc.data().aptType === "Session" ? 'text-emerald-50' : 'text-blue-50' } ${ doc.data().aptType === "New" ? 'text-slate-100' : '' } tracking-wider font-medium ${ doc.data().aptType === "Session" ? 'bg-emerald-700' : 'bg-blue-700' } ${ doc.data().aptType === "New" ? 'bg-rose-700' : '' } px-2 py-1 rounded-full"
+                     class="aptType text-xs ${ doc.data().aptType === "Session" ? 'text-emerald-50' : 'text-blue-50' } font-medium bg-blue-600 px-2 py-1 rounded-full"
                    >
                      ${ doc.data().aptType === "Supervision" ? 'SV' : doc.data().aptType.charAt( 0 ) }
                    </span>
                  </span>
                </div>
-                <span class="status tracking-wider text-red-400"> ${ doc.data().appointmentStatus } </span>
+                <span class="status text-red-500 font-semibold"> ${ doc.data().appointmentStatus } </span>
                </div>
              </div>
            </div>
@@ -76,6 +78,8 @@
         {
           if ( doc.data().appointmentStatus === 'Scheduled' || doc.data().appointmentStatus === 'Updated' || doc.data().appointmentStatus === 'Pending' )
           {
+            arr.push( doc.id )
+            appointmentCount.innerText = `( ${ arr.length} )`
             showingApts( doc, aptStartDate, aptStartDateMonth )
           }
         }
@@ -84,7 +88,4 @@
       appointmentsToUpdate()
     } )
   } )
-
-
-
 } )()

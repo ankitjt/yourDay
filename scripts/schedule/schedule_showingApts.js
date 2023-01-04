@@ -3,8 +3,9 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
 {
   let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
   let currentMonthAppointments = `
+  
   <div class="flex flex-col justify-center align-middle tableRow12">
-              <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-t border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-500 font-semibold" data-id="${ doc.id }">
+              <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-b border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-600 font-semibold" data-id="${ doc.id }">
              
               <span>${ doc.data().aptName }</span>
               <span>${ doc.data().aptTimeSlot }</span>
@@ -49,8 +50,8 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
                   </div> 
               </span>
               <span class="text-right">
-                <select id="countries"
-                  class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-3/4 ml-5 px-2.5 ">
+                <select 
+                  class="aptActions border border-gray-300 text-blue-500 text-xs rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ml-5 px-2.5 ">
                   <option selected>Select</option>
                   <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
                   <option value="Pending" class='font-semibold text-gray-900'>Pending</option>

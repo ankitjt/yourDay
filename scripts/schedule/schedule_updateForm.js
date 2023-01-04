@@ -3,27 +3,29 @@ const updateForm = ( doc ) =>
     let updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' )
 
     let updateForm = /*html*/`
-                        <div class="updateFormWrapper grid grid-cols-1 mt-2">
+                        <div class="updateFormWrapper grid grid-cols-1">
 
-                            <div class="nameUpdate">
+                            <div class="nameUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Name </span>
-                            <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled value="${ doc.data().aptName
-        }" class="border border-gray-200 bg-gray-200 rounded-lg w-full text-md text-gray-500 py-2 lg:drop-shadow-none drop-shadow-2xl mb-3" />
+                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Name: </span>
+                            <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled
+                            value="${ doc.data().aptName}" 
+                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-sm text-blue-600 py-2 lg:drop-shadow-none drop-shadow-2xl font-semibold" />
                             </div>
 
-                            <div class="emailUpdate">
+                            <div class="emailUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Email </span>
-                            <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled value="${ doc.data().aptEmail
-        }" class="border border-gray-200 bg-gray-200 rounded-lg w-full text-md text-gray-500 py-2 lg:drop-shadow-none drop-shadow-2xl mb-3">
+                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Email: </span>
+                            <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled
+                            value="${ doc.data().aptEmail}" 
+                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-sm text-blue-600 py-2 lg:drop-shadow-none drop-shadow-2xl font-semibold">
                             </div>
 
-                            <div class="dayUpdate">
+                            <div class="dayUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900">Day</span>
+                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Day:</span>
                             <select name="aptDay" id="aptDay"
-                            class="dayUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-medium lg:placeholder:text-sm py-2 aptDay lg:drop-shadow-none drop-shadow-2xl text-md mb-3 text-blue-600">
+                            class="dayUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-semibold lg:placeholder:text-sm py-2 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm text-blue-600">
                                 <option value="${ doc.data().aptDay }" class="font-semibold">
                                 ${ doc.data().aptDay }
                                 </option>
@@ -51,13 +53,12 @@ const updateForm = ( doc ) =>
                             </select>
                             </div>
 
-                            <div class="timeSlotUpdate">
+                            <div class="timeSlotUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900"> Time Slot </span>
+                            <span class="mb-3 px-1 text-xs font-medium text-gray-400"> Time Slot: </span>
                             <select name="aptTimeSlot" id="aptTimeSlot"
-                                class="timeSlotUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-medium lg:placeholder:text-sm py-2 aptTimeSlot text-md text-blue-600 mb-3">
-                                <option value="${ doc.data().aptTimeSlot
-        }" class="font-semibold">
+                                class="timeSlotUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-semibold lg:placeholder:text-sm py-2 aptTimeSlot text-sm text-blue-600">
+                                <option value="${ doc.data().aptTimeSlot}" class="font-semibold">
                                 ${ doc.data().aptTimeSlot }
                                 </option>
                                 <option value="09:00 - 10:00" class="font-semibold">
@@ -91,13 +92,13 @@ const updateForm = ( doc ) =>
                             </select>
                             </div>
 
-                            <div class="reasonToUpdate">
-                            <span class="mb-3 px-1 text-xs font-medium text-zinc-900">Reason to Update</span>
-                            <input type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-blue-600 lg:placeholder:text-sm placeholder:font-medium py-2 mb-3 text-sm text-blue-600">
+                            <div class="reasonToUpdate my-3">
+                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Reason to Update:</span>
+                            <textarea type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-blue-600 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-2 text-sm text-blue-600"></textarea>
                             </div>
                             
                         </div>
-                        <div class="updateCancelButtons  mt-5">
+                        <div class="updateCancelButtons mt-5">
                             <button class="bg-emerald-500 updateButton py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-full uppercase">Update</button>
                             <button class="bg-rose-500 cancelUpdateButton ml-2 py-3 px-6 text-white text-xs lg:text-md tracking-widest rounded-full uppercase">Cancel</button>
                         </div>
