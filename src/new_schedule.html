@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay - Schedule</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body class="h-full w-full">
+    
+    <div class="wrapper h-screen flex relative md:p-0 p-2 md:flex bg-gray-800 md:bg-white">
+
+      <!-- Panic Button  -->
+      <span
+        class="pb bg-red-500  p-3 text-2xl animate-bounce  absolute bottom-6  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase right-6 lg:left-6 w-fit ">yD</span>
+
+      <!-- Left Section  -->
+      <div
+        class="leftSection border-r border-gray-300 hidden lg:block md:w-2/6 h-full relative lg:flex lg:items-center lg:justify-center overflow-hidden">
+
+        <!-- Page Image  -->
+        <img src="../assets/schedule4.webp" alt="logo" class="w-auto h-auto" />
+
+        <!-- Update Appointements Section  -->
+        <div
+          class="updateAppointments z-50 absolute w-full md:h-full border-box bottom-0 -left-[2000px] md:flex md:items-center md:justify-between md:flex-col md:py-16 md:px-10 bg-white border-r border-gray-300 overflow-y-auto">
+
+          <div class="updateAppointmentWrapper w-full">
+            <h1 class="text-center font-semibold text-blue-600">Update Appointments</h1>
+          </div>
+          <div class="updateAppointmentsSection w-full"></div>
+          <div class="dummy"></div>
+        </div>
+
+      </div>
+
+      <!-- Right Section  -->
+      <div class="rightSection relative w-full lg:w-5/6 overflow-x-hidden overflow-y-hidden py-6 px-4 md:px-10">
+
+        <!--  (Absolute element 1)   -->
+        <div class="pageBlocker absolute h-full w-full bg-gray-800 opacity-50 left-0 top-0 hidden z-40"></div>
+
+        <!-- Global Notification (Absolute element 2) -->
+        <div class='absolute right-20 bottom-20 bg-red-600 text-white p-3 rounded-md z-50 hidden'>
+          <p>This is a global notification</p>
+        </div>
+
+        <!-- Prompts (Absolute element 3) -->
+        <div class="promptsWrapper absolute z-50 -left-[2000px] px-4 py-6 bg-rose-600 w-inherit rounded-md w-5/6 md:w-4/6 -translate-x-1/2 bottom-20  flex items-center justify-between ease-in-out duration-300"></div>
+
+        <!-- Navbar  -->
+        <div class="navbarWrapper relative my-6 md:my-2">
+          <nav class="navbarContent text-xs w-full flex items-center justify-between text-blue-600"></nav>
+
+          <!--  Navbar Notification Center -->
+          <div
+            class="absolute notificationCenter bg-gray-800 w-4/12 h-fit z-30 p-8 top-8 right-0 rounded-md text-zinc-400 hidden">
+            <div class="notificationContent h-full">
+            
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointment Filters  -->
+        <div class="scheduleFiltersWrapper md:flex md:items-center hidden my-5 ">
+          <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
+            <h3 class="mb-2">
+              <span class="uppercase text-xs text-blue-600 border-blue-600 font-semibold">
+                Find Appointments
+              </span>
+            </h3>
+        
+            <!-- Filter Type -->
+            <section class="scheduleFilters mt-1 font-semibold w-full">
+        
+              <div class="filters flex items-center flex-row justify-between w-full">
+        
+                <div class="filterWrappers grid grid-cols-3 gap-x-5 w-full mr-5">
+        
+                  <!-- Patient List -->
+                  <div class="relative w-full">
+                    <button type="button"
+                      class="patientListButton w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-4 py-3  flex  md:drop-shadow-none md:text-xs md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                      aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
+                      <span class="flex items-center">
+                        <span class="ml-3 truncate selectedPatientName font-semibold flex justify-between items-center">
+                          <span class="patientName" value="By Name">By Name</span>
+                          <span class="patientEmail ml-2"></span>
+                        </span>
+                      </span>
+                      <span class="pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2">
+        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                          stroke="currentColor" class="w-5 h-5 text-red-400 downArrowPtList">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                          stroke="currentColor" class="w-5 h-5 text-red-400 hidden upArrowPtList">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                        </svg>
+        
+                      </span>
+                    </button>
+                    <ul
+                      class="absolute z-50 bg-white mt-2 max-h-56 w-full overflow-auto rounded-md text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm hidden patientList"
+                      tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
+                    </ul>
+                  </div>
+        
+                  <!-- Filter of Months -->
+                  <select name="scheduleFilterMonth" id="monthList"
+                    class="scheduleFilterMonth rounded-md text-blue-600 md:py-3 py-3 border border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-52 md:w-full">
+                    <option selected value="" class="font-semibold">
+                      Select Month
+                    </option>
+                    <option value="1" class="font-semibold">January</option>
+                    <option value="2" class="font-semibold">February</option>
+                    <option value="3" class="font-semibold">March</option>
+                    <option value="4" class="font-semibold">April</option>
+                    <option value="5" class="font-semibold">May</option>
+                    <option value="6" class="font-semibold">June</option>
+                    <option value="7" class="font-semibold">July</option>
+                    <option value="8" class="font-semibold">August</option>
+                    <option value="9" class="font-semibold">September</option>
+                    <option value="10" class="font-semibold">October</option>
+                    <option value="11" class="font-semibold">November</option>
+                    <option value="12" class="font-semibold">December</option>
+                  </select>
+        
+                  <!-- Filter of Appointment Status -->
+                  <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                    class="rounded-md text-blue-600 md:py-3 border border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs scheduleFilterStatus capitalize w-52 md:w-full">
+                    <option value="" class="font-semibold">Status</option>
+                    <option value="Scheduled" class="font-semibold">Scheduled</option>
+                    <option value="Completed" class="font-semibold">Completed</option>
+                    <option value="Cancelled" class="font-semibold">Cancelled</option>
+                    <option value="Pending" class="font-semibold">Pending</option>
+                  </select>
+                </div>
+        
+                <!-- Buttons  -->
+                <div class="div flex items-center ">
+                  <button class="filterFindBtn bg-emerald-500 mx-2 w-16 text-center py-2 text-sm rounded-full">Find</button>
+                  <button
+                    class="filterClearBtn border border-gray-200 w-16 text-center drop-shadow-3xl text-blue-600  py-2 text-sm rounded-full">Clear</button>
+                </div>
+        
+              </div>
+            </section>
+            <div class="helper text-red-500 text-xs font-semibold mt-2">
+              All filters are required.
+            </div>
+          </section>
+        </div>
+
+        <!-- Appointments view on screens smaller than medium   -->
+        <section class="scheduleGalleryView w-full mt-5 px-1 overflow-x-hidden md:hidden block h-5/6">
+        
+        </section>
+
+        <!-- Appointments view on medium and above screens  -->
+        <div class="tableViewWrapper md:block hidden w-full relative my-10 h-4/6">
+          <h3 class="flex justify-between items-center text-xs text-blue-600 font-semibold">
+            <span class="uppercase">
+              Appointments - <span class="appointmentCount ml-1"></span>
+            </span>
+            <span class="text-gray-400 font-medium">Current & last months only.</span>
+          </h3>
+
+          <!-- Update Table  -->
+          <div class="scheduleTable text-xs my-2 md:w-full md:block overflow-x-hidden h-full">
+            <div
+              class="tableHeaders grid grid-cols-6 gap-y-5 text-center border-r border-l border-t border-b border-gray-200 uppercase text-xs font-medium py-5 text-gray-400 rounded-t-xl rounded-t-left-xl rounded-t-right-xl">
+              <span>Name</span>
+              <span>Time</span>
+              <span>Date</span>
+              <span>Type</span>
+              <span>Status</span>
+              <span>Action</span>
+            </div>
+            <div
+              class="scheduleTableRows h-5/6 overflow-x-hidden overflow-y-auto border-l border-r border-b border-gray-200 rounded-b-xl pb-5">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="../scripts/schedule/schedule_commonVariables.js"></script>
+    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+    <script src="../scripts/commonScripts/panicButton.js"></script>
+    <script src="../scripts/schedule/schedule_onLoad.js"></script>
+    <script src="../scripts/schedule/schedule_filterSchedules.js"></script>
+    <script src="../scripts/schedule/schedule_autoUpdatePendingApts.js"></script>
+    <script src="../scripts/schedule/schedule_updateForm.js"></script>
+    <script src="../scripts/schedule/schedule_updateAppointments.js"></script>
+    <script src="../scripts/schedule/schedule_showingApts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
+    <script src="../scripts/commonScripts/globalNotification.js"></script>
+    <script src="../scripts/commonScripts/prompts.js"></script>
+  </body>
+
+</html>
