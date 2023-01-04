@@ -2,9 +2,13 @@ let listButton = document.querySelector( ".listButton" ),
   dropDownList = document.querySelector( '.dropDownList' ),
   listItems = document.querySelectorAll( '.listItems' ),
   optionName = document.querySelector( '.optionName' ),
-  selectedOptionName = document.querySelector( '.selectedOptionName' )
+  selectedOptionName = document.querySelector( '.selectedOptionName' ),
+  someOne
 
-listButton.onclick = () =>
+
+
+
+listButton.onclick = ( e ) =>
 {
   dropDownList.classList.toggle( 'hidden' )
 
@@ -17,3 +21,4 @@ listButton.onclick = () =>
     }
   }
 }
+
