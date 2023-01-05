@@ -17,18 +17,18 @@ notificationOpener.onclick = () =>
 
   // Total Appointments of the day 
   let theDay = `
-    <div class="theDay text-gray-300">
+    <div class="theDay text-blue-600 md:text-gray-300">
 
-          <h1 class="text-xs uppercase text-gray-500 font-semibold mb-5 border-b-2 border-gray-500 pb-1">
+          <h1 class="text-xs uppercase text-blue-600 md:text-gray-500 font-semibold mb-5 border-b md:border-gray-300 border-blue-500 pb-1">
             Today
           </h1>
 
-          <div class="countWrapper text-xs text-gray-500">
+          <div class="countWrapper text-xs text-blue-600 md:text-gray-500 font-medium">
             <div class="sessionForTheDay mb-2 ">
-              You have <b class="text-gray-300">5 sessions</b> today.
+              You have <b class="text-red-400 md:text-gray-300">5 sessions</b> today.
             </div>
             <div class="supervisionForTheDay">
-              You have <b class="text-gray-300">2 supervisions</b> today.
+              You have <b class="text-red-400 md:text-gray-300">2 supervisions</b> today.
             </div>
           </div>
 
@@ -37,18 +37,18 @@ notificationOpener.onclick = () =>
 
   // Total Pending 
   let pending = `
-    <div class="theDay text-gray-300 mt-10">
+    <div class="theDayPending text-blue-600 md:text-gray-300 mt-10">
 
-          <h1 class="text-xs uppercase text-gray-500 font-semibold mb-5 border-b-2 border-gray-500 pb-1">
+          <h1 class="text-xs uppercase text-blue-600 md:text-gray-500 font-semibold mb-5 border-b md:border-gray-300 border-blue-500 pb-1">
             Pending
           </h1>
 
-          <div class="countWrapper text-xs text-gray-500">
+          <div class="countWrapper text-xs text-blue-600 md:text-gray-500 font-medium">
             <div class="pendingSessionForTheDay mb-2 ">
-              You have <b class="text-gray-300">15 sessions</b> pending.
+              You have <b class="text-red-400 md:text-gray-300">15 sessions</b> pending.
             </div>
             <div class="pendingSupervisionForTheDay">
-              You have <b class="text-gray-300">2 supervisions</b> pending.
+              You have <b class="text-red-400 md:text-gray-300">2 supervisions</b> pending.
             </div>
           </div>
 
@@ -56,18 +56,18 @@ notificationOpener.onclick = () =>
   `
   // Total Completed
   let completed = `
-    <div class="theDay text-gray-300 mt-10">
+    <div class="theDay text-blue-600 md:text-gray-300 mt-10">
         
-          <h1 class="text-xs uppercase text-gray-500 font-semibold mb-5 border-b-2 border-gray-500 pb-1">
+          <h1 class="text-xs uppercase text-blue-600 md:text-gray-500 font-semibold mb-5 border-b md:border-gray-300 border-blue-500 pb-1">
             Completed
           </h1>
         
-          <div class="countWrapper text-xs text-gray-500">
+          <div class="countWrapper text-xs text-blue-600 md:text-gray-500 font-medium">
             <div class="completedSessionForTheDay mb-2 ">
-              You have <b class="text-gray-300">5 sessions</b> completed.
+              You have <b class="text-red-400 md:text-gray-300">5 sessions</b> completed.
             </div>
             <div class="completedSupervisionForTheDay">
-              You have <b class="text-gray-300">2 supervisions</b> completed.
+              You have <b class="text-red-400 md:text-gray-300">2 supervisions</b> completed.
             </div>
           </div>
         

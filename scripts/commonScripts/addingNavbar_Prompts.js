@@ -2,7 +2,7 @@ let navbarContent = document.querySelector( ".navbarContent" )
 
 let pageName = window.location.href.split( "/" ).slice( -1 );
 let p = pageName.toLocaleString();
-let s = p.replace('.html', '')
+let pageUrl = p.substring(0,p.indexOf('.'))
 
 navbarContent.innerHTML = `
   <a href="./home.html" class="hover:bg-blue-500 rounded-full">
@@ -13,7 +13,7 @@ navbarContent.innerHTML = `
           </svg>
         </a>
         <div class="rightSideNavbar flex items-center">
-          <span class="tracking-widest font-semibold uppercase">${s}</span>
+          <span class="tracking-widest font-semibold uppercase">${pageUrl}</span>
           <div class="notificationOpener">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
               class="w-4 h-4 ml-5 text-red-400 cursor-pointer notification">
@@ -31,9 +31,9 @@ navbarContent.innerHTML = `
 
 
 promptsWrapper.innerHTML = `
-<section class="prompts flex item-center justify-between w-full">
+<section class="prompts flex items-center justify-between w-full">
         <div class="promptContent font-medium text-slate-50 w-4/6 text-justify"></div>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-50 closePrompts cursor-pointer" viewBox="0 0 20 20"
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 w-full  text-slate-50 closePrompts cursor-pointer" viewBox="0 0 20 20"
           fill="currentColor">
           <path fill-rule="evenodd"
             d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"

@@ -58,8 +58,8 @@ const selectingPatientName = ( doc ) =>
         downArrowPtList.classList.toggle( 'hidden' )
         upArrowPtList.classList.toggle( 'hidden' )
         patientName.innerText = item.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText
-        patientName.value = item.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].innerText
-        patientName.setAttribute( 'data-id', item.getAttribute( 'data-id' ) )
+        let profileID = item.getAttribute( 'data-id' ).trim();
+        patientName.setAttribute( 'data-id', profileID )
         patientList.classList.toggle( 'hidden' )
       }
     }
