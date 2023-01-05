@@ -9,7 +9,7 @@ patientList.onclick = () =>
   else
   {
     reportByName.classList.remove( 'hidden' )
-    getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute( 'data-id' )
+    getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute('data-id')
     console.log(getName);
     let dbRef123456 = db.collection( "profiles" ).doc( getName )
 

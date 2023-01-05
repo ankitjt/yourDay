@@ -22,6 +22,7 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
 
 updateProfileLink.onclick = () =>
 {
+  pb.classList.remove('lg:left-6')
   if ( patientList.value === 'Select' )
   {
     promptMessages( 'Select Patient name.' )
@@ -29,7 +30,7 @@ updateProfileLink.onclick = () =>
   else
   {
     updateProfileWrapper.classList.add( 'left-0' )
-    let getName = patientList.options[ patientList.selectedIndex ].getAttribute( 'data-id' )
+    let getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute( 'data-id' )
 
     db.collection( "profiles" ).doc( getName ).get().then( ( doc ) =>
     {
@@ -52,7 +53,7 @@ updateProfileLink.onclick = () =>
       updateCreateDate.value = doc.data().aptStartDate
       updateCategory.value = doc.data().aptCategory
       updateOccurrence.value = doc.data().aptOccurrenceType
-      updateSlot.value = days[ doc.data().aptDay - 1 ]
+      updateSlot.value = doc.data().aptDay
       updateFees.value = doc.data().aptFees
       let feesToNum = parseInt( updateFees.value )
 
@@ -85,7 +86,7 @@ updateProfileButton.onclick = () =>
   }
   else 
   {
-    let getName = patientList.options[ patientList.selectedIndex ].getAttribute( 'data-id' )
+    let getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute( 'data-id' )
     let dbRef = db.collection( "profiles" ).doc( getName )
 
     dbRef.update( {
