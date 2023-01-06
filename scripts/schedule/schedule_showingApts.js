@@ -32,7 +32,7 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
                       </span>
                     </div>
                     <div class="${ doc.data().appointmentStatus === "Pending" ? "block" : "hidden" }">
-                      <span class="text-amber-600">
+                      <span class="text-amber-600 animate-ping">
                         ${ doc.data().appointmentStatus === undefined ? "Scheduled" : doc.data().appointmentStatus }
                       </span>
                     </div>
