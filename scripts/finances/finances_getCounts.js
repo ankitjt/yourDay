@@ -83,15 +83,31 @@ const getCounts = () =>
                                 d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                             <span class='ml-1'>
-                              ${ totalMoneyFromCompletedSessions === undefined ? 0 : ( totalMoneyFromCompletedSessions + moneyFromPaidCancelledSessions ) }
+                              ${ totalMoneyFromCompletedSessions === undefined ? '-' : ( totalMoneyFromCompletedSessions + moneyFromPaidCancelledSessions ) }
                             </span>
                           </div>
                           </span>
                         </div>
                     </div>
                       `
-          moneyBreakDownWrapper.innerHTML = moneyBreakData
-          showBreakDownOfAppointments()
+          // moneyBreakDownWrapper.innerHTML = moneyBreakData
+          // showBreakDownOfAppointments()
+          console.log( totalScheduled.length );
+          let totalEverything = totalScheduled.length + totalFees.length + totalFreeCancelled.length 
+          if ( totalScheduled.length === undefined || totalScheduled.length === 0 )
+          {
+            moneyBreakDownWrapper.innerHTML = `
+              <div class='h-full w-full p-3 text-center'>
+                <span class='text-red-500'>No sessions are scheduled.</span>
+              </div>
+            `
+          }
+          else
+          {
+            moneyBreakDownWrapper.innerHTML = moneyBreakData
+            showBreakDownOfAppointments()
+            
+          }
         }
       }
 
