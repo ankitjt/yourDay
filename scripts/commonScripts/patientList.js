@@ -3,6 +3,17 @@ let patientList = document.querySelector( '.patientList' ),
   patientEmail = document.querySelector( '.patientEmail' ),
   patientName = document.querySelector( '.patientName' );
 
+// Hiding dropdown on outside click.
+window.onclick = ( e ) =>
+{
+  if ( !e.target.matches( '.patientListButton' ) && !patientList.classList.contains('hidden') )
+  {
+    patientList.classList.add( 'hidden' )
+    upArrowPtList.classList.toggle( 'hidden' )
+    downArrowPtList.classList.toggle( 'hidden' )
+  }
+};
+
 ( () =>
 {
 
