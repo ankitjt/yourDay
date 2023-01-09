@@ -1,15 +1,21 @@
 let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
+
 findDetailsByName.onclick = () =>
 {
-  if ( patientName.innerText === 'By Name' || monthListByName.value === 'Select Month' )
+  profileDetails.innerHTML = ''
+  moneyBreakDownWrapper.innerHTML = ''
+
+  if ( patientName.innerText === 'By Name' || monthListByName.value === 'Select month and year' )
   {
     promptMessages( 'Select name and month.' )
-    patientProfileWrapper.classList.add('hidden')
+    patientProfileWrapper.classList.add( 'hidden' )
   }
   else
   {
     patientProfileWrapper.classList.remove( 'hidden' )
-    
+
+
+
     db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
@@ -18,47 +24,63 @@ findDetailsByName.onclick = () =>
         {
           let profileDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
           let profile = `
-                <div class="profileName flex items-center justify-between mb-2">
-                  <span class="nameTag">Name</span>
-                  <span class="name ml-2 tracking-widest capitalize">${ doc.data().aptName }</span>
+                <div class="profileName flex  flex-col mb-3">
+                  <span class="nameTag text-gray-400 font-medium text-xs">Name</span>
+                  <span class="name capitalize">${ doc.data().aptName }</span>
                 </div>
-                <div class="profileEmail flex items-center justify-between mb-2">
-                  <span class="emailTag">Email</span>
-                  <span class="email ml-2 tracking-widest">${ doc.data().aptEmail }</span>
+                <div class="profileEmail flex text-right flex-col mb-3">
+                  <span class="emailTag text-gray-400 font-medium text-xs">Email</span>
+                  <span class="email">${ doc.data().aptEmail }</span>
                 </div>
-                <div class="profileAddress flex items-center justify-between mb-2">
-                  <span class="AddressTag">Address</span>
-                  <span class="ml-2 tracking-widest">${ doc.data().aptAddress === undefined ? "NA" : doc.data().aptAddress }</span>
+                <div class="profileAddress flex   flex-col mb-3">
+                  <span class="AddressTag text-gray-400 font-medium text-xs">Address</span>
+                  <span class="address">${ doc.data().aptAddress === undefined ? "NA" : doc.data().aptAddress }</span>
                 </div>
-                <div class="profileMobileNumber flex items-center justify-between mb-2">
-                  <span class="mobileTag">Mobile</span>
-                  <span class="mobileNumber ml-2 tracking-widest">+91-${ doc.data().aptMobileNumber }</span>
+                <div class="profileMobileNumber flex text-right flex-col mb-3">
+                  <span class="mobileTag text-gray-400 font-medium text-xs">Mobile</span>
+                  <span class="mobileNumber">+91-${ doc.data().aptMobileNumber }</span>
                 </div>
-                <div class="profileStartDate flex items-center justify-between mb-2">
-                  <span class="startDateTag">Start Date</span>
-                  <span class="startDate ml-2 tracking-widest">${ doc.data().aptStartDate }</span>
+                <div class="profileStartDate flex   flex-col mb-3">
+                  <span class="startDateTag text-gray-400 font-medium text-xs">Start Date</span>
+                  <span class="startDate">${ doc.data().aptStartDate }</span>
                 </div>
-                <div class="profileFee flex items-center justify-between mb-2">
-                  <span class="feeTag">Fee</span>
-                  <span class="fee ml-2 tracking-widest">${ doc.data().aptFees }</span>
+                <div class="e_name flex   flex-col text-right mb-3">
+                  <span class="e_nameTag text-gray-400 font-medium text-xs">Emergency Name</span>
+                  <span class="startDate">${ doc.data().emergencyName === undefined ? 'NA' : doc.data().emergencyName }</span>
                 </div>
-                <div class="profileCategory flex items-center justify-between mb-2">
-                  <span class="categoryTag">Category</span>
-                  <span class="category ml-2 tracking-widest">${ doc.data().aptType }</span>
+                <div class="e_relation flex   flex-col mb-3">
+                  <span class="e_relationTag text-gray-400 font-medium text-xs">Patient Relation</span>
+                  <span class="startDate">${ doc.data().patientRelation === undefined ? 'NA' : doc.data().patientRelation }</span>
                 </div>
-                <div class="profileCategory flex items-center justify-between mb-2">
-                  <span class="categoryTag">Occurrence ( per week )</span>
-                  <span class="category ml-2">${ doc.data().aptOccurrenceType }</span>
+                <div class="e_moblieNumber flex text-right  flex-col mb-3">
+                  <span class="e_moblieNumberTag text-gray-400 font-medium text-xs">Emergency Mobile Number</span>
+                  <span class="startDate">${ doc.data().emergencyMobileNumber === undefined ? 'NA' : doc.data().emergencyMobileNumber }</span>
                 </div>
-                <div class="profileCategory flex items-center justify-between ">
-                  <span class="categoryTag">Profile Created on</span>
-                  <span class="category ml-2">${ profileDate.getDate() }-${ profileDate.getMonth() + 1 }-${ profileDate.getFullYear() }, ${ profileDate.getHours() }:${ profileDate.getMinutes() }</span>
+                <div class="e_address flex  flex-col mb-3">
+                  <span class="e_addressTag text-gray-400 font-medium text-xs">Emergency Address</span>
+                  <span class="startDate">${ doc.data().emergencyAddress === undefined ? 'NA' : doc.data().emergencyAddress }</span>
+                </div>
+                <div class="profileFee flex text-right  flex-col mb-3">
+                  <span class="feeTag text-gray-400 font-medium text-xs">Fee</span>
+                  <span class="fee">${ doc.data().aptFees }</span>
+                </div>
+                <div class="profileCategory flex  flex-col mb-3">
+                  <span class="categoryTag text-gray-400 font-medium text-xs">Category</span>
+                  <span class="category">${ doc.data().aptType }</span>
+                </div>
+                <div class="profileCategory flex text-right flex-col mb-3">
+                  <span class="categoryTag text-gray-400 font-medium text-xs">Occurrence ( per week )</span>
+                  <span class="category">${ doc.data().aptOccurrenceType }</span>
+                </div>
+                <div class="profileCategory flex  flex-col">
+                  <span class="categoryTag text-gray-400 font-medium text-xs">Profile Created on</span>
+                  <span class="category">${ profileDate.getDate() }-${ profileDate.getMonth() + 1 }-${ profileDate.getFullYear() }, ${ profileDate.getHours() }:${ profileDate.getMinutes() }</span>
                 </div>
                 
               `
           profileDetails.innerHTML = profile
+          getCounts()
         }
-        getCounts()
       } )
     } )
 

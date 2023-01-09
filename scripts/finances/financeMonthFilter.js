@@ -3,7 +3,7 @@ let financeMonthFilter = document.querySelector( '.financeMonthFilter' ),
   totalMoneyBySessions = document.querySelector( '.totalMoneyBySessions' ),
   countOfSupervisions = document.querySelector( '.countOfSupervisions' ),
   totalMoneyBySupervisions = document.querySelector( '.totalMoneyBySupervisions' )
-  
+
 
 financeMonthFilter.onchange = () =>
 {
@@ -21,10 +21,11 @@ financeMonthFilter.onchange = () =>
         // For sessions
         if ( doc.data().aptType === 'Session' && doc.data().appointmentStatus === 'Completed' && doc.data().softDelete !== true )
         {
-          
-            totalMoneySessionArr.push( doc.data().aptFees )
-            countOfSessions.innerText = totalMoneySessionArr.length
-            totalMoneyBySessions.innerText = totalMoneySessionArr.reduce( ( a, b ) => a + b, 0 )
+
+          totalMoneySessionArr.push( doc.data().aptFees )
+          countOfSessions.innerText = totalMoneySessionArr.length
+          totalMoneyBySessions.classList.add( 'ml-2' )
+          totalMoneyBySessions.innerText = totalMoneySessionArr.reduce( ( a, b ) => a + b, 0 )
         }
 
         // For supervision
@@ -34,6 +35,7 @@ financeMonthFilter.onchange = () =>
 
           totalMoneySupervisionArr.push( doc.data().aptFees )
           countOfSupervisions.innerText = totalMoneySupervisionArr.length
+          totalMoneyBySupervisions.classList.add('ml-2')
           totalMoneyBySupervisions.innerText = totalMoneySupervisionArr.reduce( ( a, b ) => a + b, 0 )
 
         }
@@ -41,7 +43,7 @@ financeMonthFilter.onchange = () =>
       }
       else
       {
-        
+
       }
     } )
   } )
