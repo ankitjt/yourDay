@@ -20,7 +20,12 @@ const appointmentsToUpdate = () =>
             appointmentStatus: 'Completed',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
-          setTimeout(location.reload(), 5000)
+
+          const test = setTimeout( reload123, 3000);
+          function reload123 ()
+          {
+            location.reload()
+          }
         }
         else
         {
@@ -36,7 +41,11 @@ const appointmentsToUpdate = () =>
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
 
           } )
-          setTimeout( location.reload(), 5000 )
+          const test = setTimeout( reload123, 3000 )
+          function reload123 ()
+          {
+            location.reload()
+          }
         }
         else
         {
@@ -51,7 +60,11 @@ const appointmentsToUpdate = () =>
             appointmentStatus: 'Free Cancelled',
             statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
           } )
-          setTimeout( location.reload(), 5000 )
+          const test = setTimeout( reload123, 3000 )
+          function reload123 ()
+          {
+            location.reload()
+          }
         }
         else
         {

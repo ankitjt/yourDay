@@ -13,12 +13,12 @@ const getCounts = () =>
 
     let totalMoneyFromCompletedSessions,
       moneyFromPaidCancelledSessions,
-      moneyBreakData;
+      moneyBreakData
 
     querySnapshot.forEach( ( doc ) =>
     {
       let newDateFormat = new Date( doc.data().aptStartDate * 1000 )
-      let monthYear = monthListByName.value;
+      let monthYear = monthListByName.value
 
       let monthYearArr = monthYear.split( '-' )
       let finalMonth
@@ -26,7 +26,7 @@ const getCounts = () =>
 
       // console.log( monthYear, typeof ( monthYear ), ( newDateFormat.getMonth() + 1 ), typeof ( ( newDateFormat.getMonth() + 1 ) ), newDateFormat.getFullYear(), typeof ( newDateFormat.getFullYear() ) );
 
-      newDateFormat.getMonth() + 1 < 10 ? finalMonth = '0' + ( newDateFormat.getMonth() + 1 ) : finalMonth = ( newDateFormat.getMonth() + 1 ).toString();
+      newDateFormat.getMonth() + 1 < 10 ? finalMonth = '0' + ( newDateFormat.getMonth() + 1 ) : finalMonth = ( newDateFormat.getMonth() + 1 ).toString()
 
 
       if ( finalMonth === monthYearArr[ 1 ] && finalYear.toString() === monthYearArr[ 0 ] )
@@ -34,7 +34,7 @@ const getCounts = () =>
 
         if ( patientName.innerText === doc.data().aptName )
         {
-          console.log( monthYear, typeof ( monthYear ), ( newDateFormat.getMonth() + 1 ), typeof ( ( newDateFormat.getMonth() + 1 ) ), newDateFormat.getFullYear(), typeof ( newDateFormat.getFullYear() ) );
+          console.log( monthYear, typeof ( monthYear ), ( newDateFormat.getMonth() + 1 ), typeof ( ( newDateFormat.getMonth() + 1 ) ), newDateFormat.getFullYear(), typeof ( newDateFormat.getFullYear() ) )
 
           namesArr.push( doc.data().aptName )
           console.log( doc.data().appointmentStatus )
@@ -109,20 +109,16 @@ const getCounts = () =>
           moneyBreakDownWrapper.innerHTML = moneyBreakData
           showBreakDownOfAppointments()
         }
-
       }
 
-      else if ( finalMonth !== monthYearArr[ 1 ] && finalYear.toString() !== monthYearArr[ 0 ] )
-      {
-        moneyBreakDownWrapper.innerHTML = `
-              <div class='h-full w-full p-3 text-center'>
-                <span class='text-red-500'>No appointments are scheduled.</span>
-              </div>
-            `
-      }
-
-
-
+      // else if ( finalMonth !== monthYearArr[ 1 ] && finalYear.toString() !== monthYearArr[ 0 ] )
+      // {
+      //   moneyBreakDownWrapper.innerHTML = `
+      //         <div class='h-full w-full p-3 text-center'>
+      //           <span class='text-red-500'>No appointments are scheduled.</span>
+      //         </div>
+      //       `
+      // }
     } )
   } )
 }

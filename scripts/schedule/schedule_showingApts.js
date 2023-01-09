@@ -7,7 +7,10 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
   <div class="flex flex-col justify-center align-middle tableRow12">
               <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-b border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-600 font-semibold" data-id="${ doc.id }">
              
-              <span>${ doc.data().aptName }</span>
+              <span>
+                <span class='scheduleName'>${ doc.data().aptName } </span>
+                <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ doc.data().aptEmail } </span>
+              </span>
               <span>${ doc.data().aptTimeSlot }</span>
               <span>
                 <span> ${ doc.data().aptDay}, </span>
