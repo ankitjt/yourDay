@@ -2,6 +2,8 @@ let
   profileDetails = document.querySelector( ".profileDetails" ),
   totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
   moneyBreakDownWrapper = document.querySelector( ".moneyBreakDownWrapper" ),
+  financeMonthFilterByName = document.querySelector( ".financeMonthFilterByName" ),
+  clearScreen = document.querySelector( ".clearScreen" ),
   findDetailsByName = document.querySelector( ".findDetailsByName" ),
   countOfSessionsIndividual = document.querySelector( ".countOfSessionsIndividual" ),
   monthListByName = document.querySelector( ".monthListByName" ),

@@ -18,31 +18,23 @@ const getCounts = () =>
     querySnapshot.forEach( ( doc ) =>
     {
       let newDateFormat = new Date( doc.data().aptStartDate * 1000 )
-      let monthYear = monthListByName.value
+      let monthYear = financeMonthFilterByName.value
 
       let monthYearArr = monthYear.split( '-' )
       let finalMonth
       let finalYear = newDateFormat.getFullYear()
-
-      // console.log( monthYear, typeof ( monthYear ), ( newDateFormat.getMonth() + 1 ), typeof ( ( newDateFormat.getMonth() + 1 ) ), newDateFormat.getFullYear(), typeof ( newDateFormat.getFullYear() ) );
-
       newDateFormat.getMonth() + 1 < 10 ? finalMonth = '0' + ( newDateFormat.getMonth() + 1 ) : finalMonth = ( newDateFormat.getMonth() + 1 ).toString()
-
 
       if ( finalMonth === monthYearArr[ 1 ] && finalYear.toString() === monthYearArr[ 0 ] )
       {
-
         if ( patientName.innerText === doc.data().aptName )
         {
-          console.log( monthYear, typeof ( monthYear ), ( newDateFormat.getMonth() + 1 ), typeof ( ( newDateFormat.getMonth() + 1 ) ), newDateFormat.getFullYear(), typeof ( newDateFormat.getFullYear() ) )
-
           namesArr.push( doc.data().aptName )
-          console.log( doc.data().appointmentStatus )
+          console.log( doc.data().appointmentStatus, newDateFormat.getDate(), newDateFormat.getMonth() + 1, newDateFormat.getFullYear() )
 
           if ( doc.data().appointmentStatus === "Scheduled" || doc.data().appointmentStatus === 'Pending' )
           {
             totalScheduled.push( doc.data().appointmentStatus )
-
           }
 
           if ( doc.data().appointmentStatus === "Paid Cancelled" )
@@ -50,7 +42,6 @@ const getCounts = () =>
             totalPaidCancelled.push( doc.data().appointmentStatus )
             moneyFromPaidCancelledArray.push( doc.data().aptFees )
             moneyFromPaidCancelledSessions = moneyFromPaidCancelledArray.reduce( ( a, b ) => a + b, 0 )
-
           }
 
           if ( doc.data().appointmentStatus !== "Paid Cancelled" )
@@ -109,16 +100,16 @@ const getCounts = () =>
           moneyBreakDownWrapper.innerHTML = moneyBreakData
           showBreakDownOfAppointments()
         }
+        // else 
+        // {
+        //   moneyBreakDownWrapper.innerHTML = `
+        //        <div class='h-full w-full p-3 text-center'>
+        //          <span class='text-red-500'>No appointments are scheduled.</span>
+        //        </div>
+        //      `
+        // }
       }
 
-      // else if ( finalMonth !== monthYearArr[ 1 ] && finalYear.toString() !== monthYearArr[ 0 ] )
-      // {
-      //   moneyBreakDownWrapper.innerHTML = `
-      //         <div class='h-full w-full p-3 text-center'>
-      //           <span class='text-red-500'>No appointments are scheduled.</span>
-      //         </div>
-      //       `
-      // }
     } )
   } )
 }

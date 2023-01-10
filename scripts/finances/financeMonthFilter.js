@@ -9,14 +9,20 @@ financeMonthFilter.onchange = () =>
 {
   let totalMoneySessionArr = [],
     totalMoneySupervisionArr = []
+  
+  let monthYear = financeMonthFilter.value
+  let monthYearArr = monthYear.split( '-' )
+  
+
   db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
   {
     querySnapshot.forEach( ( doc ) =>
     {
       let getMonth = new Date( doc.data().aptStartDate * 1000 )
       let monthForDb = getMonth.getMonth() + 1
+      let finalYear = getMonth.getFullYear()
 
-      if ( financeMonthFilter.value === monthForDb.toString() )
+      if ( monthYearArr[1] === monthForDb.toString() && monthYearArr[0] === finalYear.toString() )
       {
         // For sessions
         if ( doc.data().aptType === 'Session' && doc.data().appointmentStatus === 'Completed' && doc.data().softDelete !== true )
