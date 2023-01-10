@@ -1,5 +1,4 @@
 let arr = [];
-let appointmentCount = document.querySelector( ".appointmentCount" );
 ( () =>
 {
 

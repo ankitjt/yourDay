@@ -2,6 +2,9 @@ let aptsDb = db.collection( 'appointments' )
 let profileDb = db.collection( 'profiles' )
 let scheduleTableRows = document.querySelector( '.scheduleTableRows' )
 let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
+let monthYearArr = document.querySelector( '.monthYearArr' )
+let aptsRange = document.querySelector( '.aptsRange' )
+let appointmentCount = document.querySelector( '.appointmentCount' )
 let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
 
 let scheduleGalleryView = document.querySelector( '.scheduleGalleryView' ),
