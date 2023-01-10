@@ -75,76 +75,64 @@
         <section class="mt-5 px-1 flex flex-col justify-center tracking-wide">
           <h3 class="mb-2">
             <span class="uppercase text-xs tracking-widest text-blue-600 border-blue-600 font-semibold">
-              By month
+              By month and year
             </span>
           </h3>
 
-          <!-- Filter Type ( By month ) -->
 
-          <section class="monthFilter mb-5 md:grid md:grid-cols-2 md:gap-x-10">
-            <select name="monthList" id="monthList"
-              class="form-select border-blue-600 md:border-gray-200 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800 financeMonthFilter">
-              <option selected value="All Time" class="font-semibold">
-                All Time
-              </option>
-              <option value="1" class="font-semibold">January</option>
-              <option value="2" class="font-semibold">February</option>
-              <option value="3" class="font-semibold">March</option>
-              <option value="4" class="font-semibold">April</option>
-              <option value="5" class="font-semibold">May</option>
-              <option value="6" class="font-semibold">June</option>
-              <option value="7" class="font-semibold">July</option>
-              <option value="8" class="font-semibold">August</option>
-              <option value="9" class="font-semibold">September</option>
-              <option value="10" class="font-semibold">October</option>
-              <option value="11" class="font-semibold">November</option>
-              <option value="12" class="font-semibold">December</option>
-            </select>
-          </section>
+          <!-- Month and year filter -->
+          <div class="grid md:grid-cols-2 md:gap-x-10">
 
-          <!-- Total Money Count -->
-
-          <div class="moneyCount md:grid md:gap-x-10 md:grid-cols-2 text-white">
-            <!-- Sessions Money -->
-
-            <div
-              class="sessionsWrapper flex justify-between px-3 py-4 mb-3 items-center bg-indigo-600 text-xs md:text-sm rounded-md font-medium">
-              <span class="sessions flex flex-col">
-                <span class="totalSessions"> Total Sessions </span>
-                <span class="totalSessionsCount mt-1">
-                  <span class="countOfSessions"></span>
-                </span>
-              </span>
-              <span class="moneyBySessions flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="totalMoneyBySessions tracking-widest"></span>
-              </span>
+            <input type="text" name="" id=""
+              class="financeMonthFilter w-full h-fit relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:py-4 py-3 text-xs md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+              placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+            <div class="dummy"></div>
             </div>
 
-            <!-- Supervision Money -->
+            <!-- Total Money Count -->
+            <div class="moneyCount sm:grid md:w-full sm:gap-x-10 sm:grid-cols-2 mt-5 text-white">
 
-            <div
-              class="supervisionWrapper flex justify-between px-3 py-4 mb-3 items-center bg-blue-600 text-xs md:text-sm rounded-md font-medium">
-              <span class="supervision flex flex-col">
-                <span class="totalSupervision"> Total Supervision </span>
-                <span class="totalSessionsCount mt-1">
-                  <span class="countOfSupervisions"></span>
+              <!-- Sessions Money -->
+              <div
+                class="sessionsWrapper flex justify-between px-3 py-4 mb-3 items-center bg-indigo-600 text-xs md:text-sm rounded-md font-medium">
+                <span class="sessions flex flex-col">
+                  <span class="totalSessions"> Total Sessions </span>
+                  <span class="totalSessionsCount mt-1">
+                    <span class="countOfSessions"></span>
+                  </span>
                 </span>
-              </span>
-              <span class="moneyBySupervision flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span class="totalMoneyBySupervisions tracking-widest"></span>
-              </span>
+                <span class="moneyBySessions flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="totalMoneyBySessions tracking-widest"></span>
+                </span>
+              </div>
+
+              <!-- Supervision Money -->
+              <div
+                class="supervisionWrapper flex justify-between px-3 py-4 mb-3 items-center bg-blue-600 text-xs md:text-sm rounded-md font-medium">
+                <span class="supervision flex flex-col">
+                  <span class="totalSupervision"> Total Supervision </span>
+                  <span class="totalSessionsCount mt-1">
+                    <span class="countOfSupervisions"></span>
+                  </span>
+                </span>
+                <span class="moneyBySupervision flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span class="totalMoneyBySupervisions tracking-widest"></span>
+                </span>
+              </div>
+
             </div>
-          </div>
+
+          
         </section>
 
         <!-- Breakdown by Name  -->
@@ -159,17 +147,15 @@
 
           <section class="monthFilter mb-5 flex flex-col">
 
-            <div class="grid grid-cols-2 md:gap-x-10 w-full">
-
-             
+            <div class="grid sm:grid-cols-2 sm:gap-x-10 gap-y-5 w-full">
 
               <!-- Patient List  -->
               <div class="relative w-full">
                 <button type="button"
-                  class="patientListButton w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-4 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                  class="patientListButton w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:py-4 py-3 flex md:drop-shadow-none text-xs md:bg-transparent text-blue-600 bg-gray-800"
                   aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
                   <span class="flex items-center">
-                    <span class="ml-3 truncate selectedPatientName font-semibold flex justify-between items-center">
+                    <span class="ml-3 truncate selectedPatientName flex justify-between items-center">
                       <span class="patientName" value="By Name">By Name</span>
                       <span class="patientEmail ml-2"></span>
                     </span>
@@ -193,40 +179,17 @@
                 </ul>
               </div>
 
-              <!-- Months -->
-              <!-- <select name="monthListByName" id="monthList"
-                class="monthListByName border-blue-600 md:border-gray-200 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
-                <option selected value="Select Month" class="md:font-semibold text-xs md:text-base">
-                  Month
-                </option>
-                <option value="1" class="md:font-semibold text-xs md:text-base">January</option>
-                <option value="2" class="md:font-semibold text-xs md:text-base">February</option>
-                <option value="3" class="md:font-semibold text-xs md:text-base">March</option>
-                <option value="4" class="md:font-semibold text-xs md:text-base">April</option>
-                <option value="5" class="md:font-semibold text-xs md:text-base">May</option>
-                <option value="6" class="md:font-semibold text-xs md:text-base">June</option>
-                <option value="7" class="md:font-semibold text-xs md:text-base">July</option>
-                <option value="8" class="md:font-semibold text-xs md:text-base">August</option>
-                <option value="9" class="md:font-semibold text-xs md:text-base">September</option>
-                <option value="10" class="md:font-semibold text-xs md:text-base">October</option>
-                <option value="11" class="md:font-semibold text-xs md:text-base">November</option>
-                <option value="12" class="md:font-semibold text-xs md:text-base">December</option>
-              </select> -->
-
-              <input type="text" name="" id="" class="monthListByName w-full relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-4 py-3  flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')"/>
+              <!-- Month and year filter -->
+              <input type="text" name="" id="" value=""
+                class="financeMonthFilterByName w-full h-fit relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:py-4 py-3 text-xs md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
             </div>
 
             <div class="flex align-center mt-5">
               <button
-                class="findDetailsByName bg-blue-600 px-4 py-2 text-sm rounded-full hidden md:block">Search</button>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor"
-                class="w-7 h-7 ml-4 align-middle text-white md:hidden bg-blue-600 rounded-md findDetailsByName cursor-pointer">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-
+                class="findDetailsByName font-medium bg-green-600 px-4 py-2 text-sm rounded-full block">Find</button>
+                <button class="clearScreen bg-transparent bg-gray-100 drop-shadow-3xl sm:text-blue-600 font-medium px-4 py-2 ml-5 text-sm rounded-full block">Clear</button>
             </div>
           </section>
 
@@ -236,7 +199,7 @@
         <div class="patientProfileWrapper hidden">
           <section
             class="profile md:text-blue-600 md:font-semibold text-sm my-2 border-gray-200 border-2 text-blue-600 rounded-md">
-            <div class="profileDetails py-4 px-4 md:grid md:grid-cols-2 md:gap-x-10 justify-between">
+            <div class="profileDetails py-4 grid grid-cols-1 gap-x-10 sm:grid-cols-3 px-10">
             </div>
 
           </section>
@@ -265,15 +228,14 @@
     <!-- Page Scripts  -->
     <script src="../scripts/finances/finances_constants.js"></script>
     <script src="../scripts/finances/finances_getCounts.js"></script>
+    <script src="../scripts/finances/financeMonthFilter.js"></script>
     <script src="../scripts/finances/finances_detailsByName.js"></script>
     <script src="../scripts/finances/finances_breakDownAppointments.js"></script>
-    <script src="../scripts/finances/financeMonthFilter.js"></script>
 
     <!-- Global notificaiton and prompts -->
     <script src="../scripts/commonScripts/globalNotification.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
     <script src="../scripts/commonScripts/panicButton.js"></script>
-    <script src="../scripts/commonScripts/commonFunctions.js"></script>
   </body>
 
 </html>

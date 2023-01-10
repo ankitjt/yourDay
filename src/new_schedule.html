@@ -111,25 +111,10 @@
                     </ul>
                   </div>
         
-                  <!-- Filter of Months -->
-                  <select name="scheduleFilterMonth" id="monthList"
-                    class="scheduleFilterMonth rounded-md text-blue-600 md:py-3 py-3 border border-gray-200 outline-none focus:border-blue-600 focus:ring-blue-600 text-xs w-52 md:w-full">
-                    <option selected value="" class="font-semibold">
-                      Month
-                    </option>
-                    <option value="1" class="font-semibold">January</option>
-                    <option value="2" class="font-semibold">February</option>
-                    <option value="3" class="font-semibold">March</option>
-                    <option value="4" class="font-semibold">April</option>
-                    <option value="5" class="font-semibold">May</option>
-                    <option value="6" class="font-semibold">June</option>
-                    <option value="7" class="font-semibold">July</option>
-                    <option value="8" class="font-semibold">August</option>
-                    <option value="9" class="font-semibold">September</option>
-                    <option value="10" class="font-semibold">October</option>
-                    <option value="11" class="font-semibold">November</option>
-                    <option value="12" class="font-semibold">December</option>
-                  </select>
+                  <!-- Month and year filter -->
+                  <input type="text" name="" id="" value=""
+                    class="scheduleFilterMonth w-full h-fit relative border-blue-600 md:border-gray-200 border rounded-md  placeholder:text-blue-600 md:font-semibold md:py-4 py-3 text-xs md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                    placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
         
                   <!-- Filter of Appointment Status -->
                   <select name="scheduleFilterStatus" id="scheduleFilterStatus"
@@ -146,7 +131,7 @@
                 <div class="div flex items-center ">
                   <button class="filterFindBtn bg-emerald-500 mx-2 w-16 text-center py-2 text-sm rounded-full">Find</button>
                   <button
-                    class="filterClearBtn border border-gray-200 w-16 text-center drop-shadow-3xl text-blue-600  py-2 text-sm rounded-full">Clear</button>
+                    class="filterClearBtn w-16 text-center bg-gray-100 text-blue-600  py-2 text-sm rounded-full">Clear</button>
                 </div>
         
               </div>
@@ -168,13 +153,13 @@
             <span class="uppercase">
               Appointments - <span class="appointmentCount ml-1"></span>
             </span>
-            <span class="text-gray-400 font-medium">Current & last months only.</span>
+            <span class="text-gray-400 font-medium aptsRange">Current & last months only.</span>
           </h3>
 
           <!-- Update Table  -->
-          <div class="scheduleTable text-xs my-2  md:w-full md:block overflow-x-hidden h-full">
+          <div class="scheduleTable text-xs my-2 md:w-full md:block overflow-x-hidden h-full">
             <div
-              class="tableHeaders grid grid-cols-6 gap-y-5 text-center border-r border-l border-t border-b border-gray-200 uppercase text-xs font-medium py-5 text-gray-400 rounded-t-xl rounded-t-left-xl rounded-t-right-xl">
+              class="tableHeaders grid grid-cols-6 gap-y-5 text-center border-r border-l border-t border-b border-gray-200 uppercase text-xs font-medium py-5 text-gray-400 rounded-t-xl rounded-t-left-xl rounded-t-right-xl px-2">
               <span>Name</span>
               <span>Time</span>
               <span>Date</span>
