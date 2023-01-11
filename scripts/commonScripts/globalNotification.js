@@ -7,7 +7,24 @@ let theDayD = document.createElement( 'div' )
 let theDayP = document.createElement( 'div' )
 let theDayC = document.createElement( 'div' )
 let final = document.createElement( 'div' )
-let notificationOpener = document.querySelector('.notificationOpener')
+let finalWrapper = document.createElement( 'finalWrapper' )
+let notificationOpener = document.querySelector( '.notificationOpener' )
+
+// Hiding notification center on outside click.
+window.onclick = ( e ) =>
+{
+
+  if ( !e.target.matches( '.notification' ) &&
+    !e.target.matches( '.notificationCenter' ) &&
+    !e.target.matches( '.notificationContent' ) &&
+    !notificationCenter.classList.contains( 'hidden' ) )
+  {
+    notificationCenter.classList.add( 'hidden' )
+    openedNotification.classList.toggle( 'hidden' )
+    notification.classList.toggle( 'hidden' )
+  }
+};
+
 
 notificationOpener.onclick = () =>
 {
@@ -56,7 +73,7 @@ notificationOpener.onclick = () =>
   `
   // Total Completed
   let completed = `
-    <div class="theDay text-blue-600 md:text-gray-300 mt-10">
+    <div class="theDayCompleted text-blue-600 md:text-gray-300 mt-10">
         
           <h1 class="text-xs uppercase text-blue-600 md:text-gray-500 font-semibold mb-5 border-b md:border-gray-300 border-blue-500 pb-1">
             Completed
@@ -77,7 +94,10 @@ notificationOpener.onclick = () =>
   theDayP.innerHTML = pending
   theDayC.innerHTML = completed
   final.innerHTML = theDayD.innerHTML + theDayP.innerHTML + theDayC.innerHTML
+  final.classList.add( 'finalWrapper' )
 
   notificationContent.appendChild( final )
 
 };
+
+
