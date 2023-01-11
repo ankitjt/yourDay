@@ -10,7 +10,6 @@ patientList.onclick = () =>
   {
     reportByName.classList.remove( 'hidden' )
     getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute('data-id')
-    console.log(getName);
     let dbRef123456 = db.collection( "profiles" ).doc( getName )
 
     // Getting user profile details.
