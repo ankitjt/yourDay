@@ -3,32 +3,42 @@ confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
 
-  let newDate = new Date( confirmStartDate.innerText )
+  let newDate = new Date( apt.startDate.value )
   let newDateInSeconds = newDate / 1000
   let appointmentsDates = [ newDateInSeconds ]
-  createProfile()
+  // createProfile()
+  let userDate = apt.startDate.value;
+  let splits = userDate.split( '-' )
+  console.log( splits );
 
   for ( let i = 0; i < 5; i++ )
   {
     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-    appointmentsDates.push( futureAppointments )
-
-    db.collection( 'appointments' ).add( {
-      aptName: confirmName.innerText,
-      aptEmail: confirmEmail.innerText,
-      aptMobileNumber: confirmMobileNumber.innerText,
-      aptDay: confirmDay.innerText,
-      aptSecondDay: "NA",
-      aptTimeSlot: confirmTimeSlot.innerText,
-      aptSecondTimeSlot: "NA",
-      aptType: confirmAppointmentType.innerText,
-      aptStartDate: appointmentsDates[ i ],
-      aptSecondStartDate: "NA",
-      appointmentStatus: 'Scheduled',
-      aptFees: Number( confirmFees.innerText ),
-      serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
-      statusUpdatedTimeStamp: ""
-    } )
+    let some = futureAppointments / 1000;
+    let futureNewDate = new Date( some )
+    console.log(futureNewDate);
+    let futureDate = futureNewDate.getDate()
+    let futureMonth = futureNewDate.getMonth() + 1
+    let futureYear = futureNewDate.getFullYear()
+    let final = futureDate.toString()+futureMonth.toString()+futureYear.toString()
+    appointmentsDates.push( final )
+    // console.log(appointmentsDates);
+    // db.collection( 'appointments' ).add( {
+    //   aptName: confirmName.innerText,
+    //   aptEmail: confirmEmail.innerText,
+    //   aptMobileNumber: confirmMobileNumber.innerText,
+    //   aptDay: confirmDay.innerText,
+    //   aptSecondDay: "NA",
+    //   aptTimeSlot: confirmTimeSlot.innerText,
+    //   aptSecondTimeSlot: "NA",
+    //   aptType: confirmAppointmentType.innerText,
+    //   aptStartDate: appointmentsDates[ i ],
+    //   aptSecondStartDate: "NA",
+    //   appointmentStatus: 'Scheduled',
+    //   aptFees: Number( confirmFees.innerText ),
+    //   serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+    //   statusUpdatedTimeStamp: ""
+    // } )
 
   }
 
@@ -52,34 +62,34 @@ confirmButton.onclick = ( e ) =>
 
 }
 
-const createProfile = () =>
-{
+// const createProfile = () =>
+// {
 
-  db.collection( "profiles" ).add(
-    {
-      aptCategory: confirmCategory.innerText,
-      aptName: confirmName.innerText,
-      aptEmail: confirmEmail.innerText,
-      aptMobileNumber: confirmMobileNumber.innerText,
-      aptDay: confirmDay.innerText,
-      aptSecondDay: "NA",
-      aptStartDate: confirmStartDate.innerText,
-      aptTimeSlot: confirmTimeSlot.innerText,
-      aptSecondTimeSlot: "NA",
-      aptType: confirmAppointmentType.innerText,
-      aptAddress: confirmAddress.innerText,
-      aptNature: confirmAppointmentNature.innerText,
-      aptOccurrenceType: confirmOccurrenceType.innerText,
-      aptSecondStartDate: "NA",
-      aptFees: confirmFees.innerText,
-      appointmentStatus: 'Scheduled',
-      emergencyName: confirmEmergencyName.innerText,
-      patientRelation: confirmEmergencyRelation.innerText,
-      emergencyMobileNumber: confirmEmergencyMobileNumber.innerText,
-      emergencyAddress: confirmEmergencyAddress.innerText,
-      profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
-    }
-  )
-  let createdTime = firebase.firestore.FieldValue.serverTimestamp()
-    triggerAppointmentMail()
-}
+//   db.collection( "profiles" ).add(
+//     {
+//       aptCategory: confirmCategory.innerText,
+//       aptName: confirmName.innerText,
+//       aptEmail: confirmEmail.innerText,
+//       aptMobileNumber: confirmMobileNumber.innerText,
+//       aptDay: confirmDay.innerText,
+//       aptSecondDay: "NA",
+//       aptStartDate: confirmStartDate.innerText,
+//       aptTimeSlot: confirmTimeSlot.innerText,
+//       aptSecondTimeSlot: "NA",
+//       aptType: confirmAppointmentType.innerText,
+//       aptAddress: confirmAddress.innerText,
+//       aptNature: confirmAppointmentNature.innerText,
+//       aptOccurrenceType: confirmOccurrenceType.innerText,
+//       aptSecondStartDate: "NA",
+//       aptFees: confirmFees.innerText,
+//       appointmentStatus: 'Scheduled',
+//       emergencyName: confirmEmergencyName.innerText,
+//       patientRelation: confirmEmergencyRelation.innerText,
+//       emergencyMobileNumber: confirmEmergencyMobileNumber.innerText,
+//       emergencyAddress: confirmEmergencyAddress.innerText,
+//       profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
+//     }
+//   )
+//   let createdTime = firebase.firestore.FieldValue.serverTimestamp()
+//     triggerAppointmentMail()
+// }

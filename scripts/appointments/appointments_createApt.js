@@ -61,7 +61,7 @@ apt.create.onclick = () =>
             }
           } )
         } )
-
+        
         let aptStartDate1 = new Date( apt.startDate.value )
         let currentMonth = aptStartDate1.getMonth() + 1
         let currentYear = aptStartDate1.getFullYear()
