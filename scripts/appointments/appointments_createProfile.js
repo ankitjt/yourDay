@@ -3,26 +3,34 @@ confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
 
+  // Getting selected date in the array 
   let newDate = new Date( apt.startDate.value )
-  let newDateInSeconds = newDate / 1000
-  let appointmentsDates = [ newDateInSeconds ]
+  let firstDay = newDate.getDate().toString()
+  let firstMonth = (newDate.getMonth() + 1).toString()
+  let firstYear = newDate.getFullYear().toString()
+  let appointmentDate = [ firstDay ]
+  let appointmentMonth = [ firstMonth ]
+  let appointmentYear = [ firstYear ]
   // createProfile()
-  let userDate = apt.startDate.value;
-  let splits = userDate.split( '-' )
-  console.log( splits );
+ 
 
   for ( let i = 0; i < 5; i++ )
   {
+
+    // Getting future Date, Month, Year .
     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-    let some = futureAppointments / 1000;
-    let futureNewDate = new Date( some )
-    console.log(futureNewDate);
-    let futureDate = futureNewDate.getDate()
-    let futureMonth = futureNewDate.getMonth() + 1
-    let futureYear = futureNewDate.getFullYear()
-    let final = futureDate.toString()+futureMonth.toString()+futureYear.toString()
-    appointmentsDates.push( final )
-    // console.log(appointmentsDates);
+    let some = futureAppointments
+    let someTimes = new Date( some * 1000 )
+
+    let futureDate = someTimes.getDate().toString()
+    appointmentDate.push( futureDate )
+    
+    let futureMonth = (someTimes.getMonth() + 1).toString()
+    appointmentMonth.push( futureMonth )
+    
+    let futureYear = someTimes.getFullYear().toString()
+    appointmentYear.push( futureYear )
+
     // db.collection( 'appointments' ).add( {
     //   aptName: confirmName.innerText,
     //   aptEmail: confirmEmail.innerText,
