@@ -20,6 +20,7 @@ let apt = {
   emergencyAddress : document.querySelector( ".emergencyAddress" ),
   emergencyCountryCode : document.querySelector( ".emergencyCountryCode" ),
   emergencyMobileNumber : document.querySelector( ".emergencyMobileNumber" ),
+  relationDetails : document.querySelector( ".relationDetails" )
 }
 
 let apt__occ2 = {
