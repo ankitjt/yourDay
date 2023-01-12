@@ -40,7 +40,7 @@
 
         <!-- Prompts (Absolute element 3) -->
         <div
-          class="promptsWrapper absolute z-50 -left-[2000px] px-4 py-6 bg-rose-600 w-inherit rounded-full w-5/6 md:w-4/6 -translate-x-1/2 bottom-20  flex items-center justify-between ease-in-out duration-300">
+          class="promptsWrapper absolute z-50 -left-[2000px] p-6 bg-rose-600 w-inherit rounded-full w-5/6 md:w-4/6 -translate-x-1/2 bottom-20  flex items-center justify-between ease-in-out duration-300">
         </div>
 
         <!-- Navbar  -->
@@ -820,25 +820,25 @@
                     <option value="" class="md:font-semibold text-xs md:text-base">
                       Pick a day
                     </option>
-                    <option value="1" class="md:font-semibold text-xs md:text-base">
+                    <option value="Monday" class="md:font-semibold text-xs md:text-base">
                       Monday
                     </option>
-                    <option value="2" class="md:font-semibold text-xs md:text-base">
+                    <option value="Tuesday" class="md:font-semibold text-xs md:text-base">
                       Tuesday
                     </option>
-                    <option value="3" class="md:font-semibold text-xs md:text-base">
+                    <option value="Wednesday" class="md:font-semibold text-xs md:text-base">
                       Wednesday
                     </option>
-                    <option value="4" class="md:font-semibold text-xs md:text-base">
+                    <option value="Thursday" class="md:font-semibold text-xs md:text-base">
                       Thursday
                     </option>
-                    <option value="5" class="md:font-semibold text-xs md:text-base">
+                    <option value="Friday" class="md:font-semibold text-xs md:text-base">
                       Friday
                     </option>
-                    <option value="6" class="md:font-semibold text-xs md:text-base">
+                    <option value="Saturday" class="md:font-semibold text-xs md:text-base">
                       Saturday
                     </option>
-                    <option value="7" class="md:font-semibold text-xs md:text-base">
+                    <option value="Sunday" class="md:font-semibold text-xs md:text-base">
                       Sunday
                     </option>
                   </select>
@@ -915,14 +915,49 @@
                 <div class="mb-3">
                   <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
                     aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                    class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyName md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                    class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyName md:drop-shadow-none md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
                 </div>
 
                 <!-- Emergency Contact Relation -->
                 <div class="mb-3">
-                  <input type="text" placeholder="Relation" name="emergencyRelation" id="emergencyRelation"
-                    aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                    class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyRelation md:drop-shadow-none  md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                  <div class="relative">
+                    <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                      class="emergencyRelation border-blue-500 md:border-gray-300 border  rounded-md w-full placeholder:text-blue-600 md:font-medium text-sm py-4 md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800">
+                      <option value="" class="md:font-semibold text-xs md:text-base">
+                        Select Relation
+                      </option>
+                      <option value="Father" class="md:font-semibold text-xs md:text-base">
+                        Father
+                      </option>
+                      <option value="Mother" class="md:font-semibold text-xs md:text-base">
+                        Mother
+                      </option>
+                      <option value="Brother" class="md:font-semibold text-xs md:text-base">
+                        Brother
+                      </option>
+                      <option value="Sister" class="md:font-semibold text-xs md:text-base">
+                        Sister
+                      </option>
+                      <option value="GrandFather" class="md:font-semibold text-xs md:text-base">
+                        GrandFather
+                      </option>
+                      <option value="GrandMother" class="md:font-semibold text-xs md:text-base">
+                        GrandMother
+                      </option>
+                      <option value="Uncle" class="md:font-semibold text-xs md:text-base">
+                        Uncle
+                      </option>
+                      <option value="Aunt" class="md:font-semibold text-xs md:text-base">
+                        Aunt
+                      </option>
+                      <option value="Friend" class="md:font-semibold text-xs md:text-base">
+                        Friend
+                      </option>
+                      <option value="Others" class="md:font-semibold text-xs md:text-base">
+                        Others
+                      </option>
+                    </select>
+                  </div>
                 </div>
 
                 <!-- Emergency Contact Number -->
@@ -1587,7 +1622,14 @@
                 <div class="mb-3">
                   <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
                     aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                    class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyAddress md:drop-shadow-none  md:text-base md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                    class="border-blue-500 border  rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium text-sm py-4 emergencyAddress md:drop-shadow-none  md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                </div>
+
+                <!-- Relation Details  -->
+                <div class="mb-3">
+                  <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off" name="relationDetails"
+                    id="relationDetails" title="Relation Details"
+                    class="left-0 -bottom-16  border rounded-md w-full placeholder:text-white md:placeholder:text-blue-600 border-red-500 md:font-medium text-sm py-4 relationDetails md:drop-shadow-none md:bg-transparent md:text-blue-600 bg-gray-800 text-white hidden" />
                 </div>
               </div>
             </div>
@@ -1649,14 +1691,14 @@
     <script src="../scripts/commonScripts/commonVariables.js"></script>
     <script src="../scripts/appointments/appointments_variables.js"></script>
     <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-
+    
     <!-- Page scripts  -->
     <script src="../scripts/appointments/appointments_secondOcc.js"></script>
     <script src="../scripts/appointments/appointments_createTwoApts.js"></script>
     <script src="../scripts/appointments/appointments_createProfile.js"></script>
     <script src="../scripts/appointments/appointmentFieldCheck.js"></script>
     <script src="../scripts/appointments/appointments_createApt.js"></script>
-
+    
     <!-- Global notificaiton and prompts -->
     <script src="../scripts/commonScripts/globalNotification.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
