@@ -2,7 +2,7 @@ let arr = [];
 ( () =>
 {
 
-  aptsDb.orderBy( 'aptStartDate', 'desc' ).get().then( ( querySnapshot ) =>
+  aptsDb.orderBy( 'aptStartDate', 'desc').get().then( ( querySnapshot ) =>
   {
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>

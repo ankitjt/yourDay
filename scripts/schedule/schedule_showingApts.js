@@ -1,5 +1,5 @@
 // Showing appointments of current and previous month.
-const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
+const showingApts = ( doc ) =>
 {
   let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
   let currentMonthAppointments = `
@@ -14,7 +14,7 @@ const showingApts = ( doc, aptStartDate, aptStartDateMonth ) =>
               <span>${ doc.data().aptTimeSlot }</span>
               <span>
                 <span> ${ doc.data().aptDay}, </span>
-                <span>${ aptStartDate.getDate() }-${ aptStartDateMonth }-${ aptStartDate.getFullYear() } </span>
+                <span>${ doc.data().aptStartDate }-${ doc.data().aptStartMonth }-${ doc.data().aptStartYear } </span>
               </span>
               <span>${ doc.data().aptType }</span>
               <span>
