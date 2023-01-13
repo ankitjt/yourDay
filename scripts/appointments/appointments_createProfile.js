@@ -11,6 +11,9 @@ confirmButton.onclick = ( e ) =>
   let appointmentDate = [ firstDay ]
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
+  let newDateInSec = newDate / 1000
+  console.log(newDateInSec);
+  let dateInMills = [newDateInSec]
 
   // createProfile()
 
@@ -19,6 +22,8 @@ confirmButton.onclick = ( e ) =>
 
     // Getting future Date, Month, Year .
     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
+    dateInMills.push( futureAppointments )
+    console.log(dateInMills);
     let some = futureAppointments
     let someTimes = new Date( some * 1000 )
 
@@ -35,6 +40,7 @@ confirmButton.onclick = ( e ) =>
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
 
+
     // Appointment with One Occurrence
     // db.collection( 'appointments' ).add( {
     //   aptName: apt.name.value,
@@ -45,6 +51,7 @@ confirmButton.onclick = ( e ) =>
     //   aptTimeSlot: apt.timeSlot.value,
     //   aptSecondTimeSlot: "NA",
     //   aptType: apt.type.value,
+    //   dateInMills: futureAppoinments[i],
     //   aptStartDate: appointmentDate[ i ],
     //   aptStartMonth: appointmentMonth[ i ],
     //   aptStartYear: appointmentYear[ i ],
@@ -83,6 +90,9 @@ confirmButton.onclick = ( e ) =>
 
 const createProfile = () =>
 {
+  let relativeName = apt.relationDetails.value
+  let finalRelativeName = relativeName.charAt( 0 ).toUpperCase() + relativeName.slice( 1 )
+  let finalRealtion = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + finalRelativeName
 
   db.collection( "profiles" ).add(
     {
@@ -103,7 +113,7 @@ const createProfile = () =>
       aptFees: [ apt.fees.value ],
       appointmentStatus: 'Scheduled',
       emergencyName: [ apt.emergencyName.value ],
-      patientRelation: [ apt.emergencyRelation.value ],
+      patientRelation: [ finalRealtion ],
       emergencyMobileNumber: [ apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value ],
       emergencyAddress: [ apt.emergencyAddress.value ],
       profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
