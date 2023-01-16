@@ -16,7 +16,7 @@ apt.create.onclick = () =>
   let checkForDay = new Date( apt.startDate.value )
 
   //Check for same time slot
-  let userTimeSlot = apt.timeSlot.value;
+  let userTimeSlot = apt.timeSlot.value
   let splitSlot = userTimeSlot.split( '-' )
   let trimmedSlot = splitSlot.map( str => str.trim() )
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
@@ -34,6 +34,7 @@ apt.create.onclick = () =>
   let currentHour = currentDate.getHours()
   let finalCurrentDate = new Date( currentYear, currentMonth, currentDay )
 
+  console.log( typeof ( Number( apt.occurrenceType.value ) ) )
 
   // Empty Fields check 
   if (
@@ -61,7 +62,12 @@ apt.create.onclick = () =>
     promptMessages( 'All fields are required.' )
   }
 
-  else if ( days[ checkForDay.getDay() - 1 ] !== apt.day.value )
+  else if ( finalUserDateCheck < finalCurrentDate )
+  {
+    promptMessages( 'You cannot select an old date.' )
+  }
+
+  else if ( days[ checkForDay.getDay() ] !== apt.day.value )
   {
     promptMessages( 'Start date and Day slot does not match.' )
   }
@@ -71,21 +77,24 @@ apt.create.onclick = () =>
     promptMessages( 'All fields are required.' )
   }
 
-  else if ( finalHourSplit < currentHour && finalUserDateCheck <= finalCurrentDate )
+  else if ( finalHourSplit <= currentHour && finalUserDateCheck <= finalCurrentDate )
   {
-    promptMessages( 'If selected start date is today, then ensure time slot is greater than current hour.' )
+    promptMessages( 'If selected start date is today then ensure time slot is greater than current hour.' )
   }
 
-  else if ( apt.occurrenceType.value > 2 && apt.occurrenceType.value < 1 )
+  else if ( Number( apt.occurrenceType.value ) > 2 || Number( apt.occurrenceType.value < 1 ) )
   {
-    apt__confirmPage.page.style.left = '-2000px'
     promptMessages( 'Occurrence cannot be more than 2 or less than 1.' )
+  }
+
+  else if ( apt.occurrenceType.value === '2' )
+  {
+    forSecondOccurrenceType()
   }
 
   else if ( apt.category.value === 'New' )
   {
     fieldValidators()
-
     db.collection( 'profiles' ).where( 'aptEmail', '==', apt.email.value ).onSnapshot( ( querySnapshot ) =>
     {
       if ( querySnapshot.empty )
@@ -94,17 +103,46 @@ apt.create.onclick = () =>
         {
           querySnapshot.forEach( ( doc ) =>
           {
-            if ( apt.day.value === doc.data().aptDay && apt.timeSlot.value === doc.data().aptTimeSlot )
+            let latestAptDay = doc.data().aptDay[doc.data().aptDay.length - 1]
+            let latestTimeSlot = doc.data().aptTimeSlot[doc.data().aptTimeSlot.length - 1]
+            if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
             {
               // apt__confirmPage.page.style.left = '-2000px'
               promptMessages( 'Slot is already filled.' )
             }
-            else if ( apt.occurrenceType.value === '2' )
+
+            else
             {
-              // apt__confirmPage.page.style.left = '-2000px'
-              forSecondOccurrenceType()
+              let aptStartDate1 = new Date( apt.startDate.value )
+              let currentMonth = aptStartDate1.getMonth() + 1
+              let currentYear = aptStartDate1.getFullYear()
+              let currentDay = aptStartDate1.getDate()
+              let finalCurrentDate = currentDay + ' - ' + currentMonth + ' - ' + currentYear
+              let aptEmailOfUser = apt.email.value
+              let correctEmail = aptEmailOfUser.toLowerCase()
+
+              apt__confirmPage.name.innerText = aptName.value.trim()
+              apt__confirmPage.email.innerText = correctEmail.trim()
+              apt__confirmPage.mobileNumber.innerText = apt.countryCode.value + '-' + apt.mobileNumber.value
+              apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
+              apt__confirmPage.secondStartDate.innerText = "NA"
+              apt__confirmPage.day.innerText = apt.day.value
+              apt__confirmPage.secondDay.innerText = "NA"
+              apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
+              apt__confirmPage.secondTimeSlot.innerText = "NA"
+              apt__confirmPage.fees.innerText = apt.fees.value
+              apt__confirmPage.address.innerText = apt.address.value
+              apt__confirmPage.type.innerText = apt.type.value
+              apt__confirmPage.nature.innerText = apt.nature.value
+              apt__confirmPage.occurrenceType.innerText = apt.occurrenceType.value
+              apt__confirmPage.category.innerText = apt.category.value
+              apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
+              apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
+              apt__confirmPage.emergencyMobileNumber.innerText = apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value
+              apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
+              apt__confirmPage.page.classList.remove( '-left-[2000px]' )
+              apt__confirmPage.page.classList.add( 'left-0' )
             }
-      
           } )
         } )
       }
@@ -113,40 +151,5 @@ apt.create.onclick = () =>
         promptMessages( 'Email is already registered.' )
       }
     } )
-
-
-  }
-
-  else if ( apt.category.value === 'New' && apt.type.value !== '' )
-  {
-    let aptStartDate1 = new Date( apt.startDate.value )
-    let currentMonth = aptStartDate1.getMonth() + 1
-    let currentYear = aptStartDate1.getFullYear()
-    let currentDay = aptStartDate1.getDate()
-    let finalCurrentDate = currentDay + ' - ' + currentMonth + ' - ' + currentYear
-    let aptEmailOfUser = apt.email.value
-    let correctEmail = aptEmailOfUser.toLowerCase()
-
-    apt__confirmPage.name.innerText = aptName.value.trim()
-    apt__confirmPage.email.innerText = correctEmail.trim()
-    apt__confirmPage.mobileNumber.innerText = apt.countryCode.value + '-' + apt.mobileNumber.value
-    apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
-    apt__confirmPage.secondStartDate.innerText = "NA"
-    apt__confirmPage.day.innerText = apt.day.value
-    apt__confirmPage.secondDay.innerText = "NA"
-    apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
-    apt__confirmPage.secondTimeSlot.innerText = "NA"
-    apt__confirmPage.fees.innerText = apt.fees.value
-    apt__confirmPage.address.innerText = apt.address.value
-    apt__confirmPage.type.innerText = apt.type.value
-    apt__confirmPage.nature.innerText = apt.nature.value
-    apt__confirmPage.occurrenceType.innerText = apt.occurrenceType.value
-    apt__confirmPage.category.innerText = apt.category.value
-    apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
-    apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value ).tocapitlize()
-    apt__confirmPage.emergencyMobileNumber.innerText = apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value
-    apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
-    apt__confirmPage.page.classList.remove( '-left-[2000px]' )
-    apt__confirmPage.page.classList.add( 'left-0' )
   }
 }
