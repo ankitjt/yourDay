@@ -1,7 +1,10 @@
 const updatePendingAps = ( doc, aptStartDate ) =>
 {
+
   let currentDate = new Date()
-  if ( aptStartDate < currentDate && doc.data().appointmentStatus === 'Scheduled' )
+  let x = new Date()
+  
+  if ( aptStartDate < currentDate )
   {
     let targetRecord = aptsDb.doc( doc.id )
     targetRecord.update( {

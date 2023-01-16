@@ -12,7 +12,6 @@ confirmButton.onclick = ( e ) =>
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
   let newDateInSec = newDate / 1000
-  console.log( newDateInSec )
   let dateInMills = [ newDateInSec ]
 
   createProfile()
@@ -58,7 +57,7 @@ confirmButton.onclick = ( e ) =>
       aptSecondStartDate: "NA",
       appointmentStatus: 'Scheduled',
       aptFees: apt.fees.value,
-      serverTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+      serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
       statusUpdatedTimeStamp: ""
     } )
 
@@ -116,7 +115,7 @@ const createProfile = () =>
       patientRelation: [ finalRelation ],
       emergencyMobileNumber: [ apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value ],
       emergencyAddress: [ apt.emergencyAddress.value ],
-      profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp(),
+      profileCreatedOn: firebase.firestore.Timestamp.fromDate( new Date() ),
       profileUpdatedOn: [ 'NA' ],
       softDelete: false,
     }

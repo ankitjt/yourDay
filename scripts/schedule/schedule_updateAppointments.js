@@ -18,10 +18,10 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Completed',
-            statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
           } )
 
-          const test = setTimeout( reload123, 3000);
+          const test = setTimeout( reload123, 3000 )
           function reload123 ()
           {
             location.reload()
@@ -38,7 +38,7 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Paid Cancelled',
-            statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp(),
+            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
 
           } )
           const test = setTimeout( reload123, 3000 )
@@ -58,7 +58,7 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Free Cancelled',
-            statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
           } )
           const test = setTimeout( reload123, 3000 )
           function reload123 ()
@@ -101,7 +101,7 @@ const appointmentsToUpdate = () =>
                 aptTimeSlot: timeSlotUpdateHolder.value,
                 aptOccurrenceType: occurrenceUpdateHolder.value,
                 appointmentStatus: 'Updated',
-                statusUpdatedTimeStamp: firebase.firestore.FieldValue.serverTimestamp()
+                statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
               } )
 
               updateAppointments.style.right = '-2000px'
