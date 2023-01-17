@@ -1,10 +1,12 @@
 const fieldValidators = () =>
 {
+
+  // Name check.
   let userName = aptName.value
   let check1 = userName.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check1 !== -1 )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Name should be only be alphabetic.' )
   }
 
@@ -14,14 +16,12 @@ const fieldValidators = () =>
   let currentDay = currentDate.getDate()
   let finalCurrentDate = new Date( currentYear, currentMonth, currentDay )
 
-
-
-
+  // Emergency Name check.
   let emergencyNameCheck = emergencyName.value
   let check2 = emergencyNameCheck.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check2 !== -1 )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Name should be only be alphabetic.' )
   }
 
@@ -29,59 +29,48 @@ const fieldValidators = () =>
   let check3 = emergencyRelationCheck.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check3 !== -1 )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Relation should be only be alphabetic.' )
   }
 
-
-
+  // Email format check.
   if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( aptEmail.value ) !== true )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Incorrect Email format. Format should be abc@xyz.com' )
   }
 
+  // Mobile number lenght check.
   let firstMobileNumber = aptMobileNumber.value
   let secondMobileNumber = emergencyMobileNumber.value
 
   if ( firstMobileNumber.length > 10 || firstMobileNumber.length < 5 )
   {
-    confirmPage.classList.add( '-left-[2000px]' )
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Mobile Number should be more than 5 and less than 10 numbers.' )
   }
 
   if ( secondMobileNumber.length > 10 || secondMobileNumber.length < 5 )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Emergency Mobile Number should be more than 5 and less than 10 numbers.' )
   }
 
-  if ( aptName.value === emergencyName.value )
-  {
-    // confirmPage.style.left = '-2000px'
-    promptMessages( 'Patient name and Emergency contact name cannot be same.' )
-  }
+  // Name and emergency name check. 
+  
 
+  // Mobile and emergency Mobile check. 
   if ( aptMobileNumber.value === emergencyMobileNumber.value )
   {
-    // confirmPage.style.left = '-2000px'
     promptMessages( 'Patient mobile number and Emergency contact mobile number cannot be same.' )
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
   }
 
-  if ( aptAddress.value === emergencyAddress.value )
-  {
-    // confirmPage.style.left = '-2000px'
-    promptMessages( 'Patient address and Emergency contact address cannot be same.' )
-  }
-
+  // Apt date less than current date check. 
   let startDate = new Date( aptStartDate.value )
-
   if ( startDate < finalCurrentDate )
   {
-    // confirmPage.style.left = '-2000px'
+    apt__confirmPage.page.classList.add( '-left-[2000px]' )
     promptMessages( 'Start Date cannot be less than current Date.' )
   }
-
-
-
 }

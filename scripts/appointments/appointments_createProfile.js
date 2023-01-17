@@ -22,7 +22,6 @@ confirmButton.onclick = ( e ) =>
     // Getting future Date, Month, Year .
     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
     dateInMills.push( futureAppointments )
-    console.log( dateInMills )
     let some = futureAppointments
     let someTimes = new Date( some * 1000 )
 

@@ -13,6 +13,7 @@ emergencyRelation.onchange = () =>
 
 apt.create.onclick = () =>
 {
+  
   let checkForDay = new Date( apt.startDate.value )
 
   //Check for same time slot
@@ -34,7 +35,7 @@ apt.create.onclick = () =>
   let currentHour = currentDate.getHours()
   let finalCurrentDate = new Date( currentYear, currentMonth, currentDay )
 
-  console.log( typeof ( Number( apt.occurrenceType.value ) ) )
+  
 
   // Empty Fields check 
   if (
@@ -92,27 +93,47 @@ apt.create.onclick = () =>
     forSecondOccurrenceType()
   }
 
-  else if ( apt.category.value === 'New' )
+  //Checking home relative address
+  else if ( apt.emergencyRelation.value !== 'Father' && apt.emergencyRelation.value !== 'Mother' && apt.emergencyRelation.value !== 'Sister' && apt.emergencyRelation.value !== 'Brother' )
   {
-    fieldValidators()
+    if ( aptAddress.value === emergencyAddress.value )
+    {
+      promptMessages( 'Patient address and Emergency contact address cannot be same as they are not family member.' )
+    }
+  }
+    
+  else if ( aptName.value === emergencyName.value )
+  {
+   
+    promptMessages( 'Patient name and Emergency contact name cannot be same.' )
+  }
+    
+  fieldValidators();
+
+  if ( apt.category.value === 'New' )
+  {
+    
     db.collection( 'profiles' ).where( 'aptEmail', '==', apt.email.value ).onSnapshot( ( querySnapshot ) =>
     {
       if ( querySnapshot.empty )
       {
+        
         db.collection( 'profiles' ).onSnapshot( ( querySnapshot ) =>
         {
           querySnapshot.forEach( ( doc ) =>
           {
-            let latestAptDay = doc.data().aptDay[doc.data().aptDay.length - 1]
-            let latestTimeSlot = doc.data().aptTimeSlot[doc.data().aptTimeSlot.length - 1]
+            
+            let latestAptDay = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
+            let latestTimeSlot = doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ]
             if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
             {
-              // apt__confirmPage.page.style.left = '-2000px'
+              apt__confirmPage.page.classList.add( '-left-[2000px]' )
               promptMessages( 'Slot is already filled.' )
             }
 
             else
             {
+              
               let aptStartDate1 = new Date( apt.startDate.value )
               let currentMonth = aptStartDate1.getMonth() + 1
               let currentYear = aptStartDate1.getFullYear()
