@@ -1,24 +1,11 @@
-let listButton = document.querySelector( ".listButton" ),
-  dropDownList = document.querySelector( '.dropDownList' ),
-  listItems = document.querySelectorAll( '.listItems' ),
-  optionName = document.querySelector( '.optionName' ),
-  selectedOptionName = document.querySelector( '.selectedOptionName' ),
-  someOne
 
+let submit = document.querySelector( '.submit' )
+let str1 = document.querySelector( '.str1' )
+let str2 = document.querySelector( '.str2' )
+let outputBox = document.querySelector( '.outputBox' )
 
-
-
-listButton.onclick = ( e ) =>
+submit.onclick = () =>
 {
-  dropDownList.classList.toggle( 'hidden' )
-
-  for ( let item of listItems )
-  {
-    item.onclick = () =>
-    {
-      selectedOptionName.innerText = item.childNodes[ 1 ].innerText
-      dropDownList.classList.toggle( 'hidden' )
-    }
-  }
+  outputBox.innerHTML = `<p>${ str1.value }</p> <p> ${ str2.value }</p>`
+  validateFields();
 }
-

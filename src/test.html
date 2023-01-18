@@ -15,20 +15,22 @@
 
   <body>
     <div
-      class="appointments h-screen w-screen bg-no-repeat bg-cover bg-center relative px-6 py-5 lg:p-0 flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between">
+      class="relative flex flex-col w-screen h-screen px-6 py-5 overflow-auto overflow-x-hidden bg-center bg-no-repeat bg-cover appointments lg:p-0 lg:flex-row lg:justify-between">
       <!-- Only for Desktop -->
-      <div class="banner-holder lg:w-2/5 lg:h-screen lg:block hidden">
-        <img src="../assets/notes2.webp" alt="logo" class="h-screen w-auto" />
+      <div class="hidden banner-holder lg:w-2/5 lg:h-screen lg:block">
+        <img src="../assets/notes2.webp" alt="logo" class="w-auto h-screen" />
       </div>
 
-      <div class="notesWrapper lg:p-8 pb-20 relative">
-        <input type="text" class="str1" />
-        <input type="text" class="str2" />
-        <button class="submit bg-red-500 p-2 text-white">Check</button>
+      <div class="relative w-3/5 p-6 notesWrapper">
+        <input type="text" class="str1" value=""/>
+        <input type="text" class="str2" value=""/>
+        <button class="p-2 text-white bg-red-500 submit">Check</button>
+        <div class="mt-5 outputBox"></div>
       </div>
     </div>
     <script src="../scripts/commonScripts/commonVariables.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
+    <script src="../scripts//test2.js"></script>
     <script src="../scripts/test.js"></script>
   </body>
 
