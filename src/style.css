@@ -63,3 +63,7 @@ input:-webkit-autofill:focus {
 input[data-autocompleted] {
     background-color: transparent !important;
 }
+
+.promptsWrapper > :first-child {
+    margin-top: auto !important;
+}
