@@ -1,4 +1,3 @@
-
 confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
@@ -13,6 +12,7 @@ confirmButton.onclick = ( e ) =>
   let appointmentYear = [ firstYear ]
   let newDateInSec = newDate / 1000
   let dateInMills = [ newDateInSec ]
+  let convertFees = parseInt( apt.fees.value )
 
   createProfile()
 
@@ -39,34 +39,35 @@ confirmButton.onclick = ( e ) =>
     appointmentYear.push( futureYear )
 
 
-    // Appointment with One Occurrence
+
+    // Creating Appointment with One Occurrence
     db.collection( 'appointments' ).add( {
       aptName: apt.name.value,
       aptEmail: apt.email.value,
-      aptMobileNumber: apt.countryCode.value + '-' + apt.mobileNumber.value,
-      aptDay: apt.day.value,
+      aptDay: [ apt.day.value ],
       aptSecondDay: "NA",
-      aptTimeSlot: apt.timeSlot.value,
+      aptTimeSlot: [ apt.timeSlot.value ],
       aptSecondTimeSlot: "NA",
       aptType: apt.type.value,
-      dateInMills: dateInMills[ i ],
-      aptStartDate: appointmentDate[ i ],
-      aptStartMonth: appointmentMonth[ i ],
-      aptStartYear: appointmentYear[ i ],
+      dateInMills: [ dateInMills[ i ] ],
+      aptStartDate: [ appointmentDate[ i ] ],
+      aptStartMonth: [ appointmentMonth[ i ] ],
+      aptStartYear: [ appointmentYear[ i ] ],
       aptSecondStartDate: "NA",
       appointmentStatus: 'Scheduled',
-      aptFees: apt.fees.value,
+      aptFees: convertFees,
       serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-      statusUpdatedTimeStamp: ""
+      statusUpdatedTimeStamp: [ 'NA' ]
     } )
 
   }
 
-  confirmPage.style.left = '-2000px'
+  apt__confirmPage.page.classList.add( '-left-[2000px]' )
   confirmPage.style.transition = '0.5s ease-in-out'
   aptName.value = ''
   aptEmail.value = ''
   aptMobileNumber.value = ''
+  apt.pt_countryCode.selectedIndex = 0
   aptDay.selectedIndex = 0
   aptType.selectedIndex = 0
   aptNature.selectedIndex = 0
@@ -79,11 +80,10 @@ confirmButton.onclick = ( e ) =>
   apt.emergencyName.value = ''
   apt.emergencyRelation.value = ''
   apt.emergencyMobileNumber.value = ''
+  apt.e_countryCode.selectedIndex = 0
   apt.emergencyAddress.value = ''
 
   promptMessages( 'Appointment created !!' )
-  confirmPage.style.left = '-2000px'
-
 }
 
 const createProfile = () =>
@@ -92,15 +92,19 @@ const createProfile = () =>
   let finalRelativeName = relativeName.charAt( 0 ).toUpperCase() + relativeName.slice( 1 )
   let finalRelation = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + finalRelativeName
 
+  let ptName_uppercase = apt.name.value.toUpperCase()
+  let e_name_uppercase = apt.emergencyName.value.toUpperCase()
+  let convertFees = parseInt( apt.fees.value )
+
   db.collection( "profiles" ).add(
     {
       aptCategory: apt.category.value,
-      aptName: apt.name.value,
+      aptName: ptName_uppercase,
       aptEmail: [ apt.email.value ],
-      aptMobileNumber: [ apt.countryCode.value + '-' + apt.mobileNumber.value ],
+      apt_pt_countryCode: [ apt.pt_countryCode.value ],
+      aptMobileNumber: [ apt.mobileNumber.value ],
       aptDay: [ apt.day.value ],
       aptSecondDay: "NA",
-      aptStartDate: confirmStartDate.innerText,
       aptTimeSlot: [ apt.timeSlot.value ],
       aptSecondTimeSlot: "NA",
       aptType: apt.type.value,
@@ -108,11 +112,11 @@ const createProfile = () =>
       aptNature: apt.nature.value,
       aptOccurrenceType: apt.occurrenceType.value,
       aptSecondStartDate: "NA",
-      aptFees: [ apt.fees.value ],
-      appointmentStatus: 'Scheduled',
-      emergencyName: [ apt.emergencyName.value ],
+      aptFees: [ convertFees ],
+      emergencyName: [ e_name_uppercase ],
       patientRelation: [ finalRelation ],
-      emergencyMobileNumber: [ apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value ],
+      emergency_countryCode: [ apt.e_countryCode.value ],
+      emergencyMobileNumber: [ apt.emergencyMobileNumber.value ],
       emergencyAddress: [ apt.emergencyAddress.value ],
       profileCreatedOn: firebase.firestore.Timestamp.fromDate( new Date() ),
       profileUpdatedOn: [ 'NA' ],

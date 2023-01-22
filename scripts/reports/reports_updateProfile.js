@@ -10,6 +10,10 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   updateCategory = document.querySelector( ".updateCategory" ),
   updateOccurrence = document.querySelector( ".updateOccurrence" ),
   updateSlot = document.querySelector( ".updateSlot" ),
+  update_e_name = document.querySelector( ".update_e_name" ),
+  update_e_mobileNumber = document.querySelector( ".update_e_mobileNumber" ),
+  update_e_address = document.querySelector( ".update_e_address" ),
+  update_e_relation = document.querySelector( ".update_e_relation" ),
   updateFees = document.querySelector( ".updateFees" ),
 
   currentProfileName = '',
@@ -19,20 +23,18 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   currentProfileFees = ''
 
 // Filling selected user profile details in update window.
-
 updateProfileLink.onclick = () =>
 {
-  pb.classList.remove('lg:left-6')
-  if ( patientList.value === 'Select' )
+  pb.classList.remove( 'lg:left-6' )
+  if ( patientNamesList.value === '' )
   {
     promptMessages( 'Select Patient name.' )
   }
   else
   {
     updateProfileWrapper.classList.add( 'left-0' )
-    let getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute( 'data-id' )
 
-    db.collection( "profiles" ).doc( getName ).get().then( ( doc ) =>
+    db.collection( "profiles" ).doc( patientNamesList.value ).get().then( ( doc ) =>
     {
       updateName.value = ''
       updateAptNature.value = ''
@@ -44,27 +46,29 @@ updateProfileLink.onclick = () =>
       updateSlot.value = ''
       updateFees.value = ''
       updateMobileNumber.value = ''
-      profileUpdatedOn.value = ''
+      update_e_name.value = ''
+      update_e_mobileNumber.value = ''
+      update_e_address.value = ''
+      update_e_relation.selectedIndex = 0
+
+      console.log( ( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] ) );
 
       updateName.value = doc.data().aptName
       updateAptNature.value = doc.data().aptType
-      updateEmail.value = doc.data().aptEmail
-      updateAddress.value = doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress
+      updateMobileNumber.value = parseInt( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] )
+      updateEmail.value = doc.data().aptEmail[ doc.data().aptEmail.length - 1 ]
+      updateAddress.value = doc.data().aptAddress[ doc.data().aptAddress.length - 1 ]
       updateCreateDate.value = doc.data().aptStartDate
       updateCategory.value = doc.data().aptCategory
       updateOccurrence.value = doc.data().aptOccurrenceType
-      updateSlot.value = doc.data().aptDay
-      updateFees.value = doc.data().aptFees
-      let feesToNum = parseInt( updateFees.value )
+      updateSlot.value = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
+      updateFees.value = parseInt( doc.data().aptFees[ doc.data().aptFees.length - 1 ] )
+      update_e_name.value = doc.data().emergencyName[ doc.data().emergencyName.length - 1 ]
+      update_e_mobileNumber.value = parseInt( doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] )
+      update_e_address.value = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
+      update_e_relation.value = doc.data().patientRelation[ doc.data().patientRelation.length - 1 ]
 
-      updateMobileNumber.value = doc.data().aptMobileNumber
-      let mobileToNum = parseInt( updateMobileNumber.value )
 
-      currentProfileName = doc.data().aptName
-      currentProfileEmail = doc.data().aptEmail
-      currentProfileAddress = doc.data().aptAddress
-      currentProfileMobileNumber = mobileToNum
-      currentProfileFees = feesToNum
 
     } )
   }
@@ -86,8 +90,7 @@ updateProfileButton.onclick = () =>
   }
   else 
   {
-    let getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute( 'data-id' )
-    let dbRef = db.collection( "profiles" ).doc( getName )
+    let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
 
     dbRef.update( {
       aptName: updateName.value,
@@ -95,7 +98,7 @@ updateProfileButton.onclick = () =>
       aptMobileNumber: updateMobileNumber.value,
       aptAddress: updateAddress.value,
       aptFees: parseInt( updateFees.value ),
-      profileUpdateOn: firebase.firestore.FieldValue.serverTimestamp()
+      profileUpdateOn: firebase.firestore.Timestamp.fromDate( new Date() )
     } )
 
     // ** This needs to be updated, adding information to the db is to be configured.

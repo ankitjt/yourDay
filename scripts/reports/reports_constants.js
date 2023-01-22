@@ -12,6 +12,7 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
   totalPendingCount = document.querySelector( ".totalPendingCount" )
 
 
+
 let nameOfUser = document.querySelector( ".name" ),
   email = document.querySelector( ".email" ),
   mobileNumber = document.querySelector( ".mobileNumber" ),
@@ -22,4 +23,9 @@ let nameOfUser = document.querySelector( ".name" ),
   address = document.querySelector( ".address" ),
   slot = document.querySelector( ".slot" ),
   profile = document.querySelector( '.profile' ),
+  whatChanged = document.querySelector( '.whatChanged' ),
+  e_name = document.querySelector( '.e_name' ),
+  e_relation = document.querySelector( '.e_relation' ),
+  e_mobileNumber = document.querySelector( '.e_mobileNumber' ),
+  e_address = document.querySelector( '.e_address' ),
   profileUpdatedOn = document.querySelector( ".profileUpdatedOn" )

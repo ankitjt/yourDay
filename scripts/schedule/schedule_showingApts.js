@@ -1,7 +1,9 @@
 // Showing appointments of the current and previous month.
 const showingApts = ( doc ) =>
 {
-  let myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
+  let lastElementOfUpdatedStatus = doc.data().statusUpdatedTimeStamp[ doc.data().statusUpdatedTimeStamp.length - 1 ]
+  let lastUpdatedDate = new Date( lastElementOfUpdatedStatus.seconds * 1000 )
+
   let currentMonthAppointments = `
   
   <div class="flex flex-col justify-center align-middle tableRow12">
@@ -13,8 +15,8 @@ const showingApts = ( doc ) =>
               </span>
               <span>${ doc.data().aptTimeSlot }</span>
               <span>
-                <span> ${ doc.data().aptDay }, </span>
-                <span>${ doc.data().aptStartDate }-${ doc.data().aptStartMonth }-${ doc.data().aptStartYear } </span>
+                <span> ${ doc.data().aptDay[ doc.data().aptDay.length - 1 ] }, </span>
+                <span>${ doc.data().aptStartDate[ doc.data().aptStartDate.length - 1 ] }-${ doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ] }-${ doc.data().aptStartYear[ doc.data().aptStartYear.length - 1 ] } </span>
               </span>
               <span>${ doc.data().aptType }</span>
               <span>
@@ -48,8 +50,7 @@ const showingApts = ( doc ) =>
                   </div>
               
                <div class="statusUpdateTime">
-                    <span class="text-[10px] font-semibold"> ${ doc.data().statusUpdatedTimeStamp === "" ? '' : myData.toDateString()
-      + " " + myData.toLocaleTimeString() } </span>
+                    <span class="text-[10px] font-semibold"> ${ lastElementOfUpdatedStatus === 'NA' ? 'NA' : lastUpdatedDate.toLocaleDateString() + ',' + lastUpdatedDate.toLocaleTimeString() } </span>
                   </div> 
               </span>
               <span class=" w-full flex justify-center">

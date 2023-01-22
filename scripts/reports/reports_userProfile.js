@@ -1,27 +1,30 @@
-let getName
-patientList.onclick = () =>
+
+patientNamesList.onchange = () =>
 {
-  if ( patientList.innerText === "By Name" )
+  if ( patientNamesList.value === "" )
   {
     updateProfileWrapper.classList.remove( 'left-0' )
     reportByName.classList.add( 'hidden' )
+    pb.classList.add( 'lg:left-6' )
   }
   else
   {
     reportByName.classList.remove( 'hidden' )
-    getName = patientListButton.childNodes[ 1 ].childNodes[ 1 ].childNodes[ 1 ].getAttribute('data-id')
-    let dbRef123456 = db.collection( "profiles" ).doc( getName )
+    let patientID = patientNamesList.value
+    console.log( patientID )
+    let profile = db.collection( "profiles" ).doc( patientID )
 
     // Getting user profile details.
-    dbRef123456.get().then( ( doc ) =>
+    profile.get().then( ( doc ) =>
     {
-      let createdDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
-      let updatedProfileDate = doc.data().profileUpdateOn === undefined ? 'NA' : new Date( doc.data().profileUpdateOn.seconds * 1000 )
+      let dbDate = doc.data().profileCreatedOn.seconds * 1000
+      let defaultDate = new Date( dbDate )
+      let localDate = new Date( dbDate ).toLocaleDateString()
 
       nameOfUser.innerText = doc.data().aptName
-      email.innerText = doc.data().aptEmail
-      mobileNumber.innerText = parseInt( doc.data().aptMobileNumber )
-      address.innerHTML = ` ${ doc.data().aptAddress === undefined ? 'NA' : doc.data().aptAddress } `
+      email.innerText = doc.data().aptEmail[ doc.data().aptEmail.length - 1 ]
+      mobileNumber.innerText = doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ]
+      address.innerText = doc.data().aptAddress[ doc.data().aptAddress.length - 1 ]
       category.innerText = doc.data().aptType
       fee.innerHTML =
         `<div class='flex'>
@@ -30,20 +33,17 @@ patientList.onclick = () =>
                                   <path stroke-linecap="round" stroke-linejoin="round"
                                     d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <span class='ml-2'>${ parseInt( doc.data().aptFees ) } </span> </div>`
-      
-      occurrence.innerText = doc.data().aptOccurrenceType
-      address.innerText = doc.data().aptAddress
-      createDate.innerText = createdDate.getDate() + '/' + ( createdDate.getMonth() + 1 ) + '/' + createdDate.getFullYear() + ',' + createdDate.getHours() + ':' + createdDate.getMinutes()
-      slot.innerText = days[ doc.data().aptDay - 1 ] + " , " + doc.data().aptTimeSlot
+                        <span class='ml-1'>${ doc.data().aptFees[ doc.data().aptFees.length - 1 ] }</span> </div>`
 
-      profileUpdatedOn.innerHTML = `
-                    <span>Last Updated: </span> 
-                    <span class='ml-2'> ${ updatedProfileDate === 'NA' ? 'NA' : updatedProfileDate.getDate() + '/' + ( updatedProfileDate.getMonth() + 1 ) + '/' + updatedProfileDate.getFullYear() + ',' + updatedProfileDate.getHours() + ':' + updatedProfileDate.getMinutes() } </span>
-
-                    `
+      occurrence.innerText = doc.data().aptOccurrenceType[ doc.data().aptOccurrenceType.length - 1 ]
+      createDate.innerText = localDate
+      slot.innerText = doc.data().aptDay[ doc.data().aptDay.length - 1 ] + " , " + doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ]
+      whatChanged.innerText = doc.data().profileUpdatedOn[ doc.data().profileUpdatedOn.length - 1 ]
+      e_name.innerText = doc.data().emergencyName[ doc.data().emergencyName.length - 1 ]
+      e_relation.innerText = doc.data().patientRelation[ doc.data().patientRelation.length - 1 ]
+      e_mobileNumber.innerText = doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ]
+      e_address.innerText = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
 
     } )
   }
-
 }

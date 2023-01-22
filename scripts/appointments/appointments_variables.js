@@ -2,6 +2,7 @@ let apt = {
   name : document.querySelector( '.aptName' ),
   email : document.querySelector( '.aptEmail' ),
   mobileNumber : document.querySelector( '.aptMobileNumber' ),
+  pt_countryCode : document.querySelector( '.pt_countryCode' ),
   startDate : document.querySelector( '.aptStartDate' ),
   day : document.querySelector( '.aptDay' ),
   fees : document.querySelector( '.aptFees' ),
@@ -12,14 +13,12 @@ let apt = {
   category : document.querySelector( '.aptCategory' ),
   timeSlot : document.querySelector( '.aptTimeSlot' ),
   create: document.querySelector( '.createAptBtn' ),
-  countryCode : document.querySelector( ".countryCode" ),
   dropOption : document.querySelector( ".dropOption" ),
-  countryCodeNumber: document.querySelector( ".countryCodeNumber" ),
   emergencyName : document.querySelector( ".emergencyName" ),
   emergencyRelation : document.querySelector( ".emergencyRelation" ),
   emergencyAddress : document.querySelector( ".emergencyAddress" ),
-  emergencyCountryCode : document.querySelector( ".emergencyCountryCode" ),
   emergencyMobileNumber : document.querySelector( ".emergencyMobileNumber" ),
+  e_countryCode : document.querySelector( ".e_countryCode" ),
   relationDetails : document.querySelector( ".relationDetails" )
 }
 
@@ -71,6 +70,7 @@ let
   aptName = document.querySelector( '.aptName' ),
   aptEmail = document.querySelector( '.aptEmail' ),
   aptMobileNumber = document.querySelector( '.aptMobileNumber' ),
+  
   aptStartDate = document.querySelector( '.aptStartDate' ),
   aptDay = document.querySelector( '.aptDay' ),
   aptFees = document.querySelector( '.aptFees' ),
@@ -82,7 +82,7 @@ let
   aptTimeSlot = document.querySelector( '.aptTimeSlot' ),
   createAptBtn = document.querySelector( '.createAptBtn' ),
   
-  countryCode = document.querySelector( ".countryCode" ),
+  
   dropOption = document.querySelector( ".dropOption" ),
   countryCodeNumber = document.querySelector( ".countryCodeNumber" ),
 
@@ -90,7 +90,7 @@ let
   emergencyName = document.querySelector( ".emergencyName" ),
   emergencyRelation = document.querySelector( ".emergencyRelation" ),
   emergencyAddress = document.querySelector( ".emergencyAddress" ),
-  emergencyCountryCode = document.querySelector( ".emergencyCountryCode" ),
+  e_countryCode = document.querySelector( '.e_countryCode' ),
   emergencyMobileNumber = document.querySelector( ".emergencyMobileNumber" ),
 
   // Occurrence is 2

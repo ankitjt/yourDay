@@ -7,6 +7,7 @@ let arr = [];
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>
     {
+      console.log(doc.data().dateInMills);
       let aptStartDate = new Date( doc.data().dateInMills * 1000 )
       let currentDate = new Date()
       let currentMonth = currentDate.getMonth() 
@@ -15,9 +16,9 @@ let arr = [];
 
       if ( aptStartDateMonth === currentMonth || aptStartDateMonth - 1 === lastMonth )
       {
-        if ( doc.data().appointmentStatus === 'Pending' || doc.data().appointmentStatus === 'Scheduled' )
+        if ( doc.data().appointmentStatus === 'Pending' || doc.data().appointmentStatus === 'Scheduled' || doc.data().appointmentStatus === 'Updated' )
         {
-          
+          // Phone View
           let appointmentPill = `
               <div
                class="1 px-3 py-5  rounded-2xl ${ doc.data().aptType === "Session" ? '' : 'bg-transparent' } ${ doc.data().aptType === "New" ? 'bg-rose-100' : '' } border-l-8 border ${ doc.data().aptType === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ doc.data().aptType === "New" ? 'border-rose-600' : '' } ${ doc.data().aptType === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ doc.data().aptType === "New" ? 'text-rose-700' : '' } mb-5"

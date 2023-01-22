@@ -45,7 +45,6 @@ apt.create.onclick = () =>
         apt__confirmPage.page.classList.remove( '-left-[2000px]' )
         for ( let input of inputTags )
         {
-            console.log( input.value );
             input.classList.remove( 'md:border-red-600' )
         }
     }
@@ -66,14 +65,13 @@ apt.create.onclick = () =>
         apt__confirmPage.page.classList.remove( '-left-[2000px]' )
         for ( let select of selectTags )
         {
-            console.log( select.value );
             select.classList.remove( 'md:border-red-600' )
         }
     }
 
     apt__confirmPage.name.innerText = aptName.value.trim()
     apt__confirmPage.email.innerText = correctEmail.trim()
-    apt__confirmPage.mobileNumber.innerText = apt.countryCode.value + '-' + apt.mobileNumber.value
+    apt__confirmPage.mobileNumber.innerText = apt.pt_countryCode.value + '-' + apt.mobileNumber.value
     apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
     apt__confirmPage.secondStartDate.innerText = "NA"
     apt__confirmPage.day.innerText = apt.day.value
@@ -88,7 +86,7 @@ apt.create.onclick = () =>
     apt__confirmPage.category.innerText = apt.category.value
     apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
     apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
-    apt__confirmPage.emergencyMobileNumber.innerText = apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value
+    apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
     apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
     apt__confirmPage.page.classList.add( 'left-0' )
 

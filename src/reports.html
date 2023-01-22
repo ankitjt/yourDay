@@ -1,371 +1,452 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>YourDay - Reports</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>YourDay - Reports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body class="relative w-full h-full">
+<body class="relative w-full h-full">
 
-    <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
+  <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
 
-      <!-- Panic Button  -->
-      <span
-        class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
+    <!-- Panic Button  -->
+    <span
+          class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
 
-      <!-- Left Section  -->
+    <!-- Left Section  -->
+    <div
+         class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
+
+      <!-- Page Image  -->
+      <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
+
+      <!-- Update Profile -->
       <div
-        class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection lg:block md:w-2/6 lg:flex lg:items-center lg:justify-center">
+           class="absolute h-screen overflow-y-auto w-full -left-[2000px] bg-gray-800 md:bg-gray-50 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
 
-        <!-- Page Image  -->
-        <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
+        <h1 class="w-full mt-5 font-semibold text-center text-white uppercase text-md md:text-blue-600">Update Profile
+        </h1>
 
-        <!-- Update Profile -->
-        <div
-          class="absolute h-screen overflow-y-auto w-full -left-[2000px] bg-gray-800 md:bg-gray-50 z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+        <section class="mt-10 text-xs text-white profileDetails md:transition-all md:ease-in-out md:text-blue-600">
 
-          <h1 class="w-full mt-5 font-semibold text-center text-white uppercase text-md md:text-blue-600">Update Profile
-          </h1>
+          <div class="flex flex-col items-start my-5 profileName md:justify-between">
+            <span class="mb-2 tracking-wider nameTag md:font-medium md:text-gray-400">Name</span>
+            <input type="text" value=""
+                   class="updateName border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
 
-          <section class="mt-10 text-xs text-white profileDetails md:transition-all md:ease-in-out md:text-blue-600">
-            <div class="flex flex-col items-start my-5 profileName md:justify-between">
-              <span class="mb-2 tracking-wider nameTag md:font-medium md:text-gray-400">Name</span>
-              <input type="text" value=""
-                class="updateName border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
-            </div>
-            <div class="flex flex-col items-start my-5 md:justify-between">
-              <span class="mb-2 tracking-wider appointmentNature md:font-medium md:text-gray-400">Appointment
-                Nature</span>
-              <input type="text" value=""
-                class="updateAptNature border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                disabled />
-            </div>
-            <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
-              <span class="mb-2 tracking-wider emailTag md:font-medium md:text-gray-400">Email</span>
-              <input type="email" value=""
-                class="updateEmail border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
-            </div>
-            <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
-              <span class="mb-2 tracking-wider mobileTag md:font-medium md:text-gray-400">Mobile</span>
+          <div class="flex flex-col items-start my-5 md:justify-between">
+            <span class="mb-2 tracking-wider appointmentNature md:font-medium md:text-gray-400">Appointment
+              Nature</span>
+            <input type="text" value=""
+                   class="updateAptNature border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
+            <span class="mb-2 tracking-wider emailTag md:font-medium md:text-gray-400">Email</span>
+            <input type="email" value=""
+                   class="updateEmail border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
+            <span class="mb-2 tracking-wider mobileTag md:font-medium md:text-gray-400">Mobile</span>
+            <input type='number' value=""
+                   class="updateMobileNumber border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
+            <span class="mb-2 tracking-wider addressTag md:font-medium md:text-gray-400">Address</span>
+            <textarea value=""
+                      class="updateAddress border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"></textarea>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileStartDate md:justify-between">
+            <span class="mb-2 tracking-wider createDateTag md:font-medium md:text-gray-400">Create Date</span>
+            <input type='text' value=""
+                   class="updateCreateDate border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileCategory md:justify-between">
+            <span class="mb-2 tracking-wider categoryTag md:font-medium md:text-gray-400">Category</span>
+            <input type='text' value=""
+                   class="updateCategory border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
+            <span class="mb-2 tracking-wider occurrenceTag md:font-medium md:text-gray-400">Occurrence ( per week
+              )</span>
+            <input type='number' value=""
+                   class="updateOccurrence border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
+            <span class="mb-2 tracking-wider slotTag md:font-medium md:text-gray-400">Slot</span>
+            <input type='text' value=""
+                   class="updateSlot border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Fees</span>
+            <input type='number' value=""
+                   class="updateFees border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Contact Name</span>
+            <input type='text' value=""
+                   class="update_e_name border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Contact Address</span>
+            <input type='text' value=""
+                   class="update_e_address border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Mobile Number</span>
+            <div class="someWrapper">
+              <select name="countryCode" id=""
+                      class="w-20 py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_e_countryCode countryCode"
+                      title="Country Code">
+              </select>
               <input type='number' value=""
-                class="updateMobileNumber border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+                     class="update_e_mobileNumber border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
             </div>
-            <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
-              <span class="mb-2 tracking-wider addressTag md:font-medium md:text-gray-400">Address</span>
-              <textarea value=""
-                class="updateAddress border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"></textarea>
-            </div>
-            <div class="flex flex-col items-start my-5 profileStartDate md:justify-between">
-              <span class="mb-2 tracking-wider createDateTag md:font-medium md:text-gray-400">Create Date</span>
-              <input type='text' value=""
-                class="updateCreateDate border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                disabled />
-            </div>
-            <div class="flex flex-col items-start my-5 profileCategory md:justify-between">
-              <span class="mb-2 tracking-wider categoryTag md:font-medium md:text-gray-400">Category</span>
-              <input type='text' value=""
-                class="updateCategory border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                disabled />
-            </div>
-            <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
-              <span class="mb-2 tracking-wider occurrenceTag md:font-medium md:text-gray-400">Occurrence ( per week
-                )</span>
-              <input type='number' value=""
-                class="updateOccurrence border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
-                disabled />
-            </div>
-            <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
-              <span class="mb-2 tracking-wider slotTag md:font-medium md:text-gray-400">Slot</span>
-              <input type='text' value=""
-                class="updateSlot border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                disabled />
-            </div>
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Fees</span>
-              <input type='number' value=""
-                class="updateFees border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
-            </div>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Contact Relation</span>
+            <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                    class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md update_e_relation md:border-gray-300 placeholder:text-blue-600 md:font-medium md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600">
+              <option value="" class="text-xs md:font-semibold md:text-base">
+                Select Relation
+              </option>
+              <option value="Father" class="text-xs md:font-semibold md:text-base">
+                Father
+              </option>
+              <option value="Mother" class="text-xs md:font-semibold md:text-base">
+                Mother
+              </option>
+              <option value="Brother" class="text-xs md:font-semibold md:text-base">
+                Brother
+              </option>
+              <option value="Sister" class="text-xs md:font-semibold md:text-base">
+                Sister
+              </option>
+              <option value="GrandFather" class="text-xs md:font-semibold md:text-base">
+                GrandFather
+              </option>
+              <option value="GrandMother" class="text-xs md:font-semibold md:text-base">
+                GrandMother
+              </option>
+              <option value="Uncle" class="text-xs md:font-semibold md:text-base">
+                Uncle
+              </option>
+              <option value="Aunt" class="text-xs md:font-semibold md:text-base">
+                Aunt
+              </option>
+              <option value="Friend" class="text-xs md:font-semibold md:text-base">
+                Friend
+              </option>
+              <option value="Others" class="text-xs md:font-semibold md:text-base">
+                Others
+              </option>
+            </select>
+          </div>
 
 
-            <div class="flex flex-col text-white updateProfileActionButtons ">
+          <div class="flex flex-col text-white updateProfileActionButtons ">
 
-              <div class="flex justify-between mt-5 updateWrapper">
+            <div class="flex justify-between mt-5 updateWrapper">
+              <button
+                      class="px-5 py-2 bg-blue-600 rounded-full cursor-pointer updateProfileButton">Update</button>
+              <button
+                      class="block px-4 py-2 ml-5 text-sm font-medium text-blue-600 bg-transparent bg-gray-200 rounded-full cursor-pointer closeUpdateProfileWrapper drop-shadow-3xl">Close</button>
+            </div>
+
+            <div class="mt-8 deleteButtonWrapper">
+              <button
+                      class="w-full px-5 py-2 tracking-wider uppercase rounded-md cursor-pointer deleteProfileButton bg-rose-600">Delete
+                Profile</button>
+            </div>
+
+          </div>
+          <!-- Delete Prompt -->
+          <section
+                   class="z-60 deletePrompts fixed px-4 py-10 bg-rose-600 md:w-[inherit] bottom-0 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+            <div class="flex flex-col w-full px-5 text-sm font-medium text-justify deletePromptContent">
+              <textarea name="" id="" cols="10" rows="3" class="rounded-md deleteProfileReason "
+                        placeholder="Reason for delete..."></textarea>
+              <div class="flex justify-between mt-5 text-sm confirmButtonsWrapper">
                 <button
-                  class="px-5 py-2 bg-blue-600 rounded-full cursor-pointer updateProfileButton">Update</button>
+                        class="px-5 py-2 tracking-wider uppercase bg-white rounded-full cursor-pointer confirmDeleteProfile text-rose-600">
+                  Delete
+                </button>
                 <button
-                  class="block px-4 py-2 ml-5 text-sm font-medium text-blue-600 bg-transparent bg-gray-200 rounded-full cursor-pointer closeUpdateProfileWrapper drop-shadow-3xl">Close</button>
-              </div>
+                        class="px-5 py-2 tracking-wider text-white uppercase bg-gray-400 rounded-full cursor-pointer goBack">
+                  Cancel
+                </button>
 
-              <div class="mt-8 deleteButtonWrapper">
-                <button
-                  class="w-full px-5 py-2 tracking-wider uppercase rounded-md cursor-pointer deleteProfileButton bg-rose-600">Delete
-                  Profile</button>
               </div>
-
             </div>
-            <!-- Delete Prompt -->
-            <section
-              class="z-60 deletePrompts fixed px-4 py-10 bg-rose-600 md:w-[inherit] bottom-0 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
-              <div class="flex flex-col w-full px-5 text-sm font-medium text-justify deletePromptContent">
-                <textarea name="" id="" cols="10" rows="3" class="rounded-md deleteProfileReason "
-                  placeholder="Reason for delete..."></textarea>
-                <div class="flex justify-between mt-5 text-sm confirmButtonsWrapper">
-                  <button
-                    class="px-5 py-2 tracking-wider uppercase bg-white rounded-full cursor-pointer confirmDeleteProfile text-rose-600">
-                    Delete
-                  </button>
-                  <button
-                    class="px-5 py-2 tracking-wider text-white uppercase bg-gray-400 rounded-full cursor-pointer goBack">
-                    Cancel
-                  </button>
 
-                </div>
-              </div>
-
-            </section>
           </section>
-
-
-        </div>
-
-      </div>
-
-      <!-- Right Section  -->
-      <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
-
-        <!--  (Absolute element 1)   -->
-        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
-
-        <!-- Global Notification (Absolute element 2) -->
-        <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
-          <p>This is a global notification</p>
-        </div>
-
-        <!-- Prompts (Absolute element 3) -->
-        <div
-          class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
-        </div>
-
-        <!-- Navbar  -->
-        <div class="relative my-6 navbarWrapper md:my-2">
-          <nav class="flex items-center justify-between w-full text-xs text-blue-600 navbarContent"></nav>
-
-          <!--  Navbar Notification Center -->
-          <div
-            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-            <div class="h-full notificationContent">
-
-            </div>
-          </div>
-        </div>
-
-        <!-- Reports by Month  -->
-        <section class="mt-5 rounded-md reportByMonthSection">
-          <h3 class="mb-2">
-            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-              By month and year
-            </span>
-          </h3>
-
-          <div class="grid md:grid-cols-2 md:gap-x-10">
-
-            <!-- Month and year filter -->
-            <input type="text" name="" id=""
-              class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByName h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
-              placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
-
-            <!-- By Month Breakdown  -->
-            <div
-              class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 md:mt-0">
-              <div class="flex items-center justify-between mb-2 capitalize totalSessions md:mb-4">
-                <span>Sessions</span>
-                <span class="totalSessionsCount"></span>
-              </div>
-              <div class="flex items-center justify-between mb-2 capitalize totalSupervision md:mb-4">
-                <span>Supervision</span>
-                <span class="totalSupervisionCount"></span>
-              </div>
-              <div class="flex items-center justify-between mb-2 capitalize totalRescheduled md:mb-4">
-                <span>Rescheduled</span>
-                <span class="totalRescheduledCount"></span>
-              </div>
-              <div class="flex items-center justify-between mb-2 capitalize totalFreeCancelled md:mb-4">
-                <span>Free Cancelled</span>
-                <span class="totalFreeCancelledCount"></span>
-              </div>
-              <div class="flex items-center justify-between mb-2 capitalize totalPaidCancelled md:mb-4">
-                <span>Paid Cancelled</span>
-                <span class="totalPaidCancelledCount"></span>
-              </div>
-              <div class="flex items-center justify-between capitalize totalPending">
-                <span>Pending</span>
-                <span class="totalPendingCount"></span>
-              </div>
-            </div>
-          </div>
         </section>
 
-        <!-- Report by Name -->
-        <section class="mt-5 rounded-md reportByNameSection">
-          <h3 class="mb-2">
-            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-              By name
-            </span>
-          </h3>
 
-          <!-- Report By Name Filter  -->
-
-          <!-- Patient List -->
-          <div class="relative grid w-full md:grid-cols-2 md:gap-x-10">
-            <button type="button"
-              class="relative flex w-full py-3 text-xs text-blue-600 bg-gray-800 border border-blue-600 rounded-md patientListButton md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:drop-shadow-none md:bg-transparent"
-              aria-haspopup="listbox" aria-expanded="true" aria-labelledby="listbox-label">
-              <span class="flex items-center">
-                <span class="flex items-center justify-between ml-3 font-semibold truncate selectedPatientName">
-                  <span class="patientName" value="">Name</span>
-                  <span class="ml-2 patientEmail"></span>
-                </span>
-              </span>
-              <span class="absolute inset-y-0 right-0 flex items-center pr-2 ml-3 pointer-events-none">
-
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="w-5 h-5 text-red-400 downArrowPtList">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="hidden w-5 h-5 text-red-400 upArrowPtList">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-                </svg>
-
-              </span>
-            </button>
-            <ul
-              class="absolute z-50 hidden w-full mt-2 overflow-auto text-base bg-white rounded-md shadow-lg max-h-56 ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm patientList"
-              tabindex="-1" role="listbox" aria-labelledby="listbox-label" aria-activedescendant="listbox-option-3">
-            </ul>
-          </div>
-
-
-          <!-- Reports By Name section  -->
-
-          <div class="hidden reportByName">
-
-            <!-- Profile Section  -->
-            <div
-              class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 profileSection">
-              <button class="w-full p-4 sectionButton md:font-semibold">
-                <div class="flex items-center justify-between w-full sectionButtonWrapper">
-                  <span class="text-xs sectionNameProfile md:text-sm">Profile / Update Profile</span>
-                </div>
-              </button>
-
-              <!-- Patient Profile -->
-
-              <section class="px-5 pb-4 text-xs profile md:px-8 md:transition-all md:ease-in-out md:font-semibold">
-
-                <div class="flex items-center justify-between my-3 profileName">
-                  <span class="nameTag">Name</span>
-                  <span class="ml-2 name">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileEmail">
-                  <span class="emailTag">Email</span>
-                  <span class="ml-2 email">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileMobileNumber">
-                  <span class="mobileTag">Mobile</span>
-                  <span class="ml-2 mobileNumber">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileAddress">
-                  <span class="addressTag">Address</span>
-                  <span class="ml-2 address">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileStartDate">
-                  <span class="createDateTag">Create Date</span>
-                  <span class="ml-2 createDate">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileCategory">
-                  <span class="categoryTag">Category</span>
-                  <span class="ml-2 category">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileOccurrence">
-                  <span class="occurrenceTag">Occurrence ( per week )</span>
-                  <span class="ml-2 occurrence">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileSlot">
-                  <span class="slotTag">Slot</span>
-                  <span class="ml-2 slot">NA</span>
-                </div>
-
-                <div class="flex items-center justify-between my-3 profileFee">
-                  <span class="feeTag">Fees</span>
-                  <span class="ml-2 fee">NA</span>
-                </div>
-
-                <div class="flex justify-between mt-6 updateLinksWrapper">
-                  <span class="underline cursor-pointer updateProfileLink text-rose-600 ">Update</span>
-                  <div class="flex flex-col updateDetails flex-end ">
-                    <span class="text-xs font-normal text-gray-400 profileUpdatedOn"></span>
-                    <span class="text-xs font-normal text-gray-400 whatChanged"></span>
-                  </div>
-                </div>
-
-              </section>
-            </div>
-
-            <!-- Work section  -->
-            <div
-              class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 workContent">
-              <button class="w-full p-4 sectionButton md:font-semibold">
-                <div class="flex items-center justify-between w-full sectionButtonWrapper ">
-                  <span class="text-xs sectionButtonWork md:text-sm">Work</span>
-                </div>
-              </button>
-              <section class="text-xs font-semibold leading-loose text-justify ">
-
-              </section>
-            </div>
-
-          </div>
-        </section>
       </div>
 
     </div>
 
-    <!-- Firebase  -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Right Section  -->
+    <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
 
-    <!-- Variable and common loaders  -->
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/reports/reports_constants.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-    <script src="../scripts/commonScripts/patientList.js"></script>
+      <!--  (Absolute element 1)   -->
+      <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
 
-    <!-- Page Scripts  -->
-    <script src="../scripts/reports/reports_onLoad.js"></script>
-    <script src="../scripts/reports/reports_userProfile.js"></script>
-    <script src="../scripts/reports/reports_deleteProfile.js"></script>
-    <script src="../scripts/reports/reports_updateProfile.js"></script>
-    <script src="../scripts/reports/reports.js"></script>
+      <!-- Global Notification (Absolute element 2) -->
+      <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
+        <p>This is a global notification</p>
+      </div>
 
-    <!-- Global notificaiton and prompts -->
-    <script src="../scripts/commonScripts/globalNotification.js"></script>
-    <script src="../scripts/commonScripts/prompts.js"></script>
-    <script src="../scripts/commonScripts/panicButton.js"></script>
+      <!-- Prompts (Absolute element 3) -->
+      <div
+           class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
+      </div>
 
-  </body>
+      <!-- Navbar  -->
+      <div class="relative my-6 navbarWrapper md:my-2">
+        <nav class="flex items-center justify-between w-full text-xs text-blue-600 navbarContent"></nav>
+
+        <!--  Navbar Notification Center -->
+        <div
+             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+          <div class="h-full notificationContent">
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports by Month  -->
+      <section class="mt-5 rounded-md reportByMonthSection">
+        <h3 class="mb-2">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
+            By month and year
+          </span>
+        </h3>
+
+        <div class="grid md:grid-cols-2 md:gap-x-10">
+
+          <!-- Month and year filter -->
+          <input type="text" name="" id=""
+                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByName h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
+                 placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+
+          <!-- By Month Breakdown  -->
+          <div
+               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 md:mt-0">
+            <div class="flex items-center justify-between mb-2 capitalize totalSessions md:mb-4">
+              <span>Sessions</span>
+              <span class="totalSessionsCount"></span>
+            </div>
+            <div class="flex items-center justify-between mb-2 capitalize totalSupervision md:mb-4">
+              <span>Supervision</span>
+              <span class="totalSupervisionCount"></span>
+            </div>
+            <div class="flex items-center justify-between mb-2 capitalize totalRescheduled md:mb-4">
+              <span>Rescheduled</span>
+              <span class="totalRescheduledCount"></span>
+            </div>
+            <div class="flex items-center justify-between mb-2 capitalize totalFreeCancelled md:mb-4">
+              <span>Free Cancelled</span>
+              <span class="totalFreeCancelledCount"></span>
+            </div>
+            <div class="flex items-center justify-between mb-2 capitalize totalPaidCancelled md:mb-4">
+              <span>Paid Cancelled</span>
+              <span class="totalPaidCancelledCount"></span>
+            </div>
+            <div class="flex items-center justify-between capitalize totalPending">
+              <span>Pending</span>
+              <span class="totalPendingCount"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Report by Name -->
+      <section class="mt-5 rounded-md reportByNameSection">
+        <h3 class="mb-2">
+          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
+            By name
+          </span>
+        </h3>
+
+        <!-- Report By Name Filter  -->
+
+        <!-- Patient List -->
+        <div class="relative grid md:grid-cols-2 md:gap-x-10">
+          <select title="Patient List" name="" id=""
+                  class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
+            <option selected value="">
+              Select Name
+            </option>
+          </select>
+        </div>
+
+        <!-- Reports By Name section  -->
+        <div class="hidden reportByName">
+
+          <!-- Profile Section  -->
+          <div
+               class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 profileSection p-4">
+            <button class="w-full sectionButton md:font-semibold">
+              <div class="flex items-center justify-between w-full sectionButtonWrapper">
+                <span class="text-xs sectionNameProfile md:text-sm">Profile / Update Profile</span>
+              </div>
+            </button>
+
+            <!-- Patient Profile -->
+            <section
+                     class="grid md:grid-cols-4 pb-4 md:row-span-full text-xs profile md:transition-all md:ease-in-out">
+
+              <div class="flex flex-col my-3 profileName">
+                <span class="nameTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Name</span>
+                <span class="name font-semibold capitalize">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileEmail">
+                <span class="mailTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Email</span>
+                <span class="email font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileMobileNumber">
+                <span class="mobileTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Mobile</span>
+                <span class="mobileNumber font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileAddress">
+                <span class="addressTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Address</span>
+                <span class="address font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileStartDate">
+                <span class="createDateTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Create
+                  Date</span>
+                <span class="createDate font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileCategory">
+                <span class="categoryTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Category</span>
+                <span class="category font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileOccurrence">
+                <span class="occurrenceTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Occurrence (
+                  per week )</span>
+                <span class="occurrence font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileSlot">
+                <span class="slotTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Slot</span>
+                <span class="slot font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 profileFee">
+                <span class="feeTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Fees</span>
+                <span class="fee font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3">
+                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Contact
+                  Name</span>
+                <span class="e_name font-semibold capitalize">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3">
+                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Mobile
+                  Number</span>
+                <span class="e_mobileNumber font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3">
+                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
+                  Relation</span>
+                <span class="e_relation font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3">
+                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
+                  Address</span>
+                <span class="e_address font-semibold">NA</span>
+              </div>
+
+              <div class="flex flex-col my-3 updateDetails">
+                <span class="lastUpdatedTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Last
+                  Updated:</span>
+                <span class="font-semibold whatChanged">NA</span>
+              </div>
+
+            </section>
+
+            <div class="flex justify-between mt-6 updateLinksWrapper text-xs items-center">
+              <span class="p-2 cursor-pointer updateProfileLink bg-blue-600 rounded-full text-white">Update</span>
+            </div>
+          </div>
+
+          <!-- Work section  -->
+          <div
+               class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 workContent">
+            <button class="w-full p-4 sectionButton md:font-semibold">
+              <div class="flex items-center justify-between w-full sectionButtonWrapper ">
+                <span class="text-xs sectionButtonWork md:text-sm">Work</span>
+              </div>
+            </button>
+            <section class="text-xs font-semibold leading-loose text-justify ">
+
+            </section>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+  </div>
+
+  <!-- Firebase  -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+  <!-- Variable and common loaders  -->
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/reports/reports_constants.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="../scripts/commonScripts/countryCode.js"></script>
+  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+  <script src="../scripts/commonScripts/patientList.js"></script>
+
+  <!-- Page Scripts  -->
+  <script src="../scripts/reports/reports_onLoad.js"></script>
+  <script src="../scripts/reports/reports_userProfile.js"></script>
+  <script src="../scripts/reports/reports_deleteProfile.js"></script>
+  <script src="../scripts/reports/reports_updateProfile.js"></script>
+  <script src="../scripts/reports/reports.js"></script>
+
+  <!-- Global notification and prompts -->
+  <script src="../scripts/commonScripts/globalNotification.js"></script>
+  <script src="../scripts/commonScripts/prompts.js"></script>
+  <script src="../scripts/commonScripts/panicButton.js"></script>
+
+</body>
 
 </html>
