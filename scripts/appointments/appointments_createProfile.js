@@ -11,6 +11,7 @@ confirmButton.onclick = ( e ) =>
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
   let newDateInSec = newDate / 1000
+  
   let dateInMills = [ newDateInSec ]
   let convertFees = parseInt( apt.fees.value )
 
