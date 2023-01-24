@@ -14,12 +14,12 @@ let patientNamesList = document.querySelector( '.patientNamesList' );
     {
       if ( doc.data().softDelete !== true )
       {
-        let listOfName = `
-        <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }' value='${ doc.id }' >
+        let listOfNames = `
+        <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }' value='${ doc.id }' name='${ doc.data().aptName}' class='font-semibold' >
         ${ doc.data().aptName } [ ${ doc.data().aptEmail } ] ( ${ doc.data().aptType === 'Session' ? 'Session' : 'SuperVision' } )
         </option>
         `
-        patientNamesList.innerHTML += listOfName
+        patientNamesList.innerHTML += listOfNames
       }
     } )
   } )

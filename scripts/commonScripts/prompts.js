@@ -1,5 +1,6 @@
 let checkPrompt = document.querySelector( '.checkPrompt' )
 let pageBlocker = document.querySelector( '.pageBlocker' )
+let pageBlockerLeft = document.querySelector( '.pageBlockerLeft' )
 let promptContent = document.querySelector( '.promptContent' )
 
 
@@ -9,6 +10,7 @@ const promptMessages = ( message ) =>
   
   promptsWrapper.classList.add( 'left-1/2' )
   pageBlocker.classList.remove( 'hidden' )
+  pageBlockerLeft.classList.remove( 'hidden' )
   promptsWrapper.innerHTML += `
           
           <section class="prompts flex items-center justify-between md:w-2/3 w-full px-6 py-3 my-2 bg-rose-600 rounded-full ease-in-out duration-300 hover:bg-rose-800">
@@ -22,7 +24,6 @@ const promptMessages = ( message ) =>
           </section>
         </div>
       `
-  let prompts = document.querySelectorAll( ".prompts" )
   let closePrompts = document.querySelectorAll( ".closePrompts" )
   for ( let close of closePrompts )
   {
@@ -36,6 +37,7 @@ const promptMessages = ( message ) =>
         parent.classList.add( 'hidden' )
         promptsWrapper.classList.remove( 'left-1/2' )
         pageBlocker.classList.add( 'hidden' )
+        pageBlockerLeft.classList.add( 'hidden' )
         promptsWrapper.innerHTML = ''
       }
       

@@ -2,7 +2,9 @@ let navbarContent = document.querySelector( ".navbarContent" )
 
 let pageName = window.location.href.split( "/" ).slice( -1 );
 let p = pageName.toLocaleString();
-let pageUrl = p.substring(0,p.indexOf('.'))
+let pageUrl = p.substring( 0, p.indexOf( '.' ) )
+
+
 
 navbarContent.innerHTML = `
   <a href="./home.html" class="hover:bg-blue-500 rounded-full">
@@ -12,8 +14,9 @@ navbarContent.innerHTML = `
               clip-rule="evenodd" />
           </svg>
         </a>
-        <div class="rightSideNavbar flex items-center">
-          <span class="tracking-widest font-semibold uppercase">${pageUrl}</span>
+        <div class="rightSideNavbar flex items-center justify-center">
+        <span class='serverTime font-semibold tracking-widest uppercase mr-5'></span>
+          <span class="tracking-widest font-semibold uppercase">${ pageUrl } </span>
           <div class="notificationOpener">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
               class="w-4 h-4 ml-5 text-red-400 cursor-pointer notification">
@@ -29,4 +32,14 @@ navbarContent.innerHTML = `
         </div>
 `
 
+let serverTime = document.querySelector( '.serverTime' )
+let currentTime = () =>
+{
+  // let serverTimeFirebase = firebase.firestore.Timestamp.fromDate( new Date() ).seconds * 1000
+  // let serverTimeStamp = new Date( serverTimeFirebase ).toLocaleString()
+  let serverTimeStamp = new Date().toLocaleString()
+  serverTime.innerText = serverTimeStamp
+  return serverTimeStamp;
+}
+setInterval( currentTime, 1000 )
 
