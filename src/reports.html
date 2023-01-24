@@ -21,6 +21,9 @@
     <!-- Left Section  -->
     <div
          class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
+         
+        <!--  (Absolute element 1)   -->
+        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlockerLeft"></div>
 
       <!-- Page Image  -->
       <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
@@ -56,8 +59,14 @@
 
           <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
             <span class="mb-2 tracking-wider mobileTag md:font-medium md:text-gray-400">Mobile</span>
-            <input type='number' value=""
-                   class="updateMobileNumber border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+            <div class="grid grid-cols-2 someWrapper">
+              <select name="countryCode" id=""
+                class="w-20 py-2 text-sm text-white bg-gray-800 border border-blue-500 rounded-md md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_countryCode countryCode"
+                title="Country Code">
+              </select>
+              <input type='number' value=""
+                     class="updateMobileNumber border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800" />
+            </div>
           </div>
 
           <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
@@ -115,7 +124,7 @@
 
           <div class="flex flex-col items-start my-5 profileFee md:justify-between">
             <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Mobile Number</span>
-            <div class="someWrapper">
+            <div class="grid grid-cols-2 someWrapper">
               <select name="countryCode" id=""
                       class="w-20 py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_e_countryCode countryCode"
                       title="Country Code">
@@ -226,7 +235,7 @@
       </div>
 
       <!-- Navbar  -->
-      <div class="relative my-6 navbarWrapper md:my-2">
+      <div class="relative pb-2 my-6 border-b border-gray-100 navbarWrapper md:my-2">
         <nav class="flex items-center justify-between w-full text-xs text-blue-600 navbarContent"></nav>
 
         <!--  Navbar Notification Center -->
@@ -298,7 +307,7 @@
         <div class="relative grid md:grid-cols-2 md:gap-x-10">
           <select title="Patient List" name="" id=""
                   class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
-            <option selected value="">
+            <option selected value="" class="font-semibold text-gray-400">
               Select Name
             </option>
           </select>
@@ -309,7 +318,7 @@
 
           <!-- Profile Section  -->
           <div
-               class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 profileSection p-4">
+               class="w-full p-4 my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 profileSection">
             <button class="w-full sectionButton md:font-semibold">
               <div class="flex items-center justify-between w-full sectionButtonWrapper">
                 <span class="text-xs sectionNameProfile md:text-sm">Profile / Update Profile</span>
@@ -318,77 +327,77 @@
 
             <!-- Patient Profile -->
             <section
-                     class="grid md:grid-cols-4 pb-4 md:row-span-full text-xs profile md:transition-all md:ease-in-out">
+                     class="grid pb-4 text-xs md:grid-cols-4 md:row-span-full profile md:transition-all md:ease-in-out">
 
               <div class="flex flex-col my-3 profileName">
                 <span class="nameTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Name</span>
-                <span class="name font-semibold capitalize">NA</span>
+                <span class="font-semibold capitalize name">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileEmail">
                 <span class="mailTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Email</span>
-                <span class="email font-semibold">NA</span>
+                <span class="font-semibold email">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileMobileNumber">
                 <span class="mobileTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Mobile</span>
-                <span class="mobileNumber font-semibold">NA</span>
+                <span class="font-semibold mobileNumber">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileAddress">
                 <span class="addressTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Address</span>
-                <span class="address font-semibold">NA</span>
+                <span class="font-semibold address">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileStartDate">
                 <span class="createDateTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Create
                   Date</span>
-                <span class="createDate font-semibold">NA</span>
+                <span class="font-semibold createDate">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileCategory">
                 <span class="categoryTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Category</span>
-                <span class="category font-semibold">NA</span>
+                <span class="font-semibold category">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileOccurrence">
                 <span class="occurrenceTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Occurrence (
                   per week )</span>
-                <span class="occurrence font-semibold">NA</span>
+                <span class="font-semibold occurrence">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileSlot">
                 <span class="slotTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Slot</span>
-                <span class="slot font-semibold">NA</span>
+                <span class="font-semibold slot">NA</span>
               </div>
 
               <div class="flex flex-col my-3 profileFee">
                 <span class="feeTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Fees</span>
-                <span class="fee font-semibold">NA</span>
+                <span class="font-semibold fee">NA</span>
               </div>
 
               <div class="flex flex-col my-3">
                 <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Contact
                   Name</span>
-                <span class="e_name font-semibold capitalize">NA</span>
+                <span class="font-semibold capitalize e_name">NA</span>
               </div>
 
               <div class="flex flex-col my-3">
                 <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Mobile
                   Number</span>
-                <span class="e_mobileNumber font-semibold">NA</span>
+                <span class="font-semibold e_mobileNumber">NA</span>
               </div>
 
               <div class="flex flex-col my-3">
                 <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
                   Relation</span>
-                <span class="e_relation font-semibold">NA</span>
+                <span class="font-semibold e_relation">NA</span>
               </div>
 
               <div class="flex flex-col my-3">
                 <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
                   Address</span>
-                <span class="e_address font-semibold">NA</span>
+                <span class="font-semibold e_address">NA</span>
               </div>
 
               <div class="flex flex-col my-3 updateDetails">
@@ -399,8 +408,8 @@
 
             </section>
 
-            <div class="flex justify-between mt-6 updateLinksWrapper text-xs items-center">
-              <span class="p-2 cursor-pointer updateProfileLink bg-blue-600 rounded-full text-white">Update</span>
+            <div class="flex items-center justify-between mt-6 text-xs updateLinksWrapper">
+              <span class="p-2 text-white bg-blue-600 rounded-full cursor-pointer updateProfileLink">Update</span>
             </div>
           </div>
 
@@ -425,6 +434,7 @@
 
   <!-- Firebase  -->
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
   <!-- Variable and common loaders  -->

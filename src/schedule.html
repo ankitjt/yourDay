@@ -22,6 +22,9 @@
       <div
         class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
 
+        <!--  (Absolute element 1)   -->
+        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlockerLeft"></div>
+
         <!-- Page Image  -->
         <img src="../assets/schedule4.webp" alt="logo" class="w-auto h-auto" />
 
@@ -55,7 +58,7 @@
         </div>
 
         <!-- Navbar  -->
-        <div class="relative my-6 navbarWrapper md:my-2">
+        <div class="relative pb-2 my-6 border-b border-gray-100 navbarWrapper md:my-2">
           <nav class="flex items-center justify-between w-full text-xs text-blue-600 navbarContent"></nav>
 
           <!--  Navbar Notification Center -->
@@ -167,6 +170,7 @@
     <script src="../scripts/commonScripts/commonVariables.js"></script>
     <script src="../scripts/schedule/schedule_commonVariables.js"></script>
     <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
 
     <!-- Page Scripts  -->
     <script src="../scripts/schedule/schedule_onLoad.js"></script>
@@ -176,7 +180,6 @@
     <script src="../scripts/schedule/schedule_updateAppointments.js"></script>
     <script src="../scripts/schedule/schedule_showingApts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../scripts/commonScripts/patientList.js"></script>
     
     <!-- Global Scripts  -->
     <script src="../scripts/commonScripts/globalNotification.js"></script>
