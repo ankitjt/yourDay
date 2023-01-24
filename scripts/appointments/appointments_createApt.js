@@ -1,176 +1,94 @@
 emergencyRelation.onchange = () =>
 {
-  if ( apt.emergencyRelation.value === 'Others' ) 
-  {
-    apt.relationDetails.classList.remove( 'hidden' )
-  }
-  else
-  {
-    apt.relationDetails.classList.add( 'hidden' )
-    apt.relationDetails.value = ''
-  }
+    if ( apt.emergencyRelation.value === 'Others' ) 
+    {
+        apt.relationDetails.classList.remove( 'hidden' )
+    }
+    else
+    {
+        apt.relationDetails.classList.add( 'hidden' )
+        apt.relationDetails.value = ''
+    }
 }
+
+let inputTags = document.querySelectorAll( 'input' )
+let selectTags = document.querySelectorAll( 'select' )
 
 apt.create.onclick = () =>
 {
-
-  let checkForDay = new Date( apt.startDate.value )
-
-  //Check for same time slot
-  let userTimeSlot = apt.timeSlot.value
-  let splitSlot = userTimeSlot.split( '-' )
-  let trimmedSlot = splitSlot.map( str => str.trim() )
-  let hourSplit = trimmedSlot[ 0 ].split( ':' )
-  let finalHourSplit = Number( hourSplit[ 0 ] )
-
-  let userDayCheck = checkForDay.getDate()
-  let userMonthCheck = checkForDay.getMonth()
-  let userYearCheck = checkForDay.getFullYear()
-  let finalUserDateCheck = new Date( userYearCheck, userMonthCheck, userDayCheck )
-
-  let currentDate = new Date()
-  let currentMonth = currentDate.getMonth()
-  let currentYear = currentDate.getFullYear()
-  let currentDay = currentDate.getDate()
-  let currentHour = currentDate.getHours()
-  let finalCurrentDate = new Date( currentYear, currentMonth, currentDay )
-
-
-
-  // Empty Fields check 
-  if (
-    apt.category.value === '' ||
-    apt.type.value === '' ||
-    apt.nature.value === "" ||
-    apt.name.value === '' ||
-    apt.emergencyName.value === '' ||
-    apt.startDate.value === '' ||
-    apt.email.value === '' ||
-    apt.mobileNumber.value === '' ||
-    apt.address.value === '' ||
-    apt.emergencyMobileNumber.value === '' ||
-    apt.countryCode.value === '' ||
-    apt.emergencyCountryCode.value === '' ||
-    apt.day.value === '' ||
-    apt.timeSlot.value === '' ||
-    apt.occurrenceType.value === '' ||
-    apt.fees.value === '' ||
-    apt.emergencyAddress.value === '' ||
-    apt.emergencyRelation.value === ''
-
-  )
-  {
-    promptMessages( 'All fields are required.' )
-  }
-
-  else if ( finalUserDateCheck < finalCurrentDate )
-  {
-    promptMessages( 'You cannot select an old date.' )
-  }
-
-  else if ( days[ checkForDay.getDay() ] !== apt.day.value )
-  {
-    promptMessages( 'Start date and Day slot does not match.' )
-  }
-
-  else if ( apt.relationDetails.value === '' && apt.emergencyRelation.value === 'Others' )
-  {
-    promptMessages( 'All fields are required.' )
-  }
-
-  else if ( finalHourSplit <= currentHour && finalUserDateCheck <= finalCurrentDate )
-  {
-    promptMessages( 'If selected start date is today then ensure time slot is greater than current hour.' )
-  }
-
-  else if ( Number( apt.occurrenceType.value ) > 2 || Number( apt.occurrenceType.value < 1 ) )
-  {
-    promptMessages( 'Occurrence cannot be more than 2 or less than 1.' )
-  }
-
-  else if ( apt.occurrenceType.value === '2' )
-  {
-    forSecondOccurrenceType()
-  }
-
-  //Checking home relative address
-  else if ( apt.emergencyRelation.value !== 'Father' && apt.emergencyRelation.value !== 'Mother' && apt.emergencyRelation.value !== 'Sister' && apt.emergencyRelation.value !== 'Brother' )
-  {
-    if ( aptAddress.value === emergencyAddress.value )
+    let allFilled = true;
+    let p_category = document.querySelector( ".aptCategory" )
+    let aptStartDate1 = new Date( apt.startDate.value )
+    let currentMonth = aptStartDate1.getMonth() + 1
+    let currentYear = aptStartDate1.getFullYear()
+    let currentDay = aptStartDate1.getDate()
+    let finalCurrentDate = currentDay + ' - ' + currentMonth + ' - ' + currentYear
+    let aptEmailOfUser = apt.email.value
+    let correctEmail = aptEmailOfUser.toLowerCase()
+    
+    p_category.value = 'New'
+    promptsWrapper.innerHTML = ''
+ 
+    for ( let input of inputTags )
     {
-      promptMessages( 'Patient address and Emergency contact address cannot be same as they are not family member.' )
-    }
-  }
-
-  else if ( aptName.value === emergencyName.value )
-  {
-
-    promptMessages( 'Patient name and Emergency contact name cannot be same.' )
-  }
-
-  if ( apt.category.value === 'New' )
-  {
-
-    db.collection( 'profiles' ).where( 'aptEmail', '==', apt.email.value ).onSnapshot( ( querySnapshot ) =>
-    {
-      if ( querySnapshot.empty )
-      {
-
-        db.collection( 'profiles' ).onSnapshot( ( querySnapshot ) =>
+        input.classList.remove( 'md:border-red-600' )
+        if ( input.value === "" && !input.classList.contains( 'hidden' ) )
         {
-          querySnapshot.forEach( ( doc ) =>
-          {
+            promptMessages( `${ input.getAttribute( 'title' ) } is blank.` )
+            input.classList.add('md:border-red-600')
+            allFilled = false;
+        }
+    }
 
-            let latestAptDay = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
-            let latestTimeSlot = doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ]
-            fieldValidators()
-            if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
-            {
-              apt__confirmPage.page.classList.add( '-left-[2000px]' )
-              promptMessages( 'Slot is already filled.' )
-            }
+    if ( allFilled )
+    {
+        apt__confirmPage.page.classList.remove( '-left-[2000px]' )
+        for ( let input of inputTags )
+        {
+            input.classList.remove( 'md:border-red-600' )
+        }
+    }
 
-            else
-            {
+    for ( let select of selectTags )
+    {
+        select.classList.remove( 'md:border-red-600' )
+        if ( select.value === "" )
+        {
+            promptMessages( `${ select.getAttribute( 'title' ) } is blank.` )
+            allFilled = false;
+            select.classList.add( 'md:border-red-600' )
+        }
+    }
 
-              let aptStartDate1 = new Date( apt.startDate.value )
-              let currentMonth = aptStartDate1.getMonth() + 1
-              let currentYear = aptStartDate1.getFullYear()
-              let currentDay = aptStartDate1.getDate()
-              let finalCurrentDate = currentDay + ' - ' + currentMonth + ' - ' + currentYear
-              let aptEmailOfUser = apt.email.value
-              let correctEmail = aptEmailOfUser.toLowerCase()
+    if ( allFilled )
+    {
+        apt__confirmPage.page.classList.remove( '-left-[2000px]' )
+        for ( let select of selectTags )
+        {
+            select.classList.remove( 'md:border-red-600' )
+        }
+    }
 
-              apt__confirmPage.name.innerText = aptName.value.trim()
-              apt__confirmPage.email.innerText = correctEmail.trim()
-              apt__confirmPage.mobileNumber.innerText = apt.countryCode.value + '-' + apt.mobileNumber.value
-              apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
-              apt__confirmPage.secondStartDate.innerText = "NA"
-              apt__confirmPage.day.innerText = apt.day.value
-              apt__confirmPage.secondDay.innerText = "NA"
-              apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
-              apt__confirmPage.secondTimeSlot.innerText = "NA"
-              apt__confirmPage.fees.innerText = apt.fees.value
-              apt__confirmPage.address.innerText = apt.address.value
-              apt__confirmPage.type.innerText = apt.type.value
-              apt__confirmPage.nature.innerText = apt.nature.value
-              apt__confirmPage.occurrenceType.innerText = apt.occurrenceType.value
-              apt__confirmPage.category.innerText = apt.category.value
-              apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
-              apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
-              apt__confirmPage.emergencyMobileNumber.innerText = apt.emergencyCountryCode.value + '-' + apt.emergencyMobileNumber.value
-              apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
-              apt__confirmPage.page.classList.remove( '-left-[2000px]' )
-              apt__confirmPage.page.classList.add( 'left-0' )
+    apt__confirmPage.name.innerText = aptName.value.trim()
+    apt__confirmPage.email.innerText = correctEmail.trim()
+    apt__confirmPage.mobileNumber.innerText = apt.pt_countryCode.value + '-' + apt.mobileNumber.value
+    apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
+    apt__confirmPage.secondStartDate.innerText = "NA"
+    apt__confirmPage.day.innerText = apt.day.value
+    apt__confirmPage.secondDay.innerText = "NA"
+    apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
+    apt__confirmPage.secondTimeSlot.innerText = "NA"
+    apt__confirmPage.fees.innerText = apt.fees.value
+    apt__confirmPage.address.innerText = apt.address.value
+    apt__confirmPage.type.innerText = apt.type.value
+    apt__confirmPage.nature.innerText = apt.nature.value
+    apt__confirmPage.occurrenceType.innerText = apt.occurrenceType.value
+    apt__confirmPage.category.innerText = apt.category.value
+    apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
+    apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
+    apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
+    apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
+    apt__confirmPage.page.classList.add( 'left-0' )
 
-            }
-          } )
-        } )
-      }
-      else if ( !querySnapshot.empty )
-      {
-        promptMessages( 'Email is already registered.' )
-      }
-    } )
-  }
+    fieldValidators()
 }

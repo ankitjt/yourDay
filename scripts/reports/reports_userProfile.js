@@ -19,12 +19,13 @@ patientNamesList.onchange = () =>
       let dbDate = doc.data().profileCreatedOn.seconds * 1000
       let localDate = new Date( dbDate ).toLocaleDateString()
 
-      let lastUpdate = new Date( doc.data().profileUpdatedOn[ doc.data().profileUpdatedOn.length - 1 ].seconds ) * 1000
-
+      let closeLastDate = doc.data().profileUpdatedOn[ doc.data().profileUpdatedOn.length - 1 ] 
+      let lastUpdate = closeLastDate.seconds * 1000
+      
 
       nameOfUser.innerText = doc.data().aptName
       email.innerText = doc.data().aptEmail[ doc.data().aptEmail.length - 1 ]
-      mobileNumber.innerText = doc.data().apt_pt_countryCode[ doc.data().apt_pt_countryCode.length - 1 ]  + '-' + doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ]
+      mobileNumber.innerText = doc.data().apt_pt_countryCode[ doc.data().apt_pt_countryCode.length - 1 ] + '-' + doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ]
       address.innerText = doc.data().aptAddress[ doc.data().aptAddress.length - 1 ]
       category.innerText = doc.data().aptType
       fee.innerHTML =
@@ -39,10 +40,10 @@ patientNamesList.onchange = () =>
       occurrence.innerText = doc.data().aptOccurrenceType[ doc.data().aptOccurrenceType.length - 1 ]
       createDate.innerText = localDate
       slot.innerText = doc.data().aptDay[ doc.data().aptDay.length - 1 ] + " , " + doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ]
-      whatChanged.innerText = new Date(lastUpdate).toLocaleString()
+      whatChanged.innerText = new Date( lastUpdate ).toLocaleString()
       e_name.innerText = doc.data().emergencyName[ doc.data().emergencyName.length - 1 ]
       e_relation.innerText = doc.data().patientRelation[ doc.data().patientRelation.length - 1 ]
-      e_mobileNumber.innerText = doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ]
+      e_mobileNumber.innerText = doc.data().emergency_countryCode[ doc.data().emergency_countryCode.length - 1 ] + '-' + doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ]
       e_address.innerText = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
 
     } )

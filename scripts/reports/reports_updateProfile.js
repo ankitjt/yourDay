@@ -1,6 +1,7 @@
 let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
 
+
   updateName = document.querySelector( ".updateName" ),
   updateAptNature = document.querySelector( ".updateAptNature" ),
   updateEmail = document.querySelector( ".updateEmail" ),
@@ -23,9 +24,16 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   currentProfileAddress = '',
   currentProfileFees = ''
 
-// Filling selected user profile details in update window.
-updateProfileLink.onclick = () =>
-{
+  // Filling selected user profile details in update window.
+  updateProfileLink.onclick = () =>
+  {
+  if ( body.offsetWidth < 1024 )
+  {
+    updateProfileWrapper.classList.add( '-left-[2000px]' )
+    updateProfileWrapper.classList.remove( 'left-0' )
+    alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+  }
+
   pb.classList.remove( 'lg:left-6' )
   if ( patientNamesList.value === '' )
   {
@@ -33,6 +41,7 @@ updateProfileLink.onclick = () =>
   }
   else
   {
+    updateProfileWrapper.classList.remove( '-left-[2000px]' )
     updateProfileWrapper.classList.add( 'left-0' )
 
     db.collection( "profiles" ).doc( patientNamesList.value ).get().then( ( doc ) =>
@@ -52,10 +61,8 @@ updateProfileLink.onclick = () =>
       update_e_address.value = ''
       update_e_relation.selectedIndex = 0
 
-      console.log( ( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] ) );
-
       let fetchCreateDate = doc.data().profileCreatedOn.seconds * 1000
-      let finalCreateDate = new Date(fetchCreateDate).toLocaleDateString()
+      let finalCreateDate = new Date( fetchCreateDate ).toLocaleDateString()
 
       updateName.value = doc.data().aptName
       updateAptNature.value = doc.data().aptType
@@ -71,9 +78,6 @@ updateProfileLink.onclick = () =>
       update_e_mobileNumber.value = parseInt( doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] )
       update_e_address.value = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
       update_e_relation.value = doc.data().patientRelation[ doc.data().patientRelation.length - 1 ]
-
-
-
     } )
   }
 }
@@ -88,7 +92,7 @@ updateProfileButton.onclick = () =>
 
   // *TODO: need to add check for address
 
-  if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === parseInt( updateFees.value ) )
+  if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === updateFees.value )
   {
     promptMessages( 'No changes found to update' )
   }
@@ -100,10 +104,10 @@ updateProfileButton.onclick = () =>
       aptName: updateName.value,
       aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
       apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value),
-      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value),
+      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
+      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
       aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
-      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ))
+      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
     } )
 
     // ** This needs to be updated, adding information to the db is to be configured.
