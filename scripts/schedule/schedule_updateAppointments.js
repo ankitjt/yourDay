@@ -1,11 +1,11 @@
 const appointmentsToUpdate = () =>
 {
   let aptActions = document.querySelectorAll( '.aptActions' )
+  let body = document.getElementsByTagName('body')[0]
   for ( let i = 0; i < aptActions.length; i++ )
   {
     aptActions[ i ].onchange = () =>
     {
-
       let selectedRow = aptActions[ i ].parentElement.parentElement
 
       let rowId = selectedRow.getAttribute( 'data-id' )
@@ -18,10 +18,9 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Completed',
-            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
+            statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
           } )
-
-          const test = setTimeout( reload123, 3000 )
+          const test = setTimeout( reload123, 2000 )
           function reload123 ()
           {
             location.reload()
@@ -38,10 +37,9 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Paid Cancelled',
-            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-
+            statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
           } )
-          const test = setTimeout( reload123, 3000 )
+          const test = setTimeout( reload123, 2000 )
           function reload123 ()
           {
             location.reload()
@@ -58,9 +56,9 @@ const appointmentsToUpdate = () =>
         {
           dbPath.update( {
             appointmentStatus: 'Free Cancelled',
-            statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
+            statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
           } )
-          const test = setTimeout( reload123, 3000 )
+          const test = setTimeout( reload123, 2000 )
           function reload123 ()
           {
             location.reload()
@@ -71,8 +69,13 @@ const appointmentsToUpdate = () =>
           aptActions[ i ].selectedIndex = 0
         }
       }
-      else if ( aptActions[ i ].value === 'Updated' )
+      else if ( aptActions[ i ].value === 'Update' )
       {
+        if ( body.offsetWidth < 1023 )
+        {
+          alert( 'Please view page on a bigger screen as update window will not be visible.' )
+          aptActions[ i ].selectedIndex = 0
+        }
         pb.classList.remove( 'lg:left-10' )
         let updateAppointments = document.querySelector( '.updateAppointments' )
         updateAppointments.style.transition = '0.5s ease-in-out'
@@ -97,11 +100,11 @@ const appointmentsToUpdate = () =>
                   document.querySelector( '.dayUpdateHolder' )
 
               dbPath.update( {
-                aptDay: dayUpdateHolder.value,
-                aptTimeSlot: timeSlotUpdateHolder.value,
+                aptDay: firebase.firestore.FieldValue.arrayUnion( dayUpdateHolder.value),
+                aptTimeSlot: firebase.firestore.FieldValue.arrayUnion( timeSlotUpdateHolder.value),
                 aptOccurrenceType: occurrenceUpdateHolder.value,
                 appointmentStatus: 'Updated',
-                statusUpdatedTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() )
+                statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
               } )
 
               updateAppointments.style.right = '-2000px'

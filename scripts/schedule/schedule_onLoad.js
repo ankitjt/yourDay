@@ -7,7 +7,6 @@ let arr = [];
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>
     {
-      console.log(doc.data().dateInMills);
       let aptStartDate = new Date( doc.data().dateInMills * 1000 )
       let currentDate = new Date()
       let currentMonth = currentDate.getMonth() 

@@ -1,12 +1,16 @@
 let filterFindBtn = document.querySelector( '.filterFindBtn' )
+let patientNameFromDropdown
 
+patientNamesList.onchange = ( e ) => {
+  patientNameFromDropdown = e.target.options[ e.target.selectedIndex ].getAttribute( 'name' )
+}
 
 filterFindBtn.onclick = () =>
 {
   aptsRange.classList.add( 'hidden' )
   let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
-  if ( patientListButton.innerText === 'By Name' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
+  if ( patientNamesList.value === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
   {
     promptMessages( 'Use all filters' )
   }
@@ -29,7 +33,7 @@ filterFindBtn.onclick = () =>
         myData = new Date( doc.data().statusUpdatedTimeStamp.seconds * 1000 )
 
         // All filters are used
-        if ( patientName.innerText === doc.data().aptName && finalMonth === monthYearArr[ 1 ] && finalYear.toString() === monthYearArr[ 0 ] && scheduleFilterStatus.value === doc.data().appointmentStatus )
+        if ( patientNameFromDropdown === doc.data().aptName && finalMonth === monthYearArr[ 1 ] && finalYear.toString() === monthYearArr[ 0 ] && scheduleFilterStatus.value === doc.data().appointmentStatus )
         {
 
           // Updating count 

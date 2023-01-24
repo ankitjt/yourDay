@@ -60,7 +60,7 @@ const showingApts = ( doc ) =>
                   <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
                   <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>
                   <option value="Paid Cancelled" class='font-semibold text-gray-900'>Paid Cancelled</option>
-                  <option value="Updated" class='font-semibold text-gray-900'>Update</option>
+                  <option value="Update" class='font-semibold text-gray-900'>Update</option>
                   <option value="Closed" class='font-semibold text-gray-900'>Closed</option>
                 </select>
               </span>
