@@ -5,6 +5,7 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   updateAptNature = document.querySelector( ".updateAptNature" ),
   updateEmail = document.querySelector( ".updateEmail" ),
   updateMobileNumber = document.querySelector( ".updateMobileNumber" ),
+  updateCountryCode = document.querySelector( ".update_countryCode" ),
   updateAddress = document.querySelector( ".updateAddress" ),
   updateCreateDate = document.querySelector( ".updateCreateDate" ),
   updateCategory = document.querySelector( ".updateCategory" ),
@@ -53,16 +54,19 @@ updateProfileLink.onclick = () =>
 
       console.log( ( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] ) );
 
+      let fetchCreateDate = doc.data().profileCreatedOn.seconds * 1000
+      let finalCreateDate = new Date(fetchCreateDate).toLocaleDateString()
+
       updateName.value = doc.data().aptName
       updateAptNature.value = doc.data().aptType
       updateMobileNumber.value = parseInt( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] )
       updateEmail.value = doc.data().aptEmail[ doc.data().aptEmail.length - 1 ]
       updateAddress.value = doc.data().aptAddress[ doc.data().aptAddress.length - 1 ]
-      updateCreateDate.value = doc.data().aptStartDate
+      updateCreateDate.value = finalCreateDate
       updateCategory.value = doc.data().aptCategory
       updateOccurrence.value = doc.data().aptOccurrenceType
       updateSlot.value = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
-      updateFees.value = parseInt( doc.data().aptFees[ doc.data().aptFees.length - 1 ] )
+      updateFees.value = doc.data().aptFees[ doc.data().aptFees.length - 1 ]
       update_e_name.value = doc.data().emergencyName[ doc.data().emergencyName.length - 1 ]
       update_e_mobileNumber.value = parseInt( doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] )
       update_e_address.value = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
@@ -94,11 +98,12 @@ updateProfileButton.onclick = () =>
 
     dbRef.update( {
       aptName: updateName.value,
-      aptEmail: updateEmail.value,
-      aptMobileNumber: updateMobileNumber.value,
-      aptAddress: updateAddress.value,
-      aptFees: parseInt( updateFees.value ),
-      profileUpdateOn: firebase.firestore.Timestamp.fromDate( new Date() )
+      aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+      apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value),
+      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value),
+      aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
+      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ))
     } )
 
     // ** This needs to be updated, adding information to the db is to be configured.
