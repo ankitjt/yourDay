@@ -1,6 +1,6 @@
 let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
-
+  updateInput = document.querySelectorAll( '.updateInput' ),
 
   updateName = document.querySelector( ".updateName" ),
   updateAptNature = document.querySelector( ".updateAptNature" ),
@@ -24,9 +24,9 @@ let updateProfileLink = document.querySelector( ".updateProfileLink" ),
   currentProfileAddress = '',
   currentProfileFees = ''
 
-  // Filling selected user profile details in update window.
-  updateProfileLink.onclick = () =>
-  {
+// Filling selected user profile details in update window.
+updateProfileLink.onclick = () =>
+{
   if ( body.offsetWidth < 1024 )
   {
     updateProfileWrapper.classList.add( '-left-[2000px]' )
@@ -89,7 +89,10 @@ let updateProfileButton = document.querySelector( ".updateProfileButton" )
 updateProfileButton.onclick = () =>
 {
   let profileDetails = document.querySelector( ".profileDetails" )
-
+  for ( let input of updateInput )
+  {
+    console.log( input.value )
+  }
   // *TODO: need to add check for address
 
   if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === updateFees.value )
@@ -100,30 +103,17 @@ updateProfileButton.onclick = () =>
   {
     let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
 
-    dbRef.update( {
-      aptName: updateName.value,
-      aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
-      apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
-      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
-      aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
-      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
-    } )
-
-    // ** This needs to be updated, adding information to the db is to be configured.
-
-    let whatChanged = document.querySelector( ".whatChanged" )
-    if ( updateName.value !== nameOfUser.innerHTML )
-    {
-      whatChanged.innerText += 'You updated name.'
-    }
-    if ( updateEmail.value !== email.innerHTML )
-    {
-      whatChanged.innerText += 'You updated Email.'
-    }
+    // dbRef.update( {
+    //   aptName: updateName.value,
+    //   aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+    //   apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+    //   aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
+    //   aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
+    //   aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
+    //   profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
+    // } )
 
     // Updating user profile in Db appointments.
-
     let newDbRef = db.collection( 'appointments' )
     newDbRef.onSnapshot( ( querySnapshot ) =>
     {
