@@ -1,4 +1,5 @@
 let patientNamesList = document.querySelector( '.patientNamesList' );
+let selectedNameOfPatient
 
 ( () =>
 {
@@ -26,4 +27,7 @@ let patientNamesList = document.querySelector( '.patientNamesList' );
 
 } )()
 
-
+patientNamesList.onchange = e =>
+{
+  selectedNameOfPatient = e.target.options[ e.target.selectedIndex ].getAttribute( 'name' )
+}
