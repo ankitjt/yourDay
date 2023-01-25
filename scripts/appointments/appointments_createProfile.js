@@ -11,7 +11,7 @@ confirmButton.onclick = ( e ) =>
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
   let newDateInSec = newDate / 1000
-  
+  let uppercaseName = apt.name.value.toUpperCase()
   let dateInMills = [ newDateInSec ]
   let convertFees = parseInt( apt.fees.value )
 
@@ -39,11 +39,11 @@ confirmButton.onclick = ( e ) =>
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
 
-
+    
 
     // Creating Appointment with One Occurrence
     db.collection( 'appointments' ).add( {
-      aptName: apt.name.value,
+      aptName: uppercaseName,
       aptEmail: apt.email.value,
       aptDay: [ apt.day.value ],
       aptSecondDay: "NA",
