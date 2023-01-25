@@ -61,7 +61,7 @@
             <span class="mb-2 tracking-wider mobileTag md:font-medium md:text-gray-400">Mobile</span>
             <div class="grid grid-cols-2 someWrapper">
               <select name="countryCode" id=""
-                class="updateInput w-20 py-2 text-sm text-white bg-gray-800 border border-blue-500 rounded-md md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_countryCode countryCode"
+                class="w-20 py-2 text-sm text-white bg-gray-800 border border-blue-500 rounded-md updateInput md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_countryCode countryCode"
                 title="Country Code">
               </select>
               <input type='number' value=""
@@ -126,7 +126,7 @@
             <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Mobile Number</span>
             <div class="grid grid-cols-2 someWrapper">
               <select name="countryCode" id=""
-                      class="updateInput w-20 py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_e_countryCode countryCode"
+                      class="w-20 py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md updateInput md:font-semibold placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600 update_e_countryCode countryCode"
                       title="Country Code">
               </select>
               <input type='number' value=""
@@ -137,7 +137,7 @@
           <div class="flex flex-col items-start my-5 profileFee md:justify-between">
             <span class="mb-2 tracking-wider feeTag md:font-medium md:text-gray-400">Emergency Contact Relation</span>
             <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                    class="updateInput w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md update_e_relation md:border-gray-300 placeholder:text-blue-600 md:font-medium md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600">
+                    class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md updateInput update_e_relation md:border-gray-300 placeholder:text-blue-600 md:font-medium md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600">
               <option value="" class="text-xs md:font-semibold md:text-base">
                 Select Relation
               </option>
@@ -259,7 +259,7 @@
 
           <!-- Month and year filter -->
           <input type="text" name="" id=""
-                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByName h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
+                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByNameReports h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
                  placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
           <!-- By Month Breakdown  -->
@@ -268,6 +268,10 @@
             <div class="flex items-center justify-between mb-2 capitalize totalSessions md:mb-4">
               <span>Sessions</span>
               <span class="totalSessionsCount"></span>
+            </div>
+            <div class="flex items-center justify-between mb-2 capitalize totalScheduled md:mb-4">
+              <span>Scheduled</span>
+              <span class="totalScheduledCount"></span>
             </div>
             <div class="flex items-center justify-between mb-2 capitalize totalSupervision md:mb-4">
               <span>Supervision</span>

@@ -13,6 +13,9 @@
   <body class="relative w-full h-full">
 
     <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
+      
+      <!--  (Absolute element 1)   -->
+      <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
 
       <!-- Panic Button  -->
       <span
@@ -45,8 +48,7 @@
       <!-- Right Section  -->
       <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
 
-        <!--  (Absolute element 1)   -->
-        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
+        
 
         <!-- Global Notification (Absolute element 2) -->
         <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
@@ -153,7 +155,7 @@
               <div class="relative w-full">
                 <select title="Patient List" name="" id=""
                   class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
-                  <option selected value="">
+                  <option selected value="" class="font-semibold">
                     Select Name
                   </option>
                 </select>
@@ -178,8 +180,8 @@
         <!-- Patient Profile  -->
         <div class="hidden patientProfileWrapper">
           <section
-            class="my-2 text-sm text-blue-600 border-2 border-gray-200 rounded-md profile md:text-blue-600 md:font-semibold">
-            <div class="grid grid-cols-1 px-10 py-4 profileDetails gap-x-10 sm:grid-cols-3">
+            class="my-2 text-xs text-blue-600 border-2 border-gray-200 rounded-md profile md:text-blue-600 md:font-semibold">
+            <div class="grid grid-cols-1 px-10 py-4 profileDetails gap-x-10 gap-y-3 sm:grid-cols-3">
             </div>
 
           </section>
