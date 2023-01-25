@@ -4,13 +4,11 @@ let notesOfPatients
 let uploadedNotesList = document.querySelector( '.uploadedNotesList' )
 let loading = document.querySelector( '.loading' )
 let uploadNoteFormWrapper = document.querySelector( '.uploadNoteFormWrapper' )
-let patientNameFromDropdown
 
 // Listing All files for selected name.
 patientNamesList.onchange = (e) =>
 {
   
-  patientNameFromDropdown = e.target.options[ e.target.selectedIndex ].getAttribute( 'name' )
   let uploadedNotes = document.querySelector( '.uploadedNotes' )
   let notesCount = document.querySelector( '.notesCount' )
 
@@ -31,7 +29,7 @@ patientNamesList.onchange = (e) =>
       loading.classList.remove( 'hidden' )
     }
 
-    let listRef = firebase.storage().ref( `ptNotes/${ patientNameFromDropdown }/` )
+    let listRef = firebase.storage().ref( `ptNotes/${ selectedNameOfPatient }/` )
     uploadNoteFormWrapper.classList.remove( 'hidden' )
 
     let s = firebase.storage().ref( 'ptNotes' )
@@ -41,7 +39,7 @@ patientNamesList.onchange = (e) =>
     {
       res.prefixes.forEach( ( folderRef ) =>
       {
-        if ( folderRef.name === patientNameFromDropdown )
+        if ( folderRef.name === selectedNameOfPatient )
         {
           listRef.listAll().then( ( res ) =>
           {
@@ -149,7 +147,7 @@ uploadNoteBtn.onclick = ( e ) =>
     // let storageRef = firebase.storage().ref( `ptNotes/${ patientName.getAttribute( 'data-id' ) }/` + file.name )
     // console.log( checkFileName, storageRef );
     
-    let storageRef = firebase.storage().ref( `ptNotes/${ patientNameFromDropdown }/` + file.name )
+    let storageRef = firebase.storage().ref( `ptNotes/${ selectedNameOfPatient }/` + file.name )
     let metadata = {
       uploadTime: firebase.firestore.FieldValue.serverTimestamp()
     }
