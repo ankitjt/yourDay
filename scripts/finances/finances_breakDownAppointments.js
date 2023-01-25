@@ -20,14 +20,15 @@ const showBreakDownOfAppointments = () =>
   moneyScheduled.onclick = () =>
   {
     sessionsBreakDownWrapper.classList.add( 'left-0' )
-    pb.classList.remove('lg:left-6' )
+    sessionsBreakDownWrapper.classList.remove( '-left-[2000px]' )
+    pb.classList.remove( 'lg:left-6' )
 
     sessionsBreakDown.innerHTML = ""
-    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).orderBy( "dateInMills" ).where( "aptName", "==", selectedNameOfPatient ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        let dates = new Date( doc.data().aptStartDate * 1000 )
+        let dates = new Date( doc.data().dateInMills * 1000 )
         let monthYear = financeMonthFilterByName.value
         let monthYearArr = monthYear.split( '-' )
         let finalMonth
@@ -78,13 +79,14 @@ const showBreakDownOfAppointments = () =>
   moneyCompleted.onclick = () =>
   {
     pb.classList.remove( 'lg:left-6' )
+    sessionsBreakDownWrapper.classList.remove( '-left-[2000px]' )
     sessionsBreakDownWrapper.classList.add( 'left-0' )
     sessionsBreakDown.innerText = ""
-    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).orderBy( "dateInMills" ).where('aptName', '==', selectedNameOfPatient).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        let dates = new Date( doc.data().aptStartDate * 1000 )
+        let dates = new Date( doc.data().dateInMills * 1000 )
         let monthYear = financeMonthFilterByName.value
         let monthYearArr = monthYear.split( '-' )
         let finalMonth
@@ -130,19 +132,20 @@ const showBreakDownOfAppointments = () =>
         }
       } )
     } )
-    
+
   }
 
   moneyPaidCancelled.onclick = () =>
   {
     pb.classList.remove( 'lg:left-6' )
     sessionsBreakDownWrapper.classList.add( 'left-0' )
+    sessionsBreakDownWrapper.classList.remove( '-left-[2000px]' )
     sessionsBreakDown.innerText = ""
-    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).orderBy( "dateInMills" ).where( "aptName", "==", selectedNameOfPatient ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        let dates = new Date( doc.data().aptStartDate * 1000 )
+        let dates = new Date( doc.data().dateInMills * 1000 )
         let monthYear = financeMonthFilterByName.value
         let monthYearArr = monthYear.split( '-' )
         let finalMonth
@@ -192,15 +195,16 @@ const showBreakDownOfAppointments = () =>
 
   moneyFreeCancelled.onclick = () =>
   {
-    
+
     pb.classList.remove( 'lg:left-6' )
     sessionsBreakDownWrapper.classList.add( 'left-0' )
+    sessionsBreakDownWrapper.classList.remove( '-left-[2000px]' )
     sessionsBreakDown.innerText = ""
-    db.collection( "appointments" ).orderBy( "aptStartDate" ).where( "aptName", "==", patientName.innerText ).onSnapshot( ( querySnapshot ) =>
+    db.collection( "appointments" ).orderBy( "dateInMills" ).where( "aptName", "==", selectedNameOfPatient ).onSnapshot( ( querySnapshot ) =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        let dates = new Date( doc.data().aptStartDate * 1000 )
+        let dates = new Date( doc.data().dateInMills * 1000 )
         let monthYear = financeMonthFilterByName.value
         let monthYearArr = monthYear.split( '-' )
         let finalMonth

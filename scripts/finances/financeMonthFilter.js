@@ -9,20 +9,20 @@ financeMonthFilter.onchange = () =>
 {
   let totalMoneySessionArr = [],
     totalMoneySupervisionArr = []
-  
+
   let monthYear = financeMonthFilter.value
   let monthYearArr = monthYear.split( '-' )
-  
+  let finalMonth = monthYearArr[ 1 ].replace( '0', '' )
 
   db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
   {
     querySnapshot.forEach( ( doc ) =>
     {
-      let getMonth = new Date( doc.data().aptStartDate * 1000 )
+      let getMonth = new Date( doc.data().dateInMills * 1000 )
       let monthForDb = getMonth.getMonth() + 1
       let finalYear = getMonth.getFullYear()
 
-      if ( monthYearArr[1] === monthForDb.toString() && monthYearArr[0] === finalYear.toString() )
+      if ( finalMonth === monthForDb.toString() && monthYearArr[ 0 ] === finalYear.toString() )
       {
         // For sessions
         if ( doc.data().aptType === 'Session' && doc.data().appointmentStatus === 'Completed' && doc.data().softDelete !== true )
@@ -41,7 +41,7 @@ financeMonthFilter.onchange = () =>
 
           totalMoneySupervisionArr.push( doc.data().aptFees )
           countOfSupervisions.innerText = totalMoneySupervisionArr.length
-          totalMoneyBySupervisions.classList.add('ml-2')
+          totalMoneyBySupervisions.classList.add( 'ml-2' )
           totalMoneyBySupervisions.innerText = totalMoneySupervisionArr.reduce( ( a, b ) => a + b, 0 )
 
         }

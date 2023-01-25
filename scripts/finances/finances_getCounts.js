@@ -1,5 +1,3 @@
-
-
 const getCounts = () =>
 {
   db.collection( "appointments" ).onSnapshot( ( querySnapshot ) =>
@@ -17,20 +15,21 @@ const getCounts = () =>
 
     querySnapshot.forEach( ( doc ) =>
     {
-      let newDateFormat = new Date( doc.data().aptStartDate * 1000 )
+      let newDateFormat = new Date( doc.data().dateInMills * 1000 )
       let monthYear = financeMonthFilterByName.value
 
       let monthYearArr = monthYear.split( '-' )
       let finalMonth
-      let finalYear = newDateFormat.getFullYear()
+      let finalYear = newDateFormat.getFullYear().toString()
       newDateFormat.getMonth() + 1 < 10 ? finalMonth = '0' + ( newDateFormat.getMonth() + 1 ) : finalMonth = ( newDateFormat.getMonth() + 1 ).toString()
 
-      if ( finalMonth === monthYearArr[ 1 ] && finalYear.toString() === monthYearArr[ 0 ] )
+      
+
+      if ( finalMonth === monthYearArr[ 1 ] && finalYear === monthYearArr[ 0 ] )
       {
-        if ( patientName.innerText === doc.data().aptName )
+        if ( selectedNameOfPatient === doc.data().aptName )
         {
           namesArr.push( doc.data().aptName )
-          console.log( doc.data().appointmentStatus, newDateFormat.getDate(), newDateFormat.getMonth() + 1, newDateFormat.getFullYear() )
 
           if ( doc.data().appointmentStatus === "Scheduled" || doc.data().appointmentStatus === 'Pending' )
           {
@@ -100,15 +99,18 @@ const getCounts = () =>
           moneyBreakDownWrapper.innerHTML = moneyBreakData
           showBreakDownOfAppointments()
         }
-        // else 
-        // {
-        //   moneyBreakDownWrapper.innerHTML = `
-        //        <div class='h-full w-full p-3 text-center'>
-        //          <span class='text-red-500'>No appointments are scheduled.</span>
-        //        </div>
-        //      `
-        // }
       }
+
+      // else if ( monthYearArr[ 1 ] !== doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ]  )
+      // {
+      //   console.log( monthYearArr[ 1 ], doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ] );
+      //   moneyBreakDownWrapper.innerHTML = `
+      //        <div class='h-full w-full p-3 text-center'>
+      //          <span class='text-red-500'>No appointments are scheduled.</span>
+      //        </div>
+      //      `
+      // }
+
 
     } )
   } )
