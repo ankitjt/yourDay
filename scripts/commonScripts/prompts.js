@@ -2,11 +2,8 @@ let checkPrompt = document.querySelector( '.checkPrompt' )
 let pageBlocker = document.querySelector( '.pageBlocker' )
 let promptContent = document.querySelector( '.promptContent' )
 
-
-
 const promptMessages = ( message ) =>
 {
-  
   promptsWrapper.classList.add( 'left-1/2' )
   pageBlocker.classList.remove( 'hidden' )
   promptsWrapper.innerHTML += `
@@ -27,20 +24,16 @@ const promptMessages = ( message ) =>
   {
     close.onclick = () =>
     {
-      let parent = close.parentElement;
-      let gp = parent.parentElement;
+      let parent = close.parentElement
+      let gp = parent.parentElement
       parent.classList.add( 'hidden' )
       gp.lastElementChild.onclick = () =>
       {
         parent.classList.add( 'hidden' )
         promptsWrapper.classList.remove( 'left-1/2' )
         pageBlocker.classList.add( 'hidden' )
-       
         promptsWrapper.innerHTML = ''
       }
-      
     }
   }
-
-
 }

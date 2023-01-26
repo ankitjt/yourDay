@@ -23,8 +23,6 @@ const getCounts = () =>
       let finalYear = newDateFormat.getFullYear().toString()
       newDateFormat.getMonth() + 1 < 10 ? finalMonth = '0' + ( newDateFormat.getMonth() + 1 ) : finalMonth = ( newDateFormat.getMonth() + 1 ).toString()
 
-      
-
       if ( finalMonth === monthYearArr[ 1 ] && finalYear === monthYearArr[ 0 ] )
       {
         if ( selectedNameOfPatient === doc.data().aptName )
@@ -61,22 +59,22 @@ const getCounts = () =>
           moneyBreakData =
             `           
                           <div class='p-3'>
-                          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
-                            <span>Scheduled/Pending</span>
-                            <span class="moneyScheduled tracking-widest  ${ totalScheduled.length === 0 ? "" : "underline" } cursor-pointer">${ totalScheduled.length }</span>
+                          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-gray-300 px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-700 cursor-pointer">
+                            <span class='font-medium uppercase text-xs tracking-widest'>Scheduled/Pending</span>
+                            <span class="moneyScheduled   ${ totalScheduled.length === 0 ? "" : "underline" } cursor-pointer">${ totalScheduled.length }</span>
                           </div>
-                          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
-                            <span>Completed</span>
+                          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-gray-300 px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-700 cursor-pointer">
+                            <span class='font-medium uppercase text-xs tracking-widest'>Completed</span>
                             <span class="moneyCompleted tracking-widest ${ totalFees.length === 0 ? "" : "underline" }  cursor-pointer">${ totalFees.length === 0 ? "-" : totalFees.length }</span>
                           </div>
                           <div
-                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
-                            <span>Paid Cancelled</span>
+                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-gray-300 px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-700 cursor-pointer">
+                            <span class='font-medium uppercase text-xs tracking-widest'>Paid Cancelled</span>
                             <span class="moneyPaidCancelled tracking-widest ${ totalPaidCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalPaidCancelled.length < 1 ? "-" : totalPaidCancelled.length }</span>
                           </div>
                           <div
-                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-blue-600 md:bg-blue-100  px-3 py-3 rounded-md">
-                            <span>Free Cancelled</span>
+                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-800 text-white md:text-gray-300 px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-700 cursor-pointer">
+                            <span class='font-medium uppercase text-xs tracking-widest'>Free Cancelled</span>
                             <span class="moneyFreeCancelled tracking-widest ${ totalFreeCancelled.length === 0 ? "" : "underline" } cursor-pointer">${ totalFreeCancelled.length === 0 ? "-" : totalFreeCancelled.length }</span>
                           </div>
                           <hr class="h-1 bg-blue-500 rounded-md my-4">

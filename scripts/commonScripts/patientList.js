@@ -1,5 +1,5 @@
-let patientNamesList = document.querySelector( '.patientNamesList' );
-let selectedNameOfPatient
+let patientNamesList = document.querySelector( '.patientNamesList' )
+let selectedNameOfPatient;
 
 ( () =>
 {
@@ -16,7 +16,7 @@ let selectedNameOfPatient
       if ( doc.data().softDelete !== true )
       {
         let listOfNames = `
-        <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }' value='${ doc.id }' name='${ doc.data().aptName}' class='font-semibold' >
+        <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }' value='${ doc.id }' name='${ doc.data().aptName }' class='font-semibold' >
         ${ doc.data().aptName } [ ${ doc.data().aptEmail } ] ( ${ doc.data().aptType === 'Session' ? 'Session' : 'SuperVision' } )
         </option>
         `
@@ -24,7 +24,6 @@ let selectedNameOfPatient
       }
     } )
   } )
-
 } )()
 
 patientNamesList.onchange = e =>

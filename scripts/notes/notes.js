@@ -4,9 +4,10 @@ let notesOfPatients
 let uploadedNotesList = document.querySelector( '.uploadedNotesList' )
 let loading = document.querySelector( '.loading' )
 let uploadNoteFormWrapper = document.querySelector( '.uploadNoteFormWrapper' )
+let findNotesByName = document.querySelector( '.findNotesByName' )
 
 // Listing All files for selected name.
-patientNamesList.onchange = (e) =>
+findNotesByName.onclick = (e) =>
 {
   
   let uploadedNotes = document.querySelector( '.uploadedNotes' )
@@ -16,9 +17,12 @@ patientNamesList.onchange = (e) =>
   {
     uploadedNotes.classList.add( 'hidden' )
     uploadNoteFormWrapper.classList.add( 'hidden' )
+    promptMessages('Select name to search.')
   }
   else
   {
+    uploadedNotes.classList.remove( 'hidden' )
+    uploadNoteFormWrapper.classList.remove( 'hidden' )
     let myArr = []
 
     uploadedNotesList.innerHTML = ''
@@ -159,7 +163,7 @@ uploadNoteBtn.onclick = ( e ) =>
     // if ( checkFileName === storageRef)
     // {
     // promptMessages( `A note with same name exists for the patient.
-    // Please check exisiting notes of the patient or give a different file name.`)
+    // Please check existing notes of the patient or give a different file name.`)
     // }
     // else
     // {
