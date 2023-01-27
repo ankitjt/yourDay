@@ -107,4 +107,32 @@ notificationOpener.onclick = () =>
     })
 };
 
+// Getting next session in queue.
+let arrDates = [];
+( () =>
+{
+  let currentDate = Math.round(new Date() / 1000)
+  console.log( currentDate );
+  db.collection( 'appointments' ).orderBy('dateInMills').onSnapshot( ( querySnapshot ) =>
+  {
+    querySnapshot.forEach( ( doc ) =>
+    {
+      if ( doc.data().appointmentStatus !== 'Completed' && doc.data().dateInMills[ doc.data().dateInMills.length - 1 ] >= currentDate )
+      {
+        let dates = `${doc.data().aptStartDate[ doc.data().aptStartDate.length - 1 ]}, ${doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ]}, ${doc.data().aptStartYear[ doc.data().aptStartYear.length - 1 ]}, ${doc.data().aptTimeSlot[doc.data().aptTimeSlot.length - 1]}`
+        arrDates.push( dates )
+        
+        // let s = doc.data().dateInMills[ doc.data().dateInMills.length - 1 ] * 1000
+        // arrDates.push( new Date( s ) / 1000 )
+        // let closestDate = arrDates.reduce( ( prev, current ) =>
+        // {
+        //   return ( Math.abs( current - currentDate ) < Math.abs( prev - currentDate ) ? current : prev )
+        // } )
+        // console.log(new Date(closestDate * 1000));
+      }
+      
+    } )
+    promptMessages( 'Next appointment is on ' + arrDates[ 0 ] );
+  })
+})()
 
