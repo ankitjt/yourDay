@@ -96,7 +96,6 @@ monthListByNameReports.onchange = () =>
       let finalYear = getMonth.getFullYear()
       if ( finalMonth === monthForDb.toString() && monthYearArr[ 0 ] === finalYear.toString() )
       {
-        console.log( monthForDb )
         if ( doc.data().aptType === 'Session' )
         {
           sessionCounts.push( doc.data().aptType )
@@ -111,7 +110,6 @@ monthListByNameReports.onchange = () =>
         {
           completedCount.push( doc.data().appointmentStatus )
           totalCompletedCount.innerText = completedCount.length
-          console.log( doc.data().aptName )
         }
         if ( doc.data().aptType === 'Supervision' )
         {
