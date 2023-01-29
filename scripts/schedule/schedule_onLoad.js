@@ -1,15 +1,14 @@
 let arr = [];
 ( () =>
 {
-
-  aptsDb.orderBy( 'dateInMills').get().then( ( querySnapshot ) =>
+  aptsDb.orderBy( 'dateInMills' ).get().then( ( querySnapshot ) =>
   {
     rowsToDelete()
     querySnapshot.forEach( ( doc ) =>
     {
       let aptStartDate = new Date( doc.data().dateInMills * 1000 )
       let currentDate = new Date()
-      let currentMonth = currentDate.getMonth() 
+      let currentMonth = currentDate.getMonth()
       let lastMonth = currentDate.getMonth() - 1
       let aptStartDateMonth = aptStartDate.getMonth()
 
@@ -71,18 +70,18 @@ let arr = [];
       }
 
 
-      if ( aptStartDateMonth === currentMonth || aptStartDateMonth - 1 === lastMonth )
+      // if ( aptStartDateMonth === currentMonth || aptStartDateMonth - 1 === lastMonth )
+      // {
+      if ( doc.data().softDelete !== true )
       {
-        if ( doc.data().softDelete !== true )
+        if ( doc.data().appointmentStatus === 'Scheduled' || doc.data().appointmentStatus === 'Updated' || doc.data().appointmentStatus === 'Pending' )
         {
-          if ( doc.data().appointmentStatus === 'Scheduled' || doc.data().appointmentStatus === 'Updated' || doc.data().appointmentStatus === 'Pending' )
-          {
-            arr.push( doc.id )
-            appointmentCount.innerText = `( ${ arr.length} )`
-            showingApts( doc, aptStartDate, aptStartDateMonth )
-          }
+          arr.push( doc.id )
+          appointmentCount.innerText = `( ${ arr.length } )`
+          showingApts( doc, aptStartDate, aptStartDateMonth )
         }
       }
+      // }
       updatePendingAps( doc, aptStartDate )
       appointmentsToUpdate()
     } )

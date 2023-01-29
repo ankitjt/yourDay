@@ -8,7 +8,7 @@ const updatePendingAps = ( doc, aptStartDate ) =>
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
   let finalHourSplit = Number( hourSplit[ 0 ] )
 
-  if ( aptStartDate < currentDate && currentDate.getHours() > finalHourSplit )
+  if ( aptStartDate < currentDate && currentDate.getHours() > finalHourSplit && doc.data().appointmentStatus !== 'Pending')
   {
     let targetRecord = aptsDb.doc( doc.id )
 

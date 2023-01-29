@@ -35,7 +35,7 @@ const fieldValidators = () =>
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
   let finalHourSplit = Number( hourSplit[ 0 ] )
 
-  if ( finalHourSplit < currentHour.getHours() || apt.timeSlot.value === '' )
+  if ( finalHourSplit < currentHour.getHours() && selectedDate < currentDate )
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.timeSlot.classList.add( 'md:border-red-600' )

@@ -12,7 +12,8 @@ select {
 .pageNotFound,
 .indexPageAppName,
 .confirmPageTitle,
-.pb {
+.pb,
+.lovelyDay{
     font-family: 'La Belle Aurore', cursive !important;
 }
 

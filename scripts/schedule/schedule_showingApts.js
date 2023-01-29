@@ -4,6 +4,10 @@ const showingApts = ( doc ) =>
   let lastElementOfUpdatedStatus = doc.data().statusUpdatedTimeStamp[ doc.data().statusUpdatedTimeStamp.length - 1 ]
   let lastUpdatedDate = new Date( lastElementOfUpdatedStatus.seconds * 1000 )
 
+  let userNames = []
+  userNames.push( doc.data().aptName )
+  console.log( userNames );
+  
   let currentMonthAppointments = `
   
   <div class="flex flex-col justify-center align-middle tableRow12">
