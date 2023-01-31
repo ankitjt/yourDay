@@ -1,5 +1,6 @@
 let patientNamesList = document.querySelector( '.patientNamesList' )
-let selectedNameOfPatient;
+let selectedNameOfPatient
+let patientEmail = [];
 
 ( () =>
 {
@@ -21,6 +22,8 @@ let selectedNameOfPatient;
         </option>
         `
         patientNamesList.innerHTML += listOfNames
+        patientEmail.push( doc.data().aptEmail.at( -1 ) )
+        
       }
     } )
   } )

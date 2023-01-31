@@ -9,7 +9,7 @@ const fieldValidators = () =>
     {
       apt__confirmPage.page.classList.add( '-left-[2000px]' )
       p_mobile.classList.add( 'border-red-600' )
-      promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.' );
+      promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.' )
     }
   }
 
@@ -21,22 +21,26 @@ const fieldValidators = () =>
     {
       apt__confirmPage.page.classList.add( '-left-[2000px]' )
       p_e_mobile.classList.add( 'md:border-red-600' )
-      promptMessages( 'Emergency Mobile number should be less than 10 and greater than 5 digits.' );
+      promptMessages( 'Emergency Mobile number should be less than 10 and greater than 5 digits.' )
     }
   }
 
   // Check for slot hour and current hour
-  let selectedDate = new Date( apt.startDate.value ).toLocaleDateString()
-  let currentDate = new Date().toLocaleDateString()
+  let selectedDate = new Date( apt.startDate.value )
+  let currentDate = new Date()
+  
   let currentHour = new Date()
   let userTimeSlot = apt.timeSlot.value
   let splitSlot = userTimeSlot.split( '-' )
   let trimmedSlot = splitSlot.map( str => str.trim() )
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
   let finalHourSplit = Number( hourSplit[ 0 ] )
+  finalHourSplit < 12 ? finalHourSplit = finalHourSplit + 12 : finalHourSplit
+  
 
   if ( finalHourSplit < currentHour.getHours() && selectedDate < currentDate )
   {
+  
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.timeSlot.classList.add( 'md:border-red-600' )
     promptMessages( 'If start date is today, slot hour cannot be older than current hour.' )
@@ -45,6 +49,7 @@ const fieldValidators = () =>
   // Check for old start Date 
   if ( selectedDate < currentDate )
   {
+    console.log( selectedDate, currentDate )
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.startDate.classList.add( 'md:border-red-600' )
     promptMessages( 'Appointment Start Date should be current or future date.' )

@@ -1,14 +1,51 @@
 // Showing appointments of the current and previous month.
+let startDateArr = []
+let startMonthArr = []
+let allRecords = []
+
 const showingApts = ( doc ) =>
 {
   let lastElementOfUpdatedStatus = doc.data().statusUpdatedTimeStamp[ doc.data().statusUpdatedTimeStamp.length - 1 ]
   let lastUpdatedDate = new Date( lastElementOfUpdatedStatus.seconds * 1000 )
 
-  let userNames = []
-  userNames.push( doc.data().aptName )
-  console.log( userNames );
-  
-  let currentMonthAppointments = `
+  let abc = new Date( doc.data().dateInMills.at( -1 ) * 1000 )
+  allRecords.push( {
+    name: doc.data().aptName,
+    email: doc.data().aptEmail,
+    day: doc.data().aptDay.at( -1 ),
+    type: doc.data().aptType,
+    time: abc
+  } )
+
+  allRecords.sort( function ( a, b )
+  {
+    return a.time - b.time
+  } )
+  console.log( allRecords )
+
+  db.collection( 'profiles' ).onSnapshot( ( querySnapshotProfiles ) =>
+  {
+    querySnapshotProfiles.forEach( ( profileDoc ) =>
+    {
+      if ( profileDoc.data().aptEmail.at( -1 ) === doc.data().aptEmail )
+      {
+        startDateArr.push( doc.data().aptStartDate.at( -1 ) )
+        startMonthArr.push( doc.data().aptStartMonth.at( -1 ) )
+      }
+    } )
+  } )
+
+  let update = false
+  setTimeout( () =>
+  {
+    let aptStartDate = startDateArr.at( -1 )
+    let aptStartMonth = startMonthArr.at( -1 )
+
+    if ( doc.data().aptStartDate.at( -1 ) === aptStartDate && doc.data().aptStartMonth.at( -1 ) === aptStartMonth )
+    {
+      update = true
+    }
+    let currentMonthAppointments = `
   
   <div class="flex flex-col justify-center align-middle tableRow12">
               <div class="grid grid-cols-6 text-center py-4 place-items-center text-xs border-b border-gray-200  hover:bg-blue-100 ease-in-out duration-300 text-blue-600 font-semibold px-2" data-id="${ doc.id }">
@@ -16,6 +53,7 @@ const showingApts = ( doc ) =>
               <span>
                 <span class='scheduleName'>${ doc.data().aptName } </span>
                 <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ doc.data().aptEmail } </span>
+                <div class='text-center w-full mt-2 font-medium'><button class='addMoreApt ${ update === true ? 'inline' : 'hidden' } text-center rounded-md bg-rose-600 p-2 text-white cursor-pointer text-[10px] '>Add 5 more appointments</button></div>
               </span>
               <span>${ doc.data().aptTimeSlot }</span>
               <span>
@@ -71,7 +109,9 @@ const showingApts = ( doc ) =>
             </div>
             </div>
   `
-  scheduleTableRows.innerHTML += currentMonthAppointments
+    scheduleTableRows.innerHTML += currentMonthAppointments
+  }, 1000 )
+
 
 }
 

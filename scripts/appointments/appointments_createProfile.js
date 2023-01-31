@@ -15,7 +15,7 @@ confirmButton.onclick = ( e ) =>
   let dateInMills = [ newDateInSec ]
   let convertFees = parseInt( apt.fees.value )
 
-  // createProfile()
+  createProfile()
 
   // Creating future appointments.
   for ( let i = 0; i < 5; i++ )
@@ -41,7 +41,7 @@ confirmButton.onclick = ( e ) =>
     appointmentYear.push( futureYear )
 
     // Creating Appointment with One Occurrence
-    db.collection( 'appointments' ).doc( `${ uppercaseName }` ).collection( 'details' ).add( {
+    db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
       aptName: uppercaseName,
       aptEmail: apt.email.value,
       aptDay: [ apt.day.value ],
