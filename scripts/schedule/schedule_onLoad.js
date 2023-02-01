@@ -3,23 +3,19 @@ let apt_count = [];
 {
   setTimeout( () =>
   {
-    
     for ( let currentName of patientEmail )
     {
-      
       db.collection( `appointments/${ currentName }/details` ).orderBy( 'dateInMills' ).get().then( ( querySnapshot ) =>
       {
-        
         rowsToDelete()
         querySnapshot.forEach( ( doc ) =>
         {
-          
           let aptStartDate = new Date( doc.data().dateInMills * 1000 )
           let currentDate = new Date()
           let currentMonth = currentDate.getMonth()
           let lastMonth = currentDate.getMonth() - 1
           let aptStartDateMonth = aptStartDate.getMonth()
-  
+
           if ( aptStartDateMonth === currentMonth || aptStartDateMonth - 1 === lastMonth )
           {
             if ( doc.data().appointmentStatus === 'Pending' || doc.data().appointmentStatus === 'Scheduled' || doc.data().appointmentStatus === 'Updated' )
@@ -76,8 +72,6 @@ let apt_count = [];
               scheduleGalleryView.innerHTML += appointmentPill
             }
           }
-  
-  
           // if ( aptStartDateMonth === currentMonth || aptStartDateMonth - 1 === lastMonth )
           // {
           if ( doc.data().softDelete !== true )
@@ -95,6 +89,5 @@ let apt_count = [];
         } )
       } )
     }
-    
   }, 1000 )
 } )()
