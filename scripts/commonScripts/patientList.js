@@ -18,14 +18,15 @@ let patientEmail = [];
       {
         let listOfNames = `
         <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail }' value='${ doc.id }' name='${ doc.data().aptName }' class='font-semibold' >
-        ${ doc.data().aptName } [ ${ doc.data().aptEmail } ] ( ${ doc.data().aptType === 'Session' ? 'Session' : 'SuperVision' } )
+        ${ doc.data().aptName } [ ${ doc.data().aptEmail } ] ( ${ doc.data().aptType === 'Session' ? 'Session' : 'Supervision' } )
         </option>
         `
         patientNamesList.innerHTML += listOfNames
         patientEmail.push( doc.data().aptEmail.at( -1 ) )
-        
       }
     } )
+    fetchingData( )
+    
   } )
 } )()
 

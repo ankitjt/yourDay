@@ -175,9 +175,7 @@
                 </div>
               </div>
             `
-          scheduleTableRows.innerHTML += currentMonthAppointments
-          
-          
+          scheduleTableRows.innerHTML += currentMonthAppointments 
         }
       } )
     }

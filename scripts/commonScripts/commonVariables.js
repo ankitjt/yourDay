@@ -5,6 +5,7 @@ let promptsWrapper = document.querySelector( '.promptsWrapper' )
 let pb = document.querySelector( '.pb' )
 let rightSection = document.querySelector( '.rightSection' )
 let countryCode = document.querySelectorAll( ".countryCode" )
+let dataArr = []
 
 
 
