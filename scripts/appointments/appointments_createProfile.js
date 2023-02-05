@@ -18,7 +18,9 @@ confirmButton.onclick = ( e ) =>
   createProfile()
 
   // Creating future appointments.
-  for ( let i = 0; i < 5; i++ )
+  let count = [ 1, 2, 3, 4, 5 ]
+  let showUpdate;
+  for ( let i = 0; i < count.length; i++ )
   {
 
     // Getting future Date, Month, Year .
@@ -39,8 +41,8 @@ confirmButton.onclick = ( e ) =>
 
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
-
-    // Creating Appointment with One Occurrence
+    
+    // Creating Appointment for One Occurrence
     db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
       aptName: uppercaseName,
       aptEmail: apt.email.value,
@@ -57,7 +59,8 @@ confirmButton.onclick = ( e ) =>
       appointmentStatus: 'Scheduled',
       aptFees: convertFees,
       serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-      statusUpdatedTimeStamp: [ 'NA' ]
+      statusUpdatedTimeStamp: [ 'NA' ],
+      showUpdate: count[ i ] === 5 ? 'update' : '' 
     } )
 
   }

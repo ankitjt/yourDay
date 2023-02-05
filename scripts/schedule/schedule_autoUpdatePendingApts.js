@@ -1,4 +1,4 @@
-const updatePendingAps = ( doc, aptStartDate ) =>
+const autoUpdatePendingAppointments = ( doc, aptStartDate ) =>
 {
 
   let currentDate = new Date()

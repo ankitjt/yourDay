@@ -1,4 +1,4 @@
-const appointmentsToUpdate = () =>
+const updateAppointmentStatus = () =>
 {
   let aptActions = document.querySelectorAll( '.aptActions' )
   let body = document.getElementsByTagName('body')[0]
