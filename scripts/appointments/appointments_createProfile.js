@@ -19,7 +19,7 @@ confirmButton.onclick = ( e ) =>
 
   // Creating future appointments.
   let count = [ 1, 2, 3, 4, 5 ]
-  let showUpdate;
+
   for ( let i = 0; i < count.length; i++ )
   {
 
