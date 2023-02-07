@@ -1,92 +1,114 @@
-const addMoreAppointments = (  ) =>
+const addMoreAppointments = () =>
 {
-    let showUpdate = document.querySelectorAll( '.showUpdate' )
-    for ( let update of showUpdate )
+    let showUpdate = document.querySelectorAll( ".showUpdate" )
+    for ( let updateButton of showUpdate )
     {
-        update.onclick = () =>
+        updateButton.onclick = () =>
         {
-            
-            let currentUserData = [];
-            let ptName = update.parentElement.childNodes[ 3 ].innerText
-            console.log(dataArr)
-            for ( let userDetails of dataArr )
+            let updateDetailsArr = []
+            let ptEmail = updateButton.parentElement.childNodes[ 3 ].innerText
+            let confirmMessage = `Do you wish to add 5 more appointments for ${ ptEmail }`
+            if ( confirm( confirmMessage ) === true )
             {
-                if ( ptName === userDetails.email )
+                for ( let patient of dataArr )
                 {
-                    currentUserData.push( userDetails )
+                    if ( ptEmail === patient.email )
+                    {
+                        updateDetailsArr.push( {
+                            type: patient.type,
+                            slot: patient.slot,
+                            day: patient.day,
+                            name: patient.name,
+                            status: patient.status,
+                            newConvertedDate: patient.convertedDate,
+                            id: patient.id,
+                            email: patient.email,
+                            date: patient.date,
+                            month: patient.month,
+                            year: patient.year,
+                            showUpdate: patient.showUpdate,
+                            fees: patient.fees
+                        } )
+                    }
                 }
+
+                let updateRef = updateDetailsArr.at( -1 )
+                let dbRef = db.collection( `appointments/${ updateRef.email }/details` )
+
+
+
+                let newCount = [ 1, 2, 3, 4, 5, 6 ]
+                let newDate = updateRef.newConvertedDate
+
+                let firstDay = newDate.getDate().toString()
+                let firstMonth = ( newDate.getMonth() + 1 ).toString()
+                let firstYear = newDate.getFullYear().toString()
+                let appointmentDate = [ firstDay ]
+                let appointmentMonth = [ firstMonth ]
+                let appointmentYear = [ firstYear ]
+                let newDateInSec = newDate / 1000
+                let uppercaseName = updateRef.name.toUpperCase()
+                let dateInMills = [ newDateInSec ]
+                let convertFees = updateRef.fees
+
+                for ( let i = 1; i < newCount.length; i++ )
+                {
+
+                    // Getting future Date, Month, Year .
+                    let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
+                    dateInMills.push( futureAppointments )
+                    let some = futureAppointments
+                    let someTimes = new Date( some * 1000 )
+
+                    let futureDate = someTimes.getDate().toString()
+                    let finalFutureDate
+                    futureDate < 10 ? finalFutureDate = '0' + futureDate : finalFutureDate = futureDate
+                    appointmentDate.push( finalFutureDate )
+
+                    let futureMonth = ( someTimes.getMonth() + 1 ).toString()
+                    let finalFutureMonth
+                    futureMonth < 10 ? finalFutureMonth = '0' + futureMonth : finalFutureMonth = futureMonth
+                    appointmentMonth.push( finalFutureMonth )
+
+                    let futureYear = someTimes.getFullYear().toString()
+                    appointmentYear.push( futureYear )
+
+                    // Creating Appointment for One Occurrence
+                    dbRef.add( {
+                        aptName: uppercaseName,
+                        aptEmail: updateRef.email,
+                        aptDay: [ updateRef.day ],
+                        aptSecondDay: "NA",
+                        aptTimeSlot: [ updateRef.slot ],
+                        aptSecondTimeSlot: "NA",
+                        aptType: updateRef.type,
+                        dateInMills: [ dateInMills[ i ] ],
+                        aptStartDate: [ appointmentDate[ i ] ],
+                        aptStartMonth: [ appointmentMonth[ i ] ],
+                        aptStartYear: [ appointmentYear[ i ] ],
+                        aptSecondStartDate: "NA",
+                        appointmentStatus: 'Scheduled',
+                        aptFees: convertFees,
+                        serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
+                        statusUpdatedTimeStamp: [ 'NA' ],
+                        showUpdate: newCount[ i ] === 6 ? 'update' : ''
+                    } )
+                    setTimeout( () =>
+                    {
+                        location.reload()
+                    }, 2000 )
+                }
+                updateButton.classList.add( 'hidden' )
+
+                // Updating the status of last appointment for the user
+                let dbRef_LASTAPT = db.collection( `appointments/${ updateRef.email }/details` ).doc( updateRef.id )
+                dbRef_LASTAPT.update( {
+                    showUpdate: 'updated',
+                    addedAppointmentsOn: firebase.firestore.Timestamp.fromDate( new Date() )
+                } )
             }
-            console.log( currentUserData )
-         
-            let lastEntry = currentUserData.at( -1 )
-            // console.log(lastEntry)
 
-            let dbEntry = db.collection( `appointments/${ lastEntry.email }/details` )
 
-            let newDate = lastEntry.convertedDate
-            let firstDay = newDate.getDate().toString()
-            let firstMonth = ( newDate.getMonth() + 1 ).toString()
-            let firstYear = newDate.getFullYear().toString()
-            let appointmentDate = [ firstDay ]
-            let appointmentMonth = [ firstMonth ]
-            let appointmentYear = [ firstYear ]
-            let newDateInSec = newDate / 1000
-            let uppercaseName = lastEntry.name.toUpperCase()
-            let dateInMills = [ newDateInSec ]
-            let convertFees = parseInt( lastEntry.fees )
-
-            let addMoreCount = [ 1, 2, 3, 4, 5 ]
-
-            for ( let i = 0; i < addMoreCount.length; i++ )
-            {
-
-                // Getting future Date, Month, Year .
-                let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-                dateInMills.push( futureAppointments )
-                let some = futureAppointments
-                let someTimes = new Date( some * 1000 )
-
-                let futureDate = someTimes.getDate().toString()
-                let finalFutureDate
-                futureDate < 10 ? finalFutureDate = '0' + futureDate : finalFutureDate = futureDate
-                appointmentDate.push( finalFutureDate )
-
-                let futureMonth = ( someTimes.getMonth() + 1 ).toString()
-                let finalFutureMonth
-                futureMonth < 10 ? finalFutureMonth = '0' + futureMonth : finalFutureMonth = futureMonth
-                appointmentMonth.push( finalFutureMonth )
-
-                let futureYear = someTimes.getFullYear().toString()
-                appointmentYear.push( futureYear )
-
-                let futureDates = `${ finalFutureDate }/${ finalFutureMonth }/${ futureYear }`
-                // console.log( futureDates )
-
-                // Creating Appointment for One Occurrence
-                // dbEntry.add( {
-                //     aptName: uppercaseName,
-                //     aptEmail: apt.email.value,
-                //     aptDay: [ apt.day.value ],
-                //     aptSecondDay: "NA",
-                //     aptTimeSlot: [ apt.timeSlot.value ],
-                //     aptSecondTimeSlot: "NA",
-                //     aptType: apt.type.value,
-                //     dateInMills: [ dateInMills[ i ] ],
-                //     aptStartDate: [ appointmentDate[ i ] ],
-                //     aptStartMonth: [ appointmentMonth[ i ] ],
-                //     aptStartYear: [ appointmentYear[ i ] ],
-                //     aptSecondStartDate: "NA",
-                //     appointmentStatus: 'Scheduled',
-                //     aptFees: convertFees,
-                //     serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-                //     statusUpdatedTimeStamp: [ 'NA' ],
-                //     showUpdate: count[ i ] === 5 ? 'update' : ''
-                // } )
-
-            }
-           
         }
-        currentUserData = []
     }
-
 }
