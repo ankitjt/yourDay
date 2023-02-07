@@ -26,6 +26,7 @@ const fetchingData = () =>
           date: doc.data().aptStartDate.at( -1 ),
           month: doc.data().aptStartMonth.at( -1 ),
           year: doc.data().aptStartYear.at( -1 ),
+          fees: doc.data().aptFees,
           showUpdate: doc.data().showUpdate
         } )
       } )
