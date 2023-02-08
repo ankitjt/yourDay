@@ -92,37 +92,15 @@ setTimeout( () =>
                       <span>${ eachRecord.type }</span>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
-                          <div class="${ eachRecord.status === " Completed" ? "block" : "hidden" }">
-                            <span class="text-emerald-500">
-                              ${ eachRecord.status === undefined ? "Scheduled" : eachRecord.status }
+                         <span class="text-emerald-600">
+                              ${ eachRecord.status }
                             </span>
-                          </div>
-                          <div class="${ eachRecord.status === " Cancelled" ? "block" : "hidden" }">
-                            <span class="text-red-500">
-                              ${ eachRecord.status === undefined ? "Scheduled" : eachRecord.status }
-                            </span>
-                          </div>
-                          <div class="${ eachRecord.status === " Updated" ? "block" : "hidden" }">
-                            <span class="text-amber-500">
-                              ${ eachRecord.status === undefined ? "Scheduled" : eachRecord.status }
-                            </span>
-                          </div>
-                          <div class="${ eachRecord.status === " Pending" ? "block" : "hidden" }">
-                            <span class="text-amber-600 animate-ping">
-                              ${ eachRecord.status === undefined ? "Scheduled" : eachRecord.status }
-                            </span>
-                          </div>
-                          <div class="${ eachRecord.status === " Scheduled" ? "block" : "hidden" }">
-                            <span>
-                              ${ eachRecord.status === "Scheduled" ? "Scheduled" : eachRecord.status }
-                            </span>
-                          </div>
                           <span class='text-xs text-orange-500'>${ eachRecord.profileStatus === true ? 'Profile Deleted' : '' } </span>
                         </div>
     
                         <div class="statusUpdateTime">
                           <span class="text-[10px] font-semibold">
-                          ${ lastElementOfUpdatedStatus === 'NA' ? 'NA' : lastUpdatedDate.toLocaleDateString() + ',' + lastUpdatedDate.toLocaleTimeString() }
+                          ${ lastElementOfUpdatedStatus === 'NA' ? '' : lastUpdatedDate.toLocaleDateString() + ',' + lastUpdatedDate.toLocaleTimeString() }
                             </span>
                         </div>
                       </span>
