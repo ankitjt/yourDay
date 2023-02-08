@@ -32,7 +32,7 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="profileEmail flex  flex-col mb-3">
                   <span class="emailTag text-gray-400 font-medium text-xs ">Email</span>
-                  <span class="email">${ doc.data().aptEmail[doc.data().aptEmail.length - 1] }</span>
+                  <span class="email">${ doc.data().aptEmail[ doc.data().aptEmail.length - 1 ] }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-medium text-xs">Address</span>
@@ -40,11 +40,11 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="profileMobileNumber flex  flex-col mb-3">
                   <span class="mobileTag text-gray-400 font-medium text-xs">Mobile</span>
-                  <span class="mobileNumber">${doc.data().apt_pt_countryCode[ doc.data().apt_pt_countryCode.length - 1 ]}-${ doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] }</span>
+                  <span class="mobileNumber">${ doc.data().apt_pt_countryCode[ doc.data().apt_pt_countryCode.length - 1 ] }-${ doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-medium text-xs">Nature</span>
-                  <span class="address">${ doc.data().aptNature}</span>
+                  <span class="address">${ doc.data().aptNature }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-medium text-xs">Second slot</span>
@@ -60,15 +60,15 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="e_moblieNumber flex   flex-col mb-3">
                   <span class="e_moblieNumberTag text-gray-400 font-medium text-xs">Emergency Mobile Number</span>
-                  <span class="startDate">${doc.data().emergency_countryCode[ doc.data().emergency_countryCode.length - 1 ] }-${ doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] }</span>
+                  <span class="startDate">${ doc.data().emergency_countryCode[ doc.data().emergency_countryCode.length - 1 ] }-${ doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] }</span>
                 </div>
                 <div class="e_address flex  flex-col mb-3 ">
                   <span class="e_addressTag text-gray-400 font-medium text-xs">Emergency Address</span>
-                  <span class="startDate">${doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ] }</span>
+                  <span class="startDate">${ doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ] }</span>
                 </div>
                 <div class="profileFee flex   flex-col mb-3">
                   <span class="feeTag text-gray-400 font-medium text-xs">Fee</span>
-                  <span class="fee">${ doc.data().aptFees[ doc.data().aptFees.length - 1 ]}</span>
+                  <span class="fee">${ doc.data().aptFees[ doc.data().aptFees.length - 1 ] }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3 ">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Category</span> 
