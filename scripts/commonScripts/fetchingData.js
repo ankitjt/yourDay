@@ -30,7 +30,10 @@ const fetchingData = () =>
           showUpdate: doc.data().showUpdate
         } )
       } )
-     
+      dataArr.sort( ( a, b ) =>
+      {
+        return a.convertedDate - b.convertedDate
+      } )
     } )
   }
 }
