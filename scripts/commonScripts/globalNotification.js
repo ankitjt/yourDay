@@ -109,6 +109,8 @@ notificationOpener.onclick = () =>
 // Getting next session in queue.
 let arrDates = []
 let dates;
+
+
 let getNextSession = () =>
 {
   let currentDate = Math.round( new Date() / 1000 )
@@ -119,11 +121,11 @@ let getNextSession = () =>
     {
       if ( doc.data().dateInMills[ doc.data().dateInMills.length - 1 ] >= currentDate )
       {
-        dates = `${doc.data().aptName} on ${ doc.data().aptStartDate[ doc.data().aptStartDate.length - 1 ] }/${ doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ] }/${ doc.data().aptStartYear[ doc.data().aptStartYear.length - 1 ] } from ${ doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ] }`
+        dates = `${ doc.data().aptName } on ${ doc.data().aptStartDate[ doc.data().aptStartDate.length - 1 ] }/${ doc.data().aptStartMonth[ doc.data().aptStartMonth.length - 1 ] }/${ doc.data().aptStartYear[ doc.data().aptStartYear.length - 1 ] } from ${ doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ] }`
         arrDates.push( dates )
       }
     } )
-    promptMessages( 'Next appointment is with '+ arrDates[ 0 ] )
+    promptMessages( 'Next appointment is with ' + arrDates[ 0 ] )
   } )
 }
 

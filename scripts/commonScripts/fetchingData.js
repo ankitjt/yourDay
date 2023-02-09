@@ -27,7 +27,8 @@ const fetchingData = () =>
           month: doc.data().aptStartMonth.at( -1 ),
           year: doc.data().aptStartYear.at( -1 ),
           fees: doc.data().aptFees,
-          showUpdate: doc.data().showUpdate
+          showUpdate: doc.data().showUpdate,
+          statusUpdate: doc.data().statusUpdatedTimeStamp.at( -1 )
         } )
       } )
       dataArr.sort( ( a, b ) =>
