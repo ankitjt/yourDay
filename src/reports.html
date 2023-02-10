@@ -14,6 +14,9 @@
 
     <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
 
+      <!--  (Absolute element 1)   -->
+      <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
+
       <!-- Panic Button  -->
       <span
         class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
@@ -22,8 +25,6 @@
       <div
         class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
 
-        <!--  (Absolute element 1)   -->
-        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlockerLeft"></div>
 
         <!-- Page Image  -->
         <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
@@ -265,10 +266,10 @@
             <div
               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 md:mt-0">
 
-              <div class="dummyWrap flex flex-col">
+              <div class="flex flex-col dummyWrap">
                 <!-- By Type  -->
-                <div class="byType my-2">
-                  <p class="border-b border-gray-300 mb-2 text-gray-500 uppercase text-xs">Type:</p>
+                <div class="my-2 byType">
+                  <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Type:</p>
                   <div class="flex items-center justify-between mb-2 capitalize totalSessions">
                     <span>Sessions</span>
                     <span class="totalSessionsCount"></span>
@@ -280,8 +281,8 @@
                 </div>
 
                 <!-- By Status -->
-                <div class="byStatus my-2">
-                  <p class="border-b border-gray-300 mb-2 text-gray-500 uppercase text-xs">Status:</p>
+                <div class="my-2 byStatus">
+                  <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Status:</p>
                   <div class="flex items-center justify-between mb-2 capitalize totalScheduled">
                     <span>Scheduled</span>
                     <span class="totalScheduledCount"></span>
@@ -326,10 +327,14 @@
           <div class="relative grid md:grid-cols-2 md:gap-x-10">
             <select title="Patient List" name="" id=""
               class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
-              <option selected value="" class="font-semibold text-gray-400">
+              <option selected value="Select" class="font-semibold text-gray-400">
                 Select Name
               </option>
             </select>
+            <div class="flex items-center dummy">
+              <button
+                class="px-6 py-3 text-sm text-center text-white rounded-full filterFindBtn bg-emerald-500">Find</button>
+            </div>
           </div>
 
           <!-- Reports By Name section  -->
@@ -430,7 +435,15 @@
               </section>
 
               <div class="flex items-center justify-between text-xs updateLinksWrapper">
-                <span class="p-2 text-white bg-blue-600 rounded-full cursor-pointer updateProfileLink">Update</span>
+                <span
+                  class="flex items-end font-semibold duration-300 ease-in-out rounded-full cursor-pointer text-rose-600 updateProfileLink hover:bg-rose-600 hover:text-white hover:px-4 hover:py-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="inline-block w-5 h-5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                  </svg>
+                  <span class="ml-1">Update</span>
+                </span>
               </div>
             </div>
 
