@@ -35,8 +35,6 @@ const addMoreAppointments = () =>
                 let updateRef = updateDetailsArr.at( -1 )
                 let dbRef = db.collection( `appointments/${ updateRef.email }/details` )
 
-
-
                 let newCount = [ 1, 2, 3, 4, 5, 6 ]
                 let newDate = updateRef.newConvertedDate
 

@@ -6,8 +6,9 @@ filterFindBtn.onclick = () =>
   aptsRange.classList.add( 'hidden' )
   let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
-  if ( selectedNameOfPatient.value === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
+  if ( selectedNameOfPatient === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
   {
+    console.log( selectedEmailOfPatient )
     promptMessages( 'Use all filters' )
   }
   else
