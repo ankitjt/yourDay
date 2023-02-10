@@ -83,67 +83,60 @@ updateProfileLink.onclick = () =>
 }
 
 // Updating user profile.
-
 let updateProfileButton = document.querySelector( ".updateProfileButton" )
 
 updateProfileButton.onclick = () =>
 {
   let profileDetails = document.querySelector( ".profileDetails" )
-  for ( let input of updateInput )
-  {
-    console.log( input.value )
-  }
-  // *TODO: need to add check for address
+  console.log( selectedEmailOfPatient )
+  let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
 
-  if ( currentProfileName === updateName.value && currentProfileEmail === updateEmail.value && currentProfileMobileNumber === parseInt( updateMobileNumber.value ) && currentProfileFees === updateFees.value )
-  {
-    promptMessages( 'No changes found to update' )
-  }
-  else 
-  {
-    let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
+  dbRef.update( {
+    aptName: updateName.value,
+    aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+    apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+    aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
+    aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
+    aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
+    profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
+    emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
+    emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
+    patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
+    emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
+  } )
 
-    // dbRef.update( {
-    //   aptName: updateName.value,
-    //   aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
-    //   apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-    //   aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
-    //   aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
-    //   aptFees: firebase.firestore.FieldValue.arrayUnion( updateFees.value ),
-    //   profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
-    // } )
+  // Updating user profile in Db appointments.
+  // SHOULD ONLY UPDATE IF EMAIL,NAME AND FEES IS UPDATED
+  // let newDbRef = db.collection( 'appointments' )
+  // newDbRef.onSnapshot( ( querySnapshot ) =>
+  // {
+  //   querySnapshot.forEach( ( doc ) =>
+  //   {
+  //     var batch = db.batch()
+  //     if ( doc.data().aptName === nameOfUser.innerText )
+  //     {
+  //       let newDb = newDbRef.doc( doc.id )
+  //       batch.update( newDb, { 'aptName': updateName.value } )
+  //       batch.commit()
+  //     }
+  //   } )
 
-    // Updating user profile in Db appointments.
-    let newDbRef = db.collection( 'appointments' )
-    newDbRef.onSnapshot( ( querySnapshot ) =>
-    {
-      querySnapshot.forEach( ( doc ) =>
-      {
-        var batch = db.batch()
-        if ( doc.data().aptName === nameOfUser.innerText )
-        {
-          let newDb = newDbRef.doc( doc.id )
-          batch.update( newDb, { 'aptName': updateName.value } )
-          batch.commit()
-        }
-      } )
+  // } )
 
-    } )
-
-    let listRef = firebase.storage().ref( `ptNotes` )
-    listRef.listAll().then( ( res ) =>
-    {
-      res.prefixes.forEach( ( folderRef ) =>
-      {
-        var batch = db.batch()
-        if ( folderRef.name === nameOfUser.innerText )
-        {
-          let userBucket = listRef.child( nameOfUser.innerText )
-          batch.update( userBucket, folderRef.name === nameOfUser.innerText )
-          batch.commit()
-        }
-      } )
-    } )
-    promptMessages( 'Profile Updated' )
-  }
+  // let listRef = firebase.storage().ref( `ptNotes` )
+  // listRef.listAll().then( ( res ) =>
+  // {
+  //   res.prefixes.forEach( ( folderRef ) =>
+  //   {
+  //     var batch = db.batch()
+  //     if ( folderRef.name === nameOfUser.innerText )
+  //     {
+  //       let userBucket = listRef.child( nameOfUser.innerText )
+  //       batch.update( userBucket, folderRef.name === nameOfUser.innerText )
+  //       batch.commit()
+  //     }
+  //   } )
+  // } )
+  // promptMessages( 'Profile Updated' )
 }
+

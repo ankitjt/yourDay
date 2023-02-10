@@ -1,11 +1,13 @@
+let filterFindBtn = document.querySelector( ".filterFindBtn" )
 
-patientNamesList.onchange = () =>
+filterFindBtn.onclick = () =>
 {
-  if ( patientNamesList.value === "" )
+  if ( patientNamesList.value === 'Select' )
   {
     updateProfileWrapper.classList.remove( 'left-0' )
     reportByName.classList.add( 'hidden' )
     pb.classList.add( 'lg:left-6' )
+    promptMessages( 'Select a name' )
   }
   else
   {
@@ -29,12 +31,12 @@ patientNamesList.onchange = () =>
       category.innerText = doc.data().aptType
       fee.innerHTML =
         `<div class='flex'>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
-                                  stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        <span class='ml-1'>${ doc.data().aptFees[ doc.data().aptFees.length - 1 ] }</span> </div>`
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
+                                      stroke="currentColor" stroke-width="2">
+                                      <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class='ml-1'>${ doc.data().aptFees[ doc.data().aptFees.length - 1 ] }</span> </div>`
 
       occurrence.innerText = doc.data().aptOccurrenceType[ doc.data().aptOccurrenceType.length - 1 ]
       createDate.innerText = localDate
@@ -48,3 +50,4 @@ patientNamesList.onchange = () =>
     } )
   }
 }
+
