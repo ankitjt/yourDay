@@ -35,6 +35,6 @@ setTimeout( () =>
       } )
     }
   }
-  console.log( testArr[ 0 ].nextApt, testArr[ 0 ].nextAptHour )
+  console.log( testArr[ 0 ].nextApt, ( testArr[ 0 ].nextAptHour * 60 ) * 60, testArr[ 0 ].nextAptHour )
 
 }, 2000 )

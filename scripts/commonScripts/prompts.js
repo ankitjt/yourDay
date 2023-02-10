@@ -8,7 +8,7 @@ const promptMessages = ( message ) =>
   pageBlocker.classList.remove( 'hidden' )
   promptsWrapper.innerHTML += `
           
-          <section class="prompts flex items-center justify-between md:w-2/3 w-full px-6 py-3 my-2 bg-rose-600 rounded-full ease-in-out duration-300 hover:bg-rose-800">
+          <section class="prompts flex items-center justify-between md:w-2/3 w-full px-6 py-3 my-2 bg-rose-600 rounded-full ease-in-out duration-300 hover:bg-emerald-600">
             <div class="promptContent font-medium text-xs text-slate-50 w-full text-left">${ message }</div>
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 w-full text-slate-50 closePrompts cursor-pointer" viewBox="0 0 20 20"
               fill="currentColor">
