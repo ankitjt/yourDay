@@ -1,0 +1,11 @@
+The admin page -
+
+Features
+1. Changing status of an appointment OR rolling back appointment status to last status;
+2. Recovering a profile if deleted by the user;
+3. Password reset of users;
+4. Account block/un-block of users;
+5. User's activity log, like last login/ last logout/ session duration;
+6. 
+
+

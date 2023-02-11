@@ -35,7 +35,7 @@ const getCounts = () =>
         testData.status === 'Free Cancelled' ? freeCancelled.push( testData.fees ) : ''
         totalMoneyFreeCancelled = freeCancelled.reduce( ( a, b ) => a + b, 0 )
 
-        totalMoneyReceived = ( totalMoneyFromCompleted + totalMoneyFromPaid ) - totalMoneyFreeCancelled
+        totalMoneyReceived = totalMoneyFromCompleted + totalMoneyFromPaid
 
         moneyBreakData =
           `           
@@ -82,7 +82,7 @@ const getCounts = () =>
                             </span>
                           </div>
                           <div class='totalLogic my-2 text-[10px] text-rose-600 text-right'>
-                            ** (Completed + Paid Cancelled) - Free Cancelled.
+                            ** Completed + Paid Cancelled
                           </div>
                       </div>
                         `
