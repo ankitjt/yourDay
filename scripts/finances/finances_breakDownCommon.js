@@ -21,6 +21,16 @@ const finances_breakDownCommon = ( statusCheck, countSpan ) =>
         sessionsBreakDownWrapper.classList.remove( '-left-[2000px]' )
         pb.classList.remove( 'lg:left-6' )
 
+        let updatedDate = new Date( financeBreakDown.statusUpdate.seconds * 1000 )
+        let date = updatedDate.getDate()
+        let month = updatedDate.getMonth() + 1
+        let year = updatedDate.getFullYear()
+        let hours = updatedDate.getHours()
+        let minutes = updatedDate.getMinutes()
+        let seconds = updatedDate.getSeconds()
+
+        let formattedDate = `${ date }/${ month }/${ year }, T: ${ hours }:${ minutes }:${ seconds }`
+
         let scheduledData = `
                           <div class="px-3 py-5 rounded-2xl border-l-8 border ${ financeBreakDown.type === 'Session' ? 'border-blue-600' : 'border-emerald-600' } mb-5 text-xs text-slate-900 font-semibold flex flex-col ">
                           
@@ -39,11 +49,27 @@ const finances_breakDownCommon = ( statusCheck, countSpan ) =>
                             <span class="day"> ${ financeBreakDown.day } </span>
                           </div>
                         </div>
-                        <div class="ptName-wrapper flex flex-col items-start justify-between mt-2 ">
-                          <span class="aptType ${ financeBreakDown.type === 'Session' ? 'bg-blue-600' : 'bg-emerald-600' } px-3 py-1 mb-2 rounded-full text-white font-normal">
-                            ${ financeBreakDown.type }
+                        <div class="ptName-wrapper flex mt-2 flex-col">
+                          <div class="dummy_new w-full flex justify-between mt-2 items-center">
+                            <div>
+                              <span class="aptType ${ financeBreakDown.type === 'Session' ? 'bg-blue-600' : 'bg-emerald-600' } px-3 py-1 mb-2 rounded-full text-white font-normal">
+                              ${ financeBreakDown.type }
+                              </span>
+                            </div>
+                            <div class="feesEachApt flex">
+                              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <span class="feeAmount">${ financeBreakDown.fees }</span>
+                            </div>
+                          </div>
+                          </div>
+                          <div>
+                           <span class="name mt-2 ${ financeBreakDown.status === 'Scheduled' ? 'hidden' : 'inline-block' }"> 
+                            ${ financeBreakDown.status } on: <span>${ financeBreakDown.statusUpdate === 'NA' ? 'NA' : formattedDate } 
                           </span>
-                          <span class="name mr-2 ${ financeBreakDown.status === 'Scheduled' ? 'hidden' : 'inline-block' }"> ${ financeBreakDown.status } on: <br /> <span>${ financeBreakDown.statusUpdate === 'NA' ? 'NA' : new Date( financeBreakDown.statusUpdate.seconds * 1000 ) } </span>
                         </div>
                       </div>
         `

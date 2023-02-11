@@ -88,7 +88,6 @@ let updateProfileButton = document.querySelector( ".updateProfileButton" )
 updateProfileButton.onclick = () =>
 {
   let profileDetails = document.querySelector( ".profileDetails" )
-  console.log( selectedEmailOfPatient )
   let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
 
   dbRef.update( {

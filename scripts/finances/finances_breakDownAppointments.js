@@ -1,12 +1,10 @@
 let closeSessionsBreakDownWrapper = document.querySelector( '.closeSessionsBreakDownWrapper' )
-
 closeSessionsBreakDownWrapper.onclick = () =>
 {
   sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
   sessionsBreakDownWrapper.classList.remove( 'left-0' )
   pb.classList.add( 'lg:left-6' )
 }
-
 const showBreakDownOfAppointments = () =>
 {
   let moneyScheduledWrapper = document.querySelector( ".moneyScheduledWrapper" ),
