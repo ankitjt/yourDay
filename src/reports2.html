@@ -255,7 +255,7 @@
           </span>
         </h3>
 
-        <div class="grid md:grid-cols-2 md:gap-x-10">
+        <div class="grid sm:grid-cols-2 sm:gap-x-10">
 
           <!-- Month and year filter -->
           <input type="text" name="" id=""
@@ -264,48 +264,52 @@
 
           <!-- By Month Breakdown  -->
           <div
-               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 md:mt-0">
+               class="p-4 mt-5 sm:mt-0 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 w-full">
 
-            <div class="flex flex-col dummyWrap">
+            <div class="flex flex-col dummyWrap ">
               <!-- By Type  -->
               <div class="my-2 byType">
-                <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Type:</p>
-                <div class="flex items-center justify-between mb-2 capitalize totalSessions">
-                  <span>Sessions</span>
-                  <span class="totalSessionsCount"></span>
-                </div>
-                <div class="flex items-center justify-between capitalize totalSupervision">
-                  <span>Supervision</span>
-                  <span class="totalSupervisionCount"></span>
+                <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300 font-normal">Type:</p>
+                <div class="forWrap md:grid md:grid-cols-2 md:gap-x-5 ">
+                  <div class="flex items-center justify-between capitalize totalSessions">
+                    <span>Sessions</span>
+                    <span class="totalSessionsCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalSupervision">
+                    <span>Supervision</span>
+                    <span class="totalSupervisionCount"></span>
+                  </div>
                 </div>
               </div>
 
               <!-- By Status -->
               <div class="my-2 byStatus">
                 <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Status:</p>
-                <div class="flex items-center justify-between mb-2 capitalize totalScheduled">
-                  <span>Scheduled</span>
-                  <span class="totalScheduledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalCompleted">
-                  <span>Completed</span>
-                  <span class="totalCompletedCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalRescheduled">
-                  <span>Rescheduled</span>
-                  <span class="totalRescheduledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalFreeCancelled">
-                  <span>Free Cancelled</span>
-                  <span class="totalFreeCancelledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalPaidCancelled">
-                  <span>Paid Cancelled</span>
-                  <span class="totalPaidCancelledCount"></span>
-                </div>
-                <div class="flex items-center justify-between capitalize totalPending">
-                  <span>Pending</span>
-                  <span class="totalPendingCount"></span>
+                <div class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2">
+                  <div class="flex items-center justify-between capitalize totalScheduled">
+                    <span>Scheduled</span>
+                    <span class="totalScheduledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalCompleted">
+                    <span>Completed</span>
+                    <span class="totalCompletedCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalRescheduled">
+                    <span>Rescheduled</span>
+                    <span class="totalRescheduledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalFreeCancelled">
+                    <span>Free Cancelled</span>
+                    <span class="totalFreeCancelledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalPaidCancelled">
+                    <span>Paid Cancelled</span>
+                    <span class="totalPaidCancelledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalPending">
+                    <span>Pending</span>
+                    <span class="totalPendingCount"></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -331,9 +335,21 @@
               Select Name
             </option>
           </select>
-          <div class="flex items-center dummy">
+
+          <div class="flex items-center dummy justify-between">
+            <div>
+              <input type="radio" name="Session" id="Sesison" class=" bg-white default:ring-2 " name="category"
+                     value="Session">
+              <label for="Session" class="font-semibold text-xs text-blue-600">Session</label>
+            </div>
+            <div class="ml-5">
+              <input type="radio" name="Supervision" id="Supervision" class=" bg-white default:ring-2 "
+                     name="category"
+                     value="Supervision">
+              <label for="Supervision" class="font-semibold text-xs text-blue-600">Supervision</label>
+            </div>
             <button
-                    class="w-16 py-2 text-xs text-center text-white rounded-full filterFindBtn bg-blue-500">Find</button>
+                    class="w-16 py-2 ml-5 text-xs text-center text-white rounded-full filterFindBtn bg-blue-500">Find</button>
           </div>
         </div>
 
