@@ -1,101 +1,86 @@
-
-
 // Filling selected user profile details in update window.
 const updateProfileLinkFunc = () =>
 {
   let updateProfileLink = document.querySelectorAll( ".updateProfileLink" ),
     updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
-    updateInput = document.querySelectorAll( '.updateInput' ),
-
     updateName = document.querySelector( ".updateName" ),
     updateAptNature = document.querySelector( ".updateAptNature" ),
     updateEmail = document.querySelector( ".updateEmail" ),
     updateMobileNumber = document.querySelector( ".updateMobileNumber" ),
     updateCountryCode = document.querySelector( ".update_countryCode" ),
     updateAddress = document.querySelector( ".updateAddress" ),
-    updateCreateDate = document.querySelector( ".updateCreateDate" ),
     updateCategory = document.querySelector( ".updateCategory" ),
     updateOccurrence = document.querySelector( ".updateOccurrence" ),
     updateSlot = document.querySelector( ".updateSlot" ),
+    updateDay = document.querySelector( ".updateDay" ),
     update_e_name = document.querySelector( ".update_e_name" ),
     update_e_mobileNumber = document.querySelector( ".update_e_mobileNumber" ),
     update_e_address = document.querySelector( ".update_e_address" ),
     update_e_relation = document.querySelector( ".update_e_relation" ),
     updateFees = document.querySelector( ".updateFees" ),
+    profileID
 
-    currentProfileName = '',
-    currentProfileEmail = '',
-    currentProfileMobileNumber = '',
-    currentProfileAddress = '',
-    currentProfileFees = ''
-
-  for ( let updateLink of updateProfileLink )
+  setTimeout( () =>
   {
-    updateLink.onclick = () =>
+    for ( let updateLink of updateProfileLink )
     {
-
-      let targetE = updateLink.parentElement.parentElement.childNodes[ 1 ].childNodes[ 3 ].innerText
-
-      if ( body.offsetWidth < 1024 )
+      updateLink.onclick = () =>
       {
-        updateProfileWrapper.classList.add( '-left-[2000px]' )
-        updateProfileWrapper.classList.remove( 'left-0' )
-        alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
-      }
-
-      pb.classList.remove( 'lg:left-6' )
-      if ( patientNamesList.value === '' )
-      {
-        promptMessages( 'Select Patient name.' )
-      }
-      else
-      {
-        updateProfileWrapper.classList.remove( '-left-[2000px]' )
-        updateProfileWrapper.classList.add( 'left-0' )
-
-        db.collection( "profiles" ).where( 'aptEmail', '==', targetE ).onSnapshot( ( querySnapshot ) =>
+        let targetE = updateLink.parentElement.parentElement.getAttribute( 'data-id' )
+        for ( let profile of profileDetails )
         {
-          updateName.value = ''
-          updateAptNature.value = ''
-          updateEmail.value = ''
-          updateAddress.value = ''
-          updateCreateDate.value = ''
-          updateCategory.value = ''
-          updateOccurrence.value = ''
-          updateSlot.value = ''
-          updateFees.value = ''
-          updateMobileNumber.value = ''
-          update_e_name.value = ''
-          update_e_mobileNumber.value = ''
-          update_e_address.value = ''
-          update_e_relation.selectedIndex = 0
-          querySnapshot.forEach( ( doc ) =>
+          if ( targetE === profile.id )
           {
 
-            let fetchCreateDate = doc.data().profileCreatedOn.seconds * 1000
-            let finalCreateDate = new Date( fetchCreateDate ).toLocaleDateString()
+            profileID = profile.id
+            if ( body.offsetWidth < 1024 )
+            {
+              updateProfileWrapper.classList.add( '-left-[2000px]' )
+              updateProfileWrapper.classList.remove( 'left-0' )
+              alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+            }
+            else
+            {
+              updateProfileWrapper.classList.remove( '-left-[2000px]' )
+              updateProfileWrapper.classList.add( 'left-0' )
+              pb.classList.remove( 'lg:left-6' )
 
-            updateName.value = doc.data().aptName
-            updateAptNature.value = doc.data().aptType
-            updateMobileNumber.value = parseInt( doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] )
-            updateEmail.value = doc.data().aptEmail[ doc.data().aptEmail.length - 1 ]
-            updateAddress.value = doc.data().aptAddress[ doc.data().aptAddress.length - 1 ]
-            updateCreateDate.value = finalCreateDate
-            updateCategory.value = doc.data().aptCategory
-            updateOccurrence.value = doc.data().aptOccurrenceType
-            updateSlot.value = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
-            updateFees.value = doc.data().aptFees[ doc.data().aptFees.length - 1 ]
-            update_e_name.value = doc.data().emergencyName[ doc.data().emergencyName.length - 1 ]
-            update_e_mobileNumber.value = parseInt( doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] )
-            update_e_address.value = doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ]
-            update_e_relation.value = doc.data().patientRelation[ doc.data().patientRelation.length - 1 ]
+              updateName.value = ''
+              updateAptNature.value = ''
+              updateEmail.value = ''
+              updateAddress.value = ''
+              updateCategory.value = ''
+              updateOccurrence.value = ''
+              updateSlot.selectedIndex = 0
+              updateDay.selectedIndex = 0
+              updateFees.value = ''
+              updateMobileNumber.value = ''
+              update_e_name.value = ''
+              update_e_mobileNumber.value = ''
+              update_e_address.value = ''
+              update_e_relation.selectedIndex = 0
 
-          } )
-        } )
+              updateName.value = profile.name
+              updateAptNature.value = profile.type
+              updateMobileNumber.value = parseInt( profile.mobileNumber )
+              updateEmail.value = profile.email
+              updateAddress.value = profile.address
+              updateCategory.value = profile.category
+              updateOccurrence.value = profile.occurrence
+              updateSlot.value = profile.timeSlot
+              updateDay.value = profile.day
+              updateFees.value = profile.fees
+              update_e_name.value = profile.e_name
+              update_e_mobileNumber.value = parseInt( profile.e_mobileNumber )
+              update_e_address.value = profile.e_address
+              update_e_relation.value = profile.relation
+            }
+          }
+        }
       }
     }
+  }, 2000 )
 
-  }
 
   // Updating user profile.
   let updateProfileButton = document.querySelector( ".updateProfileButton" )
@@ -103,21 +88,22 @@ const updateProfileLinkFunc = () =>
   updateProfileButton.onclick = () =>
   {
     let profileDetails = document.querySelector( ".profileDetails" )
-    let dbRef = db.collection( "profiles" ).doc( patientNamesList.value )
+    let dbRef = db.collection( "profiles" ).doc( profileID )
+    console.log( profileID )
 
-    dbRef.update( {
-      aptName: updateName.value,
-      aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
-      apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
-      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
-      aptFees: firebase.firestore.FieldValue.arrayUnion( parseInt( updateFees.value ) ),
-      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
-      emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
-      emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
-      patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
-      emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
-    } )
+    // dbRef.update( {
+    //   aptName: updateName.value,
+    //   aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+    //   apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+    //   aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
+    //   aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
+    //   aptFees: firebase.firestore.FieldValue.arrayUnion( parseInt( updateFees.value ) ),
+    //   profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
+    //   emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
+    //   emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
+    //   patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
+    //   emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
+    // } )
 
     // Updating user profile in Db appointments.
     // SHOULD ONLY UPDATE IF EMAIL,NAME AND FEES IS UPDATED

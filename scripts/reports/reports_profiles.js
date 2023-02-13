@@ -1,51 +1,45 @@
-let filterArr = [];
-let dataID = [];
-( () =>
+let filterArr = []
+let dataID = []
+
+setTimeout( () =>
 {
-  let profileRows = document.querySelector( ".profileRows" );
-  db.collection( 'profiles' ).orderBy( 'profileCreatedOn' ).onSnapshot( ( querySnapshot ) =>
+  let profileRows = document.querySelector( ".profileRows" )
+
+  for ( let filterData of profileDetails )
   {
-    querySnapshot.forEach( ( doc ) =>
-    {
-      filterArr.push( doc.data() )
 
-    } )
-    for ( let filterData of filterArr )
-    {
+    let createdOn = new Date( filterData.createdOn.seconds * 1000 )
+    let date = createdOn.getDate()
+    let month = createdOn.getMonth() + 1
+    let year = createdOn.getFullYear()
+    let time = createdOn.toLocaleTimeString()
+    let finalCreatedOn = `${ date }/${ month }/${ year }<br /> ${ time }`
 
-      let createdOn = new Date( filterData.profileCreatedOn.seconds * 1000 )
-      let date = createdOn.getDate()
-      let month = createdOn.getMonth() + 1
-      let year = createdOn.getFullYear()
-      let time = createdOn.toLocaleTimeString()
-      let finalCreatedOn = `${ date }/${ month }/${ year }<br /> ${ time }`
-
-      let profileRowData = `
+    let profileRowData = `
          <tr
-                    class="font-semibold text-blue-600 ease-in-out bg-white border-b dark:bg-gray-800 dark:border-gray-700 transition:300 hover:bg-blue-100 text-[10px] ${ filterData.aptCategory === 'Session' ? 'sessionRow' : 'supervisionRow' }" value>
-                    <td class="px-6 py-4 whitespace-nowrap dark:text-white">
-                      <span class="block name">${ filterData.aptName }</span>
-                      <span class="email">${ filterData.aptEmail.at( -1 ) }</span>
+                    class="font-semibold text-blue-600 ease-in-out bg-white border-b transition:300 hover:bg-blue-100 text-[10px] ${ filterData.category === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span class="block name">${ filterData.name }</span>
+                      <span class="email">${ filterData.email }</span>
                     </td>
                     <td class="px-6 py-4">
-                      ${ filterData.aptCategory }
+                      ${ filterData.category }
                     </td>
                     <td class="px-6 py-4">
-                      ${ filterData.aptNature }
+                      ${ filterData.nature }
                     </td>
                     <td class="px-6 py-4">
-                      <span class="block time">${ filterData.aptTimeSlot.at( -1 ) }</span>
-                      <span class="day">${ filterData.aptDay.at( -1 ) }</span>
+                      <span class="block time">${ filterData.timeSlot }</span>
+                      <span class="day">${ filterData.day }</span>
                     </td>
                      
                     <td class="flex items-center px-6 py-4">
+                    <span class="feesAmount">${ filterData.fees }</span>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-5 h-5">
+                        stroke="currentColor" class="w-4 h-4 font-light">
                         <path stroke-linecap="round" stroke-linejoin="round"
                           d="M15 8.25H9m6 3H9m3 6l-3-3h1.5a3 3 0 100-6M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
-  
-                      <span class="ml-1 feesAmount">${ filterData.aptFees.at( -1 ) }</span>
                     </td>
                     <td class="px-6 py-4">
                       <span class="flex items-center px-2 py-1 rounded-full status ${ filterData.softDelete === 'False' ? 'bg-rose-100' : 'bg-emerald-100' }  w-fit">
@@ -65,12 +59,12 @@ let dataID = [];
                     </td>
                   </tr>
       `
-      profileRows.innerHTML += profileRowData
-      filterProfile()
-      updateProfileLinkFunc()
-    }
-  } )
-} )()
+    profileRows.innerHTML += profileRowData
+    filterProfile()
+    updateProfileLinkFunc()
+  }
+}, 2000 )
+
 
 const filterProfile = () =>
 {

@@ -1,6 +1,7 @@
 let patientNamesList = document.querySelector( '.patientNamesList' )
 let selectedNameOfPatient
 let selectedEmailOfPatient
+let profileDetails = []
 let patientEmail = [];
 
 ( () =>
@@ -25,10 +26,41 @@ let patientEmail = [];
         patientNamesList.innerHTML += listOfNames
         patientEmail.push( doc.data().aptEmail.at( -1 ) )
       }
+      profileDetails.push( {
+        id: doc.id,
+        email: doc.data().aptEmail.at( -1 ),
+        name: doc.data().aptName,
+        nature: doc.data().aptNature,
+        address: doc.data().aptAddress.at( -1 ),
+        category: doc.data().aptCategory,
+        day: doc.data().aptDay.at( -1 ),
+        fees: doc.data().aptFees.at( -1 ),
+        mobileNumber: doc.data().aptMobileNumber.at( -1 ),
+        occurrence: doc.data().aptOccurrenceType,
+        secondDay: doc.data().aptSecondDay,
+        secondSlotDate: doc.data().aptSecondStartDate,
+        secondTime: doc.data().aptSecondTimeSlot,
+        timeSlot: doc.data().aptTimeSlot.at( -1 ),
+        type: doc.data().aptType,
+        countryCode: doc.data().apt_pt_countryCode.at( -1 ),
+        e_address: doc.data().emergencyAddress.at( -1 ),
+        e_mobileNumber: doc.data().emergencyMobileNumber.at( -1 ),
+        e_name: doc.data().emergencyName.at( -1 ),
+        e_countryCode: doc.data().emergency_countryCode.at( -1 ),
+        relation: doc.data().patientRelation.at( -1 ),
+        createdOn: doc.data().profileCreatedOn,
+        updatedOn: doc.data().profileUpdatedOn.at( -1 ),
+        softDelete: doc.data().softDelete,
+      } )
     } )
+    profileDetails.sort( ( a, b ) =>
+    {
+      return b.createdOn - a.createdOn
+    } )
+
     fetchingData()
   } )
-} )();
+} )()
 
 patientNamesList.onchange = e =>
 {

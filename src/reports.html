@@ -76,13 +76,6 @@
                       class="updateInput updateAddress border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"></textarea>
           </div>
 
-          <div class="flex flex-col items-start my-5 profileStartDate md:justify-between">
-            <span class="mb-2 tracking-wider createDateTag md:font-medium md:text-gray-400">Create Date</span>
-            <input type='text' value=""
-                   class="updateInput updateCreateDate border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                   disabled />
-          </div>
-
           <div class="flex flex-col items-start my-5 profileCategory md:justify-between">
             <span class="mb-2 tracking-wider categoryTag md:font-medium md:text-gray-400">Category</span>
             <input type='text' value=""
@@ -94,15 +87,76 @@
             <span class="mb-2 tracking-wider occurrenceTag md:font-medium md:text-gray-400">Occurrence ( per week
               )</span>
             <input type='number' value=""
-                   class="updateInput updateOccurrence border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
+                   class="updateOccurrence border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-transparent text-white md:text-blue-600 bg-gray-800"
                    disabled />
           </div>
 
           <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
             <span class="mb-2 tracking-wider slotTag md:font-medium md:text-gray-400">Slot</span>
-            <input type='text' value=""
-                   class="updateInput updateSlot border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 md:font-semibold md:placeholder:text-sm md:py-3.5 py-3 flex  md:drop-shadow-none md:text-sm md:bg-gray-200 text-white md:text-blue-600 bg-gray-800"
-                   disabled />
+            <select name="slot" id="slot" title="Slot"
+                    class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md updateInput updateSlot md:border-gray-300 placeholder:text-blue-600 md:font-medium md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600">
+              <option value="" class="md:font-semibold">
+                Time slot
+              </option>
+              <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-base">
+                09:00 - 10:00
+              </option>
+              <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-base">
+                10:00 - 11:00
+              </option>
+              <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-base">
+                11:00 - 12:00
+              </option>
+              <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-base">
+                12:00 - 13:00
+              </option>
+              <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-base">
+                13:00 - 14:00
+              </option>
+              <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-base">
+                14:00 - 15:00
+              </option>
+              <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-base">
+                15:00 - 16:00
+              </option>
+              <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-base">
+                16:00 - 17:00
+              </option>
+              <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-base">
+                17:00 - 18:00
+              </option>
+            </select>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileDay md:justify-between">
+            <span class="mb-2 tracking-wider slotTag md:font-medium md:text-gray-400">Day</span>
+            <select name="day" id="day" title="Day"
+                    class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md updateInput updateDay md:border-gray-300 placeholder:text-blue-600 md:font-medium md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600">
+              <option value="" class="text-xs md:font-semibold md:text-base">
+                Select Day
+              </option>
+              <option value="Monday" class="text-xs md:font-semibold md:text-base">
+                Monday
+              </option>
+              <option value="Tuesday" class="text-xs md:font-semibold md:text-base">
+                Tuesday
+              </option>
+              <option value="Wednesday" class="text-xs md:font-semibold md:text-base">
+                Wednesday
+              </option>
+              <option value="Thursday" class="text-xs md:font-semibold md:text-base">
+                Thursday
+              </option>
+              <option value="Friday" class="text-xs md:font-semibold md:text-base">
+                Friday
+              </option>
+              <option value="Saturday" class="text-xs md:font-semibold md:text-base">
+                Saturday
+              </option>
+              <option value="Sunday" class="text-xs md:font-semibold md:text-base">
+                Sunday
+              </option>
+            </select>
           </div>
 
           <div class="flex flex-col items-start my-5 profileFee md:justify-between">
@@ -235,7 +289,7 @@
       </div>
 
       <!-- Navbar  -->
-      <div class="relative pb-2 my-6 border-b border-gray-100 navbarWrapper md:my-2">
+      <div class="relative pb-1 my-6 navbarWrapper md:my-0">
         <nav class="flex items-center justify-between w-full text-xs text-blue-600 navbarContent"></nav>
 
         <!--  Navbar Notification Center -->
@@ -255,57 +309,61 @@
           </span>
         </h3>
 
-        <div class="grid md:grid-cols-2 md:gap-x-10">
+        <div class="grid sm:flex sm:justify-between">
 
           <!-- Month and year filter -->
           <input type="text" name="" id=""
-                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByNameReports h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
+                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md monthListByNameReports h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600"
                  placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
           <!-- By Month Breakdown  -->
           <div
-               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md reportsTotalByMonth md:border-gray-200 md:mt-0">
+               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md sm:mt-0 reportsTotalByMonth md:border-gray-200 md:bg-white sm:ml-5">
 
-            <div class="flex flex-col dummyWrap">
+            <div class="flex flex-col dummyWrap ">
               <!-- By Type  -->
               <div class="my-2 byType">
-                <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Type:</p>
-                <div class="flex items-center justify-between mb-2 capitalize totalSessions">
-                  <span>Sessions</span>
-                  <span class="totalSessionsCount"></span>
-                </div>
-                <div class="flex items-center justify-between capitalize totalSupervision">
-                  <span>Supervision</span>
-                  <span class="totalSupervisionCount"></span>
+                <p class="mb-2 text-xs font-normal text-gray-500 uppercase border-b border-gray-300">Type:</p>
+                <div class="forWrap md:grid md:grid-cols-2 md:gap-x-5 ">
+                  <div class="flex items-center justify-between capitalize totalSessions">
+                    <span>Sessions</span>
+                    <span class="totalSessionsCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalSupervision">
+                    <span>Supervision</span>
+                    <span class="totalSupervisionCount"></span>
+                  </div>
                 </div>
               </div>
-
+              <div class="hidden patientNamesList"></div>
               <!-- By Status -->
               <div class="my-2 byStatus">
                 <p class="mb-2 text-xs text-gray-500 uppercase border-b border-gray-300">Status:</p>
-                <div class="flex items-center justify-between mb-2 capitalize totalScheduled">
-                  <span>Scheduled</span>
-                  <span class="totalScheduledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalCompleted">
-                  <span>Completed</span>
-                  <span class="totalCompletedCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalRescheduled">
-                  <span>Rescheduled</span>
-                  <span class="totalRescheduledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalFreeCancelled">
-                  <span>Free Cancelled</span>
-                  <span class="totalFreeCancelledCount"></span>
-                </div>
-                <div class="flex items-center justify-between mb-2 capitalize totalPaidCancelled">
-                  <span>Paid Cancelled</span>
-                  <span class="totalPaidCancelledCount"></span>
-                </div>
-                <div class="flex items-center justify-between capitalize totalPending">
-                  <span>Pending</span>
-                  <span class="totalPendingCount"></span>
+                <div class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2">
+                  <div class="flex items-center justify-between capitalize totalScheduled">
+                    <span>Scheduled</span>
+                    <span class="totalScheduledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalCompleted">
+                    <span>Completed</span>
+                    <span class="totalCompletedCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalRescheduled">
+                    <span>Rescheduled</span>
+                    <span class="totalRescheduledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalFreeCancelled">
+                    <span>Free Cancelled</span>
+                    <span class="totalFreeCancelledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalPaidCancelled">
+                    <span>Paid Cancelled</span>
+                    <span class="totalPaidCancelledCount"></span>
+                  </div>
+                  <div class="flex items-center justify-between capitalize totalPending">
+                    <span>Pending</span>
+                    <span class="totalPendingCount"></span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -313,155 +371,66 @@
         </div>
       </section>
 
-      <!-- Report by Name -->
-      <section class="mt-5 rounded-md reportByNameSection">
-        <h3 class="mb-2">
-          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-            By name
-          </span>
-        </h3>
 
-        <!-- Report By Name Filter  -->
+      <!-- Reports by Category  -->
+      <div class="flex flex-col mt-10 dummy">
+        <h1 class="flex justify-between text-xs font-semibold text-blue-600 uppercase">
+          <span>Patient List</span>
+          <div class="flex items-center text-white">
+            <span
+                  class="px-3 py-1 mx-1 text-[10px] capitalize cursor-pointer text-blue-600 bg-blue-100 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-rose-600">Session</span>
+            <span
+                  class="px-3 py-1 mx-1 text-[10px] capitalize cursor-pointer bg-emerald-100 rounded-full supervision text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-rose-600">Supervision</span>
 
-        <!-- Patient List -->
-        <div class="relative grid md:grid-cols-2 md:gap-x-10">
-          <select title="Patient List" name="" id=""
-                  class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
-            <option selected value="Select" class="font-semibold text-gray-400">
-              Select Name
-            </option>
-          </select>
-          <div class="flex items-center dummy">
-            <button
-                    class="w-16 py-2 text-xs text-center text-white rounded-full filterFindBtn bg-blue-500">Find</button>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+
+
           </div>
+        </h1>
+        <div class="relative mt-3 overflow-x-auto ">
+          <table class="w-full text-xs text-left bg-white border">
+            <thead
+                   class="text-[10px] font-semibold uppercase border text-slate-900">
+              <tr>
+                <th scope="col" class="px-6 py-3">
+                  Name
+                </th>
+
+                <th scope="col" class="px-6 py-3">
+                  <span class="flex">
+                    <span>Category</span>
+                  </span>
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Type
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Slot
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Fees
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Created on
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Action
+                </th>
+              </tr>
+            </thead>
+            <tbody class="profileRows">
+
+            </tbody>
+          </table>
         </div>
-
-        <!-- Reports By Name section  -->
-        <div class="hidden reportByName">
-
-          <!-- Profile Section  -->
-          <div
-               class="w-full p-4 my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 profileSection">
-            <button class="w-full sectionButton md:font-semibold">
-              <div class="flex items-center justify-between w-full sectionButtonWrapper">
-                <span class="text-xs sectionNameProfile md:text-sm">Profile / Update Profile</span>
-              </div>
-            </button>
-
-            <!-- Patient Profile -->
-            <section
-                     class="grid pb-4 text-xs md:grid-cols-4 md:row-span-full profile md:transition-all md:ease-in-out">
-
-              <div class="flex flex-col my-3 profileName">
-                <span class="nameTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Name</span>
-                <span class="font-semibold capitalize name">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileEmail">
-                <span class="mailTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Email</span>
-                <span class="font-semibold email">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileMobileNumber">
-                <span class="mobileTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Mobile</span>
-                <span class="font-semibold mobileNumber">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileAddress">
-                <span class="addressTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Address</span>
-                <span class="font-semibold address">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileStartDate">
-                <span class="createDateTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Create
-                  Date</span>
-                <span class="font-semibold createDate">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileCategory">
-                <span
-                      class="categoryTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Category</span>
-                <span class="font-semibold category">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileOccurrence">
-                <span class="occurrenceTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Occurrence
-                  (
-                  per week )</span>
-                <span class="font-semibold occurrence">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileSlot">
-                <span class="slotTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Slot</span>
-                <span class="font-semibold slot">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 profileFee">
-                <span class="feeTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Fees</span>
-                <span class="font-semibold fee">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3">
-                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Contact
-                  Name</span>
-                <span class="font-semibold capitalize e_name">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3">
-                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency Mobile
-                  Number</span>
-                <span class="font-semibold e_mobileNumber">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3">
-                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
-                  Relation</span>
-                <span class="font-semibold e_relation">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3">
-                <span class="tag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Emergency
-                  Address</span>
-                <span class="font-semibold e_address">NA</span>
-              </div>
-
-              <div class="flex flex-col my-3 updateDetails">
-                <span class="lastUpdatedTag text-gray-400 font-medium text-[10px] uppercase tracking-wide ">Last
-                  Updated:</span>
-                <span class="font-semibold whatChanged">NA</span>
-              </div>
-
-            </section>
-
-            <div class="flex items-center justify-between text-xs updateLinksWrapper">
-              <span
-                    class="flex items-end font-semibold duration-300 ease-in-out rounded-full cursor-pointer text-rose-600 updateProfileLink hover:bg-rose-600 hover:text-white hover:px-4 hover:py-2">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="inline-block w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                </svg>
-                <span class="ml-1">Update</span>
-              </span>
-            </div>
-          </div>
-
-          <!-- Work section  -->
-          <div
-               class="w-full my-4 text-white border-2 border-gray-200 rounded-md reportsByNameSections md:text-blue-600 workContent">
-            <button class="w-full p-4 sectionButton md:font-semibold">
-              <div class="flex items-center justify-between w-full sectionButtonWrapper ">
-                <span class="text-xs sectionButtonWork md:text-sm">Work</span>
-              </div>
-            </button>
-            <section class="text-xs font-semibold leading-loose text-justify ">
-
-            </section>
-          </div>
-
-        </div>
-      </section>
+      </div>
     </div>
 
   </div>
@@ -482,7 +451,7 @@
 
   <!-- Page Scripts  -->
   <script src="../scripts/reports/reports_onLoad.js"></script>
-  <script src="../scripts/reports/reports_userProfile.js"></script>
+  <script src="../scripts/reports/reports_profiles.js"></script>
   <script src="../scripts/reports/reports_deleteProfile.js"></script>
   <script src="../scripts/reports/reports_updateProfile.js"></script>
   <script src="../scripts/reports/reports.js"></script>
