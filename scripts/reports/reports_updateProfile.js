@@ -1,6 +1,7 @@
 // Filling selected user profile details in update window.
 const updateProfileLinkFunc = () =>
 {
+
   let updateProfileLink = document.querySelectorAll( ".updateProfileLink" ),
     updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
     updateName = document.querySelector( ".updateName" ),
@@ -18,7 +19,7 @@ const updateProfileLinkFunc = () =>
     update_e_address = document.querySelector( ".update_e_address" ),
     update_e_relation = document.querySelector( ".update_e_relation" ),
     updateFees = document.querySelector( ".updateFees" ),
-    profileID
+    profileID, profileEmail, profileFees
 
   setTimeout( () =>
   {
@@ -33,6 +34,8 @@ const updateProfileLinkFunc = () =>
           {
 
             profileID = profile.id
+            profileEmail = profile.email
+            profileFees = parseInt( profile.fees )
             if ( body.offsetWidth < 1024 )
             {
               updateProfileWrapper.classList.add( '-left-[2000px]' )
@@ -84,44 +87,57 @@ const updateProfileLinkFunc = () =>
 
   // Updating user profile.
   let updateProfileButton = document.querySelector( ".updateProfileButton" )
-
   updateProfileButton.onclick = () =>
   {
-    let profileDetails = document.querySelector( ".profileDetails" )
-    let dbRef = db.collection( "profiles" ).doc( profileID )
-    console.log( profileID )
+    let profiles_DB = db.collection( "profiles" ).doc( profileID )
+    profiles_DB.update( {
+      aptName: updateName.value,
+      aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+      apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
+      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
+      aptFees: firebase.firestore.FieldValue.arrayUnion( parseInt( updateFees.value ) ),
+      aptDay: firebase.firestore.FieldValue.arrayUnion( updateDay.value ),
+      aptTimeSlot: firebase.firestore.FieldValue.arrayUnion( updateSlot.value ),
+      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
+      emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
+      emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
+      patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
+      emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
+    } )
 
-    // dbRef.update( {
-    //   aptName: updateName.value,
-    //   aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
-    //   apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-    //   aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
-    //   aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
-    //   aptFees: firebase.firestore.FieldValue.arrayUnion( parseInt( updateFees.value ) ),
-    //   profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
-    //   emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
-    //   emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
-    //   patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
-    //   emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
-    // } )
+    if ( profileFees !== updateFees.value )
+    {
+      alert( 'Changes will affect all future appointments!' )
+    }
 
     // Updating user profile in Db appointments.
-    // SHOULD ONLY UPDATE IF EMAIL,NAME AND FEES IS UPDATED
-    // let newDbRef = db.collection( 'appointments' )
-    // newDbRef.onSnapshot( ( querySnapshot ) =>
-    // {
-    //   querySnapshot.forEach( ( doc ) =>
-    //   {
-    //     var batch = db.batch()
-    //     if ( doc.data().aptName === nameOfUser.innerText )
-    //     {
-    //       let newDb = newDbRef.doc( doc.id )
-    //       batch.update( newDb, { 'aptName': updateName.value } )
-    //       batch.commit()
-    //     }
-    //   } )
-
-    // } )
+    // NEED TO ADD CHECK FOR EMAIL, NAME, FEES
+    let appointment_DB = db.collection( `appointments/${ profileEmail }/details` )
+    const currentDate = Date.now()
+    const updatedData = {
+      aptFees: parseInt( updateFees.value ),
+      statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
+    }
+    appointment_DB
+      .get()
+      .then( qs =>
+      {
+        const batch = db.batch();
+        qs.forEach( doc =>
+        {
+          if ( doc.data().dateInMills.at( -1 ) >= currentDate / 1000 )
+          {
+            batch.update( doc.ref, updatedData )
+          }
+        } )
+        return batch.commit()
+      } )
+      .catch( err => { promptMessages( err ) } )
+      .then( () =>
+      {
+        promptMessages( 'Profile details saved.' );
+      } )
 
     // let listRef = firebase.storage().ref( `ptNotes` )
     // listRef.listAll().then( ( res ) =>

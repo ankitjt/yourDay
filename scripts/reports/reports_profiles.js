@@ -60,9 +60,9 @@ setTimeout( () =>
                   </tr>
       `
     profileRows.innerHTML += profileRowData
-    filterProfile()
-    updateProfileLinkFunc()
   }
+  filterProfile()
+  updateProfileLinkFunc()
 }, 2000 )
 
 
