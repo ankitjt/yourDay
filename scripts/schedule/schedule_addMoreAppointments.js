@@ -10,12 +10,13 @@ const addMoreAppointments = () =>
             let confirmMessage = `Do you wish to add 5 more appointments for ${ ptEmail }`
             if ( confirm( confirmMessage ) === true )
             {
-                for ( let patient of dataArr )
+                for ( let patient of aptsArr )
                 {
                     if ( ptEmail === patient.email )
                     {
                         updateDetailsArr.push( {
                             type: patient.type,
+                            mode: patient.mode,
                             slot: patient.slot,
                             day: patient.day,
                             name: patient.name,
@@ -38,23 +39,21 @@ const addMoreAppointments = () =>
                 let newCount = [ 1, 2, 3, 4, 5, 6 ]
                 let newDate = updateRef.newConvertedDate
 
-                let firstDay = newDate.getDate().toString()
-                let firstMonth = ( newDate.getMonth() + 1 ).toString()
+                let firstDate = newDate.getDate().toString() < 10 ? '0' + newDate.getDate().toString() : newDate.getDate().toString()
+                let firstMonth = ( newDate.getMonth() + 1 ).toString() < 10 ? '0' + ( newDate.getMonth() + 1 ).toString() : ( newDate.getMonth() + 1 ).toString()
                 let firstYear = newDate.getFullYear().toString()
-                let appointmentDate = [ firstDay ]
+                let appointmentDate = [ firstDate ]
                 let appointmentMonth = [ firstMonth ]
                 let appointmentYear = [ firstYear ]
-                let newDateInSec = newDate / 1000
+                let dateInSeconds = [ newDate / 1000 ]
                 let uppercaseName = updateRef.name.toUpperCase()
-                let dateInMills = [ newDateInSec ]
-                let convertFees = updateRef.fees
 
                 for ( let i = 1; i < newCount.length; i++ )
                 {
 
                     // Getting future Date, Month, Year .
                     let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-                    dateInMills.push( futureAppointments )
+                    dateInSeconds.push( futureAppointments )
                     let some = futureAppointments
                     let someTimes = new Date( some * 1000 )
 
@@ -73,22 +72,26 @@ const addMoreAppointments = () =>
 
                     // Creating Appointment for One Occurrence
                     dbRef.add( {
-                        aptName: uppercaseName,
-                        aptEmail: updateRef.email,
-                        aptDay: [ updateRef.day ],
-                        aptSecondDay: "NA",
-                        aptTimeSlot: [ updateRef.slot ],
-                        aptSecondTimeSlot: "NA",
-                        aptType: updateRef.type,
-                        dateInMills: [ dateInMills[ i ] ],
-                        aptStartDate: [ appointmentDate[ i ] ],
-                        aptStartMonth: [ appointmentMonth[ i ] ],
-                        aptStartYear: [ appointmentYear[ i ] ],
-                        aptSecondStartDate: "NA",
-                        appointmentStatus: 'Scheduled',
-                        aptFees: convertFees,
-                        serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-                        statusUpdatedTimeStamp: [ 'NA' ],
+                        name: uppercaseName,
+                        email: updateRef.email,
+                        day: [ updateRef.day ],
+                        secondDay: [ "NA" ],
+                        timeSlot: [ updateRef.slot ],
+                        secondTimeSlot: [ "NA" ],
+                        type: updateRef.type,
+                        mode: [ updateRef.mode ],
+                        createdDateInSeconds: [ dateInSeconds[ i ] ],
+                        date: [ appointmentDate[ i ] ],
+                        secondDate: [ "NA" ],
+                        month: [ appointmentMonth[ i ] ],
+                        secondMonth: [ 'NA' ],
+                        year: [ appointmentYear[ i ] ],
+                        secondYear: [ 'NA' ],
+                        status: 'Scheduled',
+                        fees: [ Number( updateRef.fees ) ],
+                        createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
+                        updatedOn: [ 'NA' ],
+                        softDelete: false,
                         showUpdate: newCount[ i ] === 6 ? 'update' : ''
                     } )
                     setTimeout( () =>

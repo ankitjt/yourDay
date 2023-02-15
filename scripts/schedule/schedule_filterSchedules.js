@@ -8,7 +8,6 @@ filterFindBtn.onclick = () =>
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
   if ( selectedNameOfPatient === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
   {
-    console.log( selectedEmailOfPatient )
     promptMessages( 'Use all filters' )
   }
   else
@@ -18,7 +17,7 @@ filterFindBtn.onclick = () =>
     let monthYearArr = monthYear.split( '-' )
 
 
-    for ( let filteredAppointment of dataArr )
+    for ( let filteredAppointment of aptsArr )
     {
       if ( filteredAppointment.name === selectedNameOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value === filteredAppointment.status )
       {
