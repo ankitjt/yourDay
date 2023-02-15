@@ -6,6 +6,6 @@ Features
 3. Password reset of users;
 4. Account block/un-block of users;
 5. User's activity log, like last login/ last logout/ session duration;
-6. 
+6. Should have all values of user changes and not just the current one;
 
 
