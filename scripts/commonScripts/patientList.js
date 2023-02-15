@@ -8,48 +8,45 @@ let patientEmail = [];
 {
   db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
   {
-    let allNames = document.querySelectorAll( '.something' )
-    for ( const names of allNames )
-    {
-      names.remove()
-    }
+    refreshList()
 
     querySnapshot.forEach( ( doc ) =>
     {
       if ( doc.data().softDelete !== true )
       {
         let listOfNames = `
-        <option title='${ doc.data().aptName + ' , ' + doc.data().aptEmail.at( -1 ) }' value='${ doc.id }' name='${ doc.data().aptName }' email_ID= ${ doc.data().aptEmail.at( -1 ) } class='font-semibold' >
-        ${ doc.data().aptName } [ ${ doc.data().aptEmail } ] ( ${ doc.data().aptType === 'Session' ? 'Session' : 'Supervision' } )
+        <option title='${ doc.data().name.at( -1 ) + ' , ' + doc.data().email.at( -1 ) }' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) } class='font-semibold refreshList' >
+        ${ doc.data().name.at( -1 ) } [ ${ doc.data().email.at( -1 ) } ] ( ${ doc.data().type === 'Session' ? 'Session' : 'Supervision' } )
         </option>
         `
         patientNamesList.innerHTML += listOfNames
-        patientEmail.push( doc.data().aptEmail.at( -1 ) )
+        patientEmail.push( doc.data().email.at( -1 ) )
       }
+
       profileDetails.push( {
         id: doc.id,
-        email: doc.data().aptEmail.at( -1 ),
-        name: doc.data().aptName,
-        nature: doc.data().aptNature,
-        address: doc.data().aptAddress.at( -1 ),
-        category: doc.data().aptCategory,
-        day: doc.data().aptDay.at( -1 ),
-        fees: doc.data().aptFees.at( -1 ),
-        mobileNumber: doc.data().aptMobileNumber.at( -1 ),
-        occurrence: doc.data().aptOccurrenceType,
-        secondDay: doc.data().aptSecondDay,
-        secondSlotDate: doc.data().aptSecondStartDate,
-        secondTime: doc.data().aptSecondTimeSlot,
-        timeSlot: doc.data().aptTimeSlot.at( -1 ),
-        type: doc.data().aptType,
-        countryCode: doc.data().apt_pt_countryCode.at( -1 ),
-        e_address: doc.data().emergencyAddress.at( -1 ),
-        e_mobileNumber: doc.data().emergencyMobileNumber.at( -1 ),
-        e_name: doc.data().emergencyName.at( -1 ),
-        e_countryCode: doc.data().emergency_countryCode.at( -1 ),
-        relation: doc.data().patientRelation.at( -1 ),
-        createdOn: doc.data().profileCreatedOn,
-        updatedOn: doc.data().profileUpdatedOn.at( -1 ),
+        email: doc.data().email.at( -1 ),
+        name: doc.data().name.at( -1 ),
+        mode: doc.data().mode,
+        address: doc.data().address.at( -1 ),
+        category: doc.data().category,
+        day: doc.data().day.at( -1 ),
+        fees: doc.data().fees.at( -1 ),
+        countryCode: doc.data().countryCode.at( -1 ),
+        mobileNumber: doc.data().mobileNumber.at( -1 ),
+        countPerWeek: doc.data().countPerWeek,
+        secondDay: doc.data().secondDay.at( -1 ),
+        secondDate: doc.data().secondDate.at( -1 ),
+        secondTimeSlot: doc.data().secondTimeSlot.at( -1 ),
+        timeSlot: doc.data().timeSlot.at( -1 ),
+        type: doc.data().type,
+        emergency_name: doc.data().emergency_name.at( -1 ),
+        emergency_address: doc.data().emergency_address.at( -1 ),
+        emergency_countryCode: doc.data().emergency_countryCode.at( -1 ),
+        emergency_mobileNumber: doc.data().emergency_mobileNumber.at( -1 ),
+        patientRelation: doc.data().patientRelation.at( -1 ),
+        createdOn: doc.data().createdOn,
+        updatedOn: doc.data().updatedOn.at( -1 ),
         softDelete: doc.data().softDelete,
       } )
     } )
@@ -57,8 +54,7 @@ let patientEmail = [];
     {
       return b.createdOn - a.createdOn
     } )
-
-    fetchingData()
+    fetchingAppointments()
   } )
 } )()
 
