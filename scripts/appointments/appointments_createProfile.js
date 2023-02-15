@@ -3,17 +3,15 @@ confirmButton.onclick = ( e ) =>
   e.preventDefault()
 
   // Getting selected date in the array 
-  let newDate = new Date( apt.startDate.value )
-  let firstDay = newDate.getDate().toString()
-  let firstMonth = ( newDate.getMonth() + 1 ).toString()
-  let firstYear = newDate.getFullYear().toString()
-  let appointmentDate = [ firstDay ]
+  let firstAppointmentDate = new Date( apt.startDate.value )
+  let firstDate = firstAppointmentDate.getDate().toString() < 10 ? '0' + firstAppointmentDate.getDate().toString() : firstAppointmentDate.getDate().toString()
+  let firstMonth = ( firstAppointmentDate.getMonth() + 1 ).toString() < 10 ? '0' + ( firstAppointmentDate.getMonth() + 1 ).toString() : ( firstAppointmentDate.getMonth() + 1 ).toString()
+  let firstYear = firstAppointmentDate.getFullYear().toString()
+  let appointmentDate = [ firstDate ]
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
-  let newDateInSec = newDate / 1000
+  let dateInSeconds = [ firstAppointmentDate / 1000 ]
   let uppercaseName = apt.name.value.toUpperCase()
-  let dateInMills = [ newDateInSec ]
-  let convertFees = parseInt( apt.fees.value )
 
   createProfile()
 
@@ -24,8 +22,8 @@ confirmButton.onclick = ( e ) =>
   {
 
     // Getting future Date, Month, Year .
-    let futureAppointments = Math.floor( newDate.setDate( newDate.getDate() + 7 ) / 1000 )
-    dateInMills.push( futureAppointments )
+    let futureAppointments = Math.floor( firstAppointmentDate.setDate( firstAppointmentDate.getDate() + 7 ) / 1000 )
+    dateInSeconds.push( futureAppointments )
     let some = futureAppointments
     let someTimes = new Date( some * 1000 )
 
@@ -41,26 +39,30 @@ confirmButton.onclick = ( e ) =>
 
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
-    
+
     // Creating Appointment for One Occurrence
     db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
-      aptName: uppercaseName,
-      aptEmail: apt.email.value,
-      aptDay: [ apt.day.value ],
-      aptSecondDay: "NA",
-      aptTimeSlot: [ apt.timeSlot.value ],
-      aptSecondTimeSlot: "NA",
-      aptType: apt.type.value,
-      dateInMills: [ dateInMills[ i ] ],
-      aptStartDate: [ appointmentDate[ i ] ],
-      aptStartMonth: [ appointmentMonth[ i ] ],
-      aptStartYear: [ appointmentYear[ i ] ],
-      aptSecondStartDate: "NA",
-      appointmentStatus: 'Scheduled',
-      aptFees: convertFees,
-      serverTimeStamp: firebase.firestore.Timestamp.fromDate( new Date() ),
-      statusUpdatedTimeStamp: [ 'NA' ],
-      showUpdate: count[ i ] === 5 ? 'update' : '' 
+      type: apt.type.value,
+      mode: [ apt.nature.value ],
+      name: uppercaseName,
+      email: apt.email.value,
+      day: [ apt.day.value ],
+      secondDay: [ "NA" ],
+      timeSlot: [ apt.timeSlot.value ],
+      secondTimeSlot: [ "NA" ],
+      createdDateInSeconds: dateInSeconds[ i ],
+      date: [ appointmentDate[ i ] ],
+      secondDate: [ "NA" ],
+      month: [ appointmentMonth[ i ] ],
+      secondMonth: [ "NA" ],
+      year: [ appointmentYear[ i ] ],
+      secondYear: [ "NA" ],
+      status: 'Scheduled',
+      fees: [ Number( apt.fees.value ) ],
+      createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
+      updatedOn: [ 'NA' ],
+      softDelete: false,
+      showUpdate: count[ i ] === 5 ? 'update' : ''
     } )
 
   }
@@ -97,37 +99,35 @@ const createProfile = () =>
 
   let ptName_uppercase = apt.name.value.toUpperCase()
   let e_name_uppercase = apt.emergencyName.value.toUpperCase()
-  let convertFees = parseInt( apt.fees.value )
 
   db.collection( "profiles" ).add(
     {
-      aptCategory: apt.category.value,
-      aptName: ptName_uppercase,
-      aptEmail: [ apt.email.value ],
-      apt_pt_countryCode: [ apt.pt_countryCode.value ],
-      aptMobileNumber: [ apt.mobileNumber.value ],
-      aptDay: [ apt.day.value ],
-      aptSecondDay: "NA",
-      aptTimeSlot: [ apt.timeSlot.value ],
-      aptSecondTimeSlot: "NA",
-      aptType: apt.type.value,
-      aptAddress: [ apt.address.value ],
-      aptNature: apt.nature.value,
-      aptOccurrenceType: apt.occurrenceType.value,
-      aptSecondStartDate: "NA",
-      aptFees: [ convertFees ],
-      emergencyName: [ e_name_uppercase ],
+      category: apt.category.value,
+      type: apt.type.value,
+      mode: [ apt.nature.value ],
+      name: [ ptName_uppercase ],
+      email: [ apt.email.value ],
+      countryCode: [ apt.pt_countryCode.value ],
+      mobileNumber: [ Number( apt.mobileNumber.value ) ],
+      address: [ apt.address.value ],
+      day: [ apt.day.value ],
+      secondDay: [ "NA" ],
+      timeSlot: [ apt.timeSlot.value ],
+      secondTimeSlot: [ "NA" ],
+      countPerWeek: [ apt.occurrenceType.value ],
+      secondDate: [ "NA" ],
+      fees: [ Number( apt.fees.value ) ],
+      emergency_name: [ e_name_uppercase ],
       patientRelation: [ finalRelation ],
       emergency_countryCode: [ apt.e_countryCode.value ],
-      emergencyMobileNumber: [ apt.emergencyMobileNumber.value ],
-      emergencyAddress: [ apt.emergencyAddress.value ],
-      profileCreatedOn: firebase.firestore.Timestamp.fromDate( new Date() ),
-      profileUpdatedOn: [ 'NA' ],
+      emergency_mobileNumber: [ Number( apt.emergencyMobileNumber.value ) ],
+      emergency_address: [ apt.emergencyAddress.value ],
+      createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
+      updatedOn: [ 'NA' ],
       softDelete: false,
     }
   )
-  let createdTime = firebase.firestore.FieldValue.serverTimestamp()
-  // triggerAppointmentMail()
+  triggerAppointmentMail()
 }
 
 editButton.onclick = () => 

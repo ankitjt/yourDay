@@ -26,30 +26,26 @@ const fieldValidators = () =>
   }
 
   // Check for slot hour and current hour
-  let selectedDate = new Date( apt.startDate.value )
-  let currentDate = new Date()
-  
-  let currentHour = new Date()
+  let selectedDate = new Date( apt.startDate.value ).toLocaleDateString()
   let userTimeSlot = apt.timeSlot.value
   let splitSlot = userTimeSlot.split( '-' )
   let trimmedSlot = splitSlot.map( str => str.trim() )
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
   let finalHourSplit = Number( hourSplit[ 0 ] )
   finalHourSplit < 12 ? finalHourSplit = finalHourSplit + 12 : finalHourSplit
-  
 
-  if ( finalHourSplit < currentHour.getHours() && selectedDate < currentDate )
+
+  if ( finalHourSplit < local_hours && selectedDate < date_time_ref.toLocaleDateString() )
   {
-  
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.timeSlot.classList.add( 'md:border-red-600' )
     promptMessages( 'If start date is today, slot hour cannot be older than current hour.' )
   }
 
   // Check for old start Date 
-  if ( selectedDate < currentDate )
+  if ( selectedDate < date_time_ref.toLocaleDateString() )
   {
-    console.log( selectedDate, currentDate )
+    console.log( selectedDate, date_time_ref.toLocaleDateString() )
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.startDate.classList.add( 'md:border-red-600' )
     promptMessages( 'Appointment Start Date should be current or future date.' )
@@ -139,14 +135,14 @@ const fieldValidators = () =>
 
   if ( apt.category.value === 'New' )
   {
-    db.collection( 'profiles' ).where( 'aptEmail', '==', apt.email.value ).onSnapshot( ( querySnapshot ) =>
+    db.collection( 'profiles' ).where( 'email', '==', apt.email.value ).onSnapshot( ( querySnapshot ) =>
     {
       if ( querySnapshot.empty )
       {
         querySnapshot.forEach( ( doc ) =>
         {
-          let latestAptDay = doc.data().aptDay[ doc.data().aptDay.length - 1 ]
-          let latestTimeSlot = doc.data().aptTimeSlot[ doc.data().aptTimeSlot.length - 1 ]
+          let latestAptDay = doc.data().day.at( -1 )
+          let latestTimeSlot = doc.data().timeSlot.at( -1 )
           if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
           {
             apt__confirmPage.page.classList.add( '-left-[2000px]' )
