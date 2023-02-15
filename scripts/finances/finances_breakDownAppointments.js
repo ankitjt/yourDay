@@ -11,7 +11,6 @@ const showBreakDownOfAppointments = () =>
     moneyPaidCancelledWrapper = document.querySelector( ".moneyPaidCancelledWrapper" ),
     moneyPendingWrapper = document.querySelector( ".moneyPendingWrapper" ),
     moneyCompletedWrapper = document.querySelector( ".moneyCompletedWrapper" ),
-    moneyTotal = document.querySelector( ".moneyTotal" ),
     moneyFreeCancelledWrapper = document.querySelector( ".moneyFreeCancelledWrapper" ),
     moneyScheduledCount = document.querySelector( '.moneyScheduled' ),
     moneyCompletedCount = document.querySelector( '.moneyCompleted' ),

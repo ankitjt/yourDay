@@ -88,7 +88,7 @@ findDetailsByName.onclick = () =>
                 </div>
                 
               `
-          profileDetails.innerHTML = profile
+          profileDetailsSection.innerHTML = profile
           getCounts()
         }
       } )

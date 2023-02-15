@@ -1,5 +1,5 @@
 let
-  profileDetails = document.querySelector( ".profileDetails" ),
+  profileDetailsSection = document.querySelector( ".profileDetailsSection" ),
   totalMoneySessionsIndividual = document.querySelector( ".totalMoneySessionsIndividual" ),
   moneyBreakDownWrapper = document.querySelector( ".moneyBreakDownWrapper" ),
   financeMonthFilterByName = document.querySelector( ".financeMonthFilterByName" ),

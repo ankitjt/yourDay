@@ -14,7 +14,7 @@ const getCounts = () =>
     recordsArr = [],
     totalMoneyReceived
 
-  for ( let testData of dataArr )
+  for ( let testData of aptsArr )
   {
 
     if ( testData.month === monthYearArr[ 1 ] && testData.year === monthYearArr[ 0 ] )

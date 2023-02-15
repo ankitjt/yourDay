@@ -4,7 +4,7 @@ const finances_breakDownCommon = ( statusCheck, countSpan ) =>
   let monthYear = financeMonthFilterByName.value,
     monthYearArr = monthYear.split( '-' )
 
-  for ( let financeBreakDown of dataArr )
+  for ( let financeBreakDown of aptsArr )
   {
     if ( selectedNameOfPatient === financeBreakDown.name && financeBreakDown.month === monthYearArr[ 1 ] && financeBreakDown.year === monthYearArr[ 0 ] )
     {

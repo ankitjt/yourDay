@@ -20,7 +20,7 @@ financeMonthFilter.onchange = () =>
   totalMoneyBySessions.innerText = 0
   totalMoneyBySupervisions.innerText = 0
 
-  for ( let filterMonthData of dataArr )
+  for ( let filterMonthData of aptsArr )
   {
     if ( filterMonthData.month === monthYearArr[ 1 ] && filterMonthData.year === monthYearArr[ 0 ] )
     {
