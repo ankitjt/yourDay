@@ -9,9 +9,10 @@ let sessionCounts = [],
 
 let monthListByNameReports = document.querySelector( '.monthListByNameReports' )
 
+// Default list of all appointments
 setTimeout( () =>
 {
-  for ( let reportData of dataArr )
+  for ( let reportData of aptsArr )
   {
     if ( reportData.type === 'Session' )
     {
@@ -57,6 +58,7 @@ setTimeout( () =>
   }
 }, 2000 )
 
+// List of appointments by Month and year
 monthListByNameReports.onchange = () =>
 {
   let monthYear = monthListByNameReports.value
@@ -80,7 +82,7 @@ monthListByNameReports.onchange = () =>
   totalRescheduledCount.innerText = 0
   totalPendingCount.innerText = 0
 
-  for ( let breakMonthData of dataArr )
+  for ( let breakMonthData of aptsArr )
   {
     if ( breakMonthData.month === monthYearArr[ 1 ] && breakMonthData.year === monthYearArr[ 0 ] )
     {
@@ -128,57 +130,57 @@ monthListByNameReports.onchange = () =>
     }
   }
 
-  db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
-  {
-    querySnapshot.forEach( ( doc ) =>
-    {
-      let getMonth = new Date( doc.data().dateInMills * 1000 )
-      let monthForDb = getMonth.getMonth() + 1
-      let finalYear = getMonth.getFullYear()
-      if ( finalMonth === monthForDb.toString() && monthYearArr[ 0 ] === finalYear.toString() )
-      {
-        if ( doc.data().aptType === 'Session' )
-        {
-          sessionCounts.push( doc.data().aptType )
-          totalSessionsCount.innerText = sessionCounts.length
-        }
-        if ( doc.data().appointmentStatus === 'Scheduled' )
-        {
-          scheduledCount.push( doc.data().appointmentStatus )
-          totalScheduledCount.innerText = scheduledCount.length
-        }
-        if ( doc.data().appointmentStatus === 'Completed' )
-        {
-          completedCount.push( doc.data().appointmentStatus )
-          totalCompletedCount.innerText = completedCount.length
-        }
-        if ( doc.data().aptType === 'Supervision' )
-        {
-          supervisionCounts.push( doc.data().aptType )
-          totalSupervisionCount.innerText = supervisionCounts.length
-        }
+  // db.collection( 'appointments' ).onSnapshot( ( querySnapshot ) =>
+  // {
+  //   querySnapshot.forEach( ( doc ) =>
+  //   {
+  //     let getMonth = new Date( doc.data().dateInMills )
+  //     let monthForDb = getMonth.getMonth() + 1
+  //     let finalYear = getMonth.getFullYear()
+  //     if ( finalMonth === monthForDb.toString() && monthYearArr[ 0 ] === finalYear.toString() )
+  //     {
+  //       if ( doc.data().aptType === 'Session' )
+  //       {
+  //         sessionCounts.push( doc.data().aptType )
+  //         totalSessionsCount.innerText = sessionCounts.length
+  //       }
+  //       if ( doc.data().appointmentStatus === 'Scheduled' )
+  //       {
+  //         scheduledCount.push( doc.data().appointmentStatus )
+  //         totalScheduledCount.innerText = scheduledCount.length
+  //       }
+  //       if ( doc.data().appointmentStatus === 'Completed' )
+  //       {
+  //         completedCount.push( doc.data().appointmentStatus )
+  //         totalCompletedCount.innerText = completedCount.length
+  //       }
+  //       if ( doc.data().aptType === 'Supervision' )
+  //       {
+  //         supervisionCounts.push( doc.data().aptType )
+  //         totalSupervisionCount.innerText = supervisionCounts.length
+  //       }
 
-        if ( doc.data().appointmentStatus === 'Free Cancelled' )
-        {
-          totalFreeCancelledCount.push( doc.data().appointmentStatus )
-          totalFreeCancelledCounts.innerText = totalFreeCancelledCount.length
-        }
-        if ( doc.data().appointmentStatus === 'Paid Cancelled' )
-        {
-          totalPaidCancelledCount.push( doc.data().appointmentStatus )
-          totalPaidCancelledCounts.innerText = totalPaidCancelledCount.length
-        }
-        if ( doc.data().appointmentStatus === 'Updated' )
-        {
-          updatedCounts.push( doc.data().appointmentStatus )
-          totalRescheduledCount.innerText = updatedCounts.length
-        }
-        if ( doc.data().appointmentStatus === 'Pending' )
-        {
-          pendingCounts.push( doc.data().appointmentStatus )
-          totalPendingCount.innerText = pendingCounts.length
-        }
-      }
-    } )
-  } )
+  //       if ( doc.data().appointmentStatus === 'Free Cancelled' )
+  //       {
+  //         totalFreeCancelledCount.push( doc.data().appointmentStatus )
+  //         totalFreeCancelledCounts.innerText = totalFreeCancelledCount.length
+  //       }
+  //       if ( doc.data().appointmentStatus === 'Paid Cancelled' )
+  //       {
+  //         totalPaidCancelledCount.push( doc.data().appointmentStatus )
+  //         totalPaidCancelledCounts.innerText = totalPaidCancelledCount.length
+  //       }
+  //       if ( doc.data().appointmentStatus === 'Updated' )
+  //       {
+  //         updatedCounts.push( doc.data().appointmentStatus )
+  //         totalRescheduledCount.innerText = updatedCounts.length
+  //       }
+  //       if ( doc.data().appointmentStatus === 'Pending' )
+  //       {
+  //         pendingCounts.push( doc.data().appointmentStatus )
+  //         totalPendingCount.innerText = pendingCounts.length
+  //       }
+  //     }
+  //   } )
+  // } )
 }

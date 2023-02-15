@@ -91,19 +91,20 @@ const updateProfileLinkFunc = () =>
   {
     let profiles_DB = db.collection( "profiles" ).doc( profileID )
     profiles_DB.update( {
-      aptName: updateName.value,
-      aptEmail: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
-      apt_pt_countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
-      aptMobileNumber: firebase.firestore.FieldValue.arrayUnion( updateMobileNumber.value ),
-      aptAddress: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
-      aptFees: firebase.firestore.FieldValue.arrayUnion( parseInt( updateFees.value ) ),
-      aptDay: firebase.firestore.FieldValue.arrayUnion( updateDay.value ),
-      aptTimeSlot: firebase.firestore.FieldValue.arrayUnion( updateSlot.value ),
-      profileUpdatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
-      emergencyName: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
-      emergencyMobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
+      name: firebase.firestore.FieldValue.arrayUnion( updateName.value ),
+      email: firebase.firestore.FieldValue.arrayUnion( updateEmail.value ),
+      countryCode: firebase.firestore.FieldValue.arrayUnion( updateCountryCode.value ),
+      mobileNumber: firebase.firestore.FieldValue.arrayUnion( Number( updateMobileNumber.value ) ),
+      address: firebase.firestore.FieldValue.arrayUnion( updateAddress.value ),
+      fees: firebase.firestore.FieldValue.arrayUnion( Number( updateFees.value ) ),
+      day: firebase.firestore.FieldValue.arrayUnion( updateDay.value ),
+      timeSlot: firebase.firestore.FieldValue.arrayUnion( updateSlot.value ),
+      updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
+      emergency_name: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
+      // emergency_countryCode: firebase.firestore.FieldValue.arrayUnion( update_e_name.value ),
+      emergency_mobileNumber: firebase.firestore.FieldValue.arrayUnion( update_e_mobileNumber.value ),
       patientRelation: firebase.firestore.FieldValue.arrayUnion( update_e_relation.value ),
-      emergencyAddress: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
+      emergency_address: firebase.firestore.FieldValue.arrayUnion( update_e_address.value ),
     } )
 
     if ( profileFees !== updateFees.value )
@@ -116,9 +117,10 @@ const updateProfileLinkFunc = () =>
     let appointment_DB = db.collection( `appointments/${ profileEmail }/details` )
     const currentDate = Date.now()
     const updatedData = {
-      aptFees: parseInt( updateFees.value ),
-      statusUpdatedTimeStamp: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
+      fees: Number( updateFees.value ),
+      updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
     }
+
     appointment_DB
       .get()
       .then( qs =>
