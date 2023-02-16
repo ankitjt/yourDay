@@ -16,7 +16,7 @@ confirmDeleteProfile.onclick = () =>
   let dbRef = db.collection( "profiles" ).doc( getName )
   if ( deleteProfileReason.value === '' )
   {
-    promptMessages( 'Please provide reason to delete..' )
+    promptMessages( 'Please provide reason to delete..', 'error' )
   }
   else
   {
@@ -25,7 +25,7 @@ confirmDeleteProfile.onclick = () =>
       reasonForDelete: deleteProfileReason.value,
       profileDeletedOn: firebase.firestore.FieldValue.serverTimestamp()
     } )
-    promptMessages( 'Profile Deleted successfully.' )
+    promptMessages( 'Profile Deleted successfully.', 'success' )
 
     deleteProfileReason.value = ''
     deletePrompts.classList.remove( 'left-0' )

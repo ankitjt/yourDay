@@ -11,6 +11,7 @@ let sectionButton = document.querySelectorAll( ".sectionButton" ),
   totalFreeCancelledCounts = document.querySelector( ".totalFreeCancelledCount" ),
   totalPaidCancelledCounts = document.querySelector( ".totalPaidCancelledCount" ),
   totalRescheduledCount = document.querySelector( ".totalRescheduledCount" ),
+  updateProfileWrapper = document.querySelector( ".updateProfileWrapper" ),
   totalPendingCount = document.querySelector( ".totalPendingCount" )
 
 
