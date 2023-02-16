@@ -2,7 +2,6 @@ let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
 
 findDetailsByName.onclick = () =>
 {
-
   profileDetails.innerHTML = ''
   moneyBreakDownWrapper.innerHTML = ''
   sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
@@ -11,72 +10,71 @@ findDetailsByName.onclick = () =>
 
   if ( patientNamesList.value === '' || financeMonthFilterByName.value === '' )
   {
-    promptMessages( 'Select name and month.' )
+    promptMessages( 'Select name and month.', 'error' )
     patientProfileWrapper.classList.add( 'hidden' )
   }
   else
   {
     patientProfileWrapper.classList.remove( 'hidden' )
 
-    db.collection( "profiles" ).onSnapshot( ( querySnapshot ) =>
+    for ( let finance_profile of profileDetails )
     {
-      querySnapshot.forEach( ( doc ) =>
+      if ( selectedEmailOfPatient === finance_profile.email )
       {
-        if ( patientNamesList.value === doc.id )
-        {
-          let profileDate = new Date( doc.data().profileCreatedOn.seconds * 1000 )
-          let profile = `
+        let profileDate = new Date( finance_profile.createdOn.seconds * 1000 )
+
+        let finance_profile_data = `
                 <div class="profileName flex  flex-col mb-3">
                   <span class="nameTag text-gray-400 font-medium text-xs">Name</span>
-                  <span class="name capitalize text-blue-600">${ doc.data().aptName }</span>
+                  <span class="name capitalize text-blue-600">${ finance_profile.name }</span>
                 </div>
                 <div class="profileEmail flex  flex-col mb-3">
                   <span class="emailTag text-gray-400 font-medium text-xs ">Email</span>
-                  <span class="email text-blue-600">${ doc.data().aptEmail[ doc.data().aptEmail.length - 1 ] }</span>
+                  <span class="email text-blue-600">${ finance_profile.email }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-medium text-xs">Address</span>
-                  <span class="address text-blue-600">${ doc.data().aptAddress[ doc.data().aptAddress.length - 1 ] }</span>
+                  <span class="address text-blue-600">${ finance_profile.address }</span>
                 </div>
                 <div class="profileMobileNumber flex  flex-col mb-3">
                   <span class="mobileTag text-gray-400 font-medium text-xs">Mobile</span>
-                  <span class="mobileNumber text-blue-600">${ doc.data().apt_pt_countryCode[ doc.data().apt_pt_countryCode.length - 1 ] }-${ doc.data().aptMobileNumber[ doc.data().aptMobileNumber.length - 1 ] }</span>
+                  <span class="mobileNumber text-blue-600">${ finance_profile.countryCode }-${ finance_profile.mobileNumber }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
-                  <span class="AddressTag text-gray-400 font-medium text-xs">Nature</span>
-                  <span class="address text-blue-600">${ doc.data().aptNature }</span>
+                  <span class="AddressTag text-gray-400 font-medium text-xs">Mode</span>
+                  <span class="address text-blue-600">${ finance_profile.mode }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-medium text-xs">Second slot</span>
-                  <span class="secondSlot text-blue-600">${ doc.data().aptSecondTimeSlot }</span>
+                  <span class="secondSlot text-blue-600">${ finance_profile.secondTimeSlot }</span>
                 </div>
                 <div class="e_name flex   flex-col  mb-3">
                   <span class="e_nameTag text-gray-400 font-medium text-xs">Emergency Name</span>
-                  <span class="startDate text-blue-600">${ doc.data().emergencyName[ doc.data().emergencyName.length - 1 ] }</span>
+                  <span class="startDate text-blue-600">${ finance_profile.emergency_name }</span>
                 </div>
                 <div class="e_relation flex   flex-col mb-3 ">
                   <span class="e_relationTag text-gray-400 font-medium text-xs">Patient Relation</span>
-                  <span class="startDate text-blue-600">${ doc.data().patientRelation[ doc.data().patientRelation.length - 1 ] }</span>
+                  <span class="startDate text-blue-600">${ finance_profile.patientRelation }</span>
                 </div>
                 <div class="e_moblieNumber flex   flex-col mb-3">
                   <span class="e_moblieNumberTag text-gray-400 font-medium text-xs">Emergency Mobile Number</span>
-                  <span class="startDate text-blue-600">${ doc.data().emergency_countryCode[ doc.data().emergency_countryCode.length - 1 ] }-${ doc.data().emergencyMobileNumber[ doc.data().emergencyMobileNumber.length - 1 ] }</span>
+                  <span class="startDate text-blue-600">${ finance_profile.emergency_countryCode }-${ finance_profile.emergency_mobileNumber }</span>
                 </div>
                 <div class="e_address flex  flex-col mb-3 ">
                   <span class="e_addressTag text-gray-400 font-medium text-xs">Emergency Address</span>
-                  <span class="startDate text-blue-600">${ doc.data().emergencyAddress[ doc.data().emergencyAddress.length - 1 ] }</span>
+                  <span class="startDate text-blue-600">${ finance_profile.emergency_address }</span>
                 </div>
                 <div class="profileFee flex   flex-col mb-3">
-                  <span class="feeTag text-gray-400 font-medium text-xs">Fee</span>
-                  <span class="fee text-blue-600">${ doc.data().aptFees[ doc.data().aptFees.length - 1 ] }</span>
+                  <span class="feeTag text-gray-400 font-medium text-xs">Fees</span>
+                  <span class="fee text-blue-600">${ finance_profile.fees }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3 ">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Category</span> 
-                  <span class="category text-blue-600">${ doc.data().aptType }</span>
+                  <span class="category text-blue-600">${ finance_profile.type }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
-                  <span class="categoryTag text-gray-400 font-medium text-xs">Occurrence ( per week )</span>
-                  <span class="category text-blue-600">${ doc.data().aptOccurrenceType }</span>
+                  <span class="categoryTag text-gray-400 font-medium text-xs">Visit per week</span>
+                  <span class="category text-blue-600">${ finance_profile.countPerWeek }</span>
                 </div>
                 <div class="profileCategory flex  flex-col ">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Profile Created on</span>
@@ -84,16 +82,14 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Profile Status</span>
-                  <span class="category ${ doc.data().softDelete === true ? 'text-red-500' : 'text-emerald-500' }">${ doc.data().softDelete === true ? 'Deleted' : 'Active' }</span>
+                  <span class="category ${ finance_profile.softDelete === true ? 'text-red-500' : 'text-emerald-500' }">${ finance_profile.softDelete === true ? 'Deleted' : 'Active' }</span>
                 </div>
                 
               `
-          profileDetailsSection.innerHTML = profile
-          getCounts()
-        }
-      } )
-    } )
-
+        profileDetailsSection.innerHTML = finance_profile_data
+        getCounts()
+      }
+    }
   }
 
 }

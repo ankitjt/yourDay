@@ -22,37 +22,73 @@ const showBreakDownOfAppointments = () =>
 
   moneyScheduledWrapper.onclick = () =>
   {
-    statusCheck = 'Scheduled'
-    countSpan = moneyScheduledCount.innerText
-    finances_breakDownCommon( statusCheck, countSpan )
+    if ( body.offsetWidth < 1024 )
+    {
+      alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+    }
+    else
+    {
+      statusCheck = 'Scheduled'
+      countSpan = moneyScheduledCount.innerText
+      finances_breakDownCommon( statusCheck, countSpan )
+    }
   }
 
   moneyPendingWrapper.onclick = () =>
   {
-    statusCheck = 'Pending'
-    countSpan = moneyPendingCount.innerText
-    finances_breakDownCommon( statusCheck, countSpan )
+
+    if ( body.offsetWidth < 1024 )
+    {
+      alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+    }
+    else
+    {
+      statusCheck = 'Pending'
+      countSpan = moneyPendingCount.innerText
+      finances_breakDownCommon( statusCheck, countSpan )
+    }
   }
 
   moneyCompletedWrapper.onclick = () =>
   {
-    statusCheck = 'Completed'
-    countSpan = moneyCompletedCount.innerText
-    finances_breakDownCommon( statusCheck )
+    if ( body.offsetWidth < 1024 )
+    {
+      alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+    }
+    else
+    {
+      statusCheck = 'Completed'
+      countSpan = moneyCompletedCount.innerText
+      finances_breakDownCommon( statusCheck )
+    }
   }
 
   moneyPaidCancelledWrapper.onclick = () =>
   {
-    statusCheck = 'Paid Cancelled'
-    countSpan = moneyPaidCancelledCount.innerText
-    finances_breakDownCommon( statusCheck, countSpan )
+    if ( body.offsetWidth < 1024 )
+    {
+      alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+    }
+    else
+    {
+      statusCheck = 'Paid Cancelled'
+      countSpan = moneyPaidCancelledCount.innerText
+      finances_breakDownCommon( statusCheck, countSpan )
+    }
   }
 
   moneyFreeCancelledWrapper.onclick = () =>
   {
-    statusCheck = 'Free Cancelled'
-    countSpan = moneyFreeCancelledCount.innerText
-    finances_breakDownCommon( statusCheck, countSpan )
+    if ( body.offsetWidth < 1024 )
+    {
+      alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+    }
+    else
+    {
+      statusCheck = 'Free Cancelled'
+      countSpan = moneyFreeCancelledCount.innerText
+      finances_breakDownCommon( statusCheck, countSpan )
+    }
   }
 }
 
