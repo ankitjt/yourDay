@@ -9,7 +9,7 @@ const fieldValidators = () =>
     {
       apt__confirmPage.page.classList.add( '-left-[2000px]' )
       p_mobile.classList.add( 'border-red-600' )
-      promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.' )
+      promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.', 'error' )
     }
   }
 
@@ -21,7 +21,7 @@ const fieldValidators = () =>
     {
       apt__confirmPage.page.classList.add( '-left-[2000px]' )
       p_e_mobile.classList.add( 'md:border-red-600' )
-      promptMessages( 'Emergency Mobile number should be less than 10 and greater than 5 digits.' )
+      promptMessages( 'Emergency mobile number should be less than 10 and greater than 5 digits.', 'error' )
     }
   }
 
@@ -39,7 +39,7 @@ const fieldValidators = () =>
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.timeSlot.classList.add( 'md:border-red-600' )
-    promptMessages( 'If start date is today, slot hour cannot be older than current hour.' )
+    promptMessages( 'If start date is today, slot hour cannot be older than current hour.', 'error' )
   }
 
   // Check for old start Date 
@@ -48,7 +48,7 @@ const fieldValidators = () =>
     console.log( selectedDate, date_time_ref.toLocaleDateString() )
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.startDate.classList.add( 'md:border-red-600' )
-    promptMessages( 'Appointment Start Date should be current or future date.' )
+    promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
   }
 
   // Name check.
@@ -58,7 +58,7 @@ const fieldValidators = () =>
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     aptName.classList.add( 'md:border-red-600' )
-    promptMessages( 'Name should be only be alphabetic.' )
+    promptMessages( 'Name should be only be alphabetic.', 'error' )
   }
 
   // Emergency Name check.
@@ -68,7 +68,7 @@ const fieldValidators = () =>
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     emergencyName.classList.add( 'md:border-red-600' )
-    promptMessages( 'Emergency Name should be only be alphabetic.' )
+    promptMessages( 'Emergency Name should be only be alphabetic.', 'error' )
   }
 
   // Email format check.
@@ -76,7 +76,7 @@ const fieldValidators = () =>
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     aptEmail.classList.add( 'md:border-red-600' )
-    promptMessages( 'Incorrect Email format. Format should be abc@xyz.com' )
+    promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
   }
 
   // Day and date-day match
@@ -86,14 +86,14 @@ const fieldValidators = () =>
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
     apt.startDate.classList.add( 'md:border-red-600' )
     apt.day.classList.add( 'md:border-red-600' )
-    promptMessages( 'Start date and Day slot does not match.' )
+    promptMessages( 'Start date and Day slot does not match.', 'error' )
   }
 
   // Emergency Relation if selected 'Others' is selected
   if ( apt.relationDetails.value === '' && apt.emergencyRelation.value === 'Others' )
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
-    promptMessages( 'Relation details cannot be blank.' )
+    promptMessages( 'Relation details cannot be blank.', 'error' )
     apt.emergencyRelation.classList.add( 'md:border-red-600' )
   }
 
@@ -101,7 +101,7 @@ const fieldValidators = () =>
   if ( Number( apt.occurrenceType.value ) > 2 || Number( apt.occurrenceType.value < 1 ) )
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
-    promptMessages( 'Occurrence cannot be more than 2 or less than 1.' )
+    promptMessages( 'Visit per week cannot be more than 2 or less than 1.', 'error' )
     apt.occurrenceType.classList.add( 'md:border-red-600' )
   }
 
@@ -116,7 +116,7 @@ const fieldValidators = () =>
   if ( aptName.value === emergencyName.value )
   {
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
-    promptMessages( 'Patient name and Emergency contact name cannot be same.' )
+    promptMessages( 'Patient name and Emergency contact name cannot be same.', 'error' )
     apt.name.classList.add( 'md:border-red-600' )
     apt.emergencyName.classList.add( 'md:border-red-600' )
   }
@@ -127,7 +127,7 @@ const fieldValidators = () =>
     if ( aptAddress.value === emergencyAddress.value )
     {
       apt__confirmPage.page.classList.add( '-left-[2000px]' )
-      promptMessages( 'Patient address and Emergency contact address cannot be same as they are not family member.' )
+      promptMessages( 'Same address only for family members.', 'error' )
       apt.address.classList.add( 'md:border-red-600' )
       apt.emergencyAddress.classList.add( 'md:border-red-600' )
     }
@@ -146,7 +146,7 @@ const fieldValidators = () =>
           if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
           {
             apt__confirmPage.page.classList.add( '-left-[2000px]' )
-            promptMessages( 'Slot is already filled.' )
+            promptMessages( 'Slot is already filled.', 'error' )
             apt.day.classList.add( 'md:border-red-600' )
             apt.timeSlot.classList.add( 'md:border-red-600' )
           }
@@ -155,7 +155,7 @@ const fieldValidators = () =>
       else if ( !querySnapshot.empty )
       {
         apt__confirmPage.page.classList.add( '-left-[2000px]' )
-        promptMessages( 'Email is already registered.' )
+        promptMessages( 'Email is already registered.', 'error' )
         apt.email.classList.add( 'md:border-red-600' )
       }
     } )

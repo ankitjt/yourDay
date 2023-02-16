@@ -1,9 +1,9 @@
 
 createTwoAptBtn.onclick = () =>
 {
-  if ( firstStartDate.innerText === aptStartDate.value || firstDaySlot.innerText === days[aptDay.value -1] )
+  if ( firstStartDate.innerText === aptStartDate.value || firstDaySlot.innerText === days[ aptDay.value - 1 ] )
   {
-    promptMessages( 'You are giving same details...' )
+    promptMessages( 'You are giving same details...', 'error' )
   }
   else
   {

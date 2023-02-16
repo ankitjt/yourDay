@@ -88,7 +88,7 @@ confirmButton.onclick = ( e ) =>
   apt.e_countryCode.selectedIndex = 0
   apt.emergencyAddress.value = ''
 
-  promptMessages( 'Appointment created !!' )
+  promptMessages( 'Appointment and profile created !!', 'success' )
 }
 
 const createProfile = () =>

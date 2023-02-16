@@ -34,7 +34,7 @@ apt.create.onclick = () =>
         input.classList.remove( 'md:border-red-600' )
         if ( input.value === "" && !input.classList.contains( 'hidden' ) )
         {
-            promptMessages( `${ input.getAttribute( 'title' ) } is blank.` )
+            promptMessages( `${ input.getAttribute( 'title' ) } is blank.`, 'error' )
             input.classList.add( 'md:border-red-600' )
             allFilled = false;
         }
@@ -54,7 +54,7 @@ apt.create.onclick = () =>
         select.classList.remove( 'md:border-red-600' )
         if ( select.value === "" )
         {
-            promptMessages( `${ select.getAttribute( 'title' ) } is blank.` )
+            promptMessages( `${ select.getAttribute( 'title' ) } is blank.`, 'error' )
             allFilled = false;
             select.classList.add( 'md:border-red-600' )
         }

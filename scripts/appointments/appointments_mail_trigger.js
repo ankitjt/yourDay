@@ -1,25 +1,30 @@
 const triggerAppointmentMail = () =>
 {
+  let createdOn = new Date()
+
   emailjs.init( '11bMyXUdLWDCysXm0' )
   emailjs.send( "service_ra7p8t7", "appointment_creation_mai", {
-    pt_name: confirmName.innerText,
+    name: confirmName.innerText,
     from_name: "yourDay",
-    user_email: confirmEmail.innerText,
-    aptCategory: confirmCategory.innerText,
-    aptName:confirmName.innerText,
-    aptEmail: confirmEmail.innerText,
-    aptMobileNumber: confirmMobileNumber.innerText,
-    aptAddress: confirmAddress.innerText,
-    aptDay: confirmDay.innerText,
-    aptSecondDay: "NA",
-    aptStartDate: confirmStartDate.innerText,
-    aptSecondStartDate: "NA",
-    aptTimeSlot: confirmTimeSlot.innerText,
-    aptSecondTimeSlot: "NA",
-    aptType: confirmAppointmentType.innerText,
-    aptNature: confirmAppointmentNature.innerText,
-    aptOccurrenceType: confirmOccurrenceType.innerText,
-    aptFees: confirmFees.innerText,
-    profileCreatedOn: firebase.firestore.FieldValue.serverTimestamp()
+    email_to: confirmEmail.innerText,
+    name: confirmName.innerText,
+    email: confirmEmail.innerText,
+    mobileNumber: confirmMobileNumber.innerText,
+    address: confirmAddress.innerText,
+    day: confirmDay.innerText,
+    secondDay: "NA",
+    date: confirmStartDate.innerText,
+    secondDate: "NA",
+    timeSlot: confirmTimeSlot.innerText,
+    secondTimeSlot: "NA",
+    type: confirmAppointmentType.innerText,
+    mode: confirmAppointmentNature.innerText,
+    visitPerWeek: confirmOccurrenceType.innerText,
+    fees: confirmFees.innerText,
+    emergency_name: confirmEmergencyName.innerText,
+    emergency_address: confirmEmergencyAddress.innerText,
+    emergency_mobileNumber: confirmEmergencyMobileNumber.innerText,
+    patientRelation: confirmEmergencyRelation.innerText,
+    createdOn: createdOn
   } )
 }
