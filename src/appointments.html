@@ -40,7 +40,7 @@
 
         <!-- Prompts (Absolute element 3) -->
         <div
-          class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
+          class="promptsWrapper absolute z-50 -left-[2000px] w-4/6 h-4/5 -translate-x-1/2 bottom-16 flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
         </div>
 
         <!-- Navbar  -->
@@ -100,7 +100,7 @@
                   <div class="flex flex-col mb-5 ">
                     <span
                       class="confirmAppointmentNatureTag text-[11px] text-blue-700 font-semibold capitalize">Appointment
-                      Nature</span>
+                      Mode</span>
                     <span class="confirmAppointmentNature text-xs mt-[2px] font-semibold text-zinc-800"></span>
                   </div>
 
@@ -114,10 +114,8 @@
 
                   <!-- Occurrence Type  -->
                   <div class="flex flex-col mb-5 ">
-                    <span class="confirmOccurrenceTypeTag text-[11px] text-blue-700 font-semibold capitalize">Occurrence
-                      Type
-                      ( per
-                      week )</span>
+                    <span class="confirmOccurrenceTypeTag text-[11px] text-blue-700 font-semibold capitalize">Visit per
+                      week</span>
                     <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800"></span>
                   </div>
 
@@ -299,10 +297,10 @@
 
                 <!-- Appointment Method  -->
                 <div class="mb-3">
-                  <select name="appointmentType" id="appointmentType" title="Appointment Nature"
+                  <select name="appointmentType" id="appointmentType" title="Appointment Mode"
                     class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md aptNature md:font-medium placeholder:text-blue-600 md:drop-shadow-none md:border-gray-300 md:text-sm md:bg-transparent md:text-blue-600">
                     <option value="" class="text-xs md:font-semibold md:text-base">
-                      Appointment Nature
+                      Appointment Mode
                     </option>
                     <option value="Online" class="text-xs md:font-semibold md:text-base">
                       Online
@@ -457,8 +455,8 @@
 
                 <!-- Occurrence Type  -->
                 <div class="mb-3">
-                  <input type="number" placeholder="Occurrence ( per week )" name="occurrenceType"
-                    aria-autocomplete="none" autocomplete="off" id="occurrenceType" title="Appointment Occurrence"
+                  <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
+                    autocomplete="off" id="occurrenceType" title="Visit per week"
                     class="w-full py-4 text-sm text-white bg-gray-800 border border-blue-500 rounded-md placeholder:text-white md:placeholder:text-blue-600 md:border-gray-300 md:font-medium aptOccurrenceType md:drop-shadow-none md:text-sm md:bg-transparent md:text-blue-600" />
                 </div>
 
@@ -559,7 +557,7 @@
             <div class="flex items-center appointmentButtonWrapper md:mt-5">
               <div class="createAppointmentButtons">
                 <button
-                  class="w-20 py-2 text-xs tracking-widest text-white uppercase bg-blue-600 rounded-full  createAptBtn">
+                  class="w-20 py-2 text-xs tracking-widest text-white uppercase bg-blue-600 rounded-full createAptBtn">
                   Create
                 </button>
 
