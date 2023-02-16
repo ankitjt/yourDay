@@ -1,14 +1,13 @@
 let filterFindBtn = document.querySelector( '.filterFindBtn' )
-let appointmentCountNumber = []
 filterFindBtn.onclick = () =>
 {
-  appointmentCountNumber = []
+  let appointmentCountNumber = []
   aptsRange.classList.add( 'hidden' )
   let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
   if ( selectedNameOfPatient === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
   {
-    promptMessages( 'Use all filters' )
+    promptMessages( 'Use all filters', 'error' )
   }
   else
   {
@@ -16,10 +15,9 @@ filterFindBtn.onclick = () =>
     let monthYear = scheduleFilterMonth.value
     let monthYearArr = monthYear.split( '-' )
 
-
     for ( let filteredAppointment of aptsArr )
     {
-      if ( filteredAppointment.name === selectedNameOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value === filteredAppointment.status )
+      if ( filteredAppointment.email === selectedEmailOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value === filteredAppointment.status )
       {
         appointmentCountNumber.push( filteredAppointment )
         appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`
@@ -34,7 +32,7 @@ filterFindBtn.onclick = () =>
                         <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ filteredAppointment.email } </span>
                        <span class='showUpdate ${ filteredAppointment.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ filteredAppointment.showUpdate } </span>
                     </span>
-                      <span>${ filteredAppointment.slot }</span>
+                      <span>${ filteredAppointment.timeSlot }</span>
                       <span>
                         <span> ${ filteredAppointment.day }, </span> <br />
                         <span class='date'>${ filteredAppointment.date }-${ filteredAppointment.month }-${ filteredAppointment.year } </span>
@@ -70,6 +68,13 @@ filterFindBtn.onclick = () =>
                 `
         scheduleTableRows.innerHTML += currentMonthAppointments
       }
+      // else if ( filteredAppointment.email === selectedEmailOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value !== filteredAppointment.status )
+      // {
+      //   appointmentCountNumber.push( filteredAppointment )
+      //   appointmentCount.innerText = `( 0 )`
+      //   scheduleTableRows.innerHTML = `<p class='text-center mt-36 text-rose-600 font-semibold uppercase'>No appointments found.</p>`
+      // }
+
     }
     addMoreAppointments()
     updateAppointmentStatus()
