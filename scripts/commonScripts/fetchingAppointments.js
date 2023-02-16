@@ -6,13 +6,17 @@ const fetchingAppointments = () =>
     {
       querySnapshot.forEach( ( doc ) =>
       {
-        let appointmentStartDate = new Date( doc.data().createdDateInSeconds )
         lastElementOfUpdatedStatus = doc.data().updatedOn.at( -1 )
         lastUpdatedDate = new Date( lastElementOfUpdatedStatus.seconds * 1000 )
+        let startHour = doc.data().timeSlot.at( -1 ).split( '-' )
+        let splitStartHour = startHour[ 0 ].split( ':' )
+        let getSeconds = Number( splitStartHour[ 0 ] ) * 3600
+        let appointmentStartDate = new Date( ( doc.data().createdDateInSeconds + getSeconds ) * 1000 )
 
         aptsArr.push( {
           type: doc.data().type,
           timeSlot: doc.data().timeSlot.at( -1 ),
+          slotStartHour: Number( splitStartHour[ 0 ] ),
           day: doc.data().day.at( -1 ),
           name: doc.data().name,
           status: doc.data().status,

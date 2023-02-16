@@ -125,7 +125,7 @@ let getNextSession = () =>
         arrDates.push( dates )
       }
     } )
-    promptMessages( 'Next appointment is with ' + arrDates[ 0 ] )
+    promptMessages( 'Next appointment is with ' + arrDates[ 0 ], 'success' )
   } )
 }
 

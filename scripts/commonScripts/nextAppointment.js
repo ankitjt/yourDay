@@ -10,14 +10,11 @@ setTimeout( () =>
   let fifteenMinutes = 15 * 60
   let triggerTime = hoursInSeconds - fifteenMinutes
 
-  console.log( triggerTime )
-
-  console.log( 'refDate ', referenceDate )
   let testArr = []
 
-  for ( let nextApt of dataArr )
+  for ( let nextApt of aptsArr )
   {
-    let timeSlot = nextApt.slot.split( '-' )
+    let timeSlot = nextApt.timeSlot.split( '-' )
     let splitHour = timeSlot[ 0 ].split( ':' )
     let DB_DATE = parseInt( nextApt.date )
     let DB_MONTH = parseInt( nextApt.month )
@@ -35,6 +32,5 @@ setTimeout( () =>
       } )
     }
   }
-  console.log( testArr[ 0 ].nextApt, ( testArr[ 0 ].nextAptHour * 60 ) * 60, testArr[ 0 ].nextAptHour )
 
 }, 2000 )

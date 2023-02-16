@@ -52,7 +52,7 @@ let patientEmail = [];
     } )
     profileDetails.sort( ( a, b ) =>
     {
-      return b.createdOn - a.createdOn
+      return a.createdOn - b.createdOn
     } )
     fetchingAppointments()
   } )
