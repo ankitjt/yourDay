@@ -78,7 +78,7 @@ findDetailsByName.onclick = () =>
                 </div>
                 <div class="profileCategory flex  flex-col ">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Profile Created on</span>
-                  <span class="category text-blue-600">${ profileDate.getDate() }-${ profileDate.getMonth() + 1 }-${ profileDate.getFullYear() }, ${ profileDate.getHours() }:${ profileDate.getMinutes() }</span>
+                  <span class="category text-blue-600">${ profileDate.getDate() }-${ profileDate.getMonth() + 1 }-${ profileDate.getFullYear() }, ${ profileDate.toLocaleTimeString() }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
                   <span class="categoryTag text-gray-400 font-medium text-xs">Profile Status</span>

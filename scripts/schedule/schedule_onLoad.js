@@ -2,14 +2,12 @@ setTimeout( () =>
 {
   scheduleGalleryView.innerHTML = ''
   scheduleTableRows.innerHTML = ''
-  let currentDate = new Date()
-  let currentMonth = currentDate.getMonth() + 1
-  let lastMonth = currentDate.getMonth() - 1
+
 
   let appointmentCountNumber = []
-  for ( let eachRecord of dataArr )
+  for ( let eachRecord of aptsArr )
   {
-    if ( parseInt( eachRecord.month ) === currentMonth || parseInt( eachRecord.month ) === lastMonth )
+    if ( parseInt( eachRecord.month ) === local_month + 1 || parseInt( eachRecord.month ) === local_month - 1 )
     {
 
       if ( eachRecord.status === 'Pending' || eachRecord.status === 'Scheduled' )
@@ -79,12 +77,15 @@ setTimeout( () =>
                         <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ eachRecord.email } </span>
                        <span class='showUpdate ${ eachRecord.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ eachRecord.showUpdate } </span>
                     </span>
-                      <span>${ eachRecord.slot }</span>
+                      <span>${ eachRecord.timeSlot }</span>
                       <span>
                         <span> ${ eachRecord.day }, </span> <br />
                         <span class='date'>${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
                       </span>
-                      <span>${ eachRecord.type }</span>
+                      <div class='flex flex-col'>
+                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }</span>
+                        <span class='${ eachRecord.type === 'Session' ? 'bg-blue-600' : 'bg-emerald-600' } font-normal text-xs text-white rounded-lg w-20 py-1'>${ eachRecord.mode }</span>
+                      </div>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
                          <span class="text-emerald-600">

@@ -46,7 +46,7 @@ const updateAppointmentStatus = () =>
             setTimeout( () =>
             {
               location.reload()
-            }, 1000 )
+            }, 2000 )
           }
           else
           {

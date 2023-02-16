@@ -17,12 +17,12 @@ setTimeout( () =>
 
     let profileRowData = `
          <tr
-                    class="font-semibold text-blue-600 ease-in-out bg-white border-b transition:300 hover:bg-blue-100 text-[10px] ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    class="font-semibold ease-in-out text-white transition:300 border-b hover:bg-gray-900 text-[10px] ${ filterData.type === 'Session' ? 'bg-blue-500 ' : 'bg-emerald-500' } ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
+                    <td class="px-6 py-4 whitespace-nowrap w-fit">
                       <span class="block name">${ filterData.name }</span>
                       <span class="email">${ filterData.email }</span>
                     </td>
-                    <td class="px-6 py-4">
+                    <td class="px-6 py-4 ">
                       ${ filterData.type }
                     </td>
                     <td class="px-6 py-4">
@@ -48,7 +48,10 @@ setTimeout( () =>
                       </span>
                     </td>
                     <td class="px-6 py-4">
-                      ${ finalCreatedOn }
+                    ${ finalCreatedOn }
+                    </td>
+                    <td class="px-6 py-4">
+                      ${ filterData.updatedOn }
                     </td>
                     <td class="px-6 py-4 " title='View/Update'>
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

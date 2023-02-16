@@ -14,7 +14,7 @@ const fetchingData = () =>
         let lastMonth = currentDate.getMonth() - 1
         let aptStartDateMonth = appointmentStartDate.getMonth()
 
-        dataArr.push( {
+        aptsArr.push( {
           type: doc.data().aptType,
           slot: doc.data().aptTimeSlot.at( -1 ),
           day: doc.data().aptDay.at( -1 ),
@@ -31,7 +31,7 @@ const fetchingData = () =>
           statusUpdate: doc.data().statusUpdatedTimeStamp.at( -1 )
         } )
       } )
-      dataArr.sort( ( a, b ) =>
+      aptsArr.sort( ( a, b ) =>
       {
         return a.convertedDate - b.convertedDate
       } )
