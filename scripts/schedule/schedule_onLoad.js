@@ -2,11 +2,14 @@ setTimeout( () =>
 {
   scheduleGalleryView.innerHTML = ''
   scheduleTableRows.innerHTML = ''
+  let currentDate = new Date()
+  let currentMonth = currentDate.getMonth() + 1
+  let lastMonth = currentDate.getMonth() - 1
 
   let appointmentCountNumber = []
-  for ( let eachRecord of aptsArr )
+  for ( let eachRecord of dataArr )
   {
-    if ( parseInt( eachRecord.month ) === local_month + 1 || parseInt( eachRecord.month ) === local_month - 1 )
+    if ( parseInt( eachRecord.month ) === currentMonth || parseInt( eachRecord.month ) === lastMonth )
     {
 
       if ( eachRecord.status === 'Pending' || eachRecord.status === 'Scheduled' )
@@ -76,15 +79,12 @@ setTimeout( () =>
                         <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ eachRecord.email } </span>
                        <span class='showUpdate ${ eachRecord.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ eachRecord.showUpdate } </span>
                     </span>
-                      <span>${ eachRecord.timeSlot }</span>
+                      <span>${ eachRecord.slot }</span>
                       <span>
                         <span> ${ eachRecord.day }, </span> <br />
                         <span class='date'>${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
                       </span>
-                      <div class='flex flex-col items-center'>
-                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }</span>
-                        <span class='${ eachRecord.type === 'Session' ? 'bg-blue-600' : 'bg-emerald-600' } w-16 rounded-full text-white font-normal text-[10px] py-1'>${ eachRecord.mode }</span>
-                      </div>
+                      <span>${ eachRecord.type }</span>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
                          <span class="text-emerald-600">
