@@ -15,8 +15,8 @@ navbarContent.innerHTML = `
           </svg>
         </a>
         <div class="rightSideNavbar flex items-center justify-center">
-        <span class='serverTime font-semibold tracking-widest uppercase mr-5'></span>
-          <span class="tracking-widest font-semibold uppercase">${ pageUrl } </span>
+        <span class='serverTime font-normal mr-5'></span>
+          <span class="font-normal uppercase">${ pageUrl } </span>
           <div class="notificationOpener">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
               class="w-4 h-4 ml-5 text-red-400 cursor-pointer notification">
@@ -32,14 +32,18 @@ navbarContent.innerHTML = `
         </div>
 `
 
-let serverTime = document.querySelector( '.serverTime' )
-let currentTime = () =>
+let serverTime = document.querySelector( ".serverTime" )
+let showTime = () =>
 {
-  // let serverTimeFirebase = firebase.firestore.Timestamp.fromDate( new Date() ).seconds * 1000
-  // let serverTimeStamp = new Date( serverTimeFirebase ).toLocaleString()
-  let serverTimeStamp = new Date().toLocaleString()
-  serverTime.innerText = serverTimeStamp
-  return serverTimeStamp;
+  date_time_ref1 = new Date()
+  dateInSeconds1 = Math.round( Date.now() / 1000 )
+  local_date1 = date_time_ref1.getDate() < 10 ? '0' + date_time_ref1.getDate() : date_time_ref1.getDate()
+  local_month1 = ( date_time_ref1.getMonth() + 1 ) < 10 ? '0' + ( date_time_ref1.getMonth() + 1 ) : ( date_time_ref1.getMonth() + 1 )
+  local_year1 = date_time_ref1.getFullYear()
+  local_hours1 = date_time_ref1.getHours() < 10 ? '0' + date_time_ref1.getHours() : date_time_ref1.getHours()
+  local_minutes1 = date_time_ref1.getMinutes() < 10 ? '0' + date_time_ref1.getMinutes() : date_time_ref1.getMinutes()
+  local_seconds1 = date_time_ref1.getSeconds() < 10 ? '0' + date_time_ref1.getSeconds() : date_time_ref1.getSeconds()
+  serverTime.innerText = local_date1 + '/' + local_month1 + '/' + local_year1 + ' , ' + local_hours1 + ':' + local_minutes1 + ':' + local_seconds1
 }
-setInterval( currentTime, 1000 )
+setInterval( showTime, 1000 )
 
