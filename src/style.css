@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&family=Montserrat+Alternates:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
 
 * {
-    font-family: 'Montserrat Alternates', sans-serif;
+    /* font-family: 'Montserrat Alternates', sans-serif; */
+    font-family: 'Lexend', sans-serif;
+
 }
 
 select {
@@ -13,7 +18,7 @@ select {
 .indexPageAppName,
 .confirmPageTitle,
 .pb,
-.lovelyDay{
+.lovelyDay {
     font-family: 'La Belle Aurore', cursive !important;
 }
 
@@ -65,6 +70,6 @@ input[data-autocompleted] {
     background-color: transparent !important;
 }
 
-.promptsWrapper > :first-child {
+.promptsWrapper> :first-child {
     margin-top: auto !important;
 }

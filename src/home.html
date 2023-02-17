@@ -9,16 +9,16 @@
     <link rel="stylesheet" href="./style.css">
   </head>
 
-  <body class="2xl:bg-gray-500 relative">
+  <body class="relative 2xl:bg-gray-500">
     <span
-      class="pb bg-red-500  p-3 text-2xl animate-bounce  absolute bottom-6  z-50 rounded-full text-white font-medium cursor-pointer app-name uppercase right-12 lg:left-10 lg:right-0 w-fit ">yD</span>
+      class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-12 lg:left-10 lg:right-0 w-fit ">yD</span>
     <div
-      class="wrapper h-screen w-full bg-no-repeat bg-cover bg-center px-10 py-5 lg:p-0 flex flex-row overflow-auto relative md:justify-between bg-gray-800 md:bg-white">
+      class="relative flex flex-row w-full h-screen px-10 py-5 overflow-auto bg-gray-800 bg-center bg-no-repeat bg-cover wrapper lg:p-0 md:justify-between md:bg-white">
 
       <!-- Only for Desktop -->
       <div
-        class="banner-holder md:w-2/6 lg:h-screen hidden lg:flex lg:items-center lg:justify-center relative overflow-hidden">
-        <img src="../assets/homepage2.webp" alt="logo" class="h-auto w-auto" />
+        class="relative hidden overflow-hidden banner-holder md:w-2/6 lg:h-screen lg:flex lg:items-center lg:justify-center">
+        <img src="../assets/homepage2.webp" alt="logo" class="w-auto h-auto" />
       </div>
 
       <div
@@ -30,14 +30,14 @@
         </h1>
 
         <!-- Links Wrapper  -->
-        <div class="site-links mt-5 md:grid md:grid-cols-2 md:gap-x-20 md:w-full md:drop-shadow-5xl">
+        <div class="mt-5 site-links md:grid md:grid-cols-2 md:gap-x-20 md:w-full md:drop-shadow-5xl">
 
           <!-- Link for Appointments page  -->
           <button
-            class="bg-indigo-700 w-full mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full mb-5 text-xl text-white capitalize bg-indigo-700 rounded-md cursor-pointer md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="./appointments.html" class="flex items-center justify-between p-6">
-              <span>Appointments</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <span class="text-base tracking-wider uppercase font-regular">Appointments</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path
                   d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
               </svg>
@@ -46,10 +46,10 @@
 
           <!-- Link for Schedule page  -->
           <button
-            class="bg-blue-700 w-full mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full mb-5 text-xl text-white capitalize bg-blue-700 rounded-md cursor-pointer md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="./schedule.html" class="flex items-center justify-between p-6">
               <span>Schedule</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                   clip-rule="evenodd" />
@@ -59,10 +59,10 @@
 
           <!-- Link for Finances page  -->
           <button
-            class="bg-green-600 w-full mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full mb-5 text-xl text-white capitalize bg-green-600 rounded-md cursor-pointer md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="./finances.html" class="flex items-center justify-between p-6">
               <span>Finances</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
                   clip-rule="evenodd" />
@@ -72,10 +72,10 @@
 
           <!-- Link for Reports page  -->
           <button
-            class="bg-purple-600 w-full mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full mb-5 text-xl text-white capitalize bg-purple-600 rounded-md cursor-pointer md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="./reports.html" class="flex items-center justify-between p-6">
               <span>Reports</span>
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd"
                   d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
                   clip-rule="evenodd" />
@@ -85,7 +85,7 @@
 
           <!-- Link for Notes page  -->
           <button
-            class="bg-gray-600 w-full mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full mb-5 text-xl text-white capitalize bg-gray-600 rounded-md cursor-pointer md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="./notes.html" class="flex items-center justify-between p-6">
               <span>Notes</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -96,10 +96,10 @@
 
             </a>
           </button>
-          <div class="patientNamesList hidden"></div>
+          <div class="hidden patientNamesList"></div>
           <!-- Link for Logout page  -->
           <button
-            class="bg-rose-600 w-full md:mb-5 text-white text-xl rounded-md capitalize md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl cursor-pointer">
+            class="w-full text-xl text-white capitalize rounded-md cursor-pointer bg-rose-600 md:mb-5 md:hover:drop-shadow-2xl md:hover:-translate-y-2 md:transition-all md:ease-in-out md:shadow-2xl">
             <a href="../index.html" class="flex items-center justify-between p-6">
               <span>Logout</span>
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
