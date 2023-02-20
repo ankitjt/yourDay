@@ -2,7 +2,9 @@ let filterFindBtn = document.querySelector( '.filterFindBtn' )
 filterFindBtn.onclick = () =>
 {
   let appointmentCountNumber = []
+  let currentMonthAppointments = ''
   aptsRange.classList.add( 'hidden' )
+  let dummyData = [];
   let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
   let scheduleFilterStatus = document.querySelector( '.scheduleFilterStatus' )
   if ( selectedNameOfPatient === '' || scheduleFilterMonth.value === '' || scheduleFilterStatus.value === '' )
@@ -11,39 +13,52 @@ filterFindBtn.onclick = () =>
   }
   else
   {
-    scheduleTableRows.innerHTML = ''
+    scheduleTableRows.innerHTML = `<div
+      class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
+      yourDay
+    </div>`
+
     let monthYear = scheduleFilterMonth.value
     let monthYearArr = monthYear.split( '-' )
-
-    for ( let filteredAppointment of aptsArr )
+    setTimeout( () =>
     {
-      if ( filteredAppointment.email === selectedEmailOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value === filteredAppointment.status )
+      for ( let filteredAppointment of aptsArr )
       {
-        appointmentCountNumber.push( filteredAppointment )
-        appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`
-
-        let currentMonthAppointments = `
+        if ( filteredAppointment.email === selectedEmailOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value === filteredAppointment.status )
+        {
+          dummyData.push( filteredAppointment )
+        }
+      }
+      if ( dummyData.length )
+      {
+        for ( let eachData of dummyData )
+        {
+          appointmentCount.innerText = `( ${ dummyData.length } )`
+          currentMonthAppointments += `
                   <div class="flex flex-col justify-center align-middle tableRow12">
                     <div
                       class="grid grid-cols-6 px-2 py-4 text-xs font-semibold text-center text-blue-600 duration-300 ease-in-out border-b border-gray-200 place-items-center hover:bg-blue-100"
-                      data-id="${ filteredAppointment.id }">
+                      data-id="${ eachData.id }">
                     <span>
-                        <span class='scheduleName'>${ filteredAppointment.name } </span>
-                        <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ filteredAppointment.email } </span>
-                       <span class='showUpdate ${ filteredAppointment.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ filteredAppointment.showUpdate } </span>
+                        <span class='scheduleName'>${ eachData.name } </span>
+                        <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ eachData.email } </span>
+                       <span class='showUpdate ${ eachData.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ eachData.showUpdate } </span>
                     </span>
-                      <span>${ filteredAppointment.timeSlot }</span>
+                      <span>${ eachData.timeSlot }</span>
                       <span>
-                        <span> ${ filteredAppointment.day }, </span> <br />
-                        <span class='date'>${ filteredAppointment.date }-${ filteredAppointment.month }-${ filteredAppointment.year } </span>
+                        <span> ${ eachData.day }, </span> <br />
+                        <span class='date'>${ eachData.date }-${ eachData.month }-${ eachData.year } </span>
                       </span>
-                      <span>${ filteredAppointment.type }</span>
+                      <span>${ eachData.type }
+                       <img src='../assets/sofa.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Session' ? 'block' : 'hidden' }' />
+                        <img src='../assets/laptop.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Supervision' ? 'block' : 'hidden' }' />
+                      </span>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
                          <span class="text-emerald-600">
-                              ${ filteredAppointment.status }
+                              ${ eachData.status }
                             </span>
-                          <span class='text-xs text-orange-500'>${ filteredAppointment.profileStatus === true ? 'Profile Deleted' : '' } </span>
+                          <span class='text-xs text-orange-500'>${ eachData.profileStatus === true ? 'Profile Deleted' : '' } </span>
                         </div>
     
                         <div class="statusUpdateTime">
@@ -66,16 +81,20 @@ filterFindBtn.onclick = () =>
                     </div>
                   </div>
                 `
-        scheduleTableRows.innerHTML += currentMonthAppointments
+          scheduleTableRows.innerHTML = currentMonthAppointments
+        }
       }
-      // else if ( filteredAppointment.email === selectedEmailOfPatient && filteredAppointment.month === monthYearArr[ 1 ] && filteredAppointment.year === monthYearArr[ 0 ] && scheduleFilterStatus.value !== filteredAppointment.status )
-      // {
-      //   appointmentCountNumber.push( filteredAppointment )
-      //   appointmentCount.innerText = `( 0 )`
-      //   scheduleTableRows.innerHTML = `<p class='text-center mt-36 text-rose-600 font-semibold uppercase'>No appointments found.</p>`
-      // }
-
-    }
+      else
+      {
+        appointmentCount.innerText = `( ${ dummyData.length } )`
+        scheduleTableRows.innerHTML = `<p class='text-rose-600 font-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center flex-col'>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+        </svg>
+        <span>No records found.</span>
+      </p>`
+      }
+    }, 2000 )
     addMoreAppointments()
     updateAppointmentStatus()
   }

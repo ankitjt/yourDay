@@ -1,20 +1,27 @@
+scheduleGalleryView.innerHTML = `<div
+    class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
+    yourDay
+  </div>`
+scheduleTableRows.innerHTML = `<div
+    class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
+    yourDay
+  </div>`
 setTimeout( () =>
 {
-  scheduleGalleryView.innerHTML = ''
-  scheduleTableRows.innerHTML = ''
 
 
   let appointmentCountNumber = []
+  let currentMonthAppointments = ''
+  let mobileView = ''
   for ( let eachRecord of aptsArr )
   {
-    if ( parseInt( eachRecord.month ) === local_month + 1 || parseInt( eachRecord.month ) === local_month - 1 )
+    if ( parseInt( eachRecord.month ) === parseInt( local_month ) || parseInt( eachRecord.month ) === parseInt( local_month ) - 1 )
     {
-
       if ( eachRecord.status === 'Pending' || eachRecord.status === 'Scheduled' )
       {
         appointmentCountNumber.push( eachRecord )
 
-        let appointmentPill = `
+        mobileView = `
                   <div
                    class="1 px-3 py-5  rounded-2xl  border-l-8 border ${ eachRecord.type === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ eachRecord.type === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ eachRecord.type === "New" ? 'text-rose-700' : '' } mb-5" text-xs
              >
@@ -62,12 +69,12 @@ setTimeout( () =>
                </div>
              </div>
          `
-        scheduleGalleryView.innerHTML += appointmentPill
+        scheduleGalleryView.innerHTML += mobileView
 
         // Desktop View
         appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`
 
-        let currentMonthAppointments = `
+        currentMonthAppointments += `
                   <div class="flex flex-col justify-center align-middle tableRow12">
                     <div
                       class="grid grid-cols-6 px-2 py-4 text-xs font-semibold text-center text-blue-600 duration-300 ease-in-out border-b border-gray-200 place-items-center hover:bg-blue-100"
@@ -82,9 +89,11 @@ setTimeout( () =>
                         <span> ${ eachRecord.day }, </span> <br />
                         <span class='date'>${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
                       </span>
-                      <div class='flex flex-col'>
-                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }</span>
-                        <span class='${ eachRecord.type === 'Session' ? 'bg-blue-600' : 'bg-emerald-600' } font-normal text-xs text-white rounded-lg w-20 py-1'>${ eachRecord.mode }</span>
+                      <div class='flex flex-row' title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }'>
+                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }
+                        <img src='../assets/sofa.svg' class='h-5 w-5 inline ml-1 ${ eachRecord.mode === 'Online' ? 'block' : 'hidden' }' />
+                        <img src='../assets/laptop.svg' class='h-5 w-5 inline ml-1 ${ eachRecord.mode === 'Offline' ? 'block' : 'hidden' }' />
+                        </span>
                       </div>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
@@ -114,7 +123,7 @@ setTimeout( () =>
                     </div>
                   </div>
                 `
-        scheduleTableRows.innerHTML += currentMonthAppointments
+        scheduleTableRows.innerHTML = currentMonthAppointments
 
       }
     }
