@@ -27,12 +27,12 @@ const localDateAndTime = () =>
 {
   date_time_ref = new Date()
   dateInSeconds = Math.round( Date.now() / 1000 )
-  local_date = date_time_ref.getDate() < 10 ? '0' + date_time_ref.getDate() : date_time_ref.getDate()
-  local_month = ( date_time_ref.getMonth() + 1 ) < 10 ? '0' + ( date_time_ref.getMonth() + 1 ) : ( date_time_ref.getMonth() + 1 )
+  local_date = date_time_ref.getDate() < 10 ? parseInt( '0' + date_time_ref.getDate() ) : date_time_ref.getDate()
+  local_month = ( date_time_ref.getMonth() + 1 ) < 10 ? parseInt( '0' + ( date_time_ref.getMonth() + 1 ) ) : ( date_time_ref.getMonth() + 1 )
   local_year = date_time_ref.getFullYear()
-  local_hours = date_time_ref.getHours() < 10 ? '0' + date_time_ref.getHours() : date_time_ref.getHours()
-  local_minutes = date_time_ref.getMinutes() < 10 ? '0' + date_time_ref.getMinutes() : date_time_ref.getMinutes()
-  local_seconds = date_time_ref.getSeconds() < 10 ? '0' + date_time_ref.getSeconds() : date_time_ref.getSeconds()
+  local_hours = date_time_ref.getHours() < 10 ? parseInt( '0' + date_time_ref.getHours() ) : date_time_ref.getHours()
+  local_minutes = date_time_ref.getMinutes() < 10 ? parseInt( '0' + date_time_ref.getMinutes() ) : date_time_ref.getMinutes()
+  local_seconds = date_time_ref.getSeconds() < 10 ? parseInt( '0' + date_time_ref.getSeconds() ) : date_time_ref.getSeconds()
   serverTime.innerText = local_date + '/' + local_month + '/' + local_year + ' , ' + local_hours + ':' + local_minutes + ':' + local_seconds
 }
 localDateAndTime()
