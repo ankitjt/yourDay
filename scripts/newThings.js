@@ -1,87 +1,57 @@
-const getCounts2 = () =>
+const fetchData = document.querySelector( '.fetchData' )
+
+fetchData.onclick = () =>
 {
-  let monthYear = financeMonthFilterByName.value,
-    monthYearArr = monthYear.split( '-' )
+  let email = document.querySelector( '.emails' )
+  let selectedMonth = document.querySelector( '.selectedMonth' )
+  let status = document.querySelector( '.status' )
+  let results = ''
+  let resultWrapper = document.querySelector( '.resultWrapper' )
+  let arr = []
 
-  let scheduled = [],
-    pending = [],
-    completed = [],
-    paidCompleted = [],
-    freeCancelled = [],
-    totalMoneyFromPaid,
-    totalMoneyFromCompleted,
-    totalMoneyReceived
+  resultWrapper.innerHTML = ` 
+  <div
+  class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-9 bg-rose-600 text-md">
+  yourDay
+  </div>
+  `
 
-  for ( let testData of dataArr )
-  {
-
-    if ( testData.month === monthYearArr[ 1 ] && testData.year === monthYearArr[ 0 ] )
+  db.collection( `appointments/${ email.value }/details` )
+    .onSnapshot( qs =>
     {
-      if ( selectedNameOfPatient === testData.name )
+      qs.forEach( ( doc ) =>
       {
-        testData.status === 'Scheduled' ? scheduled.push( testData ) : ''
-        testData.status === 'Pending' ? pending.push( testData ) : ''
+        if ( doc.data().status === status.value && doc.data().month.at( -1 ) === selectedMonth.value )
+        {
+          arr.push( doc.data() )
+        }
+      } )
 
-        testData.status === 'Completed' ? completed.push( testData.fees ) : ''
-        totalMoneyFromCompleted = completed.reduce( ( a, b ) => a + b, 0 )
-
-        testData.status === 'Paid Cancelled' ? paidCompleted.push( testData.fees ) : ''
-        totalMoneyFromPaid = paidCompleted.reduce( ( a, b ) => a + b, 0 )
-
-        testData.status === 'Free Cancelled' ? freeCancelled.push( testData ) : ''
-
-        totalMoneyReceived = totalMoneyFromCompleted + totalMoneyFromPaid
-
-        moneyBreakData =
-          `           
-                          <div class='p-3'>
-                          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Scheduled</span>
-                            <span class="moneyScheduled ${ scheduled.length === 0 ? 0 : "underline" } cursor-pointer">${ scheduled.length }</span>
-                          </div>
-                          <div class="moneyPendingWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Pending</span>
-                            <span class="moneyPending ${ pending.length === 0 ? 0 : "underline" } cursor-pointer">${ pending.length }</span>
-                          </div>
-                          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Completed</span>
-                            <span class="moneyCompleted tracking-widest ${ completed.length === 0 ? 0 : "underline" }  cursor-pointer">
-                            ${ completed.length }</span>
-                          </div>
-                          <div
-                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Paid Cancelled</span>
-                            <span class="moneyPaidCancelled tracking-widest ${ paidCompleted.length === 0 ? 0 : "underline" } cursor-pointer">
-                            ${ paidCompleted.length }</span>
-                          </div>
-                          <div
-                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Free Cancelled</span>
-                            <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : "underline" } cursor-pointer">
-                            ${ freeCancelled.length }</span>
-                          </div>
-                          <hr class="h-1 bg-blue-600 rounded-md my-4">
-                          <div class="moneyTotalWrapper flex items-center justify-between mt-5 bg-rose-600 text-white px-3 py-3 rounded-md">
-                            <span>Total Due</span>
-                            <span class="moneyTotal tracking-widest">
-                               <div class="flex"> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor" stroke-width="2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                  d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-                              </svg>
-                              <span class='ml-1'>
-                               ${ totalMoneyReceived }
-                              </span>
-                            </div>
-                            </span>
-                          </div>
-                          <div class='totalLogic my-2 text-[10px] text-rose-600 text-right'>
-                            ** (Completed + Paid Cancelled) - Free Cancelled.
-                          </div>
-                      </div>
-                        `
-        moneyBreakDownWrapper.innerHTML = moneyBreakData
+      if ( arr.length )
+      {
+        for ( let data of arr )
+        {
+          results += `
+                    <p class='my-3'>
+                      ${ data.date },${ data.month }, ${ data.year } 
+                      <span class='bg-rose-600 text-white px-2 py-1 uppercase rounded-full text-xs'>
+                      ${ data.status }
+                      </span> 
+                      <span>${ data.email } </span>
+                    </p>
+                  `
+          resultWrapper.innerHTML = results
+        }
       }
-    }
-  }
+      else
+      {
+        resultWrapper.innerHTML = `<p class='text-rose-600 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center flex-col'>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+          </svg>
+          <span>No records found.</span>
+        </p>`
+      }
+    } )
+
 }
