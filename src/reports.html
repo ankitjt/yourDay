@@ -301,7 +301,7 @@
 
         <!-- Navbar  -->
         <div class="relative pb-1 my-6 navbarWrapper md:my-0">
-          <nav class="flex items-center justify-between w-full text-xs font-normal text-blue-600 navbarContent"></nav>
+          <nav class="navbarContent"></nav>
 
           <!--  Navbar Notification Center -->
           <div
@@ -315,8 +315,8 @@
         <!-- Reports by Month  -->
         <section class="mt-5 rounded-md reportByMonthSection">
           <h3 class="mb-2">
-            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-              By month and year
+            <span class="text-xs font-semibold tracking-wider text-blue-600 uppercase">
+              By month & year
             </span>
           </h3>
 
@@ -334,46 +334,52 @@
               <div class="flex flex-col dummyWrap ">
                 <!-- By Type  -->
                 <div class="my-2 byType">
-                  <p class="mb-2 text-xs font-semibold text-gray-500 border-b border-gray-300">Type:</p>
-                  <div class="forWrap md:grid md:grid-cols-2 md:gap-x-5 ">
-                    <div class="flex items-center justify-between capitalize totalSessions">
+                  <p
+                    class="mb-2 text-[10px] uppercase tracking-wider font-semibold text-blue-600 border-b border-gray-300">
+                    Type:</p>
+                  <div
+                    class="forWrap md:grid md:grid-cols-2 md:gap-x-5 text-[10px] uppercase text-gray-500 tracking-wider">
+                    <div class="flex items-center justify-between totalSessions">
                       <span>Sessions</span>
-                      <span class="totalSessionsCount"></span>
+                      <span class="totalSessionsCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalSupervision">
+                    <div class="flex items-center justify-between totalSupervision">
                       <span>Supervision</span>
-                      <span class="totalSupervisionCount"></span>
+                      <span class="totalSupervisionCount text-blue-600"></span>
                     </div>
                   </div>
                 </div>
                 <div class="hidden patientNamesList"></div>
                 <!-- By Status -->
                 <div class="my-2 byStatus">
-                  <p class="mb-2 text-xs font-semibold text-gray-500 border-b border-gray-300">Status:</p>
-                  <div class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2">
-                    <div class="flex items-center justify-between capitalize totalScheduled">
+                  <p
+                    class="mb-2 text-[10px] uppercase tracking-wider font-semibold text-blue-600 border-b border-gray-300">
+                    Status:</p>
+                  <div
+                    class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2 uppercase text-gray-500 text-[10px] tracking-wider">
+                    <div class="flex items-center justify-between totalScheduled">
                       <span>Scheduled</span>
-                      <span class="totalScheduledCount"></span>
+                      <span class="totalScheduledCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalCompleted">
+                    <div class="flex items-center justify-between totalCompleted">
                       <span>Completed</span>
-                      <span class="totalCompletedCount"></span>
+                      <span class="totalCompletedCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalRescheduled">
+                    <div class="flex items-center justify-between totalRescheduled">
                       <span>Rescheduled</span>
-                      <span class="totalRescheduledCount"></span>
+                      <span class="totalRescheduledCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalFreeCancelled">
+                    <div class="flex items-center justify-between totalFreeCancelled">
                       <span>Free Cancelled</span>
-                      <span class="totalFreeCancelledCount"></span>
+                      <span class="totalFreeCancelledCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalPaidCancelled">
+                    <div class="flex items-center justify-between totalPaidCancelled">
                       <span>Paid Cancelled</span>
-                      <span class="totalPaidCancelledCount"></span>
+                      <span class="totalPaidCancelledCount text-blue-600"></span>
                     </div>
-                    <div class="flex items-center justify-between capitalize totalPending">
+                    <div class="flex items-center justify-between totalPending">
                       <span>Pending</span>
-                      <span class="totalPendingCount"></span>
+                      <span class="totalPendingCount text-blue-600"></span>
                     </div>
                   </div>
                 </div>
@@ -385,13 +391,16 @@
 
         <!-- Reports by Category  -->
         <div class="flex flex-col mt-10 dummy">
-          <h1 class="flex justify-between text-xs font-semibold text-blue-600 uppercase">
-            <span>Patients List</span>
+          <h1 class="flex justify-between items-center text-xs font-semibold text-blue-600 uppercase">
+            <span class="tracking-wider">
+              <span>Patients List</span>
+              <span class="patientCount ml-1"></span>
+            </span>
             <div class="flex items-center text-white filters">
               <span
                 class="px-3 py-1 mx-1 text-[10px] capitalize cursor-pointer text-blue-600 bg-blue-100 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-rose-600">Session</span>
-              <span
-                class="px-3 py-1 mx-1 text-[10px] capitalize cursor-pointer bg-emerald-100 rounded-full supervision text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-rose-600">Supervision</span>
+              <span class=" px-3 py-1 mx-1 text-[10px] capitalize cursor-pointer bg-emerald-100 rounded-full supervision
+                text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-rose-600">Supervision</span>
 
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
@@ -400,40 +409,40 @@
               </svg>
             </div>
           </h1>
-          <div class="relative mt-3 overflow-x-auto ">
-            <table class="w-full text-xs text-left border bg-gray-50">
-              <thead class="text-[10px]  border">
-                <tr class="font-normal text-gray-500">
-                  <th class="px-6 py-3">
-                    Name
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                    <span class="flex">
-                      <span>Type</span>
-                    </span>
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                    Mode
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                    Status
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                    Created on
-                  </th>
-                  <th scope="col" class="px-6 py-3">
-                    Updated on
-                  </th>
-                </tr>
+          <div class="relative mt-3 overflow-auto h-full">
+            <table class="w-full text-xs text-left border bg-gray-50 h-64 overflow-auto>
+              <thead class=" border">
+              <tr class="font-normal text-blue-600 uppercase text-[10px]">
+                <th class="px-6 py-3">
+                  Name
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  <span class="flex">
+                    <span>Type</span>
+                  </span>
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Mode
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Status
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Created on
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Updated on
+                </th>
+              </tr>
               </thead>
-              <tbody class="rounded-md profileRows"></tbody>
+              <tbody class="rounded-md profileRows h-64"></tbody>
             </table>
           </div>
           <div class="hidden p-6 mt-5 rounded-md shadow-2xl patientProfileWrapper">
-            <h1 class="text-xs font-medium text-blue-600 uppercase">Profile</h1>
+            <h1 class="text-xs font-semibold text-blue-600 uppercase">Profile</h1>
             <div class="flex flex-col mt-3 text-xs patientDetails"></div>
             <div class="mt-5 patientGraph">
-              <h1 class="mb-2 text-xs font-medium text-blue-600 uppercase">Graphs</h1>
+              <h1 class="mb-2 text-xs font-semibold text-blue-600 uppercase">Graphs</h1>
               <canvas id="testGraph" class="p-4 text-white bg-gray-900 rounded-md w-80 h-80 graphs"></canvas>
             </div>
           </div>
