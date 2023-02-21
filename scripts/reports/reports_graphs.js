@@ -10,11 +10,11 @@ let showGraph = ( updateProfileEmail ) =>
   {
     if ( graphData.email === updateProfileEmail )
     {
-      graphData.status === 'Scheduled' ? scheduled.push( graphData.status ) : ''
-      graphData.status === 'Completed' ? completed.push( graphData.status ) : ''
-      graphData.status === 'Paid Cancelled' ? paidCancelled.push( graphData.status ) : ''
-      graphData.status === 'Free Cancelled' ? freeCancelled.push( graphData.status ) : ''
-      graphData.status === 'Updated' ? reScheduled.push( graphData.status ) : ''
+      graphData.status === 'Scheduled' ? scheduled.push( graphData.status ) : 0
+      graphData.status === 'Completed' ? completed.push( graphData.status ) : 0
+      graphData.status === 'Paid Cancelled' ? paidCancelled.push( graphData.status ) : 0
+      graphData.status === 'Free Cancelled' ? freeCancelled.push( graphData.status ) : 0
+      graphData.status === 'Updated' ? reScheduled.push( graphData.status ) : 0
     }
   }
   console.log( scheduled.length, completed.length, paidCancelled.length, freeCancelled.length, reScheduled.length );

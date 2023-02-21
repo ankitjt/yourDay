@@ -37,88 +37,88 @@ const updateProfileLinkFunc = () =>
           let allProfileDetails =
             `
             <div class="my-2 personalWrapper">
-                <h1 class="pb-1 text-[10px] font-medium text-gray-400 uppercase border-b">Personal</h1>
-                <div class="grid grid-cols-4 mt-1 font-semibold gap-x-5 gap-y-3 personalDetails">
+                <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Personal</h1>
+                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 personalDetails">
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Name</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.name }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Email</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Email</div>
                     <div class="mt-1">${ updateProfile.email }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Mobile Number</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Mobile Number</div>
                     <div class="mt-1">${ updateProfile.mobileNumber }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Address</div>
-                    <div class="text-justify text-[10px] mt-1">${ updateProfile.address }</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Address</div>
+                    <div class="text-justify mt-1">${ updateProfile.address }</div>
                   </div>
                 </div>
               </div>
               <div class="my-2 appointmentsWrapper">
-                <h1 class="pb-1 text-[10px] font-medium text-gray-400 uppercase border-b">Appointment</h1>
-                <div class="grid grid-cols-4 mt-1 font-semibold gap-x-5 gap-y-3 appointmentDetails">
+                <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Appointment</h1>
+                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 appointmentDetails">
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Type</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
                     <div class="mt-1">${ updateProfile.type }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Mode</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Mode</div>
                     <div class="mt-1">${ updateProfile.mode }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Time Slot</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Time Slot</div>
                     <div class="mt-1 patientTimeSlot">${ updateProfile.timeSlot }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Day</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Day</div>
                     <div class="mt-1">${ updateProfile.day }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Fees</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Fees</div>
                     <div class="mt-1">${ updateProfile.fees }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Date</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Date</div>
                     <div class="mt-1">${ updateProfile.email }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Vist per week</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Visit per week</div>
                     <div class="mt-1">${ updateProfile.countPerWeek }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Second Time Slot</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Time Slot</div>
                     <div class="mt-1">${ updateProfile.secondTimeSlot }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Second Day</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Day</div>
                     <div class="mt-1">${ updateProfile.secondDay }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Second Date</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Date</div>
                     <div class="mt-1">${ updateProfile.secondDate }</div>
                   </div>
                 </div>
               </div>
               <div class="my-2 emergencyWrapper">
-                <h1 class="pb-1 text-[10px] font-medium text-gray-400 uppercase border-b">Emergency Contact</h1>
-                <div class="grid grid-cols-4 mt-1 font-semibold gap-x-5 gap-y-3 emergency">
+                <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Emergency Contact</h1>
+                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 emergency ">
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Name</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.emergency_name }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Relation</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Relation</div>
                     <div class="mt-1">${ updateProfile.patientRelation }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Mobile Number</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Mobile Number</div>
                     <div class="mt-1">${ updateProfile.emergency_mobileNumber }</div>
                   </div>
                   <div class="fieldWrapper">
-                    <div class="profileTag font-semibold uppercase text-[9px]">Address</div>
+                    <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Address</div>
                     <div class="mt-1">${ updateProfile.emergency_address }</div>
                   </div>
                 </div>
