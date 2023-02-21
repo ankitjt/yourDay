@@ -25,63 +25,63 @@ findDetailsByName.onclick = () =>
 
         let finance_profile_data = `
                 <div class="profileName flex  flex-col mb-3">
-                  <span class="nameTag text-gray-400 font-medium text-xs">Name</span>
+                  <span class="nameTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Name</span>
                   <span class="name capitalize text-blue-600">${ finance_profile.name }</span>
                 </div>
                 <div class="profileEmail flex  flex-col mb-3">
-                  <span class="emailTag text-gray-400 font-medium text-xs ">Email</span>
+                  <span class="emailTag text-gray-400 font-semibold uppercase tracking-widest text-[10px] ">Email</span>
                   <span class="email text-blue-600">${ finance_profile.email }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
-                  <span class="AddressTag text-gray-400 font-medium text-xs">Address</span>
+                  <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Address</span>
                   <span class="address text-blue-600">${ finance_profile.address }</span>
                 </div>
                 <div class="profileMobileNumber flex  flex-col mb-3">
-                  <span class="mobileTag text-gray-400 font-medium text-xs">Mobile</span>
+                  <span class="mobileTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mobile</span>
                   <span class="mobileNumber text-blue-600">${ finance_profile.countryCode }-${ finance_profile.mobileNumber }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
-                  <span class="AddressTag text-gray-400 font-medium text-xs">Mode</span>
+                  <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mode</span>
                   <span class="address text-blue-600">${ finance_profile.mode }</span>
                 </div>
                 <div class="profileAddress flex   flex-col mb-3">
-                  <span class="AddressTag text-gray-400 font-medium text-xs">Second slot</span>
+                  <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Second slot</span>
                   <span class="secondSlot text-blue-600">${ finance_profile.secondTimeSlot }</span>
                 </div>
                 <div class="e_name flex   flex-col  mb-3">
-                  <span class="e_nameTag text-gray-400 font-medium text-xs">Emergency Name</span>
+                  <span class="e_nameTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Emergency Name</span>
                   <span class="startDate text-blue-600">${ finance_profile.emergency_name }</span>
                 </div>
                 <div class="e_relation flex   flex-col mb-3 ">
-                  <span class="e_relationTag text-gray-400 font-medium text-xs">Patient Relation</span>
+                  <span class="e_relationTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Patient Relation</span>
                   <span class="startDate text-blue-600">${ finance_profile.patientRelation }</span>
                 </div>
-                <div class="e_moblieNumber flex   flex-col mb-3">
-                  <span class="e_moblieNumberTag text-gray-400 font-medium text-xs">Emergency Mobile Number</span>
+                <div class="e_mobileNumber flex   flex-col mb-3">
+                  <span class="e_mobileNumberTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Emergency Mobile Number</span>
                   <span class="startDate text-blue-600">${ finance_profile.emergency_countryCode }-${ finance_profile.emergency_mobileNumber }</span>
                 </div>
                 <div class="e_address flex  flex-col mb-3 ">
-                  <span class="e_addressTag text-gray-400 font-medium text-xs">Emergency Address</span>
+                  <span class="e_addressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Emergency Address</span>
                   <span class="startDate text-blue-600">${ finance_profile.emergency_address }</span>
                 </div>
                 <div class="profileFee flex   flex-col mb-3">
-                  <span class="feeTag text-gray-400 font-medium text-xs">Fees</span>
+                  <span class="feeTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Fees</span>
                   <span class="fee text-blue-600">${ finance_profile.fees }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3 ">
-                  <span class="categoryTag text-gray-400 font-medium text-xs">Category</span> 
+                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Category</span> 
                   <span class="category text-blue-600">${ finance_profile.type }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
-                  <span class="categoryTag text-gray-400 font-medium text-xs">Visit per week</span>
+                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Visit per week</span>
                   <span class="category text-blue-600">${ finance_profile.countPerWeek }</span>
                 </div>
                 <div class="profileCategory flex  flex-col ">
-                  <span class="categoryTag text-gray-400 font-medium text-xs">Profile Created on</span>
+                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Profile Created on</span>
                   <span class="category text-blue-600">${ profileDate.getDate() }-${ profileDate.getMonth() + 1 }-${ profileDate.getFullYear() }, ${ profileDate.toLocaleTimeString() }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
-                  <span class="categoryTag text-gray-400 font-medium text-xs">Profile Status</span>
+                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Profile Status</span>
                   <span class="category ${ finance_profile.softDelete === true ? 'text-red-500' : 'text-emerald-500' }">${ finance_profile.softDelete === true ? 'Deleted' : 'Active' }</span>
                 </div>
                 
