@@ -1,7 +1,6 @@
 let filterFindBtn = document.querySelector( '.filterFindBtn' )
 filterFindBtn.onclick = () =>
 {
-  let appointmentCountNumber = []
   let currentMonthAppointments = ''
   aptsRange.classList.add( 'hidden' )
   let dummyData = [];
@@ -13,10 +12,7 @@ filterFindBtn.onclick = () =>
   }
   else
   {
-    scheduleTableRows.innerHTML = `<div
-      class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
-      yourDay
-    </div>`
+    scheduleTableRows.innerHTML = `${ loadingAnimation }`
 
     let monthYear = scheduleFilterMonth.value
     let monthYearArr = monthYear.split( '-' )
@@ -49,9 +45,9 @@ filterFindBtn.onclick = () =>
                         <span> ${ eachData.day }, </span> <br />
                         <span class='date'>${ eachData.date }-${ eachData.month }-${ eachData.year } </span>
                       </span>
-                      <span>${ eachData.type }
-                       <img src='../assets/sofa.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Session' ? 'block' : 'hidden' }' />
-                        <img src='../assets/laptop.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Supervision' ? 'block' : 'hidden' }' />
+                      <span title='${ eachData.mode === 'Online' ? 'Online' : 'Offline' }'>${ eachData.type }
+                       <img src='../assets/sofa.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Offline' ? 'block' : 'hidden' }' />
+                        <img src='../assets/laptop.svg' class='h-6 w-6 inline ml-1 ${ eachData.type === 'Online' ? 'block' : 'hidden' }' />
                       </span>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">

@@ -1,15 +1,8 @@
-scheduleGalleryView.innerHTML = `<div
-    class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
-    yourDay
-  </div>`
-scheduleTableRows.innerHTML = `<div
-    class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
-    yourDay
-  </div>`
+scheduleGalleryView.innerHTML = `${ loadingAnimation }`
+scheduleTableRows.innerHTML = `${ loadingAnimation }`
+
 setTimeout( () =>
 {
-
-
   let appointmentCountNumber = []
   let currentMonthAppointments = ''
   let mobileView = ''
@@ -75,9 +68,9 @@ setTimeout( () =>
         appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`
 
         currentMonthAppointments += `
-                  <div class="flex flex-col justify-center align-middle tableRow12">
+                  <div class="flex flex-col  align-middle tableRow12">
                     <div
-                      class="grid grid-cols-6 px-2 py-4 text-xs font-semibold text-center text-blue-600 duration-300 ease-in-out border-b border-gray-200 place-items-center hover:bg-blue-100"
+                      class="grid grid-cols-6 px-2 py-4 text-xs font-semibold text-blue-600 duration-300 ease-in-out border-b border-gray-200 place-items-center hover:bg-blue-100"
                       data-id="${ eachRecord.id }">
                     <span>
                         <span class='scheduleName'>${ eachRecord.name } </span>
@@ -89,11 +82,11 @@ setTimeout( () =>
                         <span> ${ eachRecord.day }, </span> <br />
                         <span class='date'>${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
                       </span>
-                      <div class='flex flex-row' title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }'>
-                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }
-                        <img src='../assets/sofa.svg' class='h-5 w-5 inline ml-1 ${ eachRecord.mode === 'Online' ? 'block' : 'hidden' }' />
-                        <img src='../assets/laptop.svg' class='h-5 w-5 inline ml-1 ${ eachRecord.mode === 'Offline' ? 'block' : 'hidden' }' />
-                        </span>
+                      <div class='' title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }'>
+                        <span class='w-32 ${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }</span>
+                        <img src='../assets/sofa.svg' class='h-5 w-5 ml-1 ${ eachRecord.mode === 'Offline' ? 'inline-block' : 'hidden' }' />
+                        <img src='../assets/laptop.svg' class='h-5 w-5 ml-1 ${ eachRecord.mode === 'Online' ? 'inline-block' : 'hidden' }' />
+                        
                       </div>
                       <span>
                         <div class="text-xs uppercase appointmentStatus">
