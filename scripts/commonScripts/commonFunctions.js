@@ -36,3 +36,9 @@ const localDateAndTime = () =>
   serverTime.innerText = local_date + '/' + local_month + '/' + local_year + ' , ' + local_hours + ':' + local_minutes + ':' + local_seconds
 }
 localDateAndTime()
+
+// Loading Animation
+let loadingAnimation = `<div
+  class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full px-5 py-8 bg-rose-600 text-md">
+  yourDay
+</div>`
