@@ -68,53 +68,73 @@ setTimeout( () =>
         appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`
 
         currentMonthAppointments += `
-                  <div class="flex flex-col  align-middle tableRow12">
-                    <div
-                      class="grid grid-cols-6 px-2 py-4 text-xs font-semibold text-blue-600 duration-300 ease-in-out border-b border-gray-200 place-items-center hover:bg-blue-100"
+                 
+                    <tr
+                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase"
                       data-id="${ eachRecord.id }">
-                    <span>
+
+                       <!-- Name & Email -->
+                      <td class="px-6 py-3 w-16">
                         <span class='scheduleName'>${ eachRecord.name } </span>
-                        <span class='scheduleEmail block text-[10px] text-gray-400 font-medium'>${ eachRecord.email } </span>
-                       <span class='showUpdate ${ eachRecord.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500 px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>${ eachRecord.showUpdate } </span>
-                    </span>
-                      <span>${ eachRecord.timeSlot }</span>
-                      <span>
+                        <span class='scheduleEmail block text-[10px] font-semibold lowercase'>${ eachRecord.email } </span>
+                        <span class='showUpdate ${ eachRecord.showUpdate === ' update' ? 'inline-block' : 'hidden' } bg-rose-500
+                          px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>
+                          ${ eachRecord.showUpdate } </span>
+                      </td>
+
+                      <!-- Time  -->
+                      <td class="px-6 py-3 w-fit">${ eachRecord.timeSlot }</td>
+
+                      <!-- Date  -->
+                      <td class="px-6 py-3 w-fit">
                         <span> ${ eachRecord.day }, </span> <br />
                         <span class='date'>${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
-                      </span>
-                      <div class='' title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }'>
-                        <span class='w-32 ${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>${ eachRecord.type }</span>
-                        <img src='../assets/sofa.svg' class='h-5 w-5 ml-1 ${ eachRecord.mode === 'Offline' ? 'inline-block' : 'hidden' }' />
-                        <img src='../assets/laptop.svg' class='h-5 w-5 ml-1 ${ eachRecord.mode === 'Online' ? 'inline-block' : 'hidden' }' />
-                        
+                      </td>
+
+                      <!-- Type  -->
+                      <td class="px-6 py-3">
+                        <span class='${ eachRecord.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }'>
+                        ${ eachRecord.type }
+                        </span>
+                      </td>
+
+                      <!-- Mode  -->
+                      <td title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }' class="px-6 py-3 text-center">
+                        <img src='../assets/sofa.svg' class='h-5 w-5  ${ eachRecord.mode === 'Offline' ? 'block' : 'hidden' }' />
+                        <img src='../assets/laptop.svg' class='h-5 w-5  ${ eachRecord.mode === 'Online' ? 'block' : 'hidden' }' />
+                      </td>
+
+                    <!-- Status  -->
+                    <td class="px-6 py-3">
+                      <div class="uppercase appointmentStatus">
+                        <span class="text-emerald-600">
+                          ${ eachRecord.status }
+                        </span>
+                        <span class='text-orange-500'>${ eachRecord.profileStatus === true ? 'Profile Deleted' : '' }
+                        </span>
                       </div>
-                      <span>
-                        <div class="text-xs uppercase appointmentStatus">
-                         <span class="text-emerald-600">
-                              ${ eachRecord.status }
-                            </span>
-                          <span class='text-xs text-orange-500'>${ eachRecord.profileStatus === true ? 'Profile Deleted' : '' } </span>
-                        </div>
-    
-                        <div class="statusUpdateTime">
-                          <span class="text-[10px] font-semibold">
-                          ${ lastElementOfUpdatedStatus === 'NA' ? '' : lastUpdatedDate.toLocaleDateString() + ',' + lastUpdatedDate.toLocaleTimeString() }
-                            </span>
-                        </div>
-                      </span>
-                      <span class="flex justify-center w-full ">
-                        <select
-                          class="block w-5/6 text-xs text-blue-500 border border-gray-300 rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
-                          <option selected>Select</option>
-                          <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
-                          <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>
-                          <option value="Paid Cancelled" class='font-semibold text-gray-900'>Paid Cancelled</option>
-                          <option value="Update" class='font-semibold text-gray-900'>Update</option>
-                          <option value="Closed" class='font-semibold text-gray-900'>Closed</option>
-                        </select>
-                      </span>
-                    </div>
-                  </div>
+                      <div class="statusUpdateTime">
+                        <span class="text-[10px] font-semibold">
+                          ${ lastElementOfUpdatedStatus === 'NA' ? '' : lastUpdatedDate.toLocaleDateString() + ',' +
+            lastUpdatedDate.toLocaleTimeString() }
+                        </span>
+                      </div> 
+                    </td>
+
+                    <!-- Action  -->
+                    <td class="flex justify-center px-6 py-3">
+                      <select
+                        class="block w-full text-xs text-blue-500 border border-gray-300 rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
+                        <option selected>Select</option>
+                        <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
+                        <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>
+                        <option value="Paid Cancelled" class='font-semibold text-gray-900'>Paid Cancelled</option>
+                        <option value="Update" class='font-semibold text-gray-900'>Update</option>
+                        <option value="Closed" class='font-semibold text-gray-900'>Closed</option>
+                      </select>
+                    </td>
+                  </tr>
+
                 `
         scheduleTableRows.innerHTML = currentMonthAppointments
 
