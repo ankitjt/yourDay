@@ -1,10 +1,8 @@
 // Deleting a user's profile.
-
-let deleteProfileButton = document.querySelector( '.deleteProfileButton' )
 let deletePrompts = document.querySelector( '.deletePrompts' )
 let confirmDeleteProfile = document.querySelector( '.confirmDeleteProfile' )
 
-deleteProfileButton.onclick = () =>
+deleteProfile.onclick = () =>
 {
   deletePrompts.classList.add( 'left-0' )
 }

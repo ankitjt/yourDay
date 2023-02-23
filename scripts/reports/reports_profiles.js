@@ -52,7 +52,7 @@ setTimeout( () =>
     patientCount.innerHTML = `- ( ${ profileDetails.length } )`
   }
   filterProfile()
-  updateProfileLinkFunc()
+  updateProfile()
 }, 2000 )
 
 

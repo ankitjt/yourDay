@@ -32,3 +32,7 @@ let nameOfUser = document.querySelector( ".name" ),
   e_mobileNumber = document.querySelector( '.e_mobileNumber' ),
   e_address = document.querySelector( '.e_address' ),
   profileUpdatedOn = document.querySelector( ".profileUpdatedOn" )
+
+let showUpdateWindow = document.querySelector( ".showUpdateWindow" ),
+  closeUpdateWindow = document.querySelector( ".closeUpdateWindow" ),
+  deleteProfile = document.querySelector( ".deleteProfile" )
