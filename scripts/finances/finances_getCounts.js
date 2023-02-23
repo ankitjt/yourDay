@@ -1,7 +1,9 @@
 const getCounts = () =>
 {
   let monthYear = financeMonthFilterByName.value,
-    monthYearArr = monthYear.split( '-' )
+    monthYearArr = monthYear.split( '-' ),
+    nameOfMonth = [ 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December' ]
+  let moreSplitter = monthYearArr[ 1 ].split( '' )
 
   let scheduled = [],
     pending = [],
@@ -40,34 +42,35 @@ const getCounts = () =>
         moneyBreakData =
           `           
                           <div class='p-3'>
-                          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
+                           <h1 class="my-2 font-semibold uppercase text-blue-600 text-[10px]">Month's Record</h1>
+                          <div class="moneyScheduledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-200 hover:text-white cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Scheduled</span>
                             <span class="moneyScheduled ${ scheduled.length === 0 ? 0 : "underline" } cursor-pointer">${ scheduled.length }</span>
                           </div>
-                          <div class="moneyPendingWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
+                          <div class="moneyPendingWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-200 hover:text-white cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Pending</span>
                             <span class="moneyPending ${ pending.length === 0 ? 0 : "underline" } cursor-pointer">${ pending.length }</span>
                           </div>
-                          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
+                          <div class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-200 hover:text-white cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Completed</span>
                             <span class="moneyCompleted tracking-widest ${ completed.length === 0 ? 0 : "underline" }  cursor-pointer">
                             ${ completed.length }</span>
                           </div>
                           <div
-                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
+                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-200 hover:text-white cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Paid Cancelled</span>
                             <span class="moneyPaidCancelled tracking-widest ${ paidCompleted.length === 0 ? 0 : "underline" } cursor-pointer">
                             ${ paidCompleted.length }</span>
                           </div>
                           <div
-                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-gray-400 hover:text-white cursor-pointer">
+                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-200 hover:text-white cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Free Cancelled</span>
                             <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : "underline" } cursor-pointer">
                             ${ freeCancelled.length }</span>
                           </div>
                           <hr class="h-1 bg-blue-600 rounded-md my-4">
                           <div class="moneyTotalWrapper flex items-center justify-between mt-5 bg-rose-600 text-white px-3 py-3 rounded-md">
-                            <span>Total Due</span>
+                            <span>Total Due for ${ nameOfMonth[ moreSplitter[ 1 ] - 1 ] }</span>
                             <span class="moneyTotal tracking-widest">
                                <div class="flex"> 
                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"

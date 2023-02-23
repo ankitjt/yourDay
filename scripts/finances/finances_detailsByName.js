@@ -24,6 +24,7 @@ findDetailsByName.onclick = () =>
         let profileDate = new Date( finance_profile.createdOn.seconds * 1000 )
 
         let finance_profile_data = `
+                 
                 <div class="profileName flex  flex-col mb-3">
                   <span class="nameTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Name</span>
                   <span class="name capitalize text-blue-600">${ finance_profile.name }</span>
@@ -35,6 +36,9 @@ findDetailsByName.onclick = () =>
                 <div class="profileAddress flex   flex-col mb-3">
                   <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Address</span>
                   <span class="address text-blue-600">${ finance_profile.address }</span>
+                  <span>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dolor perspiciatis voluptatibus esse similique. Aperiam hic corrupti in iste error quasi tenetur quidem porro quae earum consequatur tempora, eligendi molestias.
+                  </span>
                 </div>
                 <div class="profileMobileNumber flex  flex-col mb-3">
                   <span class="mobileTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mobile</span>
@@ -69,7 +73,7 @@ findDetailsByName.onclick = () =>
                   <span class="fee text-blue-600">${ finance_profile.fees }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3 ">
-                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Category</span> 
+                  <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Type</span> 
                   <span class="category text-blue-600">${ finance_profile.type }</span>
                 </div>
                 <div class="profileCategory flex  flex-col mb-3">
@@ -84,7 +88,6 @@ findDetailsByName.onclick = () =>
                   <span class="categoryTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Profile Status</span>
                   <span class="category ${ finance_profile.softDelete === true ? 'text-red-500' : 'text-emerald-500' }">${ finance_profile.softDelete === true ? 'Deleted' : 'Active' }</span>
                 </div>
-                
               `
         profileDetailsSection.innerHTML = finance_profile_data
         getCounts()

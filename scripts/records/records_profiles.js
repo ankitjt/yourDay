@@ -3,6 +3,8 @@ let dataID = []
 let profileRowData = ''
 let profileRows = document.querySelector( ".profileRows" )
 let patientCount = document.querySelector( ".patientCount" )
+let sessionCount = []
+let supervisionCount = []
 
 profileRows.innerHTML = `${ loadingAnimation }`
 setTimeout( () =>
@@ -50,6 +52,7 @@ setTimeout( () =>
       `
     profileRows.innerHTML = profileRowData
     patientCount.innerHTML = `- ( ${ profileDetails.length } )`
+    filterData.type === 'Session' ? sessionCount.push( filterData ) : supervisionCount.push( filterData )
   }
   filterProfile()
   updateProfile()
@@ -65,6 +68,7 @@ const filterProfile = () =>
 
   session.onclick = () =>
   {
+    patientCount.innerHTML = `- ( ${ sessionCount.length } )`
     for ( let sessionRow of allSessionRows )
     {
       sessionRow.classList.remove( 'hidden' )
@@ -81,6 +85,7 @@ const filterProfile = () =>
 
   supervision.onclick = () =>
   {
+    patientCount.innerHTML = `- ( ${ supervisionCount.length } )`
     for ( let sessionRow of allSessionRows )
     {
       sessionRow.classList.add( 'hidden' )
@@ -98,6 +103,7 @@ const filterProfile = () =>
   let clearFilters = document.querySelector( ".clearFilters" )
   clearFilters.onclick = () =>
   {
+    patientCount.innerHTML = `- ( ${ profileDetails.length } )`
     for ( let sessionRow of allSessionRows )
     {
       sessionRow.classList.remove( 'hidden' )
@@ -111,6 +117,5 @@ const filterProfile = () =>
     supervision.classList.add( 'bg-emerald-100', 'text-emerald-600' )
     supervision.classList.remove( 'bg-rose-600', 'text-white' )
   }
-
 }
 

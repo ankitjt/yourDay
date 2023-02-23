@@ -1,7 +1,7 @@
 let navbarContent = document.querySelector( ".navbarContent" )
 
-let pageName = window.location.href.split( "/" ).slice( -1 );
-let p = pageName.toLocaleString();
+let pageName = window.location.href.split( "/" ).slice( -1 )
+let p = pageName.toLocaleString()
 let pageUrl = p.substring( 0, p.indexOf( '.' ) )
 
 
@@ -15,7 +15,7 @@ navbarContent.innerHTML = `
               clip-rule="evenodd" />
           </svg>
         </a>
-        <div class="rightSideNavbar flex items-center justify-center">
+        <div class="rightSideNavbar font-semibold flex items-center justify-center">
         <span class='serverTime mr-5'></span>
           <span class=" uppercase">${ pageUrl } </span>
           <div class="notificationOpener">
