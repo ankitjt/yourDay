@@ -40,7 +40,7 @@ filterFindBtn.onclick = () =>
                       <td class="px-6 py-3 w-16">
                         <span class='scheduleName'>${ eachData.name } </span>
                         <span class='scheduleEmail block text-[10px] font-semibold lowercase'>${ eachData.email } </span>
-                        <span class='showUpdate ${ eachData.showUpdate === ' update' ? 'inline-block' : 'hidden' } bg-rose-500
+                        <span class='showUpdate ${ eachData.showUpdate === 'update' ? 'inline-block' : 'hidden' } bg-rose-500
                           px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>
                           ${ eachData.showUpdate } </span>
                       </td>

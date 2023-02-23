@@ -74,10 +74,10 @@ setTimeout( () =>
                       data-id="${ eachRecord.id }">
 
                        <!-- Name & Email -->
-                      <td class="px-6 py-3 w-16">
+                      <td class="px-6 py-3 w-16 h-auto">
                         <span class='scheduleName'>${ eachRecord.name } </span>
                         <span class='scheduleEmail block text-[10px] font-semibold lowercase'>${ eachRecord.email } </span>
-                        <span class='showUpdate ${ eachRecord.showUpdate === ' update' ? 'inline-block' : 'hidden' } bg-rose-500
+                        <span class='showUpdate ${ eachRecord.showUpdate === "update" ? 'block' : 'hidden' } bg-rose-500
                           px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>
                           ${ eachRecord.showUpdate } </span>
                       </td>

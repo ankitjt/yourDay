@@ -7,11 +7,11 @@ const updateAppointmentStatus = () =>
     aptActions[ i ].onchange = () =>
     {
       let selectedRow = aptActions[ i ].parentElement.parentElement
-      let selectedRow_UPDATE = aptActions[ i ].parentElement.parentElement.childNodes[ 1 ].childNodes[ 5 ]
-      let selectedRow_EMAIL = aptActions[ i ].parentElement.parentElement.childNodes[ 1 ].childNodes[ 3 ]
+      let selectedRow_UPDATE = aptActions[ i ].parentElement.parentElement.childNodes[ 3 ].childNodes[ 5 ]
+      let selectedRow_EMAIL = aptActions[ i ].parentElement.parentElement.childNodes[ 3 ].childNodes[ 3 ].innerText
 
       let rowId = selectedRow.getAttribute( 'data-id' )
-      let dbPath = db.collection( `appointments/${ selectedRow_EMAIL.innerText }/details` ).doc( rowId )
+      let dbPath = db.collection( `appointments/${ selectedRow_EMAIL }/details` ).doc( rowId )
       let ask = 'Do you wish to update status?'
 
       if ( selectedRow_UPDATE.innerText !== 'UPDATE' )
@@ -25,10 +25,11 @@ const updateAppointmentStatus = () =>
               status: 'Completed',
               updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
             } )
-            setTimeout( () =>
-            {
-              location.reload()
-            }, 2000 )
+              .then( () =>
+              {
+                promptMessages( 'Status Updated', 'success', 'refresh' )
+              } )
+              .catch( err => promptMessages( err, 'error' ) )
           }
           else
           {
@@ -43,10 +44,11 @@ const updateAppointmentStatus = () =>
               status: 'Paid Cancelled',
               updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) ),
             } )
-            setTimeout( () =>
-            {
-              location.reload()
-            }, 2000 )
+              .then( () =>
+              {
+                promptMessages( 'Status Updated', 'success', 'refresh' )
+              } )
+              .catch( err => promptMessages( err, 'error' ) )
           }
           else
           {
@@ -61,10 +63,11 @@ const updateAppointmentStatus = () =>
               status: 'Free Cancelled',
               updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
             } )
-            setTimeout( () =>
-            {
-              location.reload()
-            }, 2000 )
+              .then( () =>
+              {
+                promptMessages( 'Status Updated', 'success', 'refresh' )
+              } )
+              .catch( err => promptMessages( err, 'error' ) )
           }
           else
           {
@@ -108,6 +111,11 @@ const updateAppointmentStatus = () =>
                   status: 'Updated',
                   updatedOn: firebase.firestore.FieldValue.arrayUnion( firebase.firestore.Timestamp.fromDate( new Date() ) )
                 } )
+                  .then( () =>
+                  {
+                    promptMessages( 'Status Updated', 'success', 'refresh' )
+                  } )
+                  .catch( err => promptMessages( err, 'error' ) )
 
                 updateAppointments.style.right = '-2000px'
               }
@@ -129,7 +137,7 @@ const updateAppointmentStatus = () =>
       }
       else
       {
-        if ( confirm( `This is the last appointment for ${ selectedRow_EMAIL.innerText }, please add more appointments before updating status !!!` ) === true )
+        if ( confirm( `This is the last appointment for ${ selectedRow_EMAIL }, please add more appointments before updating status !!!` ) === true )
         {
           aptActions[ i ].selectedIndex = 0
         }
