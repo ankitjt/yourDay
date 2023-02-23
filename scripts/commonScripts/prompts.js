@@ -2,7 +2,7 @@ let checkPrompt = document.querySelector( '.checkPrompt' )
 let pageBlocker = document.querySelector( '.pageBlocker' )
 let promptContent = document.querySelector( '.promptContent' )
 
-const promptMessages = ( message, promptType ) =>
+const promptMessages = ( message, promptType, refresh ) =>
 {
   promptsWrapper.classList.add( 'left-1/2' )
   pageBlocker.classList.remove( 'hidden' )
@@ -18,7 +18,7 @@ const promptMessages = ( message, promptType ) =>
               </svg>
               <span class='w-4/5'>${ message }</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 w-full text-slate-50 closePrompts cursor-pointer" viewBox="0 0 20 20"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 w-full text-slate-50 closePrompts refreshPage ${ refresh === 'refresh' ? 'refresh' : '' } id='refreshPage' cursor-pointer" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -32,15 +32,22 @@ const promptMessages = ( message, promptType ) =>
   {
     close.onclick = () =>
     {
-      let parent = close.parentElement
-      let gp = parent.parentElement
-      parent.classList.add( 'hidden' )
-      gp.lastElementChild.onclick = () =>
+      if ( close.matches( '.refresh' ) )
       {
+        location.reload()
+      }
+      else
+      {
+        let parent = close.parentElement
+        let gp = parent.parentElement
         parent.classList.add( 'hidden' )
-        promptsWrapper.classList.remove( 'left-1/2' )
-        pageBlocker.classList.add( 'hidden' )
-        promptsWrapper.innerHTML = ''
+        gp.lastElementChild.onclick = () =>
+        {
+          parent.classList.add( 'hidden' )
+          promptsWrapper.classList.remove( 'left-1/2' )
+          pageBlocker.classList.add( 'hidden' )
+          promptsWrapper.innerHTML = ''
+        }
       }
     }
   }
