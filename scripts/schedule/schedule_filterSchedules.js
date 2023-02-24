@@ -119,8 +119,8 @@ filterFindBtn.onclick = () =>
 }
 
 // Clear filters
-let filterClearBtn = document.querySelector( '.filterClearBtn' )
-filterClearBtn.onclick = () =>
+let clearFilters = document.querySelector( '.clearFilters' )
+clearFilters.onclick = () =>
 {
   location.reload()
 }
