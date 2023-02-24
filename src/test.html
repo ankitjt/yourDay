@@ -16,101 +16,38 @@
   <body>
     <div class="p-6 newThings ">
       <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
-      <div class=" mt-36 text-xs scheduleTable md:w-full md:block relative">
-        <div class="h-56 overflow-auto">
-          <table class="w-full text-xs text-left border bg-gray-50">
-            <thead class="border">
-              <tr
-                class="font-normal text-blue-600 overflow-auto uppercase text-[10px] absolute -top-[56.8px] w-full h-fit z-30 bg-blue-100 flex justify-between items-center">
-                <th class="px-6 py-5 ">
-                  Name
-                </th>
-                <th scope="col" class="px-6 py-5">
-                  <span>Time</span>
-                </th>
-                <th scope="col" class="px-6 py-5">
-                  Date
-                </th>
-                <th scope="col" class="px-6 py-5">
-                  Type
-                </th>
-                <th scope="col" class="px-6 py-5">
-                  Status
-                </th>
-                <th scope="col" class="px-6 py-5">
-                  Action
-                </th>
-              </tr>
-            </thead>
-            <tbody class="rounded-md scheduleTableRows h-56 flex flex-col">
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-              <tr
-                class="flex justify-between items-center w-full font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase h-fit text-left">
-                <td class="px-6 py-3">Ankit</td>
-                <td class="px-6 py-3">09:00 - 10:00</td>
-                <td class="px-6 py-3">21/02/2023</td>
-                <td class="px-6 py-3">Session</td>
-                <td class="px-6 py-3">Schedule</td>
-                <td class="px-6 py-3">Action</td>
-              </tr>
-            </tbody>
-          </table>
+
+      <div class="wrapper flex flex-col bg-gray-100 w-full">
+        <div class="row1 bg-emerald-100 flex justify-between text-center items-center py-6">
+          <div class="profileName flex flex-col w-1/3">
+            <span class="nameTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Name</span>
+            <span class="name text-blue-600">${ finance_profile.name }</span>
+          </div>
+          <div class="profileEmail flex flex-col w-1/3">
+            <span class="emailTag text-gray-400 font-semibold uppercase tracking-widest text-[10px] ">Email</span>
+            <span class="email text-blue-600">${ finance_profile.email }</span>
+          </div>
+          <div class="profileAddress flex flex-col w-1/3">
+            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Address</span>
+            <span class="address text-blue-600">${ finance_profile.address }</span>
+          </div>
         </div>
-        <span class="aptsRange font-semibold uppercase block text-right mt-5 text-gray-500 text-[9px] tracking-wider ">
-          Current & last month.</span>
+        <div class="row2 bg-blue-100 flex justify-between text-center items-center py-6">
+          <div class="profileMobileNumber flex flex-col w-1/3">
+            <span class="mobileTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mobile</span>
+            <span class="mobileNumber text-blue-600">${ finance_profile.countryCode }-${ finance_profile.mobileNumber
+              }</span>
+          </div>
+          <div class="profileAddress flex flex-col w-1/3">
+            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mode</span>
+            <span class="address text-blue-600">${ finance_profile.mode }</span>
+          </div>
+          <div class="profileAddress flex flex-col w-1/3">
+            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Second
+              slot</span>
+            <span class="secondSlot text-blue-600">${ finance_profile.secondTimeSlot }</span>
+          </div>
+        </div>
       </div>
 
 

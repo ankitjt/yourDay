@@ -1,229 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>YourDay - Finances</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay - Finances</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body class="relative w-full h-full">
+  <body class="relative w-full h-full">
 
-  <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
+    <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
 
-    <!--  (Absolute element 1)   -->
-    <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
+      <!--  (Absolute element 1)   -->
+      <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
 
-    <!-- Panic Button  -->
-    <span
-          class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
+      <!-- Panic Button  -->
+      <span
+        class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
 
-    <!-- Left Section  -->
-    <div
-         class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
-
-      <!-- Page Image  -->
-      <img src="../assets/finance2.webp" alt="logo" class="w-auto h-auto" />
-
-      <!-- Sessions Breakdown  -->
+      <!-- Left Section  -->
       <div
-           class=" sessionsBreakDownWrapper bottom-0 h-full w-full bg-white border border-gray-400 z-50 -left-[2000px] ease-in-out duration-300 absolute p-10 overflow-auto">
+        class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
 
-        <span class="absolute cursor-pointer closeSessionsBreakDownWrapper right-10 top-5">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-               stroke="currentColor" class="w-5 h-5 text-blue-600 duration-300 ease-in-out hover:text-red-500">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
-        </span>
-        <h3 class="my-3 text-sm font-semibold text-blue-600">Appointment Breakdown</h3>
-        <div class="my-3 sessionsBreakDown"></div>
-      </div>
+        <!-- Page Image  -->
+        <img src="../assets/finance2.webp" alt="logo" class="w-auto h-auto" />
 
-    </div>
-
-    <!-- Right Section  -->
-    <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
-
-      <!-- Global Notification (Absolute element 2) -->
-      <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
-        <p>This is a global notification</p>
-      </div>
-
-      <!-- Prompts (Absolute element 3) -->
-      <div
-           class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
-      </div>
-
-      <!-- Navbar  -->
-      <div class="relative pb-2 my-6 border-b border-gray-100 navbarWrapper md:my-2">
-        <nav class="navbarContent"></nav>
-
-        <!--  Navbar Notification Center -->
+        <!-- Sessions Breakdown  -->
         <div
-             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-          <div class="h-full notificationContent">
+          class=" sessionsBreakDownWrapper bottom-0 h-full w-full bg-white border border-gray-400 z-50 -left-[2000px] ease-in-out duration-300 absolute p-10 overflow-auto">
 
-          </div>
+          <span class="absolute cursor-pointer closeSessionsBreakDownWrapper right-10 top-5">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-5 h-5 text-blue-600 duration-300 ease-in-out hover:text-red-500">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </span>
+          <h3 class="my-3 text-sm font-semibold text-blue-600">Appointment Breakdown</h3>
+          <div class="my-3 sessionsBreakDown"></div>
         </div>
+
       </div>
 
-      <!-- Breakdown by Month  -->
-      <section class="flex flex-col justify-center px-1 mt-5 tracking-wide">
-        <h3 class="mb-2">
-          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-            By month and year
-          </span>
-        </h3>
+      <!-- Right Section  -->
+      <div class="relative w-full bg-gray-50 px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
 
-
-        <!-- Month and year filter -->
-        <div class="grid md:grid-cols-2 md:gap-x-10">
-
-          <input type="text" name="" id=""
-                 class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md financeMonthFilter h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
-                 placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
-          <div class="dummy"></div>
+        <!-- Global Notification (Absolute element 2) -->
+        <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
+          <p>This is a global notification</p>
         </div>
 
-        <!-- Total Money Count -->
-        <div class="mt-5 text-white moneyCount sm:grid md:w-full sm:gap-x-10 sm:grid-cols-2">
-
-          <!-- Sessions Money -->
-          <div
-               class="flex items-center justify-between px-3 py-4 mb-3 text-xs font-medium bg-indigo-600 rounded-md sessionsWrapper md:text-sm">
-            <span class="flex flex-col sessions">
-              <span class="totalSessions"> Total Sessions </span>
-              <span class="mt-1 totalSessionsCount">
-                <span class="countOfSessions"></span>
-              </span>
-            </span>
-            <span class="flex items-center moneyBySessions">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="tracking-widest totalMoneyBySessions"></span>
-            </span>
-          </div>
-
-          <!-- Supervision Money -->
-          <div
-               class="flex items-center justify-between px-3 py-4 mb-3 text-xs font-medium bg-blue-600 rounded-md supervisionWrapper md:text-sm">
-            <span class="flex flex-col supervision">
-              <span class="totalSupervision"> Total Supervision </span>
-              <span class="mt-1 totalSessionsCount">
-                <span class="countOfSupervisions"></span>
-              </span>
-            </span>
-            <span class="flex items-center moneyBySupervision">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24"
-                   stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              <span class="tracking-widest totalMoneyBySupervisions"></span>
-            </span>
-          </div>
-
+        <!-- Prompts (Absolute element 3) -->
+        <div
+          class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
         </div>
 
+        <!-- Navbar  -->
+        <div class="relative pb-2 my-6 navbarWrapper md:my-2">
+          <nav class="navbarContent"></nav>
 
-      </section>
+          <!--  Navbar Notification Center -->
+          <div
+            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+            <div class="h-full notificationContent">
 
-      <!-- Breakdown by Name  -->
-      <section class="flex flex-col justify-center px-1 mt-5 tracking-wide text-slate-50">
-        <h3 class="mb-2">
-          <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
-            By name
-          </span>
-        </h3>
+            </div>
+          </div>
+        </div>
 
-        <!-- Filter Type -->
+        <!-- Breakdown by Month  -->
+        <section class="flex flex-col justify-center px-1 mt-5 tracking-wide">
+          <h3 class="mb-2">
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
+              By month and year
+            </span>
+          </h3>
 
-        <section class="flex flex-col mb-5 monthFilter">
 
-          <div class="grid w-full sm:grid-cols-2 sm:gap-x-10 gap-y-5">
+          <!-- Month and year filter -->
+          <div class="grid md:grid-cols-2 md:gap-x-10">
 
-            <!-- Patient List  -->
-            <div class="relative w-full">
-              <select title="Patient List" name="" id=""
-                      class="w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600">
-                <option selected value="" class="font-semibold">
-                  Select Name
-                </option>
-              </select>
+            <input type="text" name="" id=""
+              class="financeMonthFilter relative w-full py-3 text-xs uppercase text-white bg-gray-800 border border-blue-600 rounded-md h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600"
+              placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+            <div class="dummy"></div>
+          </div>
+
+          <!-- Total Money Count -->
+          <div
+            class="mt-5 text-blue-600 font-semibold tracking-widest text-[10px] uppercase moneyCount sm:grid md:w-full sm:gap-x-10 sm:grid-cols-2">
+
+            <!-- Sessions Money -->
+            <div class="flex items-center justify-between px-3 py-4 mb-3 bg-blue-100  rounded-md sessionsWrapper">
+              <span class="flex flex-col sessions">
+                <span class="totalSessions"> Total Sessions </span>
+                <span class="totalSessionsCount">
+                  <span class="countOfSessions text-base"></span>
+                </span>
+              </span>
+              <span class="flex items-center moneyBySessions">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="tracking-widest totalMoneyBySessions text-base"></span>
+              </span>
             </div>
 
-            <!-- Month and year filter -->
-            <input type="text" name="" id="" value=""
-                   class="relative w-full py-3 text-xs text-white bg-gray-800 border border-blue-600 rounded-md financeMonthFilterByName h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-transparent md:text-blue-600"
-                   placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+            <!-- Supervision Money -->
+            <div
+              class="flex items-center justify-between px-3 py-4 mb-3 text-emerald-600 font-semibold tracking-widest text-[10px] uppercase bg-emerald-100  rounded-md supervisionWrapper">
+              <span class="flex flex-col supervision">
+                <span class="totalSupervision"> Total Supervision </span>
+                <span class="totalSessionsCount">
+                  <span class="countOfSupervisions text-base"></span>
+                </span>
+              </span>
+              <span class="flex items-center moneyBySupervision">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 " fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="tracking-widest totalMoneyBySupervisions text-base"></span>
+              </span>
+            </div>
 
           </div>
 
-          <div class="flex mt-5 align-center text-white tracking-wider">
-            <button
-                    class="findDetailsByName bg-blue-600 uppercase w-16 py-2 text-xs font-semibold rounded-full">
-              Find
-            </button>
-            <button
-                    class="clearScreen ml-5  bg-transparent md:bg-blue-200 uppercase w-16 py-2 text-xs font-semibold rounded-full">
-              Clear
-            </button>
-          </div>
-        </section>
-
-      </section>
-
-      <!-- Patient Profile  -->
-      <div class="hidden patientProfileWrapper">
-        <section class="my-2 text-xs border border-gray-200 rounded-md profile  md:font-semibold">
-          <h1 class="mt-4 font-semibold uppercase text-blue-600 text-xs px-6">Profile</h1>
-          <div class="grid grid-cols-1 px-6 py-4 profileDetailsSection gap-y-3 sm:grid-cols-3">
-          </div>
 
         </section>
 
-        <!-- Money Breakdown section -->
-        <section
-                 class="my-4 mb-5 text-sm text-blue-600 border border-gray-200 rounded-md moneyBreakDownWrapper md:text-blue-600 md:font-semibold">
+        <!-- Breakdown by Name  -->
+        <section class="flex flex-col justify-center px-1 mt-5">
+          <h3 class="mb-2">
+            <span class="text-xs font-semibold tracking-widest text-blue-600 uppercase border-blue-600">
+              By name
+            </span>
+          </h3>
+
+          <!-- Filter Type -->
+
+          <section class="flex flex-col mb-5 monthFilter">
+
+            <div class="grid w-full sm:grid-cols-2 sm:gap-x-10 gap-y-5">
+
+              <!-- Patient List  -->
+              <div class="relative w-full">
+                <select title="Patient List" name="" id=""
+                  class="w-full py-3 text-xs uppercase text-white bg-gray-800 border border-blue-600 rounded-md patientNamesList h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600">
+                  <option selected value="" class="font-semibold">
+                    Select Name
+                  </option>
+                </select>
+              </div>
+
+              <!-- Month and year filter -->
+              <input type="text" name="" id="" value=""
+                class="relative w-full py-3 text-xs uppercase text-white bg-gray-800 border border-blue-600 rounded-md financeMonthFilterByName h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600"
+                placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+
+            </div>
+
+            <div class="wrap flex mt-5 items-center">
+              <button
+                class="findDetailsByName w-30 py-2 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-full  flex items-center justify-between overflow-hidden focused:bg-purple-600">
+                <span class="ml-5">Search</span>
+                <div class="bg-emerald-700 w-10 ml-3 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  </svg>
+                </div>
+              </button>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor"
+                class="clearScreen w-6 h-6 ml-5 rounded-full text-white bg-rose-600 cursor-pointer p-1">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </div>
+          </section>
+
         </section>
+
+        <!-- Patient Profile  -->
+        <div class="hidden patientProfileWrapper">
+
+          <section class="profile text-xs  md:font-semibold">
+            <div class="bg-white shadow-2xl rounded-md py-4 px-10">
+              <div class="profileDetailsSection flex flex-col w-full">
+              </div>
+            </div>
+          </section>
+
+          <!-- Money Breakdown section -->
+          <section
+            class="my-4 mb-5 text-sm px-10 py-4 text-blue-600 rounded-md moneyBreakDownWrapper md:text-blue-600 md:font-semibold bg-white shadow-2xl">
+          </section>
+        </div>
+
       </div>
 
     </div>
 
-  </div>
+    <!-- Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
 
-  <!-- Firebase  -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Variable and common loaders  -->
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+    <script src="../scripts/commonScripts/commonFunctions.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
+    <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
-  <!-- Variable and common loaders  -->
-  <script src="../scripts/commonScripts/dbConnect.js"></script>
-  <script src="../scripts/commonScripts/commonVariables.js"></script>
-  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-  <script src="../scripts/commonScripts/commonFunctions.js"></script>
-  <script src="../scripts/commonScripts/patientList.js"></script>
-  <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Page Scripts  -->
+    <script src="../scripts/finances/finances_constants.js"></script>
+    <script src="../scripts/finances/finances_getCounts.js"></script>
+    <script src="../scripts/finances/financeMonthFilter.js"></script>
+    <script src="../scripts/finances/finances_detailsByName.js"></script>
+    <script src="../scripts/finances/finances_breakDownAppointments.js"></script>
+    <script src="../scripts/finances/finances_breakDownCommon.js"></script>
 
-  <!-- Page Scripts  -->
-  <script src="../scripts/finances/finances_constants.js"></script>
-  <script src="../scripts/finances/finances_getCounts.js"></script>
-  <script src="../scripts/finances/financeMonthFilter.js"></script>
-  <script src="../scripts/finances/finances_detailsByName.js"></script>
-  <script src="../scripts/finances/finances_breakDownAppointments.js"></script>
-  <script src="../scripts/finances/finances_breakDownCommon.js"></script>
-
-  <!-- Global notification and prompts -->
-  <script src="../scripts/commonScripts/globalNotification.js"></script>
-  <script src="../scripts/commonScripts/prompts.js"></script>
-  <script src="../scripts/commonScripts/panicButton.js"></script>
-</body>
+    <!-- Global notification and prompts -->
+    <script src="../scripts/commonScripts/globalNotification.js"></script>
+    <script src="../scripts/commonScripts/prompts.js"></script>
+    <script src="../scripts/commonScripts/panicButton.js"></script>
+  </body>
 
 </html>
