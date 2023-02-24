@@ -28,7 +28,8 @@ const updateProfile = () =>
   {
     row.onclick = () =>
     {
-      updateProfileWrapper.classList.add( 'hidden' )
+      updateProfileWrapper.classList.add( '-left-[2000px]' )
+      updateProfileWrapper.classList.remove( 'left-0' )
       pb.classList.add( 'lg:left-6' )
       let rowID = row.getAttribute( 'data-id' );
       for ( let updateProfile of profileDetails )
@@ -139,8 +140,7 @@ const updateProfile = () =>
   {
     showUpdateWindow.onclick = () =>
     {
-      updateProfileWrapper.classList.remove( 'hidden' )
-      pb.classList.remove( 'lg:left-6' )
+
       for ( let profile of profileDetails )
       {
         if ( rowID === profile.id )
@@ -151,8 +151,6 @@ const updateProfile = () =>
 
           if ( body.offsetWidth < 1024 )
           {
-            updateProfileWrapper.classList.add( '-left-[2000px]' )
-            updateProfileWrapper.classList.remove( 'left-0' )
             alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
           }
           else

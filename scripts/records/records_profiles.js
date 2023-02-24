@@ -21,8 +21,8 @@ setTimeout( () =>
     let finalCreatedOn = `${ date }/${ month }/${ year }<br /> ${ time }`
 
     profileRowData += `
-                    <tr
-                    class="cursor-pointer patientRow font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-gray-300 text-[10px] border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
+                    <tr title='Click to view details' 
+                    class="cursor-pointer patientRow font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-gray-300 text-[10px] border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
 
                     <td class="px-6 py-3 whitespace-nowrap w-fit">
                       <span class="block name">${ filterData.name }</span>
@@ -31,10 +31,12 @@ setTimeout( () =>
                     <td class="px-6 py-3 ${ filterData.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }">
                       ${ filterData.type }
                     </td>
-                    <td class="px-6 py-3 flex items-center">
+                    <td class="px-6 py-3">
+                      <div class='flex items-center'>
                       <span class='w-12'>${ filterData.mode.at( -1 ) }</span>
                       <img src='../assets/sofa.svg' class='h-5 w-5 ml-1 ${ filterData.mode.at( -1 ) === 'Offline' ? 'block' : 'hidden' }' />
                       <img src='../assets/laptop.svg' class='h-5 w-5 ml-1 ${ filterData.mode.at( -1 ) === 'Online' ? 'block' : 'hidden' }' />
+                      </div>
                     </td>
                     <td class="px-6 py-3">
                       <span class="flex items-center px-2 py-1 rounded-full status ${ filterData.softDelete === 'False' ? 'bg-rose-100' : 'bg-emerald-100' }  w-fit">
