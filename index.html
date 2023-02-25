@@ -11,9 +11,9 @@
 
 </head>
 
-<body class="2xl:bg-gray-500">
+<body class="2xl:bg-gray-500 ">
   <div
-       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center p-10 md:p-0 flex flex-col md:flex-row overflow-hidden relative -z-0 md:bg-white md:bg-[url('')] bg-[url('../assets/logo10.webp')]">
+       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center p-10 md:p-0 flex flex-col md:flex-row overflow-hidden relative bg-gray-800 -z-0 md:bg-white md:bg-[url('')] bg-[url('../assets/logo10.webp')]">
 
     <!-- Login Form -->
     <form action="#"
@@ -57,33 +57,50 @@
       <img src="./assets/logo10.webp" alt="logo" class="" />
     </div>
 
-    <div class="pageWrapper md:w-1/2 relative">
+    <div class="pageWrapper md:w-1/2 relative h-screen p-5">
       <!-- Index page links -->
-      <div
-           class="everything h-screen flex items-center justify-center flex-col md:w-full md:justify-center md:p-10 relative ">
-        <div class="flex items-center justify-end pb-10 flex-col w-full">
-          <h1 class="text-2xl text-blue-800 text-left sm:text-center w-full  font-semibold mb-10 indexPageAppName">
+      <div class="everything h-full flex items-center justify-between flex-col md:w-full relative ">
+
+        <span
+              class="font-semiboldt text-white md:text-blue-800 block top-4 md:top-14 text-center lovelyDay text-2xl sm:text-lg">The
+          light will bring you to you, to us, always.
+        </span>
+
+        <div class="flex items-center justify-center md:justify-between md:pb-10 md:px-10 flex-col w-full">
+
+          <h1
+              class="text-2xl md:text-blue-800 text-left w-full  text-white font-semibold mb-10 indexPageAppName">
             YourDay
           </h1>
 
           <a href="./schedule.html"
-             class="bg-blue-700 w-full sm:w-1/2 py-5 text-white text-center text-lg lg:text-2xl rounded-md uppercase md:hover:-translate-y-2 md:transition-all md:ease-in-out">Schedule</a>
+             class="bg-blue-700 w-full flex justify-between px-10 items-center py-5 text-white text-center text-lg lg:text-xl rounded-md tracking-widest uppercase md:hover:-translate-y-2 md:transition-all md:ease-in-out font-semibold">
+            <span>Schedule</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                    clip-rule="evenodd" />
+            </svg>
+          </a>
           <a href="#"
-             class="bg-emerald-500 w-full sm:w-1/2 py-5 text-white lg:text-2xl text-lg rounded-md uppercase text-center loginButton md:hover:-translate-y-2 md:transition-all md:ease-in-out mt-10">Login</a>
-
-          <span
-                class="font-semibold text-blue-800 absolute top-4 md:top-14 block text-center lovelyDay text-lg">The
-            light will bring you to you, to us, always.</span>
+             class="bg-emerald-500 w-full  py-5 text-white lg:text-xl text-lg rounded-md uppercase loginButton md:hover:-translate-y-2 md:transition-all md:ease-in-out mt-10 font-semibold tracking-widest flex justify-between items-center px-10">
+            <span>Login</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor"
+                 class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+            </svg>
+          </a>
         </div>
-      </div>
+        <div
+             class="text-center w-full  text-xs font-semibold tracking-wider text-rose-500 ">
+          <p class="lovelyDay sm:text-lg text-2xl ">Made with <span>&#10084;</span>
+          </p>
+        </div>
 
-      <div
-           class="absolute bottom-20 text-center w-full left-0 text-xs font-semibold tracking-wider text-rose-500 ">
-        <p class="lovelyDay text-lg">Made with <span>&#10084;</span>
-        </p>
       </div>
     </div>
-
   </div>
   <script src="./scripts/index.js"></script>
 </body>
