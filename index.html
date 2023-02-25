@@ -13,30 +13,30 @@
 
 <body class="2xl:bg-gray-500 ">
   <div
-       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center p-10 md:p-0 flex flex-col md:flex-row overflow-hidden relative bg-gray-800 -z-0 md:bg-white md:bg-[url('')] bg-[url('../assets/logo10.webp')]">
+       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center px-10 py-20 md:p-0 flex flex-col md:flex-row overflow-hidden relative bg-gray-800 -z-0 md:bg-white md:bg-[url('')] bg-[url('../assets/logo10.webp')]">
 
     <!-- Login Form -->
     <form action="#"
-          class="text-slate-700 z-10 font-semibold bg-white absolute w-screen md:w-1/2 md:left-1/2 h-screen left-0 flex  flex-col loginForm justify-center items-center -bottom-[2000px]">
+          class="text-slate-700 z-10 font-semibold md:bg-white bg-gray-900 absolute w-screen md:w-1/2 md:left-1/2 h-screen left-0 flex  flex-col loginForm justify-center items-center -bottom-[2000px]">
       <img src="./assets/you2.jpg" alt="you" srcset=""
            class="rounded-full h-40 w-40 mx-auto text-center drop-shadow-2xl" />
 
-      <div class="loginForm w-1/2">
+      <div class="loginForm w-full px-10">
         <div class="email">
           <input type="email" autocomplete="off" name="email" id="email" placeholder="enter your email"
-                 class="border border-gray-200  text-xs rounded-md text-blue-600 placeholder:text-blue-600 px-2 py-3 w-full mt-10 mb-5 tracking-wider" />
+                 class="border border-gray-300 bg-transparent md:bg-white text-gray-500 md:text-blue-600  text-xs rounded-md  md:placeholder:text-blue-600 px-2 py-5 w-full mt-10 mb-5 tracking-wider " />
         </div>
         <div class="password">
           <input type="password" name="password" autocomplete="off" id="password" placeholder="enter your password"
-                 class=" border-gray-200  text-xs rounded-md text-blue-600 placeholder:text-blue-600 px-2 py-3 w-full mb-5" />
+                 class=" border-gray-300 bg-transparent md:bg-white text-gray-500 md:text-blue-600  text-xs rounded-md  md:placeholder:text-blue-600 px-2 py-5 w-full mb-5" />
         </div>
-        <div class="text-right outline-hidden flex items-center justify-center flex-col">
+        <div class="text-right outline-hidden flex items-center justify-between ">
           <a href="./src/home.html"
              class="rounded-full text-slate-50 py-3 text-xs bg-blue-500 uppercase tracking-widest outline-hidden focus:outline-hidden px-5">
             Login
           </a>
           <svg xmlns="http://www.w3.org/2000/svg"
-               class="cursor-pointer h-5 w-5 mt-5 bg-rose-500 rounded-full text-white closeLoginForm"
+               class="cursor-pointer h-5 w-5 mt-5 text-rose-600 bg-transparent rounded-full closeLoginForm"
                viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
                   d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
@@ -46,7 +46,7 @@
       </div>
       <span class="mt-5 text-center text-rose-500 lovelyDay">
         Wishing you a lovely day.
-        <span class="text-rose-600">&#x2665;</span>
+        <span class="text-rose-600">&#10084;</span>
       </span>
     </form>
 
@@ -57,19 +57,19 @@
       <img src="./assets/logo10.webp" alt="logo" class="" />
     </div>
 
-    <div class="pageWrapper md:w-1/2 relative h-screen p-5">
+    <div class="pageWrapper md:w-1/2 relative h-screen p-5 md:px-5 md:py-10 ">
       <!-- Index page links -->
       <div class="everything h-full flex items-center justify-between flex-col md:w-full relative ">
 
         <span
-              class="font-semiboldt text-white md:text-blue-800 block top-4 md:top-14 text-center lovelyDay text-2xl sm:text-lg">The
+              class="font-semiboldt text-blue-700 block top-4 md:top-14 text-center lovelyDay text-2xl sm:text-lg">The
           light will bring you to you, to us, always.
         </span>
 
-        <div class="flex items-center justify-center md:justify-between md:pb-10 md:px-10 flex-col w-full">
+        <div class="flex items-center justify-center md:justify-between md:pb-10 md:px-20 flex-col md:w-4/5 w-full">
 
           <h1
-              class="text-2xl md:text-blue-800 text-left w-full  text-white font-semibold mb-10 indexPageAppName">
+              class="text-4xl text-center w-full mb-5 text-blue-700 font-semibold  indexPageAppName">
             YourDay
           </h1>
 
@@ -92,10 +92,19 @@
                     d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
             </svg>
           </a>
+          <!-- New User & Forgot Password section  -->
+          <div class="forgotNewUser mt-5 flex items-center justify-end w-full text-xs uppercase font-semibold">
+            <!-- <a href="#"
+               class="duration-300 ease-in-out hover:text-rose-600 bg-blue-600 p-3 rounded-md text-slate-50">New
+              User</a>
+            <div class="h-1 w-1 rounded-[50%] mx-3 bg-slate-900"></div> -->
+            <a href="#" class="text-rose-600">Forgot Password ?</a>
+          </div>
         </div>
         <div
-             class="text-center w-full  text-xs font-semibold tracking-wider text-rose-500 ">
+             class="text-center w-full text-xs font-semibold tracking-wider text-rose-500 ">
           <p class="lovelyDay sm:text-lg text-2xl ">Made with <span>&#10084;</span>
+          <p class="md:text-slate-900 text-slate-50">All Rights Reserved.Copyright @ 2023.</p>
           </p>
         </div>
 
