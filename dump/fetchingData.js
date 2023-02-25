@@ -25,10 +25,11 @@ const fetchingData = () =>
             convertedDate: appointmentStartDate,
             id: doc.id,
             email: doc.data().aptEmail,
-            date: doc.data().aptStartDate.at( -1 ),
-            month: doc.data().aptStartMonth.at( -1 ),
-            year: doc.data().aptStartYear.at( -1 ),
-            fees: doc.data().aptFees,
+            date: doc.data().date.at( -1 ),
+            month: doc.data().month.at( -1 ),
+            year: doc.data().year.at( -1 ),
+            fees: doc.data().fees.at( -1 ),
+            firstSessionOn: doc.data().firstSessionOn,
             showUpdate: doc.data().showUpdate,
             statusUpdate: doc.data().statusUpdatedTimeStamp.at( -1 )
           } )
@@ -41,7 +42,7 @@ const fetchingData = () =>
       } )
       .catch( err =>
       {
-        console.log( err );
+        console.log( err )
       } )
   }
 }

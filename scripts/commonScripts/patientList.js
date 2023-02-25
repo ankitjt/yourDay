@@ -34,7 +34,7 @@ let patientEmail = [];
           fees: doc.data().fees.at( -1 ),
           countryCode: doc.data().countryCode.at( -1 ),
           mobileNumber: doc.data().mobileNumber.at( -1 ),
-          countPerWeek: doc.data().countPerWeek,
+          visitPerWeek: doc.data().visitPerWeek,
           secondDay: doc.data().secondDay.at( -1 ),
           secondDate: doc.data().secondDate.at( -1 ),
           secondTimeSlot: doc.data().secondTimeSlot.at( -1 ),

@@ -22,7 +22,7 @@ const updateProfile = () =>
     patientRow = document.querySelectorAll( '.patientRow' ),
     patientDetails = document.querySelector( '.patientDetails' ),
     patientProfileWrapper = document.querySelector( '.patientProfileWrapper' ),
-    profileID, profileEmail, profileFees;
+    profileID, profileEmail, profileFees
 
   for ( let row of patientRow )
   {
@@ -31,7 +31,7 @@ const updateProfile = () =>
       updateProfileWrapper.classList.add( '-left-[2000px]' )
       updateProfileWrapper.classList.remove( 'left-0' )
       pb.classList.add( 'lg:left-6' )
-      let rowID = row.getAttribute( 'data-id' );
+      let rowID = row.getAttribute( 'data-id' )
       for ( let updateProfile of profileDetails )
       {
         if ( rowID === updateProfile.id )
@@ -89,7 +89,7 @@ const updateProfile = () =>
                   </div>
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Visit per week</div>
-                    <div class="mt-1">${ updateProfile.countPerWeek }</div>
+                    <div class="mt-1">${ updateProfile.visitPerWeek }</div>
                   </div>
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Time Slot</div>
@@ -299,7 +299,7 @@ const updateProfile = () =>
       .get()
       .then( qs =>
       {
-        const batch = db.batch();
+        const batch = db.batch()
         qs.forEach( doc =>
         {
           if ( doc.data().dateInMills.at( -1 ) >= currentDate / 1000 )
@@ -312,7 +312,7 @@ const updateProfile = () =>
       .catch( err => { promptMessages( err ) } )
       .then( () =>
       {
-        promptMessages( 'Profile details saved.', 'success' );
+        promptMessages( 'Profile details saved.', 'success' )
       } )
 
     // let listRef = firebase.storage().ref( `ptNotes` )

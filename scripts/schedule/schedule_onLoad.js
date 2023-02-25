@@ -14,7 +14,7 @@ setTimeout( () =>
       {
         appointmentCountNumber.push( eachRecord )
 
-        mobileView = `
+        mobileView += `
                   <div
                    class="1 px-3 py-5  rounded-2xl  border-l-8 border ${ eachRecord.type === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ eachRecord.type === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ eachRecord.type === "New" ? 'text-rose-700' : '' } mb-5" text-xs
              >
@@ -38,7 +38,7 @@ setTimeout( () =>
                        />
                      </svg>
                      <span class="clockDetails">
-                       ${ eachRecord.slot }
+                       ${ eachRecord.timeSlot }
                      </span>
                    </span>
                    <div class='flex flex-col justify-between'>
@@ -62,7 +62,7 @@ setTimeout( () =>
                </div>
              </div>
          `
-        scheduleGalleryView.innerHTML += mobileView
+        scheduleGalleryView.innerHTML = mobileView
 
         // Desktop View
         appointmentCount.innerText = `( ${ appointmentCountNumber.length } )`

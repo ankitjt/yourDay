@@ -27,6 +27,7 @@ const fetchingAppointments = () =>
           date: doc.data().date.at( -1 ),
           month: doc.data().month.at( -1 ),
           year: doc.data().year.at( -1 ),
+          firstSessionOn: doc.data().firstSessionOn,
           fees: doc.data().fees.at( -1 ),
           showUpdate: doc.data().showUpdate,
           statusUpdate: doc.data().updatedOn.at( -1 )

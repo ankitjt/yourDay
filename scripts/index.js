@@ -5,12 +5,12 @@ let loginForm = document.querySelector( ".loginForm" ),
 
 loginButton.onclick = () =>
 {
-    loginForm.style.bottom = 0
+    loginForm.style.right = 0
     loginForm.style.transition = "0.5s ease-in-out"
     loginForm.classList.remove( "hidden" )
 }
 
 closeLoginForm.onclick = () =>
 {
-    loginForm.style.bottom = "-1500px"
+    loginForm.style.right = "-1500px"
 }
