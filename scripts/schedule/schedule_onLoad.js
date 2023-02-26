@@ -70,7 +70,7 @@ setTimeout( () =>
         currentMonthAppointments += `
                  
                     <tr
-                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase"
+                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-xs border-b border-gray-300 uppercase"
                       data-id="${ eachRecord.id }">
 
                        <!-- Name & Email -->
