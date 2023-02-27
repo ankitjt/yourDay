@@ -1,498 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>YourDay - Records</title>
-    <link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>YourDay - Records</title>
+  <link rel="stylesheet" href="style.css">
 
 
-  </head>
+</head>
 
-  <body class="relative w-full h-full">
+<body class="relative w-full h-full">
 
-    <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
+  <div class="relative flex h-screen p-2 bg-gray-800 wrapper md:p-0 md:flex md:bg-white">
+
+    <!--  (Absolute element 1)   -->
+    <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
+
+    <!-- Left Section  -->
+    <div
+         class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
+
+
+      <!-- Page Image  -->
+      <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
+
+      <!-- Update Profile -->
+      <div
+           class="absolute h-screen overflow-y-auto w-full -left-[2000px] bg-gray-800 sm:bg-white z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+
+        <h1 class="w-full mt-5 font-semibold text-center text-white uppercase text-md md:text-blue-600">Update Profile
+        </h1>
+
+        <section class="mt-10 text-xs text-white profileDetails md:transition-all md:ease-in-out md:text-blue-600">
+
+          <div class="flex flex-col items-start my-5 profileName md:justify-between">
+            <span class="nameTag mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Name</span>
+            <input type="text" value=""
+                   class="updateName updateInput border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold placeholder:text-sm py-3 text-xs bg-transparent text-blue-600" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 md:justify-between">
+            <span
+                  class="appointmentNature mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Appointment
+              Type</span>
+            <input type="text" value=""
+                   class="updateType updateInput border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold placeholder:text-sm py-3 text-xs bg-gray-200 text-blue-600"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileDay md:justify-between">
+            <span class="slotTag mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Mode</span>
+            <select name="day" id="day" title="Mode"
+                    class="updateInput updateMode w-full py-4 text-xs border  rounded-md  border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
+              <option value="" class="text-xs font-semibold">
+                Mode
+              </option>
+              <option value="Online" class="text-xs font-semibold">
+                Online
+              </option>
+              <option value="Offline" class="text-xs font-semibold">
+                Offline
+              </option>
+            </select>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
+            <span class="mb-2 emailTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Email</span>
+            <input type="email" value=""
+                   class="updateEmail updateInput border-gray-300 border rounded-md w-full font-semibold py-3 text-xs bg-transparent text-blue-600" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
+            <span
+                  class="mb-2 mobileTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Mobile</span>
+            <div class="flex w-full someWrapper">
+              <select name="countryCode" id=""
+                      class="updateInput update_countryCode countryCode w-20 py-3 text-xs border rounded-md font-semibold border-gray-300 bg-transparent text-blue-600"
+                      title="Country Code">
+              </select>
+              <input type='number' value=""
+                     class="updateInput updateMobileNumber border-gray-300 border rounded-md grow font-semibold py-3 text-xs bg-transparent text-blue-600 ml-2" />
+            </div>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
+            <span
+                  class="mb-2 addressTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Address</span>
+            <textarea value=""
+                      class="updateInput updateAddress border-gray-300 border rounded-md w-full font-semibold py-3 text-xs bg-transparent text-blue-600"></textarea>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
+            <span class="mb-2 occurrenceTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Visit
+              per week</span>
+            <input type='number' value=""
+                   class="updateOccurrence border-gray-300 border rounded-md w-full font-semibold text-xs py-3 text-blue-600 bg-gray-200"
+                   disabled />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
+            <span class="mb-2 slotTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Slot</span>
+            <select name="slot" id="slot" title="Slot"
+                    class="updateInput updateSlot w-full py-3 text-xs border rounded-md  border-gray-300 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
+              <option value="" class="font-semibold text-xs">
+                Time slot
+              </option>
+              <option value="09:00 - 10:00" class="text-xs font-semibold">
+                09:00 - 10:00
+              </option>
+              <option value="10:00 - 11:00" class="text-xs font-semibold">
+                10:00 - 11:00
+              </option>
+              <option value="11:00 - 12:00" class="text-xs font-semibold">
+                11:00 - 12:00
+              </option>
+              <option value="12:00 - 13:00" class="text-xs font-semibold">
+                12:00 - 13:00
+              </option>
+              <option value="13:00 - 14:00" class="text-xs font-semibold">
+                13:00 - 14:00
+              </option>
+              <option value="14:00 - 15:00" class="text-xs font-semibold">
+                14:00 - 15:00
+              </option>
+              <option value="15:00 - 16:00" class="text-xs font-semibold">
+                15:00 - 16:00
+              </option>
+              <option value="16:00 - 17:00" class="text-xs font-semibold">
+                16:00 - 17:00
+              </option>
+              <option value="17:00 - 18:00" class="text-xs font-semibold">
+                17:00 - 18:00
+              </option>
+            </select>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileDay md:justify-between">
+            <span class="mb-2 slotTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Day</span>
+            <select name="day" id="day" title="Day"
+                    class="updateInput updateDay w-full py-3 text-xs border rounded-md  border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
+              <option value="" class="text-xs font-semibold">
+                Select Day
+              </option>
+              <option value="Monday" class="text-xs font-semibold">
+                Monday
+              </option>
+              <option value="Tuesday" class="text-xs font-semibold">
+                Tuesday
+              </option>
+              <option value="Wednesday" class="text-xs font-semibold">
+                Wednesday
+              </option>
+              <option value="Thursday" class="text-xs font-semibold">
+                Thursday
+              </option>
+              <option value="Friday" class="text-xs font-semibold">
+                Friday
+              </option>
+              <option value="Saturday" class="text-xs font-semibold">
+                Saturday
+              </option>
+              <option value="Sunday" class="text-xs font-semibold">
+                Sunday
+              </option>
+            </select>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Fees</span>
+            <input type='number' value=""
+                   class="updateInput updateFees border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold py-3 text-xs bg-transparent text-blue-600" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
+              Contact Name</span>
+            <input type='text' value=""
+                   class="updateInput update_e_name border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold text-xs py-3 bg-transparent text-blue-600" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
+              Contact Address</span>
+            <input type='text' value=""
+                   class="updateInput update_e_address border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold text-xs py-3 bg-transparent text-blue-600" />
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
+              Mobile Number</span>
+            <div class="flex someWrapper w-full">
+              <select name="countryCode" id=""
+                      class="updateInput update_e_countryCode countryCode w-20 py-3 text-xs border rounded-md font-semibold placeholder:text-blue-600 border-gray-300 bg-transparent text-blue-600 "
+                      title="Country Code">
+              </select>
+              <input type='number' value=""
+                     class="updateInput grow update_e_mobileNumber text-xs border rounded-md font-semibold placeholder:text-blue-600 border-gray-300 bg-transparent text-blue-600 py-3 ml-2" />
+            </div>
+          </div>
+
+          <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+            <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
+              Contact Relation</span>
+            <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                    class="update_e_relation updateInput relationType w-full py-3 text-xs border rounded-md border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
+
+            </select>
+          </div>
+
+
+          <div class="flex flex-col text-white updateProfileActionButtons ">
+            <div class="flex justify-between items-center updateWrapper">
+              <button
+                      class="updateProfileButton w-30 py-2 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-full  flex items-center justify-between overflow-hidden">
+                <span class="ml-5">Update</span>
+                <div class="bg-emerald-700 w-10 ml-3 rounded-full">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                       stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+                  </svg>
+                </div>
+              </button>
+              <div title="Close window">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor"
+                     class="closeUpdateProfileWrapper w-6 h-6 rounded-full text-white bg-rose-600 cursor-pointer p-1">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <!-- Delete Prompt -->
+          <section
+                   class="z-60 deletePrompts fixed px-4 py-10 bg-rose-600 md:w-[inherit] bottom-0 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
+            <div class="flex flex-col w-full px-5 text-sm font-medium text-justify deletePromptContent">
+              <textarea name="" id="" cols="10" rows="3" class="rounded-md deleteProfileReason "
+                        placeholder="Reason for delete..."></textarea>
+              <div class="flex justify-between mt-5 text-sm confirmButtonsWrapper">
+                <button
+                        class="px-5 py-2 tracking-wider uppercase bg-white rounded-full cursor-pointer confirmDeleteProfile text-rose-600">
+                  Delete
+                </button>
+                <button
+                        class="px-5 py-2 tracking-wider text-white uppercase bg-gray-400 rounded-full cursor-pointer goBack">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+    </div>
+
+    <!-- Right Section  -->
+    <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
 
       <!--  (Absolute element 1)   -->
       <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
 
-      <!-- Panic Button  -->
-      <span
-        class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-red-500 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-6 lg:left-6 w-fit ">yD</span>
+      <!-- Global Notification (Absolute element 2) -->
+      <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
+        <p>This is a global notification</p>
+      </div>
 
-      <!-- Left Section  -->
+      <!-- Prompts (Absolute element 3) -->
       <div
-        class="relative hidden h-full overflow-hidden border-r border-gray-300 leftSection md:w-2/6 lg:flex lg:items-center lg:justify-center">
+           class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
+      </div>
 
+      <!-- Navbar  -->
+      <div class="relative pb-1 my-6 navbarWrapper md:my-0">
+        <nav class="navbarContent"></nav>
 
-        <!-- Page Image  -->
-        <img src="../assets/reports4.webp" alt="logo" class="w-auto h-auto" />
-
-        <!-- Update Profile -->
+        <!--  Navbar Notification Center -->
         <div
-          class="absolute h-screen overflow-y-auto w-full -left-[2000px] bg-gray-800 sm:bg-white z-40 updateProfileWrapper px-10 py-5 ease-in-out duration-300">
+             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+          <div class="h-full notificationContent">
 
-          <h1 class="w-full mt-5 font-semibold text-center text-white uppercase text-md md:text-blue-600">Update Profile
-          </h1>
-
-          <section class="mt-10 text-xs text-white profileDetails md:transition-all md:ease-in-out md:text-blue-600">
-
-            <div class="flex flex-col items-start my-5 profileName md:justify-between">
-              <span class="nameTag mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Name</span>
-              <input type="text" value=""
-                class="updateName updateInput border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold placeholder:text-sm py-3 text-xs bg-transparent text-blue-600" />
-            </div>
-
-            <div class="flex flex-col items-start my-5 md:justify-between">
-              <span
-                class="appointmentNature mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Appointment
-                Type</span>
-              <input type="text" value=""
-                class="updateType updateInput border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold placeholder:text-sm py-3 text-xs bg-gray-200 text-blue-600"
-                disabled />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileDay md:justify-between">
-              <span class="slotTag mb-2 tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Mode</span>
-              <select name="day" id="day" title="Mode"
-                class="updateInput updateMode w-full py-4 text-xs border  rounded-md  border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
-                <option value="" class="text-xs font-semibold">
-                  Mode
-                </option>
-                <option value="Online" class="text-xs font-semibold">
-                  Online
-                </option>
-                <option value="Offline" class="text-xs font-semibold">
-                  Offline
-                </option>
-              </select>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
-              <span class="mb-2 emailTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Email</span>
-              <input type="email" value=""
-                class="updateEmail updateInput border-gray-300 border rounded-md w-full font-semibold py-3 text-xs bg-transparent text-blue-600" />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
-              <span
-                class="mb-2 mobileTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Mobile</span>
-              <div class="flex w-full someWrapper">
-                <select name="countryCode" id=""
-                  class="updateInput update_countryCode countryCode w-20 py-3 text-xs border rounded-md font-semibold border-gray-300 bg-transparent text-blue-600"
-                  title="Country Code">
-                </select>
-                <input type='number' value=""
-                  class="updateInput updateMobileNumber border-gray-300 border rounded-md grow font-semibold py-3 text-xs bg-transparent text-blue-600 ml-2" />
-              </div>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
-              <span
-                class="mb-2 addressTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Address</span>
-              <textarea value=""
-                class="updateInput updateAddress border-gray-300 border rounded-md w-full font-semibold py-3 text-xs bg-transparent text-blue-600"></textarea>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
-              <span class="mb-2 occurrenceTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Visit
-                per week</span>
-              <input type='number' value=""
-                class="updateOccurrence border-gray-300 border rounded-md w-full font-semibold text-xs py-3 text-blue-600 bg-gray-200"
-                disabled />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
-              <span class="mb-2 slotTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Slot</span>
-              <select name="slot" id="slot" title="Slot"
-                class="updateInput updateSlot w-full py-3 text-xs border rounded-md  border-gray-300 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
-                <option value="" class="font-semibold text-xs">
-                  Time slot
-                </option>
-                <option value="09:00 - 10:00" class="text-xs font-semibold">
-                  09:00 - 10:00
-                </option>
-                <option value="10:00 - 11:00" class="text-xs font-semibold">
-                  10:00 - 11:00
-                </option>
-                <option value="11:00 - 12:00" class="text-xs font-semibold">
-                  11:00 - 12:00
-                </option>
-                <option value="12:00 - 13:00" class="text-xs font-semibold">
-                  12:00 - 13:00
-                </option>
-                <option value="13:00 - 14:00" class="text-xs font-semibold">
-                  13:00 - 14:00
-                </option>
-                <option value="14:00 - 15:00" class="text-xs font-semibold">
-                  14:00 - 15:00
-                </option>
-                <option value="15:00 - 16:00" class="text-xs font-semibold">
-                  15:00 - 16:00
-                </option>
-                <option value="16:00 - 17:00" class="text-xs font-semibold">
-                  16:00 - 17:00
-                </option>
-                <option value="17:00 - 18:00" class="text-xs font-semibold">
-                  17:00 - 18:00
-                </option>
-              </select>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileDay md:justify-between">
-              <span class="mb-2 slotTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Day</span>
-              <select name="day" id="day" title="Day"
-                class="updateInput updateDay w-full py-3 text-xs border rounded-md  border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
-                <option value="" class="text-xs font-semibold">
-                  Select Day
-                </option>
-                <option value="Monday" class="text-xs font-semibold">
-                  Monday
-                </option>
-                <option value="Tuesday" class="text-xs font-semibold">
-                  Tuesday
-                </option>
-                <option value="Wednesday" class="text-xs font-semibold">
-                  Wednesday
-                </option>
-                <option value="Thursday" class="text-xs font-semibold">
-                  Thursday
-                </option>
-                <option value="Friday" class="text-xs font-semibold">
-                  Friday
-                </option>
-                <option value="Saturday" class="text-xs font-semibold">
-                  Saturday
-                </option>
-                <option value="Sunday" class="text-xs font-semibold">
-                  Sunday
-                </option>
-              </select>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Fees</span>
-              <input type='number' value=""
-                class="updateInput updateFees border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold py-3 text-xs bg-transparent text-blue-600" />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
-                Contact Name</span>
-              <input type='text' value=""
-                class="updateInput update_e_name border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold text-xs py-3 bg-transparent text-blue-600" />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
-                Contact Address</span>
-              <input type='text' value=""
-                class="updateInput update_e_address border-blue-600 md:border-gray-300 border rounded-md w-full placeholder:text-blue-600 font-semibold text-xs py-3 bg-transparent text-blue-600" />
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
-                Mobile Number</span>
-              <div class="flex someWrapper w-full">
-                <select name="countryCode" id=""
-                  class="updateInput update_e_countryCode countryCode w-20 py-3 text-xs border rounded-md font-semibold placeholder:text-blue-600 border-gray-300 bg-transparent text-blue-600 "
-                  title="Country Code">
-                </select>
-                <input type='number' value=""
-                  class="updateInput grow update_e_mobileNumber text-xs border rounded-md font-semibold placeholder:text-blue-600 border-gray-300 bg-transparent text-blue-600 py-3 ml-2" />
-              </div>
-            </div>
-
-            <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-              <span class="mb-2 feeTag tracking-widest text-gray-400 text-[10px] font-semibold uppercase">Emergency
-                Contact Relation</span>
-              <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                class="update_e_relation updateInput relationType w-full py-3 text-xs border rounded-md border-gray-300 placeholder:text-blue-600 font-semibold uppercase tracking-wider bg-transparent text-blue-600">
-
-              </select>
-            </div>
-
-
-            <div class="flex flex-col text-white updateProfileActionButtons ">
-              <div class="flex justify-between items-center updateWrapper">
-                <button
-                  class="updateProfileButton w-30 py-2 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-full  flex items-center justify-between overflow-hidden">
-                  <span class="ml-5">Update</span>
-                  <div class="bg-emerald-700 w-10 ml-3 rounded-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
-                    </svg>
-                  </div>
-                </button>
-                <div title="Close window">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor"
-                    class="closeUpdateProfileWrapper w-6 h-6 rounded-full text-white bg-rose-600 cursor-pointer p-1">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <!-- Delete Prompt -->
-            <section
-              class="z-60 deletePrompts fixed px-4 py-10 bg-rose-600 md:w-[inherit] bottom-0 -left-[2000px] flex items-center justify-between ease-in-out duration-300">
-              <div class="flex flex-col w-full px-5 text-sm font-medium text-justify deletePromptContent">
-                <textarea name="" id="" cols="10" rows="3" class="rounded-md deleteProfileReason "
-                  placeholder="Reason for delete..."></textarea>
-                <div class="flex justify-between mt-5 text-sm confirmButtonsWrapper">
-                  <button
-                    class="px-5 py-2 tracking-wider uppercase bg-white rounded-full cursor-pointer confirmDeleteProfile text-rose-600">
-                    Delete
-                  </button>
-                  <button
-                    class="px-5 py-2 tracking-wider text-white uppercase bg-gray-400 rounded-full cursor-pointer goBack">
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </section>
-          </section>
+          </div>
         </div>
       </div>
 
-      <!-- Right Section  -->
-      <div class="relative w-full px-4 py-6 overflow-x-hidden rightSection lg:w-5/6 md:px-10">
+      <!-- Reports by Month  -->
+      <section class="mt-5 rounded-md reportByMonthSection">
+        <h3 class="mb-2">
+          <span class="text-xs font-semibold tracking-wider text-blue-600 uppercase">
+            By month & year
+          </span>
+        </h3>
 
-        <!--  (Absolute element 1)   -->
-        <div class="absolute top-0 left-0 z-40 hidden w-full h-full bg-gray-800 opacity-50 pageBlocker"></div>
+        <div class="grid sm:flex sm:justify-between">
 
-        <!-- Global Notification (Absolute element 2) -->
-        <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
-          <p>This is a global notification</p>
-        </div>
+          <!-- Month and year filter -->
+          <input type="text" name="" id=""
+                 class="relative w-full py-3 text-[10px] tracking-widest uppercase text-white bg-gray-800 border border-blue-600 rounded-md monthListByNameReports h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600"
+                 placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
-        <!-- Prompts (Absolute element 3) -->
-        <div
-          class="promptsWrapper absolute z-50 -left-[2000px] w-5/6 md:w-4/6 h-1/3 -translate-x-1/2 bottom-20  flex items-center ease-in-out duration-300 flex-col overflow-x-hidden overflow-y-auto px-5 sm:px-0">
-        </div>
-
-        <!-- Navbar  -->
-        <div class="relative pb-1 my-6 navbarWrapper md:my-0">
-          <nav class="navbarContent"></nav>
-
-          <!--  Navbar Notification Center -->
+          <!-- By Month Breakdown  -->
           <div
-            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-            <div class="h-full notificationContent">
+               class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md sm:mt-0 reportsTotalByMonth md:border-gray-200 md:bg-white sm:ml-5">
 
-            </div>
-          </div>
-        </div>
-
-        <!-- Reports by Month  -->
-        <section class="mt-5 rounded-md reportByMonthSection">
-          <h3 class="mb-2">
-            <span class="text-xs font-semibold tracking-wider text-blue-600 uppercase">
-              By month & year
-            </span>
-          </h3>
-
-          <div class="grid sm:flex sm:justify-between">
-
-            <!-- Month and year filter -->
-            <input type="text" name="" id=""
-              class="relative w-full py-3 text-[10px] tracking-widest uppercase text-white bg-gray-800 border border-blue-600 rounded-md monthListByNameReports h-fit md:border-gray-200 placeholder:text-blue-600 md:font-semibold md:py-4 md:bg-white md:text-blue-600"
-              placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
-
-            <!-- By Month Breakdown  -->
-            <div
-              class="w-full p-4 mt-5 text-xs font-semibold text-blue-600 border border-blue-600 rounded-md sm:mt-0 reportsTotalByMonth md:border-gray-200 md:bg-white sm:ml-5">
-
-              <div class="flex flex-col dummyWrap ">
-                <!-- By Type  -->
-                <div class="my-2 byType">
-                  <p
-                    class="mb-2 text-[10px] uppercase tracking-widest font-semibold text-blue-600 border-b border-gray-300">
-                    Type:</p>
-                  <div
-                    class="forWrap md:grid md:grid-cols-2 md:gap-x-5 text-[10px] uppercase text-gray-900 tracking-widest">
-                    <div class="flex items-center justify-between totalSessions">
-                      <span>Session</span>
-                      <span class="totalSessionsCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalSupervision">
-                      <span>Supervision</span>
-                      <span class="totalSupervisionCount text-blue-600"></span>
-                    </div>
+            <div class="flex flex-col dummyWrap ">
+              <!-- By Type  -->
+              <div class="my-2 byType">
+                <p
+                   class="mb-2 text-[10px] uppercase tracking-widest font-semibold text-blue-600 border-b border-gray-300">
+                  Type:</p>
+                <div
+                     class="forWrap md:grid md:grid-cols-2 md:gap-x-5 text-[10px] uppercase text-gray-900 tracking-widest">
+                  <div class="flex items-center justify-between totalSessions">
+                    <span>Session</span>
+                    <span class="totalSessionsCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalSupervision">
+                    <span>Supervision</span>
+                    <span class="totalSupervisionCount text-blue-600"></span>
                   </div>
                 </div>
-                <div class="hidden patientNamesList"></div>
-                <!-- By Status -->
-                <div class="my-2 byStatus">
-                  <p
-                    class="mb-2 text-[10px] uppercase tracking-widest font-semibold text-blue-600 border-b border-gray-300">
-                    Status:</p>
-                  <div
-                    class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2 uppercase text-gray-900 text-[10px] tracking-widest">
-                    <div class="flex items-center justify-between totalScheduled">
-                      <span>Scheduled</span>
-                      <span class="totalScheduledCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalCompleted">
-                      <span>Completed</span>
-                      <span class="totalCompletedCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalRescheduled">
-                      <span>Rescheduled</span>
-                      <span class="totalRescheduledCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalFreeCancelled">
-                      <span>Free Cancelled</span>
-                      <span class="totalFreeCancelledCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalPaidCancelled">
-                      <span>Paid Cancelled</span>
-                      <span class="totalPaidCancelledCount text-blue-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between totalPending">
-                      <span>Pending</span>
-                      <span class="totalPendingCount text-blue-600"></span>
-                    </div>
+              </div>
+              <div class="hidden patientNamesList"></div>
+              <!-- By Status -->
+              <div class="my-2 byStatus">
+                <p
+                   class="mb-2 text-[10px] uppercase tracking-widest font-semibold text-blue-600 border-b border-gray-300">
+                  Status:</p>
+                <div
+                     class="dummyWrap md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-2 uppercase text-gray-900 text-[10px] tracking-widest">
+                  <div class="flex items-center justify-between totalScheduled">
+                    <span>Scheduled</span>
+                    <span class="totalScheduledCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalCompleted">
+                    <span>Completed</span>
+                    <span class="totalCompletedCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalRescheduled">
+                    <span>Rescheduled</span>
+                    <span class="totalRescheduledCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalFreeCancelled">
+                    <span>Free Cancelled</span>
+                    <span class="totalFreeCancelledCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalPaidCancelled">
+                    <span>Paid Cancelled</span>
+                    <span class="totalPaidCancelledCount text-blue-600"></span>
+                  </div>
+                  <div class="flex items-center justify-between totalPending">
+                    <span>Pending</span>
+                    <span class="totalPendingCount text-blue-600"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
 
-        <!-- Reports by Category  -->
-        <div class="flex flex-col mt-10 dummy">
-          <h1 class="flex justify-between items-center text-xs font-semibold text-blue-600 uppercase">
-            <span class="tracking-wider">
-              <span>Patients List</span>
-              <span class="patientCount ml-1"></span>
-            </span>
-            <div class="flex items-center text-white filters">
-              <span
-                class="px-3 py-1 mx-1 text-[10px] uppercase tracking-widest cursor-pointer text-blue-600 bg-blue-100 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-rose-600">Session</span>
-              <span class=" px-3 py-1 mx-1 text-[10px] uppercase tracking-widest cursor-pointer bg-emerald-100 rounded-full supervision
+      <!-- Reports by Category  -->
+      <div class="flex flex-col mt-10 dummy">
+        <h1 class="flex justify-between items-center text-xs font-semibold text-blue-600 uppercase">
+          <span class="tracking-wider">
+            <span>Patients List</span>
+            <span class="patientCount ml-1"></span>
+          </span>
+          <div class="flex items-center text-white filters">
+            <span
+                  class="px-3 py-1 mx-1 text-[10px] uppercase tracking-widest cursor-pointer text-blue-600 bg-blue-100 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-rose-600">Session</span>
+            <span class=" px-3 py-1 mx-1 text-[10px] uppercase tracking-widest cursor-pointer bg-emerald-100 rounded-full supervision
                 text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-rose-600">Supervision</span>
 
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                  d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-          </h1>
-          <div class="relative mt-3 h-full">
-            <div class="h-72 overflow-auto border border-gray-300 rounded-md">
-              <table class=" text-xs text-left w-full overflow-auto">
-                <thead>
-                  <tr class="font-normal text-blue-600 tracking-widest bg-gray-50 uppercase text-[10px] w-full">
-                    <th class="px-6 py-3">
-                      Name
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <span class="flex">
-                        <span>Type</span>
-                      </span>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Mode
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Status
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Created on
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Updated on
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="rounded-md profileRows"></tbody>
-              </table>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+        </h1>
+        <div class="relative mt-3 h-full">
+          <div class="h-72 overflow-auto border border-gray-300 rounded-md">
+            <table class=" text-xs text-left w-full overflow-auto">
+              <thead>
+                <tr class="font-normal text-blue-600 tracking-widest bg-gray-50 uppercase text-[10px] w-full">
+                  <th class="px-6 py-3">
+                    Name
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    <span class="flex">
+                      <span>Type</span>
+                    </span>
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Mode
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Status
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Created on
+                  </th>
+                  <th scope="col" class="px-6 py-3">
+                    Updated on
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="rounded-md profileRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="hidden patientProfileWrapper shadow-2xl rounded-md p-6 mt-5">
+
+          <!-- Patient Profile  -->
+          <h1 class="text-xs pb-5 font-semibold text-blue-600 uppercase">Profile</h1>
+          <div class="flex flex-col text-xs patientDetails"></div>
+
+          <!-- Patient Graph  -->
+          <div class="patientGraph mt-10 ">
+            <h1 class="mb-2 text-xs font-semibold text-blue-600 uppercase">Progress</h1>
+            <div class="pt-5">
+              <canvas id="testGraph" class="p-4 text-white bg-gray-900 rounded-md h-full w-full graphs"></canvas>
             </div>
           </div>
 
-          <div class="hidden patientProfileWrapper shadow-2xl rounded-md p-6 mt-5">
-
-            <!-- Patient Profile  -->
-            <h1 class="text-xs pb-5 font-semibold text-blue-600 uppercase">Profile</h1>
-            <div class="flex flex-col text-xs patientDetails"></div>
-
-            <!-- Patient Graph  -->
-            <div class="patientGraph mt-10 ">
-              <h1 class="mb-2 text-xs font-semibold text-blue-600 uppercase">Progress</h1>
-              <div class="pt-5">
-                <canvas id="testGraph" class="p-4 text-white bg-gray-900 rounded-md h-full w-full graphs"></canvas>
-              </div>
-            </div>
-
-            <!-- Show Update Window  -->
-            <div class="updateProfileButtons mt-10 flex items-center justify-between">
-              <div class="buttonsWrapper flex items-center">
-                <button
-                  class="showUpdateWindow w-30 py-2 h-9 uppercase tracking-widest font-semibold text-[11px] text-white bg-emerald-600 rounded-full  flex items-center justify-between overflow-hidden">
-                  <span class="ml-5">Edit</span>
-                  <div class="bg-emerald-700 w-10 ml-3 rounded-full ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-                    </svg>
-                  </div>
-                </button>
-              </div>
+          <!-- Show Update Window  -->
+          <div class="updateProfileButtons mt-10 flex items-center justify-between">
+            <div class="buttonsWrapper flex items-center">
               <button
-                class="deleteProfile w-30 py-2 h-9 uppercase tracking-widest font-semibold text-[11px] text-white bg-rose-600 rounded-full  flex items-center justify-between overflow-hidden">
-                <span class="ml-5">Delete Profile</span>
-                <div class="bg-rose-700 w-10 ml-3 rounded-full">
+                      class="showUpdateWindow w-30 py-2 h-9 uppercase tracking-widest font-semibold text-[11px] text-white bg-emerald-600 rounded-full  flex items-center justify-between overflow-hidden">
+                <span class="ml-5">Edit</span>
+                <div class="bg-emerald-700 w-10 ml-3 rounded-full ">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                       stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
                   </svg>
                 </div>
               </button>
             </div>
+            <button
+                    class="deleteProfile w-30 py-2 h-9 uppercase tracking-widest font-semibold text-[11px] text-white bg-rose-600 rounded-full  flex items-center justify-between overflow-hidden">
+              <span class="ml-5">Delete Profile</span>
+              <div class="bg-rose-700 w-10 ml-3 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+                </svg>
+              </div>
+            </button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Firebase  -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <!-- Firebase  -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
 
-    <!-- Variable and common loaders  -->
-    <script src="../scripts/records/records_constants.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../scripts/commonScripts/countryCode.js"></script>
-    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-    <script src="../scripts/commonScripts/commonFunctions.js"></script>
-    <script src="../scripts/commonScripts/patientList.js"></script>
-    <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
+  <!-- Variable and common loaders  -->
+  <script src="../scripts/records/records_constants.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="../scripts/commonScripts/countryCode.js"></script>
+  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+  <script src="../scripts/commonScripts/commonFunctions.js"></script>
+  <script src="../scripts/commonScripts/patientList.js"></script>
+  <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
 
-    <!-- Page Scripts  -->
-    <script src="../scripts/records/records_onLoad.js"></script>
-    <script src="../scripts/records/records_profiles.js"></script>
-    <script src="../scripts/records/records_deleteProfile.js"></script>
-    <script src="../scripts/records/records_updateProfile.js"></script>
-    <script src="../scripts/records/records.js"></script>
+  <!-- Page Scripts  -->
+  <script src="../scripts/records/records_onLoad.js"></script>
+  <script src="../scripts/records/records_profiles.js"></script>
+  <script src="../scripts/records/records_deleteProfile.js"></script>
+  <script src="../scripts/records/records_updateProfile.js"></script>
+  <script src="../scripts/records/records.js"></script>
 
-    <!-- Global notification and prompts -->
-    <script src="../scripts/commonScripts/globalNotification.js"></script>
-    <script src="../scripts/commonScripts/prompts.js"></script>
-    <script src="../scripts/commonScripts/panicButton.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" charset="utf-8"></script>
-    <script src="../scripts/records/records_graphs.js"></script>
+  <!-- Global notification and prompts -->
+  <script src="../scripts/commonScripts/globalNotification.js"></script>
+  <script src="../scripts/commonScripts/prompts.js"></script>
+  <script src="../scripts/commonScripts/panicButton.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" charset="utf-8"></script>
+  <script src="../scripts/records/records_graphs.js"></script>
 
-  </body>
+</body>
 
 </html>

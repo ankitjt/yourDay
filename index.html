@@ -11,109 +11,74 @@
 
 </head>
 
-<body class="2xl:bg-gray-500 ">
+<body>
   <div
-       class="wrapper h-screen w-screen bg-no-repeat bg-cover bg-center px-0 py-5 md:p-0 flex flex-col md:flex-row overflow-hidden relative bg-gray-800 -z-0 md:bg-white">
-
-    <!-- Login Form -->
-    <form action="#"
-          class="text-slate-700 z-10 font-semibold md:bg-white bg-gray-900 absolute w-full md:w-1/2 h-full flex  flex-col loginForm justify-between items-center top-0 -right-[2000px] pb-20">
-
-      <div class="dummy"></div>
-
-      <div class="loginForm md:w-4/5 w-full px-10">
-        <img src="./assets/you2.jpg" alt="you" srcset=""
-             class="rounded-full h-40 w-40 mx-auto text-center drop-shadow-2xl" />
-        <div class="email w-full">
-          <input type="email" autocomplete="off" name="email" id="email" placeholder="enter your email"
-                 class="border border-gray-300 bg-transparent md:bg-white text-gray-500 md:text-blue-600  text-xs rounded-md  md:placeholder:text-blue-600 px-2 py-5 w-full mt-10 mb-5 tracking-wider " />
-        </div>
-        <div class="password w-full">
-          <input type="password" name="password" autocomplete="off" id="password" placeholder="enter your password"
-                 class=" border-gray-300 bg-transparent md:bg-white text-gray-500 md:text-blue-600  text-xs rounded-md  md:placeholder:text-blue-600 px-2 py-5 w-full mb-5" />
-        </div>
-        <div class="text-right outline-hidden flex items-center w-full justify-between ">
-          <a href="./src/home.html"
-             class="rounded-full text-slate-50 py-3 text-xs bg-blue-500 uppercase tracking-widest outline-hidden focus:outline-hidden px-5">
-            Login
-          </a>
-          <svg xmlns="http://www.w3.org/2000/svg"
-               class="cursor-pointer h-5 w-5 text-rose-600 bg-transparent rounded-full closeLoginForm"
-               viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                  clip-rule="evenodd" />
-          </svg>
-        </div>
-      </div>
-
-      <span class="mt-5 text-center text-rose-500 lovelyDay">
-        Wishing you a lovely day.
-        <span class="text-rose-600">&#10084;</span>
-      </span>
-
-    </form>
-
-    <!-- ***** ***** ***** ***** Ends Index page login form ***** ***** ***** ***** -->
+       class="wrapper h-screen w-screen bg-no-repeat sm:px-0 sm:py-5 p-0 flex flex-col justify-between overflow-hidden relative sm:-z-0">
 
     <!-- Only for Desktop -->
-    <div class="banner-holder md:w-1/2 md:h-screen hidden md:flex md:items-center md:justify-center">
-      <img src="./assets/logo10.webp" alt="logo" class="" />
+    <div class="banner-holder sm:w-1/2 sm:h-full top-0 hidden sm:block absolute left-0 w-1/2">
+      <img src="./assets/Rectangle5.png" alt="logo" class="w-screen h-screen" />
     </div>
 
-    <div class="pageWrapper md:w-1/2 relative h-screen px-5 py-10 md:py-10 shadow-2xl ">
+    <!-- Login Form  -->
+    <div
+         class="loginForm sm:w-1/2 w-full right-0 absolute h-screen top-1/2 -translate-y-1/2 shadow-2xl bg-[#010714]">
       <!-- Index page links -->
-      <div class="everything h-full flex items-center justify-between flex-col md:w-full relative ">
-
-        <span
-              class="font-semiboldt text-blue-700 block top-4 md:top-14 text-center lovelyDay text-lg sm:text-lg">The
-          light will bring you to you, to us, always.
-        </span>
-
-        <div class="flex items-center justify-center md:justify-between md:pb-10 md:px-20 flex-col md:w-4/5 w-full">
-
-          <h1
-              class="text-4xl text-center w-full mb-5 text-blue-700 font-semibold  indexPageAppName">
-            YourDay
-          </h1>
-
-          <a href="./schedule.html"
-             class="bg-blue-700 w-full flex justify-between px-10 items-center py-5 text-white text-center  text-base sm:text-lg lg:text-xl rounded-md tracking-widest uppercase md:hover:-translate-y-2 md:transition-all md:ease-in-out font-semibold">
-            <span>Schedule</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                    clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="#"
-             class="bg-emerald-500 w-full  py-5 text-white lg:text-xl text-lg rounded-md uppercase loginButton md:hover:-translate-y-2 md:transition-all md:ease-in-out mt-10 font-semibold tracking-widest flex justify-between items-center px-10">
-            <span>Login</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                 stroke="currentColor"
-                 class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-            </svg>
-          </a>
-          <!-- New User & Forgot Password section  -->
-          <div class="forgotNewUser mt-5 flex items-center justify-end w-full text-xs uppercase font-semibold">
-            <!-- <a href="#"
-               class="duration-300 ease-in-out hover:text-rose-600 bg-blue-600 p-3 rounded-md text-slate-50">New
-              User</a>
-            <div class="h-1 w-1 rounded-[50%] mx-3 bg-slate-900"></div> -->
-            <a href="#" class="text-rose-600">Forgot Password ?</a>
+      <div class="everything h-full flex items-end mt-32 px-20 justify-center flex-col sm:w-full">
+        <div class="flex items-center justify-center sm:justify-between flex-col w-full sm:min-w-1/5 -mt-32">
+          <form action="#" class="w-full flex flex-col">
+            <input type="text" name="" id=""
+                   class="loginEmail bg-white my-3 py-6 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
+                   placeholder="Email" autofocus autocomplete="off" />
+            <input type="password" name="" id=""
+                   class="loginPassword bg-white my-3 py-6 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
+                   placeholder="Password" />
+            <a href="./src/home.html"
+               class="loginBtn rounded-md my-3 py-6 uppercase font-semibold tracking-widest text-xs text-center bg-transparent border border-rose-400 text-white ease-in-out duration-300 hover:bg-rose-400">Login</a>
+          </form>
+          <div class="forgotPass text-right w-full">
+            <a href="#"
+               class="font-semibold text-xs text-gray-300 underline uppercase mt-2 tracking-widest ease-in-out duration-300 hover:text-rose-400">forgot
+              password?</a>
           </div>
         </div>
-        <div
-             class="text-center w-full text-xs font-semibold tracking-wider text-rose-500 ">
-          <p class="lovelyDay text-lg">Made with <span>&#10084;</span>
-          <p class="md:text-slate-900 text-slate-50">All Rights Reserved.Copyright @ 2023.</p>
-          </p>
-        </div>
-
       </div>
     </div>
+
+    <!-- Navbar (Relative)  -->
+    <nav
+         class="w-full z-10 flex items-center sm:flex-row flex-col py-10 sm:py-0 justify-between px-20 h-32 text-rose-400 uppercase font-semibold text-xs tracking-widest">
+
+      <div class="leftLinks flex items-center justify-between w-full sm:block sm:w-auto">
+        <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400">About</a>
+        <a href="#"
+           class="ml-5 text-white border-b-4 border-emerald-400  py-2 ease-in-out duration-300 hover:border-rose-400">Quick
+          help</a>
+      </div>
+
+      <div class="logo text-center my-10 sm:w-auto">
+        <p class="app-name text-xl">yourDay</p>
+        <p class="app-name normal-case mt-2">The light will bring you to you, to us, always.</p>
+      </div>
+
+      <div class="rightLinks flex items-center justify-between w-full sm:block sm:w-auto">
+        <a href="#"
+           class="text-white mr-5 border-b-4 border-rose-400 py-2 ease-in-out duration-300 ">Register</a>
+        <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400">FAQs</a>
+      </div>
+
+    </nav>
+
+    <!-- Footer (Relative) -->
+    <footer
+            class="footer z-10 flex px-20 h-32 items-center justify-between uppercase text-[10px] tracking-widest">
+      <p class="text-emerald-400">Copyright @ 2023</p>
+      <p class="text-white flex items-center">
+        <span>Made with</span>
+        <span class="text-rose-400 text-3xl ml-2 mt-1">&#10084;</span>
+      </p>
+    </footer>
+
   </div>
   <script src="./scripts/index.js"></script>
 </body>
