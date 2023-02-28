@@ -1,4 +1,3 @@
-let body = document.getElementsByTagName( 'body' )[ 0 ]
 let openedNotification = document.querySelector( '.openedNotification' )
 let notification = document.querySelector( '.notification' )
 let notificationCenter = document.querySelector( '.notificationCenter' )

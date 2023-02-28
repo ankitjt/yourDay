@@ -7,7 +7,7 @@ let pageUrl = p.substring( 0, p.indexOf( '.' ) )
 
 
 navbarContent.innerHTML = `
-  <div class='text-[10px] tracking-widest font-semibold  text-blue-600 flex items-center justify-between w-full '>
+  <div class='text-[10px] tracking-widest font-semibold  text-blue-500 flex items-center justify-between w-full '>
   <a href="./home.html" class="hover:bg-blue-500 rounded-full">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 hover:text-white" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"

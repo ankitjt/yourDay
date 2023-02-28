@@ -8,7 +8,7 @@ const promptMessages = ( message, promptType, refresh ) =>
   pageBlocker.classList.remove( 'hidden' )
   promptsWrapper.innerHTML += `
           
-          <section class="prompts flex items-center justify-between md:w-2/3 w-full px-6 py-3 my-1 rounded-lg ease-in-out duration-300 hover:bg-gray-800 cursor-pointer ${ promptType === 'error' ? 'bg-rose-600' : 'bg-emerald-600' }">
+          <section class="prompts flex items-center justify-between md:w-2/3 w-full px-6 py-3 my-1 rounded-lg ease-in-out duration-300 md:hover:bg-gray-800 cursor-pointer ${ promptType === 'error' ? 'bg-rose-600' : 'bg-emerald-600' }">
             <div class="promptContent font-medium text-xs text-slate-50 w-full flex items-center">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7 bg-white text-rose-600 p-1 rounded-lg mr-5 ${ promptType === 'error' ? 'block' : 'hidden' }">
                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />

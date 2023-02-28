@@ -1,11 +1,11 @@
-let body = document.getElementsByTagName( 'body' )[ 0 ];
+
 ( () =>
 {
   let createPanicButton = document.createElement( 'span' )
   createPanicButton.innerHTML = `<span
-        class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-rose-400 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-12 lg:left-10 lg:right-0 w-fit ">yD</span>`
-  body.appendChild( createPanicButton )
-  let pb = document.querySelector( '.pb' )
+  class="absolute z-50 p-3 text-2xl font-medium text-white uppercase bg-rose-400 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-12 lg:left-10 lg:right-0 w-fit ">yD</span>`
+  pageBody.appendChild( createPanicButton )
+  let pb = document.querySelector( '.pb' );
   pb.onclick = () =>
   {
     let currentTime = new Date()
