@@ -9,6 +9,10 @@ select {
     outline: none;
 }
 
+.fontSize {
+    font-size: 10px;
+}
+
 .app-name,
 .pageNotFound,
 .indexPageAppName,
