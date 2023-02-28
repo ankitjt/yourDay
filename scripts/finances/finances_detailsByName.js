@@ -1,12 +1,12 @@
 let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
-
+let panicButton124 = document.querySelector( '.pb' )
 findDetailsByName.onclick = () =>
 {
   profileDetails.innerHTML = ''
   moneyBreakDownWrapper.innerHTML = ''
   sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
   sessionsBreakDownWrapper.classList.remove( 'left-0' )
-  pb.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
+  panicButton124.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
 
   if ( patientNamesList.value === '' || financeMonthFilterByName.value === '' )
   {
@@ -30,7 +30,7 @@ findDetailsByName.onclick = () =>
               `
                   <div class="my-2 appointmentsWrapper">
                     <h1 class="pb-1 mb-5 text-[11px] tracking-widest font-semibold text-slate-500 uppercase border-b">Appointment Details</h1>
-                    <div class="grid grid-cols-4 font-semibold gap-x-5 gap-y-3 appointmentDetails">
+                    <div class="grid md:grid-cols-4 grid-cols-3 font-semibold gap-x-5 gap-y-3 appointmentDetails">
                       <div class="fieldWrapper">
                         <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
                         <div class="mt-1">${ finance_profile.type }</div>
