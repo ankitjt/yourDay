@@ -1,86 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
 
-  <title>yourDay</title>
-  <link rel="stylesheet" href="./src/style.css">
+    <title>yourDay</title>
+    <link rel="stylesheet" href="./src/style.css">
 
-</head>
+  </head>
 
-<body>
-  <div
-       class="wrapper h-screen w-screen bg-no-repeat sm:px-0 sm:py-5 p-0 flex flex-col justify-between overflow-hidden relative sm:-z-0">
+  <body>
+    <div class="wrapper h-screen w-screen bg-no-repeat p-0 flex justify-between overflow-hidden relative sm:-z-0">
 
-    <!-- Only for Desktop -->
-    <div class="banner-holder sm:w-1/2 sm:h-full top-0 hidden sm:block absolute left-0 w-1/2">
-      <img src="./assets/Rectangle5.png" alt="logo" class="w-screen h-screen" />
-    </div>
-
-    <!-- Login Form  -->
-    <div
-         class="loginForm sm:w-1/2 w-full right-0 absolute h-screen top-1/2 -translate-y-1/2 shadow-2xl bg-[#010714]">
-      <!-- Index page links -->
-      <div class="everything h-full flex items-end mt-32 px-20 justify-center flex-col sm:w-full">
-        <div class="flex items-center justify-center sm:justify-between flex-col w-full sm:min-w-1/5 -mt-32">
-          <form action="#" class="w-full flex flex-col">
-            <input type="text" name="" id=""
-                   class="loginEmail bg-white my-3 py-6 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
-                   placeholder="Email" autofocus autocomplete="off" />
-            <input type="password" name="" id=""
-                   class="loginPassword bg-white my-3 py-6 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
-                   placeholder="Password" />
-            <a href="./src/home.html"
-               class="loginBtn rounded-md my-3 py-6 uppercase font-semibold tracking-widest text-xs text-center bg-transparent border border-rose-400 text-white ease-in-out duration-300 hover:bg-rose-400">Login</a>
-          </form>
-          <div class="forgotPass text-right w-full">
-            <a href="#"
-               class="font-semibold text-xs text-gray-300 underline uppercase mt-2 tracking-widest ease-in-out duration-300 hover:text-rose-400">forgot
-              password?</a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Navbar (Relative)  -->
-    <nav
-         class="w-full z-10 flex items-center sm:flex-row flex-col py-10 sm:py-0 justify-between px-20 h-32 text-rose-400 uppercase font-semibold text-xs tracking-widest">
-
-      <div class="leftLinks flex items-center justify-between w-full sm:block sm:w-auto">
-        <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400">About</a>
-        <a href="#"
-           class="ml-5 text-white border-b-4 border-emerald-400  py-2 ease-in-out duration-300 hover:border-rose-400">Quick
-          help</a>
-      </div>
-
-      <div class="logo text-center my-10 sm:w-auto">
-        <p class="app-name text-xl">yourDay</p>
+      <!-- Logo  -->
+      <div class="logo absolute left-1/2 -translate-x-1/2 sm:mt-10 top-36 sm:top-0 z-50 text-rose-400 text-center">
+        <p class="app-name text-3xl">yourDay</p>
         <p class="app-name normal-case mt-2">The light will bring you to you, to us, always.</p>
       </div>
 
-      <div class="rightLinks flex items-center justify-between w-full sm:block sm:w-auto">
-        <a href="#"
-           class="text-white mr-5 border-b-4 border-rose-400 py-2 ease-in-out duration-300 ">Register</a>
-        <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400">FAQs</a>
+      <!-- Left Section  -->
+      <div
+        class="divLeft w-1/2 h-full py-10 md:px-20 px-5 md:bg-[url('./assets/Rectangle5.png')] bg-[#010714] bg-center bg-no-repeat bg-cover flex flex-col justify-between text-xs uppercase tracking-widest font-semibold">
+
+        <nav class="leftNav flex flex-col items-start md:block md:py-0 md:px-0">
+          <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400 mb-3 md:mb-0 ">About</a>
+          <a href="#"
+            class="md:ml-5 text-white border-b-4 border-emerald-400 ease-in-out duration-300 hover:border-rose-400 hover:text-rose-400">Quick
+            help</a>
+        </nav>
+
+        <footer class="leftFooter px-3 md:px-0">
+          <p class="text-emerald-400 text-[10px]">Copyright @ 2023</p>
+        </footer>
+
       </div>
 
-    </nav>
+      <!-- Right Section  -->
+      <div
+        class="divRight w-1/2 h-full py-10 md:px-20 px-5 bg-[#010714] flex flex-col justify-between items-end text-xs uppercase tracking-widest font-semibold">
 
-    <!-- Footer (Relative) -->
-    <footer
-            class="footer z-10 flex px-20 h-32 items-center justify-between uppercase text-[10px] tracking-widest">
-      <p class="text-emerald-400">Copyright @ 2023</p>
-      <p class="text-white flex items-center">
-        <span>Made with</span>
-        <span class="text-rose-400 text-3xl ml-2 mt-1">&#10084;</span>
-      </p>
-    </footer>
+        <nav class=" rightNav flex flex-col items-end md:block md:py-0 md:px-0">
+          <a href="#"
+            class="text-white md:mr-5 border-b-4 border-rose-400 ease-in-out duration-300 mb-3 md:mb-0 hover:text-rose-400">Register</a>
+          <a href="#" class="text-white ease-in-out duration-300 hover:text-rose-400">FAQs</a>
+        </nav>
 
-  </div>
-  <script src="./scripts/index.js"></script>
-</body>
+        <div
+          class="md:w-2/3 md:relative fixed top-1/2 md:top-0 -translate-y-1/2 md:translate-y-0 left-1/2 md:left-0 -translate-x-1/2 md:translate-x-0 w-full px-20 md:px-0">
+          <form action="#" class="w-full flex flex-col ">
+            <input type="text" name="" id=""
+              class="loginEmail bg-white my-3 py-4 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
+              placeholder="Email" autofocus autocomplete="off" />
+            <input type="password" name="" id=""
+              class="loginPassword bg-white my-3 py-4 pl-2 rounded-md placeholder:text-gray-300 focus:outline-none border-none font-semibold placeholder:uppercase tracking-widest text-xs"
+              placeholder="Password" />
+            <a href="./src/home.html"
+              class="loginBtn rounded-md my-3 py-4 uppercase font-semibold tracking-widest text-xs text-center bg-transparent border border-rose-400 text-white ease-in-out duration-300 hover:bg-rose-400">Login</a>
+          </form>
+          <div class="text-right mt-1">
+            <a href="#"
+              class="text-white uppercase text-[10px] tracking-widest font-semibold pb-1 border-b border-white hover:border-rose-400 ease-in-out duration-300 hover:text-rose-400">forgot
+              password?</a>
+          </div>
+        </div>
+
+        <footer class="rightFooter text-white tracking-normal text-[10px] px-3 md:px-0">
+          <!-- <span>Made with</span> -->
+          <span class="text-rose-400 text-lg ml-2 pt-28">&#10084;</span>
+        </footer>
+
+      </div>
+
+    </div>
+    <script src="./scripts/index.js"></script>
+  </body>
 
 </html>
