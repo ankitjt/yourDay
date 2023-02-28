@@ -13,6 +13,7 @@ filterFindBtn.onclick = () =>
   else
   {
     scheduleTableRows.innerHTML = `${ loadingAnimation }`
+    scheduleGalleryView.innerHTML = `${ loadingAnimation }`
 
     let monthYear = scheduleFilterMonth.value
     let monthYearArr = monthYear.split( '-' )
@@ -99,13 +100,68 @@ filterFindBtn.onclick = () =>
                   </tr>
 
                 `
+          mobileView += `
+                  <div
+                   class="1 px-3 py-5  rounded-2xl  border-l-8 border ${ eachData.type === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ eachData.type === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ eachData.type === "New" ? 'text-rose-700' : '' } mb-5 text-[10px] font-semibold uppercase tracking-widest" 
+             >
+               <div class="details flex flex-col">
+                 <div
+                   class="timeAndDate flex justify-between items-center font-black"
+                 >
+                   <span class="time flex items-center justify-between">
+                     <svg
+                       xmlns="http://www.w3.org/2000/svg"
+                       class="h-5 w-5 mr-1"
+                       fill="none"
+                       viewBox="0 0 24 24"
+                       stroke="currentColor"
+                       stroke-width="2"
+                     >
+                       <path
+                         stroke-linecap="round"
+                         stroke-linejoin="round"
+                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                       />
+                     </svg>
+                     <span class="clockDetails">
+                       ${ eachData.timeSlot }
+                     </span>
+                   </span>
+                   <div class='flex flex-col justify-between font-semibold'>
+                    <span class="date"> ${ eachData.day }, ${ eachData.date }-${ eachData.month }-${ eachData.year } </span>
+                   </div>
+                 </div>
+                 <div class="ptName flex mt-2 items-center justify-between">
+                   <div class="ptName-wrapper flex items-center">
+                     <span class="name mr-2 capitalize"> ${ eachData.name } </span>
+                     <span class="aptDetails flex items-center">
+                       <span
+                         class="aptType  ${ eachData.type === "Session" ? 'bg-emerald-700' : 'bg-blue-700' } text-white px-2 py-1 rounded-full"
+                       >
+                         ${ eachData.type === "Supervision" ? 'Supervision' : 'Session' }
+                       </span>
+                     </span>
+                   </div>
+                    <span class="status ${ eachData.type === "Supervision" ? 'text-blue-600' : 'text-emerald-500' } text-emerald-500"> ${ eachData.status } </span>
+                   </div>
+                 </div>
+               </div>
+             </div>
+         `
           scheduleTableRows.innerHTML = currentMonthAppointments
+          scheduleGalleryView.innerHTML = mobileView
         }
       }
       else
       {
         appointmentCount.innerText = `( ${ dummyData.length } )`
-        scheduleTableRows.innerHTML = `<p class='text-rose-600 font-semibold absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center flex-col'>
+        scheduleTableRows.innerHTML = `<p class='text-rose-600 font-semibold uppercase tracking-widest absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center flex-col'>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
+        </svg>
+        <span>No records found.</span>
+      </p>`
+        scheduleGalleryView.innerHTML = `<p class='text-rose-600 font-semibold uppercase tracking-widest absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center flex-col'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 mb-2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M15.182 16.318A4.486 4.486 0 0012.016 15a4.486 4.486 0 00-3.198 1.318M21 12a9 9 0 11-18 0 9 9 0 0118 0zM9.75 9.75c0 .414-.168.75-.375.75S9 10.164 9 9.75 9.168 9 9.375 9s.375.336.375.75zm-.375 0h.008v.015h-.008V9.75zm5.625 0c0 .414-.168.75-.375.75s-.375-.336-.375-.75.168-.75.375-.75.375.336.375.75zm-.375 0h.008v.015h-.008V9.75z" />
         </svg>

@@ -1,7 +1,6 @@
 const updateAppointmentStatus = () =>
 {
   let aptActions = document.querySelectorAll( '.aptActions' )
-  let body = document.getElementsByTagName( 'body' )[ 0 ]
   for ( let i = 0; i < aptActions.length; i++ )
   {
     aptActions[ i ].onchange = () =>
@@ -76,12 +75,12 @@ const updateAppointmentStatus = () =>
         }
         else if ( aptActions[ i ].value === 'Update' )
         {
-          if ( body.offsetWidth < 1023 )
+          if ( pageBody.offsetWidth < 1023 )
           {
             alert( 'Please view page on a bigger screen as update window will not be visible.' )
             aptActions[ i ].selectedIndex = 0
           }
-          pb.classList.remove( 'lg:left-10' )
+          panicButton.classList.remove( 'lg:left-10' )
           let updateAppointments = document.querySelector( '.updateAppointments' )
           updateAppointments.style.transition = '0.5s ease-in-out'
           updateAppointments.style.left = 0

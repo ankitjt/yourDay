@@ -16,9 +16,9 @@ setTimeout( () =>
 
         mobileView += `
                   <div
-                   class="1 px-3 py-5  rounded-2xl  border-l-8 border ${ eachRecord.type === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ eachRecord.type === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ eachRecord.type === "New" ? 'text-rose-700' : '' } mb-5" text-xs
+                   class="1 px-3 py-5  rounded-2xl  border-l-8 border ${ eachRecord.type === "Session" ? 'border-emerald-600' : 'border-blue-600' } ${ eachRecord.type === "Session" ? 'text-emerald-700' : 'text-blue-700' } ${ eachRecord.type === "New" ? 'text-rose-700' : '' } mb-5 text-[10px] font-semibold uppercase tracking-widest" 
              >
-               <div class="details flex flex-col text-xs">
+               <div class="details flex flex-col">
                  <div
                    class="timeAndDate flex justify-between items-center font-black"
                  >
@@ -41,22 +41,22 @@ setTimeout( () =>
                        ${ eachRecord.timeSlot }
                      </span>
                    </span>
-                   <div class='flex flex-col justify-between'>
-                    <span class="date text-xs"> ${ eachRecord.day }, ${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
+                   <div class='flex flex-col justify-between font-semibold'>
+                    <span class="date"> ${ eachRecord.day }, ${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year } </span>
                    </div>
                  </div>
                  <div class="ptName flex mt-2 items-center justify-between">
                    <div class="ptName-wrapper flex items-center">
-                     <span class="name font-normal mr-2 capitalize"> ${ eachRecord.name } </span>
+                     <span class="name mr-2 capitalize"> ${ eachRecord.name } </span>
                      <span class="aptDetails flex items-center">
                        <span
-                         class="aptType text-xs ${ eachRecord.type === "Session" ? 'bg-emerald-700' : 'bg-blue-700' } font-normal text-white px-2 py-1 rounded-full"
+                         class="aptType  ${ eachRecord.type === "Session" ? 'bg-emerald-700' : 'bg-blue-700' } text-white px-2 py-1 rounded-full"
                        >
                          ${ eachRecord.type === "Supervision" ? 'Supervision' : 'Session' }
                        </span>
                      </span>
                    </div>
-                    <span class="status text-red-500 font-normal"> ${ eachRecord.status } </span>
+                    <span class="status ${ eachRecord.type === "Supervision" ? 'text-blue-600' : 'text-emerald-500' } text-emerald-500"> ${ eachRecord.status } </span>
                    </div>
                  </div>
                </div>
@@ -70,7 +70,7 @@ setTimeout( () =>
         currentMonthAppointments += `
                  
                     <tr
-                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-xs border-b border-gray-300 uppercase"
+                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase align-middle"
                       data-id="${ eachRecord.id }">
 
                        <!-- Name & Email -->
@@ -99,7 +99,7 @@ setTimeout( () =>
                       </td>
 
                       <!-- Mode  -->
-                      <td title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }' class="px-6 py-3 text-center">
+                      <td title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }' class="px-6 py-3">
                         <img src='../assets/sofa.svg' class='h-5 w-5  ${ eachRecord.mode === 'Offline' ? 'block' : 'hidden' }' />
                         <img src='../assets/laptop.svg' class='h-5 w-5  ${ eachRecord.mode === 'Online' ? 'block' : 'hidden' }' />
                       </td>
@@ -122,9 +122,9 @@ setTimeout( () =>
                     </td>
 
                     <!-- Action  -->
-                    <td class="flex justify-center px-6 py-3">
+                    <td class="px-6 py-3">
                       <select
-                        class="block w-full text-xs text-blue-500 border border-gray-300 rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
+                        class="w-full text-[10px] py-1 text-blue-500 border border-gray-300 uppercase tracking-widest rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
                         <option selected>Select</option>
                         <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
                         <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>
