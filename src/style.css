@@ -73,3 +73,7 @@ input[data-autocompleted] {
 .promptsWrapper> :first-child {
     margin-top: auto !important;
 }
+
+.forSpacing {
+    margin: 5px 0;
+}

@@ -17,40 +17,31 @@
     <div class="p-6 newThings ">
       <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
 
-      <div class="wrapper flex flex-col bg-gray-100 w-full">
-        <div class="row1 bg-emerald-100 flex justify-between text-center items-center py-6">
-          <div class="profileName flex flex-col w-1/3">
-            <span class="nameTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Name</span>
-            <span class="name text-blue-600">${ finance_profile.name }</span>
+      <div class="graphs shadow-2xl p-8 h-auto w-3/4 rounded-md">
+        <h1 class="mb-5 w-full text-center text-blue-500 font-semibold tracking-widest font-xs">GRAPHS</h1>
+
+        <div class="wrapper relative  flex flex-col items-end justify-center">
+
+          <div class="holder flex justify-between w-full text-center items-end h-auto mb-2">
+            <span class="w-28 h-full text-center flex justify-center items-end graph_pending"></span>
+            <span class="w-28 h-full text-center flex justify-center items-end graph_completed"></span>
+            <span class="w-28 h-full text-center flex justify-center items-end graph_freeCancel"></span>
+            <span class="w-28 h-full text-center flex justify-center items-end graph_paidCancel"></span>
+            <span class="w-28 h-full text-center flex justify-center items-end graph_reScheduled"></span>
           </div>
-          <div class="profileEmail flex flex-col w-1/3">
-            <span class="emailTag text-gray-400 font-semibold uppercase tracking-widest text-[10px] ">Email</span>
-            <span class="email text-blue-600">${ finance_profile.email }</span>
+          <div class="type flex justify-between w-full text-center items-center">
+            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Pending</span>
+            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Completed</span>
+            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Free
+              Cancelled</span>
+            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Paid
+              Cancelled</span>
+            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Re-scheduled</span>
           </div>
-          <div class="profileAddress flex flex-col w-1/3">
-            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Address</span>
-            <span class="address text-blue-600">${ finance_profile.address }</span>
-          </div>
+          <div class="holder"></div>
         </div>
-        <div class="row2 bg-blue-100 flex justify-between text-center items-center py-6">
-          <div class="profileMobileNumber flex flex-col w-1/3">
-            <span class="mobileTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mobile</span>
-            <span class="mobileNumber text-blue-600">${ finance_profile.countryCode }-${ finance_profile.mobileNumber
-              }</span>
-          </div>
-          <div class="profileAddress flex flex-col w-1/3">
-            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Mode</span>
-            <span class="address text-blue-600">${ finance_profile.mode }</span>
-          </div>
-          <div class="profileAddress flex flex-col w-1/3">
-            <span class="AddressTag text-gray-400 font-semibold uppercase tracking-widest text-[10px]">Second
-              slot</span>
-            <span class="secondSlot text-blue-600">${ finance_profile.secondTimeSlot }</span>
-          </div>
-        </div>
+
       </div>
-
-
     </div>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
