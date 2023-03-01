@@ -1,53 +1,62 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>yourDay - Notes</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>yourDay - Notes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body>
-    <div class="p-6 newThings ">
-      <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
+<body>
+  <div class="p-6 newThings w-full ">
+    <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
 
-      <div class="graphs shadow-2xl p-8 h-auto w-3/4 rounded-md">
-        <h1 class="mb-5 w-full text-center text-blue-500 font-semibold tracking-widest font-xs">GRAPHS</h1>
+    <button
+            class="mt-10 bg-emerald-600 px-3 py-2 text-white uppercase text-xs tracking-widest ease-in-out relative duration-300 rounded-md
+            ">
+      <span
+            class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:-top-2 hover:after:left-0 hover:after:rounded-md ">
 
-        <div class="wrapper relative  flex flex-col items-end justify-center">
+        <span
+              class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-1 hover:after:h-full hover:after:border-2 hover:after:border-emerald-600 hover:after:-left-2 hover:after:bottom-0 hover:after:rounded-md">
 
-          <div class="holder flex justify-between w-full text-center items-end h-auto mb-2">
-            <span class="w-28 h-full text-center flex justify-center items-end graph_pending"></span>
-            <span class="w-28 h-full text-center flex justify-center items-end graph_completed"></span>
-            <span class="w-28 h-full text-center flex justify-center items-end graph_freeCancel"></span>
-            <span class="w-28 h-full text-center flex justify-center items-end graph_paidCancel"></span>
-            <span class="w-28 h-full text-center flex justify-center items-end graph_reScheduled"></span>
-          </div>
-          <div class="type flex justify-between w-full text-center items-center">
-            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Pending</span>
-            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Completed</span>
-            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Free
-              Cancelled</span>
-            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Paid
-              Cancelled</span>
-            <span class="uppercase text-blue-500 w-28 text-[9px] tracking-widest font-semibold">Re-scheduled</span>
-          </div>
-          <div class="holder"></div>
-        </div>
+          <span
+                class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-1 hover:after:h-full hover:after:border-2 hover:after:border-emerald-600 hover:after:-right-2 hover:after:bottom-0 hover:after:rounded-md">
 
-      </div>
+            <span
+                  class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:-bottom-2 hover:after:left-0 hover:after:rounded-md">
+              Testing
+            </span>
+          </span>
+        </span>
+      </span>
+    </button>
+
+    <div class="w-full text-center">
+      <button
+              class="mt-10 bg-emerald-600 px-3 py-2 text-white uppercase text-xs tracking-widest ease-in-out relative duration-300 rounded-md hover:bg-white hover:text-emerald-600 hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:bottom-0 hover:after:left-0 hover:after:rounded-md
+                  ">
+
+        Testing
+
+
+      </button>
+
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/newThings.js"></script>
-  </body>
+
+
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="../scripts/newThings.js"></script>
+</body>
 
 </html>

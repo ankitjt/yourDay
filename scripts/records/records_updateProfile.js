@@ -2,8 +2,7 @@
 const updateProfile = () =>
 {
 
-  let updateProfileLink = document.querySelectorAll( ".updateProfileLink" ),
-    panicButton123 = document.querySelector( '.pb' ),
+  let panicButtonRecords = document.querySelector( '.pb' ),
     updateName = document.querySelector( ".updateName" ),
     updateEmail = document.querySelector( ".updateEmail" ),
     updateMobileNumber = document.querySelector( ".updateMobileNumber" ),
@@ -30,7 +29,7 @@ const updateProfile = () =>
     {
       updateProfileWrapper.classList.add( '-left-[2000px]' )
       updateProfileWrapper.classList.remove( 'left-0' )
-      panicButton123.classList.add( 'lg:left-6' )
+      panicButtonRecords.classList.add( 'lg:left-6' )
       let rowID = row.getAttribute( 'data-id' )
       for ( let updateProfile of profileDetails )
       {
@@ -63,7 +62,8 @@ const updateProfile = () =>
               <div class="my-2 appointmentsWrapper">
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Appointment</h1>
                 <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 appointmentDetails">
-                  <div class="fieldWrapper">
+                  
+                <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
                     <div class="mt-1">${ updateProfile.type }</div>
                   </div>
@@ -149,7 +149,7 @@ const updateProfile = () =>
           profileEmail = profile.email
           profileFees = parseInt( profile.fees )
 
-          if ( body.offsetWidth < 1024 )
+          if ( pageBody.offsetWidth < 1024 )
           {
             alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
           }
@@ -157,7 +157,7 @@ const updateProfile = () =>
           {
             updateProfileWrapper.classList.remove( '-left-[2000px]' )
             updateProfileWrapper.classList.add( 'left-0' )
-            panicButton123.classList.remove( 'lg:left-6' )
+            panicButtonRecords.classList.remove( 'lg:left-10' )
 
             updateName.value = ''
             updateEmail.value = ''
@@ -180,7 +180,7 @@ const updateProfile = () =>
             updateAddress.value = profile.address
             updateType.value = profile.type
             updateMode.value = profile.mode
-            updateCountPerWeek.value = profile.countPerWeek
+            updateCountPerWeek.value = profile.visitPerWeek
             updateTimeSlot.value = profile.timeSlot
             updateDay.value = profile.day
             updateFees.value = profile.fees
@@ -194,68 +194,6 @@ const updateProfile = () =>
     }
 
   }
-
-  // setTimeout( () =>
-  // {
-  //   for ( let updateLink of updateProfileLink )
-  //   {
-  //     updateLink.onclick = () =>
-  //     {
-  //       let targetE = updateLink.parentElement.parentElement.getAttribute( 'data-id' )
-  //       for ( let profile of profileDetails )
-  //       {
-  //         if ( targetE === profile.id )
-  //         {
-  //           profileID = profile.id
-  //           profileEmail = profile.email
-  //           profileFees = parseInt( profile.fees )
-  //           if ( body.offsetWidth < 1024 )
-  //           {
-  //             updateProfileWrapper.classList.add( '-left-[2000px]' )
-  //             updateProfileWrapper.classList.remove( 'left-0' )
-  //             alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
-  //           }
-  //           else
-  //           {
-  //             updateProfileWrapper.classList.remove( '-left-[2000px]' )
-  //             updateProfileWrapper.classList.add( 'left-0' )
-  //             pb.classList.remove( 'lg:left-6' )
-
-  //             updateName.value = ''
-  //             updateEmail.value = ''
-  //             updateAddress.value = ''
-  //             updateType.value = ''
-  //             updateCountPerWeek.value = ''
-  //             updateTimeSlot.selectedIndex = 0
-  //             updateMode.selectedIndex = 0
-  //             updateDay.selectedIndex = 0
-  //             updateFees.value = ''
-  //             updateMobileNumber.value = ''
-  //             update_emergency_name.value = ''
-  //             update_emergency_mobileNumber.value = ''
-  //             update_emergency_address.value = ''
-  //             update_patientRelation.selectedIndex = 0
-
-  //             updateName.value = profile.name
-  //             updateMobileNumber.value = parseInt( profile.mobileNumber )
-  //             updateEmail.value = profile.email
-  //             updateAddress.value = profile.address
-  //             updateType.value = profile.type
-  //             updateMode.value = profile.mode
-  //             updateCountPerWeek.value = profile.countPerWeek
-  //             updateTimeSlot.value = profile.timeSlot
-  //             updateDay.value = profile.day
-  //             updateFees.value = profile.fees
-  //             update_emergency_name.value = profile.emergency_name
-  //             update_emergency_mobileNumber.value = parseInt( profile.emergency_mobileNumber )
-  //             update_emergency_address.value = profile.emergency_address
-  //             update_patientRelation.value = profile.patientRelation
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // }, 2000 )
 
 
   // Updating user profile.
