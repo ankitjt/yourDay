@@ -22,7 +22,7 @@ const showBreakDownOfAppointments = () =>
 
   moneyScheduledWrapper.onclick = () =>
   {
-    if ( body.offsetWidth < 1024 )
+    if ( pageBody.offsetWidth < 1024 )
     {
       alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
     }

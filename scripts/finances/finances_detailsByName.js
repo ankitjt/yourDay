@@ -97,5 +97,5 @@ clearScreen.onclick = () =>
   financeMonthFilterByName.value = ''
   sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
   sessionsBreakDownWrapper.classList.remove( 'left-0' )
-  pb.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
+  panicButton124.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
 }

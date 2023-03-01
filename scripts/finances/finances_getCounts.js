@@ -43,29 +43,29 @@ const getCounts = () =>
           `           
                            <h1 class="py-4 pb-1 text-[11px] tracking-widest font-semibold text-slate-500 uppercase border-b">Month's Record</h1> 
                           <div title='Click to view breakdown'
-                          class="moneyScheduledWrapper mt-5 flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">
+                          class="moneyScheduledWrapper mt-5 flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Scheduled</span>
                             <span class="moneyScheduled ${ scheduled.length === 0 ? 0 : "underline" } cursor-pointer">${ scheduled.length }</span>
                           </div> 
                           <div title='Click to view breakdown'
-                          class="moneyPendingWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">
+                          class="moneyPendingWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Pending</span>
                             <span class="moneyPending ${ pending.length === 0 ? 0 : "underline" } cursor-pointer">${ pending.length }</span>
                           </div> 
                           <div title='Click to view breakdown'
-                          class="moneyCompletedWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">
+                          class="moneyCompletedWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Completed</span>
                             <span class="moneyCompleted tracking-widest ${ completed.length === 0 ? 0 : "underline" }  cursor-pointer">
                             ${ completed.length }</span>
                           </div>
                           <div title='Click to view breakdown'
-                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">
+                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Paid Cancelled</span>
                             <span class="moneyPaidCancelled tracking-widest ${ paidCompleted.length === 0 ? 0 : "underline" } cursor-pointer">
                             ${ paidCompleted.length }</span>
                           </div>
                           <div title='Click to view breakdown'
-                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 bg-gray-100 text-blue-600 font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:bg-blue-500 hover:text-white cursor-pointer">
+                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
                             <span class='uppercase text-xs tracking-widest'>Free Cancelled</span>
                             <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : "underline" } cursor-pointer">
                             ${ freeCancelled.length }</span>
