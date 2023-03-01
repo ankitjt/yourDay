@@ -15,9 +15,11 @@ let patientEmail = [];
         if ( doc.data().softDelete !== true )
         {
           let listOfNames = `
-        <option title='${ doc.data().name.at( -1 ) + ' , ' + doc.data().email.at( -1 ) }' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) } class='font-semibold refreshList text-blue-500' >
+        <br />  
+        <option title='${ doc.data().name.at( -1 ) + ' , ' + doc.data().email.at( -1 ) }' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) } class='font-semibold refreshList text-blue-500 ' >
         ${ doc.data().name.at( -1 ) } [ ${ doc.data().email.at( -1 ) } ] ( ${ doc.data().type === 'Session' ? 'Session' : 'Supervision' } )
-        </option>
+        </option>;
+        <br />
         `
           patientNamesList.innerHTML += listOfNames
           patientEmail.push( doc.data().email.at( -1 ) )
