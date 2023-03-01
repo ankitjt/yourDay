@@ -3,7 +3,7 @@ const updateProfile = () =>
 {
 
   let updateProfileLink = document.querySelectorAll( ".updateProfileLink" ),
-
+    panicButton123 = document.querySelector( '.pb' ),
     updateName = document.querySelector( ".updateName" ),
     updateEmail = document.querySelector( ".updateEmail" ),
     updateMobileNumber = document.querySelector( ".updateMobileNumber" ),
@@ -30,7 +30,7 @@ const updateProfile = () =>
     {
       updateProfileWrapper.classList.add( '-left-[2000px]' )
       updateProfileWrapper.classList.remove( 'left-0' )
-      pb.classList.add( 'lg:left-6' )
+      panicButton123.classList.add( 'lg:left-6' )
       let rowID = row.getAttribute( 'data-id' )
       for ( let updateProfile of profileDetails )
       {
@@ -41,7 +41,7 @@ const updateProfile = () =>
             `
             <div class="my-2 personalWrapper">
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Personal</h1>
-                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 personalDetails">
+                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 personalDetails">
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.name }</div>
@@ -62,7 +62,7 @@ const updateProfile = () =>
               </div>
               <div class="my-2 appointmentsWrapper">
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Appointment</h1>
-                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 appointmentDetails">
+                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 appointmentDetails">
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
                     <div class="mt-1">${ updateProfile.type }</div>
@@ -107,7 +107,7 @@ const updateProfile = () =>
               </div>
               <div class="my-2 emergencyWrapper">
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Emergency Contact</h1>
-                <div class="grid grid-cols-4 my-2 font-semibold gap-x-5 gap-y-3 emergency ">
+                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 emergency ">
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.emergency_name }</div>
@@ -157,7 +157,7 @@ const updateProfile = () =>
           {
             updateProfileWrapper.classList.remove( '-left-[2000px]' )
             updateProfileWrapper.classList.add( 'left-0' )
-            pb.classList.remove( 'lg:left-6' )
+            panicButton123.classList.remove( 'lg:left-6' )
 
             updateName.value = ''
             updateEmail.value = ''

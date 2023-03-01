@@ -22,7 +22,7 @@ setTimeout( () =>
 
     profileRowData += `
                     <tr title='Click to view details' 
-                    class="cursor-pointer patientRow tracking-widest font-semibold ease-in-out text-gray-700 bg-white transition:300 hover:bg-gray-300 text-[10px] border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
+                    class="cursor-pointer patientRow tracking-widest font-semibold ease-in-out md:text-gray-700 text-gray-300 bg-gray-900 md:bg-white transition:300 hover:md:bg-blue-100 hover:bg-gray-700 text-[10px] border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
 
                     <td class="px-6 py-3 whitespace-nowrap w-fit">
                       <span class="block name">${ filterData.name }</span>
@@ -79,9 +79,9 @@ const filterProfile = () =>
     {
       supervisionRow.classList.add( 'hidden' )
     }
-    session.classList.add( 'bg-rose-600', 'text-white' )
-    session.classList.remove( 'bg-blue-100', 'text-blue-600' )
-    supervision.classList.remove( 'bg-rose-600', 'text-white' )
+    session.classList.add( 'md:bg-rose-400', 'text-white' )
+    session.classList.remove( 'bg-blue-100', 'text-blue-600', 'hover:bg-rose-400' )
+    supervision.classList.remove( 'md:bg-rose-400', 'text-white' )
     supervision.classList.add( 'bg-emerald-100', 'text-emerald-600' )
   }
 
@@ -96,10 +96,10 @@ const filterProfile = () =>
     {
       supervisionRow.classList.remove( 'hidden' )
     }
-    supervision.classList.add( 'bg-rose-600', 'text-white' )
+    supervision.classList.add( 'md:bg-rose-400', 'text-white' )
     supervision.classList.remove( 'bg-emerald-100', 'text-emerald-600' )
-    session.classList.add( 'bg-blue-100', 'text-blue-600' )
-    session.classList.remove( 'bg-rose-600', 'text-white' )
+    session.classList.add( 'bg-blue-100', 'text-blue-600', 'hover:bg-rose-400' )
+    session.classList.remove( 'md:bg-rose-400', 'text-white' )
   }
 
   let clearFilters = document.querySelector( ".clearFilters" )
@@ -114,10 +114,10 @@ const filterProfile = () =>
     {
       supervisionRow.classList.remove( 'hidden' )
     }
-    session.classList.remove( 'bg-rose-600', 'text-white' )
-    session.classList.add( 'bg-blue-100', 'text-blue-600' )
+    session.classList.remove( 'md:bg-rose-400', 'text-white' )
+    session.classList.add( 'bg-blue-100', 'text-blue-600', 'hover:bg-rose-400' )
     supervision.classList.add( 'bg-emerald-100', 'text-emerald-600' )
-    supervision.classList.remove( 'bg-rose-600', 'text-white' )
+    supervision.classList.remove( 'md:bg-rose-400', 'text-white' )
   }
 }
 
