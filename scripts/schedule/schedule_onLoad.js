@@ -69,20 +69,20 @@ setTimeout( () =>
         currentMonthAppointments += `
                  
                     <tr
-                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-300 uppercase align-middle"
+                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-100 uppercase align-middle px-5"
                       data-id="${ eachRecord.id }">
 
                        <!-- Name & Email -->
                       <td class="px-6 py-2 w-16 h-auto">
                         <span class='scheduleName'>${ eachRecord.name } </span>
                         <span class='scheduleEmail block text-[10px] font-semibold lowercase'>${ eachRecord.email } </span>
-                        <span class='showUpdate ${ eachRecord.showUpdate === "update" ? 'block' : 'hidden' } bg-rose-500
-                          px-2 py-1 mt-1 text-white font-normal rounded-md uppercase text-[10px] cursor-pointer'>
+                        <span class='showUpdate ${ eachRecord.showUpdate === "update" ? 'block' : 'hidden' } bg-rose-400
+                          px-2 py-2 tracking-widest text-center mt-1 text-white font-semibold rounded-md uppercase text-[10px] cursor-pointer'>
                           ${ eachRecord.showUpdate } </span>
                       </td>
 
                       <!-- Time  -->
-                      <td class="px-6 py-2 w-28">${ eachRecord.timeSlot }</td>
+                      <td class="px-6 py-2">${ eachRecord.timeSlot }</td>
 
                       <!-- Date  -->
                       <td class="px-6 py-2 w-fit">
@@ -121,9 +121,9 @@ setTimeout( () =>
                     </td>
 
                     <!-- Action  -->
-                    <td class="px-6 py-2">
+                    <td class="px-6 py-2 w-fit">
                       <select
-                        class="w-full text-[10px] py-1 text-blue-500 border border-gray-300 uppercase tracking-widest rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
+                        class="w-fit text-[10px] py-1 text-blue-500 border border-gray-300 uppercase tracking-widest rounded-lg aptActions focus:ring-blue-500 focus:border-blue-500">
                         <option selected>Select</option>
                         <option value="Completed" class='font-semibold text-gray-900'>Completed</option>
                         <option value="Free Cancelled" class='font-semibold text-gray-900'>Free Cancelled</option>

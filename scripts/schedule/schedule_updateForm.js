@@ -1,33 +1,41 @@
 const updateForm = ( doc ) =>
 {
     let updateAppointmentsSection = document.querySelector( '.updateAppointmentsSection' )
-
+    let defaultDateValue = `${ doc.data().year.at( -1 ) }-${ doc.data().month.at( -1 ) }-${ doc.data().date.at( -1 ) }`
+    console.log( typeof ( defaultDateValue ), defaultDateValue );
     let updateForm = /*html*/`
                         <div class="updateFormWrapper grid grid-cols-1">
 
                             <div class="nameUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Name: </span>
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase">Name: </span>
                             <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled
-                            value="${ doc.data().aptName}" 
-                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-sm text-blue-600 py-2 lg:drop-shadow-none drop-shadow-2xl font-semibold" />
+                            value="${ doc.data().name }" 
+                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-xs text-blue-500 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold" />
                             </div>
 
                             <div class="emailUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Email: </span>
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase">Email: </span>
                             <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled
-                            value="${ doc.data().aptEmail}" 
-                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-sm text-blue-600 py-2 lg:drop-shadow-none drop-shadow-2xl font-semibold">
+                            value="${ doc.data().email }" 
+                            class="border border-gray-200 bg-gray-200 rounded-lg w-full text-xs text-blue-500 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold">
+                            </div>
+
+                            <div class="dateUpdate my-3">
+
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase">Date: </span>
+                            <input type="date" name="dateUpdateCell" id="dateUpdateCell" value="${ new Date( defaultDateValue ) }" 
+                            class="border border-gray-200 bg-white rounded-lg w-full text-xs text-blue-500 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold">
                             </div>
 
                             <div class="dayUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Day:</span>
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase">Day:</span>
                             <select name="aptDay" id="aptDay"
-                            class="dayUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-semibold lg:placeholder:text-sm py-2 aptDay lg:drop-shadow-none drop-shadow-2xl text-sm text-blue-600">
-                                <option value="${ doc.data().aptDay }" class="font-semibold">
-                                ${ doc.data().aptDay }
+                            class="dayUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-500 tracking-widest font-semibold lg:placeholder:text-xs py-4 aptDay lg:drop-shadow-none drop-shadow-2xl text-xs text-blue-500 tracking-widest">
+                                <option value="${ doc.data().day }" class="font-semibold">
+                                ${ doc.data().day }
                                 </option>
                                 <option value="Monday" class="font-semibold">
                                 Monday
@@ -55,11 +63,11 @@ const updateForm = ( doc ) =>
 
                             <div class="timeSlotUpdate my-3">
 
-                            <span class="mb-3 px-1 text-xs font-medium text-gray-400"> Time Slot: </span>
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase"> Time Slot: </span>
                             <select name="aptTimeSlot" id="aptTimeSlot"
-                                class="timeSlotUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-600 font-semibold lg:placeholder:text-sm py-2 aptTimeSlot text-sm text-blue-600">
-                                <option value="${ doc.data().aptTimeSlot}" class="font-semibold">
-                                ${ doc.data().aptTimeSlot }
+                                class="timeSlotUpdateHolder border-gray-300 border rounded-lg w-full placeholder:text-blue-500 tracking-widest font-semibold lg:placeholder:text-xs py-4 aptTimeSlot text-xs text-blue-500 tracking-widest">
+                                <option value="${ doc.data().timeSlot }" class="font-semibold">
+                                ${ doc.data().timeSlot }
                                 </option>
                                 <option value="09:00 - 10:00" class="font-semibold">
                                 09:00 - 10:00
@@ -93,8 +101,8 @@ const updateForm = ( doc ) =>
                             </div>
 
                             <div class="reasonToUpdate my-3">
-                            <span class="mb-3 px-1 text-xs font-medium text-gray-400">Reason to Update:</span>
-                            <textarea type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-blue-600 lg:placeholder:text-sm placeholder:font-semibold font-semibold py-2 text-sm text-blue-600"></textarea>
+                            <span class="mb-3 px-1 text-xs font-semibold text-gray-400 uppercase">Reason to Update:</span>
+                            <textarea type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell" class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-blue-500 tracking-widest lg:placeholder:text-xs placeholder:font-semibold font-semibold py-4 text-xs text-blue-500 tracking-widest"></textarea>
                             </div>
                             
                         </div>
