@@ -10,6 +10,7 @@ let leftNav = document.querySelector( ".leftNav" )
 let rightNavFAQ = document.querySelector( ".rightNavFAQ" )
 
 
+
 lightMode.onclick = () =>
 {
   divLeft.classList.remove( "md:bg-[url('./assets/Rectangle5White.png')]" )
@@ -31,7 +32,6 @@ lightMode.onclick = () =>
   loginEmailLabel.classList.add( 'text-gray-300' )
   loginPasswordLabel.classList.add( 'text-gray-300' )
   loginPasswordLabel.classList.remove( 'text-gray-900' )
-
 
 }
 
