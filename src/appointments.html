@@ -252,7 +252,7 @@
         </sections>
 
         <!-- Create Appointment Form -->
-        <div class="h-full py-1 pb-10 mt-5 border-b-2 border-gray-300 createAptForm md:h-5/6" autocomplete="nope ">
+        <div class="h-full pb-10 mt-5 border-b-2 border-gray-300 createAptForm md:h-5/6" autocomplete="nope ">
 
           <!-- Form Fields  -->
           <div class="h-full pb-10 pr-5 overflow-x-hidden overflow-y-auto formFields">
@@ -271,14 +271,14 @@
                 <div class="mb-3">
 
                   <input id="patientCategory" type="text" placeholder="New" value="" title="Patient Category"
-                    class="aptCategory w-full py-4 text-xs font-semibold uppercase text-white bg-gray-200 border-none rounded-md  placeholder:text-blue-600 md:drop-shadow-none tracking-wider"
+                    class="aptCategory w-full my-3 h-14 text-xs font-semibold uppercase text-white bg-gray-200 border-none rounded-md  placeholder:text-blue-600 md:drop-shadow-none tracking-widest"
                     disabled />
                 </div>
 
                 <!-- Appointment Type  -->
-                <div class="mb-3">
+                <div class="mb-3 relative h-fit">
                   <select name="appointmentType" id="appointmentType" title="Appointment Type"
-                    class="aptType w-full py-4 text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold md:placeholder:text-blue-500 md:drop-shadow-none md:border-gray-300 text-xs md:bg-transparent md:text-blue-500 uppercase tracking-wider ">
+                    class="aptType w-full peer my-3 h-14 rounded-md px-2 text-gray-500 bg-gray-800 border border-blue-500 placeholder-transparent md:border-gray-300 font-semibold tracking-widest uppercase ring-transparent focus:ring-transparent text-xs md:bg-transparent md:text-blue-500">
                     <option value="" class="text-xs md:font-semibold md:text-sm ">
                       Appointment Type
                     </option>
@@ -289,12 +289,15 @@
                       Supervision
                     </option>
                   </select>
+                  <label for="appointmentType"
+                    class="transition-all absolute hidden text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Appointment
+                    Type</label>
                 </div>
 
-                <!-- Appointment Method  -->
-                <div class="mb-3">
-                  <select name="appointmentType" id="appointmentType" title="Appointment Mode"
-                    class="aptNature w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold tracking-wider placeholder:md:text-blue-500 md:drop-shadow-none md:border-gray-300 md:bg-transparent md:text-blue-500 uppercase">
+                <!-- Appointment Mode  -->
+                <div class="mb-3 relative h-fit">
+                  <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
+                    class="aptNature w-full peer my-3 h-14 rounded-md px-2 text-gray-500 bg-gray-800 border border-blue-500 placeholder-transparent md:border-gray-300 font-semibold tracking-widest uppercase ring-transparent focus:ring-transparent text-xs md:bg-transparent md:text-blue-500">
                     <option value="" class="text-xs md:font-semibold md:text-sm">
                       Appointment Mode
                     </option>
@@ -305,6 +308,9 @@
                       Offline
                     </option>
                   </select>
+                  <label for="appointmentMode"
+                    class="transition-all absolute hidden text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Appointment
+                    Mode</label>
                 </div>
               </div>
             </div>
@@ -319,37 +325,48 @@
               <div class="categoryFields md:grid md:grid-cols-3 md:gap-x-5">
 
                 <!-- Full Name  -->
-                <div class="mb-3">
-                  <input type="text" id="patientFullName" placeholder="Full Name" title="Full Name"
-                    aria-autocomplete="none" autocomplete="off"
-                    class="aptName w-full py-4 text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 font-semibold tracking-wider uppercase text-xs md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                <div class="mb-3 relative h-fit">
+                  <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
+                    class="aptName w-full peer my-3 h-14 rounded-md px-2 text-gray-500 bg-gray-800 border border-blue-500 placeholder-transparent md:border-gray-300 font-semibold tracking-widest uppercase ring-transparent focus:ring-transparent text-xs md:bg-transparent md:text-blue-500" />
+                  <label for="patientFullName"
+                    class="transition-all absolute text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2  left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Full
+                    Name</label>
                 </div>
 
                 <!-- Email address  -->
-                <div class="mb-3">
+                <div class="mb-3 relative w-full h-fit">
                   <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
                     id="patientEmail"
-                    class="aptEmail w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md  md:placeholder:text-blue-500 md:border-gray-300 font-semibold tracking-wider lowercase placeholder:uppercase  md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                    class="aptEmail w-full peer my-3 h-14 text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-widest lowercase text-xs md:bg-transparent md:text-blue-500 ring-transparent focus:ring-transparent" />
+                  <label for="patientEmail"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
                 </div>
 
                 <!-- Mobile Number  -->
-                <div class="flex mb-5">
+                <div class="flex mb-5 items-center">
 
                   <select name="countryCode" id=""
-                    class="countryCode pt_countryCode w-20 py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold placeholder:text-blue-500 md:drop-shadow-none md:border-gray-300 md:bg-transparent md:text-blue-500 "
+                    class="countryCode pt_countryCode w-20 my-3 h-14 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold placeholder:text-blue-500 md:drop-shadow-none md:border-gray-300 md:bg-transparent md:text-blue-500 "
                     title="Country Code">
                   </select>
 
-                  <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
-                    name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
-                    class="aptMobileNumber w-full py-4 ml-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 font-semibold tracking-wider  md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <div class="relative w-full h-fit">
+                    <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
+                      name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
+                      class="aptMobileNumber peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                    <label for="mobileNumber"
+                      class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
+                      number</label>
+                  </div>
                 </div>
 
                 <!-- Address  -->
-                <div class="mb-3">
+                <div class="mb-3 h-fit relative">
                   <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
                     id="address" title="Address"
-                    class="aptAddress w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 font-semibold uppercase tracking-wider  md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                    class="aptAddress peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="address"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
                 </div>
               </div>
             </div>
@@ -364,11 +381,14 @@
               <div class="categoryFields md:grid md:grid-cols-3 md:gap-x-5">
 
                 <!-- Start Date  -->
-                <div class="relative mb-3">
+                <div class="relative mb-3 h-fit">
                   <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                     autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
                     onfocusout="(this.type='text')"
-                    class="aptStartDate w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 uppercase font-semibold  md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                    class="aptStartDate peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="aptStartDate"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Appointment
+                    Start Date</label>
                   <p class="hidden py-2 text-xs font-semibold firstStartDateWrapper text-rose-500">
                     First Start Date:
                     <span class="firstStartDate"></span>
@@ -376,9 +396,9 @@
                 </div>
 
                 <!-- Start Day  -->
-                <div class="relative mb-3">
+                <div class="relative mb-3 h-fit">
                   <select name="aptDay" id="aptDay" title="Appointment Start Day"
-                    class="aptDay w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md  md:border-gray-300 font-semibold uppercase tracking-wider md:drop-shadow-none md:bg-transparent md:text-blue-500">
+                    class="aptDay peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase">
                     <option value="" class="text-xs md:font-semibold md:text-xs">
                       Pick a day
                     </option>
@@ -404,15 +424,19 @@
                       Sunday
                     </option>
                   </select>
+                  <label for="aptDay"
+                    class="transition-all absolute hidden text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Start
+                    Day
+                  </label>
                   <p class="hidden py-2 text-xs font-semibold firstDaySlotWrapper text-rose-600">
                     First Day Slot: <span class="firstDaySlot"></span>
                   </p>
                 </div>
 
                 <!-- Time slot -->
-                <div class="relative mb-3">
+                <div class="relative mb-3 h-fit">
                   <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
-                    class="aptTimeSlot w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md  md:border-gray-300 md:drop-shadow-none font-semibold uppercase tracking-wider md:bg-transparent md:text-blue-500">
+                    class="aptTimeSlot peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase">
                     <option value="" class="md:font-semibold">
                       Time slot
                     </option>
@@ -444,23 +468,31 @@
                       17:00 - 18:00
                     </option>
                   </select>
+                  <label for="aptTimeSlot"
+                    class="transition-all absolute hidden text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Time
+                    Slot</label>
                   <p class="hidden py-2 text-xs font-semibold firstTimeSlotWrapper text-rose-600">
                     First Time Slot : <span class="firstTimeSlot"></span>
                   </p>
                 </div>
 
                 <!-- Visit Per Week  -->
-                <div class="mb-3">
+                <div class="mb-3 h-fit relative">
                   <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
                     autocomplete="off" id="occurrenceType" title="Visit per week"
-                    class="aptOccurrenceType w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 font-semibold uppercase tracking-wider  md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                    class="aptOccurrenceType peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="occurrenceType"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
+                    per week</label>
                 </div>
 
                 <!-- Fees  -->
-                <div class="mb-3">
+                <div class="mb-3 h-fit relative">
                   <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
                     autocomplete="off" title="Appointment Fees"
-                    class="aptFees w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:border-gray-300  md:drop-shadow-none  md:bg-transparent md:text-blue-500 font-semibold uppercase tracking-wider md:placeholder:text-blue-500" />
+                    class="aptFees peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="aptFees"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees</label>
                 </div>
               </div>
             </div>
@@ -474,39 +506,52 @@
               <div class="categoryFields md:grid md:grid-cols-3 md:gap-x-5">
 
                 <!-- Emergency Contact Name -->
-                <div class="mb-3">
+                <div class="mb-3 h-fit relative">
                   <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
                     aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                    class="emergencyName w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 md:drop-shadow-none md:bg-transparent md:text-blue-500 font-semibold uppercase tracking-wider" />
+                    class="emergencyName peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="emergencyName"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Emergency
+                    Contact Name</label>
                 </div>
 
                 <!-- Emergency Contact Relation -->
                 <div class="mb-3">
                   <div class="relative">
                     <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                      class="emergencyRelation relationType w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md  md:border-gray-300 font-semibold uppercase tracking-wider md:drop-shadow-none md:bg-transparent md:text-blue-500">
-
+                      class="emergencyRelation relationType peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase">
                     </select>
+                    <label for="emergencyRelation"
+                      class="transition-all absolute hidden text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Emergency
+                      Relation</label>
                   </div>
                 </div>
 
                 <!-- Emergency Contact Number -->
-                <div class="flex mb-3">
+                <div class="flex mb-3 items-center">
                   <select name="countryCode" id=""
-                    class="e_countryCode countryCode w-20 py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold uppercase tracking-wider md:drop-shadow-none md:border-gray-300 md:bg-transparent md:text-blue-500 "
+                    class="e_countryCode countryCode w-20 h-14 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md font-semibold uppercase tracking-wider md:drop-shadow-none md:border-gray-300 md:bg-transparent md:text-blue-500 "
                     title="Country Code">
-
                   </select>
-                  <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
-                    name="mobileNumber" id="mobileNumber" title="Emergency Contact Number"
-                    class="emergencyMobileNumber w-full py-4 ml-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 md:drop-shadow-none md:bg-transparent md:text-blue-500 font-semibold uppercase tracking-wider" />
+
+                  <div class="relative h-fit w-full">
+                    <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
+                      name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
+                      class="emergencyMobileNumber peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                    <label for="e_mobileNumber"
+                      class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Emergency
+                      Mobile Number</label>
+                  </div>
                 </div>
 
                 <!-- Emergency Contact Address -->
-                <div class="mb-3">
+                <div class="mb-3 h-fit relative">
                   <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
                     aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                    class="emergencyAddress w-full py-4 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md md:placeholder:text-blue-500 md:border-gray-300 font-semibold uppercase tracking-wider md:drop-shadow-none md:bg-transparent md:text-blue-500" />
+                    class="emergencyAddress peer w-full my-3 ml-1 h-14 px-2 text-xs text-gray-500 bg-gray-800 border border-blue-500 rounded-md placeholder-transparent md:border-gray-300 font-semibold tracking-wider ring-transparent focus:ring-transparent md:drop-shadow-none md:bg-transparent md:text-blue-500 uppercase" />
+                  <label for="emergencyAddress"
+                    class="transition-all text-blue-500 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-blue-500  peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 absolute left-3.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Emergency
+                    Address</label>
                 </div>
 
                 <!-- Relation Details  -->
