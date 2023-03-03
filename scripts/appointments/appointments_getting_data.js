@@ -13,9 +13,26 @@ emergencyRelation.onchange = () =>
 
 let inputTags = document.querySelectorAll( 'input' )
 let selectTags = document.querySelectorAll( 'select' )
+let typeLabel = document.querySelector( '.typeLabel' )
+
+for ( let showLabel of selectTags )
+{
+    showLabel.onchange = () =>
+    {
+        if ( showLabel.options[ showLabel.selectedIndex ].value === '' )
+        {
+            showLabel.parentElement.childNodes[ 3 ].classList.add( 'hidden' )
+        }
+        else
+        {
+            showLabel.parentElement.childNodes[ 3 ].classList.remove( 'hidden' )
+        }
+    }
+}
 
 apt.create.onclick = () =>
 {
+
     let allFilled = true;
     let p_category = document.querySelector( ".aptCategory" )
     let aptStartDate1 = new Date( apt.startDate.value )
@@ -42,7 +59,6 @@ apt.create.onclick = () =>
 
     if ( allFilled )
     {
-        apt__confirmPage.page.classList.remove( '-left-[2000px]' )
         for ( let input of inputTags )
         {
             input.classList.remove( 'md:border-red-600' )
@@ -62,13 +78,13 @@ apt.create.onclick = () =>
 
     if ( allFilled )
     {
-        apt__confirmPage.page.classList.remove( '-left-[2000px]' )
         for ( let select of selectTags )
         {
             select.classList.remove( 'md:border-red-600' )
         }
     }
 
+    fieldValidators()
 
     apt__confirmPage.name.innerText = aptName.value.trim()
     apt__confirmPage.email.innerText = correctEmail.trim()
@@ -89,7 +105,7 @@ apt.create.onclick = () =>
     apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
     apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
     apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
-    apt__confirmPage.page.classList.add( 'left-0' )
 
-    fieldValidators()
+
+
 }

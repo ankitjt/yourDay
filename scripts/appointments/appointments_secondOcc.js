@@ -13,22 +13,22 @@ const forSecondOccurrenceType = () =>
   aptName.setAttribute( 'disabled', 'true' )
   aptEmail.setAttribute( 'disabled', 'true' )
   aptMobileNumber.setAttribute( 'disabled', 'true' )
-  countryCode.setAttribute( 'disabled', 'true' )
+  apt.pt_countryCode.setAttribute( 'disabled', 'true' )
   emergencyCountryCode.setAttribute( 'disabled', 'true' )
   aptFees.setAttribute( 'disabled', 'true' )
-  aptAddress.setAttribute('disabled', 'true')
+  aptAddress.setAttribute( 'disabled', 'true' )
   aptOccurrenceType.setAttribute( 'disabled', 'true' )
-  emergencyName.setAttribute('disabled', 'true')
-  emergencyRelation.setAttribute('disabled', 'true')
-  emergencyMobileNumber.setAttribute('disabled', 'true')
-  emergencyAddress.setAttribute('disabled', 'true')
+  emergencyName.setAttribute( 'disabled', 'true' )
+  emergencyRelation.setAttribute( 'disabled', 'true' )
+  emergencyMobileNumber.setAttribute( 'disabled', 'true' )
+  emergencyAddress.setAttribute( 'disabled', 'true' )
 
   aptType.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptNature.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptName.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptEmail.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptMobileNumber.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
-  countryCode.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
+  apt.pt_countryCode.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyCountryCode.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptFees.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptAddress.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
@@ -43,7 +43,7 @@ const forSecondOccurrenceType = () =>
   firstTimeSlotWrapper.classList.remove( 'hidden' )
 
   firstStartDate.innerText = aptStartDate.value
-  firstDaySlot.innerText = days[aptDay.value - 1]
+  firstDaySlot.innerText = days[ aptDay.value - 1 ]
   firstTimeSlot.innerText = aptTimeSlot.value
 
   cancelForOccurrence.classList.remove( 'hidden' )
@@ -58,7 +58,7 @@ cancelForOccurrence.onclick = () =>
   aptName.removeAttribute( 'disabled', 'true' )
   aptEmail.removeAttribute( 'disabled', 'true' )
   aptMobileNumber.removeAttribute( 'disabled', 'true' )
-  countryCode.removeAttribute( 'disabled', 'true' )
+  apt.pt_countryCode.removeAttribute( 'disabled', 'true' )
   emergencyCountryCode.removeAttribute( 'disabled', 'true' )
   aptFees.removeAttribute( 'disabled', 'true' )
   aptAddress.removeAttribute( 'disabled', 'true' )
@@ -73,7 +73,7 @@ cancelForOccurrence.onclick = () =>
   aptName.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptEmail.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptMobileNumber.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  countryCode.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
+  apt.pt_countryCode.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyCountryCode.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptFees.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptAddress.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
