@@ -7,14 +7,13 @@ const forSecondOccurrenceType = () =>
   createTwoAptBtn.classList.remove( 'hidden' )
   aptInfo.classList.remove( 'hidden' )
 
-  confirmPage.style.left = '-2000px'
   aptType.setAttribute( 'disabled', 'true' )
   aptNature.setAttribute( 'disabled', 'true' )
   aptName.setAttribute( 'disabled', 'true' )
   aptEmail.setAttribute( 'disabled', 'true' )
   aptMobileNumber.setAttribute( 'disabled', 'true' )
   apt.pt_countryCode.setAttribute( 'disabled', 'true' )
-  emergencyCountryCode.setAttribute( 'disabled', 'true' )
+  apt.e_countryCode.setAttribute( 'disabled', 'true' )
   aptFees.setAttribute( 'disabled', 'true' )
   aptAddress.setAttribute( 'disabled', 'true' )
   aptOccurrenceType.setAttribute( 'disabled', 'true' )
@@ -23,18 +22,18 @@ const forSecondOccurrenceType = () =>
   emergencyMobileNumber.setAttribute( 'disabled', 'true' )
   emergencyAddress.setAttribute( 'disabled', 'true' )
 
-  aptType.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
-  aptNature.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
+  aptType.classList.add( '!bg-blue-700', '!text-white', '!font-light' )
+  aptNature.classList.add( '!bg-blue-700', '!text-white', '!font-light' )
   aptName.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptEmail.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptMobileNumber.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
-  apt.pt_countryCode.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
-  emergencyCountryCode.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
+  apt.pt_countryCode.classList.add( '!bg-blue-700', '!text-white', '!font-light' )
+  apt.e_countryCode.classList.add( '!bg-blue-700', '!text-white', '!font-light' )
   aptFees.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptAddress.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   aptOccurrenceType.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyName.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
-  emergencyRelation.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
+  emergencyRelation.classList.add( '!bg-blue-700', '!text-white', '!font-light' )
   emergencyMobileNumber.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyAddress.classList.add( '!bg-blue-500', '!text-white', '!font-light' )
 
@@ -43,7 +42,7 @@ const forSecondOccurrenceType = () =>
   firstTimeSlotWrapper.classList.remove( 'hidden' )
 
   firstStartDate.innerText = aptStartDate.value
-  firstDaySlot.innerText = days[ aptDay.value - 1 ]
+  firstDaySlot.innerText = aptDay.value
   firstTimeSlot.innerText = aptTimeSlot.value
 
   cancelForOccurrence.classList.remove( 'hidden' )
@@ -59,7 +58,7 @@ cancelForOccurrence.onclick = () =>
   aptEmail.removeAttribute( 'disabled', 'true' )
   aptMobileNumber.removeAttribute( 'disabled', 'true' )
   apt.pt_countryCode.removeAttribute( 'disabled', 'true' )
-  emergencyCountryCode.removeAttribute( 'disabled', 'true' )
+  apt.e_countryCode.removeAttribute( 'disabled', 'true' )
   aptFees.removeAttribute( 'disabled', 'true' )
   aptAddress.removeAttribute( 'disabled', 'true' )
   aptOccurrenceType.removeAttribute( 'disabled', 'true' )
@@ -69,17 +68,17 @@ cancelForOccurrence.onclick = () =>
   emergencyAddress.removeAttribute( 'disabled', 'true' )
 
   aptType.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  aptNature.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  aptName.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
+  aptNature.classList.remove( '!bg-blue-700', '!text-white', '!font-light' )
+  aptName.classList.remove( '!bg-blue-700', '!text-white', '!font-light' )
   aptEmail.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptMobileNumber.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  apt.pt_countryCode.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  emergencyCountryCode.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
+  apt.pt_countryCode.classList.remove( '!bg-blue-700', '!text-white', '!font-light' )
+  apt.e_countryCode.classList.remove( '!bg-blue-700', '!text-white', '!font-light' )
   aptFees.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptAddress.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   aptOccurrenceType.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyName.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
-  emergencyRelation.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
+  emergencyRelation.classList.remove( '!bg-blue-700', '!text-white', '!font-light' )
   emergencyMobileNumber.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
   emergencyAddress.classList.remove( '!bg-blue-500', '!text-white', '!font-light' )
 

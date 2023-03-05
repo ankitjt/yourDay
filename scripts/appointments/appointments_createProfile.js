@@ -3,7 +3,7 @@ confirmButton.onclick = ( e ) =>
   e.preventDefault()
 
   // Getting selected date in the array 
-  let firstAppointmentDate = new Date( apt.startDate.value )
+  let firstAppointmentDate = new Date( apt__confirmPage.startDate.innerText )
   let firstDate = firstAppointmentDate.getDate().toString() < 10 ? '0' + firstAppointmentDate.getDate().toString() : firstAppointmentDate.getDate().toString()
   let firstMonth = ( firstAppointmentDate.getMonth() + 1 ).toString() < 10 ? '0' + ( firstAppointmentDate.getMonth() + 1 ).toString() : ( firstAppointmentDate.getMonth() + 1 ).toString()
   let firstYear = firstAppointmentDate.getFullYear().toString()
@@ -12,8 +12,11 @@ confirmButton.onclick = ( e ) =>
   let appointmentYear = [ firstYear ]
   let dateInSeconds = [ firstAppointmentDate / 1000 ]
   let uppercaseName = apt.name.value.toUpperCase()
+  let visitPerWeekCount
 
-  createProfile()
+  aptOccurrenceType.value === '2' ? visitPerWeekCount = apt.day.value : visitPerWeekCount = 'NA'
+
+  // createProfile()
 
   // Creating future appointments.
   let count = [ 1, 2, 3, 4, 5 ]
@@ -40,8 +43,7 @@ confirmButton.onclick = ( e ) =>
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
 
-    // Creating Appointment for One Occurrence
-    db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
+    console.log( {
       type: apt.type.value,
       mode: [ apt.nature.value ],
       name: uppercaseName,
@@ -64,11 +66,36 @@ confirmButton.onclick = ( e ) =>
       updatedOn: [ 'NA' ],
       softDelete: false,
       showUpdate: count[ i ] === 5 ? 'update' : ''
-    } )
+    } );
+
+    // Creating Appointment for One Occurrence
+    // db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
+    //   type: apt.type.value,
+    //   mode: [ apt.nature.value ],
+    //   name: uppercaseName,
+    //   email: apt.email.value,
+    //   day: [ apt.day.value ],
+    //   secondDay: [ "NA" ],
+    //   timeSlot: [ apt.timeSlot.value ],
+    //   secondTimeSlot: [ "NA" ],
+    //   createdDateInSeconds: dateInSeconds[ i ],
+    //   date: [ appointmentDate[ i ] ],
+    //   secondDate: [ "NA" ],
+    //   month: [ appointmentMonth[ i ] ],
+    //   secondMonth: [ "NA" ],
+    //   year: [ appointmentYear[ i ] ],
+    //   secondYear: [ "NA" ],
+    //   firstSessionOn: `${ appointmentDate[ 0 ] }:${ appointmentMonth[ 0 ] }:${ appointmentYear[ 0 ] }`,
+    //   status: 'Scheduled',
+    //   fees: [ Number( apt.fees.value ) ],
+    //   createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
+    //   updatedOn: [ 'NA' ],
+    //   softDelete: false,
+    //   showUpdate: count[ i ] === 5 ? 'update' : ''
+    // } )
 
   }
 
-  apt__confirmPage.page.classList.add( '-left-[2000px]' )
   confirmPage.style.transition = '0.5s ease-in-out'
   aptName.value = ''
   aptEmail.value = ''
@@ -90,6 +117,8 @@ confirmButton.onclick = ( e ) =>
   apt.emergencyAddress.value = ''
 
   promptMessages( 'Appointment and profile created !!', 'success' )
+  apt__confirmPage.page.classList.removed( 'left-0' )
+  apt__confirmPage.page.classList.add( '-left-[2000px]' )
 }
 
 const createProfile = () =>
