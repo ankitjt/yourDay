@@ -4,6 +4,7 @@ let selectedEmailOfPatient
 let profileDetails = []
 let patientEmail = [];
 
+
 ( () =>
 {
   db.collection( "profiles" ).get()
@@ -14,15 +15,77 @@ let patientEmail = [];
       {
         if ( doc.data().softDelete !== true )
         {
+
+          // let patientContent = document.querySelector( '.patientContent' );
+
+          let patientContentDetails = `
+          
+            <li title='${ doc.data().email.at( -1 ) } ( ${ doc.data().type === 'Session' ? 'Session' : 'Supervision' } )' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) }
+              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              <p class='patientName'>${ doc.data().name.at( -1 ) }  </p> 
+            </li>
+          `
+          // patientContent.innerHTML += patientContentDetails
+
           let listOfNames = `
-        <br />  
-        <option title='${ doc.data().name.at( -1 ) + ' , ' + doc.data().email.at( -1 ) }' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) } class='font-semibold refreshList text-blue-500 ' >
-        ${ doc.data().name.at( -1 ) } [ ${ doc.data().email.at( -1 ) } ] ( ${ doc.data().type === 'Session' ? 'Session' : 'Supervision' } )
-        </option>;
-        <br />
-        `
+              <br />  
+              <option title='${ doc.data().name.at( -1 ) + ' , ' + doc.data().email.at( -1 ) }' value='${ doc.id }' name='${ doc.data().name.at( -1 ) }' email_ID= ${ doc.data().email.at( -1 ) } class='font-semibold refreshList text-blue-500 ' >
+              ${ doc.data().name.at( -1 ) } [ ${ doc.data().email.at( -1 ) } ] ( ${ doc.data().type === 'Session' ? 'Session' : 'Supervision' } )
+              </option>;
+              <br />
+              `
           patientNamesList.innerHTML += listOfNames
           patientEmail.push( doc.data().email.at( -1 ) )
+
+
+          // let selectedOption = document.querySelector( ".selectedOption" )
+          // let liItem = document.querySelectorAll( '.liItem' )
+          // let dropDownOptions = document.querySelector( ".dropDownOptions" )
+          // let dropDown = document.querySelector( ".dropDown" )
+          // let downArrowNew = document.querySelector( ".downArrowNew" )
+          // let upArrow = document.querySelector( ".upArrow" )
+          // dropDown.onclick = () =>
+          // {
+          //   dropDownOptions.classList.toggle( 'hidden' )
+          //   downArrowNew.classList.toggle( 'hidden' )
+          //   upArrow.classList.toggle( 'hidden' )
+          // }
+
+          // for ( let newItem of liItem )
+          // {
+          //   newItem.onclick = () =>
+          //   {
+          //     selectedOption.innerText = newItem.innerText
+          //     dropDownOptions.classList.toggle( 'hidden' )
+          //     downArrowNew.classList.toggle( 'hidden' )
+          //     upArrow.classList.toggle( 'hidden' )
+          //   }
+          // }
+
+          // document.onkeyup = e =>
+          // {
+          //   if ( e.code === 'Escape' )
+          //   {
+          //     dropDownOptions.classList.add( 'hidden' )
+          //     downArrowNew.classList.remove( 'hidden' )
+          //     upArrow.classList.add( 'hidden' )
+          //   }
+          // }
+
+          // document.onclick = e =>
+          // {
+          //   if ( e.target.matches( '.patientName' ) === false )
+          //   {
+          //     dropDownOptions.classList.add( 'dummy123' )
+
+          //   }
+          //   if ( dropDownOptions.matches( '.dummy123' ) === false )
+          //   {
+          //     console.log( 'yes' );
+          //     dropDownOptions.classList.add( 'hidden' )
+          //   }
+          // }
+
         }
 
         profileDetails.push( {
@@ -67,3 +130,4 @@ patientNamesList.onchange = e =>
   selectedNameOfPatient = e.target.options[ e.target.selectedIndex ].getAttribute( 'name' )
   selectedEmailOfPatient = e.target.options[ e.target.selectedIndex ].getAttribute( 'email_ID' )
 }
+
