@@ -1,62 +1,68 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>yourDay - Notes</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-        rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>yourDay - Test Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-  <div class="p-6 newThings w-full ">
-    <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
+  <body>
+    <div class="p-6 newThings w-full h-full">
+      <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
 
-    <button
-            class="mt-10 bg-emerald-600 px-3 py-2 text-white uppercase text-xs tracking-widest ease-in-out relative duration-300 rounded-md
-            ">
-      <span
-            class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:-top-2 hover:after:left-0 hover:after:rounded-md ">
+      <div
+        class="container p-6 bg-purple-600 w-1/2 h-1/2 rounded-md flex flex-col text-[10px] font-semibold uppercase text-slate-700 tracking-widest cursor-pointer relative">
+        <div class="dropDown bg-white w-60 min-w-fit p-3 flex items-center justify-between rounded-md">
+          <span class="selectedOption">Select Name</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5 downArrow block">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-5 h-5 upArrow hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+          </svg>
 
-        <span
-              class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-1 hover:after:h-full hover:after:border-2 hover:after:border-emerald-600 hover:after:-left-2 hover:after:bottom-0 hover:after:rounded-md">
+        </div>
+        <div class="dropDownOptions hidden w-60 h-64 mt-1 z-50 absolute -bottom-60">
+          <ul class="w-auto h-fit">
+            <li
+              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Khris Rocks [khris@gmail.com] (session)
+            </li>
+            <li
+              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Option-2</li>
+            <li
+              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Option-3</li>
+            <li
+              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Option-4</li>
+            <li
+              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Option-5</li>
+            <li
+              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
+              Option-6</li>
+          </ul>
+        </div>
+      </div>
 
-          <span
-                class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-1 hover:after:h-full hover:after:border-2 hover:after:border-emerald-600 hover:after:-right-2 hover:after:bottom-0 hover:after:rounded-md">
-
-            <span
-                  class="hover:after:content-[''] ease-in-out duration-300 hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:-bottom-2 hover:after:left-0 hover:after:rounded-md">
-              Testing
-            </span>
-          </span>
-        </span>
-      </span>
-    </button>
-
-    <div class="w-full text-center">
-      <button
-              class="mt-10 bg-emerald-600 px-3 py-2 text-white uppercase text-xs tracking-widest ease-in-out relative duration-300 rounded-md hover:bg-white hover:text-emerald-600 hover:after:content-[''] hover:after:absolute hover:after:w-full hover:after:h-1 hover:after:border-2 hover:after:border-emerald-600 hover:after:bottom-0 hover:after:left-0 hover:after:rounded-md
-                  ">
-
-        Testing
-
-
-      </button>
 
     </div>
-
-
-  </div>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="../scripts/commonScripts/dbConnect.js"></script>
-  <script src="../scripts/commonScripts/commonVariables.js"></script>
-  <script src="../scripts/newThings.js"></script>
-</body>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="../scripts/newThings.js"></script>
+  </body>
 
 </html>
