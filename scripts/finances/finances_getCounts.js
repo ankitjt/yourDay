@@ -42,33 +42,42 @@ const getCounts = () =>
         moneyBreakData =
           `           
                            <h1 class="py-4 pb-1 text-[11px] tracking-widest font-semibold text-slate-500 uppercase border-b">Month's Record</h1> 
-                          <div title='Click to view breakdown'
-                          class="moneyScheduledWrapper mt-5 flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Scheduled</span>
-                            <span class="moneyScheduled ${ scheduled.length === 0 ? 0 : "underline" } cursor-pointer">${ scheduled.length }</span>
-                          </div> 
-                          <div title='Click to view breakdown'
-                          class="moneyPendingWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Pending</span>
-                            <span class="moneyPending ${ pending.length === 0 ? 0 : "underline" } cursor-pointer">${ pending.length }</span>
-                          </div> 
-                          <div title='Click to view breakdown'
-                          class="moneyCompletedWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Completed</span>
-                            <span class="moneyCompleted tracking-widest ${ completed.length === 0 ? 0 : "underline" }  cursor-pointer">
-                            ${ completed.length }</span>
+                           <div class='grid grid-cols-1 md:grid-cols-5 md:gap-x-5 md:gap-y-5 mt-5'>
+
+                            <div title='Click to view breakdown'
+                            class="moneyScheduledWrapper flex items-center justify-center mb-3 md:bg-gray-50 md:drop-shadow-2xl bg-gray-900 md:text-blue-500 text-white font-semibold py-4 rounded-md ease-in-out duration-300 hover:md:bg-gray-200 hover:bg-gray-700 cursor-pointer">
+                              <span class='uppercase text-[10px] tracking-widest'>Scheduled</span>
+                              <span class="moneyScheduled text-5xl ml-5 ${ scheduled.length === 0 ? 0 : "underline" } cursor-pointer">${ scheduled.length }</span>
+                            </div> 
+
+                            <div>
+                            <title='Click to view breakdown'
+                            class="moneyPendingWrapper flex items-center justify-center mb-3 md:bg-gray-50 md:drop-shadow-2xl bg-gray-900 md:text-blue-500 text-white font-semibold py-4 rounded-md ease-in-out duration-300 hover:md:bg-gray-200 hover:bg-gray-700 cursor-pointer">
+                              <span class='uppercase text-[10px] tracking-widest'>Pending</span>
+                              <span class="moneyPending text-5xl ml-5 ${ pending.length === 0 ? 0 : "underline" } cursor-pointer">${ pending.length }</span>
+                            </div> 
+
+                            <div title='Click to view breakdown'
+                            class="moneyCompletedWrapper flex items-center justify-center mb-3 md:bg-gray-50 md:drop-shadow-2xl bg-gray-900 md:text-blue-500 text-white font-semibold py-4 rounded-md ease-in-out duration-300 hover:md:bg-gray-200 hover:bg-gray-700 cursor-pointer">
+                              <span class='uppercase text-[10px] tracking-widest'>Completed</span>
+                              <span class="moneyCompleted text-5xl ml-5 tracking-widest ${ completed.length === 0 ? 0 : "underline" }  cursor-pointer">
+                              ${ completed.length }</span>
+                            </div>
+
+                            <div title='Click to view breakdown'
+                              class="moneyPaidCancelledWrapper flex items-center justify-center mb-3 md:bg-gray-50 md:drop-shadow-2xl bg-gray-900 md:text-blue-500 text-white font-semibold py-4 rounded-md ease-in-out duration-300 hover:md:bg-gray-200 hover:bg-gray-700 cursor-pointer">
+                              <span class='uppercase text-[10px] tracking-widest'>Paid Cancelled</span>
+                              <span class="moneyPaidCancelled text-5xl ml-5  tracking-widest ${ paidCompleted.length === 0 ? 0 : "underline" } cursor-pointer ">
+                              ${ paidCompleted.length }</span>
+                            </div>
+
+                            <div title='Click to view breakdown'
+                              class="moneyFreeCancelledWrapper flex items-center justify-center mb-3 md:bg-gray-50 md:drop-shadow-2xl bg-gray-900 md:text-blue-500 text-white font-semibold py-4 rounded-md ease-in-out duration-300 hover:md:bg-gray-200 hover:bg-gray-700 cursor-pointer">
+                              <span class='uppercase text-[10px] tracking-widest'>Free Cancelled</span>
+                              <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : "underline" } cursor-pointer text-5xl ml-5">
+                              ${ freeCancelled.length }</span>
+                            </div>
                           </div>
-                          <div title='Click to view breakdown'
-                            class="moneyPaidCancelledWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Paid Cancelled</span>
-                            <span class="moneyPaidCancelled tracking-widest ${ paidCompleted.length === 0 ? 0 : "underline" } cursor-pointer">
-                            ${ paidCompleted.length }</span>
-                          </div>
-                          <div title='Click to view breakdown'
-                            class="moneyFreeCancelledWrapper flex items-center justify-between mb-3 md:bg-blue-500 bg-gray-900 text-white font-semibold px-3 py-3 rounded-md ease-in-out duration-300 hover:md:bg-blue-600 hover:bg-gray-700 cursor-pointer">
-                            <span class='uppercase text-xs tracking-widest'>Free Cancelled</span>
-                            <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : "underline" } cursor-pointer">
-                            ${ freeCancelled.length }</span>
                           </div>
                           <hr class="h-1 bg-blue-600 rounded-md my-4">
                           <div class="moneyTotalWrapper text-xs flex items-center justify-between tracking-widest mt-5 bg-blue-600 text-slate-50 px-3 py-3 rounded-md">
