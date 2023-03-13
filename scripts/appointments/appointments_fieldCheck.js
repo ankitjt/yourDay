@@ -28,16 +28,14 @@ const fieldValidators = () =>
 
   // Check for slot hour and current hour
   let selectedDate = new Date( apt.startDate.value )
-  console.log( selectedDate );
   let userTimeSlot = apt.timeSlot.value
   let splitSlot = userTimeSlot.split( '-' )
   let trimmedSlot = splitSlot.map( str => str.trim() )
   let hourSplit = trimmedSlot[ 0 ].split( ':' )
   let finalHourSplit = Number( hourSplit[ 0 ] )
-  console.log( finalHourSplit );
-  finalHourSplit < 12 ? finalHourSplit = finalHourSplit + 12 : finalHourSplit
 
-  if ( finalHourSplit < local_hours && selectedDate < new Date() )
+  // finalHourSplit > 12 ? finalHourSplit = finalHourSplit + 12 : finalHourSplit
+  if ( finalHourSplit <= local_hours && selectedDate < new Date() )
   {
     apt.timeSlot.classList.add( 'md:border-red-600' )
     promptMessages( 'If start date is today, slot hour should be greater than current hour.', 'error' )
@@ -115,6 +113,15 @@ const fieldValidators = () =>
     fieldFlag = true;
   }
 
+  // Fees is wrong
+  if ( aptFees.value <= 100 )
+  {
+    promptMessages( `Fees should be greater than <span>&#8377;</span> 100.`, 'error' )
+    aptFees.classList.add( 'md:border-red-600' )
+    fieldFlag = true
+  }
+
+
   // Checking home relative address.
   if ( apt.emergencyRelation.value !== 'Father' && apt.emergencyRelation.value !== 'Mother' && apt.emergencyRelation.value !== 'Sister' && apt.emergencyRelation.value !== 'Brother' )
   {
@@ -151,19 +158,17 @@ const fieldValidators = () =>
       } )
 
 
-      if ( fieldFlag === false )
-      {
-        // Occurrence Type = 2
-        if ( apt.occurrenceType.value === '2' )
-        {
-          forSecondOccurrenceType()
-        }
-        else if ( apt.occurrenceType.value === '1' )
-        {
-          apt__confirmPage.page.classList.add( 'left-0' )
-        }
-      }
     } )
+
+    if ( fieldFlag === false && apt.occurrenceType.value === '1' )
+    {
+      apt__confirmPage.page.classList.add( 'left-0' )
+    }
+    // Occurrence Type = 2
+    else if ( fieldFlag === false && apt.occurrenceType.value === '2' )
+    {
+      forSecondOccurrenceType()
+    }
   }
 
 }

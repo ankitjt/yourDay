@@ -54,6 +54,7 @@ apt.create.onclick = () =>
             promptMessages( `${ input.getAttribute( 'title' ) } is blank.`, 'error' )
             input.classList.add( 'md:border-red-600' )
             allFilled = false;
+            return
         }
     }
 
@@ -73,6 +74,8 @@ apt.create.onclick = () =>
             promptMessages( `${ select.getAttribute( 'title' ) } is blank.`, 'error' )
             allFilled = false;
             select.classList.add( 'md:border-red-600' )
+            return
+
         }
     }
 

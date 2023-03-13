@@ -117,7 +117,7 @@ confirmButton.onclick = ( e ) =>
   apt.emergencyAddress.value = ''
 
   promptMessages( 'Appointment and profile created !!', 'success' )
-  apt__confirmPage.page.classList.removed( 'left-0' )
+  apt__confirmPage.page.classList.remove( 'left-0' )
   apt__confirmPage.page.classList.add( '-left-[2000px]' )
 }
 
