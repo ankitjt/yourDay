@@ -13,52 +13,50 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
-    <div class="p-6 newThings w-full h-full">
-      <h1 class="pb-1 border-b-2 mb-5 border-slate-900">Testing Page</h1>
+  <body class="w-screen h-screen">
+    <div class="newThings w-full h-full p-20 flex items-center justify-center flex-col">
+      <div class="startChat w-full">
+        <h1 class="text-[10px] tracking-widest uppercase text-rose-500 font-semibold my-3 headLine">To talk, enter name
+          below
+        </h1>
+        <input type="text" name="" id="" class="chatterName rounded-lg text-xs p-3 font-semibold w-full" autofocus
+          placeholder="Enter name">
+        <button
+          class="block mt-3 rounded-lg bg-indigo-600 uppercase text-xs p-3 text-white font-semibold tracking-widest startBtn">Start</button>
+      </div>
 
       <div
-        class="container p-6 bg-purple-600 w-1/2 h-1/2 rounded-md flex flex-col text-[10px] font-semibold uppercase text-slate-700 tracking-widest cursor-pointer relative">
-        <div class="dropDown bg-white w-60 min-w-fit p-3 flex items-center justify-between rounded-md">
-          <span class="selectedOption">Select Name</span>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-5 h-5 downArrow block">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-          </svg>
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="w-5 h-5 upArrow hidden">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-          </svg>
-
+        class="chatBox hidden mt-3 w-full border border-gray-300 p-3 rounded-lg h-96 flex flex-col items-center justify-between">
+        <div class="botMessage py-6 my-2 w-full h-52 overflow-y-auto">
+          <div class="quickQuestions flex">
+            <a href="#"
+              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">When's
+              my next appointment?</a>
+            <a href="#"
+              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">Are
+              there any supervisions this week?</a>
+            <a href="#"
+              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">Number
+              of pending appointments so far?</a>
+          </div>
+          <div class="quickReply"></div>
         </div>
-        <div class="dropDownOptions hidden w-60 h-64 mt-1 z-50 absolute -bottom-60">
-          <ul class="w-auto h-fit">
-            <li
-              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Khris Rocks [khris@gmail.com] (session)
-            </li>
-            <li
-              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Option-2</li>
-            <li
-              class="liItem w-auto h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Option-3</li>
-            <li
-              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Option-4</li>
-            <li
-              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Option-5</li>
-            <li
-              class="liItem w-full h-fit p-3 rounded-md my-1 bg-gray-200 duration-300 ease-in-out hover:bg-purple-200">
-              Option-6</li>
-          </ul>
+        <div class="w-full">
+          <input type="text" class="query rounded-lg text-xs p-3 font-semibold w-full"
+            placeholder="Ask your question here." autofocus>
+          <div class="buttons mt-3">
+            <button
+              class="mr-3 rounded-lg bg-indigo-300 uppercase text-xs p-3 text-white font-semibold tracking-widest queryBtn">Submit</button>
+            <button
+              class="rounded-lg bg-gray-200 uppercase text-xs p-3 text-indigo-600 font-semibold tracking-widest clearChat">Clear</button>
+
+          </div>
+
         </div>
       </div>
 
-
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="../scripts/commonScripts/dbConnect.js"></script>
     <script src="../scripts/commonScripts/commonVariables.js"></script>
