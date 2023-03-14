@@ -1,100 +1,134 @@
 confirmButton.onclick = ( e ) =>
 {
   e.preventDefault()
+  let count = [ 1, 2, 3, 4, 5 ]
 
-  // Getting selected date in the array 
-  let firstAppointmentDate = new Date( apt__confirmPage.startDate.innerText )
-  let firstDate = firstAppointmentDate.getDate().toString() < 10 ? '0' + firstAppointmentDate.getDate().toString() : firstAppointmentDate.getDate().toString()
-  let firstMonth = ( firstAppointmentDate.getMonth() + 1 ).toString() < 10 ? '0' + ( firstAppointmentDate.getMonth() + 1 ).toString() : ( firstAppointmentDate.getMonth() + 1 ).toString()
-  let firstYear = firstAppointmentDate.getFullYear().toString()
+  let firstAppointmentStart = new Date( confirmStartDate.innerText )
+  console.log( firstAppointmentStart );
+  let firstDate = firstAppointmentStart.getDate().toString() < 10 ? '0' + firstAppointmentStart.getDate().toString() : firstAppointmentStart.getDate().toString()
+  let firstMonth = ( firstAppointmentStart.getMonth() + 1 ).toString() < 10 ? '0' + ( firstAppointmentStart.getMonth() + 1 ).toString() : ( firstAppointmentStart.getMonth() + 1 ).toString()
+  let firstYear = firstAppointmentStart.getFullYear().toString()
   let appointmentDate = [ firstDate ]
   let appointmentMonth = [ firstMonth ]
   let appointmentYear = [ firstYear ]
-  let dateInSeconds = [ firstAppointmentDate / 1000 ]
-  let uppercaseName = apt.name.value.toUpperCase()
-  let visitPerWeekCount
+  let dateInSeconds = [ firstAppointmentStart / 1000 ]
+  let uppercaseName = confirmName.innerText.toUpperCase()
 
-  aptOccurrenceType.value === '2' ? visitPerWeekCount = apt.day.value : visitPerWeekCount = 'NA'
-
-  // createProfile()
-
-  // Creating future appointments.
-  let count = [ 1, 2, 3, 4, 5 ]
+  // Getting second selected date in the array
+  let secondAppointmentStart = confirmSecondStartDate.innerText === 'NA' ? new Date() : new Date( confirmSecondStartDate.innerText )
+  console.log( secondAppointmentStart );
+  let secondFirstDate = secondAppointmentStart.getDate().toString() < 10 ? '0' + secondAppointmentStart.getDate().toString() : secondAppointmentStart.getDate().toString()
+  let secondFirstMonth = ( secondAppointmentStart.getMonth() + 1 ).toString() < 10 ? '0' + ( secondAppointmentStart.getMonth() + 1 ).toString() : ( secondAppointmentStart.getMonth() + 1 ).toString()
+  let secondFirstYear = secondAppointmentStart.getFullYear().toString()
+  let secondAppointmentDate = [ secondFirstDate ]
+  let secondAppointmentMonth = [ secondFirstMonth ]
+  let secondAppointmentYear = [ secondFirstYear ]
+  let secondDateInSeconds = [ secondAppointmentStart / 1000 ]
 
   for ( let i = 0; i < count.length; i++ )
   {
-
-    // Getting future Date, Month, Year .
-    let futureAppointments = Math.floor( firstAppointmentDate.setDate( firstAppointmentDate.getDate() + 7 ) / 1000 )
+    // Getting future Date, Month, Year for 1 occurrence.
+    let futureAppointments = Math.floor( firstAppointmentStart.setDate( firstAppointmentStart.getDate() + 7 ) / 1000 )
     dateInSeconds.push( futureAppointments )
+
     let some = futureAppointments
     let someTimes = new Date( some * 1000 )
 
+    //Future Dates(1 Occurrence)
     let futureDate = someTimes.getDate().toString()
     let finalFutureDate
     futureDate < 10 ? finalFutureDate = '0' + futureDate : finalFutureDate = futureDate
     appointmentDate.push( finalFutureDate )
 
+    //Future Months(1 Occurrence)
     let futureMonth = ( someTimes.getMonth() + 1 ).toString()
     let finalFutureMonth
     futureMonth < 10 ? finalFutureMonth = '0' + futureMonth : finalFutureMonth = futureMonth
     appointmentMonth.push( finalFutureMonth )
 
+    //Future Years(1 Occurrence)
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
 
+    // Getting future Date, Month, Year for 2 occurrence.
+    let secondFutureAppointments = Math.floor( secondAppointmentStart.setDate( secondAppointmentStart.getDate() + 7 ) / 1000 )
+    secondDateInSeconds.push( secondFutureAppointments )
+
+    let secondSome = secondFutureAppointments
+    let secondSomeTimes = new Date( secondSome * 1000 )
+
+    //Future Dates(2 Occurrence)
+    let secondFutureDate = secondSomeTimes.getDate().toString()
+    let secondFinalFutureDate
+    secondFutureDate < 10 ? secondFinalFutureDate = '0' + futureDate : secondFinalFutureDate = futureDate
+    secondAppointmentDate.push( secondFinalFutureDate )
+
+    //Future Months(2 Occurrence)
+    let secondFutureMonth = ( secondSomeTimes.getMonth() + 1 ).toString()
+    let secondFinalFutureMonth
+    secondFutureMonth < 10 ? secondFinalFutureMonth = '0' + secondFutureMonth : secondFinalFutureMonth = secondFutureMonth
+    secondAppointmentMonth.push( secondFinalFutureMonth )
+
+    //Future Years(2 Occurrence)
+    let secondFutureYear = secondSomeTimes.getFullYear().toString()
+    secondAppointmentYear.push( secondFutureYear )
+
     console.log( {
-      type: apt.type.value,
+      type: confirmAppointmentType.innerText,
       mode: [ apt.nature.value ],
       name: uppercaseName,
       email: apt.email.value,
-      day: [ apt.day.value ],
-      secondDay: [ "NA" ],
-      timeSlot: [ apt.timeSlot.value ],
-      secondTimeSlot: [ "NA" ],
+      day: [ confirmDay.innerText ],
+      secondDay: confirmSecondDay.innerText === 'NA' ? 'NA' : [ confirmSecondDay.innerText ],
+      timeSlot: [ confirmTimeSlot.innerText ],
+      secondTimeSlot: confirmSecondTimeSlot.innerText === 'NA' ? 'NA' : [ confirmSecondTimeSlot.innerText ],
       createdDateInSeconds: dateInSeconds[ i ],
       date: [ appointmentDate[ i ] ],
-      secondDate: [ "NA" ],
+      secondDate: confirmSecondDay.innerText === 'NA' ? 'NA' : [ secondAppointmentDate[ i ] ],
       month: [ appointmentMonth[ i ] ],
-      secondMonth: [ "NA" ],
+      secondMonth: confirmSecondDay.innerText === 'NA' ? 'NA' : [ secondAppointmentMonth[ i ] ],
       year: [ appointmentYear[ i ] ],
-      secondYear: [ "NA" ],
+      secondYear: confirmSecondDay.innerText === 'NA' ? 'NA' : [ secondAppointmentYear[ i ] ],
       firstSessionOn: `${ appointmentDate[ 0 ] }:${ appointmentMonth[ 0 ] }:${ appointmentYear[ 0 ] }`,
+      secondFirstSessionOn: confirmSecondDay.innerText === 'NA' ? 'NA' : `${ secondAppointmentDate[ 0 ] }:${ secondAppointmentMonth[ 0 ] }:${ secondAppointmentYear[ 0 ] }`,
       status: 'Scheduled',
       fees: [ Number( apt.fees.value ) ],
       createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
       updatedOn: [ 'NA' ],
       softDelete: false,
+      visitPerWeek: apt.occurrenceType.value,
       showUpdate: count[ i ] === 5 ? 'update' : ''
     } );
-
-    // Creating Appointment for One Occurrence
-    // db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
-    //   type: apt.type.value,
-    //   mode: [ apt.nature.value ],
-    //   name: uppercaseName,
-    //   email: apt.email.value,
-    //   day: [ apt.day.value ],
-    //   secondDay: [ "NA" ],
-    //   timeSlot: [ apt.timeSlot.value ],
-    //   secondTimeSlot: [ "NA" ],
-    //   createdDateInSeconds: dateInSeconds[ i ],
-    //   date: [ appointmentDate[ i ] ],
-    //   secondDate: [ "NA" ],
-    //   month: [ appointmentMonth[ i ] ],
-    //   secondMonth: [ "NA" ],
-    //   year: [ appointmentYear[ i ] ],
-    //   secondYear: [ "NA" ],
-    //   firstSessionOn: `${ appointmentDate[ 0 ] }:${ appointmentMonth[ 0 ] }:${ appointmentYear[ 0 ] }`,
-    //   status: 'Scheduled',
-    //   fees: [ Number( apt.fees.value ) ],
-    //   createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
-    //   updatedOn: [ 'NA' ],
-    //   softDelete: false,
-    //   showUpdate: count[ i ] === 5 ? 'update' : ''
-    // } )
-
   }
+
+
+  // Creating Appointment for One Occurrence
+  // db.collection( 'appointments' ).doc( `${ apt.email.value }` ).collection( 'details' ).add( {
+  //   type: apt.type.value,
+  //   mode: [ apt.nature.value ],
+  //   name: uppercaseName,
+  //   email: apt.email.value,
+  //   day: [ apt.day.value ],
+  //   secondDay: [ "NA" ],
+  //   timeSlot: [ apt.timeSlot.value ],
+  //   secondTimeSlot: [ "NA" ],
+  //   createdDateInSeconds: dateInSeconds[ i ],
+  //   date: [ appointmentDate[ i ] ],
+  //   secondDate: [ "NA" ],
+  //   month: [ appointmentMonth[ i ] ],
+  //   secondMonth: [ "NA" ],
+  //   year: [ appointmentYear[ i ] ],
+  //   secondYear: [ "NA" ],
+  //   firstSessionOn: `${ appointmentDate[ 0 ] }:${ appointmentMonth[ 0 ] }:${ appointmentYear[ 0 ] }`,
+  //   status: 'Scheduled',
+  //   fees: [ Number( apt.fees.value ) ],
+  //   createdOn: firebase.firestore.Timestamp.fromDate( new Date() ),
+  //   updatedOn: [ 'NA' ],
+  //   softDelete: false,
+  //   showUpdate: count[ i ] === 5 ? 'update' : ''
+  // } )
+
+  // createProfile()
 
   confirmPage.style.transition = '0.5s ease-in-out'
   aptName.value = ''
@@ -119,6 +153,47 @@ confirmButton.onclick = ( e ) =>
   promptMessages( 'Appointment and profile created !!', 'success' )
   apt__confirmPage.page.classList.remove( 'left-0' )
   apt__confirmPage.page.classList.add( '-left-[2000px]' )
+
+  aptType.removeAttribute( 'disabled', 'true' )
+  aptNature.removeAttribute( 'disabled', 'true' )
+  aptName.removeAttribute( 'disabled', 'true' )
+  aptEmail.removeAttribute( 'disabled', 'true' )
+  aptMobileNumber.removeAttribute( 'disabled', 'true' )
+  apt.pt_countryCode.removeAttribute( 'disabled', 'true' )
+  apt.e_countryCode.removeAttribute( 'disabled', 'true' )
+  aptFees.removeAttribute( 'disabled', 'true' )
+  aptAddress.removeAttribute( 'disabled', 'true' )
+  aptOccurrenceType.removeAttribute( 'disabled', 'true' )
+  emergencyName.removeAttribute( 'disabled', 'true' )
+  emergencyRelation.removeAttribute( 'disabled', 'true' )
+  emergencyMobileNumber.removeAttribute( 'disabled', 'true' )
+  emergencyAddress.removeAttribute( 'disabled', 'true' )
+
+  aptType.classList.remove( '!bg-gray-400' )
+  aptNature.classList.remove( '!bg-gray-400' )
+  aptName.classList.remove( '!bg-gray-400' )
+  aptEmail.classList.remove( '!bg-gray-400' )
+  aptMobileNumber.classList.remove( '!bg-gray-400' )
+  apt.pt_countryCode.classList.remove( '!bg-gray-400' )
+  apt.e_countryCode.classList.remove( '!bg-gray-400' )
+  aptFees.classList.remove( '!bg-gray-400' )
+  aptAddress.classList.remove( '!bg-gray-400' )
+  aptOccurrenceType.classList.remove( '!bg-gray-400' )
+  emergencyName.classList.remove( '!bg-gray-400' )
+  emergencyRelation.classList.remove( '!bg-gray-400' )
+  emergencyMobileNumber.classList.remove( '!bg-gray-400' )
+  emergencyAddress.classList.remove( '!bg-gray-400' )
+
+  firstStartDateWrapper.classList.add( 'hidden' )
+  firstDaySlotWrapper.classList.add( 'hidden' )
+  firstTimeSlotWrapper.classList.add( 'hidden' )
+
+  createTwoAptBtn.classList.add( 'hidden' )
+  createAptBtn.classList.remove( 'hidden' )
+  cancelForOccurrence.classList.add( 'hidden' )
+  aptInfo.classList.add( 'hidden' )
+
+
 }
 
 const createProfile = () =>

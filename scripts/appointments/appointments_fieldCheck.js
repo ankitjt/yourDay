@@ -43,7 +43,7 @@ const fieldValidators = () =>
   }
 
   // Check for old start Date 
-  if ( selectedDate < date_time_ref.toLocaleDateString() )
+  if ( selectedDate.toDateString() < new Date().toDateString() )
   {
     apt.startDate.classList.add( 'md:border-red-600' )
     promptMessages( 'Appointment Start Date should be current or future date.', 'error' )

@@ -35,11 +35,8 @@ apt.create.onclick = () =>
 
     let allFilled = true;
     let p_category = document.querySelector( ".aptCategory" )
-    let aptStartDate1 = new Date( apt.startDate.value )
-    let currentMonth = aptStartDate1.getMonth() + 1
-    let currentYear = aptStartDate1.getFullYear()
-    let currentDay = aptStartDate1.getDate()
-    let finalCurrentDate = currentDay + ' - ' + currentMonth + ' - ' + currentYear
+    let aptStartDate1 = new Date( apt.startDate.value ).toLocaleDateString()
+    let finalCurrentDate = aptStartDate1
     let aptEmailOfUser = apt.email.value
     let correctEmail = aptEmailOfUser.toLowerCase()
 
