@@ -37,7 +37,7 @@
 
       <!-- Right Section  -->
       <div
-        class="relative w-full px-4 md:py-6 py-0 md:bg-gray-50 overflow-x-hidden overflow-y-hidden rightSection lg:w-5/6 md:px-10">
+        class="relative w-full px-4 md:py-6 py-0 md:bg-gsray-50 overflow-x-hidden overflow-y-hidden rightSection lg:w-5/6 md:px-10">
 
         <!-- Global Notification (Absolute element 2) -->
         <div class='absolute z-50 hidden p-3 text-white bg-red-600 rounded-md right-20 bottom-20'>
@@ -81,7 +81,7 @@
                   <!-- Patient List -->
                   <div class="relative w-full">
                     <select title="Patient List" name="" id=""
-                      class="w-full py-2 md:py-3 text-[10px] tracking-widest text-slate-500 bg-gray-800 border border-blue-500 rounded-md patientNamesList h-fit md:border-gray-200 md:font-semibold md:bg-white md:text-blue-500 uppercase">
+                      class="w-full py-2 md:py-3 text-[10px] tracking-widest text-slate-500 bg-gray-800 border border-blue-500 rounded-xl patientNamesList h-fit md:border-gray-200 md:font-semibold md:bg-white md:text-blue-500 uppercase">
                       <option selected value="" class="font-semibold">
                         Name
                       </option>
@@ -90,12 +90,12 @@
 
                   <!-- Month and year filter -->
                   <input type="text" name="" id="" value=""
-                    class="relative w-full py-2 md:py-3 text-[10px] uppercase tracking-widest text-slate-300 bg-gray-800 border border-blue-500 rounded-md scheduleFilterMonth h-fit md:border-gray-200 md:placeholder:text-blue-500 md:font-semibold md:bg-white md:text-blue-500"
+                    class="relative w-full py-2 md:py-3 text-[10px] uppercase tracking-widest text-slate-300 bg-gray-800 border border-blue-500 rounded-xl scheduleFilterMonth h-fit md:border-gray-200 md:placeholder:text-blue-500 md:font-semibold md:bg-white md:text-blue-500"
                     placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
                   <!-- Filter of Appointment Status -->
                   <select name="scheduleFilterStatus" id="scheduleFilterStatus"
-                    class="fontSize py-2 md:py-3 uppercase tracking-widest md:text-blue-500 text-slate-500 border md:border-gray-200 border-blue-500 rounded-md outline-none focus:border-blue-500 focus:ring-blue-500 scheduleFilterStatus w-full bg-gray-800 md:bg-white">
+                    class="fontSize py-2 md:py-3 uppercase tracking-widest md:text-blue-500 text-slate-500 border md:border-gray-200 border-blue-500 rounded-xl outline-none focus:border-blue-500 focus:ring-blue-500 scheduleFilterStatus w-full bg-gray-800 md:bg-white">
                     <option value="" class="font-semibold">Status</option>
                     <option value="Scheduled" class="font-semibold">Scheduled</option>
                     <option value="Completed" class="font-semibold">Completed</option>
@@ -108,21 +108,24 @@
                 <div class="flex items-center justify-between div mt-5 w-full">
                   <div class="wrap flex items-center">
                     <button
-                      class="filterFindBtn w-28 h-9 pl-2 uppercase tracking-widest font-bold fontSize text-white bg-blue-500 rounded-md text-center flex items-center">
-                      <span class="w-2/3">Search</span>
-                      <div class="bg-blue-600 rounded-r-md w-1/3 h-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                          stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                        </svg>
-                      </div>
+                      class="filterFindBtn h-8 w-20 uppercase tracking-widest font-semibold fontSize bg-blue-600 text-blue-50 rounded-full text-center flex items-center justify-evenly focus:bg-emerald-500 ease-in-out duration-300 hover:-translate-y-1">
+                      <span class="">Find</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                      </svg>
+
                     </button>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor"
-                      class="clearFilters w-5 h-5 ml-5 rounded-full text-white bg-rose-600 cursor-pointer p-1">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
+
+                    <button
+                      class="clearFilters ml-5 w-20 h-8 px-2 uppercase tracking-widest font-bold fontSize text-rose-400 border border-rose-400 shadow-2xl rounded-full text-center flex items-center justify-evenly ease-in-out duration-300 hover:-translate-y-1">
+                      <span class="">Clear</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="h-5 w-5 text-rose-400">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   </div>
                   <div class="ml-5 text-[10px] font-semibold text-gray-500 uppercase md:text-red-500 helper">
                     All filters are required.
@@ -148,7 +151,7 @@
 
           <!-- Update Table  -->
           <div class="my-3 text-xs scheduleTable md:w-full md:block">
-            <div class="h-64 pb-5 overflow-auto border border-gray-300 rounded-md bg-white">
+            <div class="h-96 pb-5 overflow-auto border border-gray-300 rounded-lg bg-white">
               <table class="text-xs text-left w-full">
                 <thead>
                   <tr class=" font-semibold text-blue-500 uppercase text-[10px] w-full border-b border-gray-300">
@@ -175,7 +178,7 @@
                     </th>
                   </tr>
                 </thead>
-                <tbody class="rounded-md scheduleTableRows h-48 relative "></tbody>
+                <tbody class="rounded-md scheduleTableRows h-80 relative "></tbody>
               </table>
             </div>
             <span
