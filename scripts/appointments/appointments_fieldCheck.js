@@ -1,4 +1,4 @@
-const fieldValidators = () =>
+const fieldValidators = ( allFilled ) =>
 {
   let fieldFlag = false;
 
@@ -156,16 +156,14 @@ const fieldValidators = () =>
           fieldFlag = true;
         }
       } )
-
-
     } )
 
-    if ( fieldFlag === false && apt.occurrenceType.value === '1' )
+    if ( fieldFlag === false && apt.occurrenceType.value === '1' && allFilled === true )
     {
       apt__confirmPage.page.classList.add( 'left-0' )
     }
     // Occurrence Type = 2
-    else if ( fieldFlag === false && apt.occurrenceType.value === '2' )
+    else if ( fieldFlag === false && apt.occurrenceType.value === '2' && allFilled === true )
     {
       forSecondOccurrenceType()
     }

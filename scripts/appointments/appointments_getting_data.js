@@ -43,26 +43,6 @@ apt.create.onclick = () =>
     p_category.value = 'New'
     promptsWrapper.innerHTML = ''
 
-    for ( let input of inputTags )
-    {
-        input.classList.remove( 'md:border-red-600' )
-        if ( input.value === "" && !input.classList.contains( 'hidden' ) )
-        {
-            promptMessages( `${ input.getAttribute( 'title' ) } is blank.`, 'error' )
-            input.classList.add( 'md:border-red-600' )
-            allFilled = false;
-            return
-        }
-    }
-
-    if ( allFilled )
-    {
-        for ( let input of inputTags )
-        {
-            input.classList.remove( 'md:border-red-600' )
-        }
-    }
-
     for ( let select of selectTags )
     {
         select.classList.remove( 'md:border-red-600' )
@@ -71,7 +51,6 @@ apt.create.onclick = () =>
             promptMessages( `${ select.getAttribute( 'title' ) } is blank.`, 'error' )
             allFilled = false;
             select.classList.add( 'md:border-red-600' )
-            return
 
         }
     }
@@ -84,7 +63,26 @@ apt.create.onclick = () =>
         }
     }
 
-    fieldValidators()
+    for ( let input of inputTags )
+    {
+        input.classList.remove( 'md:border-red-600' )
+        if ( input.value === "" && !input.classList.contains( 'hidden' ) )
+        {
+            promptMessages( `${ input.getAttribute( 'title' ) } is blank.`, 'error' )
+            input.classList.add( 'md:border-red-600' )
+            allFilled = false;
+        }
+    }
+
+    if ( allFilled )
+    {
+        for ( let input of inputTags )
+        {
+            input.classList.remove( 'md:border-red-600' )
+        }
+    }
+
+    fieldValidators( allFilled )
 
     apt__confirmPage.name.innerText = aptName.value.trim()
     apt__confirmPage.email.innerText = correctEmail.trim()
