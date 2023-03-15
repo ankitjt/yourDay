@@ -69,11 +69,11 @@ setTimeout( () =>
         currentMonthAppointments += `
                  
                     <tr
-                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-100 uppercase align-middle px-5"
+                      class="font-semibold tracking-wider ease-in-out text-gray-700 bg-white transition:300 hover:bg-blue-100 text-[10px] border-b border-gray-100 uppercase align-middle px-5 last:border-transparent h-10"
                       data-id="${ eachRecord.id }">
 
                        <!-- Name & Email -->
-                      <td class="px-6 py-2 w-16 h-auto">
+                      <td class="px-6 py-2 w-16">
                         <span class='scheduleName'>${ eachRecord.name } </span>
                         <span class='scheduleEmail block text-[10px] font-semibold lowercase'>${ eachRecord.email } </span>
                         <span class='showUpdate ${ eachRecord.showUpdate === "update" ? 'block' : 'hidden' } bg-rose-400
