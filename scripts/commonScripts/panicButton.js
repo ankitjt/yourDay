@@ -4,7 +4,7 @@
   let createPanicButton = document.createElement( 'span' )
   createPanicButton.classList.add( 'pb123' )
   createPanicButton.innerHTML = `<span
-  class="absolute z-50 md:p-3 p-4 md:text-2xl text-base font-medium text-white uppercase bg-rose-400 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-12 lg:left-10 lg:right-0 w-fit ">yD</span>`
+  class="absolute z-50 md:p-3 p-4 md:text-2xl text-base font-medium text-white uppercase bg-rose-600 rounded-full cursor-pointer pb animate-bounce bottom-6 app-name right-12 lg:left-10 lg:right-0 w-fit ">yD</span>`
   pageBody.appendChild( createPanicButton )
   let pb = document.querySelector( '.pb' )
   setTimeout( () =>
