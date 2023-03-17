@@ -13,62 +13,27 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body class="w-screen h-screen">
-    <!-- <div class="newThings w-full h-full p-20 flex items-center justify-center flex-col">
-      <div class="startChat w-full">
-        <h1 class="text-[10px] tracking-widest uppercase text-rose-500 font-semibold my-3 headLine">To talk, enter name
-          below
-        </h1>
-        <input type="text" name="" id="" class="chatterName rounded-lg text-xs p-3 font-semibold w-full" autofocus
-          placeholder="Enter name">
-        <button
-          class="block mt-3 rounded-lg bg-indigo-600 uppercase text-xs p-3 text-white font-semibold tracking-widest startBtn">Start</button>
-      </div>
+  <body class="w-full h-full relative">
+    <div class="pageBlocker absolute hidden w-screen h-screen bg-slate-600 z-20 opacity-50"></div>
 
+    <div class="wrapper md:w-screen w-full md:h-screen h-full flex md:px-2 md:py-6 relative">
+
+      <!-- Left Section  -->
       <div
-        class="chatBox hidden mt-3 w-full border border-gray-300 p-3 rounded-lg h-96 flex flex-col items-center justify-between">
-        <div class="botMessage py-6 my-2 w-full h-52 overflow-y-auto">
-          <div class="quickQuestions flex">
-            <a href="#"
-              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">When's
-              my next appointment?</a>
-            <a href="#"
-              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">Are
-              there any supervisions this week?</a>
-            <a href="#"
-              class="m-1 questions duration-300 ease-in-out hover:bg-rose-300 text-xs border border-gray-300 font-semibold p-2 rounded-lg">Number
-              of pending appointments so far?</a>
-          </div>
-          <div class="quickReply"></div>
+        class="leftSection hidden w-64 h-full bg-indigo-800 text-white md:flex md:flex-col md:justify-between py-10 px-4 rounded-xl">
+        <div class="logo text-center text-3xl app-name">
+          yourDay
         </div>
-        <div class="w-full">
-          <input type="text" class="query rounded-lg text-xs p-3 font-semibold w-full"
-            placeholder="Ask your question here." autofocus>
-          <div class="buttons mt-3">
-            <button
-              class="mr-3 rounded-lg bg-indigo-300 uppercase text-xs p-3 text-white font-semibold tracking-widest queryBtn">Submit</button>
-            <button
-              class="rounded-lg bg-gray-200 uppercase text-xs p-3 text-indigo-600 font-semibold tracking-widest clearChat">Clear</button>
-
-          </div>
-
-        </div>
-      </div>
-
-    </div> -->
-
-    <div class="wrapper w-full h-full flex px-2 py-6">
-      <div class="left w-64 h-full flex flex-col bg-indigo-800 text-white justify-between py-10 px-4 rounded-xl">
-        <nav class="flex flex-col ">
+        <nav class="flex flex-col">
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center mb-1 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path
                 d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
             </svg>
             <span class="ml-3">Appointments</span></a>
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest bg-indigo-900">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-2 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest bg-indigo-900">
 
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
@@ -78,7 +43,7 @@
             <span class="ml-3">Schedule</span>
           </a>
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-2 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
 
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
@@ -88,7 +53,7 @@
             <span class="ml-3">Finances</span>
           </a>
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-2 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
 
             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd"
@@ -98,7 +63,7 @@
             <span class="ml-3">RECORDS</span>
           </a>
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-2 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-4 h-4">
@@ -108,7 +73,7 @@
             <span class="ml-3">Notes</span>
           </a>
           <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-3 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 items-center my-2 p-3 text-left rounded-lg uppercase text-[10px] font-semibold tracking-widest">
 
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
               stroke="currentColor" class="w-4 h-4">
@@ -141,11 +106,44 @@
         </nav>
       </div>
 
-      <div class="right w-full h-full p-10 bg-[#F2F7FF] rounded-xl ml-4 relative">
-        <div class="relative">
-          <nav
-            class="navbar rounded-xl px-5 py-6 flex items-center justify-between text-xs tracking-widest uppercase font-semibold text-white bg-indigo-800">
-            <div class="page">
+      <!-- Right Section  -->
+      <div
+        class="rightSection w-full md:h-full h-auto md:p-6 p-6 md:bg-[#F1F6F5] bg-slate-900 md:rounded-xl md:ml-4 relative overflow-hidden">
+
+        <!-- Prompts  -->
+        <div class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-1/3 z-50 ">
+          <div
+            class="promptContentWrapper cursor-pointer h-full px-6 py-5 my-3 rounded-xl bg-white shadow-2xl font-semibold flex items-center text-rose-600 text-[10px] uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="w-6 h-6 mr-2 text-rose-700">
+              <path fill-rule="evenodd"
+                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                clip-rule="evenodd" />
+            </svg>
+            <div class="promptContent grow">
+              You must enter all the required fields.
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="closePrompt w-5 h-5 ease-in-out duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
+              <path fill-rule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div class="relative overflow-hidden rounded-xl ">
+          <nav class="navbar rounded-xl px-5 py-6 flex items-center justify-between md:text-xs text-[10px] tracking-widest uppercase
+          font-semibold text-white bg-indigo-800">
+            <div class="page flex items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                class="w-4 h-4 md:hidden md:m-0 mr-2">
+                <path fill-rule="evenodd"
+                  d="M15.79 14.77a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L11.832 10l3.938 3.71a.75.75 0 01.02 1.06zm-6 0a.75.75 0 01-1.06.02l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 111.04 1.08L5.832 10l3.938 3.71a.75.75 0 01.02 1.06z"
+                  clip-rule="evenodd" />
+              </svg>
               <span class="">Schedule</span>
             </div>
             <div class="timeAndNotification flex items-center">
@@ -161,7 +159,7 @@
             </div>
           </nav>
 
-          <div class="filterApts mt-3 bg-white px-5 py-3 rounded-xl">
+          <div class="filterApts mt-3 md:bg-white bg-gray-800 px-5 py-3 rounded-xl">
             <div class="my-2 scheduleFiltersWrapper md:flex md:items-center ">
               <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
                 <h3 class="mb-2">
@@ -204,26 +202,16 @@
                     </div>
 
                     <!-- Buttons  -->
-                    <div class="flex items-center justify-between div mt-5 w-full">
+                    <div class="flex items-center justify-between mt-5 w-full">
                       <div class="wrap flex items-center">
                         <button
-                          class="filterFindBtn h-8 w-20 uppercase tracking-widest font-semibold fontSize bg-indigo-600 text-white rounded-full flex items-center justify-evenly focus:bg-emerald-500 ease-in-out duration-300 hover:-translate-y-1">
-                          <span class="">Find</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="w-4 h-4">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                          </svg>
-
+                          class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Find</span>
                         </button>
 
                         <button
-                          class="clearFilters ml-5 w-20 h-8 px-2 uppercase tracking-widest font-bold fontSize text-rose-400 border border-rose-400 shadow-2xl rounded-full text-center flex items-center justify-evenly ease-in-out duration-300 hover:-translate-y-1">
-                          <span class="">Clear</span>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" class="h-5 w-5 text-rose-400">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                          </svg>
+                          class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Clear</span>
                         </button>
                       </div>
                       <div class="ml-5 text-[10px] font-semibold text-gray-500 uppercase md:text-red-500 helper">
@@ -237,9 +225,57 @@
             </div>
           </div>
 
-          <div class="showApts mt-3 bg-white px-5 py-5 rounded-xl">
+          <div class="showAptsDesktop hidden md:block mt-3 bg-white px-5 py-5 rounded-xl">
             <div class="h-80 overflow-auto border border-gray-300 rounded-lg bg-white">
-              <table class="text-xs text-left w-full">
+              <div
+                class="headers w-full flex items-center justify-evenly my-2 text-gray-400 py-3 uppercase font-semibold text-[10px] tracking-widest rounded-md">
+                <span class="w-52">name</span>
+                <span class="w-24">time</span>
+                <span class="w-24">date</span>
+                <span class="w-24">type</span>
+                <span class="w-24">mode</span>
+                <span class="w-24">status</span>
+                <span class="w-24">action</span>
+              </div>
+              <div class="contentWrapper w-full my-2 uppercase">
+                <div
+                  class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-300 cursor-pointer">
+                  <span class="w-52">
+                    Ankit Thakur <br /> ankitjeetthakur@gmail.com
+                  </span>
+                  <span class="w-24">09:00-10:00</span>
+                  <span class="w-24">17/03/2023</span>
+                  <span class="w-24">Session</span>
+                  <span class="w-24">Online</span>
+                  <span class="w-24">Scheduled</span>
+                  <span class="w-24">action</span>
+                </div>
+                <div
+                  class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-300 cursor-pointer">
+                  <span class="w-52">
+                    Ankit Thakur <br /> ankitjeetthakur@gmail.com
+                  </span>
+                  <span class="w-24">09:00-10:00</span>
+                  <span class="w-24">17/03/2023</span>
+                  <span class="w-24">Session</span>
+                  <span class="w-24">Online</span>
+                  <span class="w-24">Scheduled</span>
+                  <span class="w-24">action</span>
+                </div>
+                <div
+                  class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-300 cursor-pointer">
+                  <span class="w-52">
+                    Ankit Thakur <br /> ankitjeetthakur@gmail.com
+                  </span>
+                  <span class="w-24">09:00-10:00</span>
+                  <span class="w-24">17/03/2023</span>
+                  <span class="w-24">Session</span>
+                  <span class="w-24">Online</span>
+                  <span class="w-24">Scheduled</span>
+                  <span class="w-24">action</span>
+                </div>
+              </div>
+              <!-- <table class="text-xs text-left w-full">
                 <thead>
                   <tr class=" font-semibold text-indigo-600 uppercase text-[10px] w-full border-b border-gray-300">
                     <th class="px-6 py-3 tracking-wider">
@@ -266,46 +302,134 @@
                   </tr>
                 </thead>
                 <tbody class="rounded-md scheduleTableRows h-80 relative "></tbody>
-              </table>
+              </table> -->
             </div>
             <span
               class="aptsRange font-semibold uppercase block text-right mt-5 text-gray-500 text-[9px] tracking-wider ">
               Current & last month.</span>
           </div>
 
+          <div class="showAptsMobile md:hidden mt-5">
+
+            <div
+              class="contentMobile text-gray-300 bg-slate-800 p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
+              <p class="aptName flex items-center justify-between my-2">
+                <span class="text-gray-600">Name</span>
+                <span class="name">Ankit Thakur</span>
+              </p>
+              <p class="aptTime flex items-center justify-between my-2">
+                <span class="text-gray-600">Time</span>
+                <span class="Time">09:00-10:00</span>
+              </p>
+              <p class="aptDate flex items-center justify-between my-2">
+                <span class="text-gray-600">Date</span>
+                <span class="Date">17/03/2023, Friday</span>
+              </p>
+              <p class="aptType flex items-center justify-between my-2">
+                <span class="text-gray-600">Type</span>
+                <span class="Type">Session</span>
+              </p>
+              <p class="aptMode flex items-center justify-between my-2">
+                <span class="text-gray-600">Mode</span>
+                <span class="Mode">Online</span>
+              </p>
+              <p class="aptStatus flex items-center justify-between my-2">
+                <span class="text-gray-600">Status</span>
+                <span class="Status">Scheduled</span>
+              </p>
+            </div>
+
+            <div
+              class="contentMobile text-gray-300 bg-slate-800 p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
+              <p class="aptName flex items-center justify-between my-2">
+                <span class="text-gray-600">Name</span>
+                <span class="name">Ankit Thakur</span>
+              </p>
+              <p class="aptTime flex items-center justify-between my-2">
+                <span class="text-gray-600">Time</span>
+                <span class="Time">09:00-10:00</span>
+              </p>
+              <p class="aptDate flex items-center justify-between my-2">
+                <span class="text-gray-600">Date</span>
+                <span class="Date">17/03/2023, Friday</span>
+              </p>
+              <p class="aptType flex items-center justify-between my-2">
+                <span class="text-gray-600">Type</span>
+                <span class="Type">Session</span>
+              </p>
+              <p class="aptMode flex items-center justify-between my-2">
+                <span class="text-gray-600">Mode</span>
+                <span class="Mode">Online</span>
+              </p>
+              <p class="aptStatus flex items-center justify-between my-2">
+                <span class="text-gray-600">Status</span>
+                <span class="Status">Scheduled</span>
+              </p>
+            </div>
+
+            <div
+              class="contentMobile text-gray-300 bg-slate-800 p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
+              <p class="aptName flex items-center justify-between my-2">
+                <span class="text-gray-600">Name</span>
+                <span class="name">Ankit Thakur</span>
+              </p>
+              <p class="aptTime flex items-center justify-between my-2">
+                <span class="text-gray-600">Time</span>
+                <span class="Time">09:00-10:00</span>
+              </p>
+              <p class="aptDate flex items-center justify-between my-2">
+                <span class="text-gray-600">Date</span>
+                <span class="Date">17/03/2023, Friday</span>
+              </p>
+              <p class="aptType flex items-center justify-between my-2">
+                <span class="text-gray-600">Type</span>
+                <span class="Type">Session</span>
+              </p>
+              <p class="aptMode flex items-center justify-between my-2">
+                <span class="text-gray-600">Mode</span>
+                <span class="Mode">Online</span>
+              </p>
+              <p class="aptStatus flex items-center justify-between my-2">
+                <span class="text-gray-600">Status</span>
+                <span class="Status">Scheduled</span>
+              </p>
+            </div>
+
+          </div>
+
           <div
-            class="updateAptWindow absolute left-1/2 -translate-x-1/2 w-2/3 bg-white shadow-2xl py-6 px-6 rounded-xl top-1/2 -translate-y-1/2">
-            <h1
-              class="text-center text-[10px] uppercase tracking-widest font-semibold bg-indigo-800 rounded-xl py-4 text-white">
+            class="updateAptWindow rounded-xl hidden md:absolute w-2/5 h-full ease-in-out duration-500 -right-[2000px] bg-white shadow-2xl p-10 top-1/2 -translate-y-1/2 z-10 md:flex md:justify-between flex-col">
+
+            <h1 class="text-center text-[10px] uppercase tracking-widest font-semibold rounded-xl text-indigo-800">
               Update
               Appointment
             </h1>
-            <div class="updateForm w-full px-10">
+            <div class="updateForm w-full">
               <div
                 class="updateFormWrapper grid grid-cols-1 md:grid-cols-1 md:gap-x-10 text-[10px] text-gray-400 tracking-widest font-semibold ">
 
-                <div class="nameUpdate my-3">
+                <div class="nameUpdate my-1">
 
                   <span class="mb-1 px-1 block uppercase">Name: </span>
                   <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled value="${ doc.data().name }"
                     class="border border-gray-200 bg-gray-200 rounded-lg w-full text-xs text-indigo-800 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold" />
                 </div>
 
-                <div class="emailUpdate my-3">
+                <div class="emailUpdate my-1">
 
                   <span class="mb-3 px-1  uppercase">Email: </span>
                   <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled value="${ doc.data().email }"
                     class="border border-gray-200 bg-gray-200 rounded-lg w-full text-xs text-indigo-800 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold">
                 </div>
 
-                <div class="dateUpdate my-3">
+                <div class="dateUpdate my-1">
 
                   <span class="mb-3 px-1  uppercase">Date: </span>
                   <input type="date" name="dateUpdateCell" id="dateUpdateCell" value="${ new Date( defaultDateValue ) }"
                     class="border border-gray-200 bg-white rounded-lg w-full text-xs text-indigo-800 tracking-widest py-4 lg:drop-shadow-none drop-shadow-2xl font-semibold">
                 </div>
 
-                <div class="dayUpdate my-3">
+                <div class="dayUpdate my-1">
 
                   <span class="mb-3 px-1  uppercase">Day:</span>
                   <select name="aptDay" id="aptDay"
@@ -337,7 +461,7 @@
                   </select>
                 </div>
 
-                <div class="timeSlotUpdate my-3">
+                <div class="timeSlotUpdate my-1">
 
                   <span class="mb-3 px-1  uppercase"> Time Slot: </span>
                   <select name="aptTimeSlot" id="aptTimeSlot"
@@ -376,23 +500,25 @@
                   </select>
                 </div>
 
-                <div class="reasonToUpdate my-3">
+                <div class="reasonToUpdate my-1">
                   <span class="mb-3 px-1  uppercase">Reason to Update:</span>
                   <textarea type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell"
                     class="reasonToUpdate border border-gray-300 rounded-lg w-full placeholder:text-indigo-800 tracking-widest lg:placeholder:text-xs placeholder:font-semibold font-semibold py-4 text-xs text-indigo-800 tracking-widest"></textarea>
                 </div>
 
               </div>
-              <div class="updateCancelButtons">
-                <button
-                  class="border bg-indigo-800 updateButton py-3 px-6 text-white font-semibold text-xs lg:text-md tracking-widest rounded-lg uppercase">Update</button>
-                <button
-                  class="border bg-white cancelUpdateButton ml-2 py-3 px-6 text-rose-600 font-semibold text-xs lg:text-md tracking-widest rounded-lg uppercase">Cancel</button>
-              </div>
 
             </div>
+            <div class="updateCancelButtons">
+              <button
+                class="border bg-indigo-800 updateButton py-3 px-6 text-white font-bold text-xs lg:text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Update</button>
+              <button
+                class="border bg-white cancelUpdateButton ml-2 py-3 px-6 text-rose-600 font-bold text-xs lg:text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Cancel</button>
+            </div>
           </div>
+
         </div>
+
       </div>
     </div>
 
