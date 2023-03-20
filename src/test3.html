@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>yourDay - Test Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body class="w-screen h-screen relative">
+    <div class="pageBlocker absolute hidden w-screen h-screen bg-slate-600 z-20 opacity-50"></div>
+
+    <div
+      class="h-auto lg:h-full bg-gray-900 lg:bg-white px-6 py-4 lg:px-2 flex justify-center items-start font-semibold uppercase text-xs flex-wrap lg:flex-nowrap">
+
+      <div
+        class="left w-full lg:w-64 py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white h-auto lg:h-full flex flex-col lg:mb-0 justify-between lg:items-start overflow-y-auto mb-5">
+
+        <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
+          yourDay</div>
+
+        <nav
+          class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 text-slate-500 lg:text-white">
+
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 my-1 items-center justify-between w-36 lg:w-full rounded-xl uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">Appointments</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path
+                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+            </svg>
+
+          </a>
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">Schedule</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </a>
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">Finances</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </a>
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">RECORDS</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+              fill="currentColor">
+              <path fill-rule="evenodd"
+                d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </a>
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">Notes</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+            </svg>
+
+          </a>
+          <a href="#"
+            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+            <span class="">Logout</span>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+            </svg>
+
+          </a>
+        </nav>
+
+        <nav
+          class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
+          <a href="#"
+            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+            <span class="">Ankit Thakur</span>
+            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-4 h-4 ml-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+
+          </a>
+          <a href=" #"
+            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+            <span class="">Settings</span>
+            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="w-4 h-4 ml-3">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+
+          </a>
+        </nav>
+
+      </div>
+
+      <div class="rightSection h-full lg:ml-10 w-full flex flex-col justify-between overflow-hidden">
+
+        <!-- Prompts  -->
+        <div class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-1/3 z-50 ">
+          <div
+            class="promptContentWrapper cursor-pointer h-full px-6 py-5 my-3 rounded-xl bg-white shadow-2xl font-semibold flex items-center text-rose-600 text-[10px] uppercase tracking-widest">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="w-6 h-6 mr-2 text-rose-700">
+              <path fill-rule="evenodd"
+                d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                clip-rule="evenodd" />
+            </svg>
+            <div class="promptContent grow">
+              You must enter all the required fields.
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+              class="closePrompt w-5 h-5 ease-in-out duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
+              <path fill-rule="evenodd"
+                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                clip-rule="evenodd" />
+            </svg>
+
+          </div>
+
+        </div>
+
+        <div
+          class="noticeBar lg:mt-5 px-5 py-4 rounded-lg flex items-center justify-between text-slate-500 lg:text-white tracking-widest lg:bg-indigo-600">
+          <div class="pageName ">Home</div>
+          <div class="time">
+            <span>12:12</span>,
+            <span class="date">20/03/2023</span>
+          </div>
+        </div>
+
+        <div class="filterApts my-5 lg:bg-white px-5 py-3 rounded-xl border border-gray-300">
+          <div class="my-2 scheduleFiltersWrapper md:flex md:items-center ">
+            <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
+              <h3 class="mb-2">
+                <span class="text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                  Find Appointments
+                </span>
+              </h3>
+
+              <!-- Filter Type -->
+              <section class="w-full mt-1 font-semibold scheduleFilters">
+
+                <div class="flex flex-col w-full filters">
+
+                  <div class="grid w-full grid-cols-3 gap-y-3 md:gap-y-0 filterWrappers gap-x-3 md:gap-x-10">
+
+                    <!-- Patient List -->
+                    <div class="relative w-full">
+                      <select title="Patient List" name="" id=""
+                        class="w-full py-2 md:py-3 text-[10px] tracking-widest text-slate-500 bg-gray-800 border border-blue-500 rounded-xl patientNamesList h-fit md:border-gray-200 md:font-semibold md:bg-white md:text-indigo-600 uppercase">
+                        <option selected value="" class="font-semibold">
+                          Name
+                        </option>
+                      </select>
+                    </div>
+
+                    <!-- Month and year filter -->
+                    <input type="text" name="" id="" value=""
+                      class="relative w-full py-2 md:py-3 text-[10px] uppercase tracking-widest text-slate-300 bg-gray-800 border border-blue-500 rounded-xl scheduleFilterMonth h-fit md:border-gray-200 md:placeholder:text-indigo-600 md:font-semibold md:bg-white md:text-indigo-600"
+                      placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+
+                    <!-- Filter of Appointment Status -->
+                    <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                      class="fontSize py-2 md:py-3 uppercase tracking-widest md:text-indigo-600 text-slate-500 border md:border-gray-200 border-blue-500 rounded-xl outline-none focus:border-blue-500 focus:ring-blue-500 scheduleFilterStatus w-full bg-gray-800 md:bg-white">
+                      <option value="" class="font-semibold">Status</option>
+                      <option value="Scheduled" class="font-semibold">Scheduled</option>
+                      <option value="Completed" class="font-semibold">Completed</option>
+                      <option value="Cancelled" class="font-semibold">Cancelled</option>
+                      <option value="Pending" class="font-semibold">Pending</option>
+                    </select>
+                  </div>
+
+                  <!-- Buttons  -->
+                  <div class="flex items-center justify-between mt-5 w-full">
+                    <div class="wrap flex items-center">
+                      <button
+                        class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
+                        <span>Find</span>
+                      </button>
+
+                      <button
+                        class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
+                        <span>Clear</span>
+                      </button>
+                    </div>
+                    <div class="ml-5 text-[10px] font-semibold text-gray-500 uppercase md:text-red-500 helper">
+                      All filters are required.
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+            </section>
+          </div>
+        </div>
+
+        <span
+          class="h-auto lg:h-3/4 my-5 lg:my-0 block shadow-2xl overflow-y-auto rounded-xl p-10 text-justify leading-10 text-gray-600">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur laudantium eveniet in
+          eius
+          dolores, similique magni amet voluptate? Consectetur corporis maxime corrupti repudiandae ipsum
+          nesciunt omnis
+          velit, placeat quibusdam.
+          Eum id quibusdam tempora suscipit sit. Nisi eius adipisci, voluptatum sunt voluptatem dolorum, quasi
+          repellendus
+          commodi itaque nihil reiciendis perferendis quibusdam at beatae, in quam mollitia officiis laborum
+          vitae
+          maxime.
+          Deserunt sequi esse et. Rem culpa nisi dignissimos. Quibusdam autem, repellat iure modi debitis
+          deserunt fugit
+          sint! Omnis qui beatae iste ea dolor quidem, autem ullam dolorum ut quae tenetur.
+          Beatae nobis cupiditate numquam non culpa quod quaerat veritatis vel eius ullam molestias rerum
+          soluta,
+          reiciendis asperiores, architecto adipisci modi error explicabo veniam? Laudantium blanditiis vitae
+          incidunt
+          dolore, aut in?
+          Consequuntur, ratione saepe. Dignissimos at odio recusandae. Minima quidem recusandae voluptatibus
+          dolor
+          mollitia dolorum. Corrupti iure sit consectetur ab beatae praesentium, minima id dolores, eius maiores
+          reprehenderit nisi. Quas, explicabo.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente dolor maxime soluta delectus ipsum,
+          voluptatibus laudantium corrupti consectetur alias molestiae consequatur, unde, possimus harum quis
+          deserunt
+          pariatur. Recusandae, deserunt quaerat.
+          Fugit cumque illo itaque est natus repellendus, quia quisquam corrupti, vitae voluptas aperiam
+          officiis ipsa
+          similique reiciendis veritatis eum ducimus dolorum sapiente optio quo dolores ipsam nobis. Animi, quam
+          iste!
+          Deserunt, eaque assumenda adipisci voluptates repellat quaerat itaque. Maxime nihil molestiae
+          accusantium,
+          facilis libero quidem odit ducimus minima corrupti perspiciatis quis. Voluptates quibusdam et quas
+          dolor
+          aspernatur, corporis sed impedit.
+          Eveniet quis possimus vel fugit ea, vitae in, accusamus veniam sit numquam id aliquid cum tenetur non
+          deleniti
+          quas neque. Quaerat quis nobis voluptatum facere vitae eligendi laborum odio. Eos.
+          Eius error vel cum quia, tempora aperiam dolores voluptatibus dignissimos numquam dolorem beatae illo
+          natus
+          neque ipsa rerum. Commodi quidem earum cumque quasi distinctio nesciunt nobis magnam, inventore
+          veritatis
+          necessitatibus.
+          Magni molestias explicabo perspiciatis omnis atque rerum modi doloremque ut voluptates dignissimos
+          culpa,
+          aspernatur necessitatibus ipsam soluta suscipit esse! Excepturi impedit incidunt consectetur iure
+          doloribus
+          reiciendis asperiores minima? Dicta, praesentium.
+          Nesciunt incidunt sapiente magnam praesentium modi veniam doloremque, animi eveniet? Officia
+          consequuntur unde
+          voluptates doloremque expedita. Enim eum saepe amet mollitia facilis autem porro molestiae doloribus,
+          quasi
+          deserunt, consectetur hic!
+          Harum suscipit, voluptatum velit repellat esse rerum aperiam voluptatibus quibusdam cupiditate totam,
+          dolorum
+          nisi ipsa aliquid! Provident vel possimus beatae perferendis architecto numquam repellendus. Delectus
+          quaerat
+          repudiandae assumenda nostrum exercitationem.
+          Reprehenderit eum dolorem dolore veniam eius odit accusamus repudiandae itaque hic assumenda ullam
+          nemo sequi
+          eveniet porro iste facilis, quidem illo cupiditate enim incidunt deserunt nisi tempora at quae.
+          Impedit?
+          Dolorem architecto adipisci distinctio minus fuga error quisquam pariatur aliquid numquam asperiores,
+          alias
+          minima corrupti voluptas labore nulla earum. Quibusdam dolore magnam consequuntur explicabo, neque
+          dolorum
+          quidem numquam similique eligendi?
+        </span>
+
+      </div>
+
+    </div>
+
+    <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <!-- <script src="../scripts/newThings.js"></script> -->
+  </body>
+
+</html>
