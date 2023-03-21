@@ -1,760 +1,761 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>yourDay - Test Page</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>yourDay - Test Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body class="w-screen h-screen relative">
-    <div class="pageBlocker absolute hidden w-screen h-screen bg-slate-600 z-20 opacity-50"></div>
+<body class="w-screen h-screen relative">
+  <div class="pageBlocker absolute hidden w-screen h-screen bg-slate-600 z-20 opacity-50"></div>
 
+  <div
+       class="lg:h-full bg-gray-900 lg:bg-white px-6 py-4 lg:px-2 flex justify-center items-start font-semibold uppercase text-xs flex-wrap lg:flex-nowrap ">
+
+    <!-- Left Section  -->
     <div
-      class="h-auto lg:h-full bg-gray-900 lg:bg-white px-6 py-4 lg:px-2 flex justify-center items-start font-semibold uppercase text-xs flex-wrap lg:flex-nowrap ">
+         class="left w-full lg:w-64 py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white h-auto lg:h-full flex flex-col lg:mb-0 justify-between lg:items-start overflow-y-auto ">
 
-      <!-- Left Section  -->
+      <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
+        yourDay</div>
+
+      <!-- First Nav  -->
+      <nav
+           class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 text-slate-500 lg:text-white">
+
+        <a href="./test3Appointments.html"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 my-1 items-center justify-between w-36 lg:w-full rounded-xl uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Appointments</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                  d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+          </svg>
+
+        </a>
+        <a href="./test3Schedule.html"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Schedule</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                  clip-rule="evenodd" />
+          </svg>
+
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Finances</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
+                  clip-rule="evenodd" />
+          </svg>
+
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">RECORDS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
+                  clip-rule="evenodd" />
+          </svg>
+
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Notes</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+          </svg>
+
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Logout</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+          </svg>
+
+        </a>
+      </nav>
+
+      <!-- Second Nav  -->
+      <nav
+           class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
+        <a href="#"
+           class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+          <span class="">Ankit Thakur</span>
+          <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+
+        </a>
+        <a href=" #"
+           class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+          <span class="">Settings</span>
+          <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+
+        </a>
+      </nav>
+
+    </div>
+
+    <!-- Right Section    -->
+    <div
+         class="rightSection relative h-full m-0 lg:ml-10 w-full flex flex-col overflow-hidden lg:bg-[url('../assets/homepage2.webp')] bg-no-repeat bg-cover bg-center">
+
+      <!-- Confirm Page -->
+      <sections
+                class="confirmPage z-50 absolute w-full h-full top-0 -left-[2000px] flex justify-center items-center flex-col bg-gray-900 lg:bg-white ease-in-out duration-300">
+
+        <!-- Confirm Page Details -->
+        <div
+             class="flex flex-col w-full h-full p-6 overflow-hidden overflow-y-auto lg:rounded-xl border border-gray-300 confirmPageDetails text-zinc-900">
+
+          <div class="confirmDetails">
+
+            <!-- Confirm Page Navbar -->
+            <nav class="flex items-center w-full py-2 navConfirmPage justify-between">
+              <span class="text-sm text-indigo-600 confirmPageTitle">yD</span>
+              <h1 class="relative text-2xl font-semibold text-center text-emerald-600 ">
+                Confirm Page
+              </h1>
+              <div class="dummy"></div>
+            </nav>
+
+            <div
+                 class="my-5 appointmentDetails md:flex md:flex-col md:justify-between border-2 border-gray-300 rounded-xl">
+
+              <h3 class="py-3 text-sm tracking-widest font-bold text-center text-gray-300  col-span-full">
+                Appointment Details
+              </h3>
+
+              <!-- Confirm Appointment Details  -->
+              <div
+                   class="grid grid-cols-1 px-20 pt-10  appointmentDetailsWrapper lg:grid-cols-3 grid-cols-2 gap-y-5 place-items-center text-left">
+
+                <!-- Name  -->
+                <div class="flex flex-col w-full">
+                  <span class=" confirmNameTag text-[11px] text-blue-700 font-semibold capitalize">Name</span>
+                  <span class="confirmName text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Category  -->
+                <div class="flex flex-col w-full lg:text-center text-right">
+                  <span class="confirmCategoryTag text-[11px] text-blue-700 font-semibold capitalize">Category</span>
+                  <span class="confirmCategory text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Appointment Nature  -->
+                <div class="flex flex-col w-full lg:text-right">
+                  <span
+                        class="confirmAppointmentNatureTag text-[11px] text-blue-700 font-semibold capitalize">Appointment
+                    Mode</span>
+                  <span class="confirmAppointmentNature text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Appointment Type  -->
+                <div class="flex flex-col w-full lg:text-left text-right">
+                  <span
+                        class="confirmAppointmentTypeTag text-[11px] text-blue-700 font-semibold capitalize">Appointment
+                    Type</span>
+                  <span class="confirmAppointmentType text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Visit Per Week  -->
+                <div class="flex flex-col w-full lg:text-center">
+                  <span class="confirmOccurrenceTypeTag text-[11px] text-blue-700 font-semibold capitalize">Visit
+                    per
+                    week</span>
+                  <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Email  -->
+                <div class="flex flex-col w-full text-right">
+                  <span class="confirmEmailTag text-[11px] text-blue-700 font-semibold">Email</span>
+                  <span class="confirmEmail text-xs mt-[2px] font-semibold text-zinc-800 lowercase"></span>
+                </div>
+
+                <!-- Mobile Number  -->
+                <div class="flex flex-col w-full">
+                  <span class="confirmMobileNumberTag text-[11px] text-blue-700 font-semibold capitalize">Mobile
+                    Number</span>
+                  <span class="confirmMobileNumber text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Address  -->
+                <div class="flex flex-col w-full lg:text-center text-right">
+                  <span class="confirmAddresTag text-[11px] text-blue-700 font-semibold capitalize">Address</span>
+                  <span class="confirmAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
+                </div>
+
+                <!-- First Date Slot  -->
+                <div class="flex flex-col w-full lg:text-right">
+                  <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Start
+                    Date</span>
+                  <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Second Date Slot  -->
+                <div class="flex flex-col w-full text-right lg:text-left">
+                  <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Start
+                    Date</span>
+                  <span class="confirmSecondStartDate text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- First Day Slot  -->
+                <div class="flex flex-col w-full lg:text-center">
+                  <span class="confirmDayTag text-[11px] text-blue-700 font-semibold capitalize">Start Day</span>
+                  <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Second Day Slot  -->
+                <div class="flex flex-col w-full text-right">
+                  <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Start
+                    Day</span>
+                  <span class="confirmSecondDay text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- First Time Slot  -->
+                <div class="flex flex-col w-full">
+                  <span class="confirmTimeSlotTag text-[11px] text-blue-700 font-semibold capitalize">Time
+                    Slot</span>
+                  <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Second Time Slot  -->
+                <div class="flex flex-col w-full lg:text-center text-right">
+                  <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Time
+                    Slot</span>
+                  <span class="confirmSecondTimeSlot text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                </div>
+
+                <!-- Fees  -->
+                <div class="flex flex-col w-full lg:text-right">
+                  <span class="confirmFeeTag text-[11px] text-blue-700 font-semibold capitalize">Fees</span>
+                  <div class="confirmFeesWrapper text-zinc-800 text-xs mt-[2px] font-semibold ">
+                    <span>&#8377;</span>
+                    <span class="confirmFees"></span>
+                  </div>
+                </div>
+
+                <!-- Emergency Details -->
+                <div class="w-full pt-5 border-t border-gray-300 emergencyDetailsWrapper col-span-full">
+                  <h2 class="text-xs font-semibold text-center uppercase text-rose-600 tracking-widest">Emergency
+                    Contact details
+                  </h2>
+                  <div class="grid grid-cols-2 mt-5 emergencyDetails">
+
+                    <!-- Emergency Contact Name  -->
+                    <div class="flex flex-col mb-5 ">
+                      <span
+                            class="confirmEmergencyNameWrapper text-[11px] text-blue-700 font-semibold capitalize">Name</span>
+                      <span
+                            class="confirmEmergencyName text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
+                    </div>
+
+                    <!-- Emergency Relation  -->
+                    <div class="flex flex-col mb-5 text-right">
+                      <span
+                            class="confirmEmergencyRelationWrapper text-[11px] text-blue-700 font-semibold capitalize">Relation</span>
+                      <span class="confirmEmergencyRelation text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                    </div>
+
+                    <!-- Emergency Mobile Number  -->
+                    <div class="flex flex-col mb-5 ">
+                      <span
+                            class="confirmEmergencyMobileNumberWrapper text-[11px] text-blue-700 font-semibold capitalize">Mobile
+                        Number</span>
+                      <span class="confirmEmergencyMobileNumber text-xs mt-[2px] font-semibold text-zinc-800"></span>
+                    </div>
+
+                    <!-- Emergency Address  -->
+                    <div class="flex flex-col mb-5 text-right">
+                      <span
+                            class="confirmEmergencyAddressWrapper text-[11px] text-blue-700 font-semibold capitalize">Address</span>
+                      <span
+                            class="confirmEmergencyAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
+                    </div>
+
+                  </div>
+                </div>
+
+
+              </div>
+
+            </div>
+            <!-- Confirm Edit buttons  -->
+            <div class="flex items-center my-5 confirmEdit flex-row justify-center text-slate-50">
+              <a href="#"
+                 class="flex tracking-widest mx-2 items-center justify-center px-2 py-3 text-sm bg-indigo-600 rounded-md confirmButton w-36 md:mx-4 ">
+                <span>Confirm</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#"
+                 class="flex tracking-widest mx-2 items-center justify-center px-2 py-3 text-sm rounded-md editButton bg-gray-200 text-indigo-600 w-36 md:mx-4 ">
+                <span>Edit</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                  <path fill-rule="evenodd"
+                        d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                        clip-rule="evenodd" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </sections>
+
+      <!-- Prompts  -->
       <div
-        class="left w-full lg:w-64 py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white h-auto lg:h-full flex flex-col lg:mb-0 justify-between lg:items-start overflow-y-auto ">
+           class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
+        <div
+             class="flex items-center justify-between px-6 py-5 my-3 w-full h-full rounded-xl bg-white shadow-2xl font-semibold text-rose-600 text-[10px] uppercase tracking-widest">
 
-        <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
-          yourDay</div>
-
-        <!-- First Nav  -->
-        <nav
-          class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 text-slate-500 lg:text-white">
-
-          <a href="./test3Appointments.html"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 my-1 items-center justify-between w-36 lg:w-full rounded-xl uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Appointments</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path
-                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-            </svg>
-
-          </a>
-          <a href="./test3Schedule.html"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Schedule</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
+          <div class="promptContentWrapper flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                 class="w-6 h-6 mr-2 text-rose-700">
               <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                clip-rule="evenodd" />
+                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clip-rule="evenodd" />
             </svg>
 
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Finances</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
-                clip-rule="evenodd" />
-            </svg>
+            <div class="promptContent">
+              You must enter all the required fields.
+            </div>
 
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">RECORDS</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
-                clip-rule="evenodd" />
-            </svg>
+          </div>
 
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Notes</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-            </svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+               class="closePrompt w-5 h-5 ease-in-out cursor-pointer duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
+            <path fill-rule="evenodd"
+                  d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                  clip-rule="evenodd" />
+          </svg>
+        </div>
 
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Logout</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-            </svg>
-
-          </a>
-        </nav>
-
-        <!-- Second Nav  -->
-        <nav
-          class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
-          <a href="#"
-            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
-            <span class="">Ankit Thakur</span>
-            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-
-          </a>
-          <a href=" #"
-            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
-            <span class="">Settings</span>
-            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-
-          </a>
-        </nav>
 
       </div>
 
-      <!-- Right Section    -->
+      <!-- PageName and Time  -->
       <div
-        class="rightSection relative h-full lg:ml-10 w-full flex flex-col overflow-hidden lg:bg-[url('../assets/homepage2.webp')] bg-no-repeat bg-cover bg-center">
-
-        <!-- Confirm Page -->
-        <sections
-          class="confirmPage z-50 absolute w-full h-full top-0 -left-[2000px] flex justify-center items-center flex-col bg-gray-900 lg:bg-white ease-in-out duration-300">
-
-          <!-- Confirm Page Details -->
-          <div
-            class="flex flex-col w-full h-full p-6 overflow-hidden overflow-y-auto lg:rounded-xl border border-gray-300 confirmPageDetails text-zinc-900">
-
-            <div class="confirmDetails">
-
-              <!-- Confirm Page Navbar -->
-              <nav class="flex items-center w-full py-2 navConfirmPage justify-between">
-                <span class="text-sm text-indigo-600 confirmPageTitle">yD</span>
-                <h1 class="relative text-2xl font-semibold text-center text-emerald-600 ">
-                  Confirm Page
-                </h1>
-                <div class="dummy"></div>
-              </nav>
-
-              <div
-                class="my-5 appointmentDetails md:flex md:flex-col md:justify-between border-2 border-gray-300 rounded-xl">
-
-                <h3 class="py-3 text-sm tracking-widest font-bold text-center text-gray-300  col-span-full">
-                  Appointment Details
-                </h3>
-
-                <!-- Confirm Appointment Details  -->
-                <div
-                  class="grid grid-cols-1 px-20 pt-10  appointmentDetailsWrapper lg:grid-cols-3 grid-cols-2 gap-y-5 place-items-center text-left">
-
-                  <!-- Name  -->
-                  <div class="flex flex-col w-full">
-                    <span class=" confirmNameTag text-[11px] text-blue-700 font-semibold capitalize">Name</span>
-                    <span class="confirmName text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Category  -->
-                  <div class="flex flex-col w-full lg:text-center text-right">
-                    <span class="confirmCategoryTag text-[11px] text-blue-700 font-semibold capitalize">Category</span>
-                    <span class="confirmCategory text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Appointment Nature  -->
-                  <div class="flex flex-col w-full lg:text-right">
-                    <span
-                      class="confirmAppointmentNatureTag text-[11px] text-blue-700 font-semibold capitalize">Appointment
-                      Mode</span>
-                    <span class="confirmAppointmentNature text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Appointment Type  -->
-                  <div class="flex flex-col w-full lg:text-left text-right">
-                    <span
-                      class="confirmAppointmentTypeTag text-[11px] text-blue-700 font-semibold capitalize">Appointment
-                      Type</span>
-                    <span class="confirmAppointmentType text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Visit Per Week  -->
-                  <div class="flex flex-col w-full lg:text-center">
-                    <span class="confirmOccurrenceTypeTag text-[11px] text-blue-700 font-semibold capitalize">Visit
-                      per
-                      week</span>
-                    <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Email  -->
-                  <div class="flex flex-col w-full text-right">
-                    <span class="confirmEmailTag text-[11px] text-blue-700 font-semibold">Email</span>
-                    <span class="confirmEmail text-xs mt-[2px] font-semibold text-zinc-800 lowercase"></span>
-                  </div>
-
-                  <!-- Mobile Number  -->
-                  <div class="flex flex-col w-full">
-                    <span class="confirmMobileNumberTag text-[11px] text-blue-700 font-semibold capitalize">Mobile
-                      Number</span>
-                    <span class="confirmMobileNumber text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Address  -->
-                  <div class="flex flex-col w-full lg:text-center text-right">
-                    <span class="confirmAddresTag text-[11px] text-blue-700 font-semibold capitalize">Address</span>
-                    <span class="confirmAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
-                  </div>
-
-                  <!-- First Date Slot  -->
-                  <div class="flex flex-col w-full lg:text-right">
-                    <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Start
-                      Date</span>
-                    <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Second Date Slot  -->
-                  <div class="flex flex-col w-full text-right lg:text-left">
-                    <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Start
-                      Date</span>
-                    <span class="confirmSecondStartDate text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- First Day Slot  -->
-                  <div class="flex flex-col w-full lg:text-center">
-                    <span class="confirmDayTag text-[11px] text-blue-700 font-semibold capitalize">Start Day</span>
-                    <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Second Day Slot  -->
-                  <div class="flex flex-col w-full text-right">
-                    <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Start
-                      Day</span>
-                    <span class="confirmSecondDay text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- First Time Slot  -->
-                  <div class="flex flex-col w-full">
-                    <span class="confirmTimeSlotTag text-[11px] text-blue-700 font-semibold capitalize">Time
-                      Slot</span>
-                    <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Second Time Slot  -->
-                  <div class="flex flex-col w-full lg:text-center text-right">
-                    <span class="confirmStartDateTag text-[11px] text-blue-700 font-semibold capitalize">Second Time
-                      Slot</span>
-                    <span class="confirmSecondTimeSlot text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                  </div>
-
-                  <!-- Fees  -->
-                  <div class="flex flex-col w-full lg:text-right">
-                    <span class="confirmFeeTag text-[11px] text-blue-700 font-semibold capitalize">Fees</span>
-                    <div class="confirmFeesWrapper text-zinc-800 text-xs mt-[2px] font-semibold ">
-                      <span>&#8377;</span>
-                      <span class="confirmFees"></span>
-                    </div>
-                  </div>
-
-                  <!-- Emergency Details -->
-                  <div class="w-full pt-5 border-t border-gray-300 emergencyDetailsWrapper col-span-full">
-                    <h2 class="text-xs font-semibold text-center uppercase text-rose-600 tracking-widest">Emergency
-                      Contact details
-                    </h2>
-                    <div class="grid grid-cols-2 mt-5 emergencyDetails">
-
-                      <!-- Emergency Contact Name  -->
-                      <div class="flex flex-col mb-5 ">
-                        <span
-                          class="confirmEmergencyNameWrapper text-[11px] text-blue-700 font-semibold capitalize">Name</span>
-                        <span
-                          class="confirmEmergencyName text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
-                      </div>
-
-                      <!-- Emergency Relation  -->
-                      <div class="flex flex-col mb-5 text-right">
-                        <span
-                          class="confirmEmergencyRelationWrapper text-[11px] text-blue-700 font-semibold capitalize">Relation</span>
-                        <span class="confirmEmergencyRelation text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                      </div>
-
-                      <!-- Emergency Mobile Number  -->
-                      <div class="flex flex-col mb-5 ">
-                        <span
-                          class="confirmEmergencyMobileNumberWrapper text-[11px] text-blue-700 font-semibold capitalize">Mobile
-                          Number</span>
-                        <span class="confirmEmergencyMobileNumber text-xs mt-[2px] font-semibold text-zinc-800"></span>
-                      </div>
-
-                      <!-- Emergency Address  -->
-                      <div class="flex flex-col mb-5 text-right">
-                        <span
-                          class="confirmEmergencyAddressWrapper text-[11px] text-blue-700 font-semibold capitalize">Address</span>
-                        <span
-                          class="confirmEmergencyAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize"></span>
-                      </div>
-
-                    </div>
-                  </div>
-
-
-                </div>
-
-              </div>
-              <!-- Confirm Edit buttons  -->
-              <div class="flex items-center my-5 confirmEdit flex-row justify-center text-slate-50">
-                <a href="#"
-                  class="flex tracking-widest mx-2 items-center justify-center px-2 py-3 text-sm bg-indigo-600 rounded-md confirmButton w-36 md:mx-4 ">
-                  <span>Confirm</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-                <a href="#"
-                  class="flex tracking-widest mx-2 items-center justify-center px-2 py-3 text-sm rounded-md editButton bg-gray-200 text-indigo-600 w-36 md:mx-4 ">
-                  <span>Edit</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-                    <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                    <path fill-rule="evenodd"
-                      d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-
-          </div>
-
-        </sections>
-
-        <!-- Prompts  -->
-        <div
-          class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
-          <div
-            class="flex items-center justify-between px-6 py-5 my-3 w-full h-full rounded-xl bg-white shadow-2xl font-semibold text-rose-600 text-[10px] uppercase tracking-widest">
-
-            <div class="promptContentWrapper flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="w-6 h-6 mr-2 text-rose-700">
-                <path fill-rule="evenodd"
-                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                  clip-rule="evenodd" />
-              </svg>
-
-              <div class="promptContent">
-                You must enter all the required fields.
-              </div>
-
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              class="closePrompt w-5 h-5 ease-in-out cursor-pointer duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
-              <path fill-rule="evenodd"
-                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
-
-
+           class="noticeBar lg:mt-5 px-5 py-4 rounded-lg flex items-center justify-between lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+        <div class="pageName ">Home</div>
+        <div class="time">
+          <span>12:12</span>,
+          <span class="date">20/03/2023</span>
         </div>
+      </div>
 
-        <!-- PageName and Time  -->
-        <div
-          class="noticeBar lg:mt-5 px-5 py-4 rounded-lg flex items-center justify-between lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
-          <div class="pageName ">Home</div>
-          <div class="time">
-            <span>12:12</span>,
-            <span class="date">20/03/2023</span>
-          </div>
-        </div>
+      <!-- Content Section  -->
+      <div class="mt-10 text-slate-700 px-5 overflow-y-auto overflow-x-hidden">
+        <h1 class="border-b border-indigo-600 pb-1 text-indigo-600 tracking-widest">Create Appointment</h1>
 
-        <!-- Content Section  -->
-        <div class="mt-10 text-slate-700 px-5">
-          <h1 class="border-b border-indigo-600 pb-1 text-indigo-600 tracking-widest">Create Appointment</h1>
+        <div class="formFieldsWrapper mt-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-x-10 ">
 
-          <div class="formFieldsWrapper mt-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-x-10 ">
+          <div class="categoryDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
+            <div class="flex flex-col category rounded-xl ">
 
-            <div class="categoryDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
-              <div class="flex flex-col category rounded-xl ">
+              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                Appointment Nature
+              </h1>
 
-                <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Appointment Nature
-                </h1>
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
 
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+                <!-- Patient Category  -->
+                <div class="h-fit relative">
 
-                  <!-- Patient Category  -->
-                  <div class="h-fit relative">
-
-                    <input id="patientCategory" type="text" placeholder="New" value="NEW" title="Patient Category"
-                      class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-200 lg:bg-gray-200 rounded-md tracking-widest"
-                      disabled />
-                    <!-- <label for="patientCategory"
+                  <input id="patientCategory" type="text" placeholder="New" value="NEW" title="Patient Category"
+                         class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-200 lg:bg-gray-200 rounded-md tracking-widest"
+                         disabled />
+                  <!-- <label for="patientCategory"
                       class="transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 peer-focus:block left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">category</label> -->
-                  </div>
+                </div>
 
-                  <!-- Appointment Type  -->
-                  <div class="relative h-fit">
-                    <select name="appointmentType" id="appointmentType" title="Appointment Type"
-                      class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      <option value="" class="text-xs md:font-semibold md:text-sm">
-                        Type
-                      </option>
-                      <option value="Session" class="text-xs font-semibold md:text-sm ">
-                        Session
-                      </option>
-                      <option value="Supervision" class="text-xs font-semibold md:text-sm">
-                        Supervision
-                      </option>
-                    </select>
-                    <label for="appointmentType"
-                      class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
-                  </div>
+                <!-- Appointment Type  -->
+                <div class="relative h-fit">
+                  <select name="appointmentType" id="appointmentType" title="Appointment Type"
+                          class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="text-xs md:font-semibold md:text-sm">
+                      Type
+                    </option>
+                    <option value="Session" class="text-xs font-semibold md:text-sm ">
+                      Session
+                    </option>
+                    <option value="Supervision" class="text-xs font-semibold md:text-sm">
+                      Supervision
+                    </option>
+                  </select>
+                  <label for="appointmentType"
+                         class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
+                </div>
 
-                  <!-- Appointment Mode  -->
-                  <div class="relative h-fit">
-                    <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
-                      class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      <option value="" class="text-xs md:font-semibold md:text-sm">
-                        Mode
-                      </option>
-                      <option value="Online" class="text-xs md:font-semibold md:text-sm">
-                        Online
-                      </option>
-                      <option value="Offline" class="text-xs md:font-semibold md:text-sm">
-                        Offline
-                      </option>
-                    </select>
-                    <label for="appointmentMode"
-                      class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Mode</label>
-                  </div>
+                <!-- Appointment Mode  -->
+                <div class="relative h-fit">
+                  <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
+                          class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="text-xs md:font-semibold md:text-sm">
+                      Mode
+                    </option>
+                    <option value="Online" class="text-xs md:font-semibold md:text-sm">
+                      Online
+                    </option>
+                    <option value="Offline" class="text-xs md:font-semibold md:text-sm">
+                      Offline
+                    </option>
+                  </select>
+                  <label for="appointmentMode"
+                         class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Mode</label>
                 </div>
               </div>
             </div>
+          </div>
 
-            <div class="patientDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
+          <div class="patientDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
-              <div class="flex flex-col patientDetails rounded-xl ">
+            <div class="flex flex-col patientDetails rounded-xl ">
 
-                <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Patient Details</h1>
+              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                Patient Details</h1>
 
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
 
-                  <!-- Full Name  -->
-                  <div class="relative h-fit">
-                    <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
-                      class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="patientFullName"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
-                      Name</label>
-                  </div>
+                <!-- Full Name  -->
+                <div class="relative h-fit">
+                  <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
+                         class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="patientFullName"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
+                    Name</label>
+                </div>
 
-                  <!-- Email address  -->
+                <!-- Email address  -->
+                <div class="relative w-full h-fit">
+                  <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
+                         id="patientEmail"
+                         class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="patientEmail"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
+                </div>
+
+                <!-- Mobile Number  -->
+                <div class="flex items-center">
+
+                  <select name="countryCode" id=""
+                          class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest mr-5"
+                          title="Country Code">
+                  </select>
+
                   <div class="relative w-full h-fit">
-                    <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
-                      id="patientEmail"
-                      class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="patientEmail"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
-                  </div>
-
-                  <!-- Mobile Number  -->
-                  <div class="flex items-center">
-
-                    <select name="countryCode" id=""
-                      class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest mr-5"
-                      title="Country Code">
-                    </select>
-
-                    <div class="relative w-full h-fit">
-                      <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
-                        name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
-                        class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                      <label for="mobileNumber"
-                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
-                        number</label>
-                    </div>
-                  </div>
-
-                  <!-- Address  -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
-                      id="address" title="Address"
-                      class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="address"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
+                    <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
+                           name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
+                           class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                    <label for="mobileNumber"
+                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
+                      number</label>
                   </div>
                 </div>
-              </div>
 
-            </div>
-
-            <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
-
-              <div class="flex flex-col appointmentDetailsFields rounded-xl ">
-
-                <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Appointment Details</h1>
-
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                  <!-- Start Date  -->
-                  <div class="relative h-fit">
-                    <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
-                      autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
-                      onfocusout="(this.type='text')"
-                      class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-
-                    <label for="aptStartDate"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Start Date</label>
-                    <p class="hidden py-2 text-xs font-semibold firstStartDateWrapper text-rose-500">
-                      First Start Date:
-                      <span class="firstStartDate"></span>
-                    </p>
-                  </div>
-
-                  <!-- Start Day  -->
-                  <div class="relative h-fit">
-                    <select name="aptDay" id="aptDay" title="Appointment Start Day"
-                      class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      <option value="" class="text-xs md:font-semibold md:text-xs">
-                        Pick a day
-                      </option>
-                      <option value="Monday" class="text-xs md:font-semibold md:text-xs">
-                        Monday
-                      </option>
-                      <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
-                        Tuesday
-                      </option>
-                      <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
-                        Wednesday
-                      </option>
-                      <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
-                        Thursday
-                      </option>
-                      <option value="Friday" class="text-xs md:font-semibold md:text-xs">
-                        Friday
-                      </option>
-                      <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
-                        Saturday
-                      </option>
-                      <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
-                        Sunday
-                      </option>
-                    </select>
-                    <label for="aptDay"
-                      class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
-                      Day
-                    </label>
-                    <p class="hidden py-2 text-xs font-semibold firstDaySlotWrapper text-rose-600">
-                      First Day Slot: <span class="firstDaySlot"></span>
-                    </p>
-                  </div>
-
-                  <!-- Time slot -->
-                  <div class="relative h-fit">
-                    <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
-                      class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      <option value="" class="md:font-semibold">
-                        Time slot
-                      </option>
-                      <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
-                        09:00 - 10:00
-                      </option>
-                      <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
-                        10:00 - 11:00
-                      </option>
-                      <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
-                        11:00 - 12:00
-                      </option>
-                      <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
-                        12:00 - 13:00
-                      </option>
-                      <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
-                        13:00 - 14:00
-                      </option>
-                      <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
-                        14:00 - 15:00
-                      </option>
-                      <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
-                        15:00 - 16:00
-                      </option>
-                      <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
-                        16:00 - 17:00
-                      </option>
-                      <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
-                        17:00 - 18:00
-                      </option>
-                    </select>
-                    <label for="aptTimeSlot"
-                      class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
-                      Slot</label>
-                    <p class="hidden py-2 text-xs font-semibold firstTimeSlotWrapper text-rose-600">
-                      First Time Slot : <span class="firstTimeSlot"></span>
-                    </p>
-                  </div>
-
-                  <!-- Visit Per Week  -->
-                  <div class="h-fit relative">
-                    <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
-                      autocomplete="off" id="occurrenceType" title="Visit per week"
-                      class="aptOccurrenceType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="occurrenceType"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
-                      per week</label>
-                  </div>
-
-                  <!-- Fees  -->
-                  <div class="h-fit relative">
-                    <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
-                      autocomplete="off" title="Appointment Fees"
-                      class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="aptFees"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees</label>
-                  </div>
+                <!-- Address  -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
+                         id="address" title="Address"
+                         class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="address"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
                 </div>
               </div>
-
-            </div>
-
-            <div class="emergencyDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
-
-              <div class="flex flex-col emergencyDetailsFields rounded-xl ">
-                <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Emergency Details</h1>
-
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                  <!-- Emergency Contact Name -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
-                      aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                      class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="emergencyName"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Contact Name</label>
-                  </div>
-
-                  <!-- Emergency Contact Relation -->
-                  <div class="">
-                    <div class="relative">
-                      <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                        class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      </select>
-                      <label for="emergencyRelation"
-                        class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                        Relation</label>
-                    </div>
-                  </div>
-
-                  <!-- Emergency Contact Number -->
-                  <div class="flex items-center">
-                    <select name="countryCode" id=""
-                      class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
-                      title="Country Code">
-                    </select>
-
-                    <div class="relative h-fit w-full">
-                      <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
-                        name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
-                        class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                      <label for="e_mobileNumber"
-                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                        Mobile Number</label>
-                    </div>
-                  </div>
-
-                  <!-- Emergency Contact Address -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
-                      aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                      class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                    <label for="emergencyAddress"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Address</label>
-                  </div>
-
-                  <!-- Relation Details  -->
-                  <div class="">
-                    <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off"
-                      name="relationDetails" id="relationDetails" title="Relation Details"
-                      class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                  </div>
-                </div>
-              </div>
-
             </div>
 
           </div>
 
-          <!-- Buttons  -->
-          <div class="flex flex-col lg:flex-row justify-start appointmentButtonWrapper mt-10">
-            <div class="createAppointmentButtons flex items-center">
+          <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
-              <!-- Create Appointment Button  -->
-              <button
-                class="createAptBtn w-28 h-9 uppercase tracking-widest font-semibold text-xs text-white bg-emerald-600 rounded-md flex items-center text-center justify-between overflow-hidden">
-                <span class="w-2/3">Create</span>
-                <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                  </svg>
+            <div class="flex flex-col appointmentDetailsFields rounded-xl ">
+
+              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                Appointment Details</h1>
+
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Start Date  -->
+                <div class="relative h-fit">
+                  <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
+                         autocomplete="off" id="aptStartDate" title="Appointment Start Date"
+                         onfocus="(this.type='date')"
+                         onfocusout="(this.type='text')"
+                         class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+
+                  <label for="aptStartDate"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Start Date</label>
+                  <p class="hidden py-2 text-xs font-semibold firstStartDateWrapper text-rose-500">
+                    First Start Date:
+                    <span class="firstStartDate"></span>
+                  </p>
                 </div>
-              </button>
 
-              <!-- Create Two Appointments Button -->
-              <button
-                class="createTwoAptBtn hidden w-36 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-md flex text-center items-center justify-between overflow-hidden">
-                <span class="w-2/3">Create Two</span>
-                <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                  </svg>
+                <!-- Start Day  -->
+                <div class="relative h-fit">
+                  <select name="aptDay" id="aptDay" title="Appointment Start Day"
+                          class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="text-xs md:font-semibold md:text-xs">
+                      Pick a day
+                    </option>
+                    <option value="Monday" class="text-xs md:font-semibold md:text-xs">
+                      Monday
+                    </option>
+                    <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
+                      Tuesday
+                    </option>
+                    <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
+                      Wednesday
+                    </option>
+                    <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
+                      Thursday
+                    </option>
+                    <option value="Friday" class="text-xs md:font-semibold md:text-xs">
+                      Friday
+                    </option>
+                    <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
+                      Saturday
+                    </option>
+                    <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
+                      Sunday
+                    </option>
+                  </select>
+                  <label for="aptDay"
+                         class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
+                    Day
+                  </label>
+                  <p class="hidden py-2 text-xs font-semibold firstDaySlotWrapper text-rose-600">
+                    First Day Slot: <span class="firstDaySlot"></span>
+                  </p>
                 </div>
-              </button>
 
-              <!-- Clear Two Appointments  -->
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                stroke="currentColor"
-                class="cancelForOccurrence hidden w-6 h-6 ml-5 rounded-full text-white bg-rose-600 cursor-pointer p-1">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              <p class="hidden ml-3 text-xs font-semibold text-rose-600 aptInfo">Provide second 'Start Date',
-                'Start
-                Day', 'Time Slot'.</p>
+                <!-- Time slot -->
+                <div class="relative h-fit">
+                  <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
+                          class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="md:font-semibold">
+                      Time slot
+                    </option>
+                    <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
+                      09:00 - 10:00
+                    </option>
+                    <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
+                      10:00 - 11:00
+                    </option>
+                    <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
+                      11:00 - 12:00
+                    </option>
+                    <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
+                      12:00 - 13:00
+                    </option>
+                    <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
+                      13:00 - 14:00
+                    </option>
+                    <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
+                      14:00 - 15:00
+                    </option>
+                    <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
+                      15:00 - 16:00
+                    </option>
+                    <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
+                      16:00 - 17:00
+                    </option>
+                    <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
+                      17:00 - 18:00
+                    </option>
+                  </select>
+                  <label for="aptTimeSlot"
+                         class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
+                    Slot</label>
+                  <p class="hidden py-2 text-xs font-semibold firstTimeSlotWrapper text-rose-600">
+                    First Time Slot : <span class="firstTimeSlot"></span>
+                  </p>
+                </div>
+
+                <!-- Visit Per Week  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
+                         autocomplete="off" id="occurrenceType" title="Visit per week"
+                         class="aptOccurrenceType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="occurrenceType"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
+                    per week</label>
+                </div>
+
+                <!-- Fees  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
+                         autocomplete="off" title="Appointment Fees"
+                         class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="aptFees"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees</label>
+                </div>
+              </div>
             </div>
 
-            <!-- Notes  -->
-            <section
-              class="text-[10px] mt-2 lg:ml-5 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
-              <span>All fields are required.</span>
-            </section>
+          </div>
+
+          <div class="emergencyDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
+
+            <div class="flex flex-col emergencyDetailsFields rounded-xl ">
+              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                Emergency Details</h1>
+
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Emergency Contact Name -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
+                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
+                         class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="emergencyName"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Contact Name</label>
+                </div>
+
+                <!-- Emergency Contact Relation -->
+                <div class="">
+                  <div class="relative">
+                    <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                            class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    </select>
+                    <label for="emergencyRelation"
+                           class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                      Relation</label>
+                  </div>
+                </div>
+
+                <!-- Emergency Contact Number -->
+                <div class="flex items-center">
+                  <select name="countryCode" id=""
+                          class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                          title="Country Code">
+                  </select>
+
+                  <div class="relative h-fit w-full">
+                    <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
+                           name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
+                           class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                    <label for="e_mobileNumber"
+                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                      Mobile Number</label>
+                  </div>
+                </div>
+
+                <!-- Emergency Contact Address -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
+                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
+                         class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="emergencyAddress"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Address</label>
+                </div>
+
+                <!-- Relation Details  -->
+                <div class="">
+                  <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off"
+                         name="relationDetails" id="relationDetails" title="Relation Details"
+                         class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                </div>
+              </div>
+            </div>
 
           </div>
+
         </div>
 
+        <!-- Buttons  -->
+        <div class="flex flex-col lg:flex-row justify-start appointmentButtonWrapper mt-10">
+          <div class="createAppointmentButtons flex items-center">
+
+            <!-- Create Appointment Button  -->
+            <button
+                    class="createAptBtn w-28 h-9 uppercase tracking-widest font-semibold text-xs text-white bg-emerald-600 rounded-md flex items-center text-center justify-between overflow-hidden">
+              <span class="w-2/3">Create</span>
+              <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- Create Two Appointments Button -->
+            <button
+                    class="createTwoAptBtn hidden w-36 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-md flex text-center items-center justify-between overflow-hidden">
+              <span class="w-2/3">Create Two</span>
+              <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              </div>
+            </button>
+
+            <!-- Clear Two Appointments  -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                 stroke="currentColor"
+                 class="cancelForOccurrence hidden w-6 h-6 ml-5 rounded-full text-white bg-rose-600 cursor-pointer p-1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <p class="hidden ml-3 text-xs font-semibold text-rose-600 aptInfo">Provide second 'Start Date',
+              'Start
+              Day', 'Time Slot'.</p>
+          </div>
+
+          <!-- Notes  -->
+          <section
+                   class="text-[10px] mt-2 lg:ml-5 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
+            <span>All fields are required.</span>
+          </section>
+
+        </div>
       </div>
 
     </div>
 
-    <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <!-- <script src="../scripts/newThings.js"></script> -->
-  </body>
+  </div>
+
+  <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <!-- <script src="../scripts/newThings.js"></script> -->
+</body>
 
 </html>
