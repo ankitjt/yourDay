@@ -10,16 +10,16 @@ for ( let row of content )
   {
     content.forEach( ( el ) =>
     {
-      el.classList.remove( 'bg-indigo-500' )
-      el.classList.add( 'hover:bg-indigo-300' )
+      el.classList.remove( 'bg-indigo-600' )
+      el.classList.add( 'hover:bg-indigo-600' )
 
     } )
 
     updateAptWindow.classList.remove( '-right-[2000px]' )
     updateAptWindow.classList.add( 'right-0' )
 
-    row.classList.add( 'bg-indigo-500' )
-    row.classList.toggle( 'hover:bg-indigo-300' )
+    row.classList.add( 'bg-indigo-600' )
+    row.classList.toggle( 'hover:bg-indigo-600' )
 
     pageBlocker.classList.remove( 'hidden' )
     prompts.classList.add( 'left-1/2' )
@@ -30,8 +30,8 @@ for ( let row of content )
     {
       updateAptWindow.classList.remove( 'right-0' )
       updateAptWindow.classList.add( '-right-[2000px]' )
-      row.classList.remove( 'bg-indigo-500' )
-      row.classList.add( 'hover:bg-indigo-300' )
+      row.classList.remove( 'bg-indigo-600' )
+      row.classList.add( 'hover:bg-indigo-600' )
 
     }
 
