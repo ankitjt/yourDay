@@ -19,12 +19,14 @@
     <div
       class="h-auto lg:h-full bg-gray-900 lg:bg-white px-6 py-4 lg:px-2 flex justify-center items-start font-semibold uppercase text-xs flex-wrap lg:flex-nowrap">
 
+      <!-- Left Section  -->
       <div
         class="left w-full lg:w-64 py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white h-auto lg:h-full flex flex-col lg:mb-0 justify-between lg:items-start overflow-y-auto mb-5">
 
         <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
           yourDay</div>
 
+        <!-- First Nav  -->
         <nav
           class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 text-slate-500 lg:text-white">
 
@@ -93,6 +95,7 @@
           </a>
         </nav>
 
+        <!-- Second Nav  -->
         <nav
           class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
           <a href="#"
@@ -120,6 +123,7 @@
 
       </div>
 
+      <!-- Right Section    -->
       <div class="rightSection h-full lg:ml-10 w-full flex flex-col justify-between overflow-hidden">
 
         <!-- Prompts  -->
@@ -146,6 +150,7 @@
 
         </div>
 
+        <!-- PageName and Time  -->
         <div
           class="noticeBar lg:mt-5 px-5 py-4 rounded-lg flex items-center justify-between text-slate-500 lg:text-white tracking-widest lg:bg-indigo-600">
           <div class="pageName ">Home</div>
@@ -155,142 +160,146 @@
           </div>
         </div>
 
-        <div class="filterApts my-5 lg:bg-white px-5 py-3 rounded-xl border border-gray-300">
-          <div class="my-2 scheduleFiltersWrapper md:flex md:items-center ">
-            <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
-              <h3 class="mb-2">
-                <span class="text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Find Appointments
-                </span>
-              </h3>
+        <!-- Content Section  -->
+        <div>
+          <div class="filterApts my-5 lg:bg-white px-5 py-3 rounded-xl border border-gray-300">
+            <div class="my-2 scheduleFiltersWrapper md:flex md:items-center ">
+              <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
+                <h3 class="mb-2">
+                  <span class="text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                    Find Appointments
+                  </span>
+                </h3>
 
-              <!-- Filter Type -->
-              <section class="w-full mt-1 font-semibold scheduleFilters">
+                <!-- Filter Type -->
+                <section class="w-full mt-1 font-semibold scheduleFilters">
 
-                <div class="flex flex-col w-full filters">
+                  <div class="flex flex-col w-full filters">
 
-                  <div class="grid w-full grid-cols-3 gap-y-3 md:gap-y-0 filterWrappers gap-x-3 md:gap-x-10">
+                    <div class="grid w-full grid-cols-3 gap-y-3 md:gap-y-0 filterWrappers gap-x-3 md:gap-x-10">
 
-                    <!-- Patient List -->
-                    <div class="relative w-full">
-                      <select title="Patient List" name="" id=""
-                        class="w-full py-2 md:py-3 text-[10px] tracking-widest text-slate-500 bg-gray-800 border border-blue-500 rounded-xl patientNamesList h-fit md:border-gray-200 md:font-semibold md:bg-white md:text-indigo-600 uppercase">
-                        <option selected value="" class="font-semibold">
-                          Name
-                        </option>
+                      <!-- Patient List -->
+                      <div class="relative w-full">
+                        <select title="Patient List" name="" id=""
+                          class="w-full py-2 md:py-3 text-[10px] tracking-widest text-slate-500 bg-gray-800 border border-blue-500 rounded-xl patientNamesList h-fit md:border-gray-200 md:font-semibold md:bg-white md:text-indigo-600 uppercase">
+                          <option selected value="" class="font-semibold">
+                            Name
+                          </option>
+                        </select>
+                      </div>
+
+                      <!-- Month and year filter -->
+                      <input type="text" name="" id="" value=""
+                        class="relative w-full py-2 md:py-3 text-[10px] uppercase tracking-widest text-slate-300 bg-gray-800 border border-blue-500 rounded-xl scheduleFilterMonth h-fit md:border-gray-200 md:placeholder:text-indigo-600 md:font-semibold md:bg-white md:text-indigo-600"
+                        placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+
+                      <!-- Filter of Appointment Status -->
+                      <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                        class="fontSize py-2 md:py-3 uppercase tracking-widest md:text-indigo-600 text-slate-500 border md:border-gray-200 border-blue-500 rounded-xl outline-none focus:border-blue-500 focus:ring-blue-500 scheduleFilterStatus w-full bg-gray-800 md:bg-white">
+                        <option value="" class="font-semibold">Status</option>
+                        <option value="Scheduled" class="font-semibold">Scheduled</option>
+                        <option value="Completed" class="font-semibold">Completed</option>
+                        <option value="Cancelled" class="font-semibold">Cancelled</option>
+                        <option value="Pending" class="font-semibold">Pending</option>
                       </select>
                     </div>
 
-                    <!-- Month and year filter -->
-                    <input type="text" name="" id="" value=""
-                      class="relative w-full py-2 md:py-3 text-[10px] uppercase tracking-widest text-slate-300 bg-gray-800 border border-blue-500 rounded-xl scheduleFilterMonth h-fit md:border-gray-200 md:placeholder:text-indigo-600 md:font-semibold md:bg-white md:text-indigo-600"
-                      placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+                    <!-- Buttons  -->
+                    <div class="flex items-center justify-between mt-5 w-full">
+                      <div class="wrap flex items-center">
+                        <button
+                          class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Find</span>
+                        </button>
 
-                    <!-- Filter of Appointment Status -->
-                    <select name="scheduleFilterStatus" id="scheduleFilterStatus"
-                      class="fontSize py-2 md:py-3 uppercase tracking-widest md:text-indigo-600 text-slate-500 border md:border-gray-200 border-blue-500 rounded-xl outline-none focus:border-blue-500 focus:ring-blue-500 scheduleFilterStatus w-full bg-gray-800 md:bg-white">
-                      <option value="" class="font-semibold">Status</option>
-                      <option value="Scheduled" class="font-semibold">Scheduled</option>
-                      <option value="Completed" class="font-semibold">Completed</option>
-                      <option value="Cancelled" class="font-semibold">Cancelled</option>
-                      <option value="Pending" class="font-semibold">Pending</option>
-                    </select>
-                  </div>
+                        <button
+                          class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Clear</span>
+                        </button>
+                      </div>
+                      <div class="ml-5 text-[10px] font-semibold text-gray-500 uppercase md:text-red-500 helper">
+                        All filters are required.
+                      </div>
 
-                  <!-- Buttons  -->
-                  <div class="flex items-center justify-between mt-5 w-full">
-                    <div class="wrap flex items-center">
-                      <button
-                        class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
-                        <span>Find</span>
-                      </button>
-
-                      <button
-                        class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
-                        <span>Clear</span>
-                      </button>
                     </div>
-                    <div class="ml-5 text-[10px] font-semibold text-gray-500 uppercase md:text-red-500 helper">
-                      All filters are required.
-                    </div>
-
                   </div>
-                </div>
+                </section>
               </section>
-            </section>
+            </div>
           </div>
-        </div>
 
-        <span
-          class="h-auto lg:h-3/4 my-5 lg:my-0 block shadow-2xl overflow-y-auto rounded-xl p-10 text-justify leading-10 text-gray-600">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur laudantium eveniet in
-          eius
-          dolores, similique magni amet voluptate? Consectetur corporis maxime corrupti repudiandae ipsum
-          nesciunt omnis
-          velit, placeat quibusdam.
-          Eum id quibusdam tempora suscipit sit. Nisi eius adipisci, voluptatum sunt voluptatem dolorum, quasi
-          repellendus
-          commodi itaque nihil reiciendis perferendis quibusdam at beatae, in quam mollitia officiis laborum
-          vitae
-          maxime.
-          Deserunt sequi esse et. Rem culpa nisi dignissimos. Quibusdam autem, repellat iure modi debitis
-          deserunt fugit
-          sint! Omnis qui beatae iste ea dolor quidem, autem ullam dolorum ut quae tenetur.
-          Beatae nobis cupiditate numquam non culpa quod quaerat veritatis vel eius ullam molestias rerum
-          soluta,
-          reiciendis asperiores, architecto adipisci modi error explicabo veniam? Laudantium blanditiis vitae
-          incidunt
-          dolore, aut in?
-          Consequuntur, ratione saepe. Dignissimos at odio recusandae. Minima quidem recusandae voluptatibus
-          dolor
-          mollitia dolorum. Corrupti iure sit consectetur ab beatae praesentium, minima id dolores, eius maiores
-          reprehenderit nisi. Quas, explicabo.
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente dolor maxime soluta delectus ipsum,
-          voluptatibus laudantium corrupti consectetur alias molestiae consequatur, unde, possimus harum quis
-          deserunt
-          pariatur. Recusandae, deserunt quaerat.
-          Fugit cumque illo itaque est natus repellendus, quia quisquam corrupti, vitae voluptas aperiam
-          officiis ipsa
-          similique reiciendis veritatis eum ducimus dolorum sapiente optio quo dolores ipsam nobis. Animi, quam
-          iste!
-          Deserunt, eaque assumenda adipisci voluptates repellat quaerat itaque. Maxime nihil molestiae
-          accusantium,
-          facilis libero quidem odit ducimus minima corrupti perspiciatis quis. Voluptates quibusdam et quas
-          dolor
-          aspernatur, corporis sed impedit.
-          Eveniet quis possimus vel fugit ea, vitae in, accusamus veniam sit numquam id aliquid cum tenetur non
-          deleniti
-          quas neque. Quaerat quis nobis voluptatum facere vitae eligendi laborum odio. Eos.
-          Eius error vel cum quia, tempora aperiam dolores voluptatibus dignissimos numquam dolorem beatae illo
-          natus
-          neque ipsa rerum. Commodi quidem earum cumque quasi distinctio nesciunt nobis magnam, inventore
-          veritatis
-          necessitatibus.
-          Magni molestias explicabo perspiciatis omnis atque rerum modi doloremque ut voluptates dignissimos
-          culpa,
-          aspernatur necessitatibus ipsam soluta suscipit esse! Excepturi impedit incidunt consectetur iure
-          doloribus
-          reiciendis asperiores minima? Dicta, praesentium.
-          Nesciunt incidunt sapiente magnam praesentium modi veniam doloremque, animi eveniet? Officia
-          consequuntur unde
-          voluptates doloremque expedita. Enim eum saepe amet mollitia facilis autem porro molestiae doloribus,
-          quasi
-          deserunt, consectetur hic!
-          Harum suscipit, voluptatum velit repellat esse rerum aperiam voluptatibus quibusdam cupiditate totam,
-          dolorum
-          nisi ipsa aliquid! Provident vel possimus beatae perferendis architecto numquam repellendus. Delectus
-          quaerat
-          repudiandae assumenda nostrum exercitationem.
-          Reprehenderit eum dolorem dolore veniam eius odit accusamus repudiandae itaque hic assumenda ullam
-          nemo sequi
-          eveniet porro iste facilis, quidem illo cupiditate enim incidunt deserunt nisi tempora at quae.
-          Impedit?
-          Dolorem architecto adipisci distinctio minus fuga error quisquam pariatur aliquid numquam asperiores,
-          alias
-          minima corrupti voluptas labore nulla earum. Quibusdam dolore magnam consequuntur explicabo, neque
-          dolorum
-          quidem numquam similique eligendi?
-        </span>
+          <span
+            class="h-auto lg:h-3/4 my-5 lg:my-0 block shadow-2xl overflow-y-auto rounded-xl p-10 text-justify leading-10 text-gray-600">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia consectetur laudantium eveniet in
+            eius
+            dolores, similique magni amet voluptate? Consectetur corporis maxime corrupti repudiandae ipsum
+            nesciunt omnis
+            velit, placeat quibusdam.
+            Eum id quibusdam tempora suscipit sit. Nisi eius adipisci, voluptatum sunt voluptatem dolorum, quasi
+            repellendus
+            commodi itaque nihil reiciendis perferendis quibusdam at beatae, in quam mollitia officiis laborum
+            vitae
+            maxime.
+            Deserunt sequi esse et. Rem culpa nisi dignissimos. Quibusdam autem, repellat iure modi debitis
+            deserunt fugit
+            sint! Omnis qui beatae iste ea dolor quidem, autem ullam dolorum ut quae tenetur.
+            Beatae nobis cupiditate numquam non culpa quod quaerat veritatis vel eius ullam molestias rerum
+            soluta,
+            reiciendis asperiores, architecto adipisci modi error explicabo veniam? Laudantium blanditiis vitae
+            incidunt
+            dolore, aut in?
+            Consequuntur, ratione saepe. Dignissimos at odio recusandae. Minima quidem recusandae voluptatibus
+            dolor
+            mollitia dolorum. Corrupti iure sit consectetur ab beatae praesentium, minima id dolores, eius maiores
+            reprehenderit nisi. Quas, explicabo.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente dolor maxime soluta delectus ipsum,
+            voluptatibus laudantium corrupti consectetur alias molestiae consequatur, unde, possimus harum quis
+            deserunt
+            pariatur. Recusandae, deserunt quaerat.
+            Fugit cumque illo itaque est natus repellendus, quia quisquam corrupti, vitae voluptas aperiam
+            officiis ipsa
+            similique reiciendis veritatis eum ducimus dolorum sapiente optio quo dolores ipsam nobis. Animi, quam
+            iste!
+            Deserunt, eaque assumenda adipisci voluptates repellat quaerat itaque. Maxime nihil molestiae
+            accusantium,
+            facilis libero quidem odit ducimus minima corrupti perspiciatis quis. Voluptates quibusdam et quas
+            dolor
+            aspernatur, corporis sed impedit.
+            Eveniet quis possimus vel fugit ea, vitae in, accusamus veniam sit numquam id aliquid cum tenetur non
+            deleniti
+            quas neque. Quaerat quis nobis voluptatum facere vitae eligendi laborum odio. Eos.
+            Eius error vel cum quia, tempora aperiam dolores voluptatibus dignissimos numquam dolorem beatae illo
+            natus
+            neque ipsa rerum. Commodi quidem earum cumque quasi distinctio nesciunt nobis magnam, inventore
+            veritatis
+            necessitatibus.
+            Magni molestias explicabo perspiciatis omnis atque rerum modi doloremque ut voluptates dignissimos
+            culpa,
+            aspernatur necessitatibus ipsam soluta suscipit esse! Excepturi impedit incidunt consectetur iure
+            doloribus
+            reiciendis asperiores minima? Dicta, praesentium.
+            Nesciunt incidunt sapiente magnam praesentium modi veniam doloremque, animi eveniet? Officia
+            consequuntur unde
+            voluptates doloremque expedita. Enim eum saepe amet mollitia facilis autem porro molestiae doloribus,
+            quasi
+            deserunt, consectetur hic!
+            Harum suscipit, voluptatum velit repellat esse rerum aperiam voluptatibus quibusdam cupiditate totam,
+            dolorum
+            nisi ipsa aliquid! Provident vel possimus beatae perferendis architecto numquam repellendus. Delectus
+            quaerat
+            repudiandae assumenda nostrum exercitationem.
+            Reprehenderit eum dolorem dolore veniam eius odit accusamus repudiandae itaque hic assumenda ullam
+            nemo sequi
+            eveniet porro iste facilis, quidem illo cupiditate enim incidunt deserunt nisi tempora at quae.
+            Impedit?
+            Dolorem architecto adipisci distinctio minus fuga error quisquam pariatur aliquid numquam asperiores,
+            alias
+            minima corrupti voluptas labore nulla earum. Quibusdam dolore magnam consequuntur explicabo, neque
+            dolorum
+            quidem numquam similique eligendi?
+          </span>
+
+        </div>
 
       </div>
 
