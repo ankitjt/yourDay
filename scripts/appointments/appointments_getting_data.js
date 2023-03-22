@@ -45,12 +45,12 @@ apt.create.onclick = () =>
 
     for ( let select of selectTags )
     {
-        select.classList.remove( 'md:border-red-600' )
+        select.classList.remove( 'border-rose-600' )
         if ( select.value === "" )
         {
             promptMessages( `${ select.getAttribute( 'title' ) } is blank.`, 'error' )
             allFilled = false;
-            select.classList.add( 'md:border-red-600' )
+            select.classList.add( 'lg:border-rose-600', 'border-rose-600' )
 
         }
     }
@@ -59,7 +59,7 @@ apt.create.onclick = () =>
     {
         for ( let select of selectTags )
         {
-            select.classList.remove( 'md:border-red-600' )
+            select.classList.remove( 'border-rose-600' )
         }
     }
 
@@ -69,7 +69,7 @@ apt.create.onclick = () =>
         if ( input.value === "" && !input.classList.contains( 'hidden' ) )
         {
             promptMessages( `${ input.getAttribute( 'title' ) } is blank.`, 'error' )
-            input.classList.add( 'md:border-red-600' )
+            input.classList.add( 'lg:border-rose-600' )
             allFilled = false;
         }
     }
@@ -78,7 +78,7 @@ apt.create.onclick = () =>
     {
         for ( let input of inputTags )
         {
-            input.classList.remove( 'md:border-red-600' )
+            input.classList.remove( 'border-rose-600' )
         }
     }
 
