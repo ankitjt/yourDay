@@ -39,8 +39,10 @@ const updateProfile = () =>
           let allProfileDetails =
             `
             <div class="my-2 personalWrapper">
+            
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Personal</h1>
-                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 personalDetails">
+
+                <div class="grid md:grid-cols-4 grid-cols-2 my-3 font-semibold gap-x-5 gap-y-3 personalDetails">
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.name }</div>
@@ -60,10 +62,11 @@ const updateProfile = () =>
                 </div>
               </div>
               <div class="my-2 appointmentsWrapper">
+
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Appointment</h1>
-                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 appointmentDetails">
-                  
-                <div class="fieldWrapper">
+
+                <div class="grid md:grid-cols-4 grid-cols-2 my-3 font-semibold gap-x-5 gap-y-3 appointmentDetails">
+                  <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
                     <div class="mt-1">${ updateProfile.type }</div>
                   </div>
@@ -106,8 +109,10 @@ const updateProfile = () =>
                 </div>
               </div>
               <div class="my-2 emergencyWrapper">
+
                 <h1 class="pb-1 text-[11px] font-semibold text-slate-500 uppercase border-b">Emergency Contact</h1>
-                <div class="grid md:grid-cols-4 grid-cols-2 my-2 font-semibold gap-x-5 gap-y-3 emergency ">
+
+                <div class="grid md:grid-cols-4 grid-cols-2 my-3 font-semibold gap-x-5 gap-y-3 emergency ">
                   <div class="fieldWrapper">
                     <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Name</div>
                     <div class="mt-1">${ updateProfile.emergency_name }</div>
