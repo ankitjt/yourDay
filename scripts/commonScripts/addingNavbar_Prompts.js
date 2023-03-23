@@ -3,8 +3,28 @@ let navbarContent = document.querySelector( ".navbarContent" )
 let pageName = window.location.href.split( "/" ).slice( -1 )
 let p = pageName.toLocaleString()
 let pageUrl = p.substring( 0, p.indexOf( '.' ) )
+console.log( 'pageUrl' );
+
+console.log( pageUrl );
 
 
+// for ( let navLink of navLinks )
+// {
+//   console.log( navLink );
+//   navLink.onclick = () =>
+//   {
+//     let pageName = window.location.href.split( "/" ).slice( -1 )
+//     let p = pageName.toLocaleString()
+//     let pageUrl = p.substring( 0, p.indexOf( '.' ) )
+//     let finalUrl = pageUrl.toUpperCase()
+//     console.log( finalUrl );
+//     navLinks.forEach( ( link ) =>
+//     {
+//       link.classList.add( 'bg-indigo-900' )
+//       console.log( link );
+//     } )
+//   }
+// }
 
 navbarContent.innerHTML = `
   <div class='tracking-widest font-semibold flex items-center justify-between'>
