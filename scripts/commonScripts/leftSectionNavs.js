@@ -2,8 +2,10 @@
 let leftSection = document.querySelector( '.left' )
 
 let firstSectionNav = document.createElement( 'nav' )
+firstSectionNav.classList.add( 'w-full' )
+
 let firstNav = `
-        <nav
+        <div
            class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 text-slate-500 lg:text-white">
 
         <a href="./appointments.html"
@@ -69,13 +71,15 @@ let firstNav = `
           </svg>
 
         </a>
-      </nav>
+      </div>
     `
 firstSectionNav.innerHTML = firstNav
 
 let secondSectionNav = document.createElement( 'nav' )
+secondSectionNav.classList.add( 'w-full' )
+
 let secondNav = `
-    <nav
+    <div
            class="grid grid-cols-2 gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
         <a href="#"
            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
@@ -98,19 +102,18 @@ let secondNav = `
           </svg>
 
         </a>
-      </nav>
+      </div>
     `
 secondSectionNav.innerHTML = secondNav
 
 leftSection.appendChild( firstSectionNav )
 leftSection.appendChild( secondSectionNav )
 
-setTimeout( () =>
+let navLinks = document.querySelectorAll( '.navLink' );
+navLinks.forEach( ( link ) =>
 {
-    let navLinks = document.querySelectorAll( '.navLink' );
-    navLinks.forEach( ( link ) =>
-    {
-        console.log( link );
-    } )
-
-}, 1000 )
+   if ( link.href === window.location.href )
+   {
+      link.classList.add( 'bg-indigo-900' )
+   }
+} )

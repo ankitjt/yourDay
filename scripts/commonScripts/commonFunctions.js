@@ -38,8 +38,8 @@ const localDateAndTime = () =>
 localDateAndTime()
 
 // Loading Animation
-let loadingAnimation = `<div class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name w-fit text-white rounded-full md:px-5 md:py-8 px-2 py-5 bg-rose-600 md:text-md text-xs">
-  yourDay
+let loadingAnimation = `<div class="loader absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse app-name text-white rounded-full p-3 bg-rose-600 text-xl">
+  yD
 </div>`;
 
 ( () =>
