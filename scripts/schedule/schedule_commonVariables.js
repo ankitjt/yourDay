@@ -1,6 +1,6 @@
 let aptsDb = db.collection( 'appointments' )
 let profileDb = db.collection( 'profiles' )
-let scheduleTableRows = document.querySelector( '.scheduleTableRows' )
+let contentWrapper = document.querySelector( '.contentWrapper' )
 let scheduleFilterMonth = document.querySelector( '.scheduleFilterMonth' )
 let monthYearArr = document.querySelector( '.monthYearArr' )
 let aptsRange = document.querySelector( '.aptsRange' )
