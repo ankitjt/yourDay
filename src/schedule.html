@@ -1,427 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>YourDay - Schedule</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay - Schedule</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
 
-<body class="lg:w-screen lg:h-screen h-auto w-auto relative">
-  <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50"></div>
+  <body class="lg:w-screen lg:h-screen h-auto w-auto relative">
+    <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50"></div>
 
-  <div
-       class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
-
-    <!-- Left Section  -->
     <div
-         class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between lg:items-start lg:overflow-y-auto">
+      class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
 
-      <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
-        yourDay</div>
-
-    </div>
-
-    <!-- Right Section    -->
-    <div class="rightSection relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
-
-      <!-- Prompts  -->
+      <!-- Left Section  -->
       <div
-           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+        class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between  lg:items-start lg:overflow-y-auto">
+
+        <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
+          yourDay</div>
+
       </div>
 
-      <!-- PageName and Time  -->
-      <nav
-           class="navbarWrapper lg:mt-5 px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
-        <nav class="navbarContent w-full"></nav>
+      <!-- Right Section    -->
+      <div class="rightSection relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
 
-        <!--  Navbar Notification Center -->
+        <!-- Prompts  -->
         <div
-             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-          <div class="h-full notificationContent">
-
-          </div>
+          class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
         </div>
-      </nav>
 
-      <!-- Content Section  -->
-      <div class="lg:mt-10 mt-5 text-slate-700 px-5 overflow-y-auto overflow-x-hidden relative h-full">
+        <!-- PageName and Time  -->
+        <nav
+          class="navbarWrapper lg:mt-5 px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+          <nav class="navbarContent w-full"></nav>
 
-        <!-- Filter Appointments  -->
-        <div class="filterApts px-5 py-5 rounded-xl lg:bg-white shadow-2xl">
-          <div class="scheduleFiltersWrapper lg:flex lg:items-center ">
-            <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
-              <h3 class="">
-                <span class="text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                  Find Appointments
-                </span>
-              </h3>
+          <!--  Navbar Notification Center -->
+          <div
+            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+            <div class="h-full notificationContent">
 
-              <!-- Filter Type -->
-              <section class="w-full font-semibold scheduleFilters">
+            </div>
+          </div>
+        </nav>
 
-                <div class="flex flex-col w-full filters">
+        <!-- Content Section  -->
+        <div class="lg:mt-10 mt-5 text-slate-700 px-5 overflow-y-auto overflow-x-hidden relative h-full">
 
-                  <div
-                       class="grid w-full grid-cols-1 lg:grid-cols-3 gap-y-3 lg:gap-y-0 filterWrappers gap-x-3 lg:gap-x-10">
+          <!-- Filter Appointments  -->
+          <div class="filterApts px-5 py-5 rounded-xl lg:bg-white shadow-2xl">
 
-                    <!-- Patient List -->
-                    <div class="relative w-full">
-                      <select title="Patient List" name="" id=""
-                              class="patientNamesList placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                        <option selected value="" class="font-semibold">
-                          Name
-                        </option>
+            <div class="scheduleFiltersWrapper lg:flex lg:items-center ">
+
+              <section class="flex flex-col justify-center tracking-wide grow text-slate-50">
+                <h3 class="">
+                  <span class="text-xs font-semibold tracking-widest text-gray-500 lg:text-indigo-600 uppercase">
+                    Find Appointments
+                  </span>
+                </h3>
+
+                <!-- Filter Type -->
+                <section class="w-full font-semibold scheduleFilters">
+
+                  <div class="flex flex-col w-full filters">
+
+                    <div
+                      class="grid w-full grid-cols-1 lg:grid-cols-3 gap-y-3 lg:gap-y-0 filterWrappers gap-x-3 lg:gap-x-10">
+
+                      <!-- Patient List -->
+                      <div class="relative w-full">
+                        <select title="Patient List" name="" id=""
+                          class="patientNamesList placeholder-transparent peer w-full my-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                          <option selected value="" class="font-semibold">
+                            Name
+                          </option>
+                        </select>
+                      </div>
+
+                      <!-- Month and year filter -->
+                      <input type="text" name="" id="" value=""
+                        class="scheduleFilterMonth lg:placeholder:text-slate-700 placeholder:text-indigo-600 peer w-full my-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                        placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+
+                      <!-- Filter of Appointment Status -->
+                      <select name="scheduleFilterStatus" id="scheduleFilterStatus"
+                        class="fontSize scheduleFilterStatus placeholder:text-indigo-600 peer w-full my-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        <option value="" class="font-semibold">Status</option>
+                        <option value="Scheduled" class="font-semibold">Scheduled</option>
+                        <option value="Completed" class="font-semibold">Completed</option>
+                        <option value="Cancelled" class="font-semibold">Cancelled</option>
+                        <option value="Pending" class="font-semibold">Pending</option>
                       </select>
                     </div>
 
-                    <!-- Month and year filter -->
-                    <input type="text" name="" id="" value=""
-                           class="scheduleFilterMonth lg:placeholder:text-slate-700 placeholder:text-indigo-600 peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
-                           placeholder="Month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
+                    <!-- Buttons  -->
+                    <div class="flex items-center justify-between w-full">
+                      <div class="wrap flex items-center">
+                        <button
+                          class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Find</span>
+                        </button>
 
-                    <!-- Filter of Appointment Status -->
-                    <select name="scheduleFilterStatus" id="scheduleFilterStatus"
-                            class="fontSize scheduleFilterStatus placeholder:text-indigo-600 peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                      <option value="" class="font-semibold">Status</option>
-                      <option value="Scheduled" class="font-semibold">Scheduled</option>
-                      <option value="Completed" class="font-semibold">Completed</option>
-                      <option value="Cancelled" class="font-semibold">Cancelled</option>
-                      <option value="Pending" class="font-semibold">Pending</option>
-                    </select>
-                  </div>
+                        <button
+                          class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
+                          <span>Clear</span>
+                        </button>
+                      </div>
+                      <div class="ml-5 text-[10px] font-semibold uppercase tracking-widest text-rose-600 helper">
+                        All filters are required.
+                      </div>
 
-                  <!-- Buttons  -->
-                  <div class="flex items-center justify-between mt-5 w-full">
-                    <div class="wrap flex items-center">
-                      <button
-                              class="filterFindBtn w-20 h-9 uppercase tracking-widest font-semibold text-xs bg-indigo-600 text-white rounded-xl ease-in-out duration-300 hover:-translate-y-1">
-                        <span>Find</span>
-                      </button>
-
-                      <button
-                              class="clearFilters ml-5 w-20 h-9 uppercase tracking-widest font-semibold text-xs text-gray-400 border border-gray-400 shadow-2xl rounded-xl text-center ease-in-out duration-300 hover:-translate-y-1">
-                        <span>Clear</span>
-                      </button>
                     </div>
-                    <div class="ml-5 text-[10px] font-semibold uppercase tracking-widest text-rose-600 helper">
-                      All filters are required.
-                    </div>
-
                   </div>
-                </div>
+                </section>
               </section>
-            </section>
-          </div>
-        </div>
-
-        <!-- Desktop View  -->
-        <div class="showAptsDesktop hidden h-auto lg:block mt-5 bg-white px-5 py-5 rounded-xl">
-
-          <div class="h-80 overflow-auto border border-gray-300 rounded-lg bg-white">
-
-            <div
-                 class="headers w-full flex items-center justify-evenly text-indigo-600 border-b border-indigo-600 py-4 uppercase font-semibold text-[10px] tracking-widest">
-              <span class="w-52">name</span>
-              <span class="w-24">time</span>
-              <span class="w-24">date</span>
-              <span class="w-24">type</span>
-              <span class="w-24">mode</span>
-              <span class="w-24">status</span>
-              <span class="w-24">action</span>
-            </div>
-
-            <div class="contentWrapper w-full uppercase">
-              <div
-                   class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-                <span class="w-52">
-                  Ankit Thakur <br /> ankitjeetthakur@gmail.com
-                </span>
-                <span class="w-24">09:00-10:00</span>
-                <span class="w-24">17/03/2023</span>
-                <span class="w-24">Session</span>
-                <span class="w-24">Online</span>
-                <span class="w-24">Scheduled</span>
-                <span class="w-24">action</span>
-              </div>
-              <div
-                   class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-                <span class="w-52">
-                  Ankit Thakur <br /> ankitjeetthakur@gmail.com
-                </span>
-                <span class="w-24">09:00-10:00</span>
-                <span class="w-24">17/03/2023</span>
-                <span class="w-24">Session</span>
-                <span class="w-24">Online</span>
-                <span class="w-24">Scheduled</span>
-                <span class="w-24">action</span>
-              </div>
-              <div
-                   class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-                <span class="w-52">
-                  Ankit Thakur <br /> ankitjeetthakur@gmail.com
-                </span>
-                <span class="w-24">09:00-10:00</span>
-                <span class="w-24">17/03/2023</span>
-                <span class="w-24">Session</span>
-                <span class="w-24">Online</span>
-                <span class="w-24">Scheduled</span>
-                <span class="w-24">action</span>
-              </div>
             </div>
           </div>
-          <span
-                class="aptsRange font-semibold uppercase block text-right mt-5 text-indigo-600 text-[9px] tracking-wider ">
-            Current & last month.</span>
-        </div>
 
-        <!-- Mobile View  -->
-        <div class="showAptsMobile lg:hidden mt-5">
+          <!-- Desktop View  -->
+          <div class="showAptsDesktop hidden h-auto lg:block mt-5 bg-white px-5 py-5 rounded-xl">
+            <div class="appointments text-indigo-600 uppercase tracking-widest my-2">
+              <span>Appointments - </span> <span class="appointmentCount"></span>
+            </div>
 
-          <div
-               class="contentMobile text-gray-400 shadow-2xl p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
-            <p class="aptName flex items-center justify-between my-2">
-              <span class="text-indigo-600">Name</span>
-              <span class="name">Ankit Thakur</span>
-            </p>
-            <p class="aptTime flex items-center justify-between my-2">
-              <span class="text-indigo-600">Time</span>
-              <span class="Time">09:00-10:00</span>
-            </p>
-            <p class="aptDate flex items-center justify-between my-2">
-              <span class="text-indigo-600">Date</span>
-              <span class="Date">17/03/2023, Friday</span>
-            </p>
-            <p class="aptType flex items-center justify-between my-2">
-              <span class="text-indigo-600">Type</span>
-              <span class="Type">Session</span>
-            </p>
-            <p class="aptMode flex items-center justify-between my-2">
-              <span class="text-indigo-600">Mode</span>
-              <span class="Mode">Online</span>
-            </p>
-            <p class="aptStatus flex items-center justify-between my-2">
-              <span class="text-indigo-600">Status</span>
-              <span class="Status">Scheduled</span>
-            </p>
+            <div class="h-80 overflow-auto border border-gray-300 rounded-lg bg-white relative">
+
+              <div
+                class="headers w-full flex items-center justify-evenly text-indigo-600 border-b border-indigo-600 py-4 uppercase font-semibold text-[10px] tracking-widest">
+                <span class="w-36">name</span>
+                <span class="w-24">time</span>
+                <span class="w-24">date</span>
+                <span class="w-24">type</span>
+                <span class="w-24">mode</span>
+                <span class="w-24">status</span>
+                <span class="w-24">action</span>
+              </div>
+
+              <div class="contentWrapper w-full uppercase "></div>
+
+            </div>
+            <span
+              class="aptsRange font-semibold uppercase block text-right mt-5 text-indigo-600 text-xs tracking-wider ">
+              Current & last month.</span>
           </div>
 
-          <div
-               class="contentMobile text-gray-400 shadow-2xl p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
-            <p class="aptName flex items-center justify-between my-2">
-              <span class="text-indigo-600">Name</span>
-              <span class="name">Ankit Thakur</span>
-            </p>
-            <p class="aptTime flex items-center justify-between my-2">
-              <span class="text-indigo-600">Time</span>
-              <span class="Time">09:00-10:00</span>
-            </p>
-            <p class="aptDate flex items-center justify-between my-2">
-              <span class="text-indigo-600">Date</span>
-              <span class="Date">17/03/2023, Friday</span>
-            </p>
-            <p class="aptType flex items-center justify-between my-2">
-              <span class="text-indigo-600">Type</span>
-              <span class="Type">Session</span>
-            </p>
-            <p class="aptMode flex items-center justify-between my-2">
-              <span class="text-indigo-600">Mode</span>
-              <span class="Mode">Online</span>
-            </p>
-            <p class="aptStatus flex items-center justify-between my-2">
-              <span class="text-indigo-600">Status</span>
-              <span class="Status">Scheduled</span>
-            </p>
-          </div>
+          <!-- Mobile View  -->
+          <div class="scheduleGalleryView lg:hidden mt-5"></div>
 
-          <div
-               class="contentMobile text-gray-400 shadow-2xl p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
-            <p class="aptName flex items-center justify-between my-2">
-              <span class="text-indigo-600">Name</span>
-              <span class="name">Ankit Thakur</span>
-            </p>
-            <p class="aptTime flex items-center justify-between my-2">
-              <span class="text-indigo-600">Time</span>
-              <span class="Time">09:00-10:00</span>
-            </p>
-            <p class="aptDate flex items-center justify-between my-2">
-              <span class="text-indigo-600">Date</span>
-              <span class="Date">17/03/2023, Friday</span>
-            </p>
-            <p class="aptType flex items-center justify-between my-2">
-              <span class="text-indigo-600">Type</span>
-              <span class="Type">Session</span>
-            </p>
-            <p class="aptMode flex items-center justify-between my-2">
-              <span class="text-indigo-600">Mode</span>
-              <span class="Mode">Online</span>
-            </p>
-            <p class="aptStatus flex items-center justify-between my-2">
-              <span class="text-indigo-600">Status</span>
-              <span class="Status">Scheduled</span>
-            </p>
-          </div>
+          <!-- Update Appointment  -->
+          <div tabindex="-1"
+            class="updateAptWindow rounded-xl hidden md:absolute w-2/5 lg:min-h-fit h-full overflow-y-auto ease-in-out duration-500 -right-[2000px] bg-white shadow-2xl p-10 top-1/2 -translate-y-1/2 z-10 md:flex lg:justify-between flex-col">
 
-        </div>
-
-        <!-- Update Appointment  -->
-        <div
-             class="updateAptWindow rounded-xl hidden md:absolute w-2/5 lg:min-h-fit h-full overflow-y-auto ease-in-out duration-500 -right-[2000px] bg-white shadow-2xl p-10 top-1/2 -translate-y-1/2 z-10 md:flex lg:justify-between flex-col">
-
-          <h1
+            <h1 tabindex="-1"
               class="text-[10px] uppercase tracking-widest font-semibold text-indigo-600 border-b-2 pb-1 border-indigo-600">
-            Update
-            Appointment
-          </h1>
-          <div class="updateForm w-full">
-            <div
-                 class="updateFormWrapper grid grid-cols-1 md:grid-cols-1 md:gap-x-10 text-[10px] text-indigo-600 tracking-widest font-semibold ">
+              Update
+              Appointment
+            </h1>
+            <div tabindex="-1" class="updateForm w-full">
+              <div tabindex="-1"
+                class="updateFormWrapper grid grid-cols-1 md:grid-cols-1 md:gap-x-10 text-[10px] text-indigo-600 tracking-widest font-semibold">
 
-              <div class="nameUpdate my-3">
+                <div tabindex="-1" class="nameUpdate my-3">
 
-                <span class="mb-1 px-1 block uppercase">Name: </span>
-                <input type="text" name="nameUpdateCell" id="nameUpdateCell" disabled value="${ doc.data().name }"
-                       class="peer w-full h-12 text-xs font-semibold uppercase border-gray-300 text-slate-900 bg-gray-200 rounded-md tracking-widest" />
-              </div>
+                  <span class="mb-1 px-1 block uppercase">Name: </span>
+                  <input tabindex="-1" type="text" name="nameUpdateCell" id="nameUpdateCell" disabled
+                    value="${ doc.data().name }"
+                    class="peer w-full h-12 text-xs font-semibold uppercase border-gray-300 text-slate-900 bg-gray-200 rounded-md tracking-widest" />
+                </div>
 
-              <div class="emailUpdate my-3">
+                <div class="emailUpdate my-3">
 
-                <span class="mb-1 px-1 block uppercase">Email: </span>
-                <input type="text" name="emailUpdateCell" id="emailUpdateCell" disabled value="${ doc.data().email }"
-                       class="peer w-full h-12 text-xs font-semibold uppercase lg:border-gray-300 lg:text-slate-900 lg:bg-gray-200 rounded-md tracking-widest">
-              </div>
+                  <span class="mb-1 px-1 block uppercase">Email: </span>
+                  <input tabindex="-1" type="text" name="emailUpdateCell" id="emailUpdateCell" disabled
+                    value="${ doc.data().email }"
+                    class="peer w-full h-12 text-xs font-semibold uppercase lg:border-gray-300 lg:text-slate-900 lg:bg-gray-200 rounded-md tracking-widest">
+                </div>
 
-              <div class="dateUpdate my-3">
+                <div class="dateUpdate my-3">
 
-                <span class="mb-1 px-1 block uppercase">Date: </span>
-                <input type="date" name="dateUpdateCell" id="dateUpdateCell" value="${ new Date( defaultDateValue ) }"
-                       class="peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
-              </div>
+                  <span class="mb-1 px-1 block uppercase">Date: </span>
+                  <input tabindex="-1" type="date" name="dateUpdateCell" id="dateUpdateCell"
+                    value="${ new Date( defaultDateValue ) }"
+                    class="peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
+                </div>
 
-              <div class="dayUpdate my-3">
+                <div class="dayUpdate my-3">
 
-                <span class="mb-1 px-1 block uppercase">Day:</span>
-                <select name="aptDay" id="aptDay"
-                        class="dayUpdateHolder peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
-                  <option value="${ doc.data().day }" class="font-semibold">
-                    ${ doc.data().day }
-                  </option>
-                  <option value="Monday" class="font-semibold">
-                    Monday
-                  </option>
-                  <option value="Tuesday" class="font-semibold">
-                    Tuesday
-                  </option>
-                  <option value="Wednesday" class="font-semibold">
-                    Wednesday
-                  </option>
-                  <option value="Thursday" class="font-semibold">
-                    Thursday
-                  </option>
-                  <option value="Friday" class="font-semibold">
-                    Friday
-                  </option>
-                  <option value="Saturday" class="font-semibold">
-                    Saturday
-                  </option>
-                  <option value="Sunday" class="font-semibold">
-                    Sunday
-                  </option>
-                </select>
-              </div>
+                  <span class="mb-1 px-1 block uppercase">Day:</span>
+                  <select tabindex="-1" name="aptDay" id="aptDay"
+                    class="dayUpdateHolder peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
 
-              <div class="timeSlotUpdate my-3">
+                    <option value="${ doc.data().day }" class="font-semibold">
+                      ${ doc.data().day }
+                    </option>
+                    <option value="Monday" class="font-semibold">
+                      Monday
+                    </option>
+                    <option value="Tuesday" class="font-semibold">
+                      Tuesday
+                    </option>
+                    <option value="Wednesday" class="font-semibold">
+                      Wednesday
+                    </option>
+                    <option value="Thursday" class="font-semibold">
+                      Thursday
+                    </option>
+                    <option value="Friday" class="font-semibold">
+                      Friday
+                    </option>
+                    <option value="Saturday" class="font-semibold">
+                      Saturday
+                    </option>
+                    <option value="Sunday" class="font-semibold">
+                      Sunday
+                    </option>
+                  </select>
+                </div>
 
-                <span class="mb-1 px-1 block uppercase"> Time Slot: </span>
-                <select name="aptTimeSlot" id="aptTimeSlot"
-                        class="timeSlotUpdateHolder peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
-                  <option value="${ doc.data().timeSlot }" class="font-semibold">
-                    ${ doc.data().timeSlot }
-                  </option>
-                  <option value="09:00 - 10:00" class="font-semibold">
-                    09:00 - 10:00
-                  </option>
-                  <option value="10:00 - 11:00" class="font-semibold">
-                    10:00 - 11:00
-                  </option>
-                  <option value="11:00 - 12:00" class="font-semibold">
-                    11:00 - 12:00
-                  </option>
-                  <option value="12:00 - 13:00" class="font-semibold">
-                    12:00 - 13:00
-                  </option>
-                  <option value="13:00 - 14:00" class="font-semibold">
-                    13:00 - 14:00
-                  </option>
-                  <option value="14:00 - 15:00" class="font-semibold">
-                    14:00 - 15:00
-                  </option>
-                  <option value="15:00 - 16:00" class="font-semibold">
-                    15:00 - 16:00
-                  </option>
-                  <option value="16:00 - 17:00" class="font-semibold">
-                    16:00 - 17:00
-                  </option>
-                  <option value="17:00 - 18:00" class="font-semibold">
-                    17:00 - 18:00
-                  </option>
+                <div class="timeSlotUpdate my-3">
 
-                </select>
-              </div>
+                  <span class="mb-1 px-1 block uppercase"> Time Slot: </span>
+                  <select tabindex="-1" name="aptTimeSlot" id="aptTimeSlot"
+                    class="timeSlotUpdateHolder peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest">
 
-              <div class="reasonToUpdate my-3">
-                <span class="mb-1 px-1 block uppercase">Reason to Update:</span>
-                <textarea type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell"
-                          class="reasonToUpdate peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest"></textarea>
+                    <option value="${ doc.data().timeSlot }" class="font-semibold">
+                      ${ doc.data().timeSlot }
+                    </option>
+                    <option value="09:00 - 10:00" class="font-semibold">
+                      09:00 - 10:00
+                    </option>
+                    <option value="10:00 - 11:00" class="font-semibold">
+                      10:00 - 11:00
+                    </option>
+                    <option value="11:00 - 12:00" class="font-semibold">
+                      11:00 - 12:00
+                    </option>
+                    <option value="12:00 - 13:00" class="font-semibold">
+                      12:00 - 13:00
+                    </option>
+                    <option value="13:00 - 14:00" class="font-semibold">
+                      13:00 - 14:00
+                    </option>
+                    <option value="14:00 - 15:00" class="font-semibold">
+                      14:00 - 15:00
+                    </option>
+                    <option value="15:00 - 16:00" class="font-semibold">
+                      15:00 - 16:00
+                    </option>
+                    <option value="16:00 - 17:00" class="font-semibold">
+                      16:00 - 17:00
+                    </option>
+                    <option value="17:00 - 18:00" class="font-semibold">
+                      17:00 - 18:00
+                    </option>
+
+                  </select>
+                </div>
+
+                <div class="reasonToUpdate my-3">
+                  <span class="mb-1 px-1 block uppercase">Reason to Update:</span>
+                  <textarea tabindex="-1" type="text" name="occurrenceUpdateCell" id="occurrenceUpdateCell"
+                    class="reasonToUpdate peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border-gray-300 text-slate-900 bg-transparent rounded-md tracking-widest"></textarea>
+                </div>
+
               </div>
 
             </div>
+            <div class="updateCancelButtons">
+              <button tabindex="-1"
+                class="border bg-indigo-600 updateButton py-3 px-6 text-white font-bold text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Update</button>
 
+              <button tabindex="-1"
+                class="border bg-white cancelUpdateButton ml-2 py-3 px-6 text-rose-600 font-bold text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Cancel</button>
+
+            </div>
           </div>
-          <div class="updateCancelButtons">
-            <button
-                    class="border bg-indigo-600 updateButton py-3 px-6 text-white font-bold text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Update</button>
-            <button
-                    class="border bg-white cancelUpdateButton ml-2 py-3 px-6 text-rose-600 font-bold text-md tracking-widest rounded-xl uppercase ease-in-out duration-300 hover:-translate-y-2">Cancel</button>
-          </div>
+
         </div>
 
       </div>
 
     </div>
 
-  </div>
+    <!-- Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
 
-  <!-- Firebase  -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <!-- Common Variables and Loaders  -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="../scripts/schedule/schedule_commonVariables.js"></script>
+    <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
+    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+    <script src="../scripts/commonScripts/commonFunctions.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
+    <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
+    <script src="../scripts/commonScripts/panicButton.js"></script>
 
-  <!-- Common Variables and Loaders  -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="../scripts/commonScripts/commonVariables.js"></script>
-  <script src="../scripts/schedule/schedule_commonVariables.js"></script>
-  <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
-  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-  <script src="../scripts/commonScripts/commonFunctions.js"></script>
-  <script src="../scripts/commonScripts/patientList.js"></script>
-  <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
-  <script src="../scripts/commonScripts/panicButton.js"></script>
+    <!-- Page Scripts  -->
+    <script src="../scripts/schedule/schedule_addMoreAppointments.js"></script>
+    <script src="../scripts/schedule/schedule_onLoad.js"></script>
+    <script src="../scripts/schedule/schedule_filterSchedules.js"></script>
+    <script src="../scripts/schedule/schedule_autoUpdatePendingApts.js"></script>
+    <script src="../scripts/schedule/schedule_updateForm.js"></script>
+    <script src="../scripts/schedule/schedule_updateAppointmentStatus.js"></script>
 
-  <!-- Page Scripts  -->
-  <script src="../scripts/schedule/schedule_addMoreAppointments.js"></script>
-  <script src="../scripts/schedule/schedule_onLoad.js"></script>
-  <script src="../scripts/schedule/schedule_filterSchedules.js"></script>
-  <script src="../scripts/schedule/schedule_autoUpdatePendingApts.js"></script>
-  <script src="../scripts/schedule/schedule_updateForm.js"></script>
-  <script src="../scripts/schedule/schedule_updateAppointmentStatus.js"></script>
-
-  <!-- Global Scripts  -->
-  <script src="../scripts/commonScripts/globalNotification.js"></script>
-  <script src="../scripts/commonScripts/prompts.js"></script>
-</body>
+    <!-- Global Scripts  -->
+    <script src="../scripts/commonScripts/globalNotification.js"></script>
+    <script src="../scripts/commonScripts/prompts.js"></script>
+  </body>
 
 </html>
