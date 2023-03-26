@@ -24,12 +24,6 @@
       <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
         yourDay</div>
 
-      <!-- First Nav  -->
-
-
-      <!-- Second Nav  -->
-
-
     </div>
 
     <!-- Right Section    -->
@@ -264,9 +258,10 @@
       </nav>
 
       <!-- Content Section  -->
-      <div class="mt-10 text-slate-700 lg:px-5 overflow-y-auto overflow-x-hidden h-full">
+      <div class="mt-5 text-slate-700 lg:px-5 overflow-y-auto overflow-x-hidden h-full">
         <h1 class="border-b border-indigo-600 pb-1 text-indigo-600 tracking-widest">Create Appointment</h1>
 
+        <!-- Appointment Form Fields  -->
         <div class="formFieldsWrapper mt-5 grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 lg:gap-x-10 ">
 
           <div class="categoryDetails w-full py-3 px-6 rounded-xl shadow-2xl">
@@ -301,7 +296,7 @@
                     </option>
                   </select>
                   <label for="appointmentType"
-                         class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
+                         class="typeLabel transition-all absolute hidden text-slate-700 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-700 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
                 </div>
 
                 <!-- Appointment Mode  -->
@@ -585,32 +580,48 @@
         </div>
 
         <!-- Buttons  -->
-        <div class="flex flex-col lg:flex-row justify-start appointmentButtonWrapper mt-10">
+        <div class="flex flex-col lg:flex-row justify-start appointmentButtonWrapper mt-5">
           <div class="createAppointmentButtons flex items-center">
 
             <!-- Create Appointment Button  -->
-            <button
-                    class="createAptBtn w-28 h-9 uppercase tracking-widest font-semibold text-xs text-white bg-emerald-600 rounded-md flex items-center text-center justify-between overflow-hidden">
-              <span class="w-2/3">Create</span>
-              <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            <div class="createAptBtn relative w-fit flex items-center group ease-in-out duration-300 cursor-pointer">
+
+              <button
+                      class="w-fit h-9 px-4 uppercase tracking-widest font-semibold text-xs mt-5 lg:mt-0 bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none">
+                <span>Create</span>
+              </button>
+
+              <div
+                   class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-5 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-8 text-white tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                     class="w-5 h-5">
+                  <path
+                        d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
                 </svg>
+
               </div>
-            </button>
+
+            </div>
 
             <!-- Create Two Appointments Button -->
-            <button
-                    class="createTwoAptBtn hidden w-36 h-9 uppercase tracking-wider font-semibold text-xs text-white bg-emerald-600 rounded-md flex text-center items-center justify-between overflow-hidden">
-              <span class="w-2/3">Create Two</span>
-              <div class="bg-emerald-700 w-1/3 h-full rounded-r-md">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-full h-full scale-50 rounded-md text-white ">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+            <div class="createTwoAptBtn relative w-fit flex items-center group ease-in-out duration-300 cursor-pointer">
+
+              <button
+                      class="hidden w-fit px-4 h-9 uppercase tracking-wider font-semibold text-xs mt-5 lg:mt-0 bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none">
+                <span>Create Two</span>
+              </button>
+
+              <div
+                   class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-5 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-8 text-white tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                     class="w-5 h-5">
+                  <path
+                        d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
                 </svg>
+
               </div>
-            </button>
+
+            </div>
 
             <!-- Clear Two Appointments  -->
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -625,7 +636,7 @@
 
           <!-- Notes  -->
           <section
-                   class="text-[10px] mt-2 lg:ml-5 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
+                   class="text-[10px] mt-2 lg:ml-10 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
             <span>All fields are required.</span>
           </section>
 

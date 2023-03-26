@@ -29,7 +29,7 @@ const updateProfile = () =>
     {
       updateProfileWrapper.classList.add( '-left-[2000px]' )
       updateProfileWrapper.classList.remove( 'left-0' )
-      panicButtonRecords.classList.add( 'lg:left-6' )
+
       let rowID = row.getAttribute( 'data-id' )
       for ( let updateProfile of profileDetails )
       {

@@ -8,7 +8,7 @@ const fieldValidators = ( allFilled ) =>
   {
     if ( p_mobile.value.length !== 0 )
     {
-      p_mobile.classList.add( 'border-red-600' )
+      p_mobile.classList.add( 'border-rose-600' )
       promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.', 'error' )
       fieldFlag = true;
     }
@@ -20,7 +20,7 @@ const fieldValidators = ( allFilled ) =>
   {
     if ( p_e_mobile.value.length !== 0 )
     {
-      p_e_mobile.classList.add( 'md:border-red-600' )
+      p_e_mobile.classList.add( 'md:border-rose-600' )
       promptMessages( 'Emergency mobile number should be less than 10 and greater than 5 digits.', 'error' )
       fieldFlag = true;
     }
@@ -37,7 +37,7 @@ const fieldValidators = ( allFilled ) =>
   // finalHourSplit > 12 ? finalHourSplit = finalHourSplit + 12 : finalHourSplit
   if ( finalHourSplit <= local_hours && selectedDate < new Date() )
   {
-    apt.timeSlot.classList.add( 'md:border-red-600' )
+    apt.timeSlot.classList.add( 'md:border-rose-600' )
     promptMessages( 'If start date is today, slot hour should be greater than current hour.', 'error' )
     fieldFlag = true;
   }
@@ -45,7 +45,7 @@ const fieldValidators = ( allFilled ) =>
   // Check for old start Date 
   if ( selectedDate.toDateString() < new Date().toDateString() )
   {
-    apt.startDate.classList.add( 'md:border-red-600' )
+    apt.startDate.classList.add( 'md:border-rose-600' )
     promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
     fieldFlag = true;
   }
@@ -55,7 +55,7 @@ const fieldValidators = ( allFilled ) =>
   let check1 = userName.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check1 !== -1 )
   {
-    aptName.classList.add( 'md:border-red-600' )
+    aptName.classList.add( 'md:border-rose-600' )
     promptMessages( 'Name should be only be alphabetic.', 'error' )
     fieldFlag = true;
   }
@@ -65,7 +65,7 @@ const fieldValidators = ( allFilled ) =>
   let check2 = emergencyNameCheck.search( /[0-9]|[!@#$%^&*()_+|}{":';/?.>,<`~}]/g )
   if ( check2 !== -1 )
   {
-    emergencyName.classList.add( 'md:border-red-600' )
+    emergencyName.classList.add( 'md:border-rose-600' )
     promptMessages( 'Emergency Name should be only be alphabetic.', 'error' )
     fieldFlag = true;
   }
@@ -73,7 +73,7 @@ const fieldValidators = ( allFilled ) =>
   // Email format check.
   if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( aptEmail.value ) !== true )
   {
-    aptEmail.classList.add( 'md:border-red-600' )
+    aptEmail.classList.add( 'md:border-rose-600' )
     promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
     fieldFlag = true;
   }
@@ -82,8 +82,8 @@ const fieldValidators = ( allFilled ) =>
   let checkForDay = new Date( apt.startDate.value )
   if ( days[ checkForDay.getDay() ] !== apt.day.value )
   {
-    apt.startDate.classList.add( 'md:border-red-600' )
-    apt.day.classList.add( 'md:border-red-600' )
+    apt.startDate.classList.add( 'md:border-rose-600' )
+    apt.day.classList.add( 'md:border-rose-600' )
     promptMessages( 'Start date and Day slot does not match.', 'error' )
     fieldFlag = true;
   }
@@ -92,7 +92,7 @@ const fieldValidators = ( allFilled ) =>
   if ( apt.relationDetails.value === '' && apt.emergencyRelation.value === 'Others' )
   {
     promptMessages( 'Relation details cannot be blank.', 'error' )
-    apt.emergencyRelation.classList.add( 'md:border-red-600' )
+    apt.emergencyRelation.classList.add( 'md:border-rose-600' )
     fieldFlag = true;
   }
 
@@ -100,7 +100,7 @@ const fieldValidators = ( allFilled ) =>
   if ( Number( apt.occurrenceType.value ) > 2 || Number( apt.occurrenceType.value < 1 ) )
   {
     promptMessages( 'Visit per week cannot be more than 2 or less than 1.', 'error' )
-    apt.occurrenceType.classList.add( 'md:border-red-600' )
+    apt.occurrenceType.classList.add( 'md:border-rose-600' )
     fieldFlag = true;
   }
 
@@ -108,8 +108,8 @@ const fieldValidators = ( allFilled ) =>
   if ( aptName.value === emergencyName.value )
   {
     promptMessages( 'Patient name and Emergency contact name cannot be same.', 'error' )
-    apt.name.classList.add( 'md:border-red-600' )
-    apt.emergencyName.classList.add( 'md:border-red-600' )
+    apt.name.classList.add( 'md:border-rose-600' )
+    apt.emergencyName.classList.add( 'md:border-rose-600' )
     fieldFlag = true;
   }
 
@@ -117,7 +117,7 @@ const fieldValidators = ( allFilled ) =>
   if ( aptFees.value <= 100 )
   {
     promptMessages( `Fees should be greater than <span>&#8377;</span> 100.`, 'error' )
-    aptFees.classList.add( 'md:border-red-600' )
+    aptFees.classList.add( 'md:border-rose-600' )
     fieldFlag = true
   }
 
@@ -128,8 +128,8 @@ const fieldValidators = ( allFilled ) =>
     if ( aptAddress.value === emergencyAddress.value )
     {
       promptMessages( 'Same address only for family members.', 'error' )
-      apt.address.classList.add( 'md:border-red-600' )
-      apt.emergencyAddress.classList.add( 'md:border-red-600' )
+      apt.address.classList.add( 'md:border-rose-600' )
+      apt.emergencyAddress.classList.add( 'md:border-rose-600' )
       fieldFlag = true;
     }
   }
@@ -145,14 +145,14 @@ const fieldValidators = ( allFilled ) =>
         if ( apt.day.value === latestAptDay && apt.timeSlot.value === latestTimeSlot )
         {
           promptMessages( 'Slot is already filled.', 'error' )
-          apt.day.classList.add( 'md:border-red-600' )
-          apt.timeSlot.classList.add( 'md:border-red-600' )
+          apt.day.classList.add( 'md:border-rose-600' )
+          apt.timeSlot.classList.add( 'md:border-rose-600' )
           fieldFlag = true;
         }
         else if ( doc.data().email.at( -1 ) === apt.email.value )
         {
           promptMessages( 'Email is already registered.', 'error' )
-          apt.email.classList.add( 'md:border-red-600' )
+          apt.email.classList.add( 'md:border-rose-600' )
           fieldFlag = true;
         }
       } )
