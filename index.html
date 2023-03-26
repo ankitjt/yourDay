@@ -21,11 +21,7 @@
       <!-- Logo  -->
       <div class="text-center text-indigo-600 w-full mb-5">
         <p class="text-5xl app-name">yourDay</p>
-        <p class="text-xs italic lowercase font-semibold mt-2 tracking-widest">The
-          light will bring
-          you to
-          you, to us,
-          always.
+        <p class="text-xs italic lowercase font-semibold mt-2 tracking-widest">The light will bring you to you, to us always.
         </p>
 
       </div>
@@ -36,22 +32,39 @@
 
           <div class="w-full relative">
             <input type="email" name="" id="email"
-                   class="loginEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-white border-transparent rounded-md tracking-widest bg-white"
-                   placeholder="email" autocomplete="off" />
+                   class="loginEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-white"
+                   placeholder="email" autocomplete="off" autofocus />
             <label for="email"
                    class="loginEmailLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
           </div>
 
           <div class="w-full relative">
             <input type="password" name="" id="password"
-                   class="loginPassword placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-white border-transparent rounded-md tracking-widest bg-white"
+                   class="loginPassword placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-white"
                    placeholder="password" autocomplete="off" />
             <label for="password"
                    class="loginPasswordLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Password</label>
           </div>
+
           <div class="loginSection flex flex-row justify-between mt-5">
-            <a href="./src/appointments.html"
-               class="loginBtn w-fit rounded-md py-4 px-10 uppercase font-semibold tracking-widest text-center text-white bg-indigo-600  text-xs ease-in-out duration-300">Login</a>
+
+            <a href="./src/appointments.html" class="loginBtn relative w-fit flex items-center group ease-in-out duration-300 cursor-pointer">
+              <div
+                   class="w-fit h-9 px-4 uppercase tracking-widest font-semibold text-xs mt-5 lg:mt-0 bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                <span>Login</span>
+              </div>
+
+              <div
+                   class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-5 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-8 text-white tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                </svg>
+
+              </div>
+
+            </a>
+
             <div class="mt-2">
               <a href="#"
                  class="forgotPass text-indigo-600 uppercase text-xs tracking-widest font-semibold pb-1 border-b-2 border-indigo-600 hover:border-rose-600 ease-in-out duration-300 hover:text-rose-600">forgot
