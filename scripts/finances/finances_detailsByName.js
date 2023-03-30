@@ -4,9 +4,9 @@ findDetailsByName.onclick = () =>
 {
   profileDetails.innerHTML = ''
   moneyBreakDownWrapper.innerHTML = ''
-  sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
-  sessionsBreakDownWrapper.classList.remove( 'left-0' )
-  panicButton124.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
+  sessionsBreakDownWrapper.classList.add( '-right-[2000px]' )
+  sessionsBreakDownWrapper.classList.remove( 'right-0' )
+
 
   if ( patientNamesList.value === '' || financeMonthFilterByName.value === '' )
   {
@@ -29,51 +29,43 @@ findDetailsByName.onclick = () =>
             let finance_profile_data =
               `
                   <div class="my-2 appointmentsWrapper">
-                    <h1 class="pb-1 mb-5 text-[11px] tracking-widest font-semibold text-slate-500 uppercase border-b">Appointment Details</h1>
-                    <div class="grid md:grid-cols-4 grid-cols-3 font-semibold gap-x-5 gap-y-3 appointmentDetails">
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Type</div>
-                        <div class="mt-1">${ finance_profile.type }</div>
+                    <h1 class="pb-1 mb-5 text-[11px] tracking-widest font-semibold text-indigo-600 uppercase border-b">Appointment Details</h1>
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 font-semibold gap-x-5 gap-y-3 appointmentDetails text-gray-500">
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase  tracking-wider text-[10px]">Type</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.type }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Mode</div>
-                        <div class="mt-1">${ finance_profile.mode }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Mode</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.mode }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Time Slot</div>
-                        <div class="mt-1 patientTimeSlot">${ finance_profile.timeSlot }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Time Slot</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest patientTimeSlot">${ finance_profile.timeSlot }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Day</div>
-                        <div class="mt-1">${ finance_profile.day }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Day</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.day }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Fees</div>
-                        <div class="mt-1">${ finance_profile.fees }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Fees</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.fees }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Date</div>
-                        <div class="mt-1">${ finance_profile.email }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Visit per week</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.visitPerWeek }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Visit per week</div>
-                        <div class="mt-1">${ finance_profile.visitPerWeek }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Second Time Slot</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.secondTimeSlot }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Time Slot</div>
-                        <div class="mt-1">${ finance_profile.secondTimeSlot }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">Second Day</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ finance_profile.secondDay }</div>
                       </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Day</div>
-                        <div class="mt-1">${ finance_profile.secondDay }</div>
-                      </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">Second Date</div>
-                        <div class="mt-1">${ finance_profile.secondDate }</div>
-                      </div>
-                      <div class="fieldWrapper">
-                        <div class="profileTag font-semibold uppercase text-[9px] text-gray-500 tracking-wider">First Session On</div>
-                        <div class="mt-1">${ aptDetail.firstSessionOn }</div>
+                      <div class="fieldWrapper flex md:block items-center text-xs justify-between">
+                        <div class="profileTag font-semibold uppercase tracking-wider text-[10px]">First Session On</div>
+                        <div class="mt-1 text-indigo-600 lg:text-slate-700 tracking-widest">${ aptDetail.firstSessionOn }</div>
                       </div>
                       
                     </div>
@@ -90,12 +82,3 @@ findDetailsByName.onclick = () =>
 
 }
 
-clearScreen.onclick = () =>
-{
-  patientProfileWrapper.classList.add( 'hidden' )
-  patientNamesList.selectedIndex = 0
-  financeMonthFilterByName.value = ''
-  sessionsBreakDownWrapper.classList.add( '-left-[2000px]' )
-  sessionsBreakDownWrapper.classList.remove( 'left-0' )
-  panicButton124.classList.add( 'lg:left-6', 'ease-in-out', 'duration-300' )
-}
