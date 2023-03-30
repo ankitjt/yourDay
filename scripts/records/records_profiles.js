@@ -22,13 +22,13 @@ setTimeout( () =>
 
     profileRowData += `
                     <tr title='Click to view details' 
-                    class="cursor-pointer patientRow tracking-widest font-semibold ease-in-out md:text-gray-700 text-gray-300 bg-gray-900 md:bg-white transition:300 hover:md:bg-blue-100 hover:bg-gray-700 text-[10px] border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
+                    class="cursor-pointer patientRow tracking-widest font-semibold ease-in-out lg:text-gray-700 text-gray-500 bg-gray-900 lg:bg-white transition:300 hover:md:bg-indigo-600 hover:text-white text-[10px] group border-b border-gray-300 uppercase  ${ filterData.type === 'Session' ? 'sessionRow' : 'supervisionRow' }" data-id=${ filterData.id }>
 
                     <td class="px-6 py-3 whitespace-nowrap w-fit">
                       <span class="block name">${ filterData.name }</span>
                       <span class="email lowercase">${ filterData.email }</span>
                     </td>
-                    <td class="px-6 py-3 ${ filterData.type === 'Session' ? 'text-blue-600' : 'text-emerald-600' }">
+                    <td class="px-6 py-3 ${ filterData.type === 'Session' ? 'text-indigo-600' : 'text-emerald-600' } group-hover:text-white ">
                       ${ filterData.type }
                     </td>
                     <td class="px-6 py-3">

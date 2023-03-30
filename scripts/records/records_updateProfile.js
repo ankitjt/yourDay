@@ -1,4 +1,6 @@
 // Filling selected user profile details in update window.
+let patientProfileWrapper = document.querySelector( '.patientProfileWrapper' )
+
 const updateProfile = () =>
 {
 
@@ -20,15 +22,15 @@ const updateProfile = () =>
     updateFees = document.querySelector( ".updateFees" ),
     patientRow = document.querySelectorAll( '.patientRow' ),
     patientDetails = document.querySelector( '.patientDetails' ),
-    patientProfileWrapper = document.querySelector( '.patientProfileWrapper' ),
     profileID, profileEmail, profileFees
 
   for ( let row of patientRow )
   {
     row.onclick = () =>
     {
-      updateProfileWrapper.classList.add( '-left-[2000px]' )
-      updateProfileWrapper.classList.remove( 'left-0' )
+      updateProfileWrapper.classList.add( '-right-[3000px]' )
+      updateProfileWrapper.classList.remove( 'right-0' )
+      patientProfileWrapper.classList.add( 'hidden' )
 
       let rowID = row.getAttribute( 'data-id' )
       for ( let updateProfile of profileDetails )
@@ -156,12 +158,12 @@ const updateProfile = () =>
 
           if ( pageBody.offsetWidth < 1024 )
           {
-            alert( 'Please view page on a bigger screen as update window will not be available in small screen.' )
+            alert( 'Please view page on a bigger screen to see information.' )
           }
           else
           {
-            updateProfileWrapper.classList.remove( '-left-[2000px]' )
-            updateProfileWrapper.classList.add( 'left-0' )
+            updateProfileWrapper.classList.remove( '-right-[3000px]' )
+            updateProfileWrapper.classList.add( 'right-0' )
             panicButtonRecords.classList.remove( 'lg:left-10' )
 
             updateName.value = ''
@@ -276,4 +278,12 @@ const updateProfile = () =>
   }
 }
 
+let closeUpdateProfileWrapper = document.querySelector( ".closeUpdateProfileWrapper" )
+
+closeUpdateProfileWrapper.onclick = () =>
+{
+  patientProfileWrapper.classList.remove( 'hidden' )
+  updateProfileWrapper.classList.remove( 'right-0' )
+  updateProfileWrapper.classList.add( '-right-[3000px]' )
+}
 

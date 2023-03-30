@@ -28,7 +28,6 @@ let showGraph = ( updateProfileEmail ) =>
       graphData.status === 'Updated' ? reScheduled.push( graphData.status ) : 0
     }
   }
-  console.log( scheduled.length, completed.length, paidCancelled.length, freeCancelled.length, reScheduled.length );
 
   scheduled.length === 0 ? scheduleHolder.classList.add( 'text-gray-300' ) : scheduleHolder.classList.remove( 'text-gray-300' )
   graph_scheduled.innerHTML = `
