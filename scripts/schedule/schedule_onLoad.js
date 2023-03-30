@@ -1,5 +1,6 @@
 scheduleGalleryView.innerHTML = `${ loadingAnimation }`
 contentWrapper.innerHTML = `${ loadingAnimation }`
+let mobileCount = document.querySelector( ".mobileCount" )
 
 setTimeout( () =>
 {
@@ -13,10 +14,11 @@ setTimeout( () =>
       if ( eachRecord.status === 'Pending' || eachRecord.status === 'Scheduled' )
       {
         appointmentCountNumber.push( eachRecord )
-
+        mobileCount.innerText = "-  " + appointmentCountNumber.length
         mobileView += `
            <div
-               class="contentMobile text-gray-400 shadow-2xl p-3 mb-4 rounded-xl text-[10px] font-semibold uppercase tracking-widest">
+               class="contentMobile text-gray-400 border-b border-gray-400 p-3 mb-4 text-[10px] font-semibold uppercase tracking-widest">
+              
             <p class="aptName flex items-center justify-between my-2">
               <span class="text-indigo-600">Name</span>
               <span class="name">${ eachRecord.name }</span>
