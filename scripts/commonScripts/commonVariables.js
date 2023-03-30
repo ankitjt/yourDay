@@ -7,6 +7,7 @@ let panicButton = document.querySelector( '.pb' );
 let startDate = document.querySelector( ".aptStartDate" )
 let rightSection = document.querySelector( '.rightSection' )
 let countryCode = document.querySelectorAll( ".countryCode" )
+let pageBlocker = document.querySelector( '.pageBlocker' )
 let aptsArr = []
 
 

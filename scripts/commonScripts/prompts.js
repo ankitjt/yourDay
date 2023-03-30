@@ -1,5 +1,4 @@
 let checkPrompt = document.querySelector( '.checkPrompt' )
-let pageBlocker = document.querySelector( '.pageBlocker' )
 let promptContent = document.querySelector( '.promptContent' )
 
 const promptMessages = ( message, promptType, refresh ) =>
