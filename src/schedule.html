@@ -48,7 +48,7 @@
         </nav>
 
         <!-- Content Section  -->
-        <div class="lg:mt-10 mt-5 text-slate-700 px-5 overflow-y-auto overflow-x-hidden relative h-full">
+        <div class="lg:mt-10 mt-5 text-slate-700 lg:px-5 px-2 lg:overflow-y-auto overflow-x-hidden relative h-full">
 
           <!-- Filter Appointments  -->
           <div class="filterApts px-5 py-5 rounded-xl lg:bg-white shadow-2xl">
@@ -97,8 +97,9 @@
                     </div>
 
                     <!-- Buttons  -->
-                    <div class="flex items-center justify-between w-full">
-                      <div class="wrap flex items-center">
+                    <div class="flex lg:items-center lg:flex-row flex-col lg:justify-between w-full">
+
+                      <div class="wrap flex items-center  my-2 lg:my-0">
 
                         <!-- Find Button  -->
                         <div
@@ -126,17 +127,17 @@
 
                         <!-- Clear Button  -->
                         <div
-                          class="clearFilters relative w-fit h-9 flex items-center group ease-in-out duration-300 lg:ml-10 cursor-pointer">
+                          class="clearFilters lg:ml-0 ml-10 relative w-fit h-9 flex items-center group ease-in-out duration-300 lg:ml-10 cursor-pointer">
 
                           <button
-                            class="w-full h-full uppercase tracking-wider font-semibold text-xs mt-5 lg:mt-0 bg-gray-100 rounded-md text-rose-600 ease-in-out duration-300 text-center z-20 group-hover:rounded-r-none">
+                            class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-gray-900 lg:bg-white rounded-md text-rose-600  border-gray-400 ease-in-out duration-300 text-center z-20 flex items-center  group-hover:border-r-none border group-hover:rounded-r-none">
                             <span>Clear</span>
                           </button>
 
                           <div
-                            class="bg-gray-100 text-rose-600 right-10 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 tracking-widest">
+                            class="bg-gray-900 lg:bg-white border-l-none border-t border-b border-r border-gray-400 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-rose-600 tracking-widest">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                              class="w-5 h-5">
+                              class="w-4 h-4">
                               <path fill-rule="evenodd"
                                 d="M2.515 10.674a1.875 1.875 0 000 2.652L8.89 19.7c.352.351.829.549 1.326.549H19.5a3 3 0 003-3V6.75a3 3 0 00-3-3h-9.284c-.497 0-.974.198-1.326.55l-6.375 6.374zM12.53 9.22a.75.75 0 10-1.06 1.06L13.19 12l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L15.31 12l1.72-1.72a.75.75 0 10-1.06-1.06l-1.72 1.72-1.72-1.72z"
                                 clip-rule="evenodd" />
@@ -147,7 +148,8 @@
 
                       </div>
 
-                      <div class="ml-5 text-[10px] font-semibold uppercase tracking-widest text-rose-600 helper">
+                      <div
+                        class="lg:ml-5 mt-5 text-[10px] font-semibold uppercase tracking-widest text-rose-600 helper">
                         All filters are required.
                       </div>
 
@@ -186,7 +188,12 @@
           </div>
 
           <!-- Mobile View  -->
-          <div class="scheduleGalleryView lg:hidden mt-5"></div>
+          <div class="lg:hidden mt-10 shadow-2xl px-5 py-5">
+            <div class="my-2 tracking-widest uppercase text-gray-500">
+              <h1>Appointments <span class="mobileCount text-indigo-600"></span> </h1>
+            </div>
+            <div class="scheduleGalleryView relative"></div>
+          </div>
 
           <!-- Update Appointment  -->
           <div tabindex="-1"
