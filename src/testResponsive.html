@@ -172,389 +172,210 @@
         </div>
 
         <!-- Content Section  -->
-        <div class="lg:my-10 mt-5 pb-10 text-slate-700 lg:px-5 overflow-y-auto relative  lg:rounded-xl">
-          <span class="fixed bg-rose-600 px-3 py-3 rounded-full w-fit text-white bottom-10 right-10 animate-bounce">yD
-          </span>
-          <div class="filterFindBtn relative w-fit flex items-center group ease-in-out duration-300 cursor-pointer">
+        <div class="lg:my-5 mt-2 pb-5 text-slate-700 lg:px-5 overflow-y-auto relative lg:rounded-xl">
 
-            <button
-              class=" px-4 h-9 uppercase tracking-wider font-semibold text-xs mt-5 lg:mt-0 bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center  group-hover:rounded-r-none z-20 ">
-              <span>Find</span>
+          <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
-            </button>
+            <div class="flex flex-col appointmentDetailsFields rounded-xl ">
 
-            <div
-              class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-5 top-1/2 -translate-y-1/2 ease-in-out duration-300 group-hover:-right-6 px-2 w-fit text-white tracking-widest">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
-                <path fill-rule="evenodd"
-                  d="M10.5 3.75a6.75 6.75 0 100 13.5 6.75 6.75 0 000-13.5zM2.25 10.5a8.25 8.25 0 1114.59 5.28l4.69 4.69a.75.75 0 11-1.06 1.06l-4.69-4.69A8.25 8.25 0 012.25 10.5z"
-                  clip-rule="evenodd" />
-              </svg>
+              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+                Appointment Details</h1>
+
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Visit Per Week  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
+                    autocomplete="off" id="occurrenceType" title="Visit per week" value=''
+                    class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="occurrenceType"
+                    class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
+                    per week</label>
+                </div>
+
+                <!-- Week/Alternate Week  -->
+                <div
+                  class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 lg:text-slate-900">
+
+                  <div class="mr-5">
+                    <input type="radio" name="weekType" id="eachWeek"
+                      class="eachWeek radios  checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
+                    <label for="eachWeek" class="ml-2">Each Week</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="weekType" id="alternateWeek"
+                      class="alternateWeek  radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
+                      value="14">
+                    <label for="alternateWeek" class="ml-2">Alternate Week</label>
+                  </div>
+
+                </div>
+
+                <!-- Start Date  -->
+                <div class="relative h-fit flex flex-col startDateWrapper">
+
+                  <div class="default w-full flex items-center">
+                    <div class="grow relative">
+                      <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
+                        autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
+                        onfocusout="(this.type='text')"
+                        class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+
+                      <label for="aptStartDate"
+                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                        Start Date</label>
+                    </div>
+
+                    <div class="addMoreDate ml-5 cursor-pointer hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 text-indigo-600">
+                        <path fill-rule="evenodd"
+                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </div>
+
+                  </div>
+
+                  <div class="additionalDates grid grid-cols-1 lg:grid-cols-3 gap-x-10">
+                  </div>
+
+                </div>
+
+                <!-- Start Day  -->
+                <div class="relative h-fit flex flex-col startDateWrapper">
+
+                  <div class="default w-full flex items-center">
+
+                    <div class="grow relative">
+
+                      <select name="aptDay" id="aptDay" title="Appointment Start Day"
+                        class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        <option value="" class="text-xs md:font-semibold md:text-xs">
+                          Pick a day
+                        </option>
+                        <option value="Monday" class="text-xs md:font-semibold md:text-xs">
+                          Monday
+                        </option>
+                        <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
+                          Tuesday
+                        </option>
+                        <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
+                          Wednesday
+                        </option>
+                        <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
+                          Thursday
+                        </option>
+                        <option value="Friday" class="text-xs md:font-semibold md:text-xs">
+                          Friday
+                        </option>
+                        <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
+                          Saturday
+                        </option>
+                        <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
+                          Sunday
+                        </option>
+                      </select>
+                      <label for="aptDay"
+                        class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
+                        Day
+                      </label>
+                    </div>
+
+                    <div class="addMoreDay ml-5 cursor-pointer hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                        class="w-6 h-6 text-indigo-600">
+                        <path fill-rule="evenodd"
+                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                          clip-rule="evenodd" />
+                      </svg>
+                    </div>
 
 
+                  </div>
+
+                  <div class="additionalDay grid grid-cols-1 lg:grid-cols-3 gap-x-10">
+                  </div>
+
+                </div>
+
+                <!-- Time slot -->
+                <div class="relative h-fit">
+                  <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
+                    class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="md:font-semibold">
+                      Time slot
+                    </option>
+                    <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
+                      09:00 - 10:00
+                    </option>
+                    <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
+                      10:00 - 11:00
+                    </option>
+                    <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
+                      11:00 - 12:00
+                    </option>
+                    <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
+                      12:00 - 13:00
+                    </option>
+                    <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
+                      13:00 - 14:00
+                    </option>
+                    <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
+                      14:00 - 15:00
+                    </option>
+                    <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
+                      15:00 - 16:00
+                    </option>
+                    <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
+                      16:00 - 17:00
+                    </option>
+                    <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
+                      17:00 - 18:00
+                    </option>
+                  </select>
+                  <label for="aptTimeSlot"
+                    class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
+                    Slot</label>
+                  <p class="hidden py-2 text-xs font-semibold firstTimeSlotWrapper text-rose-600">
+                    First Time Slot : <span class="firstTimeSlot"></span>
+                  </p>
+                </div>
+
+
+
+                <!-- Fees  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
+                    autocomplete="off" title="Appointment Fees"
+                    class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                  <label for="aptFees"
+                    class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
+                    per visit</label>
+                </div>
+
+              </div>
             </div>
 
-          </div>
-          <!-- <p class="leading-8 text-justify">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, veritatis reiciendis fugit aperiam
-            quibusdam esse! Facere veniam deserunt porro distinctio nisi, labore itaque recusandae, cum reprehenderit
-            vero saepe hic neque.
-            Assumenda nemo nisi ullam maxime cupiditate hic explicabo eos, similique perspiciatis iste dolorum aperiam
-            et a cumque dolor debitis nesciunt corporis quibusdam iure optio alias. Mollitia at officia ad ullam?
-            Dignissimos accusamus cumque at voluptatibus eum magni praesentium atque provident vel. Nihil amet harum
-            placeat dolorem voluptatem minima, unde excepturi quae magnam velit neque necessitatibus ut temporibus sit
-            iste! Adipisci?
-            Ad voluptates expedita sit, veniam at dicta quam cupiditate reprehenderit nulla cumque! Nobis perferendis,
-            tempora, sapiente non magni consequatur ea atque accusantium amet id in nihil architecto ratione harum a!
-            Eius iusto nisi adipisci aut similique libero fugiat deserunt neque, quibusdam tempore tenetur illo odit
-            totam illum obcaecati eum iste sunt consequatur dicta sed ipsum sint inventore sit. Officiis, ipsum.
-            Ratione tenetur excepturi tempore, enim deleniti cum et soluta. Quam sunt incidunt blanditiis doloremque
-            aspernatur iusto illum odio voluptatibus. Esse, cumque quos. Aspernatur quidem nobis enim assumenda
-            similique tempore facere.
-            Labore nihil ab magnam blanditiis repellendus magni atque, saepe accusamus et doloribus, exercitationem
-            reiciendis, dolorum culpa sed ipsam molestiae quisquam quod iste dolores mollitia eveniet porro. Harum
-            placeat culpa iure.
-            Dolore laudantium cum dolorem nam inventore dolores tempora perspiciatis corrupti expedita ipsa. Ipsum
-            deleniti ad illo modi aspernatur nobis officiis, asperiores quia in animi harum earum eaque iusto libero
-            adipisci?
-            Labore doloribus delectus repellat? Cupiditate at explicabo facere perferendis! Ratione accusamus optio
-            quidem fugit cum accusantium dolor, dolore praesentium corrupti beatae tempora enim amet incidunt animi,
-            aliquam ut itaque. Accusantium!
-            Fugit, tempora. Mollitia omnis animi nostrum laudantium, perferendis, commodi voluptates id quis
-            accusantium, atque officiis ipsa! Similique quibusdam fugiat eos nesciunt? Facere architecto cumque vitae
-            illo omnis excepturi, praesentium voluptate.
-            Similique ex laudantium quos fuga quia vel eum asperiores. Praesentium similique atque dolor voluptatem qui,
-            facere a laudantium ducimus, quod laborum maxime distinctio itaque assumenda fugiat quos dolorum mollitia
-            corrupti.
-            Itaque eius nemo vero illum nam aperiam eum iusto, obcaecati neque voluptatibus cupiditate ullam tempora
-            commodi praesentium esse enim ipsam, reprehenderit, blanditiis dolor. Delectus eveniet modi autem soluta
-            rerum numquam.
-            Ipsa qui ex voluptatibus nisi id cupiditate, deleniti ab quaerat odit omnis magni! Veniam, magni? Tempora
-            neque aspernatur pariatur obcaecati inventore ducimus dignissimos cum velit deleniti, provident, doloremque,
-            modi debitis.
-            Quam ab ut cumque sed voluptatem delectus sunt voluptas incidunt unde veritatis quod expedita fugiat
-            aspernatur animi soluta, beatae quis accusantium repellendus optio ipsum neque. Quidem quas repudiandae odit
-            rerum!
-            Nihil incidunt eum, fuga quo deserunt alias, sapiente quidem corrupti eius voluptatem aliquid! Quasi,
-            expedita distinctio! Quae non at, perspiciatis tenetur maiores provident eos, rerum optio porro accusamus,
-            nostrum delectus.
-            Voluptates omnis blanditiis quod a consectetur maxime quis, laborum ullam tenetur eveniet non quas excepturi
-            porro in magnam repellendus. Voluptatum omnis veniam magnam adipisci, molestias enim sequi iure
-            necessitatibus ducimus.
-            Eveniet numquam cum ut, iusto omnis minima harum ipsa corrupti labore, atque inventore blanditiis amet
-            deleniti debitis at eum? Voluptate est hic totam ea, iure nemo nihil eveniet non pariatur?
-            Ipsam assumenda eaque pariatur sed aliquam alias corporis dicta autem numquam optio, labore ullam quia
-            impedit molestias architecto, tempore a dolorum esse corrupti nulla consequatur dolor laudantium, aut
-            expedita! Illo.
-            Delectus aspernatur nemo ipsa odit natus perspiciatis iusto sed voluptate voluptatum repudiandae possimus,
-            laborum error voluptas assumenda consequuntur amet quod quidem. Obcaecati a quo perferendis laudantium
-            delectus rem natus iusto.
-            Laborum commodi explicabo esse eos error. Quo laboriosam vitae blanditiis laborum dicta similique
-            praesentium veniam quasi nostrum in dolores non doloremque et debitis, provident ratione, voluptatibus unde
-            ea placeat adipisci.
-            Rerum, quasi quis dolor, id impedit architecto placeat voluptatibus vitae ipsa eos sequi blanditiis. Nulla
-            expedita explicabo quas, iusto voluptatum saepe natus ipsum eaque rem dolor, soluta vitae maiores placeat!
-            Ad sed natus voluptate doloremque eaque expedita praesentium, sit delectus velit necessitatibus laboriosam
-            corrupti itaque sunt veritatis quae reiciendis provident fugit ullam molestias nobis. Animi fugiat iusto
-            obcaecati fuga sunt.
-            Ut soluta magnam cumque quam necessitatibus ullam, repudiandae enim ea blanditiis, illo dolores magni vel
-            atque eum sint eos neque itaque? Nobis dolore maxime nihil dignissimos animi amet vel delectus!
-            Recusandae neque laudantium, iste quis doloremque libero autem, voluptas doloribus tempore labore culpa
-            fuga! Nulla porro error autem doloremque velit repudiandae, earum quaerat voluptatem, natus repellendus
-            fugit dolores culpa eaque?
-            Aliquam eaque optio ipsa molestiae rerum iure cupiditate quidem ullam voluptas illo ducimus reprehenderit,
-            reiciendis, suscipit consequuntur. Soluta fuga exercitationem iusto vel adipisci ab cupiditate, ipsam
-            impedit porro repudiandae corporis.
-            Vero esse, provident illum cumque rem necessitatibus et ea molestiae odio totam consequuntur eius cum odit
-            accusantium consectetur officia quo modi facilis fuga blanditiis possimus. Quis aperiam blanditiis quas
-            quae.
-            Inventore, ipsam quibusdam! Nostrum, eius id corrupti porro deserunt omnis nulla reprehenderit sequi,
-            maiores officiis dolorum sed similique obcaecati incidunt! Blanditiis dolore quasi eius explicabo nisi
-            mollitia tempora unde eum.
-            Placeat et ab ducimus inventore adipisci, dolorem magnam beatae optio commodi. Sint iure a iusto alias
-            repudiandae incidunt reprehenderit dolorem esse reiciendis, quae distinctio accusantium dolore modi aut
-            minus velit.
-            Sit velit, tempora aliquid dolor minima mollitia quam ducimus expedita dolorum modi nam itaque temporibus
-            optio necessitatibus. Ad sapiente sunt, magnam molestias nihil similique consectetur mollitia est quo minus
-            quia?
-            Quas placeat fugiat fuga laboriosam explicabo odio inventore fugit labore, ad alias qui iste sit aspernatur
-            quam minus, possimus similique facere dolores a neque quidem necessitatibus maxime. Ipsa, eius assumenda.
-            Cum explicabo voluptatibus aspernatur dolor quibusdam id. Enim vitae atque pariatur unde dolor quidem
-            eveniet cum, quisquam quos nesciunt voluptate obcaecati veniam maiores? Nesciunt illum illo id tempore esse
-            sunt!
-            Quaerat culpa excepturi laboriosam rerum! Saepe laudantium est ipsam vel voluptatibus impedit placeat qui
-            quae ipsa. Consectetur quia, nisi dolores, voluptatem quas tempora iusto earum illum impedit voluptate
-            voluptatibus et.
-            Quas eligendi totam unde officia perspiciatis at aut corporis tempora voluptatem voluptas nihil illum,
-            blanditiis deserunt, dolores enim. Quia dolorum quae a dolorem quas accusamus aut nostrum officia, magnam
-            labore.
-            Illo iure sed voluptates soluta eos dolor neque qui earum rerum quas ducimus totam suscipit repellat, sequi
-            saepe! Officiis consectetur aperiam voluptatibus illo modi voluptatem error ducimus praesentium molestias
-            possimus.
-            Quos inventore unde ipsam possimus numquam voluptates eaque blanditiis rerum itaque sint dolorum nulla
-            similique debitis modi aliquid provident qui fuga, harum non consequatur consectetur. Magnam voluptas
-            delectus optio harum.
-            Doloribus, quaerat, distinctio illo exercitationem est optio eum unde repudiandae corporis officiis aut ab
-            odio numquam! Exercitationem iste repellendus est minima, neque tenetur dolorum, in, blanditiis illum
-            ducimus praesentium similique!
-            Cum debitis, neque voluptates fugiat eaque reprehenderit rerum, commodi exercitationem autem maiores
-            delectus, quam illum quidem animi dignissimos vitae culpa qui veritatis temporibus quisquam quas itaque
-            alias! Nam, voluptatem vero.
-            Saepe consequatur voluptas commodi veritatis magni mollitia, et quos similique, a asperiores earum. Aliquid
-            inventore numquam autem laborum totam, repellat, nisi rem debitis sed facilis nulla perspiciatis fugit error
-            veritatis.
-            Eligendi molestiae vero ipsam nihil voluptates ex minus tenetur deleniti reprehenderit impedit, similique
-            dolorum eos aperiam eius vitae sint et possimus! Dignissimos consectetur temporibus facere quod ad?
-            Molestias, obcaecati voluptas.
-            Dolor, voluptatem odit optio doloribus veritatis nemo suscipit atque accusamus expedita nobis eius placeat
-            fugit non maxime blanditiis, ex eum molestiae dignissimos saepe nihil deserunt architecto, magnam corrupti?
-            Fugiat, voluptatum!
-            Iusto temporibus quae voluptas magni accusantium excepturi error, pariatur minus magnam aliquid itaque fugit
-            assumenda recusandae obcaecati rem vel optio ipsa ratione. Repellat libero maiores ducimus? Rem inventore
-            maiores tempore!
-            Nemo veniam nostrum debitis repellat reprehenderit quisquam deserunt corrupti illo earum fuga voluptas non
-            iste facilis suscipit, similique natus explicabo vitae blanditiis nam eaque dolorum in id. Aperiam,
-            similique sit?
-            Ipsam cupiditate sed, eum nesciunt doloremque corrupti aspernatur accusamus officia deserunt laborum
-            repellat iusto. Corporis consequatur repellat illo est consequuntur nulla non, neque quisquam iusto ratione,
-            praesentium veniam, iste omnis.
-            Possimus minus illo perferendis ipsum provident enim tempora laudantium excepturi atque, quos illum itaque
-            beatae rem, magni error vero iusto explicabo iure perspiciatis! Quisquam esse praesentium voluptatem,
-            reprehenderit beatae nam?
-            Doloremque, similique. Quae ipsam nobis natus pariatur sit laudantium beatae a aliquid recusandae explicabo,
-            distinctio, mollitia obcaecati velit, fuga aut assumenda officiis ut optio voluptas quam dolorem non eum
-            dolores?
-            Dignissimos temporibus labore ad iste neque, sequi tenetur iusto, vero qui ratione vitae architecto veniam,
-            blanditiis esse impedit quam tempore! Animi qui consequuntur eum quidem iste excepturi minima maiores atque.
-            Suscipit ut explicabo asperiores totam quam voluptas reprehenderit sequi minus? Illum fuga molestiae quam
-            veniam porro nulla repudiandae non nobis sapiente? Necessitatibus commodi beatae soluta. Accusamus
-            consequatur et sed laborum!
-            Dolore at beatae totam asperiores consequatur ratione? Itaque, ad mollitia nam fugit, magnam quaerat
-            adipisci ratione consectetur sunt laudantium iusto. Tempore, optio porro temporibus culpa possimus mollitia
-            cupiditate labore aliquid.
-            Magnam itaque, ea et, quo impedit obcaecati cum animi expedita nulla fuga, labore eaque nihil voluptatum
-            dolore? Quis tenetur magni beatae perspiciatis explicabo, harum maxime cum officia ipsa cupiditate. Omnis!
-            Ipsam vel minima nesciunt doloribus reprehenderit eligendi, amet magnam provident explicabo earum alias
-            atque et libero quod laboriosam sunt, nam modi ex molestiae error architecto! Dolores nihil perferendis a
-            soluta?
-          </p>
+            <!-- Create Appointment Button  -->
+            <div
+              class="createAptBtn w-auto relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
 
-          <p class="my-2 border-t-2 pt-2 border-indigo-600 leading-8 text-justify para2">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, veritatis reiciendis fugit aperiam
-            quibusdam esse! Facere veniam deserunt porro distinctio nisi, labore itaque recusandae, cum reprehenderit
-            vero saepe hic neque.
-            Assumenda nemo nisi ullam maxime cupiditate hic explicabo eos, similique perspiciatis iste dolorum aperiam
-            et a cumque dolor debitis nesciunt corporis quibusdam iure optio alias. Mollitia at officia ad ullam?
-            Dignissimos accusamus cumque at voluptatibus eum magni praesentium atque provident vel. Nihil amet harum
-            placeat dolorem voluptatem minima, unde excepturi quae magnam velit neque necessitatibus ut temporibus sit
-            iste! Adipisci?
-            Ad voluptates expedita sit, veniam at dicta quam cupiditate reprehenderit nulla cumque! Nobis perferendis,
-            tempora, sapiente non magni consequatur ea atque accusantium amet id in nihil architecto ratione harum a!
-            Eius iusto nisi adipisci aut similique libero fugiat deserunt neque, quibusdam tempore tenetur illo odit
-            totam illum obcaecati eum iste sunt consequatur dicta sed ipsum sint inventore sit. Officiis, ipsum.
-            Ratione tenetur excepturi tempore, enim deleniti cum et soluta. Quam sunt incidunt blanditiis doloremque
-            aspernatur iusto illum odio voluptatibus. Esse, cumque quos. Aspernatur quidem nobis enim assumenda
-            similique tempore facere.
-            Labore nihil ab magnam blanditiis repellendus magni atque, saepe accusamus et doloribus, exercitationem
-            reiciendis, dolorum culpa sed ipsam molestiae quisquam quod iste dolores mollitia eveniet porro. Harum
-            placeat culpa iure.
-            Dolore laudantium cum dolorem nam inventore dolores tempora perspiciatis corrupti expedita ipsa. Ipsum
-            deleniti ad illo modi aspernatur nobis officiis, asperiores quia in animi harum earum eaque iusto libero
-            adipisci?
-            Labore doloribus delectus repellat? Cupiditate at explicabo facere perferendis! Ratione accusamus optio
-            quidem fugit cum accusantium dolor, dolore praesentium corrupti beatae tempora enim amet incidunt animi,
-            aliquam ut itaque. Accusantium!
-            Fugit, tempora. Mollitia omnis animi nostrum laudantium, perferendis, commodi voluptates id quis
-            accusantium, atque officiis ipsa! Similique quibusdam fugiat eos nesciunt? Facere architecto cumque vitae
-            illo omnis excepturi, praesentium voluptate.
-            Similique ex laudantium quos fuga quia vel eum asperiores. Praesentium similique atque dolor voluptatem qui,
-            facere a laudantium ducimus, quod laborum maxime distinctio itaque assumenda fugiat quos dolorum mollitia
-            corrupti.
-            Itaque eius nemo vero illum nam aperiam eum iusto, obcaecati neque voluptatibus cupiditate ullam tempora
-            commodi praesentium esse enim ipsam, reprehenderit, blanditiis dolor. Delectus eveniet modi autem soluta
-            rerum numquam.
-            Ipsa qui ex voluptatibus nisi id cupiditate, deleniti ab quaerat odit omnis magni! Veniam, magni? Tempora
-            neque aspernatur pariatur obcaecati inventore ducimus dignissimos cum velit deleniti, provident, doloremque,
-            modi debitis.
-            Quam ab ut cumque sed voluptatem delectus sunt voluptas incidunt unde veritatis quod expedita fugiat
-            aspernatur animi soluta, beatae quis accusantium repellendus optio ipsum neque. Quidem quas repudiandae odit
-            rerum!
-            Nihil incidunt eum, fuga quo deserunt alias, sapiente quidem corrupti eius voluptatem aliquid! Quasi,
-            expedita distinctio! Quae non at, perspiciatis tenetur maiores provident eos, rerum optio porro accusamus,
-            nostrum delectus.
-            Voluptates omnis blanditiis quod a consectetur maxime quis, laborum ullam tenetur eveniet non quas excepturi
-            porro in magnam repellendus. Voluptatum omnis veniam magnam adipisci, molestias enim sequi iure
-            necessitatibus ducimus.
-            Eveniet numquam cum ut, iusto omnis minima harum ipsa corrupti labore, atque inventore blanditiis amet
-            deleniti debitis at eum? Voluptate est hic totam ea, iure nemo nihil eveniet non pariatur?
-            Ipsam assumenda eaque pariatur sed aliquam alias corporis dicta autem numquam optio, labore ullam quia
-            impedit molestias architecto, tempore a dolorum esse corrupti nulla consequatur dolor laudantium, aut
-            expedita! Illo.
-            Delectus aspernatur nemo ipsa odit natus perspiciatis iusto sed voluptate voluptatum repudiandae possimus,
-            laborum error voluptas assumenda consequuntur amet quod quidem. Obcaecati a quo perferendis laudantium
-            delectus rem natus iusto.
-            Laborum commodi explicabo esse eos error. Quo laboriosam vitae blanditiis laborum dicta similique
-            praesentium veniam quasi nostrum in dolores non doloremque et debitis, provident ratione, voluptatibus unde
-            ea placeat adipisci.
-            Rerum, quasi quis dolor, id impedit architecto placeat voluptatibus vitae ipsa eos sequi blanditiis. Nulla
-            expedita explicabo quas, iusto voluptatum saepe natus ipsum eaque rem dolor, soluta vitae maiores placeat!
-            Ad sed natus voluptate doloremque eaque expedita praesentium, sit delectus velit necessitatibus laboriosam
-            corrupti itaque sunt veritatis quae reiciendis provident fugit ullam molestias nobis. Animi fugiat iusto
-            obcaecati fuga sunt.
-            Ut soluta magnam cumque quam necessitatibus ullam, repudiandae enim ea blanditiis, illo dolores magni vel
-            atque eum sint eos neque itaque? Nobis dolore maxime nihil dignissimos animi amet vel delectus!
-            Recusandae neque laudantium, iste quis doloremque libero autem, voluptas doloribus tempore labore culpa
-            fuga! Nulla porro error autem doloremque velit repudiandae, earum quaerat voluptatem, natus repellendus
-            fugit dolores culpa eaque?
-            Aliquam eaque optio ipsa molestiae rerum iure cupiditate quidem ullam voluptas illo ducimus reprehenderit,
-            reiciendis, suscipit consequuntur. Soluta fuga exercitationem iusto vel adipisci ab cupiditate, ipsam
-            impedit porro repudiandae corporis.
-            Vero esse, provident illum cumque rem necessitatibus et ea molestiae odio totam consequuntur eius cum odit
-            accusantium consectetur officia quo modi facilis fuga blanditiis possimus. Quis aperiam blanditiis quas
-            quae.
-            Inventore, ipsam quibusdam! Nostrum, eius id corrupti porro deserunt omnis nulla reprehenderit sequi,
-            maiores officiis dolorum sed similique obcaecati incidunt! Blanditiis dolore quasi eius explicabo nisi
-            mollitia tempora unde eum.
-            Placeat et ab ducimus inventore adipisci, dolorem magnam beatae optio commodi. Sint iure a iusto alias
-            repudiandae incidunt reprehenderit dolorem esse reiciendis, quae distinctio accusantium dolore modi aut
-            minus velit.
-            Sit velit, tempora aliquid dolor minima mollitia quam ducimus expedita dolorum modi nam itaque temporibus
-            optio necessitatibus. Ad sapiente sunt, magnam molestias nihil similique consectetur mollitia est quo minus
-            quia?
-            Quas placeat fugiat fuga laboriosam explicabo odio inventore fugit labore, ad alias qui iste sit aspernatur
-            quam minus, possimus similique facere dolores a neque quidem necessitatibus maxime. Ipsa, eius assumenda.
-            Cum explicabo voluptatibus aspernatur dolor quibusdam id. Enim vitae atque pariatur unde dolor quidem
-            eveniet cum, quisquam quos nesciunt voluptate obcaecati veniam maiores? Nesciunt illum illo id tempore esse
-            sunt!
-            Quaerat culpa excepturi laboriosam rerum! Saepe laudantium est ipsam vel voluptatibus impedit placeat qui
-            quae ipsa. Consectetur quia, nisi dolores, voluptatem quas tempora iusto earum illum impedit voluptate
-            voluptatibus et.
-            Quas eligendi totam unde officia perspiciatis at aut corporis tempora voluptatem voluptas nihil illum,
-            blanditiis deserunt, dolores enim. Quia dolorum quae a dolorem quas accusamus aut nostrum officia, magnam
-            labore.
-            Illo iure sed voluptates soluta eos dolor neque qui earum rerum quas ducimus totam suscipit repellat, sequi
-            saepe! Officiis consectetur aperiam voluptatibus illo modi voluptatem error ducimus praesentium molestias
-            possimus.
-            Quos inventore unde ipsam possimus numquam voluptates eaque blanditiis rerum itaque sint dolorum nulla
-            similique debitis modi aliquid provident qui fuga, harum non consequatur consectetur. Magnam voluptas
-            delectus optio harum.
-            Doloribus, quaerat, distinctio illo exercitationem est optio eum unde repudiandae corporis officiis aut ab
-            odio numquam! Exercitationem iste repellendus est minima, neque tenetur dolorum, in, blanditiis illum
-            ducimus praesentium similique!
-            Cum debitis, neque voluptates fugiat eaque reprehenderit rerum, commodi exercitationem autem maiores
-            delectus, quam illum quidem animi dignissimos vitae culpa qui veritatis temporibus quisquam quas itaque
-            alias! Nam, voluptatem vero.
-            Saepe consequatur voluptas commodi veritatis magni mollitia, et quos similique, a asperiores earum. Aliquid
-            inventore numquam autem laborum totam, repellat, nisi rem debitis sed facilis nulla perspiciatis fugit error
-            veritatis.
-            Eligendi molestiae vero ipsam nihil voluptates ex minus tenetur deleniti reprehenderit impedit, similique
-            dolorum eos aperiam eius vitae sint et possimus! Dignissimos consectetur temporibus facere quod ad?
-            Molestias, obcaecati voluptas.
-            Dolor, voluptatem odit optio doloribus veritatis nemo suscipit atque accusamus expedita nobis eius placeat
-            fugit non maxime blanditiis, ex eum molestiae dignissimos saepe nihil deserunt architecto, magnam corrupti?
-            Fugiat, voluptatum!
-            Iusto temporibus quae voluptas magni accusantium excepturi error, pariatur minus magnam aliquid itaque fugit
-            assumenda recusandae obcaecati rem vel optio ipsa ratione. Repellat libero maiores ducimus? Rem inventore
-            maiores tempore!
-            Nemo veniam nostrum debitis repellat reprehenderit quisquam deserunt corrupti illo earum fuga voluptas non
-            iste facilis suscipit, similique natus explicabo vitae blanditiis nam eaque dolorum in id. Aperiam,
-            similique sit?
-            Ipsam cupiditate sed, eum nesciunt doloremque corrupti aspernatur accusamus officia deserunt laborum
-            repellat iusto. Corporis consequatur repellat illo est consequuntur nulla non, neque quisquam iusto ratione,
-            praesentium veniam, iste omnis.
-            Possimus minus illo perferendis ipsum provident enim tempora laudantium excepturi atque, quos illum itaque
-            beatae rem, magni error vero iusto explicabo iure perspiciatis! Quisquam esse praesentium voluptatem,
-            reprehenderit beatae nam?
-            Doloremque, similique. Quae ipsam nobis natus pariatur sit laudantium beatae a aliquid recusandae explicabo,
-            distinctio, mollitia obcaecati velit, fuga aut assumenda officiis ut optio voluptas quam dolorem non eum
-            dolores?
-            Dignissimos temporibus labore ad iste neque, sequi tenetur iusto, vero qui ratione vitae architecto veniam,
-            blanditiis esse impedit quam tempore! Animi qui consequuntur eum quidem iste excepturi minima maiores atque.
-            Suscipit ut explicabo asperiores totam quam voluptas reprehenderit sequi minus? Illum fuga molestiae quam
-            veniam porro nulla repudiandae non nobis sapiente? Necessitatibus commodi beatae soluta. Accusamus
-            consequatur et sed laborum!
-            Dolore at beatae totam asperiores consequatur ratione? Itaque, ad mollitia nam fugit, magnam quaerat
-            adipisci ratione consectetur sunt laudantium iusto. Tempore, optio porro temporibus culpa possimus mollitia
-            cupiditate labore aliquid.
-            Magnam itaque, ea et, quo impedit obcaecati cum animi expedita nulla fuga, labore eaque nihil voluptatum
-            dolore? Quis tenetur magni beatae perspiciatis explicabo, harum maxime cum officia ipsa cupiditate. Omnis!
-            Ipsam vel minima nesciunt doloribus reprehenderit eligendi, amet magnam provident explicabo earum alias
-            atque et libero quod laboriosam sunt, nam modi ex molestiae error architecto! Dolores nihil perferendis a
-            soluta?
-          </p> -->
+              <button
+                class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                <span>Create</span>
+              </button>
+
+            </div>
+          </div>
+
 
         </div>
 
-        <h1
-          class="py-4 pb-1 text-[11px] tracking-widest font-semibold lg:text-indigo-600 text-gray-500 uppercase border-b">
-          Month's Record</h1>
 
-        <div class='grid grid-cols-1 lg:grid-cols-2 md:gap-x-5 md:gap-y-5 mt-5 text-indigo-600 '>
 
-          <div title='Click to view breakdown'
-            class="moneyScheduledWrapper breakDownType flex items-center justify-between px-6 mb-3 lg:bg-gray-50 shadow-2xl font-semibold py-4 rounded-md ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-            <span class='uppercase text-xs tracking-widest'>Scheduled</span>
-            <span class="moneyScheduled text-lg ml-5 ${ scheduled.length === 0 ? 0 : ' underline' } cursor-pointer">${
-              scheduled.length }</span>
-          </div>
-
-          <div title='Click to view breakdown'
-            class="moneyPendingWrapper breakDownType flex items-center justify-between px-6 mb-3 lg:bg-gray-50 shadow-2xl font-semibold py-4 rounded-md ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-            <span class='uppercase text-xs tracking-widest'>Pending</span>
-            <span class="moneyPending text-lg ml-5 ${ pending.length === 0 ? 0 : " underline" } cursor-pointer">${
-              pending.length }</span>
-          </div>
-
-          <div title='Click to view breakdown'
-            class="moneyCompletedWrapper breakDownType flex items-center justify-between px-6 mb-3 lg:bg-gray-50 shadow-2xl font-semibold py-4 rounded-md ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-            <span class='uppercase text-xs tracking-widest'>Completed</span>
-            <span class="moneyCompleted text-lg ml-5 tracking-widest ${ completed.length === 0 ? 0 : " underline" }
-              cursor-pointer">
-              ${ completed.length }</span>
-          </div>
-
-          <div title='Click to view breakdown'
-            class="moneyPaidCancelledWrapper breakDownType flex items-center justify-between px-6 mb-3 lg:bg-gray-50 shadow-2xl font-semibold py-4 rounded-md ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer">
-            <span class='uppercase text-xs tracking-widest'>Paid Cancelled</span>
-            <span class="moneyPaidCancelled text-lg ml-5  tracking-widest ${ paidCompleted.length === 0 ? 0 : "
-              underline" } cursor-pointer ">
-                              ${ paidCompleted.length }</span>
-                            </div>
-
-                            <div title='Click to view breakdown'
-                              class=" moneyFreeCancelledWrapper breakDownType flex items-center justify-between px-6
-              mb-3 lg:bg-gray-50 shadow-2xl font-semibold py-4 rounded-md ease-in-out duration-300 hover:bg-indigo-600
-              hover:text-white cursor-pointer">
-              <span class='uppercase text-xs tracking-widest'>Free Cancelled</span>
-              <span class="moneyFreeCancelled tracking-widest ${ freeCancelled.length === 0 ? 0 : " underline" }
-                cursor-pointer text-lg ml-5">
-                ${ freeCancelled.length }</span>
-          </div>
-        </div>
       </div>
-      <hr class="h-1 bg-indigo-600 rounded-md my-4">
-      <div
-        class="moneyTotalWrapper text-xs flex items-center justify-between tracking-widest mt-5 bg-indigo-600 text-slate-50 px-3 py-3 rounded-md">
-        <span class='uppercase'>Total Due for ${ nameOfMonth[ moreSplitter[ 1 ] - 1 ] }</span>
-        <span class="moneyTotal">
-          <div class="flex">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 " fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M9 8h6m-5 0a3 3 0 110 6H9l3 3m-3-6h6m6 1a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <span class='ml-1'>
-              ${ totalMoneyReceived }
-            </span>
-          </div>
-        </span>
-      </div>
-      <div class='totalLogic my-2 text-[10px] text-indigo-600 text-right'>
-        ** Completed + Paid Cancelled
-      </div>
-
-
-    </div>
 
     </div>
 
