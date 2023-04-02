@@ -104,6 +104,4 @@ apt.create.onclick = () =>
     apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
     apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
 
-
-
 }

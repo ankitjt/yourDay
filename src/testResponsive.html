@@ -1,389 +1,405 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>yourDay - ResponsiveCheck</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>yourDay - ResponsiveCheck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body class="relative lg:w-screen w-auto lg:h-screen h-auto">
-    <div class="pageBlocker absolute -left-[3000px] lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-30 opacity-50">
-    </div>
+<body class="relative lg:w-screen w-auto lg:h-screen h-auto">
+  <div class="pageBlocker absolute -left-[3000px] lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-30 opacity-50">
+  </div>
 
+  <div
+       class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold text-xs flex-col">
+
+    <!-- Left Section  -->
     <div
-      class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold text-xs flex-col">
+         class="left lg:h-full min-h-fit h-80 lg:w-64 w-full py-5 lg:px-6 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-center items-center lg:justify-between lg:items-start lg:overflow-y-auto fixed lg:relative left-0 top-0 z-30 ">
 
-      <!-- Left Section  -->
       <div
-        class="left lg:h-full min-h-fit h-80 lg:w-64 w-full py-5 lg:px-6 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-center items-center lg:justify-between lg:items-start lg:overflow-y-auto fixed lg:relative left-0 top-0 z-30 ">
+           class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 uppercase tracking-widest rounded-xl text-center w-full">
+        yourDay</div>
 
-        <div
-          class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 uppercase tracking-widest rounded-xl text-center w-full">
-          yourDay</div>
+      <!-- First Nav  -->
 
-        <!-- First Nav  -->
+      <nav
+           class="grid grid-cols-2  h-fit lg:h-auto bg-gray-900 lg:bg-indigo-600 place-items-center lg:grid-cols-1 w-full my-2 text-slate-500 lg:text-white">
 
-        <nav
-          class="grid grid-cols-2  h-fit lg:h-auto bg-gray-900 lg:bg-indigo-600 place-items-center lg:grid-cols-1 w-full my-2 text-slate-500 lg:text-white">
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 my-1 items-start justify-between w-36 lg:w-full rounded-xl uppercase text-[10px] font-semibold tracking-widest w-auto">
+          <span class="">Appointments</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path
+                  d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
+          </svg>
 
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 my-1 items-start justify-between w-36 lg:w-full rounded-xl uppercase text-[10px] font-semibold tracking-widest w-auto">
-            <span class="">Appointments</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path
-                d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z" />
-            </svg>
-
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-end justify-between lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest w-auto">
-            <span class="">Schedule</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
-                clip-rule="evenodd" />
-            </svg>
-
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Finances</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
-                clip-rule="evenodd" />
-            </svg>
-
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">RECORDS</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
-              fill="currentColor">
-              <path fill-rule="evenodd"
-                d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
-                clip-rule="evenodd" />
-            </svg>
-
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Notes</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
-            </svg>
-
-          </a>
-          <a href="#"
-            class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
-            <span class="">Logout</span>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-            </svg>
-
-          </a>
-        </nav>
-
-        <!-- Second Nav  -->
-        <nav
-          class="grid grid-cols-2 lg:gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
-          <a href="#"
-            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
-            <span class="">Ankit Thakur</span>
-            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-
-          </a>
-          <a href=" #"
-            class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
-            <span class="">Settings</span>
-            <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-4 h-4 ml-3">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-
-          </a>
-        </nav>
-
-      </div>
-
-      <!-- Right Section    -->
-      <div
-        class="rightSection bg-gray-900 lg:bg-transparent relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
-
-        <!-- Prompts  -->
-        <div
-          class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
-          <div
-            class="flex items-center justify-between px-6 py-5 my-3 w-full h-full rounded-xl bg-white shadow-2xl font-semibold text-rose-600 text-[10px] uppercase tracking-widest">
-
-            <div class="promptContentWrapper flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="w-6 h-6 mr-2 text-rose-700">
-                <path fill-rule="evenodd"
-                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-end justify-between lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest w-auto">
+          <span class="">Schedule</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
                   clip-rule="evenodd" />
-              </svg>
+          </svg>
 
-              <div class="promptContent">
-                You must enter all the required fields.
-              </div>
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Finances</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 5a1 1 0 100 2h1a2 2 0 011.732 1H7a1 1 0 100 2h2.732A2 2 0 018 11H7a1 1 0 00-.707 1.707l3 3a1 1 0 001.414-1.414l-1.483-1.484A4.008 4.008 0 0011.874 10H13a1 1 0 100-2h-1.126a3.976 3.976 0 00-.41-1H13a1 1 0 100-2H7z"
+                  clip-rule="evenodd" />
+          </svg>
 
-            </div>
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center justify-between w-36 lg:w-full rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">RECORDS</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-3 lg:mr-0" viewBox="0 0 20 20"
+               fill="currentColor">
+            <path fill-rule="evenodd"
+                  d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm2 10a1 1 0 10-2 0v3a1 1 0 102 0v-3zm2-3a1 1 0 011 1v5a1 1 0 11-2 0v-5a1 1 0 011-1zm4-1a1 1 0 10-2 0v7a1 1 0 102 0V8z"
+                  clip-rule="evenodd" />
+          </svg>
 
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              class="closePrompt w-5 h-5 ease-in-out cursor-pointer duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
-              <path fill-rule="evenodd"
-                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Notes</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+          </svg>
 
+        </a>
+        <a href="#"
+           class="flex ease-in-out duration-300 hover:bg-indigo-900 p-3 items-center w-36 lg:w-full justify-between rounded-lg uppercase text-[10px] font-semibold tracking-widest">
+          <span class="">Logout</span>
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3 lg:mr-0">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+          </svg>
 
-        </div>
+        </a>
+      </nav>
 
-        <!-- PageName and Time  -->
-        <div
-          class="noticeBar mt-80 lg:mt-5 lg:px-5 lg:py-4 py-2 rounded-lg flex items-center justify-between lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
-          <div class="pageName uppercase ">Reports</div>
-          <div class="time">
-            <span>12:12</span>,
-            <span class="date">20/03/2023</span>
-          </div>
-        </div>
+      <!-- Second Nav  -->
+      <nav
+           class="grid grid-cols-2 lg:gap-x-10 lg:grid-cols-1 place-items-center w-full my-2 pt-2 text-slate-500 lg:text-white border-t border-gray-300">
+        <a href="#"
+           class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+          <span class="">Ankit Thakur</span>
+          <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
 
-        <!-- Content Section  -->
-        <div class="lg:my-5 mt-2 pb-5 text-slate-700 lg:px-5 overflow-y-auto relative lg:rounded-xl">
+        </a>
+        <a href=" #"
+           class="text-[10px] uppercase font-semibold rounded-lg tracking-widest ease-in-out duration-300 w-36 lg:w-full hover:bg-indigo-900 hover:text-white p-3 flex items-center justify-between">
+          <span class="">Settings</span>
+          <svg xmlns=" http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+               stroke="currentColor" class="w-4 h-4 ml-3">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 011.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 01-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 01-.12-1.45l.527-.737c.25-.35.273-.806.108-1.204-.165-.397-.505-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.107-1.204l-.527-.738a1.125 1.125 0 01.12-1.45l.773-.773a1.125 1.125 0 011.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894z" />
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
 
-          <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
-
-            <div class="flex flex-col appointmentDetailsFields rounded-xl ">
-
-              <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
-                Appointment Details</h1>
-
-              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                <!-- Visit Per Week  -->
-                <div class="h-fit relative">
-                  <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
-                    autocomplete="off" id="occurrenceType" title="Visit per week" value=''
-                    class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                  <label for="occurrenceType"
-                    class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
-                    per week</label>
-                </div>
-
-                <!-- Week/Alternate Week  -->
-                <div
-                  class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 lg:text-slate-900">
-
-                  <div class="mr-5">
-                    <input type="radio" name="weekType" id="eachWeek"
-                      class="eachWeek radios  checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
-                    <label for="eachWeek" class="ml-2">Each Week</label>
-                  </div>
-
-                  <div>
-                    <input type="radio" name="weekType" id="alternateWeek"
-                      class="alternateWeek  radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
-                      value="14">
-                    <label for="alternateWeek" class="ml-2">Alternate Week</label>
-                  </div>
-
-                </div>
-
-                <!-- Start Date  -->
-                <div class="relative h-fit flex flex-col startDateWrapper">
-
-                  <div class="default w-full flex items-center">
-                    <div class="grow relative">
-                      <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
-                        autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
-                        onfocusout="(this.type='text')"
-                        class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-
-                      <label for="aptStartDate"
-                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                        Start Date</label>
-                    </div>
-
-                    <div class="addMoreDate ml-5 cursor-pointer hidden">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        class="w-6 h-6 text-indigo-600">
-                        <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </div>
-
-                  </div>
-
-                  <div class="additionalDates grid grid-cols-1 lg:grid-cols-3 gap-x-10">
-                  </div>
-
-                </div>
-
-                <!-- Start Day  -->
-                <div class="relative h-fit flex flex-col startDateWrapper">
-
-                  <div class="default w-full flex items-center">
-
-                    <div class="grow relative">
-
-                      <select name="aptDay" id="aptDay" title="Appointment Start Day"
-                        class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                        <option value="" class="text-xs md:font-semibold md:text-xs">
-                          Pick a day
-                        </option>
-                        <option value="Monday" class="text-xs md:font-semibold md:text-xs">
-                          Monday
-                        </option>
-                        <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
-                          Tuesday
-                        </option>
-                        <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
-                          Wednesday
-                        </option>
-                        <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
-                          Thursday
-                        </option>
-                        <option value="Friday" class="text-xs md:font-semibold md:text-xs">
-                          Friday
-                        </option>
-                        <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
-                          Saturday
-                        </option>
-                        <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
-                          Sunday
-                        </option>
-                      </select>
-                      <label for="aptDay"
-                        class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
-                        Day
-                      </label>
-                    </div>
-
-                    <div class="addMoreDay ml-5 cursor-pointer hidden">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                        class="w-6 h-6 text-indigo-600">
-                        <path fill-rule="evenodd"
-                          d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                          clip-rule="evenodd" />
-                      </svg>
-                    </div>
-
-
-                  </div>
-
-                  <div class="additionalDay grid grid-cols-1 lg:grid-cols-3 gap-x-10">
-                  </div>
-
-                </div>
-
-                <!-- Time slot -->
-                <div class="relative h-fit">
-                  <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
-                    class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                    <option value="" class="md:font-semibold">
-                      Time slot
-                    </option>
-                    <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
-                      09:00 - 10:00
-                    </option>
-                    <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
-                      10:00 - 11:00
-                    </option>
-                    <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
-                      11:00 - 12:00
-                    </option>
-                    <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
-                      12:00 - 13:00
-                    </option>
-                    <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
-                      13:00 - 14:00
-                    </option>
-                    <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
-                      14:00 - 15:00
-                    </option>
-                    <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
-                      15:00 - 16:00
-                    </option>
-                    <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
-                      16:00 - 17:00
-                    </option>
-                    <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
-                      17:00 - 18:00
-                    </option>
-                  </select>
-                  <label for="aptTimeSlot"
-                    class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
-                    Slot</label>
-                  <p class="hidden py-2 text-xs font-semibold firstTimeSlotWrapper text-rose-600">
-                    First Time Slot : <span class="firstTimeSlot"></span>
-                  </p>
-                </div>
-
-
-
-                <!-- Fees  -->
-                <div class="h-fit relative">
-                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
-                    autocomplete="off" title="Appointment Fees"
-                    class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
-                  <label for="aptFees"
-                    class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
-                    per visit</label>
-                </div>
-
-              </div>
-            </div>
-
-            <!-- Create Appointment Button  -->
-            <div
-              class="createAptBtn w-auto relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
-
-              <button
-                class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                <span>Create</span>
-              </button>
-
-            </div>
-          </div>
-
-
-        </div>
-
-
-
-      </div>
+        </a>
+      </nav>
 
     </div>
 
-    <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/newThings.js"></script>
-  </body>
+    <!-- Right Section    -->
+    <div
+         class="rightSection bg-gray-900 lg:bg-transparent relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
+
+      <!-- Prompts  -->
+      <div
+           class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
+        <div
+             class="flex items-center justify-between px-6 py-5 my-3 w-full h-full rounded-xl bg-white shadow-2xl font-semibold text-rose-600 text-[10px] uppercase tracking-widest">
+
+          <div class="promptContentWrapper flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                 class="w-6 h-6 mr-2 text-rose-700">
+              <path fill-rule="evenodd"
+                    d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clip-rule="evenodd" />
+            </svg>
+
+            <div class="promptContent">
+              You must enter all the required fields.
+            </div>
+
+          </div>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+               class="closePrompt w-5 h-5 ease-in-out cursor-pointer duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
+            <path fill-rule="evenodd"
+                  d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
+                  clip-rule="evenodd" />
+          </svg>
+        </div>
+
+
+      </div>
+
+      <!-- PageName and Time  -->
+      <div
+           class="noticeBar mt-80 lg:mt-5 lg:px-5 lg:py-4 py-2 rounded-lg flex items-center justify-between lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+        <div class="pageName uppercase ">Reports</div>
+        <div class="time">
+          <span>12:12</span>,
+          <span class="date">20/03/2023</span>
+        </div>
+      </div>
+
+      <!-- Content Section  -->
+      <div class="lg:my-5 mt-2 pb-5 text-slate-700 lg:px-5 overflow-y-auto relative lg:rounded-xl">
+
+        <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
+
+          <div class="flex flex-col appointmentDetailsFields rounded-xl ">
+
+            <h1 class="mt-5 text-[10px] font-semibold tracking-widest text-gray-500 md:text-gray-400 uppercase">
+              Appointment Details</h1>
+
+            <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+              <!-- Visit Per Week  -->
+              <div class="h-fit relative">
+                <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
+                       autocomplete="off" id="occurrenceType" title="Visit per week" value=''
+                       class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                <label for="occurrenceType"
+                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
+                  per week</label>
+              </div>
+
+              <!-- Week/Alternate Week  -->
+              <div
+                   class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 lg:text-slate-900">
+
+                <div class="mr-5">
+                  <input type="radio" name="weekType" id="eachWeek"
+                         class="eachWeek radios  checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
+                  <label for="eachWeek" class="ml-2">Each Week</label>
+                </div>
+
+                <div>
+                  <input type="radio" name="weekType" id="alternateWeek"
+                         class="alternateWeek  radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
+                         value="14">
+                  <label for="alternateWeek" class="ml-2">Alternate Week</label>
+                </div>
+
+              </div>
+
+              <!-- Start Date  -->
+              <div class="relative h-fit flex flex-col startDateWrapper">
+
+                <div class="default w-full flex items-center">
+                  <div class="grow relative">
+                    <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
+                           autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
+                           onfocusout="(this.type='text')"
+                           class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+
+                    <label for="aptStartDate"
+                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                      Start Date</label>
+                  </div>
+
+                  <div class="addMoreDate addMore ml-5 cursor-pointer hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                         class="w-6 h-6 text-indigo-600">
+                      <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                            clip-rule="evenodd" />
+                    </svg>
+                  </div>
+
+                </div>
+
+                <div class="additionalDates addSections grid grid-cols-1 lg:grid-cols-3 gap-x-10" name="Appointment Start Date">
+                </div>
+
+              </div>
+
+              <!-- Start Day  -->
+              <div class="relative h-fit flex flex-col">
+
+                <div class="default w-full flex items-center">
+
+                  <div class="grow relative">
+
+                    <select name="days" id="aptDay" title="Appointment Start Day"
+                            class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                      <option value="" class="text-xs md:font-semibold md:text-xs">
+                        Pick a day
+                      </option>
+                      <option value="Monday" class="text-xs md:font-semibold md:text-xs">
+                        Monday
+                      </option>
+                      <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
+                        Tuesday
+                      </option>
+                      <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
+                        Wednesday
+                      </option>
+                      <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
+                        Thursday
+                      </option>
+                      <option value="Friday" class="text-xs md:font-semibold md:text-xs">
+                        Friday
+                      </option>
+                      <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
+                        Saturday
+                      </option>
+                      <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
+                        Sunday
+                      </option>
+                    </select>
+                    <label for="aptDay"
+                           class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
+                      Day
+                    </label>
+                  </div>
+
+                  <div class="addMoreDay addMore ml-5 cursor-pointer hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                         class="w-6 h-6 text-indigo-600">
+                      <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                            clip-rule="evenodd" />
+                    </svg>
+                  </div>
+
+
+                </div>
+
+                <div class="additionalDay addSections grid grid-cols-1 lg:grid-cols-3 gap-x-10" name="Appointment Start Day">
+                </div>
+
+              </div>
+
+              <!-- Time slot -->
+              <div class="relative h-fit flex flex-col">
+                <div class="default w-full flex items-center">
+                  <div class="grow relative">
+                    <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
+                            class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                      <option value="" class="md:font-semibold">
+                        Time slot
+                      </option>
+                      <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
+                        09:00 - 10:00
+                      </option>
+                      <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
+                        10:00 - 11:00
+                      </option>
+                      <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
+                        11:00 - 12:00
+                      </option>
+                      <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
+                        12:00 - 13:00
+                      </option>
+                      <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
+                        13:00 - 14:00
+                      </option>
+                      <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
+                        14:00 - 15:00
+                      </option>
+                      <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
+                        15:00 - 16:00
+                      </option>
+                      <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
+                        16:00 - 17:00
+                      </option>
+                      <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
+                        17:00 - 18:00
+                      </option>
+                    </select>
+                    <label for="aptTimeSlot"
+                           class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
+                      Slot</label>
+
+                  </div>
+
+                  <div class="addMoreTimeSlot addMore ml-5 cursor-pointer hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                         class="w-6 h-6 text-indigo-600">
+                      <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                            clip-rule="evenodd" />
+                    </svg>
+                  </div>
+
+                </div>
+
+                <div class="additionalTimeSlot addSections grid grid-cols-1 lg:grid-cols-3 gap-x-10" name="Appointment Time Slot">
+                </div>
+
+              </div>
+
+
+
+              <!-- Fees  -->
+              <div class="h-fit relative">
+                <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
+                       autocomplete="off" title="Appointment Fees"
+                       class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                <label for="aptFees"
+                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
+                  per visit</label>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Create Appointment Button  -->
+          <div
+               class="createAptBtn w-auto relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
+
+            <button
+                    class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+              <span>Create</span>
+            </button>
+
+          </div>
+        </div>
+
+
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="../scripts/newThings.js"></script>
+</body>
 
 </html>
