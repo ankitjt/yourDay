@@ -17,7 +17,7 @@ const promptMessages = ( message, promptType, refresh ) =>
               </svg>
               <span class='grow text-left'>${ message }</span>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 closePrompts refreshPage ${ refresh === 'refresh' ? 'refresh' : '' } id='refreshPage' cursor-pointer" viewBox="0 0 20 20"
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 closePrompts ease-in-out duration-300  rounded-full hover:text-rose-600 text-gray-900 refreshPage ${ refresh === 'refresh' ? 'refresh' : '' } id='refreshPage' cursor-pointer" viewBox="0 0 20 20"
               fill="currentColor">
               <path fill-rule="evenodd"
                 d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
