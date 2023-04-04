@@ -53,9 +53,9 @@ const fieldValidators = ( allFilled ) =>
 
   for ( let startDate of apt.startDate )
   {
-    if ( startDate.value === '' )
+    if ( startDate.value === '' && apt.visitCount.value > 1 )
     {
-      promptMessages( `${ startDate.getAttribute( 'title' ) } is blank`, 'error' )
+      promptMessages( `${ startDate.getAttribute( 'title' ) } is required.`, 'error' )
     }
     // Check for slot hour and current hour
     let selectedDate = new Date( startDate.value )
