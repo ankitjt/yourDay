@@ -11,11 +11,20 @@ let additionalTimeSlot = document.querySelector( ".additionalTimeSlot" )
 
 visitCount.onkeyup = () =>
 {
-  if ( visitCount.value > 1 )
+  if ( parseInt( visitCount.value ) > 1 && parseInt( visitCount.value ) <= 6 )
   {
     addMoreDate.classList.remove( 'hidden' )
     addMoreDay.classList.remove( 'hidden' )
     addMoreTimeSlot.classList.remove( 'hidden' )
+  }
+
+  else if ( parseInt( visitCount.value ) > 6 )
+  {
+    alert( 'more than 6' );
+    addMoreDate.classList.add( 'hidden' )
+    addMoreDay.classList.add( 'hidden' )
+    addMoreTimeSlot.classList.add( 'hidden' )
+    visitCount.value = ''
   }
   else
   {
@@ -119,9 +128,10 @@ for ( let addMore of addMores )
     else
     {
       let inputWrapper = document.createElement( 'div' )
-      inputWrapper.classList.add( 'relative', 'flex', 'items-center' )
+      inputWrapper.classList.add( 'relative', 'flex', 'items-center', 'w-full' )
 
       let inputHolder = document.createElement( 'div' )
+      inputHolder.classList.add( 'w-full' )
 
       let deleteDateInput = document.createElement( 'span' )
       deleteDateInput.innerHTML = `
@@ -156,7 +166,7 @@ for ( let addMore of addMores )
       {
         delDateTag.onclick = () =>
         {
-          delDateTag.parentElement.parentElement.remove()
+          delDateTag.parentElement.parentElement.remove();
         }
       }
     }
@@ -177,7 +187,6 @@ create.onclick = () =>
       radioValue = radio.value;
     }
   }
-  console.log( radioValue );
 
   let addSections = document.querySelectorAll( '.addSections' )
 
@@ -192,12 +201,52 @@ create.onclick = () =>
     }
   }
 
-  let startDates = document.querySelectorAll( '.aptStartDate' )
+  let dateInputs = document.querySelectorAll( '.aptStartDate' )
   let datesArr = []
+  let fieldTags = [ "First", 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
 
-  for ( let startDate of startDates )
+  for ( let startDate of dateInputs )
   {
-    datesArr.push( startDate.value )
+    if ( startDate.value === '' )
+    {
+      alert( `${ startDate.getAttribute( 'title' ) } is required.` )
+      startDate.classList.add( 'lg:border-rose-600' )
+    }
+
+    else
+    {
+      datesArr.push( startDate.value )
+
+    }
   }
-  console.log( datesArr );
+  for ( let [ index, date ] of datesArr.entries() )
+  {
+    console.log( `${ fieldTags[ index ] } start date is ${ date }` );
+
+  }
+
+  let dayInputs = document.querySelectorAll( '.aptDay' )
+  let daysArr = []
+  for ( let startDay of dayInputs )
+  {
+    if ( startDay.value === '' )
+    {
+      alert( `${ startDay.getAttribute( 'title' ) } is required.` )
+      startDay.classList.add( 'lg:border-rose-600' )
+    }
+
+    else
+    {
+      daysArr.push( startDay.value )
+
+    }
+  }
+  for ( let [ index, day ] of daysArr.entries() )
+  {
+    console.log( `${ fieldTags[ index ] } start day is ${ day }` );
+
+  }
 }
+
+
+
