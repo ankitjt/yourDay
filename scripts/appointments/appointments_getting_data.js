@@ -1,8 +1,3 @@
-if ( document.readyState === 'complete' )
-{
-  console.log( 'page loaded' );
-}
-
 emergencyRelation.onchange = () =>
 {
   if ( apt.emergencyRelation.value === 'Others' ) 
@@ -47,7 +42,7 @@ visitCount.onkeyup = () =>
 
 }
 
-let inputTags = document.querySelectorAll( 'input' )
+
 let selectTags = document.querySelectorAll( 'select' )
 let typeLabel = document.querySelector( '.typeLabel' )
 
@@ -67,10 +62,10 @@ for ( let showLabel of selectTags )
 }
 
 let addMoreFields = document.querySelectorAll( '.addMoreFields' );
-let fieldTags = [ "first", 'second', 'third', 'fourth', 'fifth' ]
 
 for ( let [ index, addMore ] of addMoreFields.entries() )
 {
+  let fieldTags = [ 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth' ]
   addMore.onclick = () =>
   {
     let inputType = addMore.parentElement.childNodes[ 1 ].childNodes[ 1 ]
@@ -80,12 +75,12 @@ for ( let [ index, addMore ] of addMoreFields.entries() )
 
     let moreStartDate = `
          <input type="date" placeholder="Start Date" aria-autocomplete="none"
-                            autocomplete="off" id="aptStartDate" title="${ fieldTags[ index ] } Appointment Start Date" 
+                            autocomplete="off" id='' title="${ fieldTags[ index ] } Appointment Start Date" 
                             class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
           `
 
     let moreDayInput = `
-      <select name="aptDay" id="aptDay" title="Appointment Start Day"
+      <select name="aptDay" id="aptDay" title="${ fieldTags[ index ] } Appointment Start Day"
                             class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                       <option value="" class="text-xs md:font-semibold md:text-xs">
                         Pick a day
@@ -115,7 +110,7 @@ for ( let [ index, addMore ] of addMoreFields.entries() )
     `
 
     let moreTimeSlotInput = `
-      <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
+      <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ index ] } Appointment Time Slot"
                             class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                       <option value="" class="md:font-semibold">
                         Time slot
@@ -208,6 +203,7 @@ for ( let [ index, addMore ] of addMoreFields.entries() )
 apt.create.onclick = () =>
 {
 
+  let inputTags = document.querySelectorAll( 'input' )
   let allFilled = true;
   let p_category = document.querySelector( ".aptCategory" )
   let aptStartDate1 = new Date( apt.startDate.value ).toLocaleDateString()
@@ -268,7 +264,10 @@ apt.create.onclick = () =>
     allFilled = false;
   }
 
-  fieldValidators( allFilled )
+  let fieldFlag = false;
+  // fieldValidators( allFilled )
+  // checkPatientDetails( fieldFlag )
+  checkAppointmentDetails( fieldFlag )
 
   apt__confirmPage.name.innerText = aptName.value.trim()
   apt__confirmPage.email.innerText = correctEmail.trim()

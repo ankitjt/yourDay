@@ -53,12 +53,10 @@ const fieldValidators = ( allFilled ) =>
 
   for ( let startDate of apt.startDate )
   {
-    if ( startDate.value === '' && apt.visitCount.value > 1 )
-    {
-      promptMessages( `${ startDate.getAttribute( 'title' ) } is required.`, 'error' )
-    }
+    console.log( startDate );
     // Check for slot hour and current hour
     let selectedDate = new Date( startDate.value )
+    console.log( selectedDate.toDateString(), new Date().toDateString() );
     let userTimeSlot = apt.timeSlot.value
     let splitSlot = userTimeSlot.split( '-' )
     let trimmedSlot = splitSlot.map( str => str.trim() )
@@ -76,7 +74,8 @@ const fieldValidators = ( allFilled ) =>
     // Check for old start Date 
     if ( selectedDate.toDateString() < new Date().toDateString() )
     {
-      apt.startDate.classList.add( 'md:border-rose-600' )
+      console.log( selectedDate, new Date().toDateString() );
+      startDate.classList.add( 'md:border-rose-600' )
       promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
       fieldFlag = true;
     }
