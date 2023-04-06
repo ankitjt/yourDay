@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>yourDay - Page not found</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body>
+    <div
+      class="h-screen w-screen bg-no-repeat bg-cover bg-center relative  flex flex-col lg:flex-row overflow-auto overflow-x-hidden lg:justify-between bg-gray-800 lg:bg-white ">
+
+      <div class="box w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
+
+        <div class="flex flex-col boxFields rounded-xl ">
+
+          <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+            <!-- Start Date  -->
+            <div class="relative h-fit flex flex-col startDateWrapper">
+
+              <div class="default w-full flex items-center">
+                <div class="grow relative">
+                  <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none" autocomplete="off"
+                    id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
+                    onfocusout="(this.type='text')"
+                    class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 rounded-md tracking-widest" />
+
+                </div>
+
+                <div class="addMoreInputs ml-5 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-6 h-6 text-indigo-600">
+                    <path fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+
+              </div>
+
+              <div class="additionalDates addSections grid grid-cols-1 gap-x-10" name="Appointment Start Date">
+              </div>
+
+            </div>
+
+            <!-- Start Day  -->
+            <div class="relative h-fit flex flex-col">
+
+              <div class="default w-full flex items-center">
+
+                <div class="grow relative">
+
+                  <select name="days" id="aptDay" title="Appointment Start Day"
+                    class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 rounded-md tracking-widest">
+                    <option value="" class="text-xs md:font-semibold md:text-xs">
+                      Pick a day
+                    </option>
+                    <option value="Monday" class="text-xs md:font-semibold md:text-xs">
+                      Monday
+                    </option>
+                    <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
+                      Tuesday
+                    </option>
+                    <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
+                      Wednesday
+                    </option>
+                    <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
+                      Thursday
+                    </option>
+                    <option value="Friday" class="text-xs md:font-semibold md:text-xs">
+                      Friday
+                    </option>
+                    <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
+                      Saturday
+                    </option>
+                    <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
+                      Sunday
+                    </option>
+                  </select>
+
+                </div>
+
+                <div class="addMoreInputs ml-5 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="w-6 h-6 text-indigo-600">
+                    <path fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                      clip-rule="evenodd" />
+                  </svg>
+                </div>
+
+
+              </div>
+
+              <div class="additionalDay addSections grid grid-cols-1 gap-x-10" name="Appointment Start Day">
+              </div>
+
+            </div>
+
+
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
+
+  </body>
+
+</html>
