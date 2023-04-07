@@ -8,6 +8,7 @@ let addMoreTimeSlot = document.querySelector( ".addMoreTimeSlot" )
 let additionalDates = document.querySelector( ".additionalDates" )
 let additionalDay = document.querySelector( ".additionalDay" )
 let additionalTimeSlot = document.querySelector( ".additionalTimeSlot" )
+let counter = -1
 
 visitCount.onkeyup = () =>
 {
@@ -16,6 +17,7 @@ visitCount.onkeyup = () =>
     addMoreDate.classList.remove( 'hidden' )
     addMoreDay.classList.remove( 'hidden' )
     addMoreTimeSlot.classList.remove( 'hidden' )
+    counter = -1
   }
 
   else if ( parseInt( visitCount.value ) > 6 )
@@ -25,6 +27,7 @@ visitCount.onkeyup = () =>
     addMoreDay.classList.add( 'hidden' )
     addMoreTimeSlot.classList.add( 'hidden' )
     visitCount.value = ''
+    counter = -1
   }
   else
   {
@@ -39,19 +42,23 @@ visitCount.onkeyup = () =>
 
 let addMores = document.querySelectorAll( '.addMore' )
 let addSections = document.querySelectorAll( '.addSections' )
-
+let fieldTags = [ 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
 for ( let addMore of addMores )
 {
+
   addMore.onclick = () =>
   {
+    console.log( counter );
+    counter = counter + 1
+    console.log( counter );
     let inputType = addMore.parentElement.childNodes[ 1 ].childNodes[ 1 ]
     let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ];
 
     let moreStartDate = `
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
-                            autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
+                            autocomplete="off" id="aptStartDate" title="${ fieldTags[ counter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                            class="datesAdditional placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
           `
 
     let moreDayInput = `
@@ -120,9 +127,12 @@ for ( let addMore of addMores )
                     </select>
     `
 
-    if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
+    if ( moreDetails.childElementCount === parseInt( visitCount.value ) - 2 )
     {
       alert( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.` )
+      addMoreDate.classList.add( 'hidden' )
+      addMoreDay.classList.add( 'hidden' )
+      addMoreTimeSlot.classList.add( 'hidden' )
     }
 
     else
@@ -167,6 +177,12 @@ for ( let addMore of addMores )
         delDateTag.onclick = () =>
         {
           delDateTag.parentElement.parentElement.remove();
+          let startDates = document.querySelectorAll( '.datesAdditional' )
+          for ( let [ index, startDate ] of startDates.entries() )
+          {
+            startDate.title = `${ fieldTags[ index ] } Appointment Start Date`
+          }
+          counter = -1
         }
       }
     }
@@ -203,7 +219,7 @@ create.onclick = () =>
 
   let dateInputs = document.querySelectorAll( '.aptStartDate' )
   let datesArr = []
-  let fieldTags = [ "First", 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
+
 
   for ( let startDate of dateInputs )
   {
