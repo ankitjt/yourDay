@@ -8,7 +8,9 @@ let addMoreTimeSlot = document.querySelector( ".addMoreTimeSlot" )
 let additionalDates = document.querySelector( ".additionalDates" )
 let additionalDay = document.querySelector( ".additionalDay" )
 let additionalTimeSlot = document.querySelector( ".additionalTimeSlot" )
-let counter = -1
+let dateCounter = -1,
+  dayCounter = -1,
+  timeSlotCounter = -1
 
 visitCount.onkeyup = () =>
 {
@@ -17,7 +19,9 @@ visitCount.onkeyup = () =>
     addMoreDate.classList.remove( 'hidden' )
     addMoreDay.classList.remove( 'hidden' )
     addMoreTimeSlot.classList.remove( 'hidden' )
-    counter = -1
+    dateCounter = -1
+    dayCounter = -1
+    timeSlotCounter = -1
   }
 
   else if ( parseInt( visitCount.value ) > 6 )
@@ -27,7 +31,9 @@ visitCount.onkeyup = () =>
     addMoreDay.classList.add( 'hidden' )
     addMoreTimeSlot.classList.add( 'hidden' )
     visitCount.value = ''
-    counter = -1
+    dateCounter = -1
+    dayCounter = -1
+    timeSlotCounter = -1
   }
   else
   {
@@ -37,33 +43,69 @@ visitCount.onkeyup = () =>
     additionalDates.innerHTML = ''
     additionalDay.innerHTML = ''
     additionalTimeSlot.innerHTML = ''
+    dateCounter = -1
+    dayCounter = -1
+    timeSlotCounter = -1
   }
 }
 
 let addMores = document.querySelectorAll( '.addMore' )
 let addSections = document.querySelectorAll( '.addSections' )
 let fieldTags = [ 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
+
+
+
 for ( let addMore of addMores )
 {
 
   addMore.onclick = () =>
   {
-    console.log( counter );
-    counter = counter + 1
-    console.log( counter );
     let inputType = addMore.parentElement.childNodes[ 1 ].childNodes[ 1 ]
     let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ];
 
-    let moreStartDate = `
-         <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
-                            autocomplete="off" id="aptStartDate" title="${ fieldTags[ counter ] } Appointment Start Date" onfocus="(this.type='date')"
-                            onfocusout="(this.type='text')"
-                            class="datesAdditional placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+    if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
+    {
+      alert( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.` )
+      addMoreDate.classList.add( 'hidden' )
+      addMoreDay.classList.add( 'hidden' )
+      addMoreTimeSlot.classList.add( 'hidden' )
+    }
+
+    else
+    {
+      let inputWrapper = document.createElement( 'div' )
+      inputWrapper.classList.add( 'relative', 'flex', 'items-center', 'w-full' )
+
+      let inputHolder = document.createElement( 'div' )
+      inputHolder.classList.add( 'w-full' )
+
+      let deleteDateInput = document.createElement( 'span' )
+      deleteDateInput.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 p-1 rounded-full text-rose-600 ml-2 deleteExtraDateInput cursor-pointer ease-in-out duration-300 hover:bg-rose-600 hover:text-white">
+              <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
+            </svg>
+
           `
 
-    let moreDayInput = `
-      <select name="aptDay" id="aptDay" title="Appointment Start Day"
-                            class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+      if ( inputType.getAttribute( 'id' ) === 'aptStartDate' )
+      {
+        dateCounter = dateCounter + 1
+        console.log( dateCounter );
+        let moreStartDate = `
+         <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
+                            autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
+                            onfocusout="(this.type='text')"
+                            class="newDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+          `
+        inputHolder.innerHTML = moreStartDate
+      }
+
+      if ( inputType.getAttribute( 'id' ) === 'aptDay' )
+      {
+        dayCounter = dayCounter + 1
+        let moreDayInput = `
+      <select name="aptDay" id="aptDay" title="${ fieldTags[ dayCounter ] } Appointment Start Day"
+                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                       <option value="" class="text-xs md:font-semibold md:text-xs">
                         Pick a day
                       </option>
@@ -90,10 +132,15 @@ for ( let addMore of addMores )
                       </option>
                     </select>
     `
+        inputHolder.innerHTML = moreDayInput
+      }
 
-    let moreTimeSlotInput = `
-      <select name="aptTimeSlot" id="aptTimeSlot" title="Appointment Time Slot"
-                            class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+      if ( inputType.getAttribute( 'id' ) === 'aptTimeSlot' )
+      {
+        timeSlotCounter = timeSlotCounter + 1
+        let moreTimeSlotInput = `
+      <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ timeSlotCounter ] } Appointment Time Slot"
+                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                       <option value="" class="md:font-semibold">
                         Time slot
                       </option>
@@ -126,43 +173,6 @@ for ( let addMore of addMores )
                       </option>
                     </select>
     `
-
-    if ( moreDetails.childElementCount === parseInt( visitCount.value ) - 2 )
-    {
-      alert( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.` )
-      addMoreDate.classList.add( 'hidden' )
-      addMoreDay.classList.add( 'hidden' )
-      addMoreTimeSlot.classList.add( 'hidden' )
-    }
-
-    else
-    {
-      let inputWrapper = document.createElement( 'div' )
-      inputWrapper.classList.add( 'relative', 'flex', 'items-center', 'w-full' )
-
-      let inputHolder = document.createElement( 'div' )
-      inputHolder.classList.add( 'w-full' )
-
-      let deleteDateInput = document.createElement( 'span' )
-      deleteDateInput.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 p-1 rounded-full text-rose-600 ml-2 deleteExtraDateInput cursor-pointer ease-in-out duration-300 hover:bg-rose-600 hover:text-white">
-              <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd" />
-            </svg>
-
-          `
-
-      if ( inputType.getAttribute( 'id' ) === 'aptStartDate' )
-      {
-        inputHolder.innerHTML = moreStartDate
-      }
-
-      if ( inputType.getAttribute( 'id' ) === 'aptDay' )
-      {
-        inputHolder.innerHTML = moreDayInput
-      }
-
-      if ( inputType.getAttribute( 'id' ) === 'aptTimeSlot' )
-      {
         inputHolder.innerHTML = moreTimeSlotInput
       }
 
@@ -170,24 +180,62 @@ for ( let addMore of addMores )
       inputWrapper.appendChild( deleteDateInput )
       moreDetails.appendChild( inputWrapper )
 
-      let deleteExtraDateInput = document.querySelectorAll( '.deleteExtraDateInput' )
+      deleteFields()
 
-      for ( let delDateTag of deleteExtraDateInput )
-      {
-        delDateTag.onclick = () =>
-        {
-          delDateTag.parentElement.parentElement.remove();
-          let startDates = document.querySelectorAll( '.datesAdditional' )
-          for ( let [ index, startDate ] of startDates.entries() )
-          {
-            startDate.title = `${ fieldTags[ index ] } Appointment Start Date`
-          }
-          counter = -1
-        }
-      }
     }
 
   }
+}
+
+const deleteFields = () =>
+{
+  let deleteExtraDateInput = document.querySelectorAll( '.deleteExtraDateInput' )
+
+  for ( let delField of deleteExtraDateInput )
+  {
+    delField.onclick = () =>
+    {
+      let deleteType = delField.parentElement.parentElement.childNodes[ 0 ].childNodes[ 1 ].getAttribute( 'id' );
+
+      if ( deleteType === 'aptStartDate' )
+      {
+        delField.parentElement.parentElement.remove();
+        let newDates = document.querySelectorAll( '.newDates' )
+        for ( let [ index, startDate ] of newDates.entries() )
+        {
+          startDate.title = `${ fieldTags[ index ] } Appointment Start Date`
+          console.log( newDates.length );
+        }
+        dateCounter = dateCounter - 1
+      }
+
+      if ( deleteType === 'aptDay' )
+      {
+        delField.parentElement.parentElement.remove();
+        let newDays = document.querySelectorAll( '.newDays' )
+        for ( let [ index, additionalDay ] of newDays.entries() )
+        {
+          console.log( additionalDay );
+          additionalDay.title = `${ fieldTags[ index ] } Appointment Start Day`
+        }
+        dayCounter = dayCounter - 1
+
+      }
+
+      if ( deleteType === 'aptTimeSlot' )
+      {
+        delField.parentElement.parentElement.remove();
+        let newTimeSlots = document.querySelectorAll( '.newTimeSlots' )
+        for ( let [ index, additionalTimeSlot ] of newTimeSlots.entries() )
+        {
+          additionalTimeSlot.title = `${ fieldTags[ index ] } Appointment Time Slot`
+        }
+        timeSlotCounter = timeSlotCounter - 1
+
+      }
+    }
+  }
+
 }
 
 let create = document.querySelector( '.createAptBtn' )
@@ -212,56 +260,65 @@ create.onclick = () =>
     {
       let counter = ( addSection.childElementCount - ( parseInt( visitCount.value ) - 1 ) ) * -1
 
-      console.log( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.` );
+      alert( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.` );
 
     }
   }
 
-  let dateInputs = document.querySelectorAll( '.aptStartDate' )
-  let datesArr = []
+  let dateInputs = document.querySelector( '.aptStartDate' )
+  let getNewDates = document.querySelectorAll( '.newDates' )
+  let datesArr = [ dateInputs.value ]
 
 
-  for ( let startDate of dateInputs )
+  for ( let newDate of getNewDates )
   {
-    if ( startDate.value === '' )
+    if ( newDate.value === '' )
     {
-      alert( `${ startDate.getAttribute( 'title' ) } is required.` )
-      startDate.classList.add( 'lg:border-rose-600' )
+      alert( `${ newDate.getAttribute( 'title' ) } is required.` )
+      newDate.classList.add( 'lg:border-rose-600' )
     }
 
     else
     {
-      datesArr.push( startDate.value )
-
+      datesArr.push( newDate.value )
+      let x = new Set( datesArr )
+      if ( x.size === 1 )
+      {
+        console.log( 'same dates' );
+      }
+      else
+      {
+        console.log( datesArr );
+      }
     }
   }
-  for ( let [ index, date ] of datesArr.entries() )
-  {
-    console.log( `${ fieldTags[ index ] } start date is ${ date }` );
+  // for ( let [ index, date ] of datesArr.entries() )
+  // {
+  //   console.log( `${ fieldTags[ index ] } start date is ${ date }` );
 
-  }
+  // }
 
-  let dayInputs = document.querySelectorAll( '.aptDay' )
-  let daysArr = []
-  for ( let startDay of dayInputs )
-  {
-    if ( startDay.value === '' )
-    {
-      alert( `${ startDay.getAttribute( 'title' ) } is required.` )
-      startDay.classList.add( 'lg:border-rose-600' )
-    }
+  // let dayInputs = document.querySelectorAll( '.aptDay' )
+  // let daysArr = []
+  // for ( let startDay of dayInputs )
+  // {
+  //   if ( startDay.value === '' )
+  //   {
+  //     alert( `${ startDay.getAttribute( 'title' ) } is required.` )
+  //     startDay.classList.add( 'lg:border-rose-600' )
+  //   }
 
-    else
-    {
-      daysArr.push( startDay.value )
+  //   else
+  //   {
+  //     daysArr.push( startDay.value )
 
-    }
-  }
-  for ( let [ index, day ] of daysArr.entries() )
-  {
-    console.log( `${ fieldTags[ index ] } start day is ${ day }` );
+  //   }
+  // }
+  // for ( let [ index, day ] of daysArr.entries() )
+  // {
+  //   console.log( `${ fieldTags[ index ] } start day is ${ day }` );
 
-  }
+  // }
 }
 
 
