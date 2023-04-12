@@ -90,7 +90,6 @@ for ( let addMore of addMores )
       if ( inputType.getAttribute( 'id' ) === 'aptStartDate' )
       {
         dateCounter = dateCounter + 1
-        console.log( dateCounter );
         let moreStartDate = `
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
@@ -267,11 +266,11 @@ create.onclick = () =>
 
   let dateInputs = document.querySelector( '.aptStartDate' )
   let getNewDates = document.querySelectorAll( '.newDates' )
-  let datesArr = [ dateInputs.value ]
-
+  let datesArr = [ { date: dateInputs.value } ]
 
   for ( let newDate of getNewDates )
   {
+
     if ( newDate.value === '' )
     {
       alert( `${ newDate.getAttribute( 'title' ) } is required.` )
@@ -280,40 +279,76 @@ create.onclick = () =>
 
     else
     {
-      datesArr.push( newDate.value )
-      let x = new Set( datesArr )
-      if ( x.size === 1 )
-      {
-        console.log( 'same dates' );
-      }
-      else
-      {
-        console.log( datesArr );
-      }
+      datesArr.push( { date: newDate.value } )
+
+      let values = datesArr.map( ( item ) => { return item.date } )
+      let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+      isDuplicate === true ? alert( 'all dates should be unique' ) : console.log( datesArr );
+
     }
   }
+
+  let dayInputs = document.querySelector( '.aptDay' )
+  let getNewDays = document.querySelectorAll( '.newDays' )
+  let daysArr = [ { day: dayInputs.value } ]
+  for ( let newDay of getNewDays )
+  {
+    if ( newDay.value === '' )
+    {
+      alert( `${ newDay.getAttribute( 'title' ) } is required.` )
+      newDay.classList.add( 'lg:border-rose-600' )
+    }
+
+    else
+    {
+      daysArr.push( { day: newDay.value } )
+    }
+  }
+
+  let timeSlotInput = document.querySelector( '.aptTimeSlot' )
+  let getNewTimeSlots = document.querySelectorAll( '.newTimeSlots' )
+  let timeSlotArr = [ { timeSlot: timeSlotInput.value } ]
+  for ( let newTimeSlot of getNewTimeSlots )
+  {
+    if ( newTimeSlot.value === '' )
+    {
+      alert( `${ newTimeSlot.getAttribute( 'title' ) } is required.` )
+      newTimeSlot.classList.add( 'lg:border-rose-600' )
+    }
+    else
+    {
+      timeSlotArr.push( { timeSlot: newTimeSlot.value } )
+    }
+  }
+
+  let finalFieldTags = [ 'First', 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
+  const res = datesArr.map( ( { date }, i ) => (
+    {
+      date,
+      day: daysArr[ i ].day,
+      timeSlot: timeSlotArr[ i ].timeSlot,
+      order: finalFieldTags[ i ]
+    }
+  ) )
+
+  for ( let schedule of res )
+  {
+    console.log(
+      `
+      ${ schedule.order } Start Date: ${ schedule.date } 
+      ${ schedule.order } Start Day: ${ schedule.day }
+      ${ schedule.order } Start TimeSlot: ${ schedule.timeSlot }
+    `
+    );
+  }
+
   // for ( let [ index, date ] of datesArr.entries() )
   // {
   //   console.log( `${ fieldTags[ index ] } start date is ${ date }` );
 
   // }
 
-  // let dayInputs = document.querySelectorAll( '.aptDay' )
-  // let daysArr = []
-  // for ( let startDay of dayInputs )
-  // {
-  //   if ( startDay.value === '' )
-  //   {
-  //     alert( `${ startDay.getAttribute( 'title' ) } is required.` )
-  //     startDay.classList.add( 'lg:border-rose-600' )
-  //   }
 
-  //   else
-  //   {
-  //     daysArr.push( startDay.value )
-
-  //   }
-  // }
   // for ( let [ index, day ] of daysArr.entries() )
   // {
   //   console.log( `${ fieldTags[ index ] } start day is ${ day }` );
