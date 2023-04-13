@@ -53,8 +53,6 @@ let addMores = document.querySelectorAll( '.addMore' )
 let addSections = document.querySelectorAll( '.addSections' )
 let fieldTags = [ 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
 
-
-
 for ( let addMore of addMores )
 {
 
@@ -94,7 +92,7 @@ for ( let addMore of addMores )
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="newDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
           `
         inputHolder.innerHTML = moreStartDate
       }
@@ -252,7 +250,6 @@ create.onclick = () =>
   }
 
   let addSections = document.querySelectorAll( '.addSections' )
-
   for ( let addSection of addSections )
   {
     if ( addSection.childElementCount !== parseInt( visitCount.value - 1 ) && visitCount.value > 1 )
@@ -264,13 +261,13 @@ create.onclick = () =>
     }
   }
 
-  let dateInputs = document.querySelector( '.aptStartDate' )
-  let getNewDates = document.querySelectorAll( '.newDates' )
-  let datesArr = [ { date: dateInputs.value } ]
+  // Getting all Dates
+  let getNewDates = document.querySelectorAll( '.aptDates' )
+  let currentDate = new Date().toLocaleDateString()
+  let datesArr = []
 
   for ( let newDate of getNewDates )
   {
-
     if ( newDate.value === '' )
     {
       alert( `${ newDate.getAttribute( 'title' ) } is required.` )
@@ -280,14 +277,25 @@ create.onclick = () =>
     else
     {
       datesArr.push( { date: newDate.value } )
-
-      let values = datesArr.map( ( item ) => { return item.date } )
-      let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
-      isDuplicate === true ? alert( 'all dates should be unique' ) : console.log( datesArr );
-
     }
   }
 
+  let values = datesArr.map( ( item ) => { return item.date } )
+  let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+  if ( isDuplicate === true )
+  {
+    alert( 'All dates should be unique' )
+  }
+  else
+  {
+    let res = datesArr.every( ( { date } ) =>
+    {
+      return currentDate <= new Date( date ).toLocaleDateString()
+    } )
+    res === false ? alert( 'Old Dates' ) : '';
+  }
+
+  // Get all Days
   let dayInputs = document.querySelector( '.aptDay' )
   let getNewDays = document.querySelectorAll( '.newDays' )
   let daysArr = [ { day: dayInputs.value } ]
@@ -303,8 +311,10 @@ create.onclick = () =>
     {
       daysArr.push( { day: newDay.value } )
     }
+
   }
 
+  // Getting all Time Slots
   let timeSlotInput = document.querySelector( '.aptTimeSlot' )
   let getNewTimeSlots = document.querySelectorAll( '.newTimeSlots' )
   let timeSlotArr = [ { timeSlot: timeSlotInput.value } ]
@@ -321,7 +331,20 @@ create.onclick = () =>
     }
   }
 
+  let days = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday' ]
   let finalFieldTags = [ 'First', 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
+
+  // Check for date and day match
+  for ( let [ index, checkDays ] of datesArr.entries() )
+  {
+    let finalDate = new Date( checkDays.date ).getDay() - 1
+    if ( days[ finalDate ] !== daysArr[ index ].day )
+    {
+      return alert( `${ finalFieldTags[ index ] } days and dates do not match.` )
+    }
+  }
+
+  // Final Array of data
   const res = datesArr.map( ( { date }, i ) => (
     {
       date,
@@ -331,29 +354,18 @@ create.onclick = () =>
     }
   ) )
 
+  // Adding information to the page
   for ( let schedule of res )
   {
     console.log(
       `
-      ${ schedule.order } Start Date: ${ schedule.date } 
-      ${ schedule.order } Start Day: ${ schedule.day }
-      ${ schedule.order } Start TimeSlot: ${ schedule.timeSlot }
-    `
-    );
+              ${ schedule.order } Start Date: ${ schedule.date } 
+              ${ schedule.order } Start Day: ${ schedule.day }
+              ${ schedule.order } Start TimeSlot: ${ schedule.timeSlot }
+            `
+    )
   }
 
-  // for ( let [ index, date ] of datesArr.entries() )
-  // {
-  //   console.log( `${ fieldTags[ index ] } start date is ${ date }` );
-
-  // }
-
-
-  // for ( let [ index, day ] of daysArr.entries() )
-  // {
-  //   console.log( `${ fieldTags[ index ] } start day is ${ day }` );
-
-  // }
 }
 
 
