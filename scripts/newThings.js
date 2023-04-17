@@ -26,7 +26,7 @@ visitCount.onkeyup = () =>
 
   else if ( parseInt( visitCount.value ) > 6 )
   {
-    alert( 'more than 6' );
+    promptMessages( 'Visit count cannot be more than 6.', 'error' );
     addMoreDate.classList.add( 'hidden' )
     addMoreDay.classList.add( 'hidden' )
     addMoreTimeSlot.classList.add( 'hidden' )
@@ -63,7 +63,8 @@ for ( let addMore of addMores )
 
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
-      alert( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.` )
+      promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
+      fieldFlag = true;
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
@@ -201,7 +202,6 @@ const deleteFields = () =>
         for ( let [ index, startDate ] of newDates.entries() )
         {
           startDate.title = `${ fieldTags[ index ] } Appointment Start Date`
-          console.log( newDates.length );
         }
         dateCounter = dateCounter - 1
       }
@@ -212,7 +212,6 @@ const deleteFields = () =>
         let newDays = document.querySelectorAll( '.newDays' )
         for ( let [ index, additionalDay ] of newDays.entries() )
         {
-          console.log( additionalDay );
           additionalDay.title = `${ fieldTags[ index ] } Appointment Start Day`
         }
         dayCounter = dayCounter - 1
@@ -239,15 +238,25 @@ let create = document.querySelector( '.createAptBtn' )
 
 create.onclick = () =>
 {
+  visitCount.value === '' ? promptMessages( `${ visitCount.getAttribute( 'title' ) } cannot be blank`, 'error' ) : ''
+
   let radios = document.querySelectorAll( 'input[type=radio]' )
-  let radioValue = ''
+  let radioValue
+
+  if ( radios.value === 0 )
+  {
+    console.log( 'error' );
+  }
+
   for ( let radio of radios )
   {
-    if ( radio.checked )
+    if ( radio.checked === 0 )
     {
-      radioValue = radio.value;
+      promptMessages( 'Select at least one week type', 'error' )
     }
+
   }
+
 
   let addSections = document.querySelectorAll( '.addSections' )
   for ( let addSection of addSections )
@@ -256,7 +265,7 @@ create.onclick = () =>
     {
       let counter = ( addSection.childElementCount - ( parseInt( visitCount.value ) - 1 ) ) * -1
 
-      alert( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.` );
+      promptMessages( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.`, 'error' );
 
     }
   }
@@ -270,41 +279,45 @@ create.onclick = () =>
   {
     if ( newDate.value === '' )
     {
-      alert( `${ newDate.getAttribute( 'title' ) } is required.` )
+      promptMessages( `${ newDate.getAttribute( 'title' ) } is required.`, 'error' )
       newDate.classList.add( 'lg:border-rose-600' )
+      fieldFlag = true;
     }
 
     else
     {
       datesArr.push( { date: newDate.value } )
+      let values = datesArr.map( ( item ) => { return item.date } )
+      let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+
+      if ( isDuplicate === true )
+      {
+        promptMessages( 'All dates should be unique.', 'error' )
+        fieldFlag = true;
+      }
+      else
+      {
+        let res = datesArr.every( ( { date } ) =>
+        {
+          return currentDate <= new Date( date ).toLocaleDateString()
+        } )
+        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } date cannot be an older date.`, 'error' ) : '';
+        fieldFlag = true;
+      }
     }
   }
 
-  let values = datesArr.map( ( item ) => { return item.date } )
-  let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
-  if ( isDuplicate === true )
-  {
-    alert( 'All dates should be unique' )
-  }
-  else
-  {
-    let res = datesArr.every( ( { date } ) =>
-    {
-      return currentDate <= new Date( date ).toLocaleDateString()
-    } )
-    res === false ? alert( 'Old Dates' ) : '';
-  }
 
   // Get all Days
-  let dayInputs = document.querySelector( '.aptDay' )
   let getNewDays = document.querySelectorAll( '.newDays' )
-  let daysArr = [ { day: dayInputs.value } ]
+  let daysArr = []
   for ( let newDay of getNewDays )
   {
     if ( newDay.value === '' )
     {
-      alert( `${ newDay.getAttribute( 'title' ) } is required.` )
+      promptMessages( `${ newDay.getAttribute( 'title' ) } is required.`, 'error' )
       newDay.classList.add( 'lg:border-rose-600' )
+      fieldFlag = true;
     }
 
     else
@@ -315,19 +328,38 @@ create.onclick = () =>
   }
 
   // Getting all Time Slots
-  let timeSlotInput = document.querySelector( '.aptTimeSlot' )
   let getNewTimeSlots = document.querySelectorAll( '.newTimeSlots' )
-  let timeSlotArr = [ { timeSlot: timeSlotInput.value } ]
+  let timeSlotArr = []
   for ( let newTimeSlot of getNewTimeSlots )
   {
     if ( newTimeSlot.value === '' )
     {
-      alert( `${ newTimeSlot.getAttribute( 'title' ) } is required.` )
+      promptMessages( `${ newTimeSlot.getAttribute( 'title' ) } is required.`, 'error' )
       newTimeSlot.classList.add( 'lg:border-rose-600' )
+      fieldFlag = true;
     }
-    else
+
+    else if ( newTimeSlot.value !== '' )
     {
-      timeSlotArr.push( { timeSlot: newTimeSlot.value } )
+      // Check for slot hour and current hour
+      let selectedDate = new Date( startDate.value ).toLocaleDateString()
+      let userTimeSlot = newTimeSlot.value
+      let splitSlot = userTimeSlot.split( '-' )
+      let trimmedSlot = splitSlot.map( str => str.trim() )
+      let hourSplit = trimmedSlot[ 0 ].split( ':' )
+      let finalHourSplit = Number( hourSplit[ 0 ] )
+
+      if ( finalHourSplit <= local_hours && selectedDate < currentDate )
+      {
+        newTimeSlot.classList.add( 'md:border-rose-600' )
+        promptMessages( `If ${ startDate.getAttribute( 'title' ) } is today, slot hour should be greater than current hour.`, 'error' )
+        fieldFlag = true;
+      }
+      else
+      {
+        timeSlotArr.push( { newTimeSlot: newTimeSlot.value } )
+      }
+
     }
   }
 
@@ -340,7 +372,7 @@ create.onclick = () =>
     let finalDate = new Date( checkDays.date ).getDay() - 1
     if ( days[ finalDate ] !== daysArr[ index ].day )
     {
-      return alert( `${ finalFieldTags[ index ] } days and dates do not match.` )
+      return promptMessages( `${ finalFieldTags[ index ] } days and dates do not match.`, 'error' )
     }
   }
 
@@ -349,7 +381,7 @@ create.onclick = () =>
     {
       date,
       day: daysArr[ i ].day,
-      timeSlot: timeSlotArr[ i ].timeSlot,
+      newTimeSlot: timeSlotArr[ i ].newTimeSlot,
       order: finalFieldTags[ i ]
     }
   ) )
@@ -361,7 +393,7 @@ create.onclick = () =>
       `
               ${ schedule.order } Start Date: ${ schedule.date } 
               ${ schedule.order } Start Day: ${ schedule.day }
-              ${ schedule.order } Start TimeSlot: ${ schedule.timeSlot }
+              ${ schedule.order } Start TimeSlot: ${ schedule.newTimeSlot }
             `
     )
   }
