@@ -132,31 +132,8 @@
 
         <!-- Prompts  -->
         <div
-          class="prompts ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
-          <div
-            class="flex items-center justify-between px-6 py-5 my-3 w-full h-full rounded-xl bg-white shadow-2xl font-semibold text-rose-600 text-[10px] uppercase tracking-widest">
+          class="promptsWrapper ease-in-out duration-300 absolute -left-[2000px] bottom-5 -translate-x-1/2 w-3/6 text-center z-50 ">
 
-            <div class="promptContentWrapper flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                class="w-6 h-6 mr-2 text-rose-700">
-                <path fill-rule="evenodd"
-                  d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                  clip-rule="evenodd" />
-              </svg>
-
-              <div class="promptContent">
-                You must enter all the required fields.
-              </div>
-
-            </div>
-
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-              class="closePrompt w-5 h-5 ease-in-out cursor-pointer duration-300 p-1 hover:bg-rose-600 hover:text-white rounded-full">
-              <path fill-rule="evenodd"
-                d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z"
-                clip-rule="evenodd" />
-            </svg>
-          </div>
 
 
         </div>
@@ -220,7 +197,7 @@
                       <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
                         autocomplete="off" id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
                         onfocusout="(this.type='text')"
-                        class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                        class="aptStartDate aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
 
                       <label for="aptStartDate"
                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
@@ -251,7 +228,7 @@
                     <div class="grow relative">
 
                       <select name="days" id="aptDay" title="Appointment Start Day"
-                        class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                         <option value="" class="text-xs md:font-semibold md:text-xs">
                           Pick a day
                         </option>
@@ -305,7 +282,7 @@
                   <div class="default w-full flex items-center">
                     <div class="grow relative">
                       <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
-                        class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                         <option value="" class="md:font-semibold">
                           Time slot
                         </option>
@@ -397,10 +374,14 @@
 
     <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
     <script src="../scripts/commonScripts/dbConnect.js"></script>
+
     <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/newThings.js"></script>
+    <script src="../scripts/commonScripts/commonFunctions.js"></script>
     <script src="../scripts/commonScripts/prompts.js"></script>
+
+    <script src="../scripts/newThings.js"></script>
   </body>
 
 </html>
