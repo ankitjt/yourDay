@@ -404,14 +404,15 @@
                     class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 lg:text-slate-900">
 
                     <div class="mr-5">
-                      <input type="radio" name="weekType" id="eachWeek" title="Each Week"
-                        class="eachWeek checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
+                      <input type="radio" name="weekType" id="eachWeek"
+                        class="eachWeek radios  checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
                       <label for="eachWeek" class="ml-2">Each Week</label>
                     </div>
 
                     <div>
-                      <input type="radio" name="weekType" id="alternateWeek" title="Alternate Week"
-                        class="alternateWeek checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="14">
+                      <input type="radio" name="weekType" id="alternateWeek"
+                        class="alternateWeek  radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
+                        value="14">
                       <label for="alternateWeek" class="ml-2">Alternate Week</label>
                     </div>
 
@@ -422,16 +423,17 @@
 
                     <div class="default w-full flex items-center">
                       <div class="grow relative">
-                        <input type="text" placeholder="Start Date" aria-autocomplete="none" autocomplete="off"
-                          id="aptStartDate" title="Appointment Start Date" onfocus="(this.type='date')"
-                          class="aptStartDate placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                        <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
+                          autocomplete="off" id="aptStartDate" title="Appointment Start Date"
+                          onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                          class="aptStartDate aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
 
                         <label for="aptStartDate"
                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
                           Start Date</label>
                       </div>
 
-                      <div class="addMoreDate addMoreFields ml-5 cursor-pointer hidden">
+                      <div class="addMoreDate addMore ml-5 cursor-pointer hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                           class="w-6 h-6 text-indigo-600">
                           <path fill-rule="evenodd"
@@ -442,8 +444,7 @@
 
                     </div>
 
-                    <div class="additionalDates addSections grid grid-cols-1 w-full  gap-x-10"
-                      name="Appointment Start Date">
+                    <div class="additionalDates addSections grid grid-cols-1 gap-x-10" name="Appointment Start Date">
                     </div>
 
                   </div>
@@ -456,7 +457,7 @@
                       <div class="grow relative">
 
                         <select name="days" id="aptDay" title="Appointment Start Day"
-                          class="aptDay placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                          class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                           <option value="" class="text-xs md:font-semibold md:text-xs">
                             Pick a day
                           </option>
@@ -488,7 +489,7 @@
                         </label>
                       </div>
 
-                      <div class="addMoreDay addMoreFields ml-5 cursor-pointer hidden">
+                      <div class="addMoreDay addMore ml-5 cursor-pointer hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                           class="w-6 h-6 text-indigo-600">
                           <path fill-rule="evenodd"
@@ -510,7 +511,7 @@
                     <div class="default w-full flex items-center">
                       <div class="grow relative">
                         <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
-                          class="aptTimeSlot placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                          class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
                           <option value="" class="md:font-semibold">
                             Time slot
                           </option>
@@ -548,7 +549,7 @@
 
                       </div>
 
-                      <div class="addMoreTimeSlot addMoreFields ml-5 cursor-pointer hidden">
+                      <div class="addMoreTimeSlot addMore ml-5 cursor-pointer hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                           class="w-6 h-6 text-indigo-600">
                           <path fill-rule="evenodd"
