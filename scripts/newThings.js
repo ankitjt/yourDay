@@ -241,18 +241,14 @@ create.onclick = () =>
   visitCount.value === '' ? promptMessages( `${ visitCount.getAttribute( 'title' ) } cannot be blank`, 'error' ) : ''
 
   let radios = document.querySelectorAll( 'input[type=radio]' )
-  let radioValue
-
-  if ( radios.value === 0 )
-  {
-    console.log( 'error' );
-  }
+  let radioChecked = 0
 
   for ( let radio of radios )
   {
-    if ( radio.checked === 0 )
+    if ( !radio.checked )
     {
       promptMessages( 'Select at least one week type', 'error' )
+      break;
     }
 
   }
@@ -301,7 +297,7 @@ create.onclick = () =>
         {
           return currentDate <= new Date( date ).toLocaleDateString()
         } )
-        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } date cannot be an older date.`, 'error' ) : '';
+        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : '';
         fieldFlag = true;
       }
     }
@@ -349,7 +345,7 @@ create.onclick = () =>
       let hourSplit = trimmedSlot[ 0 ].split( ':' )
       let finalHourSplit = Number( hourSplit[ 0 ] )
 
-      if ( finalHourSplit <= local_hours && selectedDate < currentDate )
+      if ( finalHourSplit <= local_hours && selectedDate <= currentDate )
       {
         newTimeSlot.classList.add( 'md:border-rose-600' )
         promptMessages( `If ${ startDate.getAttribute( 'title' ) } is today, slot hour should be greater than current hour.`, 'error' )
@@ -373,6 +369,7 @@ create.onclick = () =>
     if ( days[ finalDate ] !== daysArr[ index ].day )
     {
       return promptMessages( `${ finalFieldTags[ index ] } days and dates do not match.`, 'error' )
+
     }
   }
 
@@ -394,6 +391,8 @@ create.onclick = () =>
               ${ schedule.order } Start Date: ${ schedule.date } 
               ${ schedule.order } Start Day: ${ schedule.day }
               ${ schedule.order } Start TimeSlot: ${ schedule.newTimeSlot }
+              ${ visitCount.value }
+              
             `
     )
   }
