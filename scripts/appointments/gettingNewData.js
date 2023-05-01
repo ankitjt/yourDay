@@ -59,7 +59,7 @@ for ( let showLabel of selectTags )
   }
 }
 
-let addMoreFields = document.querySelectorAll( '.addMoreFields' );
+let addMoreFields = document.querySelectorAll( '.addMoreFields' )
 let addMores = document.querySelectorAll( '.addMore' )
 let fieldTags = [ 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
 let dateCounter = -1,
@@ -73,12 +73,12 @@ for ( let addMore of addMores )
   addMore.onclick = () =>
   {
     let inputType = addMore.parentElement.childNodes[ 1 ].childNodes[ 1 ]
-    let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ];
+    let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ]
 
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
       promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
-      fieldFlag = true;
+      fieldFlag = true
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
@@ -107,7 +107,7 @@ for ( let addMore of addMores )
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
           `
         inputHolder.innerHTML = moreStartDate
       }
@@ -117,7 +117,7 @@ for ( let addMore of addMores )
         dayCounter = dayCounter + 1
         let moreDayInput = `
       <select name="aptDay" id="aptDay" title="${ fieldTags[ dayCounter ] } Appointment Start Day"
-                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                       <option value="" class="text-xs md:font-semibold md:text-xs">
                         Pick a day
                       </option>
@@ -152,7 +152,7 @@ for ( let addMore of addMores )
         timeSlotCounter = timeSlotCounter + 1
         let moreTimeSlotInput = `
       <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ timeSlotCounter ] } Appointment Time Slot"
-                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                       <option value="" class="md:font-semibold">
                         Time slot
                       </option>
@@ -206,11 +206,11 @@ const deleteFields = () =>
   {
     delField.onclick = () =>
     {
-      let deleteType = delField.parentElement.parentElement.childNodes[ 0 ].childNodes[ 1 ].getAttribute( 'id' );
+      let deleteType = delField.parentElement.parentElement.childNodes[ 0 ].childNodes[ 1 ].getAttribute( 'id' )
 
       if ( deleteType === 'aptStartDate' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newDates = document.querySelectorAll( '.newDates' )
         for ( let [ index, startDate ] of newDates.entries() )
         {
@@ -221,7 +221,7 @@ const deleteFields = () =>
 
       if ( deleteType === 'aptDay' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newDays = document.querySelectorAll( '.newDays' )
         for ( let [ index, additionalDay ] of newDays.entries() )
         {
@@ -233,7 +233,7 @@ const deleteFields = () =>
 
       if ( deleteType === 'aptTimeSlot' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newTimeSlots = document.querySelectorAll( '.newTimeSlots' )
         for ( let [ index, additionalTimeSlot ] of newTimeSlots.entries() )
         {
@@ -250,7 +250,9 @@ let aptFormInput = document.querySelectorAll( ".aptFormInput" )
 
 apt.create.onclick = () =>
 {
-  let allFilled = true;
+  let allFilled = true
+
+  // Check for empty fields.
   for ( let formInput of aptFormInput )
   {
     // Check for hidden class in case of emergency relation.
