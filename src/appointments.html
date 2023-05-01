@@ -264,6 +264,7 @@
           <!-- Appointment Form Fields  -->
           <div class="formFieldsWrapper mt-5 grid lg:grid-cols-2 gap-y-10 md:grid-cols-3 grid-cols-1 lg:gap-x-10 ">
 
+            <!-- Category Details  -->
             <div class="categoryDetails w-full py-3 px-6 rounded-xl shadow-2xl">
               <div class="flex flex-col category rounded-xl ">
 
@@ -277,14 +278,14 @@
                   <div class="h-fit relative">
 
                     <input id="patientCategory" type="text" placeholder="New" value="NEW" title="Patient Category"
-                      class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-200 lg:bg-gray-200 rounded-md tracking-widest"
+                      class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-200 lg:bg-gray-200 rounded-md tracking-widest aptFormInput"
                       disabled />
                   </div>
 
                   <!-- Appointment Type  -->
                   <div class="relative h-fit">
                     <select name="appointmentType" id="appointmentType" title="Appointment Type"
-                      class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                      class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                       <option value="" class="text-xs md:font-semibold md:text-sm">
                         Type
                       </option>
@@ -302,7 +303,7 @@
                   <!-- Appointment Mode  -->
                   <div class="relative h-fit">
                     <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
-                      class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                      class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                       <option value="" class="text-xs md:font-semibold md:text-sm">
                         Mode
                       </option>
@@ -322,6 +323,7 @@
               </div>
             </div>
 
+            <!-- Patient Details  -->
             <div class="patientDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
               <div class="flex flex-col patientDetails rounded-xl ">
@@ -334,7 +336,7 @@
                   <!-- Full Name  -->
                   <div class="relative h-fit">
                     <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
-                      class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="patientFullName"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
                       Name</label>
@@ -344,7 +346,7 @@
                   <div class="relative w-full h-fit">
                     <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
                       id="patientEmail"
-                      class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="patientEmail"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
                   </div>
@@ -353,14 +355,14 @@
                   <div class="flex items-center">
 
                     <select name="countryCode" id=""
-                      class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest mr-5"
+                      class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest mr-5 aptFormInput"
                       title="Country Code">
                     </select>
 
                     <div class="relative w-full h-fit">
                       <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
                         name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
-                        class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                        class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                       <label for="mobileNumber"
                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
                         number</label>
@@ -371,7 +373,7 @@
                   <div class="h-fit relative">
                     <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
                       id="address" title="Address"
-                      class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="address"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
                   </div>
@@ -380,6 +382,7 @@
 
             </div>
 
+            <!-- Appointment Details  -->
             <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
               <div class="flex flex-col appointmentDetailsFields rounded-xl ">
@@ -393,7 +396,7 @@
                   <div class="h-fit relative">
                     <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
                       autocomplete="off" id="occurrenceType" title="Visit per week" value=''
-                      class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="occurrenceType"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
                       per week</label>
@@ -426,7 +429,7 @@
                         <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
                           autocomplete="off" id="aptStartDate" title="Appointment Start Date"
                           onfocus="(this.type='date')" onfocusout="(this.type='text')"
-                          class="aptStartDate aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                          class="aptStartDate aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
 
                         <label for="aptStartDate"
                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
@@ -457,7 +460,7 @@
                       <div class="grow relative">
 
                         <select name="days" id="aptDay" title="Appointment Start Day"
-                          class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                          class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                           <option value="" class="text-xs md:font-semibold md:text-xs">
                             Pick a day
                           </option>
@@ -511,8 +514,8 @@
                     <div class="default w-full flex items-center">
                       <div class="grow relative">
                         <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
-                          class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                          <option value="" class="md:font-semibold">
+                          class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
+                          <option value="" class="md:font-semibold ">
                             Time slot
                           </option>
                           <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
@@ -571,7 +574,7 @@
                   <div class="h-fit relative">
                     <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
                       autocomplete="off" title="Appointment Fees"
-                      class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="aptFees"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
                       per visit</label>
@@ -582,6 +585,7 @@
 
             </div>
 
+            <!-- Emergency Details  -->
             <div class="emergencyDetails w-full shadow-2xl py-3 px-6 rounded-xl lg:bg-white">
 
               <div class="flex flex-col emergencyDetailsFields rounded-xl ">
@@ -594,7 +598,7 @@
                   <div class="h-fit relative">
                     <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
                       aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                      class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="emergencyName"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
                       Contact Name</label>
@@ -604,7 +608,7 @@
                   <div class="">
                     <div class="relative">
                       <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                        class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
                       </select>
                       <label for="emergencyRelation"
                         class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
@@ -615,14 +619,14 @@
                   <!-- Emergency Contact Number -->
                   <div class="flex items-center">
                     <select name="countryCode" id=""
-                      class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                      class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput"
                       title="Country Code">
                     </select>
 
                     <div class="relative h-fit w-full">
                       <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
                         name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
-                        class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                        class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                       <label for="e_mobileNumber"
                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
                         Mobile Number</label>
@@ -633,7 +637,7 @@
                   <div class="h-fit relative">
                     <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
                       aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                      class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                     <label for="emergencyAddress"
                       class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
                       Address</label>
@@ -643,7 +647,7 @@
                   <div class="">
                     <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off"
                       name="relationDetails" id="relationDetails" title="Relation Details"
-                      class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                      class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
                   </div>
                 </div>
               </div>
@@ -713,6 +717,7 @@
     <!-- <script src="../scripts/appointments/appointments_createTwoApts.js"></script> -->
     <script src="../scripts/appointments/appointments_createProfile.js"></script>
     <script src="../scripts/appointments/appointments_getting_data.js"></script>
+    <script src="../scripts/appointments/gettingNewData.js"></script>
     <!-- <script src="../scripts/appointments/checkPatientDetails.js"></script> -->
     <script src="../scripts/appointments/checkAppointmentDetails.js"></script>
     <!-- <script src="../scripts/appointments/appointments_fieldCheck.js"></script> -->
