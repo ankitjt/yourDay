@@ -242,9 +242,7 @@ const checkAppointmentDetails = fieldFlag =>
     if ( addSection.childElementCount !== parseInt( visitCount.value - 1 ) && visitCount.value > 1 )
     {
       let counter = ( addSection.childElementCount - ( parseInt( visitCount.value ) - 1 ) ) * -1
-
       promptMessages( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.`, 'error' )
-
     }
   }
 

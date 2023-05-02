@@ -1,3 +1,4 @@
+let allFilled = true
 emergencyRelation.onchange = () =>
 {
   if ( apt.emergencyRelation.value === 'Others' ) 
@@ -78,7 +79,7 @@ for ( let addMore of addMores )
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
       promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
-      fieldFlag = true
+      allFilled = true
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
@@ -107,7 +108,7 @@ for ( let addMore of addMores )
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput" />
+                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs" />
           `
         inputHolder.innerHTML = moreStartDate
       }
@@ -116,8 +117,8 @@ for ( let addMore of addMores )
       {
         dayCounter = dayCounter + 1
         let moreDayInput = `
-      <select name="aptDay" id="aptDay" title="${ fieldTags[ dayCounter ] } Appointment Start Day"
-                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
+          <select name="aptDay" id="aptDay" title="${ fieldTags[ dayCounter ] } Appointment Start Day"
+                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs">
                       <option value="" class="text-xs md:font-semibold md:text-xs">
                         Pick a day
                       </option>
@@ -150,9 +151,9 @@ for ( let addMore of addMores )
       if ( inputType.getAttribute( 'id' ) === 'aptTimeSlot' )
       {
         timeSlotCounter = timeSlotCounter + 1
-        let moreTimeSlotInput = `
-      <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ timeSlotCounter ] } Appointment Time Slot"
-                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest aptFormInput">
+        let moreTimeSlotInput = ` 
+          <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ timeSlotCounter ] } Appointment Time Slot"
+                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs">
                       <option value="" class="md:font-semibold">
                         Time slot
                       </option>
@@ -246,25 +247,81 @@ const deleteFields = () =>
   }
 }
 
-let aptFormInput = document.querySelectorAll( ".aptFormInput" )
-
 apt.create.onclick = () =>
 {
-  let allFilled = true
 
   // Check for empty fields.
+  let aptFormInput = document.querySelectorAll( ".aptFormInput" )
   for ( let formInput of aptFormInput )
   {
-    // Check for hidden class in case of emergency relation.
-    if ( formInput.value === '' )
+    // Check for hidden class in case of emergency relation to be added.
+    if ( formInput.value === '' && !formInput.classList.contains( 'hidden' ) )
     {
       let inputName = formInput.getAttribute( 'title' )
-      promptMessages( `${ formInput.getAttribute( 'title' ) } cannot be blank.`, 'error' )
+      promptMessages( `${ inputName } cannot be blank.`, 'error' )
       formInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
-      console.table( {
-        inputName: inputName
-      } )
       allFilled = false
     }
+  }
+
+  // Check for newly added fields
+  let newInputs = document.querySelectorAll( ".newInputs" )
+  for ( let newInput of newInputs )
+  {
+    if ( newInput.value === '' )
+    {
+      let inputName = newInput.getAttribute( 'title' )
+      promptMessages( `${ inputName } cannot be blank.`, 'error' )
+      newInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
+      allFilled = false
+    }
+
+  }
+
+  let radios = document.querySelector( 'input[name="weekType"]:checked' )
+  if ( !radios )
+  {
+    promptMessages( `Week Type is blank`, 'error' )
+    allFilled = false;
+  }
+
+  let fieldFlag = false
+  let checkPatientDetails = checkPatientDetails( fieldFlag )
+  let checkAppointmentDetails = checkAppointmentDetails( fieldFlag )
+
+  // Getting all Dates
+  let getNewDates = document.querySelectorAll( '.aptDates' )
+  let currentDate = new Date().toLocaleDateString()
+  let datesArr = []
+
+  for ( let newDate of getNewDates )
+  {
+    datesArr.push( { date: newDate.value } )
+    let values = datesArr.map( ( item ) => { return item.date } )
+    let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+
+    if ( isDuplicate === true )
+    {
+      promptMessages( 'All dates should be unique.', 'error' )
+      allFilled = false
+    }
+    else
+    {
+      let res = datesArr.every( ( { date } ) =>
+      {
+        return currentDate <= new Date( date ).toLocaleDateString()
+      } )
+      res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
+      allFilled = false
+    }
+  }
+
+  if ( allFilled === true && checkPatientDetails === false )
+  {
+    for ( let aptInput of aptFormInput )
+    {
+      console.log( aptInput.value );
+    }
+    console.log( radios.value );
   }
 }

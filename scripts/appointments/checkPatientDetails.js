@@ -1,4 +1,4 @@
-const checkPatientDetails = fieldFlag =>
+const checkPatientDetails = () =>
 {
   // Name check.
   let userName = apt.name.value
@@ -6,8 +6,8 @@ const checkPatientDetails = fieldFlag =>
   if ( check1 !== -1 )
   {
     apt.name.classList.add( 'md:border-rose-600' )
-    promptMessages( 'Name should be only be alphabetic.', 'error' )
-    fieldFlag = true;
+    promptMessages( 'Name should only be alphabetic.', 'error' )
+    return fieldFlag = true;
 
   }
 
@@ -16,8 +16,7 @@ const checkPatientDetails = fieldFlag =>
   {
     apt.email.classList.add( 'md:border-rose-600' )
     promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
-    fieldFlag = true;
-
+    return fieldFlag = true;
   }
 
   // Check for mobile number 
@@ -27,8 +26,8 @@ const checkPatientDetails = fieldFlag =>
     {
       apt.mobileNumber.classList.add( 'border-rose-600' )
       promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.', 'error' )
-      fieldFlag = true;
-
+      return fieldFlag = true;
     }
   }
+  return fieldFlag = false;
 }
