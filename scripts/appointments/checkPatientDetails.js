@@ -1,4 +1,4 @@
-const checkPatientDetails = () =>
+const checkPatientDetails = ( fieldFlag ) =>
 {
   // Name check.
   let userName = apt.name.value

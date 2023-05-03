@@ -1,4 +1,6 @@
 let allFilled = true
+let res = '';
+
 emergencyRelation.onchange = () =>
 {
   if ( apt.emergencyRelation.value === 'Others' ) 
@@ -28,6 +30,7 @@ visitCount.onkeyup = () =>
     addMoreDay.classList.remove( 'hidden' )
     addMoreTimeSlot.classList.remove( 'hidden' )
     promptMessages( 'You can only add 6 visits per appointment', 'error' )
+    allFilled = false
   }
 
   else
@@ -39,7 +42,6 @@ visitCount.onkeyup = () =>
     additionalDay.innerHTML = ''
     additionalTimeSlot.innerHTML = ''
   }
-
 }
 
 let selectTags = document.querySelectorAll( 'select' )
@@ -79,7 +81,7 @@ for ( let addMore of addMores )
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
       promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
-      allFilled = true
+      allFilled = false
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
@@ -241,7 +243,6 @@ const deleteFields = () =>
           additionalTimeSlot.title = `${ fieldTags[ index ] } Appointment Time Slot`
         }
         timeSlotCounter = timeSlotCounter - 1
-
       }
     }
   }
@@ -254,7 +255,6 @@ apt.create.onclick = () =>
   let aptFormInput = document.querySelectorAll( ".aptFormInput" )
   for ( let formInput of aptFormInput )
   {
-    // Check for hidden class in case of emergency relation to be added.
     if ( formInput.value === '' && !formInput.classList.contains( 'hidden' ) )
     {
       let inputName = formInput.getAttribute( 'title' )
@@ -275,7 +275,6 @@ apt.create.onclick = () =>
       newInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
       allFilled = false
     }
-
   }
 
   let radios = document.querySelector( 'input[name="weekType"]:checked' )
@@ -286,42 +285,132 @@ apt.create.onclick = () =>
   }
 
   let fieldFlag = false
-  let checkPatientDetails = checkPatientDetails( fieldFlag )
-  let checkAppointmentDetails = checkAppointmentDetails( fieldFlag )
+  let finalVerdictCheckPatientDetails = checkPatientDetails( fieldFlag )
+  let finalVerdictCheckAppointmentDetails = checkAppointmentDetails( fieldFlag )
 
-  // Getting all Dates
-  let getNewDates = document.querySelectorAll( '.aptDates' )
-  let currentDate = new Date().toLocaleDateString()
-  let datesArr = []
-
-  for ( let newDate of getNewDates )
+  if ( visitCount.value > 1 )
   {
-    datesArr.push( { date: newDate.value } )
-    let values = datesArr.map( ( item ) => { return item.date } )
-    let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+    let finalFieldTags = [ 'First', 'Second', 'Third', 'Fourth', 'Fifth', "Sixth" ]
 
-    if ( isDuplicate === true )
+    // Getting all Dates
+    let getNewDates = document.querySelectorAll( '.aptDates' )
+    let currentDate = new Date().toLocaleDateString()
+    let datesArr = []
+
+    for ( let newDate of getNewDates )
     {
-      promptMessages( 'All dates should be unique.', 'error' )
-      allFilled = false
-    }
-    else
-    {
-      let res = datesArr.every( ( { date } ) =>
+      datesArr.push( { date: newDate.value } )
+      let values = datesArr.map( ( item ) => { return item.date } )
+      let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+
+      if ( isDuplicate === true )
       {
-        return currentDate <= new Date( date ).toLocaleDateString()
-      } )
-      res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
-      allFilled = false
+        promptMessages( 'All dates should be unique.', 'error' )
+        allFilled = false
+      }
+      else
+      {
+        let res = datesArr.every( ( { date } ) =>
+        {
+          return currentDate <= new Date( date ).toLocaleDateString()
+        } )
+        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
+        // allFilled = false
+      }
     }
+
+    // Get all Days
+    let getNewDays = document.querySelectorAll( '.newDays' )
+    let daysArr = []
+    for ( let newDay of getNewDays )
+    {
+      daysArr.push( { day: newDay.value } )
+    }
+
+    // Getting all Time Slots
+    let getNewTimeSlots = document.querySelectorAll( '.newTimeSlots' )
+    let timeSlotArr = []
+    for ( let newTimeSlot of getNewTimeSlots )
+    {
+      if ( newTimeSlot.value !== '' )
+      {
+        // Check for slot hour and current hour
+        let selectedDate = new Date( startDate.value ).toLocaleDateString()
+        let userTimeSlot = newTimeSlot.value
+        let splitSlot = userTimeSlot.split( '-' )
+        let trimmedSlot = splitSlot.map( str => str.trim() )
+        let hourSplit = trimmedSlot[ 0 ].split( ':' )
+        let finalHourSplit = Number( hourSplit[ 0 ] )
+
+        if ( finalHourSplit <= local_hours && selectedDate <= currentDate )
+        {
+          newTimeSlot.classList.add( 'md:border-rose-600' )
+          promptMessages( `If ${ startDate.getAttribute( 'title' ) } is today, slot hour should be greater than current hour.`, 'error' )
+          allFilled = false
+        }
+        else
+        {
+          timeSlotArr.push( { newTimeSlot: newTimeSlot.value } )
+        }
+      }
+    }
+
+    // Final Array of data
+    res = datesArr.map( ( { date }, i ) => (
+      {
+        date,
+        day: daysArr[ i ].day,
+        newTimeSlot: timeSlotArr[ i ].newTimeSlot,
+        order: finalFieldTags[ i ]
+      }
+    ) )
   }
 
-  if ( allFilled === true && checkPatientDetails === false )
+  console.log( allFilled, finalVerdictCheckPatientDetails, finalVerdictCheckAppointmentDetails );
+  if ( allFilled === true && finalVerdictCheckPatientDetails === false && finalVerdictCheckAppointmentDetails === false )
   {
+    apt__confirmPage.page.classList.add( 'left-0' )
     for ( let aptInput of aptFormInput )
     {
       console.log( aptInput.value );
+      apt__confirmPage.name.innerText = aptName.value.trim()
+      apt__confirmPage.email.innerText = correctEmail.trim()
+      apt__confirmPage.mobileNumber.innerText = apt.pt_countryCode.value + '-' + apt.mobileNumber.value
     }
     console.log( radios.value );
+    if ( visitCount.value > 1 )
+    {
+      for ( let schedule of res )
+      {
+        console.log(
+          `
+                ${ schedule.order } Start Date: ${ schedule.date } 
+                ${ schedule.order } Start Day: ${ schedule.day }
+                ${ schedule.order } Start TimeSlot: ${ schedule.newTimeSlot }
+                ${ visitCount.value }
+                
+              `
+        )
+      }
+    }
+
+
+
+    apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
+    apt__confirmPage.secondStartDate.innerText = "NA"
+    apt__confirmPage.day.innerText = apt.day.value
+    apt__confirmPage.secondDay.innerText = "NA"
+    apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
+    apt__confirmPage.secondTimeSlot.innerText = "NA"
+    apt__confirmPage.fees.innerText = apt.fees.value
+    apt__confirmPage.address.innerText = apt.address.value
+    apt__confirmPage.type.innerText = apt.type.value
+    apt__confirmPage.nature.innerText = apt.nature.value
+    apt__confirmPage.occurrenceType.innerText = apt.visitCount.value
+    apt__confirmPage.category.innerText = apt.category.value
+    apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
+    apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
+    apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
+    apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
   }
 }
