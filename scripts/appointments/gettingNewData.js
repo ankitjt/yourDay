@@ -1,4 +1,4 @@
-let allFilled = true
+let additionalChecks = true
 let res = '';
 
 emergencyRelation.onchange = () =>
@@ -30,7 +30,7 @@ visitCount.onkeyup = () =>
     addMoreDay.classList.remove( 'hidden' )
     addMoreTimeSlot.classList.remove( 'hidden' )
     promptMessages( 'You can only add 6 visits per appointment', 'error' )
-    allFilled = false
+    additionalChecks = false
   }
 
   else
@@ -81,10 +81,10 @@ for ( let addMore of addMores )
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
       promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
-      allFilled = false
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
+      additionalChecks = false
     }
 
     else
@@ -250,6 +250,7 @@ const deleteFields = () =>
 
 apt.create.onclick = () =>
 {
+  let allFilled = true;
 
   // Check for empty fields.
   let aptFormInput = document.querySelectorAll( ".aptFormInput" )
@@ -274,6 +275,10 @@ apt.create.onclick = () =>
       promptMessages( `${ inputName } cannot be blank.`, 'error' )
       newInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
       allFilled = false
+    }
+    else
+    {
+      newInput.classList.remove( 'lg:border-rose-600', 'border-rose-600' )
     }
   }
 
@@ -315,7 +320,7 @@ apt.create.onclick = () =>
           return currentDate <= new Date( date ).toLocaleDateString()
         } )
         res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
-        // allFilled = false
+        // return allFilled = false
       }
     }
 
@@ -366,51 +371,8 @@ apt.create.onclick = () =>
     ) )
   }
 
-  console.log( allFilled, finalVerdictCheckPatientDetails, finalVerdictCheckAppointmentDetails );
-  if ( allFilled === true && finalVerdictCheckPatientDetails === false && finalVerdictCheckAppointmentDetails === false )
+  if ( allFilled === true && additionalChecks === true && finalVerdictCheckPatientDetails === false && finalVerdictCheckAppointmentDetails === false )
   {
-    apt__confirmPage.page.classList.add( 'left-0' )
-    for ( let aptInput of aptFormInput )
-    {
-      console.log( aptInput.value );
-      apt__confirmPage.name.innerText = aptName.value.trim()
-      apt__confirmPage.email.innerText = correctEmail.trim()
-      apt__confirmPage.mobileNumber.innerText = apt.pt_countryCode.value + '-' + apt.mobileNumber.value
-    }
-    console.log( radios.value );
-    if ( visitCount.value > 1 )
-    {
-      for ( let schedule of res )
-      {
-        console.log(
-          `
-                ${ schedule.order } Start Date: ${ schedule.date } 
-                ${ schedule.order } Start Day: ${ schedule.day }
-                ${ schedule.order } Start TimeSlot: ${ schedule.newTimeSlot }
-                ${ visitCount.value }
-                
-              `
-        )
-      }
-    }
-
-
-
-    apt__confirmPage.startDate.innerText = finalCurrentDate.toString()
-    apt__confirmPage.secondStartDate.innerText = "NA"
-    apt__confirmPage.day.innerText = apt.day.value
-    apt__confirmPage.secondDay.innerText = "NA"
-    apt__confirmPage.timeSlot.innerText = apt.timeSlot.value.toString()
-    apt__confirmPage.secondTimeSlot.innerText = "NA"
-    apt__confirmPage.fees.innerText = apt.fees.value
-    apt__confirmPage.address.innerText = apt.address.value
-    apt__confirmPage.type.innerText = apt.type.value
-    apt__confirmPage.nature.innerText = apt.nature.value
-    apt__confirmPage.occurrenceType.innerText = apt.visitCount.value
-    apt__confirmPage.category.innerText = apt.category.value
-    apt__confirmPage.emergencyName.innerText = apt.emergencyName.value
-    apt__confirmPage.emergencyRelation.innerText = apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value )
-    apt__confirmPage.emergencyMobileNumber.innerText = apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value
-    apt__confirmPage.emergencyAddress.innerText = apt.emergencyAddress.value
+    generateConfirmPage()
   }
 }

@@ -3,7 +3,7 @@ let apt = {
   email: document.querySelector( '.aptEmail' ),
   mobileNumber: document.querySelector( '.aptMobileNumber' ),
   pt_countryCode: document.querySelector( '.pt_countryCode' ),
-  startDate: document.querySelectorAll( '.aptStartDate' ),
+  startDate: document.querySelector( '.aptStartDate' ),
   day: document.querySelector( '.aptDay' ),
   fees: document.querySelector( '.aptFees' ),
   type: document.querySelector( '.aptType' ),
@@ -66,6 +66,7 @@ let apt__confirmPage = {
 
 
 let visitCount = document.querySelector( ".visitCount" )
+let radios = document.querySelector( 'input[name="weekType"]:checked' )
 
 let addMoreDate = document.querySelector( ".addMoreDate" )
 let addMoreDay = document.querySelector( ".addMoreDay" )
@@ -82,7 +83,6 @@ let
   aptEmail = document.querySelector( '.aptEmail' ),
   aptMobileNumber = document.querySelector( '.aptMobileNumber' ),
 
-  aptStartDate = document.querySelector( '.aptStartDate' ),
   aptDay = document.querySelector( '.aptDay' ),
   aptFees = document.querySelector( '.aptFees' ),
   aptType = document.querySelector( '.aptType' ),
