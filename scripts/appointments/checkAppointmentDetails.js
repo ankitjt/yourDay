@@ -11,7 +11,46 @@ const checkAppointmentDetails = fieldFlag =>
     }
   }
 
-  // Getting all Dates
+  // Checking for first date,day and time slot.
+  let firstDate = document.querySelector( ".firstDate" )
+  let firstDay = document.querySelector( ".firstDay" )
+  let firstTime = document.querySelector( ".firstTime" )
+  let selectedDate = new Date( firstDate.value )
+  let userTimeSlot = firstTime.value
+  let splitSlot = userTimeSlot.split( '-' )
+  let trimmedSlot = splitSlot.map( str => str.trim() )
+  let hourSplit = trimmedSlot[ 0 ].split( ':' )
+  let finalHourSplit = Number( hourSplit[ 0 ] )
+
+  if ( finalHourSplit <= local_hours && selectedDate < new Date() )
+  {
+    firstTime.classList.add( 'md:border-rose-600' )
+    promptMessages( 'If start date is today, slot hour should be greater than current hour.', 'error' )
+    return fieldFlag = true
+  }
+
+  // Check for old start Date 
+  if ( selectedDate.toLocaleDateString() < new Date().toLocaleDateString() )
+  {
+    console.log( selectedDate, new Date().toLocaleDateString() )
+    startDate.classList.add( 'md:border-rose-600' )
+    promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
+    return fieldFlag = true
+  }
+
+  // Day and date-day match
+  const aptDaysCheck = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
+  console.log( aptDaysCheck[ new Date().getDay() ], firstDay.value )
+  if ( aptDaysCheck[ new Date( firstDate.value ).getDay() ] !== firstDay.value )
+  {
+    firstDate.classList.add( 'md:border-rose-600' )
+    firstDay.classList.add( 'md:border-rose-600' )
+    promptMessages( 'Start date and Day slot does not match.', 'error' )
+    return fieldFlag = true
+  }
+
+
+  // Checking all Dates
   let getNewDates = document.querySelectorAll( '.aptDates' )
   let datesArr = []
 

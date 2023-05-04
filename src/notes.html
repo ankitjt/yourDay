@@ -1,186 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>YourDay - Notes</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>YourDay - Notes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-  <body class="lg:w-screen lg:h-screen h-auto w-auto relative">
+<body class="lg:w-screen lg:h-screen h-auto w-auto relative xl:h-screen xl:w-2/3 xl:mx-auto xl:bg-slate-100">
 
-    <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50"></div>
+  <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50 xl:w-full"></div>
 
+  <div
+       class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-8 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
+
+    <!-- Left Section  -->
     <div
-      class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-8 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
+         class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between lg:items-start lg:overflow-y-auto">
 
-      <!-- Left Section  -->
+      <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
+        yourDay</div>
+
+    </div>
+
+    <!-- Right Section    -->
+    <div class="rightSection relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
+
+      <!-- Prompts  -->
       <div
-        class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between lg:items-start lg:overflow-y-auto">
-
-        <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
-          yourDay</div>
-
+           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
       </div>
 
-      <!-- Right Section    -->
-      <div class="rightSection relative w-full h-auto lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
+      <!-- PageName and Time  -->
+      <nav
+           class="navbarWrapper lg:mt-5 lg:px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+        <nav class="navbarContent w-full"></nav>
 
-        <!-- Prompts  -->
+        <!--  Navbar Notification Center -->
         <div
-          class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
-        </div>
+             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+          <div class="h-full notificationContent">
 
-        <!-- PageName and Time  -->
-        <nav
-          class="navbarWrapper lg:mt-5 lg:px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
-          <nav class="navbarContent w-full"></nav>
-
-          <!--  Navbar Notification Center -->
-          <div
-            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-            <div class="h-full notificationContent">
-
-            </div>
           </div>
-        </nav>
+        </div>
+      </nav>
 
-        <!-- Content Section  -->
-        <div class="mt-10 text-slate-700 lg:px-5 overflow-y-auto overflow-x-hidden h-full">
+      <!-- Content Section  -->
+      <div class="mt-10 text-slate-700 lg:px-5 overflow-y-auto overflow-x-hidden h-full">
 
-          <!-- Dropdown of names for notes  -->
-          <div class="w-full mt-5 text-xs namesForNotes ptNotes">
-            <h3 class="mb-5 text-xs font-semibold text-indigo-600 tracking-widest uppercase">
-              Select Name (
-              to
-              View/Upload ):
-            </h3>
+        <!-- Dropdown of names for notes  -->
+        <div class="w-full mt-5 text-xs namesForNotes ptNotes">
+          <h3 class="mb-5 text-xs font-semibold text-indigo-600 tracking-widest uppercase">
+            Select Name (
+            to
+            View/Upload ):
+          </h3>
 
-            <!-- Patient List -->
-            <div class="relative flex  flex-col lg:flex-row lg:items-center">
-              <select title="Patient List"
-                class="patientNamesList lg:w-1/2 w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
-                <option selected value="" class="font-semibold">
-                  Select Name
-                </option>
-              </select>
+          <!-- Patient List -->
+          <div class="relative flex  flex-col lg:flex-row lg:items-center">
+            <select title="Patient List"
+                    class="patientNamesList lg:w-1/2 w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+              <option selected value="" class="font-semibold">
+                Select Name
+              </option>
+            </select>
+
+            <div
+                 class="findNotesByName relative w-fit flex h-9 lg:ml-5 my-3 lg:my-0 items-center group ease-in-out duration-300 cursor-pointer">
+
+              <button
+                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                <span>Search</span>
+
+              </button>
 
               <div
-                class="findNotesByName relative w-fit flex h-9 lg:ml-5 my-3 lg:my-0 items-center group ease-in-out duration-300 cursor-pointer">
+                   class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                     class="w-5 h-5 text-white">
+                  <path fill-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                        clip-rule="evenodd" />
+                </svg>
+              </div>
 
-                <button
-                  class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                  <span>Search</span>
+            </div>
+          </div>
+        </div>
 
+        <!-- Uploading a note  -->
+        <div class="h-auto mt-10 text-xs uploadedNotesWrapper">
+
+          <div class="uploadNoteFormWrapper  hidden">
+            <h4 class="pb-2 font-semibold text-indigo-600 uppercase border-b border-indigo-600 md:border-gray-300">
+              <span>Upload notes</span>
+              <span class="block instructions text-rose-400 sm:inline">( only .pdf & .jpg files allowed
+                )</span>
+            </h4>
+            <form action="#" class="w-full uploadNoteForm flex items-center mt-5 ">
+              <input type="file"
+                     class="fileUpload w-full uppercase tracking-widest text-[10px] font-semibold text-rose-600 cursor-pointer md:w-2/5 file:py-4 file:w-auto file:px-6 file:rounded-full file:bg-indigo-600 file:border-none file:text-slate-50 file:uppercase file:font-semibold file:tracking-wider file:mr-32" />
+
+              <div
+                   class="holderDiv w-32 h-10 ml-5 flex justify-between items-center rounded-full bg-emerald-600 md:mt-0 overflow-hidden">
+
+                <button class="uploadNoteBtn text-xs ml-5 font-semibold text-white tracking-wider uppercase">
+                  <span>Upload</span>
                 </button>
-
-                <div
-                  class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                    class="w-5 h-5 text-white">
-                    <path fill-rule="evenodd"
-                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </div>
-
-              </div>
-            </div>
-          </div>
-
-          <!-- Uploading a note  -->
-          <div class="h-auto mt-10 text-xs uploadedNotesWrapper">
-
-            <div class="uploadNoteFormWrapper  hidden">
-              <h4 class="pb-2 font-semibold text-indigo-600 uppercase border-b border-indigo-600 md:border-gray-300">
-                <span>Upload notes</span>
-                <span class="block instructions text-rose-400 sm:inline">( only .pdf & .jpg files allowed
-                  )</span>
-              </h4>
-              <form action="#" class="w-full uploadNoteForm flex items-center mt-5 ">
-                <input type="file"
-                  class="fileUpload w-full uppercase tracking-widest text-[10px] font-semibold text-rose-600 cursor-pointer md:w-2/5 file:py-4 file:w-auto file:px-6 file:rounded-full file:bg-indigo-600 file:border-none file:text-slate-50 file:uppercase file:font-semibold file:tracking-wider file:mr-32" />
-
-                <div
-                  class="holderDiv w-32 h-10 ml-5 flex justify-between items-center rounded-full bg-emerald-600 md:mt-0 overflow-hidden">
-
-                  <button class="uploadNoteBtn text-xs ml-5 font-semibold text-white tracking-wider uppercase">
-                    <span>Upload</span>
-                  </button>
-                  <div class="bg-emerald-700 w-10 ml-3 rounded-full h-full">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                      stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
-                    </svg>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <!-- Uploaded Notes list  -->
-            <div class="relative mt-10 border border-indigo-600 rounded-md uploadedNotes md:border-gray-300">
-
-              <div class="defaultView">
-                <div class="flex flex-col items-center w-full h-full p-12 emptyState">
+                <div class="bg-emerald-700 w-10 ml-3 rounded-full h-full">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-12 h-12 my-5 text-indigo-600">
+                       stroke="currentColor" class="w-full h-full scale-50 rounded-full text-white ">
                     <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+                          d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
                   </svg>
-                  <h3 class="font-semibold text-center text-indigo-600 uppercase tracking-widest">Select a
-                    name to
-                    view/upload
-                    notes.</h3>
                 </div>
               </div>
+            </form>
+          </div>
 
-              <div class="detailsOnChange hidden">
-                <h3
-                  class="p-3 font-semibold text-indigo-600 border-b border-indigo-600 rounded-t-md md:border-gray-300">
-                  <span class="totalUploadedNotesCount">Uploaded notes <span class="notesCount"> </span>
-                  </span>
-                </h3>
-                <div class="p-3 uploadedNotesList h-56 overflow-y-auto relative"></div>
+          <!-- Uploaded Notes list  -->
+          <div class="relative mt-10 border border-indigo-600 rounded-md uploadedNotes md:border-gray-300">
+
+            <div class="defaultView">
+              <div class="flex flex-col items-center w-full h-full p-12 emptyState">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-12 h-12 my-5 text-indigo-600">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+                </svg>
+                <h3 class="font-semibold text-center text-indigo-600 uppercase tracking-widest">Select a
+                  name to
+                  view/upload
+                  notes.</h3>
               </div>
             </div>
 
-            <!-- ***** ***** ***** ***** Ends Uploaded Notes list section ***** ***** ***** ***** -->
+            <div class="detailsOnChange hidden">
+              <h3
+                  class="p-3 font-semibold text-indigo-600 border-b border-indigo-600 rounded-t-md md:border-gray-300">
+                <span class="totalUploadedNotesCount">Uploaded notes <span class="notesCount"> </span>
+                </span>
+              </h3>
+              <div class="p-3 uploadedNotesList h-56 overflow-y-auto relative"></div>
+            </div>
           </div>
 
+          <!-- ***** ***** ***** ***** Ends Uploaded Notes list section ***** ***** ***** ***** -->
         </div>
 
       </div>
 
     </div>
 
-    <!-- Firebase  -->
-    <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
-    </script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+  </div>
 
-    <!-- Variable and common loaders  -->
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/records/records_constants.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-    <script src="../scripts/commonScripts/commonFunctions.js"></script>
-    <script src="../scripts/commonScripts/patientList.js"></script>
-    <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
-    <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
+  <!-- Firebase  -->
+  <script src=" https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
 
-    <!-- Page Scripts -->
-    <script src="../scripts/notes/notes.js"></script>
+  <!-- Variable and common loaders  -->
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/records/records_constants.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+  <script src="../scripts/commonScripts/commonFunctions.js"></script>
+  <script src="../scripts/commonScripts/patientList.js"></script>
+  <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
+  <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
 
-    <!-- Global notification and prompts -->
-    <script src="../scripts/commonScripts/globalNotification.js"></script>
-    <script src="../scripts/commonScripts/prompts.js"></script>
-    <script src="../scripts/commonScripts/panicButton.js"></script>
-  </body>
+  <!-- Page Scripts -->
+  <script src="../scripts/notes/notes.js"></script>
+
+  <!-- Global notification and prompts -->
+  <script src="../scripts/commonScripts/globalNotification.js"></script>
+  <script src="../scripts/commonScripts/prompts.js"></script>
+  <script src="../scripts/commonScripts/panicButton.js"></script>
+</body>
 
 </html>
