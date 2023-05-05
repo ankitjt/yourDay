@@ -15,10 +15,18 @@
 
     <!-- Best choices indexPage11 and indexPage8 -->
     <div
-      class="indexWrapper  w-full lg:h-full h-auto min-h-screen bg-no-repeat bg-top bg-[url('./assets/indexPage4_clear.png')] bg-gray-900 flex items-start justify-end">
+      class="indexWrapper w-full lg:h-full h-auto min-h-screen bg-no-repeat bg-top bg-[url('./assets/indexPage4_clear.png')] bg-gray-900 flex items-start justify-end">
 
       <div
-        class="contentSection md:w-3/5 lg:w-2/5 w-full h-screen md:px-20 px-5 rounded-lg flex flex-col items-center justify-center relative">
+        class="contentSection md:w-3/5 lg:w-2/5 w-full h-screen md:px-20 px-5 flex flex-col items-center justify-center relative overflow-x-hidden ">
+
+        <div class="pageBlocker absolute hidden w-full h-full bg-slate-600 z-40 opacity-50">
+        </div>
+
+        <!-- Prompts  -->
+        <div
+          class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-5/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+        </div>
 
         <!-- Logo  -->
         <div class="text-center text-indigo-600 w-full mb-5">
@@ -31,6 +39,8 @@
 
         <!-- Login Form  -->
         <div class="w-full relative md:bg-transparent rounded-xl">
+
+          <!-- Form Fields  -->
           <form action="#" class="w-full flex flex-col ">
 
             <div class="w-full relative">
@@ -49,38 +59,51 @@
                 class="loginPasswordLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Password</label>
             </div>
 
-            <div
-              class="loginSection flex lg:flex-row w-full items-center flex-col justify-center lg:justify-between mt-5">
+            <div class="loginSection flex w-full flex-col mt-5">
 
-              <a href="./src/appointments.html"
-                class="loginBtn relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
-                <div
-                  class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                  <span>Login</span>
+              <div class="loginRow flex items-center justify-between w-full">
+                <a href="./src/appointments.html"
+                  class="loginBtn relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
+                  <div
+                    class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                    <span>Login</span>
+                  </div>
+
+                  <div
+                    class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-1/4 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-6 text-white tracking-widest">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                      stroke="currentColor" class="w-5 h-5">
+                      <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+
+                  </div>
+
+                </a>
+
+                <div class="mt-5 lg:m-0">
+                  <a href="#"
+                    class="forgotPass text-indigo-600 uppercase text-xs tracking-widest font-semibold pb-1 border-b-2 border-indigo-600 hover:border-rose-600 ease-in-out duration-300 hover:text-rose-600">forgot
+                    password?</a>
                 </div>
 
-                <div
-                  class="bg-indigo-600 rounded-r-md h-9 flex items-center justify-center absolute right-1/4 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-6 text-white tracking-widest">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                  </svg>
-
-                </div>
-
-              </a>
-
-              <div class="mt-5 lg:m-0">
-                <a href="#"
-                  class="forgotPass text-indigo-600 uppercase text-xs tracking-widest font-semibold pb-1 border-b-2 border-indigo-600 hover:border-rose-600 ease-in-out duration-300 hover:text-rose-600">forgot
-                  password?</a>
               </div>
+
+              <div class="newUser mt-5">
+
+                <a href="#"
+                  class="block p-3 ease-in-out duration-300 cursor-pointer w-full uppercase tracking-widest font-semibold text-xs bg-emerald-600 rounded-md text-white text-center hover:bg-indigo-600">
+                  Create Account
+                </a>
+
+              </div>
+
             </div>
           </form>
 
         </div>
 
+        <!-- Foot Notes  -->
         <div
           class="absolute text-indigo-600 w-full text-xs bottom-10 lg:px-20 px-5 left-0 uppercase font-semibold flex items-center justify-between">
           <p class="">Copyright @ 2023</p>
@@ -88,10 +111,121 @@
               class="ml-1 text-rose-600">&#10084;</span></p>
 
         </div>
+
+        <!-- Create Account Form  -->
+        <div
+          class="createAccountForm text-indigo-600 ease-in-out duration-300 absolute -right-[2000px] top-0 bg-white  w-full h-screen md:p-10 px-5 z-30 border-l border-slate-700 ">
+          <div class="text-center w-full">
+            <p class="text-5xl app-name">yourDay</p>
+          </div>
+
+          <div class="createAccount mt-10">
+            <h1 class="uppercase text-xs font-semibold tracking-widest">
+              <span class="pb-1 border-double border-b-8 border-indigo-600">
+                Create Account
+              </span>
+            </h1>
+
+            <div class="createAccountFormSection mt-8">
+
+              <div class="formFields">
+
+                <!-- New Name  -->
+                <div class="w-full relative">
+                  <input type="text" name="" id="newName"
+                    class="newName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-gray-200 newUserForm"
+                    placeholder="email" autocomplete="off" autofocus title="Name" />
+                  <label for="newName"
+                    class="loginEmailLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
+                    Name</label>
+                </div>
+
+                <!-- New Email  -->
+                <div class="w-full relative">
+                  <input type="email" name="" id="newEmail"
+                    class="newEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-gray-200 newUserForm"
+                    placeholder="email" autocomplete="off" autofocus title="Email" />
+                  <label for="newEmail"
+                    class="loginEmailLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
+                </div>
+
+                <!-- Mobile Number  -->
+                <div class="flex items-center">
+
+                  <select name="countryCode" id=""
+                    class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-transparent bg-gray-200 rounded-md tracking-widest mr-5 newCountryCode newUserForm"
+                    title="Country Code">
+                  </select>
+
+                  <div class="relative w-full h-fit">
+                    <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
+                      name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
+                      class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border-transparent bg-gray-200 rounded-md tracking-widest newMobileNumber newUserForm" />
+                    <label for="mobileNumber"
+                      class="transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px]  peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
+                      number</label>
+                  </div>
+                </div>
+
+                <!-- New Password -->
+                <div class="w-full relative">
+                  <input type="password" name="" id="newPassword"
+                    class="newPassword placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-gray-200 newUserForm"
+                    placeholder="password" autocomplete="off" title="Password" />
+                  <label for="newPassword"
+                    class="loginPasswordLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Password</label>
+                </div>
+
+                <!-- Confirm Password  -->
+                <div class="w-full relative">
+                  <input type="password" name="" id="newConfirmPassword"
+                    class="confirmNewPassword placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border-transparent rounded-md tracking-widest bg-gray-200 newUserForm"
+                    placeholder="password" autocomplete="off" title="Confirm Password" />
+                  <label for="newConfirmPassword"
+                    class="loginPasswordLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] lg:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Confirm
+                    Password</label>
+                </div>
+
+              </div>
+
+              <div class="createBtn mt-3">
+                <a href="#"
+                  class="createNewAccountBtn block p-3 ease-in-out duration-300 cursor-pointer w-full uppercase tracking-widest font-semibold text-xs bg-emerald-600 rounded-md text-white text-center hover:bg-indigo-600">
+                  Create Account
+                </a>
+                <p class="text-[10px] mt-5 text-center font-semibold uppercase">Already have an account?
+                  <a href="#"
+                    class="backToLoginScreen text-emerald-600 border-double border-b border-b-4 border-emerald-600">Log
+                    In</a>
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
       </div>
     </div>
+
+    <!-- Mailing scripts  -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!-- Variables and common loaders  -->
+    <script src="./scripts/commonScripts/dbConnect.js"></script>
+    <script src="./scripts/commonScripts/commonVariables.js"></script>
+    <script src="./scripts/commonScripts/countryCode.js"></script>
+
+    <!-- Page scripts  -->
     <script src="./scripts/index.js"></script>
-    <!-- <script src="./scripts/commonScripts/colorModes.js"></script> -->
+
+    <!-- Global notifications and prompts -->
+    <script src="./scripts/commonScripts/prompts.js"></script>
+
   </body>
 
 
