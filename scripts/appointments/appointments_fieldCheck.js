@@ -13,7 +13,6 @@ const fieldValidators = ( allFilled ) =>
     apt.name.classList.add( 'md:border-rose-600' )
     promptMessages( 'Name should be only be alphabetic.', 'error' )
     fieldFlag = true;
-
   }
 
   // Email format check.
@@ -22,7 +21,6 @@ const fieldValidators = ( allFilled ) =>
     apt.email.classList.add( 'md:border-rose-600' )
     promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
     fieldFlag = true;
-
   }
 
   // Check for mobile number 
@@ -33,7 +31,6 @@ const fieldValidators = ( allFilled ) =>
       apt.mobileNumber.classList.add( 'border-rose-600' )
       promptMessages( 'Mobile number should be less than 10 and greater than 5 digits.', 'error' )
       fieldFlag = true;
-
     }
   }
 

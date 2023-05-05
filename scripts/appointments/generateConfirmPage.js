@@ -191,7 +191,7 @@ const generateConfirmPage = () =>
               <!-- Confirm & Edit buttons  -->
               <div class="flex items-center uppercase justify-center my-10 confirmEdit flex-row text-white">
                 <a href="#"
-                  class="confirmButton flex tracking-widest mx-2 items-center justify-center py-3 text-xs bg-indigo-600 rounded-md w-28 md:mx-0 ">
+                  class="confirmPageConfirmButton flex tracking-widest mx-2 items-center justify-center py-3 text-xs bg-indigo-600 rounded-md w-28 md:mx-0 ">
                   <span>Confirm</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
                     <path fill-rule="evenodd"
@@ -246,11 +246,19 @@ const generateConfirmPage = () =>
     }
   }
 
+  let confirmPageConfirmButton = document.querySelector( '.confirmPageConfirmButton' )
+  confirmPageConfirmButton.onclick = () =>
+  {
+    createAppointments()
+  }
+
+
   let confirmPageEditButton = document.querySelector( ".confirmPageEditButton" )
   confirmPageEditButton.onclick = () =>
   {
     apt__confirmPage.page.classList.remove( 'left-0' )
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
   }
+
 
 }
