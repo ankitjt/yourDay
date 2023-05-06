@@ -10,34 +10,53 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="lg:w-screen lg:h-screen h-auto w-auto relative xl:h-screen xl:w-2/3 xl:mx-auto xl:bg-slate-100">
+<body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 3xl:w-2/3 3xl:mx-auto 3xl:bg-slate-100">
 
-  <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50 xl:w-full"></div>
+  <div class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 xl:w-full"></div>
 
   <div
-       class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
+       class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
 
     <!-- Left Section  -->
     <div
-         class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between lg:items-start lg:overflow-y-auto">
+         class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
 
-      <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
-        yourDay</div>
+      <!-- Logo Section  -->
+      <div
+           class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
+
+        <div class="logo text-center">
+          <span class="hidden md:block">yourDay</span>
+          <span class="inline md:hidden">yD</span>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+             class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
+          <path fill-rule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
+                clip-rule="evenodd" />
+        </svg>
+
+      </div>
+
+      <section
+               class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
+      </section>
 
     </div>
 
     <!-- Right Section    -->
-    <div class="rightSection relative w-full h-auto  lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
+    <div class="rightSection relative w-full h-auto  sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
 
 
       <!-- Prompts  -->
       <div
-           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
       </div>
 
       <!-- PageName and Time  -->
       <nav
-           class="navbarWrapper lg:mt-5 lg:px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+           class="navbarWrapper sm:mt-0 mt-10 sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
         <nav class="navbarContent w-full"></nav>
 
         <!--  Navbar Notification Center -->
@@ -50,7 +69,7 @@
       </nav>
 
       <!-- Content Section  -->
-      <div class="mt-10 text-slate-700 h-full lg:px-5 overflow-y-auto overflow-x-hidden">
+      <div class="mt-5 text-slate-700 h-full sm:px-5 overflow-y-auto overflow-x-hidden">
 
         <!-- Reports by Month  -->
         <section class="rounded-md reportByMonthSection">
@@ -60,26 +79,26 @@
             </span>
           </h3>
 
-          <div class="grid lg:flex lg:justify-between">
+          <div class="grid sm:flex sm:justify-between">
 
             <!-- Month and year filter -->
             <input type="text" name="" id=""
-                   class="monthListByNameReports w-full my-5 lg:my-0 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 lg:placeholder:text-slate-900 placeholder:text-indigo-600 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                   class="monthListByNameReports w-full my-5 sm:my-0 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 sm:placeholder:text-slate-900 placeholder:text-indigo-600 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                    placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
             <!-- By Month Breakdown  -->
             <div
-                 class="w-full p-4 mt-5 text-xs font-semibold text-indigo-600 border border-indigo-600 rounded-md sm:mt-0 reportsTotalByMonth lg:border-gray-200 lg:bg-white lg:ml-5">
+                 class="w-full p-4 mt-5 text-xs font-semibold text-indigo-600 border border-indigo-600 rounded-md sm:mt-0 reportsTotalByMonth sm:border-gray-200 sm:bg-white sm:ml-5">
 
               <div class="flex flex-col dummyWrap">
 
                 <!-- By Type  -->
                 <div class="my-2 byType">
                   <p
-                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 lg:border-gray-300 ">
+                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300 ">
                     Type:</p>
                   <div
-                       class="forWrap grid grid-cols-2 gap-x-5 text-xs uppercase lg:text-gray-900 tracking-widest text-gray-500">
+                       class="forWrap grid grid-cols-2 gap-x-5 text-xs uppercase sm:text-gray-900 tracking-widest text-gray-500">
                     <div class="flex items-center justify-between my-2 totalSessions">
                       <span>Session</span>
                       <span class="totalSessionsCount text-indigo-600"></span>
@@ -95,10 +114,10 @@
                 <!-- By Status -->
                 <div class="my-2 byStatus">
                   <p
-                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 lg:border-gray-300">
+                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300">
                     Status:</p>
                   <div
-                       class="dummyWrap grid grid-cols-2 gap-x-5 gap-y-2 uppercase lg:text-gray-900 text-gray-500 text-xs tracking-widest">
+                       class="dummyWrap grid grid-cols-2 gap-x-5 gap-y-2 uppercase sm:text-gray-900 text-gray-500 text-xs tracking-widest">
                     <div class="flex items-center justify-between my-2 totalScheduled">
                       <span>Scheduled</span>
                       <span class="totalScheduledCount text-indigo-600"></span>
@@ -155,11 +174,11 @@
           <!-- Patient List Table  -->
           <div class="relative mt-3 h-full">
 
-            <div class="h-56 overflow-auto border border-indigo-600 lg:border-gray-300 rounded-md lg:bg-white">
+            <div class="h-56 overflow-auto border border-indigo-600 sm:border-gray-300 rounded-md sm:bg-white">
               <table class=" text-xs text-left w-full overflow-auto">
                 <thead>
                   <tr
-                      class="font-semibold text-indigo-600 tracking-widest border-b border-indigo-600 bg-gray-900 lg:bg-gray-50 uppercase text-xs w-full">
+                      class="font-semibold text-indigo-600 tracking-widest border-b border-indigo-600 bg-gray-900 sm:bg-gray-50 uppercase text-xs w-full">
                     <th class="px-6 py-3">
                       Name
                     </th>
@@ -189,11 +208,11 @@
 
           <!-- Patient Profile Details  -->
           <div
-               class="hidden patientProfileWrapper relative border border-indigo-600 lg:border-gray-300 rounded-md p-6 mt-5 bg-gray-900 lg:bg-white">
+               class="hidden patientProfileWrapper relative border border-indigo-600 sm:border-gray-300 rounded-md p-6 mt-5 bg-gray-900 sm:bg-white">
 
             <!-- Patient Profile  -->
             <h1 class="text-xs pb-5 font-semibold text-indigo-600 uppercase tracking-widest">Profile</h1>
-            <div class="flex flex-col text-xs patientDetails text-indigo-600 lg:text-slate-700"></div>
+            <div class="flex flex-col text-xs patientDetails text-indigo-600 sm:text-slate-700"></div>
 
             <!-- Patient Graph  -->
             <div class="patientGraphWrapper md:mt-10 mt-5 ">
@@ -323,12 +342,12 @@
                          class="goBackRecords ml-10 relative w-fit h-9 flex items-center group ease-in-out duration-300 cursor-pointer">
 
                       <button
-                              class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-gray-900 lg:bg-white rounded-md text-rose-600  border-gray-400 ease-in-out duration-300 text-center z-20 flex items-center  group-hover:border-r-none border group-hover:rounded-r-none">
+                              class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-gray-900 sm:bg-white rounded-md text-rose-600  border-gray-400 ease-in-out duration-300 text-center z-20 flex items-center  group-hover:border-r-none border group-hover:rounded-r-none">
                         <span>Clear</span>
                       </button>
 
                       <div
-                           class="bg-gray-900 lg:bg-white border-l-none border-t border-b border-r border-gray-400 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-rose-600 tracking-widest">
+                           class="bg-gray-900 sm:bg-white border-l-none border-t border-b border-r border-gray-400 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-rose-600 tracking-widest">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                              class="w-4 h-4">
                           <path fill-rule="evenodd"
@@ -354,7 +373,7 @@
 
         <!-- Update Profile -->
         <div
-             class="lg:absolute hidden lg:block top-0 overflow-y-auto h-full w-full -right-[3000px] border border-gray-300 rounded-md bg-white z-40 updateProfileWrapper p-6 ease-in-out duration-300">
+             class="sm:absolute hidden sm:block top-0 overflow-y-auto h-full w-full -right-[3000px] border border-gray-300 rounded-md bg-white z-40 updateProfileWrapper p-6 ease-in-out duration-300">
 
           <h1 class="w-full my-2 font-semibold text-center  uppercase text-lg text-indigo-600 tracking-widest">
             Update
@@ -363,29 +382,29 @@
 
           <div class="profileDetails relative overflow-x-hidden">
 
-            <section class="text-xs grid lg:grid-cols-3 grid-cols-2 gap-x-10 lg:text-indigo-600 text-gray-500">
+            <section class="text-xs grid sm:grid-cols-3 grid-cols-2 gap-x-10 sm:text-indigo-600 text-gray-500">
 
               <div class="flex flex-col items-start my-5 profileName md:justify-between">
                 <span
-                      class="nameTag mb-2 tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Name</span>
+                      class="nameTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Name</span>
                 <input type="text" value=""
-                       class="updateName updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                       class="updateName updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
               </div>
 
               <div class="flex flex-col items-start my-5 md:justify-between">
                 <span
-                      class="appointmentNature mb-2 tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Appointment
+                      class="appointmentNature mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Appointment
                   Type</span>
                 <input type="text" value=""
-                       class="updateType updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                       class="updateType updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                        disabled />
               </div>
 
               <div class="flex flex-col items-start my-5 profileDay md:justify-between">
                 <span
-                      class="slotTag mb-2 tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Mode</span>
+                      class="slotTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mode</span>
                 <select name="day" id="day" title="Mode"
-                        class="updateInput updateMode w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="updateInput updateMode w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
                   <option value="" class="text-xs font-semibold">
                     Mode
                   </option>
@@ -400,45 +419,45 @@
 
               <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
                 <span
-                      class="mb-2 emailTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Email</span>
+                      class="mb-2 emailTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Email</span>
                 <input type="email" value=""
-                       class="updateEmail updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                       class="updateEmail updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
               </div>
 
               <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
                 <span
-                      class="mb-2 mobileTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Mobile</span>
+                      class="mb-2 mobileTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mobile</span>
                 <div class="flex w-full someWrapper">
                   <select name="countryCode" id=""
-                          class="updateInput update_countryCode countryCode w-32 mr-2 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                          class="updateInput update_countryCode countryCode w-32 mr-2 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                           title="Country Code">
                   </select>
                   <input type='number' value=""
-                         class="updateInput updateMobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                         class="updateInput updateMobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
                 </div>
               </div>
 
               <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
                 <span
-                      class="mb-2 addressTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Address</span>
+                      class="mb-2 addressTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Address</span>
                 <textarea value=""
-                          class="updateInput updateAddress w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"></textarea>
+                          class="updateInput updateAddress w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"></textarea>
               </div>
 
               <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
                 <span
-                      class="mb-2 occurrenceTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Visit
+                      class="mb-2 occurrenceTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Visit
                   per week</span>
                 <input type='number' value=""
-                       class="updateOccurrence w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-gray-300 rounded-md tracking-widest"
+                       class="updateOccurrence w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-gray-300 rounded-md tracking-widest"
                        disabled />
               </div>
 
               <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
                 <span
-                      class="mb-2 slotTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Slot</span>
+                      class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Slot</span>
                 <select name="slot" id="slot" title="Slot"
-                        class="updateInput updateSlot w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="updateInput updateSlot w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
                   <option value="" class="font-semibold text-xs">
                     Time slot
                   </option>
@@ -474,9 +493,9 @@
 
               <div class="flex flex-col items-start my-5 profileDay md:justify-between">
                 <span
-                      class="mb-2 slotTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Day</span>
+                      class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Day</span>
                 <select name="day" id="day" title="Day"
-                        class="updateInput updateDay w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="updateInput updateDay w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
                   <option value="" class="text-xs font-semibold">
                     Select Day
                   </option>
@@ -506,47 +525,47 @@
 
               <div class="flex flex-col items-start my-5 profileFee md:justify-between">
                 <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Fees</span>
+                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Fees</span>
                 <input type='number' value=""
-                       class="updateInput updateFees w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                       class="updateInput updateFees w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
               </div>
 
               <div class="flex flex-col items-start my-5 profileFee md:justify-between">
                 <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
                   Contact Name</span>
                 <input type='text' value=""
-                       class="updateInput update_e_name w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                       class="updateInput update_e_name w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
               </div>
 
               <div class="flex flex-col items-start my-5 profileFee md:justify-between">
                 <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
                   Contact Address</span>
                 <input type='text' value=""
-                       class="updateInput update_e_address w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                       class="updateInput update_e_address w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
               </div>
 
               <div class="flex flex-col items-start my-5 profileFee md:justify-between">
                 <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
                   Mobile Number</span>
                 <div class="flex someWrapper w-full">
                   <select name="countryCode" id=""
-                          class="updateInput update_e_countryCode countryCode w-20 mr-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                          class="updateInput update_e_countryCode countryCode w-20 mr-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                           title="Country Code">
                   </select>
                   <input type='number' value=""
-                         class="updateInput grow update_e_mobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest" />
+                         class="updateInput grow update_e_mobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
                 </div>
               </div>
 
               <div class="flex flex-col items-start my-5 profileFee md:justify-between">
                 <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 lg:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
                   Contact Relation</span>
                 <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                        class="update_e_relation updateInput relationType w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="update_e_relation updateInput relationType w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
 
                 </select>
               </div>

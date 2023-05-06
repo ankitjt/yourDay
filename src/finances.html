@@ -10,33 +10,52 @@
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="lg:w-screen lg:h-screen h-auto w-auto relative xl:h-screen xl:w-2/3 xl:mx-auto xl:bg-slate-100">
-  <div class="pageBlocker absolute hidden lg:w-screen lg:h-screen h-full w-full bg-slate-600 z-20 opacity-50 xl:w-full"></div>
+<body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 3xl:w-2/3 3xl:mx-auto 3xl:bg-slate-100">
+
+  <div class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 xl:w-full"></div>
 
   <div
-       class="wrapper bg-gray-900 w-full lg:h-full h-auto min-h-screen lg:bg-white px-6 py-4 lg:px-2 flex justify-start lg:flex-row items-start font-semibold uppercase text-xs flex-col">
+       class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
 
     <!-- Left Section  -->
     <div
-         class="left lg:h-full min-h-fit lg:w-64 w-full py-5 px-6 rounded-xl bg-gray-900 lg:bg-indigo-600 text-white flex flex-col lg:mb-0 justify-between lg:items-start lg:overflow-y-auto">
+         class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
 
-      <div class="title lg:bg-indigo-600 shadow-2xl drop-shadow-2xl text-white py-4 rounded-xl text-center w-full">
-        yourDay</div>
+      <!-- Logo Section  -->
+      <div
+           class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
 
+        <div class="logo text-center">
+          <span class="hidden md:block">yourDay</span>
+          <span class="inline md:hidden">yD</span>
+        </div>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+             class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
+          <path fill-rule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
+                clip-rule="evenodd" />
+        </svg>
+
+      </div>
+
+      <section
+               class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
+      </section>
 
     </div>
 
     <!-- Right Section    -->
-    <div class="rightSection relative w-full h-auto  lg:ml-10 lg:max-h-full flex flex-col lg:overflow-hidden">
+    <div class="rightSection mt-10 relative w-full h-auto sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
 
       <!-- Prompts  -->
       <div
-           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 lg:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
       </div>
 
       <!-- PageName and Time  -->
       <nav
-           class="navbarWrapper lg:mt-5 px-5 py-4 rounded-lg flex items-center lg:bg-indigo-600 text-indigo-600 lg:text-white tracking-widest ">
+           class="navbarWrapper sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
         <nav class="navbarContent w-full"></nav>
 
         <!--  Navbar Notification Center -->
@@ -49,7 +68,7 @@
       </nav>
 
       <!-- Content Section  -->
-      <div class="lg:mt-10 mt-5 text-slate-700 px-5 overflow-y-auto relative h-full overflow-x-hidden">
+      <div class="sm:mt-10 mt-5 text-slate-700 px-5 overflow-y-auto relative h-full overflow-x-hidden">
 
         <!-- Breakdown by Month  -->
         <section class="flex flex-col justify-center tracking-wide">
@@ -60,10 +79,10 @@
           </h3>
 
           <!-- Month and year filter -->
-          <div class="grid lg:grid-cols-2 lg:gap-x-10">
+          <div class="grid sm:grid-cols-2 sm:gap-x-10">
 
             <input type="text"
-                   class="financeMonthFilter peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest lg:placeholder:text-slate-700 placeholder:text-indigo-600"
+                   class="financeMonthFilter peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-700 bg-gray-900 sm:bg-transparent rounded-md tracking-widest sm:placeholder:text-slate-700 placeholder:text-indigo-600"
                    placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
             <div class="dummy"></div>
           </div>
@@ -74,7 +93,7 @@
 
             <!-- Sessions Money -->
             <div
-                 class="sessionsWrapper flex items-center justify-between px-3 mb-3 lg:bg-blue-100 text-indigo-600 rounded-md shadow-2xl ">
+                 class="sessionsWrapper flex items-center justify-between px-3 mb-3 sm:bg-blue-100 text-indigo-600 rounded-md shadow-2xl ">
               <span class="flex flex-col sessions">
                 <span class="totalSessions"> Sessions </span>
                 <span class="totalSessionsCount">
@@ -93,7 +112,7 @@
 
             <!-- Supervision Money -->
             <div
-                 class="supervisionWrapper flex items-center justify-between px-3 py-6 mb-3 text-emerald-600 font-semibold tracking-widest text-xs uppercase lg:bg-emerald-100 rounded-md shadow-2xl">
+                 class="supervisionWrapper flex items-center justify-between px-3 py-6 mb-3 text-emerald-600 font-semibold tracking-widest text-xs uppercase sm:bg-emerald-100 rounded-md shadow-2xl">
               <span class="flex flex-col supervision">
                 <span class="totalSupervision"> Supervision </span>
                 <span class="totalSessionsCount">
@@ -128,7 +147,7 @@
               <!-- Patient List  -->
               <div class="relative w-full">
                 <select title="Patient List" name="" id=""
-                        class="patientNamesList placeholder-transparent  peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest">
+                        class="patientNamesList placeholder-transparent  peer w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-700 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
                   <option selected value="" class="font-semibold">
                     Select Name
                   </option>
@@ -137,7 +156,7 @@
 
               <!-- Month and year filter -->
               <input type="text" name="" id="" value=""
-                     class="financeMonthFilterByName peer w-full  h-12 text-xs font-semibold uppercase text-indigo-600 border placeholder:text-indigo-600 lg:placeholder:text-slate-700 border-indigo-600 lg:border-gray-300 lg:text-slate-700 bg-gray-900 lg:bg-transparent rounded-md tracking-widest"
+                     class="financeMonthFilterByName peer w-full  h-12 text-xs font-semibold uppercase text-indigo-600 border placeholder:text-indigo-600 sm:placeholder:text-slate-700 border-indigo-600 sm:border-gray-300 sm:text-slate-700 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                      placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
             </div>
@@ -147,7 +166,7 @@
                  class="findDetailsByName mt-5 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
 
               <button
-                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-10 group-hover:rounded-r-none flex items-center">
                 <span>Search</span>
 
               </button>
@@ -172,7 +191,7 @@
         <div class="patientProfileWrapper hidden">
 
           <section class="profile text-xs md:font-semibold">
-            <div class="lg:bg-white bg-gray-900 shadow-2xl rounded-md py-4 md:px-10 px-5">
+            <div class="sm:bg-white bg-gray-900 shadow-2xl rounded-md py-4 md:px-10 px-5">
               <div class="profileDetailsSection flex flex-col w-full">
               </div>
             </div>
@@ -180,13 +199,13 @@
 
           <!-- Money Breakdown section -->
           <section
-                   class="moneyBreakDownWrapper my-4 mb-5 text-sm md:px-10 px-5 py-4 text-indigo-600 rounded-md md:font-semibold lg:bg-white bg-gray-900 shadow-2xl">
+                   class="moneyBreakDownWrapper my-4 mb-5 text-sm md:px-10 px-5 py-4 text-indigo-600 rounded-md md:font-semibold sm:bg-white bg-gray-900 shadow-2xl">
           </section>
         </div>
 
         <!-- Sessions Breakdown  -->
         <div
-             class=" sessionsBreakDownWrapper hidden lg:block top-0 h-full w-1/3 bg-white rounded-xl shadow-2xl z-50 -right-[2000px] ease-in-out duration-300 fixed p-10 overflow-auto">
+             class=" sessionsBreakDownWrapper hidden sm:block top-0 h-full w-1/3 bg-white rounded-xl shadow-2xl z-50 -right-[2000px] ease-in-out duration-300 fixed p-10 overflow-auto">
 
           <span class="absolute cursor-pointer closeSessionsBreakDownWrapper right-10 top-5">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

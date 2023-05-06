@@ -12,6 +12,18 @@ let dateCounter = -1,
   dayCounter = -1,
   timeSlotCounter = -1
 
+let openMenu = document.querySelector( '.openMenu' )
+let navWrapper = document.querySelector( '.navWrapper' )
+openMenu.onclick = () =>
+{
+  navWrapper.classList.add( 'right-0' )
+}
+let closeMenu = document.querySelector( '.closeMenu' )
+closeMenu.onclick = () =>
+{
+  navWrapper.classList.remove( 'right-0' )
+}
+
 visitCount.onkeyup = () =>
 {
   if ( parseInt( visitCount.value ) > 1 && parseInt( visitCount.value ) <= 6 )
@@ -26,7 +38,7 @@ visitCount.onkeyup = () =>
 
   else if ( parseInt( visitCount.value ) > 6 )
   {
-    promptMessages( 'Visit count cannot be more than 6.', 'error' );
+    promptMessages( 'Visit count cannot be more than 6.', 'error' )
     addMoreDate.classList.add( 'hidden' )
     addMoreDay.classList.add( 'hidden' )
     addMoreTimeSlot.classList.add( 'hidden' )
@@ -59,12 +71,12 @@ for ( let addMore of addMores )
   addMore.onclick = () =>
   {
     let inputType = addMore.parentElement.childNodes[ 1 ].childNodes[ 1 ]
-    let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ];
+    let moreDetails = inputType.parentElement.parentElement.parentElement.childNodes[ 3 ]
 
     if ( moreDetails.childElementCount > parseInt( visitCount.value ) - 2 )
     {
       promptMessages( `For ${ visitCount.value } visits per week you can only add upto ${ visitCount.value } ${ inputType.getAttribute( 'title' ) }.`, 'error' )
-      fieldFlag = true;
+      fieldFlag = true
       addMoreDate.classList.add( 'hidden' )
       addMoreDay.classList.add( 'hidden' )
       addMoreTimeSlot.classList.add( 'hidden' )
@@ -193,11 +205,11 @@ const deleteFields = () =>
   {
     delField.onclick = () =>
     {
-      let deleteType = delField.parentElement.parentElement.childNodes[ 0 ].childNodes[ 1 ].getAttribute( 'id' );
+      let deleteType = delField.parentElement.parentElement.childNodes[ 0 ].childNodes[ 1 ].getAttribute( 'id' )
 
       if ( deleteType === 'aptStartDate' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newDates = document.querySelectorAll( '.newDates' )
         for ( let [ index, startDate ] of newDates.entries() )
         {
@@ -208,7 +220,7 @@ const deleteFields = () =>
 
       if ( deleteType === 'aptDay' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newDays = document.querySelectorAll( '.newDays' )
         for ( let [ index, additionalDay ] of newDays.entries() )
         {
@@ -220,7 +232,7 @@ const deleteFields = () =>
 
       if ( deleteType === 'aptTimeSlot' )
       {
-        delField.parentElement.parentElement.remove();
+        delField.parentElement.parentElement.remove()
         let newTimeSlots = document.querySelectorAll( '.newTimeSlots' )
         for ( let [ index, additionalTimeSlot ] of newTimeSlots.entries() )
         {
@@ -248,7 +260,7 @@ create.onclick = () =>
     if ( !radio.checked )
     {
       promptMessages( 'Select at least one week type', 'error' )
-      break;
+      break
     }
 
   }
@@ -261,7 +273,7 @@ create.onclick = () =>
     {
       let counter = ( addSection.childElementCount - ( parseInt( visitCount.value ) - 1 ) ) * -1
 
-      promptMessages( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.`, 'error' );
+      promptMessages( `${ counter } more ${ addSection.getAttribute( 'name' ) } required.`, 'error' )
 
     }
   }
@@ -277,7 +289,7 @@ create.onclick = () =>
     {
       promptMessages( `${ newDate.getAttribute( 'title' ) } is required.`, 'error' )
       newDate.classList.add( 'lg:border-rose-600' )
-      fieldFlag = true;
+      fieldFlag = true
     }
 
     else
@@ -289,7 +301,7 @@ create.onclick = () =>
       if ( isDuplicate === true )
       {
         promptMessages( 'All dates should be unique.', 'error' )
-        fieldFlag = true;
+        fieldFlag = true
       }
       else
       {
@@ -297,8 +309,8 @@ create.onclick = () =>
         {
           return currentDate <= new Date( date ).toLocaleDateString()
         } )
-        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : '';
-        fieldFlag = true;
+        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
+        fieldFlag = true
       }
     }
   }
@@ -313,7 +325,7 @@ create.onclick = () =>
     {
       promptMessages( `${ newDay.getAttribute( 'title' ) } is required.`, 'error' )
       newDay.classList.add( 'lg:border-rose-600' )
-      fieldFlag = true;
+      fieldFlag = true
     }
 
     else
@@ -332,7 +344,7 @@ create.onclick = () =>
     {
       promptMessages( `${ newTimeSlot.getAttribute( 'title' ) } is required.`, 'error' )
       newTimeSlot.classList.add( 'lg:border-rose-600' )
-      fieldFlag = true;
+      fieldFlag = true
     }
 
     else if ( newTimeSlot.value !== '' )
@@ -349,7 +361,7 @@ create.onclick = () =>
       {
         newTimeSlot.classList.add( 'md:border-rose-600' )
         promptMessages( `If ${ startDate.getAttribute( 'title' ) } is today, slot hour should be greater than current hour.`, 'error' )
-        fieldFlag = true;
+        fieldFlag = true
       }
       else
       {
