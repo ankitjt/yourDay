@@ -11,7 +11,7 @@ newUser.onclick = () =>
 
 createNewAccountBtn.onclick = () =>
 {
-  let createFormFlag = false;
+  let createFormFlag = false
   let newName = document.querySelector( '.newName' )
   let newEmail = document.querySelector( '.newEmail' )
   let newCountryCode = document.querySelector( '.newCountryCode' )
@@ -84,6 +84,15 @@ createNewAccountBtn.onclick = () =>
       weekday: 'long'
     } )
 
+
+
+    firebase.auth().createUserWithEmailAndPassword( newEmail, newPassword )
+      .then( ( userCredential ) =>
+      {
+        const user = userCredential.user
+        console.log( user )
+      } )
+
     console.log( {
       name: newName.value,
       email: newEmail.value,
@@ -92,7 +101,7 @@ createNewAccountBtn.onclick = () =>
       createdDate: dateLog.format( new Date() ),
       createdTime: timeLog.format( new Date() ),
       createdDay: dayLog.format( new Date() )
-    } );
+    } )
 
     for ( let detail of newUserForm )
     {

@@ -71,7 +71,7 @@ let firstNav = `
             </svg>
 
           </a>
-          <a href="./index.html"
+          <a href="../index.html"
              class="navLink flex ease-in-out duration-300 hover:bg-indigo-900 sm:hover:bg-transparent md:hover:bg-indigo-900 hover:text-white p-3 sm:mb-2 items-center justify-between sm:justify-center md:justify-between w-full group rounded-xl uppercase text-xs font-semibold tracking-widest"
              title="Logout">
             <span class="inline sm:hidden md:inline">Logout</span>
