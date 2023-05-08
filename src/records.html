@@ -1,597 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-  <title>YourDay - Records</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>YourDay - Records</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 3xl:w-2/3 3xl:mx-auto 3xl:bg-slate-100">
+  <body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 3xl:w-2/3 3xl:mx-auto 3xl:bg-slate-100">
 
-  <div class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 xl:w-full"></div>
-
-  <div
-       class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
-
-    <!-- Left Section  -->
     <div
-         class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
-
-      <!-- Logo Section  -->
-      <div
-           class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
-
-        <div class="logo text-center">
-          <span class="hidden md:block">yourDay</span>
-          <span class="inline md:hidden">yD</span>
-        </div>
-
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-             class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
-          <path fill-rule="evenodd"
-                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
-                clip-rule="evenodd" />
-        </svg>
-
-      </div>
-
-      <section
-               class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
-      </section>
-
+      class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 xl:w-full">
     </div>
 
-    <!-- Right Section    -->
-    <div class="rightSection relative w-full h-auto  sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
+    <div
+      class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
 
-
-      <!-- Prompts  -->
+      <!-- Left Section  -->
       <div
-           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
-      </div>
+        class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
 
-      <!-- PageName and Time  -->
-      <nav
-           class="navbarWrapper sm:mt-0 mt-10 sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
-        <nav class="navbarContent w-full"></nav>
-
-        <!--  Navbar Notification Center -->
+        <!-- Logo Section  -->
         <div
-             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-          <div class="h-full notificationContent">
+          class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
 
+          <div class="logo text-center">
+            <span class="hidden md:block">yourDay</span>
+            <span class="inline md:hidden">yD</span>
           </div>
+
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
+            <path fill-rule="evenodd"
+              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
+              clip-rule="evenodd" />
+          </svg>
+
         </div>
-      </nav>
 
-      <!-- Content Section  -->
-      <div class="mt-5 text-slate-700 h-full sm:px-5 overflow-y-auto overflow-x-hidden">
-
-        <!-- Reports by Month  -->
-        <section class="rounded-md reportByMonthSection">
-          <h3 class="mb-3">
-            <span class="text-xs font-semibold tracking-widest text-indigo-600 uppercase">
-              By month & year
-            </span>
-          </h3>
-
-          <div class="grid sm:flex sm:justify-between">
-
-            <!-- Month and year filter -->
-            <input type="text" name="" id=""
-                   class="monthListByNameReports w-full my-5 sm:my-0 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 sm:placeholder:text-slate-900 placeholder:text-indigo-600 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
-                   placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
-
-            <!-- By Month Breakdown  -->
-            <div
-                 class="w-full p-4 mt-5 text-xs font-semibold text-indigo-600 border border-indigo-600 rounded-md sm:mt-0 reportsTotalByMonth sm:border-gray-200 sm:bg-white sm:ml-5">
-
-              <div class="flex flex-col dummyWrap">
-
-                <!-- By Type  -->
-                <div class="my-2 byType">
-                  <p
-                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300 ">
-                    Type:</p>
-                  <div
-                       class="forWrap grid grid-cols-2 gap-x-5 text-xs uppercase sm:text-gray-900 tracking-widest text-gray-500">
-                    <div class="flex items-center justify-between my-2 totalSessions">
-                      <span>Session</span>
-                      <span class="totalSessionsCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalSupervision">
-                      <span>Supervision</span>
-                      <span class="totalSupervisionCount text-indigo-600"></span>
-                    </div>
-                  </div>
-                </div>
-                <div class="hidden patientNamesList"></div>
-
-                <!-- By Status -->
-                <div class="my-2 byStatus">
-                  <p
-                     class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300">
-                    Status:</p>
-                  <div
-                       class="dummyWrap grid grid-cols-2 gap-x-5 gap-y-2 uppercase sm:text-gray-900 text-gray-500 text-xs tracking-widest">
-                    <div class="flex items-center justify-between my-2 totalScheduled">
-                      <span>Scheduled</span>
-                      <span class="totalScheduledCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalCompleted">
-                      <span>Completed</span>
-                      <span class="totalCompletedCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalRescheduled">
-                      <span>Rescheduled</span>
-                      <span class="totalRescheduledCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalFreeCancelled">
-                      <span>Free Cancelled</span>
-                      <span class="totalFreeCancelledCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalPaidCancelled">
-                      <span>Paid Cancelled</span>
-                      <span class="totalPaidCancelledCount text-indigo-600"></span>
-                    </div>
-                    <div class="flex items-center justify-between my-2 totalPending">
-                      <span>Pending</span>
-                      <span class="totalPendingCount text-indigo-600"></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+        <section
+          class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
         </section>
 
-        <!-- Reports by Category  -->
-        <div class="flex flex-col mt-10 dummy">
-          <h1 class="flex justify-between items-center text-xs font-semibold text-indigo-600 uppercase">
-            <span class="tracking-widest">
-              <span>Patients List</span>
-              <span class="patientCount ml-1"></span>
-            </span>
-            <div class="flex items-center text-white filters ">
-              <span
-                    class="px-3 py-1 mx-2 text-xs uppercase tracking-widest cursor-pointer text-indigo-600 border border-indigo-600 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-indigo-600">Session</span>
-              <span
-                    class=" px-3 py-1 mx-2 text-xs uppercase tracking-widest cursor-pointer border border-emerald-600 rounded-full supervision text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-indigo-600">Supervision</span>
+      </div>
 
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                   stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-          </h1>
-
-          <!-- Patient List Table  -->
-          <div class="relative mt-3 h-full">
-
-            <div class="h-56 overflow-auto border border-indigo-600 sm:border-gray-300 rounded-md sm:bg-white">
-              <table class=" text-xs text-left w-full overflow-auto">
-                <thead>
-                  <tr
-                      class="font-semibold text-indigo-600 tracking-widest border-b border-indigo-600 bg-gray-900 sm:bg-gray-50 uppercase text-xs w-full">
-                    <th class="px-6 py-3">
-                      Name
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      <span class="flex">
-                        <span>Type</span>
-                      </span>
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Mode
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Status
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Created on
-                    </th>
-                    <th scope="col" class="px-6 py-3">
-                      Updated on
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="rounded-md profileRows"></tbody>
-              </table>
-            </div>
-          </div>
-
-          <!-- Patient Profile Details  -->
-          <div
-               class="hidden patientProfileWrapper relative border border-indigo-600 sm:border-gray-300 rounded-md p-6 mt-5 bg-gray-900 sm:bg-white">
-
-            <!-- Patient Profile  -->
-            <h1 class="text-xs pb-5 font-semibold text-indigo-600 uppercase tracking-widest">Profile</h1>
-            <div class="flex flex-col text-xs patientDetails text-indigo-600 sm:text-slate-700"></div>
-
-            <!-- Patient Graph  -->
-            <div class="patientGraphWrapper md:mt-10 mt-5 ">
-              <h1 class="text-xs font-semibold text-indigo-600 uppercase w-full tracking-widest">Progress</h1>
-              <div class="pt-3 patientGraph">
-                <div class="wrapper my-3 relative flex flex-col items-end justify-center">
-
-                  <div class="holder flex justify-between w-full text-center items-end h-auto mb-2">
-                    <span class="w-28 h-full text-center flex justify-center items-end graph_scheduled"></span>
-                    <span class="w-28 h-full text-center flex justify-center items-end graph_completed"></span>
-                    <span class="w-28 h-full text-center flex justify-center items-end graph_freeCancel"></span>
-                    <span class="w-28 h-full text-center flex justify-center items-end graph_paidCancel"></span>
-                    <span class="w-28 h-full text-center flex justify-center items-end graph_reScheduled"></span>
-                  </div>
-                  <div class="type flex justify-between w-full text-center items-center">
-                    <span
-                          class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold scheduleHolder">Scheduled</span>
-                    <span
-                          class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold completedHolder">Completed</span>
-                    <span
-                          class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold freeHolder">Free
-                      Cancelled</span>
-                    <span
-                          class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold paidHolder">Paid
-                      Cancelled</span>
-                    <span
-                          class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold reHolder">Re-scheduled</span>
-                  </div>
-                  <div class="holder"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Show Update Window  -->
-            <div class="updateProfileButtons mt-10 flex items-center">
-
-              <!-- Update Button  -->
-              <div
-                   class="showUpdateWindow mt-5 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
-
-                <button
-                        class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                  <span>Edit</span>
-
-                </button>
-
-                <div
-                     class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path
-                          d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
-                    <path
-                          d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
-                  </svg>
+      <!-- Right Section    -->
+      <div class="rightSection relative w-full h-auto  sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
 
 
-                </div>
-
-              </div>
-
-              <!-- Delete Profile Button  -->
-              <div
-                   class="deleteProfile mt-5 ml-10 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
-
-                <button
-                        class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                  <span>Delete</span>
-
-                </button>
-
-                <div
-                     class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
-
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path fill-rule="evenodd"
-                          d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                          clip-rule="evenodd" />
-                  </svg>
-
-
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- Delete Profile -->
-            <section
-                     class="z-50 deletePrompts w-full px-4 py-5 bg-white border-t border-gray-300 absolute bottom-0 -right-[3000px] flex items-center justify-between ease-in-out duration-300">
-              <div
-                   class="deletePromptContent flex flex-col w-full px-5 text-sm font-semibold text-slate-700 text-justify tracking-widest">
-
-                <textarea name="" id="" cols="10" rows="2"
-                          class="deleteProfileReason rounded-md text-rose-600 placeholder:text-rose-600"
-                          placeholder="Reason for delete..."></textarea>
-
-                <div class="confirmButtonsWrapper flex flex-col mt-5 text-sm font-semibold">
-
-                  <div class="buttons flex">
-                    <!-- Delete Profile Button  -->
-                    <div
-                         class="confirmDeleteProfile relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
-
-                      <button
-                              class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                        <span>Confirm</span>
-
-                      </button>
-
-                      <div
-                           class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
-
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                             class="w-5 h-5">
-                          <path fill-rule="evenodd"
-                                d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
-                                clip-rule="evenodd" />
-                        </svg>
-
-
-                      </div>
-
-                    </div>
-
-                    <!-- Clear Button  -->
-                    <div
-                         class="goBackRecords ml-10 relative w-fit h-9 flex items-center group ease-in-out duration-300 cursor-pointer">
-
-                      <button
-                              class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-gray-900 sm:bg-white rounded-md text-rose-600  border-gray-400 ease-in-out duration-300 text-center z-20 flex items-center  group-hover:border-r-none border group-hover:rounded-r-none">
-                        <span>Clear</span>
-                      </button>
-
-                      <div
-                           class="bg-gray-900 sm:bg-white border-l-none border-t border-b border-r border-gray-400 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-rose-600 tracking-widest">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                             class="w-4 h-4">
-                          <path fill-rule="evenodd"
-                                d="M2.515 10.674a1.875 1.875 0 000 2.652L8.89 19.7c.352.351.829.549 1.326.549H19.5a3 3 0 003-3V6.75a3 3 0 00-3-3h-9.284c-.497 0-.974.198-1.326.55l-6.375 6.374zM12.53 9.22a.75.75 0 10-1.06 1.06L13.19 12l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L15.31 12l1.72-1.72a.75.75 0 10-1.06-1.06l-1.72 1.72-1.72-1.72z"
-                                clip-rule="evenodd" />
-                        </svg>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="note text-rose-600 uppercase mt-3 text-[10px]">
-                    Once confirmed, profile would be permanently removed from records.
-                  </div>
-
-                </div>
-              </div>
-            </section>
-
-          </div>
+        <!-- Prompts  -->
+        <div
+          class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
         </div>
 
-        <!-- Update Profile -->
-        <div
-             class="sm:absolute hidden sm:block top-0 overflow-y-auto h-full w-full -right-[3000px] border border-gray-300 rounded-md bg-white z-40 updateProfileWrapper p-6 ease-in-out duration-300">
+        <!-- PageName and Time  -->
+        <nav
+          class="navbarWrapper sm:mt-0 mt-10 sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
+          <nav class="navbarContent w-full"></nav>
 
-          <h1 class="w-full my-2 font-semibold text-center  uppercase text-lg text-indigo-600 tracking-widest">
-            Update
-            Profile
-          </h1>
+          <!--  Navbar Notification Center -->
+          <div
+            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+            <div class="h-full notificationContent">
 
-          <div class="profileDetails relative overflow-x-hidden">
+            </div>
+          </div>
+        </nav>
 
-            <section class="text-xs grid sm:grid-cols-3 grid-cols-2 gap-x-10 sm:text-indigo-600 text-gray-500">
+        <!-- Content Section  -->
+        <div class="mt-5 text-slate-700 h-full sm:px-5 overflow-y-auto overflow-x-hidden">
 
-              <div class="flex flex-col items-start my-5 profileName md:justify-between">
-                <span
-                      class="nameTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Name</span>
-                <input type="text" value=""
-                       class="updateName updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
-              </div>
+          <!-- Reports by Month  -->
+          <section class="rounded-md reportByMonthSection">
+            <h3 class="mb-3">
+              <span class="text-xs font-semibold tracking-widest text-indigo-600 uppercase">
+                By month & year
+              </span>
+            </h3>
 
-              <div class="flex flex-col items-start my-5 md:justify-between">
-                <span
-                      class="appointmentNature mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Appointment
-                  Type</span>
-                <input type="text" value=""
-                       class="updateType updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
-                       disabled />
-              </div>
+            <div class="grid sm:flex sm:justify-between">
 
-              <div class="flex flex-col items-start my-5 profileDay md:justify-between">
-                <span
-                      class="slotTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mode</span>
-                <select name="day" id="day" title="Mode"
-                        class="updateInput updateMode w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
-                  <option value="" class="text-xs font-semibold">
-                    Mode
-                  </option>
-                  <option value="Online" class="text-xs font-semibold">
-                    Online
-                  </option>
-                  <option value="Offline" class="text-xs font-semibold">
-                    Offline
-                  </option>
-                </select>
-              </div>
+              <!-- Month and year filter -->
+              <input type="text" name="" id=""
+                class="monthListByNameReports w-full my-5 sm:my-0 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 sm:placeholder:text-slate-900 placeholder:text-indigo-600 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
+                placeholder="Select month and year" onfocus="(this.type='month')" onfocusout="(this.type='text')" />
 
-              <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
-                <span
-                      class="mb-2 emailTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Email</span>
-                <input type="email" value=""
-                       class="updateEmail updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
-              </div>
+              <!-- By Month Breakdown  -->
+              <div
+                class="w-full p-4 mt-5 text-xs font-semibold text-indigo-600 border border-indigo-600 rounded-md sm:mt-0 reportsTotalByMonth sm:border-gray-200 sm:bg-white sm:ml-5">
 
-              <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
-                <span
-                      class="mb-2 mobileTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mobile</span>
-                <div class="flex w-full someWrapper">
-                  <select name="countryCode" id=""
-                          class="updateInput update_countryCode countryCode w-32 mr-2 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
-                          title="Country Code">
-                  </select>
-                  <input type='number' value=""
-                         class="updateInput updateMobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                <div class="flex flex-col dummyWrap">
+
+                  <!-- By Type  -->
+                  <div class="my-2 byType">
+                    <p
+                      class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300 ">
+                      Type:</p>
+                    <div
+                      class="forWrap grid grid-cols-2 gap-x-5 text-xs uppercase sm:text-gray-900 tracking-widest text-gray-500">
+                      <div class="flex items-center justify-between my-2 totalSessions">
+                        <span>Session</span>
+                        <span class="totalSessionsCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalSupervision">
+                        <span>Supervision</span>
+                        <span class="totalSupervisionCount text-indigo-600"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hidden patientNamesList"></div>
+
+                  <!-- By Status -->
+                  <div class="my-2 byStatus">
+                    <p
+                      class="mb-2 text-xs uppercase tracking-widest font-semibold text-indigo-600 border-b border-indigo-600 pb-1 sm:border-gray-300">
+                      Status:</p>
+                    <div
+                      class="dummyWrap grid grid-cols-2 gap-x-5 gap-y-2 uppercase sm:text-gray-900 text-gray-500 text-xs tracking-widest">
+                      <div class="flex items-center justify-between my-2 totalScheduled">
+                        <span>Scheduled</span>
+                        <span class="totalScheduledCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalCompleted">
+                        <span>Completed</span>
+                        <span class="totalCompletedCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalRescheduled">
+                        <span>Rescheduled</span>
+                        <span class="totalRescheduledCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalFreeCancelled">
+                        <span>Free Cancelled</span>
+                        <span class="totalFreeCancelledCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalPaidCancelled">
+                        <span>Paid Cancelled</span>
+                        <span class="totalPaidCancelledCount text-indigo-600"></span>
+                      </div>
+                      <div class="flex items-center justify-between my-2 totalPending">
+                        <span>Pending</span>
+                        <span class="totalPendingCount text-indigo-600"></span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
-                <span
-                      class="mb-2 addressTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Address</span>
-                <textarea value=""
-                          class="updateInput updateAddress w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"></textarea>
-              </div>
+            </div>
+          </section>
 
-              <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
+          <!-- Reports by Category  -->
+          <div class="flex flex-col mt-10 dummy">
+            <h1 class="flex justify-between items-center text-xs font-semibold text-indigo-600 uppercase">
+              <span class="tracking-widest">
+                <span>Patients List</span>
+                <span class="patientCount ml-1"></span>
+              </span>
+              <div class="flex items-center text-white filters ">
                 <span
-                      class="mb-2 occurrenceTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Visit
-                  per week</span>
-                <input type='number' value=""
-                       class="updateOccurrence w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-gray-300 rounded-md tracking-widest"
-                       disabled />
-              </div>
+                  class="px-3 py-1 mx-2 text-xs uppercase tracking-widest cursor-pointer text-indigo-600 border border-indigo-600 rounded-full session ease-in-out duration-300 hover:text-white hover:bg-indigo-600">Session</span>
+                <span
+                  class=" px-3 py-1 mx-2 text-xs uppercase tracking-widest cursor-pointer border border-emerald-600 rounded-full supervision text-emerald-600 ease-in-out duration-300 hover:text-white hover:bg-indigo-600">Supervision</span>
 
-              <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
-                <span
-                      class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Slot</span>
-                <select name="slot" id="slot" title="Slot"
-                        class="updateInput updateSlot w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
-                  <option value="" class="font-semibold text-xs">
-                    Time slot
-                  </option>
-                  <option value="09:00 - 10:00" class="text-xs font-semibold">
-                    09:00 - 10:00
-                  </option>
-                  <option value="10:00 - 11:00" class="text-xs font-semibold">
-                    10:00 - 11:00
-                  </option>
-                  <option value="11:00 - 12:00" class="text-xs font-semibold">
-                    11:00 - 12:00
-                  </option>
-                  <option value="12:00 - 13:00" class="text-xs font-semibold">
-                    12:00 - 13:00
-                  </option>
-                  <option value="13:00 - 14:00" class="text-xs font-semibold">
-                    13:00 - 14:00
-                  </option>
-                  <option value="14:00 - 15:00" class="text-xs font-semibold">
-                    14:00 - 15:00
-                  </option>
-                  <option value="15:00 - 16:00" class="text-xs font-semibold">
-                    15:00 - 16:00
-                  </option>
-                  <option value="16:00 - 17:00" class="text-xs font-semibold">
-                    16:00 - 17:00
-                  </option>
-                  <option value="17:00 - 18:00" class="text-xs font-semibold">
-                    17:00 - 18:00
-                  </option>
-                </select>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-5 h-5 cursor-pointer text-rose-600 clearFilters">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
+            </h1>
 
-              <div class="flex flex-col items-start my-5 profileDay md:justify-between">
-                <span
-                      class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Day</span>
-                <select name="day" id="day" title="Day"
-                        class="updateInput updateDay w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
-                  <option value="" class="text-xs font-semibold">
-                    Select Day
-                  </option>
-                  <option value="Monday" class="text-xs font-semibold">
-                    Monday
-                  </option>
-                  <option value="Tuesday" class="text-xs font-semibold">
-                    Tuesday
-                  </option>
-                  <option value="Wednesday" class="text-xs font-semibold">
-                    Wednesday
-                  </option>
-                  <option value="Thursday" class="text-xs font-semibold">
-                    Thursday
-                  </option>
-                  <option value="Friday" class="text-xs font-semibold">
-                    Friday
-                  </option>
-                  <option value="Saturday" class="text-xs font-semibold">
-                    Saturday
-                  </option>
-                  <option value="Sunday" class="text-xs font-semibold">
-                    Sunday
-                  </option>
-                </select>
+            <!-- Patient List Table  -->
+            <div class="relative mt-3 h-full">
+
+              <div class="h-56 overflow-auto border border-indigo-600 sm:border-gray-300 rounded-md sm:bg-white">
+                <table class=" text-xs text-left w-full overflow-auto">
+                  <thead>
+                    <tr
+                      class="font-semibold text-indigo-600 tracking-widest border-b border-indigo-600 bg-gray-900 sm:bg-gray-50 uppercase text-xs w-full">
+                      <th class="px-6 py-3">
+                        Name
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                        <span class="flex">
+                          <span>Type</span>
+                        </span>
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                        Mode
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                        Status
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                        Created on
+                      </th>
+                      <th scope="col" class="px-6 py-3">
+                        Updated on
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="rounded-md profileRows"></tbody>
+                </table>
               </div>
+            </div>
 
-              <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-                <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Fees</span>
-                <input type='number' value=""
-                       class="updateInput updateFees w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
-              </div>
+            <!-- Patient Profile Details  -->
+            <div
+              class="hidden patientProfileWrapper relative border border-indigo-600 sm:border-gray-300 rounded-md p-6 mt-5 bg-gray-900 sm:bg-white">
 
-              <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-                <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
-                  Contact Name</span>
-                <input type='text' value=""
-                       class="updateInput update_e_name w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
-              </div>
+              <!-- Patient Profile  -->
+              <h1 class="text-xs pb-5 font-semibold text-indigo-600 uppercase tracking-widest">Profile</h1>
+              <div class="flex flex-col text-xs patientDetails text-indigo-600 sm:text-slate-700"></div>
 
-              <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-                <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
-                  Contact Address</span>
-                <input type='text' value=""
-                       class="updateInput update_e_address w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
-              </div>
+              <!-- Patient Graph  -->
+              <div class="patientGraphWrapper md:mt-10 mt-5 ">
+                <h1 class="text-xs font-semibold text-indigo-600 uppercase w-full tracking-widest">Progress</h1>
+                <div class="pt-3 patientGraph">
+                  <div class="wrapper my-3 relative flex flex-col items-end justify-center">
 
-              <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-                <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
-                  Mobile Number</span>
-                <div class="flex someWrapper w-full">
-                  <select name="countryCode" id=""
-                          class="updateInput update_e_countryCode countryCode w-20 mr-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
-                          title="Country Code">
-                  </select>
-                  <input type='number' value=""
-                         class="updateInput grow update_e_mobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                    <div class="holder flex justify-between w-full text-center items-end h-auto mb-2">
+                      <span class="w-28 h-full text-center flex justify-center items-end graph_scheduled"></span>
+                      <span class="w-28 h-full text-center flex justify-center items-end graph_completed"></span>
+                      <span class="w-28 h-full text-center flex justify-center items-end graph_freeCancel"></span>
+                      <span class="w-28 h-full text-center flex justify-center items-end graph_paidCancel"></span>
+                      <span class="w-28 h-full text-center flex justify-center items-end graph_reScheduled"></span>
+                    </div>
+                    <div class="type flex justify-between w-full text-center items-center">
+                      <span
+                        class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold scheduleHolder">Scheduled</span>
+                      <span
+                        class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold completedHolder">Completed</span>
+                      <span
+                        class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold freeHolder">Free
+                        Cancelled</span>
+                      <span
+                        class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold paidHolder">Paid
+                        Cancelled</span>
+                      <span
+                        class="uppercase text-indigo-600 w-28 text-[9px] tracking-widest font-semibold reHolder">Re-scheduled</span>
+                    </div>
+                    <div class="holder"></div>
+                  </div>
                 </div>
               </div>
 
-              <div class="flex flex-col items-start my-5 profileFee md:justify-between">
-                <span
-                      class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
-                  Contact Relation</span>
-                <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                        class="update_e_relation updateInput relationType w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
-
-                </select>
-              </div>
-
-            </section>
-
-            <div class="flex flex-col text-white updateProfileActionButtons">
-              <div class="flex items-center updateWrapper">
+              <!-- Show Update Window  -->
+              <div class="updateProfileButtons mt-10 flex items-center">
 
                 <!-- Update Button  -->
                 <div
-                     class="updateProfileButton mt-5 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
+                  class="showUpdateWindow mt-5 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
 
                   <button
-                          class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                    <span>Update</span>
+                    class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                    <span>Edit</span>
 
                   </button>
 
                   <div
-                       class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+                    class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                       <path
-                            d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
+                        d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
                       <path
-                            d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
+                        d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
                     </svg>
 
 
@@ -599,72 +275,399 @@
 
                 </div>
 
-                <!-- Close Profile Button  -->
+                <!-- Delete Profile Button  -->
                 <div
-                     class="closeUpdateProfileWrapper mt-5 ml-10 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
+                  class="deleteProfile mt-5 ml-10 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
 
                   <button
-                          class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
-                    <span>Cancel</span>
+                    class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                    <span>Delete</span>
 
                   </button>
 
                   <div
-                       class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+                    class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
 
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
                       <path fill-rule="evenodd"
-                            d="M2.515 10.674a1.875 1.875 0 000 2.652L8.89 19.7c.352.351.829.549 1.326.549H19.5a3 3 0 003-3V6.75a3 3 0 00-3-3h-9.284c-.497 0-.974.198-1.326.55l-6.375 6.374zM12.53 9.22a.75.75 0 10-1.06 1.06L13.19 12l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L15.31 12l1.72-1.72a.75.75 0 10-1.06-1.06l-1.72 1.72-1.72-1.72z"
-                            clip-rule="evenodd" />
+                        d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                        clip-rule="evenodd" />
                     </svg>
+
 
                   </div>
 
                 </div>
 
               </div>
+
+              <!-- Delete Profile -->
+              <section
+                class="z-50 deletePrompts w-full px-4 py-5 bg-white border-t border-gray-300 absolute bottom-0 -right-[3000px] flex items-center justify-between ease-in-out duration-300">
+                <div
+                  class="deletePromptContent flex flex-col w-full px-5 text-sm font-semibold text-slate-700 text-justify tracking-widest">
+
+                  <textarea name="" id="" cols="10" rows="2"
+                    class="deleteProfileReason rounded-md text-rose-600 placeholder:text-rose-600"
+                    placeholder="Reason for delete..."></textarea>
+
+                  <div class="confirmButtonsWrapper flex flex-col mt-5 text-sm font-semibold">
+
+                    <div class="buttons flex">
+                      <!-- Delete Profile Button  -->
+                      <div
+                        class="confirmDeleteProfile relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
+
+                        <button
+                          class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                          <span>Confirm</span>
+
+                        </button>
+
+                        <div
+                          class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-5 h-5">
+                            <path fill-rule="evenodd"
+                              d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z"
+                              clip-rule="evenodd" />
+                          </svg>
+
+
+                        </div>
+
+                      </div>
+
+                      <!-- Clear Button  -->
+                      <div
+                        class="goBackRecords ml-10 relative w-fit h-9 flex items-center group ease-in-out duration-300 cursor-pointer">
+
+                        <button
+                          class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-gray-900 sm:bg-white rounded-md text-rose-600  border-gray-400 ease-in-out duration-300 text-center z-20 flex items-center  group-hover:border-r-none border group-hover:rounded-r-none">
+                          <span>Clear</span>
+                        </button>
+
+                        <div
+                          class="bg-gray-900 sm:bg-white border-l-none border-t border-b border-r border-gray-400 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-rose-600 tracking-widest">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                            class="w-4 h-4">
+                            <path fill-rule="evenodd"
+                              d="M2.515 10.674a1.875 1.875 0 000 2.652L8.89 19.7c.352.351.829.549 1.326.549H19.5a3 3 0 003-3V6.75a3 3 0 00-3-3h-9.284c-.497 0-.974.198-1.326.55l-6.375 6.374zM12.53 9.22a.75.75 0 10-1.06 1.06L13.19 12l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L15.31 12l1.72-1.72a.75.75 0 10-1.06-1.06l-1.72 1.72-1.72-1.72z"
+                              clip-rule="evenodd" />
+                          </svg>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div class="note text-rose-600 uppercase mt-3 text-[10px]">
+                      Once confirmed, profile would be permanently removed from records.
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
             </div>
+          </div>
+
+          <!-- Update Profile -->
+          <div
+            class="sm:absolute hidden sm:block top-0 overflow-y-auto h-full w-full -right-[3000px] border border-gray-300 rounded-md bg-white z-40 updateProfileWrapper p-6 ease-in-out duration-300">
+
+            <h1 class="w-full my-2 font-semibold text-center  uppercase text-lg text-indigo-600 tracking-widest">
+              Update
+              Profile
+            </h1>
+
+            <div class="profileDetails relative overflow-x-hidden">
+
+              <section class="text-xs grid sm:grid-cols-3 grid-cols-2 gap-x-10 sm:text-indigo-600 text-gray-500">
+
+                <div class="flex flex-col items-start my-5 profileName md:justify-between">
+                  <span
+                    class="nameTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Name</span>
+                  <input type="text" value=""
+                    class="updateName updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                </div>
+
+                <div class="flex flex-col items-start my-5 md:justify-between">
+                  <span
+                    class="appointmentNature mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Appointment
+                    Type</span>
+                  <input type="text" value=""
+                    class="updateType updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
+                    disabled />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileDay md:justify-between">
+                  <span
+                    class="slotTag mb-2 tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mode</span>
+                  <select name="day" id="day" title="Mode"
+                    class="updateInput updateMode w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="text-xs font-semibold">
+                      Mode
+                    </option>
+                    <option value="Online" class="text-xs font-semibold">
+                      Online
+                    </option>
+                    <option value="Offline" class="text-xs font-semibold">
+                      Offline
+                    </option>
+                  </select>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileEmail md:justify-between">
+                  <span
+                    class="mb-2 emailTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Email</span>
+                  <input type="email" value=""
+                    class="updateEmail updateInput w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileMobileNumber md:justify-between">
+                  <span
+                    class="mb-2 mobileTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Mobile</span>
+                  <div class="flex w-full someWrapper">
+                    <select name="countryCode" id=""
+                      class="updateInput update_countryCode countryCode w-32 mr-2 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
+                      title="Country Code">
+                    </select>
+                    <input type='number' value=""
+                      class="updateInput updateMobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileAddress md:justify-between">
+                  <span
+                    class="mb-2 addressTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Address</span>
+                  <textarea value=""
+                    class="updateInput updateAddress w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"></textarea>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileOccurrence md:justify-between">
+                  <span
+                    class="mb-2 occurrenceTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Visit
+                    per week</span>
+                  <input type='number' value=""
+                    class="updateOccurrence w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-gray-300 rounded-md tracking-widest"
+                    disabled />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileSlot md:justify-between">
+                  <span
+                    class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Slot</span>
+                  <select name="slot" id="slot" title="Slot"
+                    class="updateInput updateSlot w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="font-semibold text-xs">
+                      Time slot
+                    </option>
+                    <option value="09:00 - 10:00" class="text-xs font-semibold">
+                      09:00 - 10:00
+                    </option>
+                    <option value="10:00 - 11:00" class="text-xs font-semibold">
+                      10:00 - 11:00
+                    </option>
+                    <option value="11:00 - 12:00" class="text-xs font-semibold">
+                      11:00 - 12:00
+                    </option>
+                    <option value="12:00 - 13:00" class="text-xs font-semibold">
+                      12:00 - 13:00
+                    </option>
+                    <option value="13:00 - 14:00" class="text-xs font-semibold">
+                      13:00 - 14:00
+                    </option>
+                    <option value="14:00 - 15:00" class="text-xs font-semibold">
+                      14:00 - 15:00
+                    </option>
+                    <option value="15:00 - 16:00" class="text-xs font-semibold">
+                      15:00 - 16:00
+                    </option>
+                    <option value="16:00 - 17:00" class="text-xs font-semibold">
+                      16:00 - 17:00
+                    </option>
+                    <option value="17:00 - 18:00" class="text-xs font-semibold">
+                      17:00 - 18:00
+                    </option>
+                  </select>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileDay md:justify-between">
+                  <span
+                    class="mb-2 slotTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Day</span>
+                  <select name="day" id="day" title="Day"
+                    class="updateInput updateDay w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
+                    <option value="" class="text-xs font-semibold">
+                      Select Day
+                    </option>
+                    <option value="Monday" class="text-xs font-semibold">
+                      Monday
+                    </option>
+                    <option value="Tuesday" class="text-xs font-semibold">
+                      Tuesday
+                    </option>
+                    <option value="Wednesday" class="text-xs font-semibold">
+                      Wednesday
+                    </option>
+                    <option value="Thursday" class="text-xs font-semibold">
+                      Thursday
+                    </option>
+                    <option value="Friday" class="text-xs font-semibold">
+                      Friday
+                    </option>
+                    <option value="Saturday" class="text-xs font-semibold">
+                      Saturday
+                    </option>
+                    <option value="Sunday" class="text-xs font-semibold">
+                      Sunday
+                    </option>
+                  </select>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+                  <span
+                    class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Fees</span>
+                  <input type='number' value=""
+                    class="updateInput updateFees w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+                  <span
+                    class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                    Contact Name</span>
+                  <input type='text' value=""
+                    class="updateInput update_e_name w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+                  <span
+                    class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                    Contact Address</span>
+                  <input type='text' value=""
+                    class="updateInput update_e_address w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+                  <span
+                    class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                    Mobile Number</span>
+                  <div class="flex someWrapper w-full">
+                    <select name="countryCode" id=""
+                      class="updateInput update_e_countryCode countryCode w-20 mr-3 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
+                      title="Country Code">
+                    </select>
+                    <input type='number' value=""
+                      class="updateInput grow update_e_mobileNumber w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest" />
+                  </div>
+                </div>
+
+                <div class="flex flex-col items-start my-5 profileFee md:justify-between">
+                  <span
+                    class="mb-2 feeTag tracking-widest text-gray-500 sm:text-indigo-600 text-[10px] font-semibold uppercase">Emergency
+                    Contact Relation</span>
+                  <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                    class="update_e_relation updateInput relationType w-full h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest">
+
+                  </select>
+                </div>
+
+              </section>
+
+              <div class="flex flex-col text-white updateProfileActionButtons">
+                <div class="flex items-center updateWrapper">
+
+                  <!-- Update Button  -->
+                  <div
+                    class="updateProfileButton mt-5 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
+
+                    <button
+                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                      <span>Update</span>
+
+                    </button>
+
+                    <div
+                      class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path
+                          d="M21.731 2.269a2.625 2.625 0 00-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 000-3.712zM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 00-1.32 2.214l-.8 2.685a.75.75 0 00.933.933l2.685-.8a5.25 5.25 0 002.214-1.32l8.4-8.4z" />
+                        <path
+                          d="M5.25 5.25a3 3 0 00-3 3v10.5a3 3 0 003 3h10.5a3 3 0 003-3V13.5a.75.75 0 00-1.5 0v5.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5V8.25a1.5 1.5 0 011.5-1.5h5.25a.75.75 0 000-1.5H5.25z" />
+                      </svg>
 
 
+                    </div>
+
+                  </div>
+
+                  <!-- Close Profile Button  -->
+                  <div
+                    class="closeUpdateProfileWrapper mt-5 ml-10 relative w-fit flex h-9 items-center group ease-in-out duration-300 cursor-pointer">
+
+                    <button
+                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-rose-600 ease-in-out duration-300 hover:bg-rose-600 hover:text-white text-center z-20 group-hover:rounded-r-none flex items-center">
+                      <span>Cancel</span>
+
+                    </button>
+
+                    <div
+                      class="bg-rose-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                          d="M2.515 10.674a1.875 1.875 0 000 2.652L8.89 19.7c.352.351.829.549 1.326.549H19.5a3 3 0 003-3V6.75a3 3 0 00-3-3h-9.284c-.497 0-.974.198-1.326.55l-6.375 6.374zM12.53 9.22a.75.75 0 10-1.06 1.06L13.19 12l-1.72 1.72a.75.75 0 101.06 1.06l1.72-1.72 1.72 1.72a.75.75 0 101.06-1.06L15.31 12l1.72-1.72a.75.75 0 10-1.06-1.06l-1.72 1.72-1.72-1.72z"
+                          clip-rule="evenodd" />
+                      </svg>
+
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+
+
+            </div>
 
           </div>
 
         </div>
 
+
       </div>
-
-
     </div>
-  </div>
 
-  <!-- Firebase  -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script src="../scripts/commonScripts/dbConnect.js"></script>
+    <!-- Firebase Scripts  -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.min.js"></script>
+    <script src="../scripts/commonScripts/dbConnect.js"></script>
 
-  <!-- Variable and common loaders  -->
-  <script src="../scripts/records/records_constants.js"></script>
-  <script src="../scripts/commonScripts/commonVariables.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script src="../scripts/commonScripts/countryCode.js"></script>
-  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
-  <script src="../scripts/commonScripts/commonFunctions.js"></script>
-  <script src="../scripts/commonScripts/patientList.js"></script>
-  <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
-  <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
+    <!-- Variable and common loaders  -->
+    <script src="../scripts/records/records_constants.js"></script>
+    <script src="../scripts/commonScripts/commonVariables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="../scripts/commonScripts/countryCode.js"></script>
+    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+    <script src="../scripts/commonScripts/commonFunctions.js"></script>
+    <script src="../scripts/commonScripts/patientList.js"></script>
+    <script src="../scripts/commonScripts/fetchingAppointments.js"></script>
+    <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
 
-  <!-- Page Scripts  -->
-  <script src="../scripts/records/records_onLoad.js"></script>
-  <script src="../scripts/records/records_profiles.js"></script>
-  <script src="../scripts/records/records_deleteProfile.js"></script>
-  <script src="../scripts/records/records_updateProfile.js"></script>
+    <!-- Page Scripts  -->
+    <script src="../scripts/records/records_onLoad.js"></script>
+    <script src="../scripts/records/records_profiles.js"></script>
+    <script src="../scripts/records/records_deleteProfile.js"></script>
+    <script src="../scripts/records/records_updateProfile.js"></script>
 
-  <!-- Global notification and prompts -->
-  <script src="../scripts/commonScripts/globalNotification.js"></script>
-  <script src="../scripts/commonScripts/prompts.js"></script>
-  <script src="../scripts/commonScripts/panicButton.js"></script>
-  <script src="../scripts/records/records_graphs.js"></script>
+    <!-- Global notification and prompts -->
+    <script src="../scripts/commonScripts/globalNotification.js"></script>
+    <script src="../scripts/commonScripts/prompts.js"></script>
+    <script src="../scripts/commonScripts/panicButton.js"></script>
+    <script src="../scripts/records/records_graphs.js"></script>
 
-</body>
+  </body>
 
 </html>
