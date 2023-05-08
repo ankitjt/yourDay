@@ -33,7 +33,10 @@ const promptMessages = ( message, promptType, refresh ) =>
     {
       if ( close.matches( '.refresh' ) )
       {
-        location.reload()
+        setTimeout( () =>
+        {
+          location.reload()
+        }, 3000 )
       }
       else
       {
