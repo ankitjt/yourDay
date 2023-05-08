@@ -84,32 +84,34 @@ createNewAccountBtn.onclick = () =>
       weekday: 'long'
     } )
 
-
-
-    firebase.auth().createUserWithEmailAndPassword( newEmail, newPassword )
-      .then( ( userCredential ) =>
-      {
-        const user = userCredential.user
-        console.log( user )
-      } )
-
-    console.log( {
-      name: newName.value,
+    let newUserDetails = {
+      displayName: newName.value,
       email: newEmail.value,
-      mobileNumber: newCountryCode.value + "-" + newMobileNumber.value,
+      phoneNumber: newCountryCode.value + "-" + newMobileNumber.value,
       password: newPassword.value,
       createdDate: dateLog.format( new Date() ),
       createdTime: timeLog.format( new Date() ),
       createdDay: dayLog.format( new Date() )
-    } )
-
-    for ( let detail of newUserForm )
-    {
-      detail.classList.remove( 'border-rose-600' )
-      detail.value = ''
-      detail.getAttribute( 'title' ) === 'Country Code' ? detail.value = "+91" : ''
     }
-    promptMessages( `<p class='text-[10px]'>Account created successfully</p> <p class='text-[10px]'> <a href='#' class='backToLoginScreen1 text-indigo-600 underline text-xs'>Click here</a> to login</p>`, 'success' )
+
+    // Adding new users to the database
+    firebase.auth().createUserWithEmailAndPassword( newUserDetails.email, newUserDetails.password )
+      .then( ( userCredential ) =>
+      {
+        const user = userCredential.user
+        console.log( user )
+        for ( let detail of newUserForm )
+        {
+          detail.classList.remove( 'border-rose-600' )
+          detail.value = ''
+          detail.getAttribute( 'title' ) === 'Country Code' ? detail.value = "+91" : ''
+        }
+        promptMessages( `<p class='text-[10px]'>Account created successfully</p> <p class='text-[10px]'> <a href='#' class='backToLoginScreen1 text-indigo-600 underline text-xs'>Click here</a> to login</p>`, 'success' )
+      } )
+      .catch( ( err ) =>
+      {
+        promptMessages( err.code + err.message )
+      } )
 
     let backToLoginScreen1 = document.querySelector( '.backToLoginScreen1' )
     backToLoginScreen1.onclick = () =>
@@ -134,3 +136,36 @@ for ( let showLogin of backToLoginScreen )
 
 }
 
+let loginBtn = document.querySelector( ".loginBtn" )
+let loginInputs = document.querySelectorAll( ".loginInputs" )
+let loginEmail = document.querySelector( '.loginEmail' )
+let loginPass = document.querySelector( '.loginPassword' )
+
+loginBtn.onclick = () =>
+{
+  for ( let loginInput of loginInputs )
+  {
+    if ( loginInput.value === '' )
+    {
+      promptMessages( `${ loginInput.getAttribute( 'title' ) } cannot be blank`, 'error' )
+    }
+    else
+    {
+      firebase.auth().signInWithEmailAndPassword( loginEmail.value, loginPass.value )
+        .then( () =>
+        {
+          firebase.auth().onAuthStateChanged( ( user ) =>
+          {
+            if ( user )
+            {
+              window.location.href = './src/appointments.html'
+            }
+          } )
+        } )
+        .catch( ( error ) =>
+        {
+          promptMessages( error.message, 'error' )
+        } )
+    }
+  }
+}
