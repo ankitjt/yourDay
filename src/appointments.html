@@ -1,556 +1,556 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
-    <title>yourDay - Appointments</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <title>yourDay - Appointments</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  <body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 3xl:w-2/3 3xl:mx-auto 3xl:bg-slate-100">
+<body class="sm:w-screen sm:h-screen h-auto w-auto relative 3xl:h-screen 2xl:w-2/3 2xl:mx-auto 2xl:bg-slate-50 2xl:border-gray-300 2xl:shadow-2xl">
 
+  <div
+       class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 3xl:w-full">
+  </div>
+
+  <div
+       class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
+
+    <!-- Left Section  -->
     <div
-      class="pageBlocker absolute hidden sm:w-screen sm:h-screen h-full w-full bg-slate-600 z-30 opacity-50 3xl:w-full">
-    </div>
+         class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
 
-    <div
-      class="wrapper bg-gray-900 w-full h-full min-h-screen sm:bg-white px-6 py-4 sm:px-2 flex justify-start sm:flex-row items-start font-semibold text-xs flex-col overflow-x-hidden">
-
-      <!-- Left Section  -->
+      <!-- Logo Section  -->
       <div
-        class="min-h-fit sm:h-full sm:rounded-xl sm:w-24 md:w-64 w-full left-0 px-6 sm:px-0 py-4 top-0 bg-gray-900 sm:bg-indigo-600 text-white flex flex-col sm:mb-0 sm:overflow-y-auto fixed sm:relative z-20">
+           class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
 
-        <!-- Logo Section  -->
-        <div
-          class="!lovely-day sm:bg-indigo-600 sm:py-0 md:py-0 text-rose-600 sm:text-white  text-xl sm:text-sm tracking-wider flex item-center justify-between sm:justify-center z-30 w-full ">
-
-          <div class="logo text-center">
-            <span class="hidden md:block">yourDay</span>
-            <span class="inline md:hidden">yD</span>
-          </div>
-
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-            class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
-            <path fill-rule="evenodd"
-              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
-              clip-rule="evenodd" />
-          </svg>
-
+        <div class="logo text-center">
+          <span class="hidden md:block">yourDay</span>
+          <span class="inline md:hidden">yD</span>
         </div>
 
-        <section
-          class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
-        </section>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+             class="openMenu cursor-pointer w-6 h-6 sm:hidden hover:text-white ease-in-out duration-300">
+          <path fill-rule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm8.25 5.25a.75.75 0 01.75-.75h8.25a.75.75 0 010 1.5H12a.75.75 0 01-.75-.75z"
+                clip-rule="evenodd" />
+        </svg>
 
       </div>
 
-      <!-- Right Section    -->
+      <section
+               class="left h-full flex flex-col justify-center sm:justify-between sm:items-center fixed sm:relative top-0 -right-[2000px] sm:right-0 w-full px-6 sm:px-0 md:px-3 bg-slate-900 sm:bg-transparent ease-in-out duration-300 z-50">
+      </section>
+
+    </div>
+
+    <!-- Right Section    -->
+    <div
+         class="rightSection relative mt-10 sm:mt-0 w-full h-auto sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
+
+      <!-- Confirm Page -->
+      <sections
+                class="confirmPage z-50 absolute w-full h-full top-0 -left-[2000px] flex justify-center items-center flex-col bg-gray-900 sm:bg-white ease-in-out duration-300 bg-no-repeat bg-[top_left] bg-[url('../assets/indexPage4_clear.png')]">
+
+      </sections>
+
+      <!-- Prompts  -->
       <div
-        class="rightSection relative mt-10 sm:mt-0 w-full h-auto sm:ml-10 sm:max-h-full flex flex-col sm:overflow-hidden">
+           class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+      </div>
 
-        <!-- Confirm Page -->
-        <sections
-          class="confirmPage z-50 absolute w-full h-full top-0 -left-[2000px] flex justify-center items-center flex-col bg-gray-900 sm:bg-white ease-in-out duration-300 bg-no-repeat bg-[top_left] bg-[url('../assets/indexPage4_clear.png')]">
+      <!-- PageName and Time  -->
+      <nav
+           class="navbarWrapper sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
+        <nav class="navbarContent w-full"></nav>
 
-        </sections>
-
-        <!-- Prompts  -->
+        <!--  Navbar Notification Center -->
         <div
-          class="promptsWrapper font-semibold ease-in-out duration-300 absolute -left-[2000px] bottom-0 -translate-x-1/2 sm:w-3/6 w-full h-80 overflow-y-auto overflow-x-hidden text-center z-50 grid grid-cols-1 place-items-end">
+             class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
+          <div class="h-full notificationContent">
+
+          </div>
         </div>
+      </nav>
 
-        <!-- PageName and Time  -->
-        <nav
-          class="navbarWrapper sm:px-5 py-4 rounded-lg flex items-center sm:bg-indigo-600 text-indigo-600 sm:text-white tracking-widest ">
-          <nav class="navbarContent w-full"></nav>
+      <!-- Content Section  -->
+      <div class="mt-5 text-slate-700 sm:px-5 overflow-y-auto overflow-x-hidden h-full">
+        <h1 class="border-b border-indigo-600 pb-1 text-indigo-600 tracking-widest uppercase">Create Appointment</h1>
 
-          <!--  Navbar Notification Center -->
-          <div
-            class="absolute right-0 z-30 hidden w-10/12 p-8 bg-white rounded-md notificationCenter sm:bg-gray-800 sm:w-4/12 h-fit top-8 text-zinc-400">
-            <div class="h-full notificationContent">
+        <!-- Appointment Form Fields  -->
+        <div class="formFieldsWrapper mt-5 grid sm:grid-cols-2 gap-y-10 grid-cols-1 sm:gap-x-10 ">
+
+          <!-- Category Details  -->
+          <div class="categoryDetails w-full py-3 px-6 rounded-xl shadow-2xl">
+            <div class="flex flex-col category rounded-xl ">
+
+              <h1
+                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
+                Appointment Nature
+              </h1>
+
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Patient Category  -->
+                <div class="h-fit relative">
+
+                  <input id="patientCategory" type="text" placeholder="New" value="NEW" title="Patient Category"
+                         class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-200 sm:bg-gray-200 rounded-md tracking-widest aptFormInput"
+                         disabled />
+                </div>
+
+                <!-- Appointment Type  -->
+                <div class="relative h-fit">
+                  <select name="appointmentType" id="appointmentType" title="Appointment Type"
+                          class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
+                    <option value="" class="text-xs md:font-semibold md:text-sm">
+                      Type
+                    </option>
+                    <option value="Session" class="text-xs font-semibold md:text-sm ">
+                      Session
+                    </option>
+                    <option value="Supervision" class="text-xs font-semibold md:text-sm">
+                      Supervision
+                    </option>
+                  </select>
+                  <label for="appointmentType"
+                         class="typeLabel transition-all absolute hidden text-slate-700 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-700 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
+                </div>
+
+                <!-- Appointment Mode  -->
+                <div class="relative h-fit">
+                  <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
+                          class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
+                    <option value="" class="text-xs md:font-semibold md:text-sm">
+                      Mode
+                    </option>
+                    <option value="Online" class="text-xs md:font-semibold md:text-sm">
+                      Online
+                    </option>
+                    <option value="Offline" class="text-xs md:font-semibold md:text-sm">
+                      Offline
+                    </option>
+                  </select>
+                  <label for="appointmentMode"
+                         class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Mode</label>
+                </div>
+              </div>
 
             </div>
           </div>
-        </nav>
 
-        <!-- Content Section  -->
-        <div class="mt-5 text-slate-700 sm:px-5 overflow-y-auto overflow-x-hidden h-full">
-          <h1 class="border-b border-indigo-600 pb-1 text-indigo-600 tracking-widest uppercase">Create Appointment</h1>
+          <!-- Patient Details  --------------------------------------------------->
+          <div class="patientDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
 
-          <!-- Appointment Form Fields  -->
-          <div class="formFieldsWrapper mt-5 grid sm:grid-cols-2 gap-y-10 grid-cols-1 sm:gap-x-10 ">
+            <div class="flex flex-col patientDetails rounded-xl ">
 
-            <!-- Category Details  -->
-            <div class="categoryDetails w-full py-3 px-6 rounded-xl shadow-2xl">
-              <div class="flex flex-col category rounded-xl ">
-
-                <h1
+              <h1
                   class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
-                  Appointment Nature
-                </h1>
+                Patient Details</h1>
 
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
 
-                  <!-- Patient Category  -->
-                  <div class="h-fit relative">
-
-                    <input id="patientCategory" type="text" placeholder="New" value="NEW" title="Patient Category"
-                      class="aptCategory w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-200 sm:bg-gray-200 rounded-md tracking-widest aptFormInput"
-                      disabled />
-                  </div>
-
-                  <!-- Appointment Type  -->
-                  <div class="relative h-fit">
-                    <select name="appointmentType" id="appointmentType" title="Appointment Type"
-                      class="aptType w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
-                      <option value="" class="text-xs md:font-semibold md:text-sm">
-                        Type
-                      </option>
-                      <option value="Session" class="text-xs font-semibold md:text-sm ">
-                        Session
-                      </option>
-                      <option value="Supervision" class="text-xs font-semibold md:text-sm">
-                        Supervision
-                      </option>
-                    </select>
-                    <label for="appointmentType"
-                      class="typeLabel transition-all absolute hidden text-slate-700 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-700 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs ">Type</label>
-                  </div>
-
-                  <!-- Appointment Mode  -->
-                  <div class="relative h-fit">
-                    <select name=" appointmentMode" id="appointmentMode" title="Appointment Mode"
-                      class="aptNature w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
-                      <option value="" class="text-xs md:font-semibold md:text-sm">
-                        Mode
-                      </option>
-                      <option value="Online" class="text-xs md:font-semibold md:text-sm">
-                        Online
-                      </option>
-                      <option value="Offline" class="text-xs md:font-semibold md:text-sm">
-                        Offline
-                      </option>
-                    </select>
-                    <label for="appointmentMode"
-                      class="typeLabel transition-all absolute hidden text-slate-900 font-semibold uppercase tracking-widest text-[10px] peer-placeholder-shown:text-slate-900 left-2.5 -top-2 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Mode</label>
-                  </div>
+                <!-- Full Name  -->
+                <div class="relative h-fit">
+                  <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
+                         class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="patientFullName"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
+                    Name</label>
                 </div>
 
-              </div>
-            </div>
+                <!-- Email address  -->
+                <div class="relative w-full h-fit">
+                  <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
+                         id="patientEmail"
+                         class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="patientEmail"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
+                </div>
 
-            <!-- Patient Details  --------------------------------------------------->
-            <div class="patientDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
+                <!-- Mobile Number  -->
+                <div class="flex items-center">
 
-              <div class="flex flex-col patientDetails rounded-xl ">
+                  <select name="countryCode" id=""
+                          class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest mr-5 aptFormInput"
+                          title="Country Code">
+                  </select>
 
-                <h1
-                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
-                  Patient Details</h1>
-
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                  <!-- Full Name  -->
-                  <div class="relative h-fit">
-                    <input type="text" name="" id="patientFullName" title="Full Name" placeholder="full name"
-                      class="aptName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="patientFullName"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Full
-                      Name</label>
-                  </div>
-
-                  <!-- Email address  -->
                   <div class="relative w-full h-fit">
-                    <input type="email" placeholder="Email" aria-autocomplete="none" autocomplete="off" title="Email"
-                      id="patientEmail"
-                      class="aptEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="patientEmail"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Email</label>
-                  </div>
-
-                  <!-- Mobile Number  -->
-                  <div class="flex items-center">
-
-                    <select name="countryCode" id=""
-                      class="countryCode pt_countryCode placeholder-transparent peer w-20 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest mr-5 aptFormInput"
-                      title="Country Code">
-                    </select>
-
-                    <div class="relative w-full h-fit">
-                      <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
-                        name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
-                        class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                      <label for="mobileNumber"
-                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
-                        number</label>
-                    </div>
-
-                  </div>
-
-                  <!-- Address  -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
-                      id="address" title="Address"
-                      class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="address"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-
-            <!-- Appointment Details  ------------------------------------------------------->
-            <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
-
-              <div class="flex flex-col appointmentDetailsFields rounded-xl ">
-
-                <h1
-                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
-                  Appointment Details</h1>
-
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                  <!-- Visit Per Week  -->
-                  <div class="h-fit relative">
-                    <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
-                      autocomplete="off" id="occurrenceType" title="Visit per week" value=''
-                      class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="occurrenceType"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
-                      per week</label>
-                  </div>
-
-                  <!-- Week/Alternate Week  -->
-                  <div
-                    class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 sm:text-slate-900">
-
-                    <div class="mr-5">
-                      <input type="radio" name="weekType" id="eachWeek"
-                        class="eachWeek radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
-                      <label for="eachWeek" class="ml-2">Each Week</label>
-                    </div>
-
-                    <div>
-                      <input type="radio" name="weekType" id="alternateWeek"
-                        class="alternateWeek radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
-                        value="14">
-                      <label for="alternateWeek" class="ml-2">Alternate Week</label>
-                    </div>
-
-                  </div>
-
-                  <!-- Start Date  -->
-                  <div class="relative h-fit flex flex-col startDateWrapper">
-
-                    <div class="default w-full flex items-center startDateSections">
-                      <div class="grow relative">
-                        <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
-                          autocomplete="off" id="aptStartDate" title="Appointment Start Date"
-                          onfocus="(this.type='date')" onfocusout="(this.type='text')"
-                          class=" aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptStartDate firstDate" />
-
-                        <label for="aptStartDate"
-                          class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                          Start Date</label>
-                      </div>
-
-                      <div class="addMoreDate addMore ml-5 cursor-pointer hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                          class="w-6 h-6 text-indigo-600">
-                          <path fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div>
-
-                    </div>
-
-                    <div class="additionalDates addSections grid grid-cols-1 gap-x-10" name="Appointment Start Date">
-                    </div>
-
-                  </div>
-
-                  <!-- Start Day  -->
-                  <div class="relative h-fit flex flex-col">
-
-                    <div class="default w-full flex items-center">
-
-                      <div class="grow relative">
-
-                        <select name="days" id="aptDay" title="Appointment Start Day"
-                          class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput firstDay">
-                          <option value="" class="text-xs md:font-semibold md:text-xs">
-                            Pick a day
-                          </option>
-                          <option value="Monday" class="text-xs md:font-semibold md:text-xs">
-                            Monday
-                          </option>
-                          <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
-                            Tuesday
-                          </option>
-                          <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
-                            Wednesday
-                          </option>
-                          <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
-                            Thursday
-                          </option>
-                          <option value="Friday" class="text-xs md:font-semibold md:text-xs">
-                            Friday
-                          </option>
-                          <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
-                            Saturday
-                          </option>
-                          <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
-                            Sunday
-                          </option>
-                        </select>
-                        <label for="aptDay"
-                          class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
-                          Day
-                        </label>
-                      </div>
-
-                      <div class="addMoreDay addMore ml-5 cursor-pointer hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                          class="w-6 h-6 text-indigo-600">
-                          <path fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div>
-
-
-                    </div>
-
-                    <div class="additionalDay addSections grid grid-cols-1 gap-x-10" name="Appointment Start Day">
-                    </div>
-
-                  </div>
-
-                  <!-- Time slot -->
-                  <div class="relative h-fit flex flex-col">
-                    <div class="default w-full flex items-center">
-                      <div class="grow relative">
-                        <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
-                          class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput firstTime">
-                          <option value="" class="md:font-semibold ">
-                            Time slot
-                          </option>
-                          <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
-                            09:00 - 10:00
-                          </option>
-                          <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
-                            10:00 - 11:00
-                          </option>
-                          <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
-                            11:00 - 12:00
-                          </option>
-                          <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
-                            12:00 - 13:00
-                          </option>
-                          <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
-                            13:00 - 14:00
-                          </option>
-                          <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
-                            14:00 - 15:00
-                          </option>
-                          <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
-                            15:00 - 16:00
-                          </option>
-                          <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
-                            16:00 - 17:00
-                          </option>
-                          <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
-                            17:00 - 18:00
-                          </option>
-                        </select>
-                        <label for="aptTimeSlot"
-                          class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
-                          Slot</label>
-
-                      </div>
-
-                      <div class="addMoreTimeSlot addMore ml-5 cursor-pointer hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
-                          class="w-6 h-6 text-indigo-600">
-                          <path fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
-                            clip-rule="evenodd" />
-                        </svg>
-                      </div>
-
-                    </div>
-
-                    <div class="additionalTimeSlot addSections grid grid-cols-1 gap-x-10" name="Appointment Time Slot">
-                    </div>
-
-                  </div>
-
-                  <!-- Fees  -->
-                  <div class="h-fit relative">
-                    <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
-                      autocomplete="off" title="Appointment Fees"
-                      class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="aptFees"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
-                      per visit</label>
+                    <input type="number" placeholder="Mobile Number" aria-autocomplete="none" autocomplete="off"
+                           name="mobileNumber" id="mobileNumber" title="Mobile Number" value=""
+                           class="aptMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                    <label for="mobileNumber"
+                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">mobile
+                      number</label>
                   </div>
 
                 </div>
-              </div>
 
-            </div>
-
-            <!-- Emergency Details  --------------------------------------------->
-            <div class="emergencyDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
-
-              <div class="flex flex-col emergencyDetailsFields rounded-xl ">
-                <h1
-                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
-                  Emergency Details</h1>
-
-                <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
-
-                  <!-- Emergency Contact Name -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
-                      aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
-                      class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="emergencyName"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Contact Name</label>
-                  </div>
-
-                  <!-- Emergency Contact Relation -->
-                  <div class="">
-                    <div class="relative">
-                      <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
-                        class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
-                      </select>
-                      <label for="emergencyRelation"
-                        class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                        Relation</label>
-                    </div>
-                  </div>
-
-                  <!-- Emergency Contact Number -->
-                  <div class="flex items-center">
-                    <select name="countryCode" id=""
-                      class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput"
-                      title="Country Code">
-                    </select>
-
-                    <div class="relative h-fit w-full">
-                      <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
-                        name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
-                        class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                      <label for="e_mobileNumber"
-                        class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                        Mobile Number</label>
-                    </div>
-                  </div>
-
-                  <!-- Emergency Contact Address -->
-                  <div class="h-fit relative">
-                    <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
-                      aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
-                      class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                    <label for="emergencyAddress"
-                      class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
-                      Address</label>
-                  </div>
-
-                  <!-- Relation Details  -->
-                  <div class="">
-                    <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off"
-                      name="relationDetails" id="relationDetails" title="Relation Details"
-                      class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
-                  </div>
+                <!-- Address  -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Address" aria-autocomplete="none" autocomplete="off" name="address"
+                         id="address" title="Address"
+                         class="aptAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="address"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Address</label>
                 </div>
               </div>
-
             </div>
 
           </div>
 
-          <!-- Buttons  -->
-          <div class="flex flex-col sm:flex-row justify-start appointmentButtonWrapper my-5">
-            <div class="createAppointmentButtons flex items-center">
+          <!-- Appointment Details  ------------------------------------------------------->
+          <div class="appointmentDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
 
-              <!-- Create Appointment Button  -->
-              <div class="createAptBtn relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
+            <div class="flex flex-col appointmentDetailsFields rounded-xl ">
 
-                <button
-                  class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center  group-hover:rounded-r-none flex items-center z-10">
-                  <span>Create</span>
-                </button>
+              <h1
+                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
+                Appointment Details</h1>
 
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Visit Per Week  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Visit per week" name="occurrenceType" aria-autocomplete="none"
+                         autocomplete="off" id="occurrenceType" title="Visit per week" value=''
+                         class="visitCount placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="occurrenceType"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Visit
+                    per week</label>
+                </div>
+
+                <!-- Week/Alternate Week  -->
                 <div
-                  class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-                    <path
-                      d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
-                  </svg>
+                     class="h-fit relative flex items-center my-2 tracking-widest uppercase text-xs text-indigo-600 sm:text-slate-900">
+
+                  <div class="mr-5">
+                    <input type="radio" name="weekType" id="eachWeek"
+                           class="eachWeek radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600" value="7">
+                    <label for="eachWeek" class="ml-2">Each Week</label>
+                  </div>
+
+                  <div>
+                    <input type="radio" name="weekType" id="alternateWeek"
+                           class="alternateWeek radios checked:bg-indigo-600 focus:ring-indigo-600 text-indigo-600"
+                           value="14">
+                    <label for="alternateWeek" class="ml-2">Alternate Week</label>
+                  </div>
 
                 </div>
 
-              </div>
+                <!-- Start Date  -->
+                <div class="relative h-fit flex flex-col startDateWrapper">
 
+                  <div class="default w-full flex items-center startDateSections">
+                    <div class="grow relative">
+                      <input type="text" placeholder="Start Date" name="dates" aria-autocomplete="none"
+                             autocomplete="off" id="aptStartDate" title="Appointment Start Date"
+                             onfocus="(this.type='date')" onfocusout="(this.type='text')"
+                             class=" aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptStartDate firstDate" />
+
+                      <label for="aptStartDate"
+                             class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                        Start Date</label>
+                    </div>
+
+                    <div class="addMoreDate addMore ml-5 cursor-pointer hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                           class="w-6 h-6 text-indigo-600">
+                        <path fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+
+                  </div>
+
+                  <div class="additionalDates addSections grid grid-cols-1 gap-x-10" name="Appointment Start Date">
+                  </div>
+
+                </div>
+
+                <!-- Start Day  -->
+                <div class="relative h-fit flex flex-col">
+
+                  <div class="default w-full flex items-center">
+
+                    <div class="grow relative">
+
+                      <select name="days" id="aptDay" title="Appointment Start Day"
+                              class="aptDay newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput firstDay">
+                        <option value="" class="text-xs md:font-semibold md:text-xs">
+                          Pick a day
+                        </option>
+                        <option value="Monday" class="text-xs md:font-semibold md:text-xs">
+                          Monday
+                        </option>
+                        <option value="Tuesday" class="text-xs md:font-semibold md:text-xs">
+                          Tuesday
+                        </option>
+                        <option value="Wednesday" class="text-xs md:font-semibold md:text-xs">
+                          Wednesday
+                        </option>
+                        <option value="Thursday" class="text-xs md:font-semibold md:text-xs">
+                          Thursday
+                        </option>
+                        <option value="Friday" class="text-xs md:font-semibold md:text-xs">
+                          Friday
+                        </option>
+                        <option value="Saturday" class="text-xs md:font-semibold md:text-xs">
+                          Saturday
+                        </option>
+                        <option value="Sunday" class="text-xs md:font-semibold md:text-xs">
+                          Sunday
+                        </option>
+                      </select>
+                      <label for="aptDay"
+                             class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Start
+                        Day
+                      </label>
+                    </div>
+
+                    <div class="addMoreDay addMore ml-5 cursor-pointer hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                           class="w-6 h-6 text-indigo-600">
+                        <path fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+
+
+                  </div>
+
+                  <div class="additionalDay addSections grid grid-cols-1 gap-x-10" name="Appointment Start Day">
+                  </div>
+
+                </div>
+
+                <!-- Time slot -->
+                <div class="relative h-fit flex flex-col">
+                  <div class="default w-full flex items-center">
+                    <div class="grow relative">
+                      <select name="slots" id="aptTimeSlot" title="Appointment Time Slot"
+                              class="aptTimeSlot newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput firstTime">
+                        <option value="" class="md:font-semibold ">
+                          Time slot
+                        </option>
+                        <option value="09:00 - 10:00" class="text-xs md:font-semibold md:text-xs">
+                          09:00 - 10:00
+                        </option>
+                        <option value="10:00 - 11:00" class="text-xs md:font-semibold md:text-xs">
+                          10:00 - 11:00
+                        </option>
+                        <option value="11:00 - 12:00" class="text-xs md:font-semibold md:text-xs">
+                          11:00 - 12:00
+                        </option>
+                        <option value="12:00 - 13:00" class="text-xs md:font-semibold md:text-xs">
+                          12:00 - 13:00
+                        </option>
+                        <option value="13:00 - 14:00" class="text-xs md:font-semibold md:text-xs">
+                          13:00 - 14:00
+                        </option>
+                        <option value="14:00 - 15:00" class="text-xs md:font-semibold md:text-xs">
+                          14:00 - 15:00
+                        </option>
+                        <option value="15:00 - 16:00" class="text-xs md:font-semibold md:text-xs">
+                          15:00 - 16:00
+                        </option>
+                        <option value="16:00 - 17:00" class="text-xs md:font-semibold md:text-xs">
+                          16:00 - 17:00
+                        </option>
+                        <option value="17:00 - 18:00" class="text-xs md:font-semibold md:text-xs">
+                          17:00 - 18:00
+                        </option>
+                      </select>
+                      <label for="aptTimeSlot"
+                             class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Time
+                        Slot</label>
+
+                    </div>
+
+                    <div class="addMoreTimeSlot addMore ml-5 cursor-pointer hidden">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                           class="w-6 h-6 text-indigo-600">
+                        <path fill-rule="evenodd"
+                              d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v2.25H9a.75.75 0 000 1.5h2.25V15a.75.75 0 001.5 0v-2.25H15a.75.75 0 000-1.5h-2.25V9z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </div>
+
+                  </div>
+
+                  <div class="additionalTimeSlot addSections grid grid-cols-1 gap-x-10" name="Appointment Time Slot">
+                  </div>
+
+                </div>
+
+                <!-- Fees  -->
+                <div class="h-fit relative">
+                  <input type="number" placeholder="Fee" name="aptFees" id="aptFees" aria-autocomplete="none"
+                         autocomplete="off" title="Appointment Fees"
+                         class="aptFees placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="aptFees"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Fees
+                    per visit</label>
+                </div>
+
+              </div>
             </div>
 
-            <!-- Notes  -->
-            <section
-              class="text-[10px] mt-2 sm:ml-10 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
-              <span>All fields are required.</span>
-            </section>
+          </div>
+
+          <!-- Emergency Details  --------------------------------------------->
+          <div class="emergencyDetails w-full shadow-2xl py-3 px-6 rounded-xl sm:bg-white">
+
+            <div class="flex flex-col emergencyDetailsFields rounded-xl ">
+              <h1
+                  class="mt-5 text-[10px] text-right font-semibold tracking-widest text-gray-500 md:text-indigo-600 uppercase">
+                Emergency Details</h1>
+
+              <div class="categoryFields md:grid md:grid-cols-1 md:gap-x-10">
+
+                <!-- Emergency Contact Name -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Full Name" name="emergencyName" id="emergencyName"
+                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Name"
+                         class="emergencyName placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="emergencyName"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Contact Name</label>
+                </div>
+
+                <!-- Emergency Contact Relation -->
+                <div class="">
+                  <div class="relative">
+                    <select name="emergencyRelation" id="emergencyRelation" title="Emergency Relation"
+                            class="emergencyRelation relationType placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput">
+                    </select>
+                    <label for="emergencyRelation"
+                           class="typeLabel hidden transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                      Relation</label>
+                  </div>
+                </div>
+
+                <!-- Emergency Contact Number -->
+                <div class="flex items-center">
+                  <select name="countryCode" id=""
+                          class="e_countryCode countryCode placeholder-transparent peer w-20 mr-5 my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput"
+                          title="Country Code">
+                  </select>
+
+                  <div class="relative h-fit w-full">
+                    <input type="number" placeholder="Mobile number" aria-autocomplete="none" autocomplete="off"
+                           name="mobileNumber" id="e_mobileNumber" title="Emergency Mobile Number"
+                           class="emergencyMobileNumber placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                    <label for="e_mobileNumber"
+                           class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                      Mobile Number</label>
+                  </div>
+                </div>
+
+                <!-- Emergency Contact Address -->
+                <div class="h-fit relative">
+                  <input type="text" placeholder="Address" name="emergencyAddress" id="emergencyAddress"
+                         aria-autocomplete="none" autocomplete="off" title="Emergency Contact Address"
+                         class="emergencyAddress placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                  <label for="emergencyAddress"
+                         class="transition-all absolute text-gray-400 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">
+                    Address</label>
+                </div>
+
+                <!-- Relation Details  -->
+                <div class="">
+                  <input type="text" placeholder="Relation Details" aria-autocomplete="none" autocomplete="off"
+                         name="relationDetails" id="relationDetails" title="Relation Details"
+                         class="relationDetails left-0 hidden placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest aptFormInput" />
+                </div>
+              </div>
+            </div>
 
           </div>
+
         </div>
 
+        <!-- Buttons  -->
+        <div class="flex flex-col sm:flex-row justify-start appointmentButtonWrapper my-5">
+          <div class="createAppointmentButtons flex items-center">
+
+            <!-- Create Appointment Button  -->
+            <div class="createAptBtn relative flex items-center group ease-in-out duration-300 cursor-pointer h-9">
+
+              <button
+                      class="w-fit h-full px-4 uppercase tracking-widest font-semibold text-xs bg-indigo-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-indigo-600 hover:text-white text-center  group-hover:rounded-r-none flex items-center z-10">
+                <span>Create</span>
+              </button>
+
+              <div
+                   class="bg-indigo-600 rounded-r-md h-full flex items-center justify-center absolute right-1/3 top-1/2 -translate-y-1/2 ease-in-out duration-300 px-2 group-hover:-right-7 text-white tracking-widest">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+                  <path
+                        d="M6.25 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM3.25 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM19.75 7.5a.75.75 0 00-1.5 0v2.25H16a.75.75 0 000 1.5h2.25v2.25a.75.75 0 001.5 0v-2.25H22a.75.75 0 000-1.5h-2.25V7.5z" />
+                </svg>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Notes  -->
+          <section
+                   class="text-[10px] mt-2 sm:ml-10 uppercase font-semibold tracking-widest rounded-md notes text-rose-600">
+            <span>All fields are required.</span>
+          </section>
+
+        </div>
       </div>
 
     </div>
 
-    <!-- Mailing scripts  -->
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="../scripts/appointments/appointments_mail_trigger.js"></script>
+  </div>
 
-    <!-- Firebase Scripts  -->
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.min.js"></script>
+  <!-- Mailing scripts  -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="../scripts/appointments/appointments_mail_trigger.js"></script>
 
-    <!-- Variables and common loaders  -->
-    <script src="../scripts/commonScripts/dbConnect.js"></script>
-    <script src="../scripts/commonScripts/commonVariables.js"></script>
-    <script src="../scripts/commonScripts/countryCode.js"></script>
-    <script src="../scripts/commonScripts/commonFunctions.js"></script>
-    <script src="../scripts/appointments/appointments_variables.js"></script>
-    <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
-    <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
+  <!-- Firebase Scripts  -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/8.10.0/firebase-auth.min.js"></script>
 
-
-    <!-- Page scripts  -->
-    <!-- <script src="../scripts/appointments/appointments_secondOcc.js"></script> -->
-    <!-- <script src="../scripts/appointments/appointments_createTwoApts.js"></script> -->
-    <!-- <script src="../scripts/appointments/appointments_createProfile.js"></script> -->
-    <!-- <script src="../scripts/appointments/appointments_getting_data.js"></script> -->
-    <script src="../scripts/appointments/checkPatientDetails.js"></script>
-    <script src="../scripts/appointments/checkAppointmentDetails.js"></script>
-    <script src="../scripts/appointments/generateConfirmPage.js"></script>
-    <script src="../scripts/appointments/gettingNewData.js"></script>
-    <!-- <script src="../scripts/appointments/appointments_fieldCheck.js"></script> -->
+  <!-- Variables and common loaders  -->
+  <script src="../scripts/commonScripts/dbConnect.js"></script>
+  <script src="../scripts/commonScripts/commonVariables.js"></script>
+  <script src="../scripts/commonScripts/countryCode.js"></script>
+  <script src="../scripts/commonScripts/commonFunctions.js"></script>
+  <script src="../scripts/appointments/appointments_variables.js"></script>
+  <script src="../scripts/commonScripts/leftSectionNavs.js"></script>
+  <script src="../scripts/commonScripts/addingNavbar_Prompts.js"></script>
 
 
-    <!-- Global notifications and prompts -->
-    <script src="../scripts/commonScripts/globalNotification.js"></script>
-    <script src="../scripts/commonScripts/prompts.js"></script>
-    <script src="../scripts/commonScripts/panicButton.js"></script>
-  </body>
+  <!-- Page scripts  -->
+  <!-- <script src="../scripts/appointments/appointments_secondOcc.js"></script> -->
+  <!-- <script src="../scripts/appointments/appointments_createTwoApts.js"></script> -->
+  <!-- <script src="../scripts/appointments/appointments_createProfile.js"></script> -->
+  <!-- <script src="../scripts/appointments/appointments_getting_data.js"></script> -->
+  <script src="../scripts/appointments/checkPatientDetails.js"></script>
+  <script src="../scripts/appointments/checkAppointmentDetails.js"></script>
+  <script src="../scripts/appointments/generateConfirmPage.js"></script>
+  <script src="../scripts/appointments/gettingNewData.js"></script>
+  <!-- <script src="../scripts/appointments/appointments_fieldCheck.js"></script> -->
+
+
+  <!-- Global notifications and prompts -->
+  <script src="../scripts/commonScripts/globalNotification.js"></script>
+  <script src="../scripts/commonScripts/prompts.js"></script>
+  <script src="../scripts/commonScripts/panicButton.js"></script>
+</body>
 
 </html>

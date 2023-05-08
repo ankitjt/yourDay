@@ -14,6 +14,7 @@ createNewAccountBtn.onclick = () =>
   let createFormFlag = false
   let newName = document.querySelector( '.newName' )
   let newEmail = document.querySelector( '.newEmail' )
+  let newCEmail = document.querySelector( '.newCEmail' )
   let newCountryCode = document.querySelector( '.newCountryCode' )
   let newMobileNumber = document.querySelector( '.newMobileNumber' )
   let newPassword = document.querySelector( '.newPassword' )
@@ -43,6 +44,14 @@ createNewAccountBtn.onclick = () =>
   if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( newEmail.value ) !== true && newEmail.value !== '' )
   {
     newEmail.classList.add( 'md:border-rose-600' )
+    promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
+    createFormFlag = true
+  }
+
+  // Correspondence Email format check.
+  if ( /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test( newCEmail.value ) !== true && newCEmail.value !== '' )
+  {
+    newCEmail.classList.add( 'md:border-rose-600' )
     promptMessages( 'Incorrect Email format. Format should be abc@xyz.com', 'error' )
     createFormFlag = true
   }

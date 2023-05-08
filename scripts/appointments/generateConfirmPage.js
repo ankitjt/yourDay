@@ -37,21 +37,21 @@ const generateConfirmPage = () =>
                       <!-- Category  -->
                       <div class="flex flex-col">
                         <span class="confirmCategoryTag text-[11px] font-semibold uppercase">Category</span>
-                        <span class="confirmCategory text-xs mt-[2px] font-semibold text-zinc-800">New</span>
+                        <span class="confirmCategory text-xs mt-[2px] font-semibold text-zinc-800  confirmDetail">New</span>
                       </div>
 
                       <!-- Appointment Nature  -->
                       <div class="flex flex-col">
                         <span
                           class="confirmAppointmentNatureTag text-[11px] font-semibold uppercase">Mode</span>
-                        <span class="confirmAppointmentNature text-xs mt-[2px] font-semibold text-zinc-800">${ apt.nature.value }</span>
+                        <span class="confirmAppointmentNature text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.nature.value }</span>
                       </div>
 
                       <!-- Appointment Type  -->
                       <div class="flex flex-col">
                         <span
                           class="confirmAppointmentTypeTag text-[11px] font-semibold uppercase">Type</span>
-                        <span class="confirmAppointmentType text-xs mt-[2px] font-semibold text-zinc-800">${ apt.type.value }</span>
+                        <span class="confirmAppointmentType text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.type.value }</span>
                       </div>
 
                       <!-- Visit Per Week  -->
@@ -59,13 +59,13 @@ const generateConfirmPage = () =>
                         <span class="confirmOccurrenceTypeTag text-[11px] font-semibold uppercase">Visit
                           per
                           week</span>
-                        <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800">${ apt.visitCount.value }</span>
+                        <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.visitCount.value }</span>
                       </div>
 
                       <!-- Cycle  -->
                       <div class="flex flex-col">
                         <span class="confirmOccurrenceTypeTag text-[11px] font-semibold uppercase">Cycle</span>
-                        <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800">${ radios.value } days</span>
+                        <span class="confirmOccurrenceType text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ radios.value } days</span>
                       </div>
 
                     </div>
@@ -80,7 +80,7 @@ const generateConfirmPage = () =>
                       <!-- Name  -->
                       <div class="flex flex-col w-full">
                         <span class="confirmNameTag text-[11px] font-semibold uppercase">Name</span>
-                        <span class="confirmName text-xs mt-[2px] font-semibold text-zinc-800">${ aptName.value.trim() }</span>
+                        <span class="confirmName text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ aptName.value.trim() }</span>
                       </div>
 
                       <!-- Email  -->
@@ -93,13 +93,13 @@ const generateConfirmPage = () =>
                       <div class="flex flex-col w-full">
                         <span class="confirmMobileNumberTag text-[11px] font-semibold uppercase">Mobile
                           Number</span>
-                        <span class="confirmMobileNumber text-xs mt-[2px] font-semibold text-zinc-800">${ apt.pt_countryCode.value + '-' + apt.mobileNumber.value }</span>
+                        <span class="confirmMobileNumber text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.pt_countryCode.value + '-' + apt.mobileNumber.value }</span>
                       </div>
 
                       <!-- Address  -->
                       <div class="flex flex-col w-full">
                         <span class="confirmAddressTag text-[11px] font-semibold uppercase">Address</span>
-                        <span class="confirmAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize">${ apt.address.value }</span>
+                        <span class="confirmAddress text-xs mt-[2px] font-semibold text-zinc-800 capitalize confirmDetail">${ apt.address.value }</span>
                       </div>
                     </div>
                   </div>
@@ -116,29 +116,27 @@ const generateConfirmPage = () =>
                       <div class="flex flex-col">
                         <span class="confirmStartDateTag text-[11px] font-semibold uppercase">Start
                           Date</span>
-                        <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800">${ finalCurrentDate }</span>
+                        <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ finalCurrentDate }</span>
                       </div>
 
                       <!-- First Day Slot  -->
                       <div class="flex flex-col">
                         <span class="confirmDayTag text-[11px] font-semibold uppercase">Start Day</span>
-                        <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800">${ apt.day.value }</span>
+                        <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.day.value }</span>
                       </div>
 
                       <!-- First Time Slot  -->
                       <div class="flex flex-col">
                         <span class="confirmTimeSlotTag text-[11px] font-semibold uppercase">Time</span>
-                        <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800">${ apt.timeSlot.value.toString() }</span>
+                        <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.timeSlot.value.toString() }</span>
                       </div>
                     </div>
 
                       <!-- Fees  -->
                       <div class="flex flex-col">
                         <span class="confirmFeeTag text-[11px] font-semibold uppercase">Fees</span>
-                        <div class="confirmFeesWrapper text-zinc-800 text-xs mt-[2px] font-semibold ">
-                          <span>&#8377;</span>
-                          <span class="confirmFees">${ apt.fees.value }</span>
-                        </div>
+                        <span class="confirmFees text-zinc-800 text-xs mt-[2px] font-semibold confirmDetail">${ apt.fees.value }</span>
+                       
                       </div>
                       
                     </div>
@@ -156,14 +154,14 @@ const generateConfirmPage = () =>
                         <span
                           class="confirmEmergencyNameWrapper text-[11px] font-semibold uppercase">Name</span>
                         <span
-                          class="confirmEmergencyName text-xs mt-[2px] font-semibold text-zinc-800">${ apt.emergencyName.value }</span>
+                          class="confirmEmergencyName text-xs mt-[2px] font-semibold text-zinc-800 capitalize confirmDetail">${ apt.emergencyName.value }</span>
                       </div>
 
                       <!-- Emergency Relation  -->
                       <div class="flex flex-col">
                         <span
                           class="confirmEmergencyRelationWrapper text-[11px] font-semibold uppercase">Relation</span>
-                        <span class="confirmEmergencyRelation text-xs mt-[2px] font-semibold text-zinc-800">${ apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value ) }</span>
+                        <span class="confirmEmergencyRelation capitalize text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.relationDetails.value === '' ? apt.emergencyRelation.value : apt.emergencyRelation.value + ' - ' + ( apt.relationDetails.value ) }</span>
                       </div>
 
                       <!-- Emergency Mobile Number  -->
@@ -171,7 +169,7 @@ const generateConfirmPage = () =>
                         <span
                           class="confirmEmergencyMobileNumberWrapper text-[11px] font-semibold uppercase">Mobile
                           Number</span>
-                        <span class="confirmEmergencyMobileNumber text-xs mt-[2px] font-semibold text-zinc-800">${ apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value }</span>
+                        <span class="confirmEmergencyMobileNumber text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.e_countryCode.value + '-' + apt.emergencyMobileNumber.value }</span>
                       </div>
 
                       <!-- Emergency Address  -->
@@ -179,7 +177,7 @@ const generateConfirmPage = () =>
                         <span
                           class="confirmEmergencyAddressWrapper text-[11px] uppercase font-semibold">Address</span>
                         <span
-                          class="confirmEmergencyAddress text-sm mt-[2px] font-semibold text-zinc-800">${ apt.emergencyAddress.value }</span>
+                          class="confirmEmergencyAddress capitalize text-sm mt-[2px] font-semibold text-zinc-800 confirmDetail">${ apt.emergencyAddress.value }</span>
                       </div>
                     </div>
                   </div>
@@ -226,19 +224,19 @@ const generateConfirmPage = () =>
          <!-- First Date Slot  -->
           <div class="flex flex-col">
             <span class="confirmStartDateTag text-[11px] font-semibold uppercase">${ schedule.order } Date</span>
-            <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800">${ schedule.date } </span>
+            <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ schedule.date } </span>
           </div>
 
           <!-- First Day Slot  -->
           <div class="flex flex-col">
             <span class="confirmDayTag text-[11px] font-semibold uppercase">${ schedule.order } Day</span>
-            <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800">${ schedule.day }</span>
+            <span class="confirmDay text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ schedule.day }</span>
           </div>
 
           <!-- First Time Slot  -->
           <div class="flex flex-col">
             <span class="confirmTimeSlotTag text-[11px] font-semibold uppercase">${ schedule.order } Time</span>
-            <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800">${ schedule.newTimeSlot }</span>
+            <span class="confirmTimeSlot text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ schedule.newTimeSlot }</span>
           </div>
 
       `
@@ -249,7 +247,7 @@ const generateConfirmPage = () =>
   let confirmPageConfirmButton = document.querySelector( '.confirmPageConfirmButton' )
   confirmPageConfirmButton.onclick = () =>
   {
-    createAppointments()
+    getAppointmentDetails()
   }
 
 
@@ -259,6 +257,19 @@ const generateConfirmPage = () =>
     apt__confirmPage.page.classList.remove( 'left-0' )
     apt__confirmPage.page.classList.add( '-left-[2000px]' )
   }
+}
 
-
+const getAppointmentDetails = () =>
+{
+  let arr = []
+  let confirmDetail = document.querySelectorAll( '.confirmDetail' )
+  for ( let detail of confirmDetail )
+  {
+    let fieldName = detail.parentElement.childNodes[ 1 ]
+    let name = fieldName.innerText
+    arr.push( {
+      [ name ]: detail.innerText
+    } )
+  }
+  console.log( arr )
 }

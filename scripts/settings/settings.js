@@ -43,7 +43,7 @@ firebase.auth().onAuthStateChanged( ( user ) =>
                 <div class="oldDetails h-fit w-full flex items-center justify-between">
                   <div class="relative w-full mt-2">
                     <input type="email" name="" id="profileEmail" title="Email" placeholder="full name"
-                      class="placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
+                      class="profileEmail placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold lowercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest"
                       disabled />
                     <label for="profileEmail"
                       class="transition-all absolute text-gray-400 font-semibold tracking-widest text-[10px] sm:peer-placeholder-shown:text-gray-900 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0  peer-placeholder-shown:text-xs">
@@ -155,33 +155,38 @@ firebase.auth().onAuthStateChanged( ( user ) =>
         }
       }
       const userIs = firebase.auth().currentUser
-      console.log( userIs );
-      let profileName = document.querySelector( '.profileName' )
-      let profileNameLabel = document.querySelector( '.profileNameLabel' )
-      console.log( profileNameLabel.innerText.toLowerCase() );
-      if ( profileNameLabel.innerText.toLowerCase() === userIs.displayName )
+      if ( userIs )
       {
-        promptMessages( 'You are giving the same name', 'error' )
+        let profileName = document.querySelector( '.profileName' )
+
+        console.log( profileName.disabled )
+        if ( profileName.disabled === false )
+        {
+          let finalUpdatedName = profileName.value.trim()
+          user.updateProfile( {
+            displayName: finalUpdatedName
+          } )
+            .then( () =>
+            {
+              promptMessages( 'Profile updated successfully', 'success', 'refresh' )
+            } )
+            .catch( err => { promptMessages( err.message, 'error' ) } )
+        }
+
+        let profileEmail = document.querySelector( '.profileEmail' )
+        if ( profileEmail.disabled === false )
+        {
+          let finalUpdatedEmail = profileEmail.value.trim()
+          user.updateEmail( finalUpdatedEmail )
+            .then( () =>
+            {
+              promptMessages( 'Profile Updated successfully', 'success', 'refresh' )
+            } )
+            .catch( err => promptMessages( err.message, 'error' ) )
+        }
+
       }
-      else if ( profileName.value === userIs.displayName )
-      {
-        promptMessages( 'You are giving the same name', 'error' )
-      }
-      else
-      {
-        promptMessages( 'Name changed', 'success' )
-      }
-      // else
-      // {
-      //   user.updateProfile( {
-      //     displayName: profileName.value
-      //   } )
-      //     .then( () =>
-      //     {
-      //       promptMessages( 'Profile updated successfully', 'success', 'refresh' )
-      //     } )
-      //     .catch( err => { promptMessages( err.message, 'error' ) } )
-      // }
+
     }
   }
 } )

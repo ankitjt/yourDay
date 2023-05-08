@@ -170,7 +170,7 @@ firebase.auth().onAuthStateChanged( ( user ) =>
    }
    else
    {
-      promptMessages( `Your session is expired, <a href='../index.html' class='underline'>Login</a> again.`, 'error' )
+      promptMessages( `Your session is expired, <a href='../index.html' class='underline'>Login</a> again.`, 'forceReload' )
    }
 } )
 
