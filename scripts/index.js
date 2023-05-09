@@ -147,7 +147,7 @@ for ( let showLogin of backToLoginScreen )
 
 let loginBtn = document.querySelector( ".loginBtn" )
 let loginInputs = document.querySelectorAll( ".loginInputs" )
-let loginEmail = document.querySelector( '.loginEmail' )
+let loginID = document.querySelector( '.loginID' )
 let loginPass = document.querySelector( '.loginPassword' )
 
 loginBtn.onclick = () =>
@@ -160,7 +160,7 @@ loginBtn.onclick = () =>
     }
     else
     {
-      firebase.auth().signInWithEmailAndPassword( loginEmail.value, loginPass.value )
+      firebase.auth().signInWithEmailAndPassword( loginID.value, loginPass.value )
         .then( () =>
         {
           firebase.auth().onAuthStateChanged( ( user ) =>
