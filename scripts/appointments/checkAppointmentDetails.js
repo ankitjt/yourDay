@@ -32,7 +32,7 @@ const checkAppointmentDetails = fieldFlag =>
   // Check for old start Date 
   if ( selectedDate.toLocaleDateString() < new Date().toLocaleDateString() )
   {
-    console.log( selectedDate, new Date().toLocaleDateString() )
+    console.log( selectedDate.toLocaleDateString(), new Date().toLocaleDateString() )
     startDate.classList.add( 'md:border-rose-600' )
     promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
     return fieldFlag = true
@@ -40,7 +40,6 @@ const checkAppointmentDetails = fieldFlag =>
 
   // Day and date-day match
   const aptDaysCheck = [ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ]
-  console.log( aptDaysCheck[ new Date().getDay() ], firstDay.value )
   if ( aptDaysCheck[ new Date( firstDate.value ).getDay() ] !== firstDay.value )
   {
     firstDate.classList.add( 'md:border-rose-600' )

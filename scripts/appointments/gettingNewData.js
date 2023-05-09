@@ -110,7 +110,7 @@ for ( let addMore of addMores )
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs" />
+                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs allDates" />
           `
         inputHolder.innerHTML = moreStartDate
       }
@@ -317,10 +317,11 @@ apt.create.onclick = () =>
       {
         let res = datesArr.every( ( { date } ) =>
         {
-          return currentDate <= new Date( date ).toLocaleDateString()
+          console.log( currentDate, new Date( date ).toLocaleDateString() );
+          return new Date( date ).toLocaleDateString() < currentDate
         } )
         res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
-        // return allFilled = false
+        // allFilled = false
       }
     }
 

@@ -4,7 +4,7 @@ const generateConfirmPage = () =>
   apt__confirmPage.page.classList.add( 'left-0' )
   apt__confirmPage.page.classList.remove( '-left-[2000px]' )
 
-  let aptStartDate1 = new Date( apt.startDate.value ).toLocaleDateString()
+  let aptStartDate1 = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( apt.startDate.value ) )
   let finalCurrentDate = aptStartDate1
   let aptEmailOfUser = apt.email.value
   let correctEmail = aptEmailOfUser.toLowerCase()
@@ -116,7 +116,7 @@ const generateConfirmPage = () =>
                       <div class="flex flex-col">
                         <span class="confirmStartDateTag text-[11px] font-semibold uppercase">Start
                           Date</span>
-                        <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ finalCurrentDate }</span>
+                        <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail startDates">${ finalCurrentDate }</span>
                       </div>
 
                       <!-- First Day Slot  -->
@@ -188,7 +188,7 @@ const generateConfirmPage = () =>
 
               <!-- Confirm & Edit buttons  -->
               <div class="flex items-center uppercase justify-center my-10 confirmEdit flex-row text-white">
-                <a href="#"
+                <button
                   class="confirmPageConfirmButton flex tracking-widest mx-2 items-center justify-center py-3 text-xs bg-indigo-600 rounded-md w-28 md:mx-0 ">
                   <span>Confirm</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -196,8 +196,8 @@ const generateConfirmPage = () =>
                       d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
                       clip-rule="evenodd" />
                   </svg>
-                </a>
-                <a href="#"
+                </button>
+                <button
                   class="confirmPageEditButton flex tracking-widest mx-2 items-center justify-center px-2 py-3 text-xs rounded-md  bg-gray-200 text-indigo-600 w-28 md:mx-4 ">
                   <span>Edit</span>
                   <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 20 20" fill="currentColor">
@@ -206,7 +206,7 @@ const generateConfirmPage = () =>
                       d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
                       clip-rule="evenodd" />
                   </svg>
-                </a>
+                </button>
               </div>
             </div>
 
@@ -224,7 +224,7 @@ const generateConfirmPage = () =>
          <!-- First Date Slot  -->
           <div class="flex flex-col">
             <span class="confirmStartDateTag text-[11px] font-semibold uppercase">${ schedule.order } Date</span>
-            <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail">${ schedule.date } </span>
+            <span class="confirmStartDate text-xs mt-[2px] font-semibold text-zinc-800 confirmDetail startDates">${ Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( schedule.date ) ) } </span>
           </div>
 
           <!-- First Day Slot  -->
@@ -262,6 +262,7 @@ const generateConfirmPage = () =>
 const getAppointmentDetails = () =>
 {
   let arr = []
+  let arrStartDates = []
   let confirmDetail = document.querySelectorAll( '.confirmDetail' )
   for ( let detail of confirmDetail )
   {
@@ -271,5 +272,10 @@ const getAppointmentDetails = () =>
       [ name ]: detail.innerText
     } )
   }
-  console.log( arr )
+  let startDates = document.querySelectorAll( '.startDates' )
+  for ( let startDate of startDates )
+  {
+    arrStartDates.push( startDate.innerText )
+  }
+  createAppointmentsAndProfile( arr, arrStartDates )
 }

@@ -14,17 +14,6 @@ confirmButton.onclick = ( e ) =>
   let dateInSeconds = [ firstAppointmentStart / 1000 ]
   let uppercaseName = confirmName.innerText.toUpperCase()
 
-  // Getting second selected date in the array
-  let secondAppointmentStart = confirmSecondStartDate.innerText === 'NA' ? new Date() : new Date( confirmSecondStartDate.innerText )
-  console.log( secondAppointmentStart );
-  let secondFirstDate = secondAppointmentStart.getDate().toString() < 10 ? '0' + secondAppointmentStart.getDate().toString() : secondAppointmentStart.getDate().toString()
-  let secondFirstMonth = ( secondAppointmentStart.getMonth() + 1 ).toString() < 10 ? '0' + ( secondAppointmentStart.getMonth() + 1 ).toString() : ( secondAppointmentStart.getMonth() + 1 ).toString()
-  let secondFirstYear = secondAppointmentStart.getFullYear().toString()
-  let secondAppointmentDate = [ secondFirstDate ]
-  let secondAppointmentMonth = [ secondFirstMonth ]
-  let secondAppointmentYear = [ secondFirstYear ]
-  let secondDateInSeconds = [ secondAppointmentStart / 1000 ]
-
   for ( let i = 0; i < count.length; i++ )
   {
     // Getting future Date, Month, Year for 1 occurrence.
