@@ -6,8 +6,8 @@ const generateConfirmPage = () =>
 
   let aptStartDate1 = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( apt.startDate.value ) )
   let finalCurrentDate = aptStartDate1
-  let aptEmailOfUser = apt.email.value
-  let correctEmail = aptEmailOfUser.toLowerCase()
+  // let aptEmailOfUser = apt.email.value
+  // let correctEmail = aptEmailOfUser.toLowerCase()
 
   let confirmPageDetails = `
           <div class="flex flex-col w-full h-auto overflow-hidden overflow-y-auto confirmPageDetails">
@@ -73,7 +73,7 @@ const generateConfirmPage = () =>
 
                   <!-- Patient Details --------------------------------------------------------------->
                   <div class='flex flex-col w-full'>
-                    
+
                     <h1 class='text-[10px] text-gray-400 tracking-widest uppercase pb-1 border-b border-gray-300 w-full'>Patient Details</h1>
 
                   <div class= "grid grid-cols-4 gap-10 mt-2">
@@ -103,6 +103,7 @@ const generateConfirmPage = () =>
                       </div>
                     </div>
                   </div>
+
                  
                   <!-- Slot Details --------------------------------------------------------------------->
                   <div class='flex flex-col w-full'>
@@ -135,7 +136,7 @@ const generateConfirmPage = () =>
                       <!-- Fees  -->
                       <div class="flex flex-col">
                         <span class="confirmFeeTag text-[11px] font-semibold uppercase">Fees</span>
-                        <span class="confirmFees text-zinc-800 text-xs mt-[2px] font-semibold confirmDetail">${ apt.fees.value }</span>
+                        <span class="confirmFees text-zinc-800 text-xs mt-[2px] font-semibold confirmDetail">${ parseInt( apt.fees.value ) }</span>
                        
                       </div>
                       
@@ -144,11 +145,11 @@ const generateConfirmPage = () =>
 
                   <!-- Emergency Details -------------------------------------------------------------------->
                   <div class='flex flex-col w-full'>
-                    
+
                     <h1 class='text-[10px] text-gray-400 tracking-widest uppercase pb-1 border-b border-gray-300 w-full'>Emergency Details</h1>
 
                     <div class="grid grid-cols-4 gap-10 mt-2">
-                       
+
                       <!-- Emergency Contact Name  -->
                       <div class="flex flex-col">
                         <span
@@ -181,6 +182,8 @@ const generateConfirmPage = () =>
                       </div>
                     </div>
                   </div>
+
+
 
                 </div>
 
@@ -249,7 +252,6 @@ const generateConfirmPage = () =>
   {
     getAppointmentDetails()
   }
-
 
   let confirmPageEditButton = document.querySelector( ".confirmPageEditButton" )
   confirmPageEditButton.onclick = () =>

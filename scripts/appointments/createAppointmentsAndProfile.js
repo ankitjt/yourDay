@@ -1,14 +1,14 @@
 const createAppointmentsAndProfile = ( arr ) =>
 {
-  console.log( arr );
-
   let count = [ 1, 2, 3, 4, 5 ]
   let allDates = document.querySelectorAll( '.allDates' )
-  let futureDates = []
   let radios1 = document.querySelector( 'input[name="weekType"]:checked' )
 
   for ( let date of allDates )
   {
+    let firstStartDate = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( date.value ) )
+    console.log( firstStartDate );
+    let futureDates = [ { [ date.getAttribute( 'title' ) ]: firstStartDate } ]
     const refStartDate = new Date( date.value )
 
     for ( let i = 0; i < count.length; i++ )
@@ -19,12 +19,13 @@ const createAppointmentsAndProfile = ( arr ) =>
         [ date.getAttribute( 'title' ) ]: finalFutureDates
       } )
     }
-    console.log( futureDates );
 
-    for ( let [ index, futureDate ] of futureDates.entries() )
-    {
-      console.log( index, futureDate )
+    // for ( let date of futureDates )
+    // {
+    //   console.log( {
+    //     name: arr.fullName
+    //   } );
+    // }
 
-    }
   }
 }

@@ -1,18 +1,18 @@
 let additionalChecks = true
 let res = '';
 
-emergencyRelation.onchange = () =>
-{
-  if ( apt.emergencyRelation.value === 'Others' ) 
-  {
-    apt.relationDetails.classList.remove( 'hidden' )
-  }
-  else
-  {
-    apt.relationDetails.classList.add( 'hidden' )
-    apt.relationDetails.value = ''
-  }
-}
+// emergencyRelation.onchange = () =>
+// {
+//   if ( apt.emergencyRelation.value === 'Others' ) 
+//   {
+//     apt.relationDetails.classList.remove( 'hidden' )
+//   }
+//   else
+//   {
+//     apt.relationDetails.classList.add( 'hidden' )
+//     apt.relationDetails.value = ''
+//   }
+// }
 
 visitCount.onkeyup = () =>
 {
@@ -290,7 +290,7 @@ apt.create.onclick = () =>
   }
 
   let fieldFlag = false
-  let finalVerdictCheckPatientDetails = checkPatientDetails( fieldFlag )
+  // let finalVerdictCheckPatientDetails = checkPatientDetails( fieldFlag )
   let finalVerdictCheckAppointmentDetails = checkAppointmentDetails( fieldFlag )
 
   if ( visitCount.value > 1 )
@@ -305,25 +305,28 @@ apt.create.onclick = () =>
     for ( let newDate of getNewDates )
     {
       datesArr.push( { date: newDate.value } )
-      let values = datesArr.map( ( item ) => { return item.date } )
-      let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
-
-      if ( isDuplicate === true )
-      {
-        promptMessages( 'All dates should be unique.', 'error' )
-        allFilled = false
-      }
-      else
-      {
-        let res = datesArr.every( ( { date } ) =>
-        {
-          console.log( currentDate, new Date( date ).toLocaleDateString() );
-          return new Date( date ).toLocaleDateString() < currentDate
-        } )
-        res === false ? promptMessages( `${ newDate.getAttribute( 'title' ) } cannot be an older date.`, 'error' ) : ''
-        // allFilled = false
-      }
     }
+
+    let values = datesArr.map( ( item ) => { return item.date } )
+    let isDuplicate = values.some( ( item, i ) => { return values.indexOf( item ) !== i } )
+
+    if ( isDuplicate === true )
+    {
+      promptMessages( 'All dates should be unique.', 'error' )
+      allFilled = false
+    }
+    else
+    {
+      let result = datesArr.every( ( { date } ) =>
+      {
+        return new Date( date ).getTime() >= new Date().setHours( 0, 0, 0, 0 )
+      } );
+
+      result === false ? promptMessages( `Cannot use an older date.`, 'error' ) : '';
+      allFilled = false
+
+    }
+
 
     // Get all Days
     let getNewDays = document.querySelectorAll( '.newDays' )
@@ -347,6 +350,7 @@ apt.create.onclick = () =>
         let trimmedSlot = splitSlot.map( str => str.trim() )
         let hourSplit = trimmedSlot[ 0 ].split( ':' )
         let finalHourSplit = Number( hourSplit[ 0 ] )
+        // console.log( finalHourSplit, Intl.DateTimeFormat( { timeSt } ) );
 
         if ( finalHourSplit <= local_hours && selectedDate <= currentDate )
         {
@@ -370,9 +374,12 @@ apt.create.onclick = () =>
         order: finalFieldTags[ i ]
       }
     ) )
+    console.log( res );
   }
 
-  if ( allFilled === true && additionalChecks === true && finalVerdictCheckPatientDetails === false && finalVerdictCheckAppointmentDetails === false )
+
+  // Add finalVerdictCheckPatientDetails 
+  if ( allFilled === true && additionalChecks === true && finalVerdictCheckAppointmentDetails === false )
   {
     generateConfirmPage()
   }

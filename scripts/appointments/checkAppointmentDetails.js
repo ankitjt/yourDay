@@ -30,9 +30,8 @@ const checkAppointmentDetails = fieldFlag =>
   }
 
   // Check for old start Date 
-  if ( selectedDate.toLocaleDateString() < new Date().toLocaleDateString() )
+  if ( new Date( selectedDate ).getTime() < new Date().setHours( 0, 0, 0, 0 ) )
   {
-    console.log( selectedDate.toLocaleDateString(), new Date().toLocaleDateString() )
     startDate.classList.add( 'md:border-rose-600' )
     promptMessages( 'Appointment Start Date should be current or future date.', 'error' )
     return fieldFlag = true
