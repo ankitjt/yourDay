@@ -1,18 +1,18 @@
 let additionalChecks = true
-let res = '';
+let res = ''
 
-// emergencyRelation.onchange = () =>
-// {
-//   if ( apt.emergencyRelation.value === 'Others' ) 
-//   {
-//     apt.relationDetails.classList.remove( 'hidden' )
-//   }
-//   else
-//   {
-//     apt.relationDetails.classList.add( 'hidden' )
-//     apt.relationDetails.value = ''
-//   }
-// }
+emergencyRelation.onchange = () =>
+{
+  if ( apt.emergencyRelation.value === 'Others' ) 
+  {
+    apt.relationDetails.classList.remove( 'hidden' )
+  }
+  else
+  {
+    apt.relationDetails.classList.add( 'hidden' )
+    apt.relationDetails.value = ''
+  }
+}
 
 visitCount.onkeyup = () =>
 {
@@ -250,7 +250,7 @@ const deleteFields = () =>
 
 apt.create.onclick = () =>
 {
-  let allFilled = true;
+  let allFilled = true
 
   // Check for empty fields.
   let aptFormInput = document.querySelectorAll( ".aptFormInput" )
@@ -262,6 +262,7 @@ apt.create.onclick = () =>
       promptMessages( `${ inputName } cannot be blank.`, 'error' )
       formInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
       allFilled = false
+      console.log( allFilled )
     }
   }
 
@@ -275,6 +276,7 @@ apt.create.onclick = () =>
       promptMessages( `${ inputName } cannot be blank.`, 'error' )
       newInput.classList.add( 'lg:border-rose-600', 'border-rose-600' )
       allFilled = false
+      console.log( allFilled )
     }
     else
     {
@@ -286,11 +288,12 @@ apt.create.onclick = () =>
   if ( !radios )
   {
     promptMessages( `Week Type is blank`, 'error' )
-    allFilled = false;
+    allFilled = false
+    console.log( allFilled )
   }
 
   let fieldFlag = false
-  // let finalVerdictCheckPatientDetails = checkPatientDetails( fieldFlag )
+  let finalVerdictCheckPatientDetails = checkPatientDetails( fieldFlag )
   let finalVerdictCheckAppointmentDetails = checkAppointmentDetails( fieldFlag )
 
   if ( visitCount.value > 1 )
@@ -314,16 +317,18 @@ apt.create.onclick = () =>
     {
       promptMessages( 'All dates should be unique.', 'error' )
       allFilled = false
+      console.log( allFilled )
     }
     else
     {
       let result = datesArr.every( ( { date } ) =>
       {
-        return new Date( date ).getTime() >= new Date().setHours( 0, 0, 0, 0 )
-      } );
+        return ( new Date( date ).getTime() >= new Date().setHours( 0, 0, 0, 0 ) )
+      } )
 
-      result === false ? promptMessages( `Cannot use an older date.`, 'error' ) : '';
+      result === false ? promptMessages( `Cannot use an older date.`, 'error' ) : ''
       allFilled = false
+      console.log( allFilled )
 
     }
 
@@ -357,6 +362,7 @@ apt.create.onclick = () =>
           newTimeSlot.classList.add( 'md:border-rose-600' )
           promptMessages( `If ${ startDate.getAttribute( 'title' ) } is today, slot hour should be greater than current hour.`, 'error' )
           allFilled = false
+          console.log( allFilled )
         }
         else
         {
@@ -374,12 +380,12 @@ apt.create.onclick = () =>
         order: finalFieldTags[ i ]
       }
     ) )
-    console.log( res );
+    console.log( res )
   }
 
 
-  // Add finalVerdictCheckPatientDetails 
-  if ( allFilled === true && additionalChecks === true && finalVerdictCheckAppointmentDetails === false )
+  console.log( allFilled, additionalChecks, finalVerdictCheckAppointmentDetails, finalVerdictCheckPatientDetails )
+  if ( allFilled === true && additionalChecks === true && finalVerdictCheckAppointmentDetails === false && finalVerdictCheckPatientDetails === false )
   {
     generateConfirmPage()
   }

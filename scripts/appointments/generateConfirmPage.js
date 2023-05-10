@@ -6,8 +6,8 @@ const generateConfirmPage = () =>
 
   let aptStartDate1 = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( apt.startDate.value ) )
   let finalCurrentDate = aptStartDate1
-  // let aptEmailOfUser = apt.email.value
-  // let correctEmail = aptEmailOfUser.toLowerCase()
+  let aptEmailOfUser = apt.email.value
+  let correctEmail = aptEmailOfUser.toLowerCase()
 
   let confirmPageDetails = `
           <div class="flex flex-col w-full h-auto overflow-hidden overflow-y-auto confirmPageDetails">
