@@ -158,23 +158,81 @@ loginBtn.onclick = () =>
     {
       promptMessages( `${ loginInput.getAttribute( 'title' ) } cannot be blank`, 'error' )
     }
-    else
-    {
-      firebase.auth().signInWithEmailAndPassword( loginID.value, loginPass.value )
-        .then( () =>
-        {
-          firebase.auth().onAuthStateChanged( ( user ) =>
-          {
-            if ( user )
-            {
-              window.location.href = './src/appointments.html'
-            }
-          } )
-        } )
-        .catch( ( error ) =>
-        {
-          promptMessages( error.message, 'error' )
-        } )
-    }
   }
+  checkCredentials()
+}
+
+loginPass.onkeydown = ( e ) =>
+{
+  if ( e.key === 'Enter' )
+  {
+    e.preventDefault()
+    loginBtn.click()
+  }
+}
+
+const checkCredentials = () =>
+{
+  firebase.auth().signInWithEmailAndPassword( loginID.value, loginPass.value )
+    .then( () =>
+    {
+      firebase.auth().onAuthStateChanged( ( user ) =>
+      {
+        if ( user )
+        {
+          window.location.href = './src/appointments.html'
+        }
+      } )
+    } )
+    .catch( ( error ) =>
+    {
+      if ( error.code === 'auth/user-not-found' )
+      {
+        promptMessages( 'Login ID or Password do not match.', 'error' )
+
+      }
+    } )
+}
+
+let forgotPass = document.querySelector( '.forgotPass' )
+let contentSection = document.querySelector( '.contentSection' )
+forgotPass.onclick = () =>
+{
+  let forgotPassSection = document.createElement( 'div' )
+  forgotPassSection.innerHTML = `<div class='absolute flex flex-col justify-between ease-in-out duration-300 bottom-0 left-0 w-full h-full bg-gray-900 z-30 p-6'>
+  
+  <!-- Back Arrow -->
+  <div class="backArrow">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-gray-600 cursor-pointer ease-in-out duration-300 hover:text-white">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+    </svg>
+  </div>
+  
+  <div class="resetPasswordWrapper grow flex flex-col items-center justify-center">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-48 h-48 text-gray-600">
+      <path fill-rule="evenodd" d="M11.484 2.17a.75.75 0 011.032 0 11.209 11.209 0 007.877 3.08.75.75 0 01.722.515 12.74 12.74 0 01.635 3.985c0 5.942-4.064 10.933-9.563 12.348a.749.749 0 01-.374 0C6.314 20.683 2.25 15.692 2.25 9.75c0-1.39.223-2.73.635-3.985a.75.75 0 01.722-.516l.143.001c2.996 0 5.718-1.17 7.734-3.08zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zM12 15a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75H12z" clip-rule="evenodd" />
+    </svg>
+
+    <div class="resetTaglines text-gray-600 uppercase text-xs font-semibold text-center">
+      <h1 class='text-xl my-4'>Forgot your Password?</h1>
+      <p>Don't worry we got you covered</p>
+      <p>Just enter your Login ID below</p>
+    </div>
+    
+    <div class="resetSection w-full mt-5 flex flex-col items-center">
+      <div class="w-full relative">
+            <input type="email" name="" id="resetLoginID" title="Login ID"
+                   class="resetLoginID placeholder-transparent peer w-full my-1 h-12 text-xs font-semibold lowercase text-indigo-600 md:border-transparent rounded-md tracking-widest bg-white"
+                   placeholder="email" autocomplete="off" autofocus />
+            <label for="resetLoginID"
+                   class="loginEmailLabel transition-all absolute text-indigo-600 font-semibold uppercase tracking-widest text-[10px] sm:peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:text-indigo-600 peer-placeholder-shown:top-1/2 peer-placeholder-shown:!-translate-y-1/2 left-2.5 top-0 peer-placeholder-shown:uppercase peer-placeholder-shown:text-xs">Login
+              ID</label>
+          </div>
+          <button class="resetPasswordButton mt-5 w-fit py-2 px-4 uppercase tracking-widest font-semibold text-xs bg-rose-600 rounded-md text-white border-indigo-600 ease-in-out duration-300 hover:bg-emerald-600  text-center z-20 group-hover:rounded-r-none flex items-center">Reset Password</button>
+    </div>
+    
+  </div>
+    
+  </div>`
+  contentSection.appendChild( forgotPassSection )
 }
