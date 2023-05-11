@@ -1,6 +1,14 @@
 const createAppointmentsAndProfile = ( arr ) =>
 {
-  let count = [ 1, 2, 3, 4, 5 ]
+  console.log( {
+    mode: arr.MODE,
+    type: arr.TYPE,
+    cycle: arr.CYCLE,
+    name: arr.NAME,
+    time: arr.TIME,
+  } );
+
+  let count = [ 1, 2, 3, 4 ]
   let allDates = document.querySelectorAll( '.allDates' )
   let radios1 = document.querySelector( 'input[name="weekType"]:checked' )
 
@@ -15,6 +23,14 @@ const createAppointmentsAndProfile = ( arr ) =>
     {
       let finalFutureDates = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( refStartDate.setDate( refStartDate.getDate() + parseInt( radios1.value ) ) )
       console.log( finalFutureDates );
+      // console.log( {
+      //   mode: arr.MODE,
+      //   type: arr.TYPE,
+      //   cycle: arr.CYCLE,
+      //   name: arr.NAME,
+      //   time: arr.TIME,
+      //   [ date.getAttribute( 'title' ) ]: finalFutureDates
+      // } );
       futureDates.push( {
         [ date.getAttribute( 'title' ) ]: finalFutureDates
       } )
