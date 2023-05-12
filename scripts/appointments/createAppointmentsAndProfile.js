@@ -1,47 +1,39 @@
-const createAppointmentsAndProfile = ( arr ) =>
+const createAppointmentsAndProfile = () =>
 {
-  console.log( {
-    mode: arr.MODE,
-    type: arr.TYPE,
-    cycle: arr.CYCLE,
-    name: arr.NAME,
-    time: arr.TIME,
-  } );
 
   let count = [ 1, 2, 3, 4 ]
   let allDates = document.querySelectorAll( '.allDates' )
   let radios1 = document.querySelector( 'input[name="weekType"]:checked' )
+  let counters = [ 'First', 'Second', 'Third', 'Fourth', 'Fifth', 'Sixth' ]
 
-  for ( let date of allDates )
+  for ( let [ index, date ] of allDates.entries() )
   {
-    let firstStartDate = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( new Date( date.value ) )
-    console.log( firstStartDate );
-    let futureDates = [ { [ date.getAttribute( 'title' ) ]: firstStartDate } ]
+    let firstStartDate = new Date( date.value )
+    let finalArr = [ firstStartDate ]
     const refStartDate = new Date( date.value )
 
     for ( let i = 0; i < count.length; i++ )
     {
-      let finalFutureDates = Intl.DateTimeFormat( 'en-GB', { dateStyle: 'short' } ).format( refStartDate.setDate( refStartDate.getDate() + parseInt( radios1.value ) ) )
-      console.log( finalFutureDates );
-      // console.log( {
-      //   mode: arr.MODE,
-      //   type: arr.TYPE,
-      //   cycle: arr.CYCLE,
-      //   name: arr.NAME,
-      //   time: arr.TIME,
-      //   [ date.getAttribute( 'title' ) ]: finalFutureDates
-      // } );
-      futureDates.push( {
-        [ date.getAttribute( 'title' ) ]: finalFutureDates
+      let setDate = Math.floor( refStartDate.setDate( refStartDate.getDate() + parseInt( radios1.value ) ) / 1000 )
+      let finalFutureDates = new Date( setDate * 1000 )
+      finalArr.push( finalFutureDates )
+    }
+    console.log( finalArr );
+    for ( let j = 0; j < finalArr.length; j++ )
+    {
+      let dayOfApt = Intl.DateTimeFormat( 'en', { weekday: 'long' } ).format( new Date( finalArr[ j ] ) )
+      console.log( {
+        appointmentNumbers: counters[ index ] + ' ' + 'Appointment',
+        name: apt.email.value,
+        mode: [ apt.nature.value ],
+        email: apt.email.value,
+        status: 'Scheduled',
+        fees: [ Number( apt.fees.value ) ],
+        softDelete: false,
+        showUpdate: count[ j ] === 5 ? 'update' : '',
+        appointmentDate: finalArr[ j ],
+        dayOfApt: dayOfApt
       } )
     }
-
-    // for ( let date of futureDates )
-    // {
-    //   console.log( {
-    //     name: arr.fullName
-    //   } );
-    // }
-
   }
 }

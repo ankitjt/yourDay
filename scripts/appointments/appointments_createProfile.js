@@ -39,28 +39,6 @@ confirmButton.onclick = ( e ) =>
     let futureYear = someTimes.getFullYear().toString()
     appointmentYear.push( futureYear )
 
-    // Getting future Date, Month, Year for 2 occurrence.
-    let secondFutureAppointments = Math.floor( secondAppointmentStart.setDate( secondAppointmentStart.getDate() + 7 ) / 1000 )
-    secondDateInSeconds.push( secondFutureAppointments )
-
-    let secondSome = secondFutureAppointments
-    let secondSomeTimes = new Date( secondSome * 1000 )
-
-    //Future Dates(2 Occurrence)
-    let secondFutureDate = secondSomeTimes.getDate().toString()
-    let secondFinalFutureDate
-    secondFutureDate < 10 ? secondFinalFutureDate = '0' + futureDate : secondFinalFutureDate = futureDate
-    secondAppointmentDate.push( secondFinalFutureDate )
-
-    //Future Months(2 Occurrence)
-    let secondFutureMonth = ( secondSomeTimes.getMonth() + 1 ).toString()
-    let secondFinalFutureMonth
-    secondFutureMonth < 10 ? secondFinalFutureMonth = '0' + secondFutureMonth : secondFinalFutureMonth = secondFutureMonth
-    secondAppointmentMonth.push( secondFinalFutureMonth )
-
-    //Future Years(2 Occurrence)
-    let secondFutureYear = secondSomeTimes.getFullYear().toString()
-    secondAppointmentYear.push( secondFutureYear )
 
     console.log( {
       type: confirmAppointmentType.innerText,

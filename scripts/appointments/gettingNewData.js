@@ -299,7 +299,6 @@ apt.create.onclick = () =>
 
     // Getting all Dates
     let getNewDates = document.querySelectorAll( '.aptDates' )
-    let currentDate = new Date().toLocaleDateString()
     let datesArr = []
 
     for ( let newDate of getNewDates )

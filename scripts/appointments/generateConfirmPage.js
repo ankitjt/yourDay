@@ -270,6 +270,8 @@ const getAppointmentDetails = () =>
   {
     let fieldName = detail.parentElement.childNodes[ 1 ]
     let name = fieldName.innerText
+
+    // Can be used for creating profile. 
     arr.push( {
       [ name ]: detail.innerText
     } )
@@ -279,5 +281,5 @@ const getAppointmentDetails = () =>
   {
     arrStartDates.push( startDate.innerText )
   }
-  createAppointmentsAndProfile( arr, arrStartDates )
+  createAppointmentsAndProfile()
 }
