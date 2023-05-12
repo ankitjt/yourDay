@@ -12,7 +12,7 @@ const createAppointmentsAndProfile = () =>
   {
     timeSlotArr.push( timeSlot.value )
   }
-  console.log( timeSlotArr )
+
 
   for ( let [ index, date ] of allDates.entries() )
   {
@@ -30,6 +30,7 @@ const createAppointmentsAndProfile = () =>
     // Data sent to Db for creating appointments
     for ( let j = 0; j < finalArr.length; j++ )
     {
+      console.log( j )
       let dayOfApt = Intl.DateTimeFormat( 'en', { weekday: 'long' } ).format( new Date( finalArr[ j ] ) )
 
       const user = firebase.auth().currentUser
@@ -43,9 +44,9 @@ const createAppointmentsAndProfile = () =>
           email: [ apt.email.value ],
           status: 'Scheduled',
           fees: [ Number( apt.fees.value ) ],
-          softDelete: false,
-          showUpdate: count[ j ] === 5 ? 'update' : '',
-          appointmentDate: finalArr[ j ],
+          softDelete: [ false ],
+          showUpdate: j === 4 ? 'update' : '',
+          appointmentDate: [ finalArr[ j ] ],
           dayOfApt: [ dayOfApt ],
           timeOfApt: [ timeSlotArr[ index ] ]
         } )

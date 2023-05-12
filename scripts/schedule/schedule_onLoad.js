@@ -4,15 +4,18 @@ let mobileCount = document.querySelector( ".mobileCount" )
 
 setTimeout( () =>
 {
+  console.log( 'testing' )
   let appointmentCountNumber = []
   let currentMonthAppointments = ''
   let mobileView = ''
+
   for ( let eachRecord of aptsArr )
   {
-    if ( parseInt( eachRecord.month ) === parseInt( local_month ) || parseInt( eachRecord.month ) === parseInt( local_month ) - 1 )
+    if ( parseInt( eachRecord.appointmentMonth ) - 1 === new Date().getMonth() || parseInt( eachRecord.appointmentMonth ) === parseInt( local_month ) - 1 )
     {
-      if ( eachRecord.status === 'Pending' || eachRecord.status === 'Scheduled' )
+      if ( eachRecord.appointmentStatus === 'Pending' || eachRecord.appointmentStatus === 'Scheduled' )
       {
+        console.log( eachRecord.appointmentMonth, new Date().getMonth() )
         appointmentCountNumber.push( eachRecord )
         mobileCount.innerText = "-  " + appointmentCountNumber.length
         mobileView += `
@@ -21,27 +24,27 @@ setTimeout( () =>
               
             <p class="aptName flex items-center justify-between my-2">
               <span class="text-indigo-600">Name</span>
-              <span class="name">${ eachRecord.name }</span>
+              <span class="name">${ eachRecord.appointmentName }</span>
             </p>
             <p class="aptTime flex items-center justify-between my-2">
               <span class="text-indigo-600">Time Slot</span>
-              <span class="Time"> ${ eachRecord.timeSlot }</span>
+              <span class="Time"> ${ eachRecord.appointmentTime }</span>
             </p>
             <p class="aptDate flex items-center justify-between my-2">
               <span class="text-indigo-600">Date</span>
-              <span class="Date">${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year }, ${ eachRecord.day }</span>
+              <span class="Date">${ eachRecord.appointmentDate }</span>
             </p>
             <p class="aptType flex items-center justify-between my-2">
               <span class="text-indigo-600">Type</span>
-              <span class="Type">${ eachRecord.type }</span>
+              <span class="Type">${ eachRecord.appointmentType }</span>
             </p>
             <p class="aptMode flex items-center justify-between my-2">
               <span class="text-indigo-600">Mode</span>
-              <span class="Mode">${ eachRecord.mode }</span>
+              <span class="Mode">${ eachRecord.appointmentMode }</span>
             </p>
             <p class="aptStatus flex items-center justify-between my-2">
               <span class="text-indigo-600">Status</span>
-              <span class="Status">${ eachRecord.status }</span>
+              <span class="Status">${ eachRecord.appointmentStatus }</span>
             </p>
           </div>
                   
@@ -57,30 +60,30 @@ setTimeout( () =>
                   class="content w-full py-3 font-semibold tracking-widest border-b border-gray-300 text-[10px] flex items-center justify-evenly ease-in-out duration-300 hover:bg-indigo-600 hover:text-white cursor-pointer" data-id="${ eachRecord.id }">
                   
                   <span class="w-36 flex flex-col flex-start">
-                    <span>${ eachRecord.name } </span>
-                    <span class='lowercase'>${ eachRecord.email }</span>
+                    <span>${ eachRecord.appointmentName } </span>
+                    <span class='lowercase'>${ eachRecord.appointmentEmail }</span>
                     <span class='showUpdate ${ eachRecord.showUpdate === "update" ? 'block' : 'hidden' } bg-indigo-600
                           tracking-widest text-center mt-1 w-fit px-2 py-1 text-white font-semibold rounded-md uppercase text-[10px] cursor-pointer'>
                           ${ eachRecord.showUpdate } 
                     </span>
                   </span>
 
-                  <span class="w-24">${ eachRecord.timeSlot }</span>
+                  <span class="w-24">${ eachRecord.appointmentTime }</span>
 
-                  <span class="w-24">${ eachRecord.date }-${ eachRecord.month }-${ eachRecord.year }</span>
+                  <span class="w-24">${ eachRecord.appointmentDate }</span>
 
-                  <span class="w-24">${ eachRecord.type }</span>
+                  <span class="w-24">${ eachRecord.appointmentType }</span>
 
-                  <span class="w-24" title='${ eachRecord.mode === 'Online' ? 'Online' : 'Offline' }'>
-                     <img src='../assets/sofa.svg' class='h-5 w-5  ${ eachRecord.mode === 'Offline' ? 'block' : 'hidden' }' />
-                     <img src='../assets/laptop.svg' class='h-5 w-5  ${ eachRecord.mode === 'Online' ? 'block' : 'hidden' }' />
+                  <span class="w-24" title='${ eachRecord.appointmentMode === 'Online' ? 'Online' : 'Offline' }'>
+                     <img src='../assets/sofa.svg' class='h-5 w-5  ${ eachRecord.appointmentMode === 'Offline' ? 'block' : 'hidden' }' />
+                     <img src='../assets/laptop.svg' class='h-5 w-5  ${ eachRecord.appointmentMode === 'Online' ? 'block' : 'hidden' }' />
                   </span>
 
                   <span class="w-24">
-                    ${ eachRecord.status }
+                    ${ eachRecord.appointmentStatus }
                     <div class="statusUpdateTime">
                         <span class="text-[10px] font-semibold">
-                          ${ lastElementOfUpdatedStatus === 'NA' ? '' : lastUpdatedDate.toLocaleDateString() + ',' + lastUpdatedDate.toLocaleTimeString() }
+                          NA
                         </span>
                       </div> 
                   </span>
@@ -105,7 +108,9 @@ setTimeout( () =>
       }
     }
   }
+
   addMoreAppointments()
   updateAppointmentStatus()
-}, 2000 )
+
+}, 4000 )
 
