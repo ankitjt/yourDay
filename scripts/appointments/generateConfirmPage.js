@@ -12,7 +12,7 @@ const generateConfirmPage = () =>
   let confirmPageDetails = `
           <div class="flex flex-col w-full h-auto overflow-hidden overflow-y-auto confirmPageDetails">
 
-            <div class="confirmDetails w-2/3 bg-white rounded-xl py-3 px-5 shadow-2xl">
+            <div class="confirmDetails w-full bg-white rounded-xl py-3 px-5 shadow-2xl">
 
               <!-- Confirm Page Navbar -->
               <nav class="flex items-center w-full py-2 navConfirmPage justify-between">
@@ -26,7 +26,7 @@ const generateConfirmPage = () =>
 
                 <!-- Confirm Appointment Details  -->
                 <div
-                  class="grid grid-cols-1 appointmentDetailsWrapper lg:grid-cols-1 md:grid-cols-2 gap-y-5 place-items-center text-left">
+                  class="grid grid-cols-1 appointmentDetailsWrapper gap-y-5 place-items-center text-left">
 
                   <!-- Appointment Basics ---------------------------------------------------------->
                   <div class='flex flex-col w-full'>

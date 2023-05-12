@@ -109,6 +109,10 @@ createNewAccountBtn.onclick = () =>
       {
         const user = userCredential.user
         console.log( user )
+        const newUser = firebase.auth().currentUser
+        newUser.updateProfile( {
+          displayName: newName.value
+        } )
         for ( let detail of newUserForm )
         {
           detail.classList.remove( 'border-rose-600' )
@@ -225,10 +229,10 @@ passwordResetButton.onclick = () =>
       } )
       .catch( ( error ) =>
       {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        promptMessages( errorCode, errorMessage );
-      } );
+        var errorCode = error.code
+        var errorMessage = error.message
+        promptMessages( errorCode, errorMessage )
+      } )
   }
 }
 

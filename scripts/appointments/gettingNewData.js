@@ -1,18 +1,18 @@
 let additionalChecks = true
-let res = '';
+let res = ''
 
-// emergencyRelation.onchange = () =>
-// {
-//   if ( apt.emergencyRelation.value === 'Others' ) 
-//   {
-//     apt.relationDetails.classList.remove( 'hidden' )
-//   }
-//   else
-//   {
-//     apt.relationDetails.classList.add( 'hidden' )
-//     apt.relationDetails.value = ''
-//   }
-// }
+emergencyRelation.onchange = () =>
+{
+  if ( apt.emergencyRelation.value === 'Others' ) 
+  {
+    apt.relationDetails.classList.remove( 'hidden' )
+  }
+  else
+  {
+    apt.relationDetails.classList.add( 'hidden' )
+    apt.relationDetails.value = ''
+  }
+}
 
 visitCount.onkeyup = () =>
 {
@@ -110,7 +110,7 @@ for ( let addMore of addMores )
          <input type="text" placeholder="Start Date" name="aptStartDate" aria-autocomplete="none"
                             autocomplete="off" id="aptStartDate" title="${ fieldTags[ dateCounter ] } Appointment Start Date" onfocus="(this.type='date')"
                             onfocusout="(this.type='text')"
-                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs allDates" />
+                            class="newDates aptDates placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest newInputs allDates" />
           `
         inputHolder.innerHTML = moreStartDate
       }
@@ -120,7 +120,7 @@ for ( let addMore of addMores )
         dayCounter = dayCounter + 1
         let moreDayInput = `
           <select name="aptDay" id="aptDay" title="${ fieldTags[ dayCounter ] } Appointment Start Day"
-                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs">
+                            class="newDays placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest newInputs">
                       <option value="" class="text-xs md:font-semibold md:text-xs">
                         Pick a day
                       </option>
@@ -155,7 +155,7 @@ for ( let addMore of addMores )
         timeSlotCounter = timeSlotCounter + 1
         let moreTimeSlotInput = ` 
           <select name="aptTimeSlot" id="aptTimeSlot" title="${ fieldTags[ timeSlotCounter ] } Appointment Time Slot"
-                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 lg:border-gray-300 lg:text-slate-900 bg-gray-900 lg:bg-transparent rounded-md tracking-widest newInputs">
+                            class="newTimeSlots placeholder-transparent peer w-full my-5 h-12 text-xs font-semibold uppercase text-indigo-600 border border-indigo-600 sm:border-gray-300 sm:text-slate-900 bg-gray-900 sm:bg-transparent rounded-md tracking-widest newInputs finalSlots">
                       <option value="" class="md:font-semibold">
                         Time slot
                       </option>
@@ -250,7 +250,7 @@ const deleteFields = () =>
 
 apt.create.onclick = () =>
 {
-  let allFilled = true;
+  let allFilled = true
 
   // Check for empty fields.
   let aptFormInput = document.querySelectorAll( ".aptFormInput" )
@@ -286,7 +286,7 @@ apt.create.onclick = () =>
   if ( !radios )
   {
     promptMessages( `Week Type is blank`, 'error' )
-    allFilled = false;
+    allFilled = false
   }
 
   let fieldFlag = false
@@ -315,7 +315,7 @@ apt.create.onclick = () =>
       allFilled = false
     }
 
-    const result = datesArr.every( ( { date } ) => { return new Date( date ).getTime() >= new Date().setHours( 0, 0, 0, 0 ) } );
+    const result = datesArr.every( ( { date } ) => { return new Date( date ).getTime() >= new Date().setHours( 0, 0, 0, 0 ) } )
     if ( result === false ) 
     {
       promptMessages( `Cannot use an older date.`, 'error' )
